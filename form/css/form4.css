@@ -1,0 +1,2472 @@
+@font-face {
+font-family: Avenir-Book;
+font-style: normal;
+font-weight: normal;
+src: local('../fonts/AvenirLTStd-Light.woff'), url('../fonts/AvenirLTStd-Light.woff') format('woff');
+}
+@import url(http://markmurray.co/codepen/entypostyle.css);
+body {
+  background: #8e8e8e;
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+  overflow-y: hidden;
+}
+
+section {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: table;
+  overflow: hidden;
+  z-index: 1;
+}
+section .content {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  color: #ffffff;
+  padding: 20px;
+  font-size: 28px;
+line-height: 44px;
+font-family: Avenir-Book;
+  font-weight: 100;
+}
+section .content h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -170px;
+  position: relative;
+   -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+section .content input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+padding-left:10px;
+  margin-top: 10px;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 500px;
+  height: 50px;
+}
+
+section .content .arrow {
+  font-size: 2rem;
+  line-height: 0.5;
+  padding: 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+
+/*
+PRIMEIRA DIV
+*/
+
+.section1 {
+  top: 0;
+}
+
+.progress1 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+/* CHROME */
+ .progress1 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress1 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress1 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 768px){
+
+body{
+
+  overflow-x: hidden;
+}
+
+  .progress1 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+}
+
+
+@media screen and (max-width:600px) { 
+
+section .content h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -10px;
+  position: relative;
+}
+section .content input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+padding-left:10px;
+  margin-top: 10px;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 270px;
+  height: 50px;
+}
+  .progress1 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+}
+
+
+
+/*
+SEGUNDA DIV
+*/
+
+.section2 {
+  top: 100%;
+}
+
+section .content .responsavel h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -160px;
+  position: relative;
+}
+.progress2 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+/* CHROME */
+ .progress2 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress2 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress2 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+  .progress2 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+    .progress2 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+section .content .responsavel h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: 20px;
+  position: relative;
+}
+
+}
+
+
+/*
+TERCEIRA DIV
+*/
+
+.section3 {
+  top: 200%;
+}
+
+.progress3 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+/* CHROME */
+ .progress3 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress3 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress3 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+  .progress3 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+    .progress3 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+}
+
+/*
+QUARTA DIV
+*/
+
+
+.section4 {
+  top: 300%;
+}
+
+.progress4 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+/* CHROME */
+ .progress4 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress4 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress4 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+  .progress4 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+    .progress4 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+}
+
+/*
+QUINTA DIV
+*/
+
+
+section .content .fotos h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: 35px;
+  position: relative;
+}
+
+.camera img{
+width:200px;
+height:200px;
+padding-left:-50px;
+padding-bottom: 50px;
+  margin-top: -80px;
+}
+
+.section5 {
+  top: 400%;
+}
+
+.progress5 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+/* CHROME */
+ .progress5 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress5 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress5 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+  .progress5 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+    .progress5 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+section .content .fotos h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: 20px;
+  position: relative;
+}
+
+}
+
+/*
+SEXTA DIV
+*/
+
+.section6 {
+  top: 500%;
+}
+
+section .content .sorria h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -150px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.gradient2 {
+  z-index: 0;
+  width:100%;
+  height: 100%;
+  position: absolute; /* */
+  opacity: 0.8;  /* */
+  margin: 0px;
+  padding: 0px;
+}
+.gradient2:after {
+    content: '';
+    display:block;
+    width: 100%;
+    height: 102%;
+    background: url("../images/sorrindo.jpg") center center;
+    background-size: cover;
+    opacity: 0.1;
+  }
+
+.myFile {
+  position: absolute;
+  overflow: hidden;
+  float: left;
+  clear: left;
+margin-left:-100px;
+  margin-top: 50px;
+}
+.myFile img{
+  width:200px;
+  height:200px;
+}
+
+.myFile input[type="file"] {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  font-size: 100px;
+  filter: alpha(opacity=0);
+  cursor: pointer;
+}
+
+
+
+.progress6 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+/* CHROME */
+ .progress6 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress6 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress6 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+  .progress6 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+    .progress6 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+.myFile img{
+  width:100px;
+  height:100px;
+}
+
+.myFile {
+  position: absolute;
+  overflow: hidden;
+  float: left;
+  clear: left;
+margin-left:-50px;
+  margin-top: 185px;
+}
+}
+
+
+@media screen and (max-width:320px) { 
+
+.myFile img{
+  width:80px;
+  height:80px;
+}
+
+.myFile {
+  position: absolute;
+  overflow: hidden;
+  float: left;
+  clear: left;
+margin-left:-50px;
+  margin-top: 185px;
+}
+}
+
+
+/*
+SÉTIMA DIV
+*/
+
+.section7 {
+  top: 600%;
+}
+
+
+section .content .serio h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -150px;
+  margin-left: 10px;
+  position: relative;
+}
+.gradient3 {
+  z-index: 0;
+  width:100%;
+  height: 100%;
+  position: absolute; /* */
+  opacity: 0.8;  /* */
+  margin: 0px;
+  padding: 0px;
+}
+.gradient3:after {
+    content: '';
+    display:block;
+    width: 100%;
+    height: 102%;
+    background: url("../images/serio.jpg") center center;
+    background-size: cover;
+    opacity: 0.1;
+  }
+
+.myFile2 {
+  position: absolute;
+  overflow: hidden;
+  float: left;
+  clear: left;
+margin-left:-100px;
+  margin-top: 50px;
+}
+.myFile2 img{
+  width:200px;
+  height:200px;
+}
+
+.myFile2 input[type="file"] {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  font-size: 100px;
+  filter: alpha(opacity=0);
+  cursor: pointer;
+}
+
+
+.progress7 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+/* CHROME */
+ .progress7 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress7 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress7 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+  .progress7 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+    .progress7 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+.myFile2 img{
+  width:100px;
+  height:100px;
+}
+
+.myFile2 {
+  position: absolute;
+  overflow: hidden;
+  float: left;
+  clear: left;
+margin-left:-50px;
+  margin-top: 185px;
+}
+}
+
+
+@media screen and (max-width:320px) { 
+
+.myFile img{
+  width:80px;
+  height:80px;
+}
+
+.myFile {
+  position: absolute;
+  overflow: hidden;
+  float: left;
+  clear: left;
+margin-left:-50px;
+  margin-top: 185px;
+}
+}
+
+
+
+/*
+OITAVA DIV
+*/
+
+.section8 {
+  top: 700%;
+}
+
+
+section .content .contato h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -150px;
+  margin-left: -100px;
+  position: relative;
+}
+
+div.contato{
+
+  margin-left: -150px;
+}
+
+@media screen and (max-width:414px) { 
+ div.contato{
+
+  margin-left: -70px;
+}
+}
+
+.progress8 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+/* CHROME */
+ .progress8 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress8 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress8 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+  .progress8 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+    .progress8 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+section .content .contato h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -150px;
+  margin-left: 10px;
+  position: relative;
+}
+
+}
+
+/*
+NONA DIV
+*/
+
+
+.section9 {
+  top: 800%;
+}
+
+section .content .email h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+    margin-top: -80px;
+  margin-left: -350px;
+  position: relative;
+}
+div.email{
+
+  margin-left: 20px;
+}
+
+
+@media screen and (max-width:414px) { 
+
+div.email{
+
+  margin-left: 70px;
+}
+}
+
+.progress9 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+/* CHROME */
+ .progress9 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress9 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress9 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+  .progress9 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+    .progress9 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+section .content .email h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+    margin-top: -80px;
+  margin-left: -150px;
+  position: relative;
+}
+
+
+}
+
+
+
+/*
+DÉCIMA DIV
+*/
+
+
+
+.section10 {
+  top: 900%;
+}
+
+
+section .content .sexo h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -150px;
+  margin-left: 10px;
+  position: relative;
+}
+
+
+.toggleswitch{
+
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-400px;
+margin-top:-30px;
+}
+
+.toggleswitch label {
+  display: inline-block;
+  border: 2px solid #ECECEC;
+border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 150px;
+  margin: 15px;
+  font-weight: normal;
+/* Feminino: */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 34px;
+margin-left:40%;
+}
+
+.toggleswitch input:checked,
+.toggleswitch input:not(:checked) {
+  display: none;
+}
+
+.toggleswitch input:checked + label {
+  /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+}
+
+
+
+
+.progress10 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+/* CHROME */
+ .progress10 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress10 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress10 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+  .progress10 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+    .progress10 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+}
+
+
+
+
+@media screen and (max-width:360px) { 
+
+.toggleswitch{
+
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-370px;
+margin-top:-30px;
+}
+
+}
+
+/***
+
+DÉCIMA PRIMEIRA DIV
+***/
+
+
+.section11 {
+  top: 1000%;
+}
+
+section .content .raca h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+ width:280px;
+  height:250px;
+  left:40%; 
+margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+top: 50%;
+bottom: auto;
+display: block;
+position: absolute;
+}
+
+
+div.raca{
+
+  margin-left: 80px;
+}
+
+.progress11 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+/* CHROME */
+ .progress11 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress11 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress11 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+  .progress11 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+section .content .raca h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+ width:280px;
+  height:250px;
+  left:35%; 
+margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+top: 50%;
+bottom: auto;
+display: block;
+position: absolute;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+    .progress11 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+section .content .raca h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 44px;
+ width:280px;
+  height:250px;
+  left:30%; 
+margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+top: 50%;
+bottom: auto;
+display: block;
+position: absolute;
+}
+
+
+}
+
+@media screen and (max-width:320px){ 
+
+section .content .raca h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 44px;
+ width:280px;
+  height:250px;
+  left:30%; 
+margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+top: 50%;
+bottom: auto;
+display: block;
+position: absolute;
+}
+
+}
+
+/***
+
+DÉCIMA SEGUNDA DIV
+***/
+
+
+
+.section12 {
+  top: 1100%;
+}
+
+
+section .content .bairro h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  position: relative;
+  margin-top: -80px;
+  margin-left:-15px;
+}
+
+
+div.bairro{
+
+  margin-left: -120px;
+}
+
+.progress12 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+/* CHROME */
+ .progress12 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress12 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress12 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+  .progress12 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+     .progress12 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+section .content .bairro h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 44px;
+  position: relative;
+  margin-top: -80px;
+  margin-left: -45px;
+}
+
+
+
+}
+
+
+@media screen and (max-width:360px){ 
+
+section .content .bairro h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  position: relative;
+  margin-top: -80px;
+  margin-left: -15px;
+}
+
+}
+
+
+/***
+
+DÉCIMA TERCEIRA DIV
+***/
+
+.section13 {
+  top: 1200%;
+}
+
+
+
+.progress13 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+/* CHROME */
+ .progress13 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress13 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress13 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+  .progress13 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+    .progress13 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+div.toggleswitch2{
+
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-450px;
+margin-top:-130px;
+}
+
+
+section .content .ator h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -10px;
+  position: relative;
+}
+div.ator{
+  margin-left:80px
+}
+
+
+}
+
+
+@media screen and (max-width:414px) { 
+    .progress13 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+div.toggleswitch2{
+
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-400px;
+margin-top:-130px;
+}
+
+}
+
+
+section .content .ator h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -200px;
+  margin-left: -90px;
+  position: relative;
+}
+
+
+
+.toggleswitch2{
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-500px;
+margin-top:-140px;
+}
+
+.toggleswitch2 label {
+  display: inline-block;
+  border: 2px solid #ECECEC;
+border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 260px;
+  margin: 15px;
+  font-weight: normal;
+/* Feminino: */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 34px;
+margin-left:30%;
+}
+
+.toggleswitch2 input:checked,
+.toggleswitch2 input:not(:checked) {
+  display: none;
+}
+
+.toggleswitch2 input:checked + label {
+  /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+}
+
+.sim2{
+ width:400px;
+  height:250px;
+  left:50%; 
+margin-left:-250px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+top: 50%;
+bottom: auto;
+display: block;
+position: absolute;
+}
+ 
+
+@media screen and (max-width:600px) { 
+
+.sim2{
+ width:400px;
+  height:250px;
+  left:60%; 
+margin-left:-250px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+top: 40%;
+bottom: auto;
+display: block;
+position: absolute;
+}
+}
+
+
+@media screen and (max-width:480px) {
+.sim2{
+ width:300px;
+  height:250px;
+  left:60%; 
+margin-left:-250px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+top: 52%;
+bottom: auto;
+display: block;
+position: absolute;
+}
+
+div.centered {
+ width:280px;
+  height:250px;
+  left:40%; 
+margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+top: 42%;
+bottom: auto;
+display: block;
+position: absolute;
+  background: rgba(215,215,215,0.1);
+ }
+
+ .p1 {
+font-family: Avenir-Book;
+font-size: 15px;
+color: #FFFFFF;
+line-height: 30px;
+ }
+
+.p2 {
+font-family: Avenir-Book;
+font-size: 15px;
+color: #FFFFFF;
+line-height: 30px;
+  margin-top: 5px;
+ }
+
+.t11 {
+font-family: Avenir-Book;
+font-size: 18px;
+color: #FFFFFF;
+line-height: 44px;
+text-align: left;
+  margin-top: 5px;
+ }
+
+}
+
+
+div.centered {
+  display: inline-block;
+  width: 400px;
+  height:200px;
+  padding: 5px 5px;
+  background: rgba(215,215,215,0.1);
+ }
+
+p.p1 {
+font-family: Avenir-Book;
+font-size: 18px;
+color: #FFFFFF;
+line-height: 30px;
+  margin-top: -18px;
+ }
+
+ p.p2 {
+font-family: Avenir-Book;
+font-size: 18px;
+color: #FFFFFF;
+line-height: 30px;
+  margin-top: 5px;
+ }
+
+h3.t11 {
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 44px;
+text-align: left;
+  margin-top: 5px;
+ }
+
+
+/***
+
+DÉCIMA QUARTA DIV
+***/
+
+.section14 {
+  top: 1300%;
+}
+
+
+section .content .quartoze h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -50px;
+  position: relative;
+}
+
+
+.progress14 progress {
+  width:600px;
+  position:absolute; 
+  top:95%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+/* CHROME */
+ .progress14 progress::-webkit-progress-bar {
+ 
+background: rgba(215,215,215,0.1);
+}
+
+ .progress14 progress::-webkit-progress-value {
+  background-color: #fff;
+}
+
+ .progress14 progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) { 
+
+  .progress14 progress {
+  width:600px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-300px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+}
+
+@media screen and (max-width:600px) { 
+
+    .progress14 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+section .content .quartoze h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -30px;
+  position: relative;
+}
+
+section .content .ig{
+  width:400;
+  height:100px;
+}
+
+section .content .ig .ig2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+  position: absolute;
+margin-top:10px;
+margin-left: 120px;
+  width: 300px;
+  height: 50px;
+}
+
+.ig img{
+  position: absolute;
+  overflow: hidden;
+margin-top:10px;
+margin-left: 100px;
+}
+
+
+section .content .face .face2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 300px;
+  height: 50px;
+}
+
+
+.face img{
+
+  position: absolute;
+  overflow: hidden;
+float:left;
+margin-top:10px;
+margin-left: 100px;
+
+}
+
+
+}
+
+
+@media screen and (max-width:500px) { 
+
+    .progress14 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+section .content .quartoze h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -30px;
+  position: relative;
+}
+
+section .content .ig{
+  width:300;
+  height:100px;
+}
+
+section .content .ig .ig2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+  position: absolute;
+margin-top:10px;
+margin-left: 150px;
+  width: 250px;
+  height: 50px;
+}
+
+.ig img{
+  position: absolute;
+  overflow: hidden;
+margin-top:10px;
+margin-left: 90px;
+}
+
+
+section .content .face .face2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+margin-left: 150px;
+  width: 250px;
+  height: 50px;
+}
+
+
+.face img{
+
+  position: absolute;
+  overflow: hidden;
+float:left;
+margin-top:10px;
+margin-left: 90px;
+
+}
+
+section .content .tt .tt2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+margin-left: 150px;
+  width: 250px;
+  height: 50px;
+}
+
+
+.tt img{
+
+  position: absolute;
+  overflow: hidden;
+float:left;
+margin-top:10px;
+margin-left: 90px;
+
+}
+
+
+}
+
+
+
+@media screen and (max-width:450px) { 
+
+    .progress14 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+section .content .quartoze h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -30px;
+  position: relative;
+}
+
+section .content .ig{
+  width:200;
+  height:100px;
+}
+
+section .content .ig .ig2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+  position: absolute;
+margin-top:10px;
+}
+input#twitter.twitter2{
+
+  width: 200px;
+  height: 50px;
+margin-left: -31px;
+}
+
+.ig img{
+  position: absolute;
+  overflow: hidden;
+margin-top:10px;
+width:40px;
+height:40px;
+}
+
+img.imgtt{
+
+margin-right: 50px;
+}
+
+section .content .face .face2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+margin-left: 190px;
+  width: 150px;
+  height: 50px;
+}
+
+
+input#face.face2{
+
+  width: 200px;
+  height: 50px;
+margin-left: -31px;
+}
+
+
+.face img{
+
+  position: absolute;
+  overflow: hidden;
+float:left;
+margin-top:10px;
+margin-left: 250px;
+width:40px;
+height:40px;
+
+}
+
+section .content .tt .tt2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+margin-left: 190px;
+  width: 150px;
+  height: 50px;
+}
+
+
+.tt img{
+
+  position: absolute;
+  overflow: hidden;
+float:left;
+margin-top:10px;
+margin-left: 180px;
+width:40px;
+height:40px;
+}
+
+
+}
+
+
+
+section .content .ig .ig2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  position: absolute;
+  width: 400px;
+  height: 50px;
+}
+
+
+input#ig.ig2{
+
+  width: 200px;
+  height: 50px;
+margin-left: -31px;
+}
+
+.ig img{
+  position: absolute;
+  overflow: hidden;
+float:left;
+margin-top:10px;
+margin-left: -70px;
+}
+
+/*
+ESTILO FACEBOOK
+*/
+section .content .face{
+  width:550;
+  height:100px;
+}
+section .content .face .face2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 500px;
+  height: 50px;
+}
+
+
+.face img{
+
+  position: absolute;
+  overflow: hidden;
+float:left;
+margin-top:10px;
+margin-left: -70px;
+
+}
+
+/*
+ESTILO TWITTER
+*/
+section .content .tt{
+  width:550;
+  height:100px;
+}
+
+section .content .tt .tt2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 500px;
+  height: 50px;
+}
+
+
+.tt img{
+
+  position: absolute;
+  overflow: hidden;
+float:left;
+margin-top:10px;
+margin-left: -70px;
+
+}
+
+
+/***
+
+DÉCIMA QUINTA DIV
+***/
+
+
+.section15 {
+  top: 1400%;
+}
+
+
+section .content .ultima h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  left:50%; 
+margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+top: 30%;
+bottom: auto;
+display: block;
+position: absolute;
+}
+
+
+
+@media screen and (max-width:780px) { 
+
+section .content .logomag img{
+margin-top: 300px;
+  position: relative;
+  }
+
+}
+
+
+
+@media screen and (max-width:600px) { 
+
+
+section .content .logomag img{
+margin-top: 150px;
+  position: relative;
+}
+
+}
+
+
+
+@media screen and (max-width:480px){ 
+
+section .content .logomag img{
+margin-top: 80px;
+  position: relative;
+}
+
+}
+
+.gradient4 {
+  z-index: 0;
+  width:100%;
+  height: 100%;
+  position: absolute; /* */
+  opacity: 0.8;  /* */
+  margin: 0px;
+  padding: 0px;
+}
+.gradient4:after {
+    content: '';
+    display:block;
+    width: 100%;
+    height: 102%;
+    background: url("../images/img-DSC_2882-contraste.png") center center;
+    background-size: cover;
+    opacity: 0.1;
+  }
+
+.logomag img{
+  left:55%; 
+margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+top: 80%;
+bottom: auto;
+display: block;
+position: absolute;
+
+}
+
+/**********************
+SETAS
+***********************/
+
+
+.vs-vertical-nav {
+
+position: absolute;
+
+z-index: 1;
+
+top: 50%;
+
+right: 3%;
+
+bottom: auto;
+
+display: block;
+
+-webkit-transform: translateY(-50%);
+
+-moz-transform: translateY(-50%);
+
+-ms-transform: translateY(-50%);
+
+-o-transform: translateY(-50%);
+
+transform: translateY(-50%);
+
+}
+
+
+.vs-vertical-nav a {
+
+display: block;
+
+overflow: hidden;
+
+width: 40px;
+
+height: 40px;
+
+white-space: nowrap;
+
+text-indent: 100%;
+
+background: url('../images/arrows-downres.svg') no-repeat center center;
+
+}
+
+ 
+
+.vs-vertical-nav a.vs-prev {
+
+margin-bottom: 10px;
+
+-webkit-transform: rotate(180deg);
+
+-moz-transform: rotate(180deg);
+
+-ms-transform: rotate(180deg);
+
+-o-transform: rotate(180deg);
+
+transform: rotate(180deg);
+
+}
+
+
+@media only screen and (max-width: 768px){
+
+
+
+.vs-vertical-nav {
+
+position: absolute;
+
+z-index: 1;
+
+top: 95%;
+
+left:50%;
+width:80px;
+
+    margin-left:-80px;
+
+bottom: auto;
+
+display: block;
+
+-webkit-transform: translateY(-50%);
+
+-moz-transform: translateY(-50%);
+
+-ms-transform: translateY(-50%);
+
+-o-transform: translateY(-50%);
+
+transform: translateY(-50%);
+
+}
+
+
+.vs-vertical-nav a {
+
+display: block;
+
+overflow: hidden;
+
+width: 40px;
+
+height: 40px;
+
+white-space: nowrap;
+
+text-indent: 100%;
+margin-top: -49px;
+
+background: url('../images/arrows-downres.svg') no-repeat center center;
+
+}
+
+ 
+
+.vs-vertical-nav a.vs-prev {
+
+margin-bottom: 10px;
+margin-left: 50px;
+
+-webkit-transform: rotate(180deg);
+
+-moz-transform: rotate(180deg);
+
+-ms-transform: rotate(180deg);
+
+-o-transform: rotate(180deg);
+
+transform: rotate(180deg);
+
+}
+
+
+}
+
+
+
+
+
+
+
