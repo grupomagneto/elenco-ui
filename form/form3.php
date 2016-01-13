@@ -440,7 +440,7 @@
   </div>
 </section>
 
-<!-- <section class="section13 gradient" id="13" data-section="13">
+<section class="section13 gradient" id="13" data-section="13">
   <div class="content"> 
 
      <div class="ator"> <h1>Você é ator ou atriz com DRT?</h1> </div>  
@@ -484,7 +484,7 @@
 
   </div>
 
-</section> -->
+</section>
 
 
 <section class="section14 gradient" id="14" data-section="14">
