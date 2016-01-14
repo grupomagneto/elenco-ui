@@ -539,24 +539,26 @@ line-height:50px;
   margin:0 auto;
   display: block;
   text-align: center;
-/* Prazer! Copy: */
+/* Prazer! Copy 2: */
 font-family: Avenir-Book;
-font-size: 46px;
+font-size: 37px;
 color: #FFFFFF;
-line-height: 76px;
+line-height: 51px;
 }
 .contenu p{
   position: absolute;
   left:10%;
-  top:40%;
+  top:45%;
   right:10%;
   margin:0 auto;
   display: block;
   text-align: center;
+/* Nós somos uma agênci Copy: */
 font-family: Avenir-Book;
-font-size: 22px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 34px;
+line-height: 38px;
+font-weight: 600;
   -webkit-column-count: 1; 
   -moz-column-count: 1; 
   column-count: 1;
@@ -745,14 +747,14 @@ line-height:50px;
 .contenu2 p{
   position: absolute;
   left:10%;
-  top:40%;
+  top:45%;
   right:10%;
   margin:0 auto;
   display: block;
   text-align: center;
-/* Para atores e modelo: */
+/* Nós somos uma agênci Copy: */
 font-family: Avenir-Book;
-font-size: 30px;
+font-size: 28px;
 color: #FFFFFF;
 line-height: 38px;
 font-weight: 600;
@@ -942,15 +944,17 @@ line-height:50px;
 .contenu3 p{
   position: absolute;
   left:10%;
-  top:40%;
+  top:45%;
   right:10%;
   margin:0 auto;
   display: block;
   text-align: center;
+/* Nós somos uma agênci Copy: */
 font-family: Avenir-Book;
-font-size: 22px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 34px;
+line-height: 38px;
+font-weight: 600;
   -webkit-column-count: 1; 
   -moz-column-count: 1; 
   column-count: 1;
@@ -1030,24 +1034,30 @@ animation: bgcolor  5s ease infinite;
 }
 
 .iniciar{
-  /* Rectangle 9 Copy: */
+/* Rectangle 9 Copy: */
 background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
-width:200px;
-height:50px;
+width:103px;
+height:45px;
 position: absolute;
 left:15%;
 top:40%;
 display: block;
 }
 .iniciar p{
-  margin-top: -12px;
-  margin-left: -15px;
+  margin-top: -3px;
+  margin-left: -10px;
+font-family: Avenir-Book;
+font-size: 16.91px;
+color: #FFFFFF;
+line-height: 23px;
 }
 .iniciar span img{
-  margin-top: -70px;
-  margin-left: 120px;
+  margin-top: -45px;
+  margin-left: 45px;
+  width:80px;
+  height:80px;
 }
 
 @media only screen and (max-width: 1366px){
@@ -1069,29 +1079,35 @@ font-weight: 600;
   -webkit-column-gap: 20px; 
   -moz-column-gap: 20px; 
   column-gap: 20px;
-
-
 }
 
-
 .iniciar{
-  /* Rectangle 9 Copy: */
+/* Rectangle 9 Copy: */
 background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
-width:200px;
+width:103px;
 height:45px;
 position: absolute;
 left:10%;
 top:45%;
 display: block;
 }
-.iniciar p{
-  margin-top: -10px;
-  margin-left: -5px;
-  font-size: 25px;
-}
 
+.iniciar p{
+  margin-top: -3px;
+  margin-left: -5px;
+font-family: Avenir-Book;
+font-size: 16.91px;
+color: #FFFFFF;
+line-height: 23px;
+}
+.iniciar span img{
+  margin-top: -45px;
+  margin-left: 50px;
+  width:80px;
+  height:80px;
+}
 
 .logo{
   top: 5%;
@@ -1168,30 +1184,31 @@ line-height:50px;
 
 }
 
-
 .iniciar{
-  /* Rectangle 9 Copy: */
+/* Rectangle 9 Copy: */
 background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
-width:120px;
-height:30px;
+width:103px;
+height:45px;
 position: absolute;
 left:10%;
 top:65%;
 display: block;
 }
 .iniciar p{
-font-size: 24px;
-line-height: 34px;
-  margin-top: -12px;
-  margin-left: -8px;
+  margin-top: -10px;
+  margin-left: -5px;
+font-family: Avenir-Book;
+font-size: 16.91px;
+color: #FFFFFF;
+line-height: 23px;
 }
 .iniciar span img{
-  margin-top: -60px;
-  margin-left: 80px;
-  width:52px;
-  height: 52px;
+  margin-top: -45px;
+  margin-left: 50px;
+  width:80px;
+  height:80px;
 }
 
 
@@ -1201,15 +1218,17 @@ line-height: 34px;
 .contenu4 p{
   position: absolute;
   left:10%;
-  top:40%;
+  top:45%;
   right:10%;
   margin:0 auto;
   display: block;
   text-align: center;
+/* Nós somos uma agênci Copy: */
 font-family: Avenir-Book;
-font-size: 22px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 34px;
+line-height: 38px;
+font-weight: 600;
   -webkit-column-count: 1; 
   -moz-column-count: 1; 
   column-count: 1;
@@ -1222,24 +1241,27 @@ line-height: 34px;
 
 
 .iniciar{
-  /* Rectangle 9 Copy: */
 background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
-width:120px;
-height:30px;
+width:93px;
+height:41px;
 position: absolute;
-left:35%;
-top:50%;
+left:28%;
+top:60%;
 display: block;
 }
 .iniciar p{
-  margin-top: -12px;
+font-family: Avenir-Book;
+font-size: 15.27px;
+color: #FFFFFF;
+line-height: 21px;
+  margin-top: -5px;
   margin-left: -30px;
 }
 .iniciar span img{
-  margin-top: -60px;
-  margin-left: 100px;
+  margin-top: -35px;
+  margin-left:80px;
   width:52px;
   height: 52px;
 }
@@ -1254,24 +1276,27 @@ display: block;
 @media only screen and (max-width: 375px){
 
 .iniciar{
-  /* Rectangle 9 Copy: */
 background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
-width:130px;
-height:30px;
+width:93px;
+height:41px;
 position: absolute;
-left:32%;
-top:52%;
+left:25%;
+top:60%;
 display: block;
 }
 .iniciar p{
-  margin-top: -12px;
-  margin-left: -40px;
+font-family: Avenir-Book;
+font-size: 15.27px;
+color: #FFFFFF;
+line-height: 21px;
+  margin-top: -5px;
+  margin-left: -30px;
 }
 .iniciar span img{
-  margin-top: -60px;
-  margin-left: 120px;
+  margin-top: -35px;
+  margin-left:80px;
   width:52px;
   height: 52px;
 }
@@ -1280,150 +1305,72 @@ display: block;
 
 @media only screen and (max-width: 320px){
 
+
+
 .iniciar{
-  /* Rectangle 9 Copy: */
 background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
-width:135px;
-height:30px;
+width:93px;
+height:41px;
 position: absolute;
-left:28%;
-top:54%;
+left:20%;
+top:62%;
 display: block;
 }
 .iniciar p{
-  margin-top: -12px;
-  margin-left: -40px;
+font-family: Avenir-Book;
+font-size: 15.27px;
+color: #FFFFFF;
+line-height: 21px;
+  margin-top: -5px;
+  margin-left: -30px;
 }
 .iniciar span img{
-  margin-top: -60px;
-  margin-left: 120px;
+  margin-top: -35px;
+  margin-left:80px;
   width:52px;
   height: 52px;
 }
 
 }
 
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+
+
+.iniciar{
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+width:93px;
+height:41px;
+position: absolute;
+left:20%;
+top:65%;
+display: block;
+}
+.iniciar p{
+font-family: Avenir-Book;
+font-size: 15.27px;
+color: #FFFFFF;
+line-height: 21px;
+  margin-top: -5px;
+  margin-left: -30px;
+}
+.iniciar span img{
+  margin-top: -35px;
+  margin-left:80px;
+  width:52px;
+  height: 52px;
+}
+}
+
 /*Section 2*/
-.hue {
-background: linear-gradient(-135deg, #8124FA 0%, #FF2981 100%);
-   background: -webkit-linear-gradient(-135deg, #8124FA 0%, #FF2981 100%);
-   background: -moz-linear-gradient(-135deg, #8124FA 0%, #FF2981 100%);
-   background: -o-linear-gradient(-135deg, #8124FA 0%, #FF2981 100%);
-  background-color: hsl(0, 50%, 50%);
--webkit-animation: hue 5s ease infinite;
--moz-animation: hue  5s ease infinite;
--o-animation: hue  5s ease infinite;
-animation: hue  5s ease infinite;
-background-size: 400% 400%;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index:9999;
-}
-@-webkit-keyframes hue  {
-    0%{background-position:0% 26%}
-    50%{background-position:100% 75%}
-    100%{background-position:0% 26%}
-}
-@-moz-keyframes hue  {
-    0%{background-position:0% 26%}
-    50%{background-position:100% 75%}
-    100%{background-position:0% 26%}
-}
-@-o-keyframes hue  {
-    0%{background-position:0% 26%}
-    50%{background-position:100% 75%}
-    100%{background-position:0% 26%}
-}
-@keyframes hue  {
-    0%{background-position:0% 26%}
-    50%{background-position:100% 75%}
-    100%{background-position:0% 26%}
-}
 
-.hue h1{
-  /* Quem você está cadas: */
-font-family: Avenir-Book;
-font-size: 45px;
-color: #FFFFFF;
-line-height: 38px;
-margin-top: 20%;
-margin-left: 25%;
-}
-a{
-  text-decoration: none;
-}
+/***
+LINKS SEGUNDA PÁGINA
+***/
 
-a:hover{
-  text-decoration: none;
-}
-
-a.link11:hover{
-  text-decoration: none;
-
-}
-a.link12:hover{
-  text-decoration: none;
-
-}
-
-.link1{
-  /* Rectangle 9 Copy 2: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-/* Uma criança: */
-font-family: Avenir-Book;
-font-size: 20px;
-color: #FFFFFF;
-line-height: 27px;
-width:400px;
-height:50px;
-margin-left: 35%;
-padding: 15px;
-margin-top: 50px;
-}
-
-.link1:hover{
-  text-decoration: none;
-}
-
-.link1 span img{
-  margin-left: 320px;
-  margin-top: -55px;
-}
-
-.link2 span img{
-  margin-left: 320px;
-  margin-top: -55px;
-}
-
-
-.link2{
-  /* Rectangle 9 Copy 2: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-/* Uma criança: */
-font-family: Avenir-Book;
-font-size: 20px;
-color: #FFFFFF;
-line-height: 27px;
-width:400px;
-height:50px;
-margin-left: 35%;
-padding: 15px;
-margin-top: 20px;
-}
-
-.link2:hover{
-  text-decoration: none;
-}
-
-
-/*INDEX 2 LINK*/
 .hue2 {
 background: linear-gradient(-135deg, #8124FA 0%, #FF2981 100%);
    background: -webkit-linear-gradient(-135deg, #8124FA 0%, #FF2981 100%);
@@ -1461,19 +1408,22 @@ background-size: 400% 400%;
     100%{background-position:0% 26%}
 }
 
-.hue2 h1{
-  /* Quem você está cadas: */
+div.hue2 h1{
+/* Quem você está cadas: */
 font-family: Avenir-Book;
-font-size: 45px;
+font-size: 32px;
 color: #FFFFFF;
-line-height: 38px;
+line-height: 44px;
+font-weight: 600;
   position: absolute;
-  left:35%;
+  left:3%;
   top:40%;
   right:10%;
-  margin:0 auto;
-  display: inline-block;
+  text-align: center;
+  display: block;
+
 }
+
 a{
   text-decoration: none;
 }
@@ -1486,30 +1436,55 @@ a.link111:hover{
   text-decoration: none;
 
 }
+
 a.link122:hover{
   text-decoration: none;
-
 }
 
-.link11{
-  /* Rectangle 9 Copy 2: */
+.link111{
+
+/* Rectangle 9 Copy: */
 background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
-/* Uma criança: */
-font-family: Avenir-Book;
-font-size: 20px;
-color: #FFFFFF;
-line-height: 27px;
-width:400px;
-height:50px;
+width:488px;
+height:79px;
   position: absolute;
-  left:10%;
+  left:5%;
   top:50%;
   right:10%;
   margin:0 auto;
   display: block;
-padding: 15px;
+}
+
+.link122{
+
+/* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+width:488px;
+height:79px;
+  position: absolute;
+  left:5%;
+  top:62%;
+  right:10%;
+  margin:0 auto;
+  display: block;
+}
+
+.link11{
+/* Eu mesm@, sou maior : */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 34px;
+  position: absolute;
+  left:-13%;
+  top:35%;
+  right:10%;
+  margin:0 auto;
+  display: block;
 }
 
 .link11:hover{
@@ -1517,320 +1492,216 @@ padding: 15px;
 }
 
 .link11 span img{
-  margin-left: 320px;
+  margin-left: 485px;
   margin-top: -55px;
 }
 
 .link22 span img{
-  margin-left: 320px;
+  margin-left: 475px;
   margin-top: -55px;
 }
 
 .link22{
-  /* Rectangle 9 Copy 2: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-/* Uma criança: */
+/* Eu mesm@, sou maior : */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 25px;
 color: #FFFFFF;
-line-height: 27px;
-width:400px;
-height:50px;
+line-height: 34px;
+width:488px;
+height:79px;
   position: absolute;
-  left:10%;
-  top:60%;
+  left:-11%;
+  top:35%;
   right:10%;
   margin:0 auto;
   display: block;
-padding: 15px;
 }
 
 .link22:hover{
   text-decoration: none;
 }
 
-@media only screen and (max-width: 1366px){
-
-.hue2 h1{
-  /* Quem você está cadas: */
-font-family: Avenir-Book;
-font-size: 45px;
-color: #FFFFFF;
-line-height: 38px;
-  position: absolute;
-  left:28%;
-  top:40%;
-  right:10%;
-  margin:0 auto;
-  display: inline-block;
-}
-
-}
-@media only screen and (max-width: 1024px){
-
-.hue2 h1{
-  /* Quem você está cadas: */
-font-family: Avenir-Book;
-font-size: 45px;
-color: #FFFFFF;
-line-height: 38px;
-  position: absolute;
-  left:22%;
-  top:40%;
-  right:10%;
-  margin:0 auto;
-  display: inline-block;
-} 
-}
 
 @media only screen and (max-width: 800px){
 
-.hue2 h1{
-  /* Quem você está cadas: */
-font-family: Avenir-Book;
-font-size: 35px;
-color: #FFFFFF;
-line-height: 20px;
+
+.link111{
+
+/* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+width:488px;
+height:79px;
   position: absolute;
-  left:22%;
-  top:30%;
+  left:5%;
+  top:50%;
   right:10%;
   margin:0 auto;
-  display: inline-block;
+  display: block;
+}
+
+.link122{
+
+/* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+width:488px;
+height:79px;
+  position: absolute;
+  left:5%;
+  top:62%;
+  right:10%;
+  margin:0 auto;
+  display: block;
 }
 
 .link11{
-  /* Rectangle 9 Copy 2: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-/* Uma criança: */
+/* Eu mesm@, sou maior : */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 25px;
 color: #FFFFFF;
-line-height: 27px;
-width:400px;
-height:50px;
+line-height: 34px;
   position: absolute;
-  left:10%;
-  top:40%;
+  left:-15%;
+  top:35%;
   right:10%;
   margin:0 auto;
   display: block;
-padding: 15px;
 }
-
-
-.link22{
-  /* Rectangle 9 Copy 2: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-/* Uma criança: */
-font-family: Avenir-Book;
-font-size: 20px;
-color: #FFFFFF;
-line-height: 27px;
-width:400px;
-height:50px;
-  position: absolute;
-  left:10%;
-  top:55%;
-  right:10%;
-  margin:0 auto;
-  display: block;
-padding: 15px;
-}
-
-}
-
-
-@media only screen and (max-width: 768px){
-.hue2 h1{
-
-/* Quem você está cadas: */
-font-family: Avenir-Book;
-font-size: 30px;
-color: #FFFFFF;
-line-height: 38px;
-  position: absolute;
-  left:22%;
-  top:32%;
-  right:10%;
-  margin:0 auto;
-  display: inline-block;
-}
-.link22{
-  /* Rectangle 9 Copy 2: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-/* Uma criança: */
-font-family: Avenir-Book;
-font-size: 20px;
-color: #FFFFFF;
-line-height: 27px;
-width:400px;
-height:50px;
-  position: absolute;
-  left:10%;
-  top:48%;
-  right:10%;
-  margin:0 auto;
-  display: block;
-padding: 15px;
-}
-}
-
-@media only screen and (max-width: 414px){
-
-.hue2 h1{
-  /* Quem você está cadas: */
-font-family: Avenir-Book;
-font-size: 20px;
-color: #FFFFFF;
-line-height: 20px;
-  position: absolute;
-  left:20%;
-  top:40%;
-  right:10%;
-  margin:0 auto;
-  display: inline-block;
-}
-
-.link11{
-  /* Rectangle 9 Copy 2: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-/* Uma criança: */
-font-family: Avenir-Book;
-font-size: 13px;
-color: #FFFFFF;
-line-height: 27px;
-width:250px;
-height:50px;
-  position: absolute;
-  left:10%;
-  top:45%;
-  right:10%;
-  margin:0 auto;
-  display: block;
-padding: 15px;
-}
-
-.link22{
-  /* Rectangle 9 Copy 2: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-/* Uma criança: */
-font-family: Avenir-Book;
-font-size: 13px;
-color: #FFFFFF;
-line-height: 20px;
-width:250px;
-height:50px;
-  position: absolute;
-  left:10%;
-  top:55%;
-  right:10%;
-  margin:0 auto;
-  display: block;
-padding: 15px;
-}
-
 .link11 span img{
-  margin-left: 190px;
-  margin-top: -40px;
-  width:60px;
-  height: 60px;
+  margin-left: 490px;
+  margin-top: -55px;
 }
 
 .link22 span img{
-  margin-left: 190px;
-  margin-top: -36px;
-  width:60px;
-  height: 60px;
+  margin-left: 475px;
+  margin-top: -55px;
+}
+
+.link22{
+/* Eu mesm@, sou maior : */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 34px;
+width:488px;
+height:79px;
+  position: absolute;
+  left:-13%;
+  top:35%;
+  right:10%;
+  margin:0 auto;
+  display: block;
+}
+
+}
+
+
+
+@media only screen and (max-width: 414px){
+
+
+div.hue2 h1{
+/* Quem você está cadas: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 38px;
+font-weight: 600;
+  position: absolute;
+  left:3%;
+  top:15%;
+  right:10%;
+  text-align: center;
+  display: block;
+
+}
+
+.link111{
+
+/* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+width:265px;
+height:79px;
+  position: absolute;
+  left:5%;
+  top:60%;
+  right:10%;
+  margin:0 auto;
+  display: block;
+}
+
+.link122{
+
+/* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+width:265px;
+height:79px;
+  position: absolute;
+  left:5%;
+  top:40%;
+  right:10%;
+  margin:0 auto;
+  display: block;
+}
+
+.link11{
+
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 27px;
+position: absolute;
+width:150px;
+  left:-20%;
+  top:20%;
+  right:10%;
+  margin:0 auto;
+  display: block;
+}
+.link11 span img{
+  margin-left: 180px;
+  margin-top: -65px;
+}
+
+.link22 span img{
+  margin-left: 180px;
+  margin-top: -65px;
+}
+
+.link22{
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 27px;
+width:150px;
+  position: absolute;
+  left:-20%;
+  top:20%;
+  right:10%;
+  margin:0 auto;
+  display: block;
 }
 
 }
 
 
 @media only screen and (max-width: 375px){
-
-.hue2 h1{
-  /* Quem você está cadas: */
-font-family: Avenir-Book;
-font-size: 17px;
-color: #FFFFFF;
-line-height: 20px;
-  position: absolute;
-  left:22%;
-  top:40%;
-  right:10%;
-  margin:0 auto;
-  display: inline-block;
-}
-
-.link11{
-  /* Rectangle 9 Copy 2: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-/* Uma criança: */
-font-family: Avenir-Book;
-font-size: 10px;
-color: #FFFFFF;
-line-height: 27px;
-width:200px;
-height:40px;
-  position: absolute;
-  left:10%;
-  top:45%;
-  right:10%;
-  margin:0 auto;
-  display: block;
-padding: 10px;
-}
-
-.link22{
-  /* Rectangle 9 Copy 2: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-/* Uma criança: */
-font-family: Avenir-Book;
-font-size: 10px;
-color: #FFFFFF;
-line-height: 20px;
-width:200px;
-height:40px;
-  position: absolute;
-  left:10%;
-  top:55%;
-  right:10%;
-  margin:0 auto;
-  display: block;
-padding: 10px;
-}
-
 .link11 span img{
-  margin-left: 150px;
-  margin-top: -40px;
-  width:60px;
-  height: 60px;
+  margin-left: 175px;
+  margin-top: -65px;
 }
 
 .link22 span img{
-  margin-left: 150px;
-  margin-top: -36px;
-  width:60px;
-  height: 60px;
+  margin-left: 175px;
+  margin-top: -65px;
 }
-
 
 }
 
@@ -1838,74 +1709,6 @@ padding: 10px;
 
 @media only screen and (max-width: 320px){
 
-.hue2 h1{
-  /* Quem você está cadas: */
-font-family: Avenir-Book;
-font-size: 16px;
-color: #FFFFFF;
-  position: absolute;
-  left:18%;
-  top:40%;
-  right:10%;
-  margin:0 auto;
-  display: inline-block;
-}
-
-.link11{
-  /* Rectangle 9 Copy 2: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-/* Uma criança: */
-font-family: Avenir-Book;
-font-size: 11px;
-color: #FFFFFF;
-line-height: 27px;
-width:220px;
-height:40px;
-  position: absolute;
-  left:10%;
-  top:45%;
-  right:10%;
-  margin:0 auto;
-  display: block;
-padding: 10px;
-}
-
-.link22{
-  /* Rectangle 9 Copy 2: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-/* Uma criança: */
-font-family: Avenir-Book;
-font-size: 11px;
-color: #FFFFFF;
-line-height: 20px;
-width:220px;
-height:40px;
-  position: absolute;
-  left:10%;
-  top:55%;
-  right:10%;
-  margin:0 auto;
-  display: block;
-padding: 10px;
-}
-
-.link11 span img{
-  margin-left: 171px;
-  margin-top: -42px;
-  width:60px;
-  height: 60px;
-}
-
-.link22 span img{
-  margin-left: 171px;
-  margin-top: -36px;
-  width:60px;
-  height: 60px;
-}
 
 
 }

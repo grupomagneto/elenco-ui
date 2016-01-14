@@ -41,6 +41,8 @@ echo ("<div class='botao'><a class='link111' href = \"$urls[$random]\"><p class=
 echo ("<div class='botao'><a class='link122' href = \"$urls2[$random2]\"><p class='text-center link22'>$text2[$random2]<span><img src='images/arrow-right.svg'></span></p></a></div>"); 
 
 ?>
+
+</div>
 		<script src="js/res/jquery-2.1.4.js"></script>
 		<script src="js/res/hammer.min.js"></script>
 		<script src="js/res/mousewheel.min.js"></script>
