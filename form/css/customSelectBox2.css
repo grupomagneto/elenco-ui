@@ -15,37 +15,20 @@ text-align: left;
 
 div.customSelect.custom{
 position:absolute;
-left:50%;
+left:45%;
 top:50%;
 width:200px;
 margin-left:-200px;
 margin-top:-30px;
 }	
 
-@media screen and (max-width:600px){ 
-
-
-div.customSelect.custom{
-position:absolute;
-left:50%;
-top:50%;
-margin-left:-180px;
-margin-top:-30px;
-}	
-
+.selectValueWrap {
+  width:488px;
 }
 
-@media screen and (max-width:360px){ 
 
-
-div.customSelect.custom{
-position:absolute;
-left:50%;
-top:50%;
-margin-left:-150px;
-margin-top:-30px;
-}	
-
+.selectList {
+  width:487px;
 }
 
 .customSelect .selectedValue {
@@ -90,7 +73,7 @@ span.caret{
 	top: auto !important;
 }
 .customSelect .selectList dl {
-	
+padding-right: 226px;
 background: rgba(215,215,215,0.30);
 }
 .customSelect .selectList dl.defaultScrollbar {
@@ -110,12 +93,13 @@ background: rgba(215,215,215,0.30);
 }
 .customSelect .selected {
 	color: #fff;
+	width:487px;
 	text-decoration: none;
 background: rgba(215,215,215,0.30);
 	background-repeat: repeat-x;
 }
 .customSelect .selectList dd.hovered {
-	
+	width:487px;
 background: rgba(215,215,215,0.30);
 	color: #fff;
 }
@@ -148,7 +132,7 @@ background: rgba(215,215,215,0.30);
 	font-size: 16px;
 }
 .customSelect.focused .selectedValue {
-	box-shadow: 0 0 2px #00aedb;
+	box-shadow: 0 0 2px #fff;
 }
 .customSelect.disabled .selectedValue {
 	border: 1px solid #fff;
@@ -198,3 +182,101 @@ background: #ffffff;
 	border-color: #222222 #222222 #000000;
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
+
+
+
+
+@media screen and (max-width:600px){ 
+
+
+div.customSelect.custom{
+position:absolute;
+left:40%;
+top:50%;
+margin-left:-175px;
+margin-top:-30px;
+}
+
+
+.selectValueWrap {
+  width:450px;
+}
+
+
+.selectList {
+  width:447px;
+}
+
+div.jspContainer{
+	width:449px !important;
+}
+
+dl.jspScrollable{
+	width:449px  !important;
+}
+
+
+}
+
+@media screen and (max-width:414px){ 
+
+
+div.customSelect.custom{
+position:absolute;
+left:45%;
+top:50%;
+width:200px;
+margin-left:-100px;
+margin-top:-30px;
+}
+
+
+.selectValueWrap {
+  width:265px;
+}
+
+
+.selectList {
+  width:265px;
+}
+
+div.jspContainer{
+	width:267px !important;
+}
+
+dl.jspScrollable{
+	width:267px  !important;
+}
+
+}
+
+@media screen and (max-width:360px){ 
+
+
+div.customSelect.custom{
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-150px;
+margin-top:-30px;
+}	
+
+}
+
+
+
+@media screen and (max-width:320px){ 
+
+
+div.customSelect.custom{
+position:absolute;
+left:47%;
+top:50%;
+margin-left:-150px;
+margin-top:-30px;
+}	
+
+}
+
+
+

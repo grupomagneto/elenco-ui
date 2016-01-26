@@ -9,7 +9,6 @@ src: local('../fonts/AvenirLTStd-Light.woff'), url('../fonts/AvenirLTStd-Light.w
 	position: relative;			
 	font-size: 18px;
 	font-family: Avenir-Book;
-
 padding-left:10px;
   margin-top: 10px;
 }		
@@ -90,7 +89,7 @@ background: rgba(215,215,215,0.30);
 }
 .customSelect dt {
 	font-weight: bold;
-	font-style: italic;
+	font-style: Avenir-Book;
 	padding: 2px 10px 2px 6px;
 }	
 .customSelect dd {
@@ -113,7 +112,7 @@ background: rgba(215,215,215,0.30);
 	font-size: 16px;
 }
 .customSelect.focused .selectedValue {
-	box-shadow: 0 0 2px #00aedb;
+	box-shadow: 0 0 2px #fff;
 }
 .customSelect.disabled .selectedValue {
 	border: 1px solid #fff;
@@ -130,6 +129,7 @@ background: rgba(215,215,215,0.30);
 	border-left: 4px solid transparent;
 	content: "";
 }
+
 .customSelect .selectValueWrap .caret {
 	position: absolute;
 	top: 12px;

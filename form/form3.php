@@ -8,7 +8,7 @@
 
     
     <link rel="stylesheet" href="css/form3.css">
-    <link rel="stylesheet" href="css/jquery.jscrollpane.css" />
+<link rel="stylesheet" href="css/jquery.jscrollpane.css">
     <link rel="stylesheet" href="css/customSelectBox2.css" />
 
     
@@ -20,6 +20,7 @@
 <form action="">
 
 <section class="section1 current gradient" id="1" data-section="1">
+
   <div class="content"> 
     <i class="arrow icon-arrow-up"></i>
 
@@ -47,6 +48,8 @@
   </nav>
 
   </div>
+
+
 </section>
 
 <section class="section2 gradient" id="2"  data-section="2">
@@ -229,10 +232,11 @@
 <section class="section8 gradient" id="8" data-section="8">
   <div class="content"> 
 
-   <div class="contato"><h1>Qual o seu celular para contato?</h1></div> 
+  <div class="contato"><h1>Qual o seu celular para contato?</h1>
 
     <input name="celular" id="celular" type="text" onkeypress ="autoTab(this, event);" required />
 
+  </div> 
 
 
 
@@ -261,7 +265,9 @@
 <section class="section9 gradient" id="9" data-section="9">
   <div class="content"> 
 
-  <div class="email">  <h1>E o email?</h1> </div>
+<div class="email"> <h1>E o email?</h1>  </div>
+  
+
     <input name="celular" id="celular" type="text" onkeypress ="autoTab(this, event);" required />
 
 
@@ -273,7 +279,8 @@
 
   </div>
 
-         <nav>
+  <nav>
+
     <ul class="vs-vertical-nav">
 
       <li><a href="#8" class="vs-prev">Next</a></li>
@@ -439,7 +446,7 @@
 
   </div>
 </section>
-
+<!-- 
 <section class="section13 gradient" id="13" data-section="13">
   <div class="content"> 
 
@@ -485,7 +492,7 @@
   </div>
 
 </section>
-
+ -->
 
 <section class="section14 gradient" id="14" data-section="14">
   <div class="content"> 
@@ -494,7 +501,7 @@
 
     <div class="ig">
 
-      <img src="images/ig.svg" alt="instagram">
+      <img class="insta" src="images/ig.svg" alt="instagram">
       <input name="ig" id="ig" class="ig2" type="text" required onkeypress ="autoTab(this, event);" />
 
     </div>
@@ -524,7 +531,7 @@
          <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#13" class="vs-prev">Next</a></li>
+      <li><a href="#12" class="vs-prev">Next</a></li>
 
       <li><a href="#15" class="vs-next">Prev</a></li>
 

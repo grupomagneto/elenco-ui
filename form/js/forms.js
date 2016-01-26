@@ -914,7 +914,7 @@ $(function() {
           var sb = new SelectBox({
             selectbox: $(this),
             height: 160,
-            width: 250
+            width: 265
           });
         });
         
