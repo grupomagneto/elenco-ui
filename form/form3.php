@@ -14,7 +14,7 @@
     
   </head>
 
-  <body class="noJS" >
+  <body class="noJS" id="gradient" >
 
  
 <form action="">
@@ -576,7 +576,7 @@
 
 
 
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.7/jquery.scrollTo.min.js'></script>  
     <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>  
 

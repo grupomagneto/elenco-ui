@@ -8,23 +8,24 @@
 
     
     <link rel="stylesheet" href="css/form4.css">
-    <link rel="stylesheet" href="css/jquery.jscrollpane.css" />
+<link rel="stylesheet" href="css/jquery.jscrollpane.css">
     <link rel="stylesheet" href="css/customSelectBox2.css" />
 
     
   </head>
 
-  <body class="noJS" >
+  <body class="noJS" id="gradient" >
 
  
 <form action="">
 
 <section class="section1 current gradient" id="1" data-section="1">
+
   <div class="content"> 
     <i class="arrow icon-arrow-up"></i>
 
-   <h1>Qual o seu primeiro nome?</h1>
-    <input name="nome" id="nome" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
+    <h1>Qual o seu primeiro nome?</h1>
+    <input name="cpf" id="cpf" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
 
     <i class="arrow icon-arrow-down"></i>
 
@@ -47,11 +48,13 @@
   </nav>
 
   </div>
+
+
 </section>
 
 <section class="section2 gradient" id="2"  data-section="2">
   <div class="content"> 
-    <div class="responsavel"><h1>Qual o seu sobrenome?</h1></div>
+    <div class="responsavel"><h1>Qual seu sobrenome?</h1></div>
 
     <input name="nome2" id="nome2" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
 
@@ -77,7 +80,7 @@
 
 <section class="section3 gradient" id="3" data-section="3">
   <div class="content"> 
-
+ 
     <div class="camera"><img src="images/camera.svg" alt="camera"></div>  
   <div class="fotos"> <h1 >Precisamos de duas fotos <br /> suas feitas hoje</h1></div> 
 
@@ -132,6 +135,7 @@
     </ul>
 
   </nav>
+
   </div>
 </section>
 
@@ -165,18 +169,19 @@
 
   </nav>
 
+
   </div>
 
 </section>
 
-<section class="section6 gradient" id="6" data-section="6">  
+<section class="section6" id="6" data-section="6">  
   <div class="content"> 
 
-
-   <div class="contato"><h1>Qual o seu celular?</h1></div> 
+  <div class="contato"><h1>Qual o seu celular?</h1>
 
     <input name="celular" id="celular" type="text" onkeypress ="autoTab(this, event);" required />
 
+  </div> 
 
 
 
@@ -197,13 +202,17 @@
 
   </nav>
 
+
+
   </div>
 </section>
 
-<section class="section7 gradient" id="7" data-section="7">
-  <div class="content"> 
+<section class="section7" id="7" data-section="7">
+ <div class="content"> 
 
-<div class="email">  <h1>E seu o email?</h1> </div>
+<div class="email"> <h1>E o seu email?</h1>  </div>
+  
+
     <input name="celular" id="celular" type="text" onkeypress ="autoTab(this, event);" required />
 
 
@@ -215,7 +224,8 @@
 
   </div>
 
-         <nav>
+  <nav>
+
     <ul class="vs-vertical-nav">
 
       <li><a href="#6" class="vs-prev">Next</a></li>
@@ -234,7 +244,6 @@
 <section class="section8 gradient" id="8" data-section="8">
   <div class="content"> 
 
-   
    <div class="sexo"> <h1>Qual o seu sexo?</h1></div>
 
     <div class="toggleswitch">
@@ -272,6 +281,7 @@
 
 <section class="section9 gradient" id="9" data-section="9">
   <div class="content"> 
+
      <div class="raca"> <h1>Qual a sua raça?</h1></div>
     
   <select name="raca" class="custom" onkeypress ="autoTab(this, event);">
@@ -304,12 +314,14 @@
 
 
 
+
   </div>
 </section>
 
 <section class="section10 gradient" id="10" data-section="10">
   <div class="content"> 
-     <div class="bairro"> <h1>Qual o seu bairro?</h1> </div>
+     
+     <div class="bairro"> <h1>Em qual bairro você mora?</h1> </div>
 
     <div class="left">
 
@@ -376,15 +388,13 @@
   </nav>
 
 
-
-
   </div>
 </section>
 
 <section class="section11 gradient" id="11" data-section="11">
   <div class="content"> 
 
-    <div class="ator"> <h1>Você é ator ou atriz com DRT?</h1> </div>  
+     <div class="ator"> <h1>Você é ator ou atriz com DRT?</h1> </div>  
 
     <div class="toggleswitch2">
       <input id="sim" name="option" type="radio" value="sim" onkeypress ="autoTab(this, event);">
@@ -396,11 +406,11 @@
   <div class="sim2">
     <div class="centered">
 
-    <h3 class="t11">Ótimo!</h3>
+    <h3>Ótimo!</h3>
 
     <p class="p1">Isso quer dizer que você pode se agenciar  <br />pelo <b>Cadastro Premium</b> gratuitamente</p> 
 
-    <p class="p2">Ao finalizar este cadastro, entre em contato <br /> com a Magneto Elenco para mais informações</p>
+    <p class="p1">Ao finalizar este cadastro, entre em contato <br /> com a Magneto Elenco para mais informações</p>
     </div>
   </div>
 
@@ -423,15 +433,62 @@
 
   </nav>
 
+  </div>
+</section>
 
+
+<section class="section12 gradient" id="12" data-section="12">
+  <div class="content"> 
+
+  <div class="quartoze"><h1>Que tal deixar seu perfil mais completo?</h1></div>   
+
+    <div class="ig">
+
+      <img class="insta" src="images/ig.svg" alt="instagram">
+      <input name="ig" id="ig" class="ig2" type="text" required onkeypress ="autoTab(this, event);" />
+
+    </div>
+
+    <div class="face">
+
+      <img src="images/face.svg" alt="facebook">
+      <input name="face" id="face" class="face2" type="text" required onkeypress ="autoTab(this, event);" />
+
+    </div>
+
+    <div class="tt">
+
+      <img src="images/tt.svg" class="imgtt"  alt="twitter">
+      <input name="twitter" id="twitter" class="twitter2" type="text" required onkeypress ="autoTab(this, event);" />
+      
+    </div>
+
+
+
+  <div class="progress14">
+  
+    <progress id="progressbar14" value="0"></progress>
+
+  </div>
+  
+         <nav>
+    <ul class="vs-vertical-nav">
+
+      <li><a href="#11" class="vs-prev">Next</a></li>
+
+      <li><a href="#13" class="vs-next">Prev</a></li>
+
+    </ul>
+
+  </nav>
 
 
 
   </div>
 </section>
 
+<section class="section13 gradient" id="13" data-section="13">
 
-<section class="section12 gradient" id="12" data-section="12">
 <div class="gradient4"></div> 
   <div class="content">   
 
@@ -443,17 +500,94 @@
          <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#11" class="vs-prev">Next</a></li>
+      <li><a href="#12" class="vs-prev">Next</a></li>
 
     </ul>
 
   </nav>
 
   </nav>
+    
+  </div>
+
+</section>
+
+
+<!-- <section class="section14 gradient" id="14" data-section="14">
+  <div class="content"> 
+
+  <div class="quartoze"><h1>Que tal deixar seu perfil mais completo?</h1></div>   
+
+    <div class="ig">
+
+      <img class="insta" src="images/ig.svg" alt="instagram">
+      <input name="ig" id="ig" class="ig2" type="text" required onkeypress ="autoTab(this, event);" />
+
+    </div>
+
+    <div class="face">
+
+      <img src="images/face.svg" alt="facebook">
+      <input name="face" id="face" class="face2" type="text" required onkeypress ="autoTab(this, event);" />
+
+    </div>
+
+    <div class="tt">
+
+      <img src="images/tt.svg" class="imgtt"  alt="twitter">
+      <input name="twitter" id="twitter" class="twitter2" type="text" required onkeypress ="autoTab(this, event);" />
+      
+    </div>
+
+
+
+  <div class="progress14">
+  
+    <progress id="progressbar14" value="0"></progress>
+
+  </div>
+  
+         <nav>
+    <ul class="vs-vertical-nav">
+
+      <li><a href="#12" class="vs-prev">Next</a></li>
+
+      <li><a href="#15" class="vs-next">Prev</a></li>
+
+    </ul>
+
+  </nav>
+
 
 
   </div>
 </section>
+
+
+
+<section class="section15 gradient" id="15" data-section="15">
+
+<div class="gradient4"></div> 
+  <div class="content">   
+
+ <div class="ultima"><h1>Bem-vind@ ao <br />nosso elenco!</h1></div>   
+  
+  <div class="logomag"><img src="images/logo.svg" alt="LOGO"></div>
+
+  
+         <nav>
+    <ul class="vs-vertical-nav">
+
+      <li><a href="#14" class="vs-prev">Next</a></li>
+
+    </ul>
+
+  </nav>
+
+  </nav>
+    
+  </div>
+</section> -->
 
 
 </form>
@@ -461,7 +595,7 @@
 
 
 
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.7/jquery.scrollTo.min.js'></script>  
     <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>  
 

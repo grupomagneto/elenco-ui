@@ -13,6 +13,14 @@ body {
   overflow-y: hidden;
 }
 
+#gradient
+{
+  width: 100%;
+  height: 400px;
+  padding: 0px;
+  margin: 0px;
+}
+
 section {
   height: 100%;
   width: 100%;
@@ -171,6 +179,79 @@ border-radius: 8px;
 }
 }
 
+@media screen and (max-width:375px) { 
+
+section .content h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -120px;
+  margin-left:30px;
+  position: absolute;
+}
+section .content input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+padding-left:10px;
+  margin-top: -104px;
+  margin-left:10px;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 270px;
+  height: 50px;
+}
+  .progress1 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+}
+
+
+@media screen and (max-width:320px) { 
+
+section .content h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -120px;
+  margin-left:2px;
+  position: absolute;
+}
+section .content input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+padding-left:10px;
+  margin-top: -104px;
+  margin-left:2px;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 270px;
+  height: 50px;
+}
+
+}
 
 
 /*
@@ -188,7 +269,7 @@ font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
   margin-top: -80px;
-  margin-left: -160px;
+  margin-left: -220px;
   position: relative;
 }
 .progress2 progress {
@@ -248,7 +329,52 @@ background: rgba(215,215,215,0.1);
 border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
+section .content .responsavel h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: 10px;
+  position: relative;
+}
 
+}
+
+
+@media screen and (max-width:414px) { 
+
+section .content .responsavel h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: 25px;
+  width:280px;
+  position: relative;
+}
+section .content .responsavel input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+padding-left:10px;
+  margin-top: 10px;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 270px;
+  height: 50px;
+}
+
+}
+
+@media screen and (max-width:390px) { 
 
 section .content .responsavel h1 {
  /* Qual o seu primeiro : */
@@ -258,10 +384,71 @@ color: #FFFFFF;
 line-height: 44px;
   margin-top: -80px;
   margin-left: 20px;
+  width:280px;
   position: relative;
+}
+section .content .responsavel input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+padding-left:10px;
+  margin-top: 10px;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 270px;
+  height: 50px;
 }
 
 }
+
+@media screen and (max-width:320px) { 
+    .progress2 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-160px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+section .content .responsavel h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -10px;
+  width:280px;
+  position: relative;
+}
+section .content .responsavel input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+padding-left:10px;
+  margin-top: 10px;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 270px;
+  height: 50px;
+}
+
+}
+
+
 
 
 /*
@@ -512,11 +699,11 @@ SEXTA DIV
 }
 
 section .content .sorria h1 {
- /* Qual o seu primeiro : */
+/* Sorria!: */
 font-family: Avenir-Book;
-font-size: 28px;
+font-size: 48px;
 color: #FFFFFF;
-line-height: 44px;
+line-height: 66px;
   margin-top: -150px;
   margin-left: 10px;
   position: relative;
@@ -546,12 +733,12 @@ line-height: 44px;
   overflow: hidden;
   float: left;
   clear: left;
-margin-left:-100px;
-  margin-top: 50px;
+margin-left:-50px;
+  margin-top: 45px;
 }
 .myFile img{
-  width:200px;
-  height:200px;
+  width:93px;
+  height:80px;
 }
 
 .myFile input[type="file"] {
@@ -609,6 +796,33 @@ border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
 
+
+section .content .sorria h1 {
+/* Sorria!: */
+font-family: Avenir-Book;
+font-size: 48px;
+color: #FFFFFF;
+line-height: 66px;
+  margin-top: -150px;
+  margin-left: 10px;
+  position: relative;
+}
+
+
+.myFile img{
+  width:93px;
+  height:80px;
+}
+
+.myFile {
+  position: absolute;
+  overflow: hidden;
+  float: left;
+  clear: left;
+margin-left:-50px;
+  margin-top: 45px;
+}
+
 }
 
 @media screen and (max-width:600px) { 
@@ -625,27 +839,20 @@ border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
 
+section .content .sorria h1 {
+/* Sorria!: */
+font-family: Avenir-Book;
+font-size: 48px;
+color: #FFFFFF;
+line-height: 66px;
+  margin-top: -150px;
+  margin-left: 10px;
+  position: relative;
+}
+
 
 .myFile img{
-  width:100px;
-  height:100px;
-}
-
-.myFile {
-  position: absolute;
-  overflow: hidden;
-  float: left;
-  clear: left;
-margin-left:-50px;
-  margin-top: 185px;
-}
-}
-
-
-@media screen and (max-width:320px) { 
-
-.myFile img{
-  width:80px;
+  width:93px;
   height:80px;
 }
 
@@ -655,7 +862,37 @@ margin-left:-50px;
   float: left;
   clear: left;
 margin-left:-50px;
-  margin-top: 185px;
+  margin-top: 45px;
+}
+
+}
+
+
+@media screen and (max-width:320px) { 
+
+section .content .sorria h1 {
+/* Sorria.: */
+font-family: Avenir-Book;
+font-size: 36px;
+color: #FFFFFF;
+line-height: 49px;
+  margin-top: -150px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.myFile img{
+  width:93px;
+  height:80px;
+}
+
+label.myFile {
+  position: absolute;
+  overflow: hidden;
+  float: left;
+  clear: left;
+margin-left:-50px;
+  margin-top: 45px;
 }
 }
 
@@ -670,11 +907,11 @@ SÉTIMA DIV
 
 
 section .content .serio h1 {
- /* Qual o seu primeiro : */
+/* Agora Sério!: */
 font-family: Avenir-Book;
-font-size: 28px;
+font-size: 48px;
 color: #FFFFFF;
-line-height: 44px;
+line-height: 66px;
   margin-top: -150px;
   margin-left: 10px;
   position: relative;
@@ -703,12 +940,12 @@ line-height: 44px;
   overflow: hidden;
   float: left;
   clear: left;
-margin-left:-100px;
+margin-left:-50px;
   margin-top: 50px;
 }
 .myFile2 img{
-  width:200px;
-  height:200px;
+  width:93px;
+  height:80px;
 }
 
 .myFile2 input[type="file"] {
@@ -765,6 +1002,33 @@ border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
 
+
+section .content .serio h1 {
+/* Sorria!: */
+font-family: Avenir-Book;
+font-size: 48px;
+color: #FFFFFF;
+line-height: 66px;
+  margin-top: -150px;
+  margin-left: 10px;
+  position: relative;
+}
+
+
+.myFile2 img{
+  width:93px;
+  height:80px;
+}
+
+.myFile2 {
+  position: absolute;
+  overflow: hidden;
+  float: left;
+  clear: left;
+margin-left:-50px;
+  margin-top: 45px;
+}
+
 }
 
 @media screen and (max-width:600px) { 
@@ -781,10 +1045,21 @@ border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
 
+section .content .serio h1 {
+/* Sorria!: */
+font-family: Avenir-Book;
+font-size: 48px;
+color: #FFFFFF;
+line-height: 66px;
+  margin-top: -150px;
+  margin-left: 10px;
+  position: relative;
+}
+
 
 .myFile2 img{
-  width:100px;
-  height:100px;
+  width:93px;
+  height:80px;
 }
 
 .myFile2 {
@@ -793,25 +1068,37 @@ border-radius: 8px;
   float: left;
   clear: left;
 margin-left:-50px;
-  margin-top: 185px;
+  margin-top: 45px;
 }
+
 }
 
 
 @media screen and (max-width:320px) { 
 
-.myFile img{
-  width:80px;
+section .content .serio h1 {
+/* Agora séri@.: */
+font-family: Avenir-Book;
+font-size: 36px;
+color: #FFFFFF;
+line-height: 49px;
+  margin-top: -150px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.myFile2 img{
+  width:93px;
   height:80px;
 }
 
-.myFile {
+label.myFile2 {
   position: absolute;
   overflow: hidden;
   float: left;
   clear: left;
 margin-left:-50px;
-  margin-top: 185px;
+  margin-top: 45px;
 }
 }
 
@@ -832,21 +1119,20 @@ font-family: Avenir-Book;
 font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
-  margin-top: -150px;
-  margin-left: -100px;
+  margin-top: -80px;
+  margin-left: -300px;
   position: relative;
 }
 
-div.contato{
-
-  margin-left: -150px;
-}
-
-@media screen and (max-width:414px) { 
- div.contato{
-
-  margin-left: -70px;
-}
+section .content .contato input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -55px;
+  position: relative;
 }
 
 .progress8 progress {
@@ -890,6 +1176,27 @@ background: rgba(215,215,215,0.1);
 border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
+section .content .contato h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -100px;
+  margin-left: -280px;
+  position: relative;
+}
+
+section .content .contato input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -100px;
+  margin-left: -25px;
+  position: relative;
+}
 
 }
 
@@ -911,11 +1218,60 @@ border-radius: 8px;
 section .content .contato h1 {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
-font-size: 25px;
+font-size: 20px;
 color: #FFFFFF;
 line-height: 44px;
-  margin-top: -150px;
-  margin-left: 10px;
+  margin-top: -160px;
+  margin-left: -100px;
+  position: relative;
+}
+
+section .content .contato input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -134px;
+  margin-left: -15px;
+  position: relative;
+}
+
+}
+@media screen and (max-width:414px) { 
+    .progress8 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+
+section .content .contato h1 {
+/* Qual celular para co: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 38px;
+  margin-top: -140px;
+  margin-left: 2px;
+  position: relative;
+}
+
+section .content .contato input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: 50px;
+  margin-left: -10px;
   position: relative;
 }
 
@@ -937,21 +1293,8 @@ font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
     margin-top: -80px;
-  margin-left: -350px;
+  margin-left: -320px;
   position: relative;
-}
-div.email{
-
-  margin-left: 20px;
-}
-
-
-@media screen and (max-width:414px) { 
-
-div.email{
-
-  margin-left: 70px;
-}
 }
 
 .progress9 progress {
@@ -1019,7 +1362,35 @@ font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
     margin-top: -80px;
-  margin-left: -150px;
+  margin-left: -90px;
+  position: relative;
+}
+
+
+}
+
+@media screen and (max-width:414px) { 
+    .progress9 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+section .content .email h1 {
+/* E o e-mail?: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 38px;
+    margin-top: -80px;
+  margin-left: -90px;
   position: relative;
 }
 
@@ -1046,7 +1417,7 @@ font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
   margin-top: -150px;
-  margin-left: 10px;
+  margin-left: -195px;
   position: relative;
 }
 
@@ -1058,8 +1429,8 @@ line-height: 44px;
 position:absolute;
 left:50%;
 top:50%;
-margin-left:-400px;
-margin-top:-30px;
+margin-left:-600px;
+margin-top:-76px;
 }
 
 .toggleswitch label {
@@ -1069,7 +1440,7 @@ border-radius: 8px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
-  padding-right: 150px;
+  padding-right: 280px;
   margin: 15px;
   font-weight: normal;
 /* Feminino: */
@@ -1155,6 +1526,51 @@ border-radius: 8px;
 }
 
 
+@media screen and (max-width:470px) { 
+
+section .content .sexo h1 {
+/* Qual celular para co: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 38px;
+  margin-top: -150px;
+  margin-left: -30px;
+  position: relative;
+}
+
+.toggleswitch{
+
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-450px;
+margin-top:-76px;
+}
+
+.toggleswitch label {
+  display: inline-block;
+  border: 2px solid #ECECEC;
+border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 180px;
+  margin: 15px;
+  font-weight: normal;
+/* Feminino: */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 34px;
+margin-left:40%;
+}
+
+}
+
+
 
 
 @media screen and (max-width:360px) { 
@@ -1168,6 +1584,52 @@ left:50%;
 top:50%;
 margin-left:-370px;
 margin-top:-30px;
+}
+
+}
+
+
+
+@media screen and (max-width:320px) { 
+
+section .content .sexo h1 {
+/* Qual celular para co: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 38px;
+  margin-top: -150px;
+  margin-left: -10px;
+  position: relative;
+}
+
+.toggleswitch{
+
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-350px;
+margin-top:-46px;
+}
+
+.toggleswitch label {
+  display: inline-block;
+  border: 2px solid #ECECEC;
+border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 150px;
+  margin: 15px;
+  font-weight: normal;
+/* Feminino: */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 34px;
+margin-left:40%;
 }
 
 }
@@ -1188,20 +1650,12 @@ font-family: Avenir-Book;
 font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
- width:280px;
-  height:250px;
-  left:40%; 
-margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-top: 50%;
-bottom: auto;
-display: block;
-position: absolute;
-}
-
-
-div.raca{
-
-  margin-left: 80px;
+position:absolute;
+left:45%;
+top:40%;
+width:250px;
+margin-left:-220px;
+margin-top:-30px;
 }
 
 .progress11 progress {
@@ -1246,21 +1700,6 @@ background: rgba(215,215,215,0.1);
 border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
-section .content .raca h1 {
- /* Qual o seu primeiro : */
-font-family: Avenir-Book;
-font-size: 28px;
-color: #FFFFFF;
-line-height: 44px;
- width:280px;
-  height:250px;
-  left:35%; 
-margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-top: 50%;
-bottom: auto;
-display: block;
-position: absolute;
-}
 
 }
 
@@ -1281,38 +1720,60 @@ border-radius: 8px;
 section .content .raca h1 {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
-font-size: 25px;
+font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
- width:280px;
-  height:250px;
-  left:30%; 
-margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-top: 50%;
-bottom: auto;
-display: block;
-position: absolute;
+  position: relative;
+  margin-top: -80px;
+  margin-left: -240px;
 }
 
+
+}
+
+
+@media screen and (max-width:414px){ 
+
+
+div.customSelect.custom.use-default{
+  margin-left: -120px;
+  margin-top: -14px;
+}
+
+
+section .content .raca h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+position:absolute;
+left:45%;
+top:40%;
+width:260px;
+margin-left:-120px;
+margin-top:-30px;
+}
 
 }
 
 @media screen and (max-width:320px){ 
 
+
+div.customSelect.custom.use-default{
+  margin-left: -120px;
+}
+
+
 section .content .raca h1 {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
-font-size: 25px;
+font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
- width:280px;
-  height:250px;
-  left:30%; 
-margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-top: 50%;
-bottom: auto;
-display: block;
-position: absolute;
+  position: relative;
+  margin-top: -80px;
+  margin-left: -120px;
 }
 
 }
@@ -1335,16 +1796,14 @@ font-family: Avenir-Book;
 font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
-  position: relative;
-  margin-top: -80px;
-  margin-left:-15px;
+position:absolute;
+left:45%;
+top:40%;
+width:400px;
+margin-left:-215px;
+margin-top:-30px;
 }
 
-
-div.bairro{
-
-  margin-left: -120px;
-}
 
 .progress12 progress {
   width:600px;
@@ -1421,18 +1880,33 @@ line-height: 44px;
 
 }
 
+@media screen and (max-width:414px) { 
+
+section .content .bairro h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 44px;
+width:270px;
+  position: relative;
+  margin-top: -120px;
+  margin-left: -130px;
+}
+}
 
 @media screen and (max-width:360px){ 
 
 section .content .bairro h1 {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 25px;
 color: #FFFFFF;
 line-height: 44px;
+width:270px;
   position: relative;
-  margin-top: -80px;
-  margin-left: -15px;
+  margin-top: -120px;
+  margin-left: -120px;
 }
 
 }
@@ -1507,68 +1981,14 @@ border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
 
-div.toggleswitch2{
-
-  position: absolute;
-  overflow: hidden;
-position:absolute;
-left:50%;
-top:50%;
-margin-left:-450px;
-margin-top:-130px;
-}
-
-
-section .content .ator h1 {
- /* Qual o seu primeiro : */
-font-family: Avenir-Book;
-font-size: 20px;
-color: #FFFFFF;
-line-height: 44px;
-  margin-top: -80px;
-  margin-left: -10px;
-  position: relative;
-}
-div.ator{
-  margin-left:80px
-}
-
-
-}
-
-
-@media screen and (max-width:414px) { 
-    .progress13 progress {
-  width:300px;
-  position:absolute; 
-  top:2%;
-  color:#FFFFFF;
-  height: 5px;
-  left:50%; 
-margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-background: rgba(215,215,215,0.1);
-border: 1px solid #FFFFFF;
-border-radius: 8px;
-}
-
-div.toggleswitch2{
-
-  position: absolute;
-  overflow: hidden;
-position:absolute;
-left:50%;
-top:50%;
-margin-left:-400px;
-margin-top:-130px;
-}
 
 }
 
 
 section .content .ator h1 {
- /* Qual o seu primeiro : */
+/* Você é ator ou atriz: */
 font-family: Avenir-Book;
-font-size: 28px;
+font-size: 32px;
 color: #FFFFFF;
 line-height: 44px;
   margin-top: -200px;
@@ -1584,7 +2004,7 @@ line-height: 44px;
 position:absolute;
 left:50%;
 top:50%;
-margin-left:-500px;
+margin-left:-660px;
 margin-top:-140px;
 }
 
@@ -1595,7 +2015,7 @@ border-radius: 8px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
-  padding-right: 260px;
+  padding-right: 400px;
   margin: 15px;
   font-weight: normal;
 /* Feminino: */
@@ -1618,117 +2038,300 @@ border: 2px solid #ECECEC;
 border-radius: 8px;
 }
 
-.sim2{
- width:400px;
-  height:250px;
-  left:50%; 
-margin-left:-250px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-top: 50%;
-bottom: auto;
-display: block;
-position: absolute;
-}
- 
 
-@media screen and (max-width:600px) { 
 
-.sim2{
- width:400px;
-  height:250px;
-  left:60%; 
-margin-left:-250px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-top: 40%;
-bottom: auto;
-display: block;
-position: absolute;
-}
+@media  only screen and (max-width:600px){
+.toggleswitch2{
+
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-430px;
+margin-top:-130px;
 }
 
 
-@media screen and (max-width:480px) {
-.sim2{
- width:300px;
-  height:250px;
-  left:60%; 
-margin-left:-250px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-top: 52%;
-bottom: auto;
-display: block;
-position: absolute;
-}
-
-div.centered {
- width:280px;
-  height:250px;
-  left:40%; 
-margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-top: 42%;
-bottom: auto;
-display: block;
-position: absolute;
-  background: rgba(215,215,215,0.1);
- }
-
- .p1 {
+section .content .ator h1 {
+ /* Qual o seu primeiro : */
 font-family: Avenir-Book;
-font-size: 15px;
-color: #FFFFFF;
-line-height: 30px;
- }
-
-.p2 {
-font-family: Avenir-Book;
-font-size: 15px;
-color: #FFFFFF;
-line-height: 30px;
-  margin-top: 5px;
- }
-
-.t11 {
-font-family: Avenir-Book;
-font-size: 18px;
+font-size: 20px;
 color: #FFFFFF;
 line-height: 44px;
+  margin-top: -180px;
+  margin-left: -10px;
+  position: relative;
+}
+
+
+
+}
+
+
+
+@media screen and (max-width:500px){
+.toggleswitch2{
+
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-430px;
+margin-top:-170px;
+}
+
+
+section .content .ator h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -250px;
+  margin-left: -10px;
+  position: relative;
+}
+
+
+.sim2 {
+  text-align: center;
+  background: transparent;
+  border: transparent solid 1px;
+  margin:5px;
+  position:absolute; 
+  top:40%;
+  left:30%; 
+margin-left:-150px;
+}
+
+.centered {
+  display: inline-block;
+  width: 100px;
+  padding: 5px 15px;
+  background: rgba(215,215,215,0.1);
+ }
+
+ .centered p {
+font-family: Avenir-Book;
+font-size: 18px;
+color: #FFFFFF;
+line-height: 20px;
+ }
+
+.centered h3 {
+font-family: Avenir-Book;
+font-size: 10px;
+color: #FFFFFF;
+line-height: 34px;
 text-align: left;
-  margin-top: 5px;
  }
 
 }
 
 
-div.centered {
+
+@media screen and (max-width:360px) { 
+
+.toggleswitch2{
+
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-280px;
+margin-top:-20px;
+}
+
+
+.toggleswitch2 label {
+  display: inline-block;
+  border: 2px solid #ECECEC;
+border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 200px;
+  margin: 15px;
+  font-weight: normal;
+/* Feminino: */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 34px;
+margin-left:30%;
+}
+
+}
+
+
+.sim2 {
+  text-align: center;
+  background: transparent;
+  border: transparent solid 1px;
+  margin:10px;
+  position:absolute; 
+  top:38%;
+  left:42%; 
+margin-left:-150px;
+}
+
+
+@media screen and (max-width:768px) {
+.toggleswitch2{
+
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-520px;
+margin-top:-110px;
+}
+
+.toggleswitch2 label {
+  display: inline-block;
+  border: 2px solid #ECECEC;
+border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 300px;
+  margin: 15px;
+  font-weight: normal;
+/* Feminino: */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 34px;
+margin-left:30%;
+}
+
+
+section .content .ator h1 {
+/* Você é ator ou atriz: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 38px;
+  margin-top: -200px;
+  margin-left: -20px;
+  position: relative;
+}
+
+  .sim2 {
+  text-align: center;
+  background: transparent;
+  border: transparent solid 1px;
+  margin:5px;
+  position:absolute; 
+  top:40%;
+  left:40%; 
+margin-left:-120px;
+}
+.centered {
   display: inline-block;
   width: 400px;
-  height:200px;
-  padding: 5px 5px;
+  padding: 5px 15px;
   background: rgba(215,215,215,0.1);
  }
 
-p.p1 {
+ .centered p {
+font-family: Avenir-Book;
+font-size: 18px;
+color: #FFFFFF;
+line-height: 20px;
+ }
+
+  .centered h3 {
+font-family: Avenir-Book;
+font-size: 10px;
+color: #FFFFFF;
+line-height: 34px;
+text-align: left;
+ }
+}
+
+@media screen and (max-width:1024px){
+ 
+ 
+.sim2 {
+  text-align: center;
+  background: transparent;
+  border: transparent solid 1px;
+  margin:5px;
+  position:absolute; 
+  top:45%;
+  left:40%; 
+margin-left:-80px;
+}
+
+.centered {  
+  overflow: hidden;
+position:absolute;
+left:30%;
+top:60%;
+margin-left:-95px;
+margin-top:40px;
+  display: inline-block;
+  width: 400px;
+  padding: 10px 15px;
+  background: rgba(215,215,215,0.1);
+ }
+
+}
+ 
+.sim2 {
+  text-align: center;
+  background: transparent;
+  border: transparent solid 1px;
+  margin:5px;
+  position:absolute; 
+  top:45%;
+  left:40%; 
+margin-left:-100px;
+}
+
+.sim2:before {
+  content: '';
+  display: inline-block;
+  height: 50%; 
+  vertical-align: middle;
+  margin-right: -0.40em; /* Adjusts for spacing */
+    
+  /* For visualization 
+  background: #808080; width: 5px;
+  */
+ }
+ 
+.centered {  
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:70%;
+margin-left:-25px;
+margin-top:40px;
+  display: inline-block;
+  width: 400px;
+  padding: 10px 15px;
+  background: rgba(215,215,215,0.1);
+ }
+
+ .centered p {
 font-family: Avenir-Book;
 font-size: 18px;
 color: #FFFFFF;
 line-height: 30px;
-  margin-top: -18px;
  }
 
- p.p2 {
-font-family: Avenir-Book;
-font-size: 18px;
-color: #FFFFFF;
-line-height: 30px;
-  margin-top: 5px;
- }
-
-h3.t11 {
+  .centered h3 {
 font-family: Avenir-Book;
 font-size: 25px;
 color: #FFFFFF;
 line-height: 44px;
 text-align: left;
-  margin-top: 5px;
  }
-
 
 /***
 
@@ -1736,14 +2339,14 @@ DÉCIMA QUARTA DIV
 ***/
 
 .section14 {
-  top: 1300%;
+  top: 1200%;
 }
 
 
 section .content .quartoze h1 {
- /* Qual o seu primeiro : */
+/* Que tal deixar seu p: */
 font-family: Avenir-Book;
-font-size: 28px;
+font-size: 32px;
 color: #FFFFFF;
 line-height: 44px;
   margin-top: -80px;
@@ -1795,6 +2398,129 @@ border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
 
+
+section .content .quartoze h1 {
+/* Que tal deixar seu p: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 38px;
+  margin-top: -80px;
+  margin-left: 10px;
+  position: relative;
+}
+
+
+section .content .ig .ig2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  position: absolute;
+  width: 350px;
+  height: 50px;
+}
+
+
+input#ig.ig2{
+  margin-left: 50px;
+  width: 418px;
+  height: 68px;
+}
+.ig img{
+  position: absolute;
+  overflow: hidden;
+margin-top:22px !important;
+margin-left: -20px !important;
+}
+
+/*
+ESTILO FACEBOOK
+*/
+section .content .face{
+  width:550;
+  height:100px;
+}
+section .content .face .face2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 350px;
+  height: 50px;
+}
+
+
+.face img{
+
+  position: absolute;
+  overflow: hidden;
+float:left;
+margin-top:40px !important;
+margin-left: -20px !important;
+
+}
+input#face.face2{
+  width: 418px;
+  height: 68px;
+
+  margin-left: 50px;
+}
+
+/*
+ESTILO TWITTER
+*/
+section .content .tt{
+  width:550;
+  height:100px;
+}
+
+section .content .tt .tt2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 350px;
+  height: 50px;
+}
+
+
+input#twitter.twitter2{
+  margin-left: 50px;
+  width: 418px;
+  height: 68px;
+margin-top:30px !important;
+}
+
+.tt img{
+
+  position: absolute;
+  overflow: hidden;
+float:left;
+margin-top:40px !important;
+margin-left: -20px !important;
+
+}
+
+
 }
 
 @media screen and (max-width:600px) { 
@@ -1812,47 +2538,60 @@ border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
 
-
 section .content .quartoze h1 {
- /* Qual o seu primeiro : */
+/* Que tal deixar seu p: */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 44px;
-  margin-top: -80px;
-  margin-left: -30px;
-  position: relative;
+line-height: 30px;
+width:250px;
+  position: absolute;
+  left:18%;
+  top:28%;
+  right:10%;
+  display: block;
+  text-align: center;
 }
 
-section .content .ig{
-  width:400;
-  height:100px;
-}
 
 section .content .ig .ig2 input {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
 font-size:24px; 
 color:white; 
+float:right;
  /* Rectangle 9 Copy: */
 background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
+
   position: absolute;
-margin-top:10px;
-margin-left: 120px;
-  width: 300px;
+  width: 350px;
   height: 50px;
 }
 
+
+input#ig.ig2{
+  margin-left: 40px;
+  width: 214px;
+  height: 42px;
+}
 .ig img{
   position: absolute;
   overflow: hidden;
-margin-top:10px;
-margin-left: 100px;
+  width: 32px;
+  height: 33px;
+margin-top:20px !important;
+margin-left: 5px !important;
 }
 
-
+/*
+ESTILO FACEBOOK
+*/
+section .content .face{
+  width:550;
+  height:100px;
+}
 section .content .face .face2 input {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
@@ -1864,7 +2603,7 @@ background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
 
-  width: 300px;
+  width: 350px;
   height: 50px;
 }
 
@@ -1874,229 +2613,25 @@ border-radius: 8px;
   position: absolute;
   overflow: hidden;
 float:left;
-margin-top:10px;
-margin-left: 100px;
+  width: 32px;
+  height: 33px;
+margin-top:50px !important;
+margin-left: 5px !important;
 
 }
-
-
-}
-
-
-@media screen and (max-width:500px) { 
-
-    .progress14 progress {
-  width:300px;
-  position:absolute; 
-  top:2%;
-  color:#FFFFFF;
-  height: 5px;
-  left:50%; 
-margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-background: rgba(215,215,215,0.1);
-border: 1px solid #FFFFFF;
-border-radius: 8px;
-}
-
-
-section .content .quartoze h1 {
- /* Qual o seu primeiro : */
-font-family: Avenir-Book;
-font-size: 20px;
-color: #FFFFFF;
-line-height: 44px;
-  margin-top: -80px;
-  margin-left: -30px;
-  position: relative;
-}
-
-section .content .ig{
-  width:300;
-  height:100px;
-}
-
-section .content .ig .ig2 input {
- /* Qual o seu primeiro : */
-font-family: Avenir-Book;
-font-size:24px; 
-color:white; 
- /* Rectangle 9 Copy: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-  position: absolute;
-margin-top:10px;
-margin-left: 150px;
-  width: 250px;
-  height: 50px;
-}
-
-.ig img{
-  position: absolute;
-  overflow: hidden;
-margin-top:10px;
-margin-left: 90px;
-}
-
-
-section .content .face .face2 input {
- /* Qual o seu primeiro : */
-font-family: Avenir-Book;
-font-size:24px; 
-color:white; 
-float:right;
- /* Rectangle 9 Copy: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-
-margin-left: 150px;
-  width: 250px;
-  height: 50px;
-}
-
-
-.face img{
-
-  position: absolute;
-  overflow: hidden;
-float:left;
-margin-top:10px;
-margin-left: 90px;
-
-}
-
-section .content .tt .tt2 input {
- /* Qual o seu primeiro : */
-font-family: Avenir-Book;
-font-size:24px; 
-color:white; 
-float:right;
- /* Rectangle 9 Copy: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-
-margin-left: 150px;
-  width: 250px;
-  height: 50px;
-}
-
-
-.tt img{
-
-  position: absolute;
-  overflow: hidden;
-float:left;
-margin-top:10px;
-margin-left: 90px;
-
-}
-
-
-}
-
-
-
-@media screen and (max-width:450px) { 
-
-    .progress14 progress {
-  width:300px;
-  position:absolute; 
-  top:2%;
-  color:#FFFFFF;
-  height: 5px;
-  left:50%; 
-margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-background: rgba(215,215,215,0.1);
-border: 1px solid #FFFFFF;
-border-radius: 8px;
-}
-
-
-section .content .quartoze h1 {
- /* Qual o seu primeiro : */
-font-family: Avenir-Book;
-font-size: 20px;
-color: #FFFFFF;
-line-height: 44px;
-  margin-top: -80px;
-  margin-left: -30px;
-  position: relative;
-}
-
-section .content .ig{
-  width:200;
-  height:100px;
-}
-
-section .content .ig .ig2 input {
- /* Qual o seu primeiro : */
-font-family: Avenir-Book;
-font-size:24px; 
-color:white; 
- /* Rectangle 9 Copy: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-  position: absolute;
-margin-top:10px;
-}
-input#twitter.twitter2{
-
-  width: 200px;
-  height: 50px;
-margin-left: -31px;
-}
-
-.ig img{
-  position: absolute;
-  overflow: hidden;
-margin-top:10px;
-width:40px;
-height:40px;
-}
-
-img.imgtt{
-
-margin-right: 50px;
-}
-
-section .content .face .face2 input {
- /* Qual o seu primeiro : */
-font-family: Avenir-Book;
-font-size:24px; 
-color:white; 
-float:right;
- /* Rectangle 9 Copy: */
-background: rgba(215,215,215,0.30);
-border: 2px solid #ECECEC;
-border-radius: 8px;
-
-margin-left: 190px;
-  width: 150px;
-  height: 50px;
-}
-
-
 input#face.face2{
-
-  width: 200px;
-  height: 50px;
-margin-left: -31px;
+  width: 214px;
+  height: 42px;
+margin-top:44px !important;
+  margin-left: 40px;
 }
 
-
-.face img{
-
-  position: absolute;
-  overflow: hidden;
-float:left;
-margin-top:10px;
-margin-left: 250px;
-width:40px;
-height:40px;
-
+/*
+ESTILO TWITTER
+*/
+section .content .tt{
+  width:550;
+  height:100px;
 }
 
 section .content .tt .tt2 input {
@@ -2110,23 +2645,203 @@ background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
 
-margin-left: 190px;
-  width: 150px;
+  width: 350px;
   height: 50px;
 }
 
+
+input#twitter.twitter2{
+  margin-left: 50px;
+  width: 214px;
+  height: 42px;
+margin-top:30px !important;
+  margin-left: 40px;
+}
 
 .tt img{
 
   position: absolute;
   overflow: hidden;
 float:left;
-margin-top:10px;
-margin-left: 180px;
-width:40px;
-height:40px;
+  width: 32px;
+  height: 33px;
+margin-top:40px !important;
+margin-left: 5px !important;
+
 }
 
+
+}
+
+@media screen and (max-width:380px) { 
+
+    .progress14 progress {
+  width:300px;
+  position:absolute; 
+  top:2%;
+  color:#FFFFFF;
+  height: 5px;
+  left:50%; 
+margin-left:-150px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+background: rgba(215,215,215,0.1);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+}
+
+section .content .quartoze h1 {
+/* Que tal deixar seu p: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 30px;
+width:250px;
+  position: absolute;
+  left:15%;
+  top:30%;
+  right:10%;
+  display: block;
+  text-align: center;
+}
+
+
+section .content .ig .ig2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  position: absolute;
+  width: 350px;
+  height: 50px;
+}
+
+
+input#ig.ig2{
+  margin-left: 40px;
+  width: 214px;
+  height: 42px;
+margin-top:140px !important;
+}
+.ig img{
+  position: absolute;
+  overflow: hidden;
+  width: 32px;
+  height: 33px;
+margin-top:150px !important;
+margin-left: 5px !important;
+}
+
+/*
+ESTILO FACEBOOK
+*/
+section .content .face{
+  width:550;
+  height:100px;
+}
+section .content .face .face2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 350px;
+  height: 50px;
+}
+
+
+.face img{
+
+  position: absolute;
+  overflow: hidden;
+float:left;
+  width: 32px;
+  height: 33px;
+margin-top:45px !important;
+margin-left: 5px !important;
+
+}
+input#face.face2{
+  width: 214px;
+  height: 42px;
+margin-top:35px !important;
+  margin-left: 40px;
+}
+
+/*
+ESTILO TWITTER
+*/
+section .content .tt{
+  width:550;
+  height:100px;
+}
+
+section .content .tt .tt2 input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size:24px; 
+color:white; 
+float:right;
+ /* Rectangle 9 Copy: */
+background: rgba(215,215,215,0.30);
+border: 2px solid #ECECEC;
+border-radius: 8px;
+
+  width: 350px;
+  height: 50px;
+}
+
+
+input#twitter.twitter2{
+  margin-left: 50px;
+  width: 214px;
+  height: 42px;
+margin-top:20px !important;
+  margin-left: 40px;
+}
+
+.tt img{
+
+  position: absolute;
+  overflow: hidden;
+float:left;
+  width: 32px;
+  height: 33px;
+margin-top:28px !important;
+margin-left: 5px !important;
+
+}
+
+
+}
+
+
+
+@media screen and (max-width:360px) { 
+
+section .content .quartoze h1 {
+/* Que tal deixar seu p: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 30px;
+width:250px;
+  position: absolute;
+  left:10%;
+  top:30%;
+  right:10%;
+  display: block;
+  text-align: center;
+}
 
 }
 
@@ -2149,12 +2864,6 @@ border-radius: 8px;
 }
 
 
-input#ig.ig2{
-
-  width: 200px;
-  height: 50px;
-margin-left: -31px;
-}
 
 .ig img{
   position: absolute;
@@ -2192,9 +2901,13 @@ border-radius: 8px;
   position: absolute;
   overflow: hidden;
 float:left;
-margin-top:10px;
+margin-top:25px;
 margin-left: -70px;
 
+}
+input#face.face2{
+
+margin-top:25px;
 }
 
 /*
@@ -2239,8 +2952,52 @@ DÉCIMA QUINTA DIV
 
 
 .section15 {
-  top: 1400%;
+  top: 1300%;
 }
+
+
+section .content .ultima h1 {
+/* Bem vind@ ao nosso e: */
+font-family: Avenir-Book;
+font-size: 48px;
+color: #FFFFFF;
+line-height: 66px;
+  margin-top: 250px;
+  margin-left: -55px;
+  position: relative;
+}
+
+.logomag img{
+margin-top: 300px;
+width:194px;
+height:107px;
+  position: relative;
+}
+
+
+@media screen and (max-width:780px) { 
+
+section .content .logomag img{
+margin-top: 250px;
+  position: relative;
+  }
+
+  section .content .ultima h1 {
+/* Bem vind@ ao nosso e: */
+font-family: Avenir-Book;
+font-size: 48px;
+color: #FFFFFF;
+line-height: 66px;
+  margin-top: 250px;
+  margin-left: -35px;
+  position: relative;
+}
+
+}
+
+
+
+@media screen and (max-width:600px) { 
 
 
 section .content .ultima h1 {
@@ -2249,29 +3006,9 @@ font-family: Avenir-Book;
 font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
-  left:50%; 
-margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-top: 30%;
-bottom: auto;
-display: block;
-position: absolute;
-}
-
-
-
-@media screen and (max-width:780px) { 
-
-section .content .logomag img{
-margin-top: 300px;
+  margin-left: -10px;
   position: relative;
-  }
-
 }
-
-
-
-@media screen and (max-width:600px) { 
-
 
 section .content .logomag img{
 margin-top: 150px;
@@ -2284,9 +3021,23 @@ margin-top: 150px;
 
 @media screen and (max-width:480px){ 
 
+
+section .content .ultima h1 {
+/* Bem vind@ ao nosso e: */
+font-family: Avenir-Book;
+font-size: 30px;
+color: #FFFFFF;
+line-height: 41px;
+  margin-left: -10px;
+  margin-top: 50px;
+  position: relative;
+}
+
 section .content .logomag img{
 margin-top: 80px;
   position: relative;
+  width:147px;
+  height:81px;
 }
 
 }
@@ -2304,21 +3055,13 @@ margin-top: 80px;
     content: '';
     display:block;
     width: 100%;
-    height: 102%;
+    height: 100%;
     background: url("../images/img-DSC_2882-contraste.png") center center;
     background-size: cover;
     opacity: 0.1;
   }
 
-.logomag img{
-  left:55%; 
-margin-left:-120px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
-top: 80%;
-bottom: auto;
-display: block;
-position: absolute;
 
-}
 
 /**********************
 SETAS

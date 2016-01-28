@@ -8,22 +8,25 @@
 
     
     <link rel="stylesheet" href="css/form3.css">
-    <link rel="stylesheet" href="css/jquery.jscrollpane.css" />
-    <link rel="stylesheet" href="css/customSelectBox.css" />
+<link rel="stylesheet" href="css/jquery.jscrollpane.css">
+    <link rel="stylesheet" href="css/customSelectBox2.css" />
 
     
   </head>
 
-  <body class="noJS" >
+  <body class="noJS" id="gradient" >
 
-    <!-- 100% height and width sections positioned absolutely. Colors from www.flatuicolors.com -->
+ 
 <form action="">
 
 <section class="section1 current gradient" id="1" data-section="1">
+
   <div class="content"> 
-        <i class="arrow icon-arrow-up"></i>
+    <i class="arrow icon-arrow-up"></i>
+
     <h1>Qual o CPF d@ responsável?</h1>
     <input name="cpf" id="cpf" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
+
     <i class="arrow icon-arrow-down"></i>
 
 
@@ -45,11 +48,14 @@
   </nav>
 
   </div>
+
+
 </section>
 
 <section class="section2 gradient" id="2"  data-section="2">
   <div class="content"> 
     <div class="responsavel"><h1>Qual o nome completo d@ responsável?</h1></div>
+
     <input name="nome2" id="nome2" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
 
  <div class="progress2">
@@ -74,6 +80,7 @@
 
 <section class="section3 gradient" id="3" data-section="3">
   <div class="content"> 
+
     <h1>Qual o seu o sobrenome?</h1>
     <input name="sobrenome" id="sobrenome" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
 
@@ -155,7 +162,7 @@
 </section>
 
 <section class="section6" id="6" data-section="6">  
-	<div class="gradient2"></div>
+  <div class="gradient2"></div>
 
   <div class="content"> 
 
@@ -189,7 +196,7 @@
 </section>
 
 <section class="section7" id="7" data-section="7">
-  		<div class="gradient3"></div>
+      <div class="gradient3"></div>
   <div class="content"> 
 
     <div class="serio"><h1>Agora Séri@!</h1></div>
@@ -225,10 +232,11 @@
 <section class="section8 gradient" id="8" data-section="8">
   <div class="content"> 
 
-   <div class="contato"><h1>Qual o seu celular para contato?</h1></div> 
+  <div class="contato"><h1>Qual o seu celular para contato?</h1>
 
     <input name="celular" id="celular" type="text" onkeypress ="autoTab(this, event);" required />
 
+  </div> 
 
 
 
@@ -257,7 +265,9 @@
 <section class="section9 gradient" id="9" data-section="9">
   <div class="content"> 
 
-    <h1>E o email?</h1>
+<div class="email"> <h1>E o email?</h1>  </div>
+  
+
     <input name="celular" id="celular" type="text" onkeypress ="autoTab(this, event);" required />
 
 
@@ -269,7 +279,8 @@
 
   </div>
 
-         <nav>
+  <nav>
+
     <ul class="vs-vertical-nav">
 
       <li><a href="#8" class="vs-prev">Next</a></li>
@@ -325,7 +336,8 @@
 
 <section class="section11 gradient" id="11" data-section="11">
   <div class="content"> 
-      <h1>E a raça?</h1>
+
+     <div class="raca"> <h1>E a raça?</h1></div>
     
   <select name="raca" class="custom" onkeypress ="autoTab(this, event);">
     <option  selected="selected"  value="amarelo">Amarela</option>
@@ -364,7 +376,8 @@
 
 <section class="section12 gradient" id="12" data-section="12">
   <div class="content"> 
-      <h1>Em qual bairro fulan@ mora?</h1>
+     
+     <div class="bairro"> <h1>Em qual bairro fulan@ mora?</h1> </div>
 
     <div class="left">
 
@@ -424,7 +437,7 @@
 
       <li><a href="#11" class="vs-prev">Next</a></li>
 
-      <li><a href="#13" class="vs-next">Prev</a></li>
+      <li><a href="#14" class="vs-next">Prev</a></li>
 
     </ul>
 
@@ -433,11 +446,11 @@
 
   </div>
 </section>
-
+<!-- 
 <section class="section13 gradient" id="13" data-section="13">
   <div class="content"> 
 
-        <h1>Você é ator ou atriz com DRT?</h1>
+     <div class="ator"> <h1>Você é ator ou atriz com DRT?</h1> </div>  
 
     <div class="toggleswitch2">
       <input id="sim" name="option" type="radio" value="sim" onkeypress ="autoTab(this, event);">
@@ -447,14 +460,14 @@
     </div>
 
   <div class="sim2">
-    <div class="sim2_1">fundo</div>
+    <div class="centered">
 
     <h3>Ótimo!</h3>
 
     <p class="p1">Isso quer dizer que você pode se agenciar  <br />pelo <b>Cadastro Premium</b> gratuitamente</p> 
 
-    <p class="p2">Ao finalizar este cadastro, entre em contato <br /> com a Magneto Elenco para mais informações</p>
-
+    <p class="p1">Ao finalizar este cadastro, entre em contato <br /> com a Magneto Elenco para mais informações</p>
+    </div>
   </div>
 
 
@@ -479,26 +492,32 @@
   </div>
 
 </section>
-
+ -->
 
 <section class="section14 gradient" id="14" data-section="14">
   <div class="content"> 
 
-    <h1>Que tal deixar seu perfil mais completo?</h1> 
+  <div class="quartoze"><h1>Que tal deixar seu perfil mais completo?</h1></div>   
 
     <div class="ig">
-      <img src="images/ig.svg" alt="instagram">
-      <input name="ig" id="ig" type="ig" required onkeypress ="autoTab(this, event);" />
+
+      <img class="insta" src="images/ig.svg" alt="instagram">
+      <input name="ig" id="ig" class="ig2" type="text" required onkeypress ="autoTab(this, event);" />
+
     </div>
 
     <div class="face">
+
       <img src="images/face.svg" alt="facebook">
-      <input name="face" id="face" type="face" required onkeypress ="autoTab(this, event);" />
+      <input name="face" id="face" class="face2" type="text" required onkeypress ="autoTab(this, event);" />
+
     </div>
 
     <div class="tt">
-      <img src="images/tt.svg" alt="twitter">
-      <input name="twitter" id="twitter" type="twitter" required onkeypress ="autoTab(this, event);" />
+
+      <img src="images/tt.svg" class="imgtt"  alt="twitter">
+      <input name="twitter" id="twitter" class="twitter2" type="text" required onkeypress ="autoTab(this, event);" />
+      
     </div>
 
 
@@ -512,7 +531,7 @@
          <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#13" class="vs-prev">Next</a></li>
+      <li><a href="#12" class="vs-prev">Next</a></li>
 
       <li><a href="#15" class="vs-next">Prev</a></li>
 
@@ -531,7 +550,8 @@
 
 <div class="gradient4"></div> 
   <div class="content">   
-    <h1>Bem-vind@ ao <br />nosso elenco!</h1>
+
+ <div class="ultima"><h1>Bem-vind@ ao <br />nosso elenco!</h1></div>   
   
   <div class="logomag"><img src="images/logo.svg" alt="LOGO"></div>
 
@@ -556,7 +576,7 @@
 
 
 
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='js/jquery.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.7/jquery.scrollTo.min.js'></script>  
     <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>  
 
