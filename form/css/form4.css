@@ -13,6 +13,10 @@ body {
   overflow-y: hidden;
 }
 
+html, body{ width: 100%; 
+  margin: 0 
+}
+
 #gradient
 {
   width: 100%;
@@ -141,13 +145,13 @@ border-radius: 8px;
 @media screen and (max-width:600px) { 
 
 section .content h1 {
- /* Qual o seu primeiro : */
+/* Em qual bairro você : */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 44px;
+line-height: 38px;
   margin-top: -80px;
-  margin-left: -10px;
+  margin-left: 18px;
   position: relative;
 }
 section .content input {
@@ -678,11 +682,11 @@ border-radius: 8px;
 
 
 section .content .fotos h1 {
- /* Qual o seu primeiro : */
+/* Em qual bairro você : */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 44px;
+line-height: 38px;
   margin-top: -80px;
   margin-left: 20px;
   position: relative;
@@ -1216,13 +1220,13 @@ border-radius: 8px;
 
 
 section .content .contato h1 {
- /* Qual o seu primeiro : */
+/* Em qual bairro você : */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 44px;
+line-height: 38px;
   margin-top: -160px;
-  margin-left: -100px;
+  margin-left: -60px;
   position: relative;
 }
 
@@ -1725,7 +1729,7 @@ color: #FFFFFF;
 line-height: 44px;
   position: relative;
   margin-top: -80px;
-  margin-left: -240px;
+  margin-left: -230px;
 }
 
 
@@ -1866,14 +1870,14 @@ border-radius: 8px;
 
 
 section .content .bairro h1 {
- /* Qual o seu primeiro : */
+/* Em qual bairro você : */
 font-family: Avenir-Book;
-font-size: 25px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 44px;
+line-height: 38px;
   position: relative;
   margin-top: -80px;
-  margin-left: -45px;
+  margin-left: -240px;
 }
 
 
@@ -1883,11 +1887,11 @@ line-height: 44px;
 @media screen and (max-width:414px) { 
 
 section .content .bairro h1 {
- /* Qual o seu primeiro : */
+ /* Em qual bairro você : */
 font-family: Avenir-Book;
-font-size: 25px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 44px;
+line-height: 38px;
 width:270px;
   position: relative;
   margin-top: -120px;
@@ -1898,11 +1902,11 @@ width:270px;
 @media screen and (max-width:360px){ 
 
 section .content .bairro h1 {
- /* Qual o seu primeiro : */
+/* Em qual bairro você : */
 font-family: Avenir-Book;
-font-size: 25px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 44px;
+line-height: 38px;
 width:270px;
   position: relative;
   margin-top: -120px;
@@ -1985,6 +1989,118 @@ border-radius: 8px;
 }
 
 
+@media screen and (max-width:360px) { 
+
+.toggleswitch2{
+
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-280px;
+margin-top:-20px;
+}
+
+
+.toggleswitch2 label {
+  display: inline-block;
+  border: 2px solid #ECECEC;
+border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 200px;
+  margin: 15px;
+  font-weight: normal;
+/* Feminino: */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 34px;
+margin-left:30%;
+}
+
+}
+
+
+
+
+
+/*@media screen and (max-width:768px) {
+.toggleswitch2{
+
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-520px;
+margin-top:-110px;
+}
+
+.toggleswitch2 label {
+  display: inline-block;
+  border: 2px solid #ECECEC;
+border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 300px;
+  margin: 15px;
+  font-weight: normal;
+
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 34px;
+margin-left:30%;
+}
+
+
+section .content .ator h1 {
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 38px;
+  margin-top: -200px;
+  margin-left: -20px;
+  position: relative;
+}
+
+  .sim2 {
+  text-align: center;
+  background: transparent;
+  border: transparent solid 1px;
+  margin:5px;
+  position:absolute; 
+  top:40%;
+  left:40%; 
+margin-left:-120px;
+}
+.centered {
+  display: inline-block;
+  width: 400px;
+  padding: 5px 15px;
+  background: rgba(215,215,215,0.1);
+ }
+
+ .centered p {
+font-family: Avenir-Book;
+font-size: 18px;
+color: #FFFFFF;
+line-height: 20px;
+ }
+
+  .centered h3 {
+font-family: Avenir-Book;
+font-size: 10px;
+color: #FFFFFF;
+line-height: 34px;
+text-align: left;
+ }
+}*/
+
+
 section .content .ator h1 {
 /* Você é ator ou atriz: */
 font-family: Avenir-Book;
@@ -1995,8 +2111,6 @@ line-height: 44px;
   margin-left: -90px;
   position: relative;
 }
-
-
 
 .toggleswitch2{
   position: absolute;
@@ -2038,6 +2152,89 @@ border: 2px solid #ECECEC;
 border-radius: 8px;
 }
 
+.centered { 
+  width:400px;
+  top: 55%;
+  right: 0%;
+  left:50%;
+  padding: 10px 50px;
+  bottom: auto;
+  display: block;
+  margin-left: -280px;
+  position: absolute;
+  background: rgba(215,215,215,0.1);
+}
+
+ .centered p {
+font-family: Avenir-Book;
+font-size: 18px;
+color: #FFFFFF;
+line-height: 30px;
+  padding: 5px;
+}
+
+  .centered h3 {
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 44px;
+  padding: 5px;
+  text-align: left;
+}
+
+@media screen and (max-width:1024px){
+ .centered { 
+  width:400px;
+  top: 54%;
+  right: 0%;
+  left:50%;
+  padding: 10px 50px;
+  bottom: auto;
+  display: block;
+  margin-left: -255px;
+  position: absolute;
+  background: rgba(215,215,215,0.1);
+}
+
+ .centered p {
+font-family: Avenir-Book;
+font-size: 18px;
+color: #FFFFFF;
+line-height: 30px;
+  padding: 5px;
+}
+
+  .centered h3 {
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 44px;
+  padding: 5px;
+  text-align: left;
+}
+
+section .content .ator h1 {
+/* Você é ator ou atriz: */
+font-family: Avenir-Book;
+font-size: 32px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -200px;
+  margin-left: -50px;
+  position: relative;
+}
+
+.toggleswitch2{
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-640px;
+margin-top:-120px;
+}
+ 
+}
 
 
 @media  only screen and (max-width:600px){
@@ -2048,27 +2245,52 @@ border-radius: 8px;
 position:absolute;
 left:50%;
 top:50%;
-margin-left:-430px;
+margin-left:-520px;
 margin-top:-130px;
 }
 
+.toggleswitch2 label {
+  display: inline-block;
+  border: 2px solid #ECECEC;
+border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 320px;
+  margin: 15px;
+  font-weight: normal;
+/* Feminino: */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 34px;
+margin-left:30%;
+}
 
 section .content .ator h1 {
- /* Qual o seu primeiro : */
+/* Você é ator ou atriz: */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 44px;
+line-height: 38px;
   margin-top: -180px;
   margin-left: -10px;
   position: relative;
 }
-
-
-
+.centered { 
+  width:400px;
+  top: 54%;
+  right: 0%;
+  left:50%;
+  padding: 10px 40px;
+  bottom: auto;
+  display: block;
+  margin-left: -245px;
+  position: absolute;
+  background: rgba(215,215,215,0.1);
 }
 
-
+}
 
 @media screen and (max-width:500px){
 .toggleswitch2{
@@ -2078,116 +2300,8 @@ line-height: 44px;
 position:absolute;
 left:50%;
 top:50%;
-margin-left:-430px;
-margin-top:-170px;
-}
-
-
-section .content .ator h1 {
- /* Qual o seu primeiro : */
-font-family: Avenir-Book;
-font-size: 20px;
-color: #FFFFFF;
-line-height: 44px;
-  margin-top: -250px;
-  margin-left: -10px;
-  position: relative;
-}
-
-
-.sim2 {
-  text-align: center;
-  background: transparent;
-  border: transparent solid 1px;
-  margin:5px;
-  position:absolute; 
-  top:40%;
-  left:30%; 
-margin-left:-150px;
-}
-
-.centered {
-  display: inline-block;
-  width: 100px;
-  padding: 5px 15px;
-  background: rgba(215,215,215,0.1);
- }
-
- .centered p {
-font-family: Avenir-Book;
-font-size: 18px;
-color: #FFFFFF;
-line-height: 20px;
- }
-
-.centered h3 {
-font-family: Avenir-Book;
-font-size: 10px;
-color: #FFFFFF;
-line-height: 34px;
-text-align: left;
- }
-
-}
-
-
-
-@media screen and (max-width:360px) { 
-
-.toggleswitch2{
-
-  overflow: hidden;
-position:absolute;
-left:50%;
-top:50%;
-margin-left:-280px;
-margin-top:-20px;
-}
-
-
-.toggleswitch2 label {
-  display: inline-block;
-  border: 2px solid #ECECEC;
-border-radius: 8px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 15px;
-  padding-right: 200px;
-  margin: 15px;
-  font-weight: normal;
-/* Feminino: */
-font-family: Avenir-Book;
-font-size: 25px;
-color: #FFFFFF;
-line-height: 34px;
-margin-left:30%;
-}
-
-}
-
-
-.sim2 {
-  text-align: center;
-  background: transparent;
-  border: transparent solid 1px;
-  margin:10px;
-  position:absolute; 
-  top:38%;
-  left:42%; 
-margin-left:-150px;
-}
-
-
-@media screen and (max-width:768px) {
-.toggleswitch2{
-
-  position: absolute;
-  overflow: hidden;
-position:absolute;
-left:50%;
-top:50%;
-margin-left:-520px;
-margin-top:-110px;
+margin-left:-380px;
+margin-top:-100px;
 }
 
 .toggleswitch2 label {
@@ -2197,7 +2311,7 @@ border-radius: 8px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
-  padding-right: 300px;
+  padding-right: 220px;
   margin: 15px;
   font-weight: normal;
 /* Feminino: */
@@ -2207,7 +2321,6 @@ color: #FFFFFF;
 line-height: 34px;
 margin-left:30%;
 }
-
 
 section .content .ator h1 {
 /* Você é ator ou atriz: */
@@ -2215,123 +2328,195 @@ font-family: Avenir-Book;
 font-size: 28px;
 color: #FFFFFF;
 line-height: 38px;
-  margin-top: -200px;
-  margin-left: -20px;
+  margin-top: -180px;
+  margin-left: -10px;
   position: relative;
 }
-
-  .sim2 {
-  text-align: center;
-  background: transparent;
-  border: transparent solid 1px;
-  margin:5px;
-  position:absolute; 
-  top:40%;
-  left:40%; 
-margin-left:-120px;
-}
-.centered {
-  display: inline-block;
-  width: 400px;
+.centered { 
+  width:300px;
+  top: 60%;
+  right: 0%;
+  left:50%;
   padding: 5px 15px;
+  bottom: auto;
+  display: block;
+  margin-left: -165px;
+  position: absolute;
   background: rgba(215,215,215,0.1);
- }
+}
 
  .centered p {
+/* Isso quer dizer que : */
 font-family: Avenir-Book;
-font-size: 18px;
+font-size: 12px;
 color: #FFFFFF;
-line-height: 20px;
- }
+line-height: 18px;
+  padding: 2px;
+}
 
   .centered h3 {
+/* Ótimo!: */
 font-family: Avenir-Book;
-font-size: 10px;
+font-size: 20px;
 color: #FFFFFF;
-line-height: 34px;
-text-align: left;
- }
+line-height: 15px;
+  padding: 2px;
+  text-align: left;
 }
 
-@media screen and (max-width:1024px){
- 
- 
-.sim2 {
-  text-align: center;
-  background: transparent;
-  border: transparent solid 1px;
-  margin:5px;
-  position:absolute; 
-  top:45%;
-  left:40%; 
-margin-left:-80px;
 }
 
-.centered {  
-  overflow: hidden;
-position:absolute;
-left:30%;
-top:60%;
-margin-left:-95px;
-margin-top:40px;
-  display: inline-block;
-  width: 400px;
-  padding: 10px 15px;
-  background: rgba(215,215,215,0.1);
- }
 
-}
- 
-.sim2 {
-  text-align: center;
-  background: transparent;
-  border: transparent solid 1px;
-  margin:5px;
-  position:absolute; 
-  top:45%;
-  left:40%; 
-margin-left:-100px;
-}
 
-.sim2:before {
-  content: '';
-  display: inline-block;
-  height: 50%; 
-  vertical-align: middle;
-  margin-right: -0.40em; /* Adjusts for spacing */
-    
-  /* For visualization 
-  background: #808080; width: 5px;
-  */
- }
- 
-.centered {  
+@media screen and (max-width:375px) { 
+.toggleswitch2{
+
+  position: absolute;
   overflow: hidden;
 position:absolute;
 left:50%;
-top:70%;
-margin-left:-25px;
-margin-top:40px;
+top:50%;
+margin-left:-330px;
+margin-top:-100px;
+}
+
+.toggleswitch2 label {
   display: inline-block;
-  width: 400px;
-  padding: 10px 15px;
-  background: rgba(215,215,215,0.1);
- }
-
- .centered p {
-font-family: Avenir-Book;
-font-size: 18px;
-color: #FFFFFF;
-line-height: 30px;
- }
-
-  .centered h3 {
+  border: 2px solid #ECECEC;
+border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 220px;
+  margin: 15px;
+  font-weight: normal;
+/* Feminino: */
 font-family: Avenir-Book;
 font-size: 25px;
 color: #FFFFFF;
-line-height: 44px;
-text-align: left;
- }
+line-height: 34px;
+margin-left:30%;
+}
+
+section .content .ator h1 {
+/* Você é ator ou atriz: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 38px;
+  margin-top: -180px;
+  margin-left: -10px;
+  position: relative;
+}
+.centered { 
+  width:300px;
+  top: 60%;
+  right: 0%;
+  left:50%;
+  padding: 5px 10px;
+  bottom: auto;
+  display: block;
+  margin-left: -160px;
+  position: absolute;
+  background: rgba(215,215,215,0.1);
+}
+
+ .centered p {
+/* Isso quer dizer que : */
+font-family: Avenir-Book;
+font-size: 12px;
+color: #FFFFFF;
+line-height: 18px;
+  padding: 2px;
+}
+
+  .centered h3 {
+/* Ótimo!: */
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+line-height: 15px;
+  padding: 2px;
+  text-align: left;
+}
+
+}
+
+
+
+@media screen and (max-width:350px) { 
+.toggleswitch2{
+
+  position: absolute;
+  overflow: hidden;
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-280px;
+margin-top:-100px;
+}
+
+.toggleswitch2 label {
+  display: inline-block;
+  border: 2px solid #ECECEC;
+border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 220px;
+  margin: 15px;
+  font-weight: normal;
+/* Feminino: */
+font-family: Avenir-Book;
+font-size: 25px;
+color: #FFFFFF;
+line-height: 34px;
+margin-left:30%;
+}
+
+section .content .ator h1 {
+/* Você é ator ou atriz: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 38px;
+  margin-top: -180px;
+  margin-left: -10px;
+  position: relative;
+}
+.centered { 
+  width:200px;
+  top: 60%;
+  right: 0%;
+  left:50%;
+  padding: 5px 5px;
+  bottom: auto;
+  display: block;
+  margin-left: -110px;
+  position: absolute;
+  background: rgba(215,215,215,0.1);
+}
+
+ .centered p {
+/* Isso quer dizer que : */
+font-family: Avenir-Book;
+font-size: 10px;
+color: #FFFFFF;
+line-height: 10px;
+  padding: 2px;
+}
+
+  .centered h3 {
+/* Ótimo!: */
+font-family: Avenir-Book;
+font-size: 15px;
+color: #FFFFFF;
+line-height: 15px;
+  padding: 2px;
+  text-align: left;
+}
+
+}
 
 /***
 
