@@ -18,14 +18,13 @@
 <body>
 
 	<div class="hue2">
-
 		<h1>Quem você está cadastrando?</h1>
 
 <?php
 header('Content-Type: text/html; charset=utf-8');
 	//lista os links 
-$urls = array("form1.php" ,"form2.php"); 
-$urls2 = array("form3.php#1" ,"form4.php#1"); 
+$urls = array("form2.php#1" ,"form2.php#1"); 
+$urls2 = array("form3.php#1" ,"form3.php#1"); 
 
 //Lista o nome dos links
 $text = array("Eu mesm@, sou maior de idade","Eu mesm@, sou maior de idade"); 
@@ -41,6 +40,7 @@ echo ("<div class='botao'><a class='link111' href = \"$urls[$random]\"><p class=
 echo ("<div class='botao'><a class='link122' href = \"$urls2[$random2]\"><p class='text-center link22'>$text2[$random2]<span><img src='images/arrow-right.svg'></span></p></a></div>"); 
 
 ?>
+
 
 </div>
 		<script src="js/res/jquery-2.1.4.js"></script>
