@@ -17,6 +17,10 @@ html, body{ width: 100%;
   margin: 0 
 }
 
+form{
+  height:2600%;
+}
+
 #gradient
 {
   width: 100%;
@@ -35,7 +39,7 @@ section {
   overflow: hidden;
   z-index: 1;
 }
-section .content {
+.content {
   text-align: center;
   display: table-cell;
   vertical-align: middle;
@@ -46,7 +50,7 @@ line-height: 44px;
 font-family: Avenir-Book;
   font-weight: 100;
 }
-section .content h1 {
+.content h1 {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
 font-size: 28px;
@@ -60,7 +64,7 @@ line-height: 44px;
   -webkit-justify-content: center;
   justify-content: center;
 }
-section .content input {
+.content input {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
 font-size:24px; 
@@ -727,7 +731,7 @@ line-height: 66px;
     display:block;
     width: 100%;
     height: 102%;
-    background: url("../images/sorrindo.jpg") center center;
+    background: url("../images/sorriso5fps.gif") center center;
     background-size: cover;
     opacity: 0.1;
   }
@@ -934,7 +938,7 @@ line-height: 66px;
     display:block;
     width: 100%;
     height: 102%;
-    background: url("../images/serio.jpg") center center;
+    background: url("../images/semsorrir5fps.gif") center center;
     background-size: cover;
     opacity: 0.1;
   }
@@ -2567,8 +2571,37 @@ background: rgba(215,215,215,0.1);
   background-color: #fff;
 }
 
+.enviar{
+  /* Rectangle 9 Copy: */
+border: 2px solid #ECECEC;
+border-radius: 8px;
+background: transparent;
+/* ENVIAR: */
+font-family: Avenir-Book;
+font-size: 16.91px;
+color: #FFFFFF;
+line-height: 23px;
+padding: 10px;
+margin-top: 26px;
+text-transform: uppercase;
+}
+
 
 @media screen and (max-width:768px) { 
+
+  .enviar{
+  /* Rectangle 9 Copy: */
+border: 2px solid #ECECEC;
+border-radius: 8px;
+/* ENVIAR: */
+font-family: Avenir-Book;
+font-size: 16.91px;
+color: #FFFFFF;
+line-height: 23px;
+padding: 10px;
+margin-top: 40px;
+}
+
 
   .progress14 progress {
   width:600px;
@@ -3004,6 +3037,18 @@ float:left;
 margin-top:28px !important;
 margin-left: 5px !important;
 
+}
+
+.enviar{
+/* Rectangle 9 Copy: */
+border: 2px solid #ECECEC;
+border-radius: 8px;
+/* ENVIAR: */
+font-family: Avenir-Book;
+font-size: 15.27px;
+color: #FFFFFF;
+line-height: 21px;
+text-transform: uppercase;
 }
 
 

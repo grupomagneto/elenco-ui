@@ -17,17 +17,21 @@
   <body class="noJS" id="gradient" >
 
  
-<form action="">
+<form action="adiciona-usuario.php" method="post" enctype="multipart/form-data">
 
-<section class="section1 current gradient" id="1" data-section="1">
+<section class="section1">
 
   <div class="content"> 
     <i class="arrow icon-arrow-up"></i>
 
     <h1>Qual o seu primeiro nome?</h1>
-    <input name="cpf" id="cpf" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
+
+    <input name="nome" id="nome" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
+
 
     <i class="arrow icon-arrow-down"></i>
+
+
 
 
 <div class="progress1">
@@ -49,14 +53,15 @@
 
   </div>
 
-
 </section>
 
 <section class="section2 gradient" id="2"  data-section="2">
   <div class="content"> 
     <div class="responsavel"><h1>Qual seu sobrenome?</h1></div>
 
-    <input name="nome2" id="nome2" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
+    <input name="sobrenome" id="sobrenome" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
+
+
 
  <div class="progress2">
   
@@ -74,6 +79,7 @@
     </ul>
 
   </nav>
+
 
   </div>
 </section>
@@ -148,7 +154,7 @@
 
 <label class="myFile2">
   <img src="images/upload.svg"  alt="upload" />
-  <input type="file" />
+  <input type="file" name="fotos" />
 </label>
 
 
@@ -158,7 +164,7 @@
 
   </div>
 
-         <nav>
+  <nav>
     <ul class="vs-vertical-nav">
 
       <li><a href="#4" class="vs-prev">Next</a></li>
@@ -177,11 +183,13 @@
 <section class="section6" id="6" data-section="6">  
   <div class="content"> 
 
-  <div class="contato"><h1>Qual o seu celular?</h1>
+  <div class="contato">
+    <h1>Qual o seu celular?</h1>
 
-    <input name="celular" id="celular" type="text" onkeypress ="autoTab(this, event);" required />
+    <input name="celular" id="celular" type="text" onkeypress ="autoTab(this, event);" maxlength="15" required />
 
   </div> 
+
 
 
 
@@ -213,8 +221,7 @@
 <div class="email"> <h1>E o seu email?</h1>  </div>
   
 
-    <input name="celular" id="celular" type="text" onkeypress ="autoTab(this, event);" required />
-
+    <input name="email" id="email" type="email" onkeypress ="autoTab(this, event);"  required />
 
 
 
@@ -247,9 +254,9 @@
    <div class="sexo"> <h1>Qual o seu sexo?</h1></div>
 
     <div class="toggleswitch">
-      <input id="opt_a" name="option" type="radio" value="opt_a" onkeypress ="autoTab(this, event);">
+      <input id="opt_a" name="sexo" type="radio" value="feminino" onkeypress ="autoTab(this, event);">
       <label for="opt_a">Feminino</label>
-      <input checked="checked" id="opt_b" name="option" type="radio" value="opt_b" onkeypress ="autoTab(this, event);">
+      <input checked="checked" id="opt_b" name="sexo" type="radio" value="masculino" onkeypress ="autoTab(this, event);">
       <label for="opt_b">Masculino</label>  
     </div>
 
@@ -261,7 +268,9 @@
 
   </div>
 
-         <nav>
+
+
+  <nav>
     <ul class="vs-vertical-nav">
 
       <li><a href="#7" class="vs-prev">Next</a></li>
@@ -291,6 +300,7 @@
     <option value="preta">Preta</option>
     <option value="parda">Parda</option>
   </select>  
+
 
 
 
@@ -325,7 +335,7 @@
 
     <div class="left">
 
-<select name="bairros" class="custom" onkeypress ="autoTab(this, event);">
+<select name="bairro" class="custom" onkeypress ="autoTab(this, event);">
    <option selected="selected" value="aguasclaras"> Águas Claras</option>
    <option value="asanorte"> Asa Norte</option>
    <option value="asanorte"> Asa Sul</option>
@@ -376,7 +386,7 @@
 
   </div>
   
-         <nav>
+    <nav>
     <ul class="vs-vertical-nav">
 
       <li><a href="#9" class="vs-prev">Next</a></li>
@@ -397,9 +407,9 @@
      <div class="ator"> <h1>Você é ator ou atriz com DRT?</h1> </div>  
 
     <div class="toggleswitch2">
-      <input id="sim" name="option" type="radio" value="sim" onkeypress ="autoTab(this, event);">
+      <input id="sim" name="ator" type="radio" value="sim" required onkeypress ="autoTab(this, event);">
       <label for="sim">Sim</label>
-      <input checked="checked" id="nao" name="option" type="radio" value="nao" onkeypress ="autoTab(this, event);">
+      <input checked="checked" id="nao" name="ator" type="radio" required value="nao" onkeypress ="autoTab(this, event);">
       <label for="nao">Não</label>  
     </div>
 
@@ -416,9 +426,10 @@
 
 
 
-  <div class="progress12">
+
+  <div class="progress13">
   
-    <progress id="progressbar12" value="0"></progress>
+    <progress id="progressbar13" value="0"></progress>
 
   </div>
   
@@ -445,14 +456,14 @@
     <div class="ig">
 
       <img class="insta" src="images/ig.svg" alt="instagram">
-      <input name="ig" id="ig" class="ig2" type="text" required onkeypress ="autoTab(this, event);" />
+      <input name="instagram" id="ig" class="ig2" type="text" required onkeypress ="autoTab(this, event);" />
 
     </div>
 
     <div class="face">
 
       <img src="images/face.svg" alt="facebook">
-      <input name="face" id="face" class="face2" type="text" required onkeypress ="autoTab(this, event);" />
+      <input name="facebook" id="face" class="face2" type="text" required onkeypress ="autoTab(this, event);" />
 
     </div>
 
@@ -463,6 +474,7 @@
       
     </div>
 
+      <button class="enviar" type="submit">Enviar</button>
 
 
   <div class="progress14">
@@ -487,6 +499,8 @@
   </div>
 </section>
 
+
+
 <section class="section13 gradient" id="13" data-section="13">
 
 <div class="gradient4"></div> 
@@ -496,8 +510,10 @@
   
   <div class="logomag"><img src="images/logo.svg" alt="LOGO"></div>
 
+
+
   
-         <nav>
+  <nav>
     <ul class="vs-vertical-nav">
 
       <li><a href="#12" class="vs-prev">Next</a></li>
@@ -506,93 +522,16 @@
 
   </nav>
 
-  </nav>
+  
     
   </div>
 
-</section>
 
 
-<!-- <section class="section14 gradient" id="14" data-section="14">
-  <div class="content"> 
-
-  <div class="quartoze"><h1>Que tal deixar seu perfil mais completo?</h1></div>   
-
-    <div class="ig">
-
-      <img class="insta" src="images/ig.svg" alt="instagram">
-      <input name="ig" id="ig" class="ig2" type="text" required onkeypress ="autoTab(this, event);" />
-
-    </div>
-
-    <div class="face">
-
-      <img src="images/face.svg" alt="facebook">
-      <input name="face" id="face" class="face2" type="text" required onkeypress ="autoTab(this, event);" />
-
-    </div>
-
-    <div class="tt">
-
-      <img src="images/tt.svg" class="imgtt"  alt="twitter">
-      <input name="twitter" id="twitter" class="twitter2" type="text" required onkeypress ="autoTab(this, event);" />
-      
-    </div>
-
-
-
-  <div class="progress14">
-  
-    <progress id="progressbar14" value="0"></progress>
-
-  </div>
-  
-         <nav>
-    <ul class="vs-vertical-nav">
-
-      <li><a href="#12" class="vs-prev">Next</a></li>
-
-      <li><a href="#15" class="vs-next">Prev</a></li>
-
-    </ul>
-
-  </nav>
-
-
-
-  </div>
-</section>
-
-
-
-<section class="section15 gradient" id="15" data-section="15">
-
-<div class="gradient4"></div> 
-  <div class="content">   
-
- <div class="ultima"><h1>Bem-vind@ ao <br />nosso elenco!</h1></div>   
-  
-  <div class="logomag"><img src="images/logo.svg" alt="LOGO"></div>
-
-  
-         <nav>
-    <ul class="vs-vertical-nav">
-
-      <li><a href="#14" class="vs-prev">Next</a></li>
-
-    </ul>
-
-  </nav>
-
-  </nav>
-    
-  </div>
-</section> -->
+</section> 
 
 
 </form>
-
-
 
 
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>

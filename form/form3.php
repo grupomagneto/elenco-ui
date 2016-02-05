@@ -17,7 +17,7 @@
   <body class="noJS" id="gradient" >
 
  
-<form action="">
+<form action="adiciona-usuario.php" method="post" enctype="multipart/form-data">
 
 <section class="section1 current gradient" id="1" data-section="1">
 

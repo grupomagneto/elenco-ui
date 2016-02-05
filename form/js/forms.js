@@ -6,6 +6,32 @@ $( "input" ).change(function() {
  }, 800);
 });*/
 
+//INICIO MASCARA
+
+/*function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout("execmascara()",1)
+}
+function execmascara(){
+    v_obj.value=v_fun(v_obj.value)
+}
+function mtel(v){
+    v=v.replace(/\D/g,"");             
+    v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); 
+    v=v.replace(/(\d)(\d{4})$/,"$1-$2");    
+    return v;
+}
+function id( el ){
+  return document.getElementById( el );
+}
+window.onload = function(){
+  id('celular').onkeyup = function(){
+    mascara( this, mtel );
+  }
+}*/
+
+//FIM MASCARA
 
 function autoTab(input, e)  {   
   var ind = 0;  
@@ -49,12 +75,12 @@ $('html,body').animate({
 }
 
 var colors = new Array(
-  [165, 0, 200],
-  [176, 116, 255],
-  [255, 41, 129],
-  [237, 107, 107],
-  [201, 87, 222],
-  [35, 188, 237]
+  [165, 0, 200, 0.1],
+  [176, 116, 255, 0.1],
+  [255, 41, 129, 0.1],
+  [237, 107, 107, 0.1],
+  [201, 87, 222, 0.1],
+  [35, 188, 237, 0.1]
   );
 
 var step = 0;
