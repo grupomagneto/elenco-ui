@@ -4,9 +4,9 @@
 
 <?php 
 
-function insereUsuario($conexao, $nome, $sobrenome, $celular){
+function insereUsuario($conexao, $nome){
 
-    $query = "insert into usuario (nome, sobrenome, celular) values ('{$nome}', '{$sobrenome}', $celular)";
+    $query = "insert into usuario (nome) values ('{$nome}')";
     return mysqli_query($conexao, $query);
 }
 

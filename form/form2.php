@@ -121,7 +121,7 @@
 
 <label class="myFile">
   <img src="images/upload.svg"  alt="upload" />
-  <input type="file" />
+  <input type="file" name="foto"  />
 </label>
 
 
@@ -154,7 +154,7 @@
 
 <label class="myFile2">
   <img src="images/upload.svg"  alt="upload" />
-  <input type="file" name="fotos" />
+  <input type="file" name="fotos"  />
 </label>
 
 
@@ -186,7 +186,7 @@
   <div class="contato">
     <h1>Qual o seu celular?</h1>
 
-    <input name="celular" id="celular" type="text" onkeypress ="autoTab(this, event);" maxlength="15" required />
+    <input name="celular" id="celular" type="text" onkeypress ="autoTab(this, event);" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" required />
 
   </div> 
 
@@ -340,7 +340,7 @@
    <option value="asanorte"> Asa Norte</option>
    <option value="asanorte"> Asa Sul</option>
    <option value="brazlandia"> Brazlandia</option>
-   <option value="ca"> CA Do Lago Norte</option>
+   <option value="ca do lago norte"> CA Do Lago Norte</option>
    <option value="candangolandia"> Candangolândia</option>
    <option value="ceilandia"> Ceilândia</option>
    <option value="colorado"> Colorado</option>
@@ -541,6 +541,7 @@
 <script src="js/jScrollPane.js"></script>
     <script src="js/jquery.mousewheel.js"></script>
     <script src="js/SelectBox.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
 
         <script src="js/forms.js"></script>
 
