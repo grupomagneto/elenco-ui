@@ -63,7 +63,7 @@
           		echo "<a href='form2.php'>Clique aqui para voltar</a>";
         	}
 
-header("location: form2.php#13");
+header("location: sucesso.php");
 
 
 mysqli_close($con);

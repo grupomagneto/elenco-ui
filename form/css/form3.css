@@ -3020,6 +3020,54 @@ margin-top: 80px;
   }
 
 
+.enviar{
+  /* Rectangle 9 Copy: */
+border: 2px solid #ECECEC;
+border-radius: 8px;
+background: transparent;
+/* ENVIAR: */
+font-family: Avenir-Book;
+font-size: 16.91px;
+color: #FFFFFF;
+line-height: 23px;
+padding: 10px;
+margin-top: 26px;
+text-transform: uppercase;
+}
+
+@media screen and (max-width:768px) { 
+
+  .enviar{
+  /* Rectangle 9 Copy: */
+border: 2px solid #ECECEC;
+border-radius: 8px;
+/* ENVIAR: */
+font-family: Avenir-Book;
+font-size: 16.91px;
+color: #FFFFFF;
+line-height: 23px;
+padding: 10px;
+margin-top: 40px;
+}
+
+}
+
+@media screen and (max-width:380px) { 
+
+.enviar{
+/* Rectangle 9 Copy: */
+border: 2px solid #ECECEC;
+border-radius: 8px;
+/* ENVIAR: */
+font-family: Avenir-Book;
+font-size: 15.27px;
+color: #FFFFFF;
+line-height: 21px;
+text-transform: uppercase;
+}
+
+}
+
 
 /**********************
 SETAS

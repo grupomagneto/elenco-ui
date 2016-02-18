@@ -521,6 +521,7 @@
     </div>
 
 
+      <button class="enviar" type="submit">Enviar Cadastro</button>
 
   <div class="progress14">
   
@@ -531,9 +532,7 @@
          <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#12" class="vs-prev">Next</a></li>
-
-      <li><a href="#15" class="vs-next">Prev</a></li>
+      <li><a href="#12" class="vs-prev">Prev</a></li>
 
     </ul>
 
@@ -544,7 +543,7 @@
   </div>
 </section>
 
-
+<!-- 
 
 <section class="section15 gradient" id="15" data-section="15">
 
@@ -568,11 +567,10 @@
   </nav>
     
   </div>
-</section>
+</section> -->
 
 
 </form>
-
 
 
 
@@ -583,6 +581,7 @@
 <script src="js/jScrollPane.js"></script>
     <script src="js/jquery.mousewheel.js"></script>
     <script src="js/SelectBox.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
 
         <script src="js/forms.js"></script>
 

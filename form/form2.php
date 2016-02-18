@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html>
   <head>
     <meta charset="UTF-8">
     <title>Magneto Elenco</title>
@@ -256,7 +256,7 @@
     <div class="toggleswitch">
       <input id="opt_a" name="sexo" type="radio" value="feminino" onkeypress ="autoTab(this, event);">
       <label for="opt_a">Feminino</label>
-      <input checked="checked" id="opt_b" name="sexo" type="radio" value="masculino" onkeypress ="autoTab(this, event);">
+      <input id="opt_b" name="sexo" type="radio" value="masculino" onkeypress ="autoTab(this, event);">
       <label for="opt_b">Masculino</label>  
     </div>
 
@@ -294,7 +294,8 @@
      <div class="raca"> <h1>Qual a sua raça?</h1></div>
     
   <select name="raca" class="custom" onkeypress ="autoTab(this, event);">
-    <option  selected="selected"  value="amarelo">Amarela</option>
+    <option  selected="selected" >Selecione</option>
+    <option value="amarelo">Amarela</option>
     <option value="branca">Branca</option>
     <option value="indigena">Indigena</option>
     <option value="preta">Preta</option>
@@ -336,6 +337,7 @@
     <div class="left">
 
 <select name="bairro" class="custom" onkeypress ="autoTab(this, event);">
+    <option  selected="selected">Selecione</option>
    <option selected="selected" value="aguasclaras"> Águas Claras</option>
    <option value="asanorte"> Asa Norte</option>
    <option value="asanorte"> Asa Sul</option>
@@ -474,7 +476,7 @@
       
     </div>
 
-      <button class="enviar" type="submit">Enviar</button>
+      <button class="enviar" type="submit">Enviar Cadastro</button>
 
 
   <div class="progress14">
@@ -486,9 +488,7 @@
          <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#11" class="vs-prev">Next</a></li>
-
-      <li><a href="#13" class="vs-next">Prev</a></li>
+      <li><a href="#11" class="vs-prev">Prev</a></li>
 
     </ul>
 
@@ -498,9 +498,7 @@
 
   </div>
 </section>
-
-
-
+<!-- 
 <section class="section13 gradient" id="13" data-section="13">
 
 <div class="gradient4"></div> 
@@ -511,24 +509,13 @@
   <div class="logomag"><img src="images/logo.svg" alt="LOGO"></div>
 
 
-
-  
-  <nav>
-    <ul class="vs-vertical-nav">
-
-      <li><a href="#12" class="vs-prev">Next</a></li>
-
-    </ul>
-
-  </nav>
-
   
     
   </div>
 
 
 
-</section> 
+</section>  -->
 
 
 </form>

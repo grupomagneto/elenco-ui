@@ -60,6 +60,10 @@
     			<a href="#slide4"><span><i class="fa fa-circle-o"></i></span></a>
   			</div>
 
+  			<div class="footer">
+  				<a href="index2.php"><h1>Pular introdução</h1></a>
+  			</div>
+
             </li>
 
             <li id="slide2" class="pane2">
@@ -83,6 +87,11 @@
     			<a href="#slide4"><span><i class="fa fa-circle-o"></i></span></a>
   			</div>
 
+
+  			<div class="footer">
+  				<a href="index2.php"><h1>Pular introdução</h1></a>
+  			</div>
+
             </li>
 
             <li id="slide3" class="pane3">
@@ -103,6 +112,11 @@
     			<a href="#slide2"><span><i class="fa fa-circle-o"></i></span>&nbsp;</a>
     			<a href="#slide3"><span><i class="fa fa-circle"></i></span>&nbsp;</a>
     			<a href="#slide4"><span><i class="fa fa-circle-o"></i></span></a>
+  			</div>
+
+  			
+  			<div class="footer">
+  				<a href="index2.php"><h1>Pular introdução</h1></a>
   			</div>
 
             </li>
