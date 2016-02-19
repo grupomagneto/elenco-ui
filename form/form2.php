@@ -19,7 +19,7 @@
  
 <form action="adiciona-usuario.php" method="post" enctype="multipart/form-data">
 
-<section class="section1">
+<section class="section1" id="1">
 
   <div class="content"> 
     <i class="arrow icon-arrow-up"></i>
@@ -56,6 +56,9 @@
 </section>
 
 <section class="section2 gradient" id="2"  data-section="2">
+
+
+
   <div class="content"> 
     <div class="responsavel"><h1>Qual seu sobrenome?</h1></div>
 
@@ -86,6 +89,49 @@
 
 <section class="section3 gradient" id="3" data-section="3">
   <div class="content"> 
+
+   <div class="sexo"> <h1>Qual o seu sexo?</h1></div>
+
+    <div class="toggleswitch">
+      <input id="opt_a" name="sexo" type="radio" value="feminino"  onchange="exibeMsg(this.value);">
+      <label for="opt_a">Feminino</label>
+      <input id="opt_b" name="sexo" type="radio" value="masculino"  onchange="exibeMsg(this.value);">
+      <label for="opt_b">Masculino</label>  
+    </div>
+
+
+
+
+  <div class="progress10">
+  
+    <progress id="progressbar10" value="0"></progress>
+
+  </div>
+
+
+
+  <nav>
+    <ul class="vs-vertical-nav">
+
+      <li><a href="#2" class="vs-prev">Next</a></li>
+
+      <li><a href="#4" class="vs-next">Prev</a></li>
+
+    </ul>
+
+  </nav>
+
+
+
+
+
+  </div>
+</section>
+
+<section class="section4 gradient" id="4" data-section="4">
+
+  
+  <div class="content"> 
  
     <div class="camera"><img src="images/camera.svg" alt="camera"></div>  
   <div class="fotos"> <h1 >Precisamos de duas fotos <br /> suas feitas hoje</h1></div> 
@@ -100,18 +146,20 @@
   <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#2" class="vs-prev">Next</a></li>
+      <li><a href="#3" class="vs-prev">Next</a></li>
 
-      <li><a href="#4" class="vs-next">Prev</a></li>
+      <li><a href="#5" class="vs-next">Prev</a></li>
 
     </ul>
 
   </nav>
 
   </div>
+
 </section>
 
-<section class="section4 gradient" id="4" data-section="4">
+<section class="section5 gradient" id="5" data-section="5">
+
   <div class="gradient2"></div>
 
   <div class="content"> 
@@ -134,18 +182,22 @@
          <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#3" class="vs-prev">Next</a></li>
+      <li><a href="#4" class="vs-prev">Next</a></li>
 
-      <li><a href="#5" class="vs-next">Prev</a></li>
+      <li><a href="#6" class="vs-next">Prev</a></li>
 
     </ul>
 
   </nav>
 
   </div>
+
 </section>
 
-<section class="section5 gradient" id="5" data-section="5">
+<section class="section6" id="6" data-section="6">  
+
+
+  
       <div class="gradient3"></div>
   <div class="content"> 
 
@@ -167,9 +219,9 @@
   <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#4" class="vs-prev">Next</a></li>
+      <li><a href="#5" class="vs-prev">Next</a></li>
 
-      <li><a href="#6" class="vs-next">Prev</a></li>
+      <li><a href="#7" class="vs-next">Prev</a></li>
 
     </ul>
 
@@ -177,10 +229,11 @@
 
 
   </div>
-
 </section>
 
-<section class="section6" id="6" data-section="6">  
+<section class="section7" id="7" data-section="7">
+
+  
   <div class="content"> 
 
   <div class="contato">
@@ -202,9 +255,9 @@
          <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#5" class="vs-prev">Next</a></li>
+      <li><a href="#6" class="vs-prev">Next</a></li>
 
-      <li><a href="#7" class="vs-next">Prev</a></li>
+      <li><a href="#8" class="vs-next">Prev</a></li>
 
     </ul>
 
@@ -215,7 +268,8 @@
   </div>
 </section>
 
-<section class="section7" id="7" data-section="7">
+<section class="section8 gradient" id="8" data-section="8">
+  
  <div class="content"> 
 
 <div class="email"> <h1>E o seu email?</h1>  </div>
@@ -235,44 +289,6 @@
 
     <ul class="vs-vertical-nav">
 
-      <li><a href="#6" class="vs-prev">Next</a></li>
-
-      <li><a href="#8" class="vs-next">Prev</a></li>
-
-    </ul>
-
-  </nav>
-
-
-
-  </div>
-</section>
-
-<section class="section8 gradient" id="8" data-section="8">
-  <div class="content"> 
-
-   <div class="sexo"> <h1>Qual o seu sexo?</h1></div>
-
-    <div class="toggleswitch">
-      <input id="opt_a" name="sexo" type="radio" value="feminino" onkeypress ="autoTab(this, event);">
-      <label for="opt_a">Feminino</label>
-      <input id="opt_b" name="sexo" type="radio" value="masculino" onkeypress ="autoTab(this, event);">
-      <label for="opt_b">Masculino</label>  
-    </div>
-
-
-
-  <div class="progress10">
-  
-    <progress id="progressbar10" value="0"></progress>
-
-  </div>
-
-
-
-  <nav>
-    <ul class="vs-vertical-nav">
-
       <li><a href="#7" class="vs-prev">Next</a></li>
 
       <li><a href="#9" class="vs-next">Prev</a></li>
@@ -283,15 +299,13 @@
 
 
 
-
-
   </div>
 </section>
 
 <section class="section9 gradient" id="9" data-section="9">
   <div class="content"> 
 
-     <div class="raca"> <h1>Qual a sua raça?</h1></div>
+     <div class="raca"> <h1>Qual a cor da sua pele?</h1></div>
     
   <select name="raca" class="custom" onkeypress ="autoTab(this, event);">
     <option  selected="selected" >Selecione</option>

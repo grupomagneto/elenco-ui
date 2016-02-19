@@ -79,6 +79,38 @@
 </section>
 
 <section class="section3 gradient" id="3" data-section="3">
+
+  
+  <div class="content"> 
+
+    <h1>Qual o primeiro nome da <br> pessoa sendo cadastrada?</h1>
+    <input name="nome3" id="nome3" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
+
+
+  <div class="progress4">
+  
+    <progress id="progressbar4" value="0"></progress>
+
+  </div>
+
+         <nav>
+    <ul class="vs-vertical-nav">
+
+      <li><a href="#3" class="vs-prev">Next</a></li>
+
+      <li><a href="#4" class="vs-next">Prev</a></li>
+
+    </ul>
+
+  </nav>
+
+  </div>
+
+</section>
+
+<section class="section4 gradient" id="4" data-section="4">
+
+
   <div class="content"> 
 
     <h1>Qual o seu o sobrenome?</h1>
@@ -97,33 +129,6 @@
 
       <li><a href="#2" class="vs-prev">Next</a></li>
 
-      <li><a href="#4" class="vs-next">Prev</a></li>
-
-    </ul>
-
-  </nav>
-
-  </div>
-</section>
-
-<section class="section4 gradient" id="4" data-section="4">
-  <div class="content"> 
-
-    <h1>Qual o primeiro nome da <br> pessoa sendo cadastrada?</h1>
-    <input name="nome3" id="nome3" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
-
-
-  <div class="progress4">
-  
-    <progress id="progressbar4" value="0"></progress>
-
-  </div>
-
-         <nav>
-    <ul class="vs-vertical-nav">
-
-      <li><a href="#3" class="vs-prev">Next</a></li>
-
       <li><a href="#5" class="vs-next">Prev</a></li>
 
     </ul>
@@ -131,9 +136,54 @@
   </nav>
 
   </div>
+
+
 </section>
 
 <section class="section5 gradient" id="5" data-section="5">
+
+  <div class="content"> 
+
+   <div class="sexo"> <h1>Qual o sexo d@ fulan@?</h1></div>
+
+    <div class="toggleswitch">
+      <input id="opt_a" name="option" type="radio" value="opt_a" onkeypress ="autoTab(this, event);">
+      <label for="opt_a">Feminino</label>
+      <input id="opt_b" name="option" type="radio" value="opt_b" onkeypress ="autoTab(this, event);">
+      <label for="opt_b">Masculino</label>  
+    </div>
+
+
+
+  <div class="progress10">
+  
+    <progress id="progressbar10" value="0"></progress>
+
+  </div>
+
+         <nav>
+    <ul class="vs-vertical-nav">
+
+      <li><a href="#9" class="vs-prev">Next</a></li>
+
+      <li><a href="#6" class="vs-next">Prev</a></li>
+
+    </ul>
+
+  </nav>
+
+
+
+
+
+  </div>
+
+</section>
+
+<section class="section6" id="6" data-section="6">  
+
+
+
   <div class="content"> 
  
     <div class="camera"><img src="images/camera.svg" alt="camera"></div>  
@@ -151,18 +201,18 @@
 
       <li><a href="#3" class="vs-prev">Next</a></li>
 
-      <li><a href="#6" class="vs-next">Prev</a></li>
+      <li><a href="#7" class="vs-next">Prev</a></li>
 
     </ul>
 
   </nav>
 
   </div>
+  
+  </section>
 
-</section>
-
-<section class="section6" id="6" data-section="6">  
-	<div class="gradient2"></div>
+<section class="section7" id="7" data-section="7">
+  <div class="gradient2"></div>
 
   <div class="content"> 
 
@@ -186,17 +236,20 @@
 
       <li><a href="#5" class="vs-prev">Next</a></li>
 
-      <li><a href="#7" class="vs-next">Prev</a></li>
+      <li><a href="#8" class="vs-next">Prev</a></li>
 
     </ul>
 
   </nav>
 
   </div>
+
+
 </section>
 
-<section class="section7" id="7" data-section="7">
-  		<div class="gradient3"></div>
+<section class="section8 gradient" id="8" data-section="8">
+
+      <div class="gradient3"></div>
   <div class="content"> 
 
     <div class="serio"><h1>Agora Séri@!</h1></div>
@@ -219,7 +272,7 @@
 
       <li><a href="#6" class="vs-prev">Next</a></li>
 
-      <li><a href="#8" class="vs-next">Prev</a></li>
+      <li><a href="#9" class="vs-next">Prev</a></li>
 
     </ul>
 
@@ -227,9 +280,10 @@
 
 
   </div>
+
 </section>
 
-<section class="section8 gradient" id="8" data-section="8">
+<section class="section9 gradient" id="9" data-section="9">
   <div class="content"> 
 
   <div class="contato"><h1>Qual o seu celular para contato?</h1>
@@ -251,7 +305,7 @@
 
       <li><a href="#7" class="vs-prev">Next</a></li>
 
-      <li><a href="#9" class="vs-next">Prev</a></li>
+      <li><a href="#10" class="vs-next">Prev</a></li>
 
     </ul>
 
@@ -262,7 +316,8 @@
   </div>
 </section>
 
-<section class="section9 gradient" id="9" data-section="9">
+<section class="section10 gradient" id="10" data-section="10">
+  
   <div class="content"> 
 
 <div class="email"> <h1>E o email?</h1>  </div>
@@ -285,49 +340,11 @@
 
       <li><a href="#8" class="vs-prev">Next</a></li>
 
-      <li><a href="#10" class="vs-next">Prev</a></li>
-
-    </ul>
-
-  </nav>
-
-
-
-  </div>
-</section>
-
-<section class="section10 gradient" id="10" data-section="10">
-  <div class="content"> 
-
-   <div class="sexo"> <h1>Qual o sexo d@ fulan@?</h1></div>
-
-    <div class="toggleswitch">
-      <input id="opt_a" name="option" type="radio" value="opt_a" onkeypress ="autoTab(this, event);">
-      <label for="opt_a">Feminino</label>
-      <input checked="checked" id="opt_b" name="option" type="radio" value="opt_b" onkeypress ="autoTab(this, event);">
-      <label for="opt_b">Masculino</label>  
-    </div>
-
-
-
-  <div class="progress10">
-  
-    <progress id="progressbar10" value="0"></progress>
-
-  </div>
-
-         <nav>
-    <ul class="vs-vertical-nav">
-
-      <li><a href="#9" class="vs-prev">Next</a></li>
-
       <li><a href="#11" class="vs-next">Prev</a></li>
 
     </ul>
 
   </nav>
-
-
 
 
 
@@ -337,10 +354,11 @@
 <section class="section11 gradient" id="11" data-section="11">
   <div class="content"> 
 
-     <div class="raca"> <h1>E a raça?</h1></div>
+     <div class="raca"> <h1>Qual a cor da sua pele?</h1></div>
     
   <select name="raca" class="custom" onkeypress ="autoTab(this, event);">
-    <option  selected="selected"  value="amarelo">Amarela</option>
+    <option selected="selected"   value="">Selecione</option>
+    <option   value="amarelo">Amarela</option>
     <option value="branca">Branca</option>
     <option value="indigena">Indigena</option>
     <option value="preta">Preta</option>
@@ -382,7 +400,8 @@
     <div class="left">
 
 <select name="bairros" class="custom" onkeypress ="autoTab(this, event);">
-   <option selected="selected" value="aguasclaras"> Águas Claras</option>
+    <option selected="selected"   value="">Selecione</option>
+   <option value="aguasclaras"> Águas Claras</option>
    <option value="asanorte"> Asa Norte</option>
    <option value="asanorte"> Asa Sul</option>
    <option value="brazlandia"> Brazlandia</option>
