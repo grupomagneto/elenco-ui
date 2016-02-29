@@ -49,7 +49,7 @@ font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
   margin-top: -80px;
-  margin-left: -170px;
+  margin-left: -150px;
   position: relative;
    -webkit-align-items: center;
   align-items: center;
@@ -143,9 +143,9 @@ border-radius: 8px;
 section .content h1 {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 44px;
+line-height: 38px;
   margin-top: -80px;
   margin-left: -10px;
   position: relative;
@@ -184,11 +184,11 @@ border-radius: 8px;
 section .content h1 {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 44px;
-  margin-top: -120px;
-  margin-left:30px;
+line-height: 38px;
+  margin-top: -150px;
+  margin-left:-20px;
   position: absolute;
 }
 section .content input {
@@ -227,11 +227,11 @@ border-radius: 8px;
 section .content h1 {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 28px;
 color: #FFFFFF;
-line-height: 44px;
+line-height: 38px;
   margin-top: -120px;
-  margin-left:2px;
+  margin-left:-20px;
   position: absolute;
 }
 section .content input {
@@ -241,7 +241,7 @@ font-size:24px;
 color:white; 
 padding-left:10px;
   margin-top: -104px;
-  margin-left:2px;
+  margin-left:1px;
  /* Rectangle 9 Copy: */
 background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
@@ -269,8 +269,11 @@ font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
   margin-top: -80px;
-  margin-left: 10px;
+  left:50%; 
+margin-left:-250px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+  width:370px;
   position: relative;
+  text-align: justify;
 }
 .progress2 progress {
   width:600px;
@@ -330,22 +333,41 @@ border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
 
+
+section .content .responsavel h1 {
+  /*  Qual o nome complet: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 38px;
+  left:50%; 
+margin-left:-140px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+  width:320px;
+  position: relative;
+  text-align: justify;
+}
+
 }
 
 
 @media screen and (max-width:414px) { 
 
+
+
 section .content .responsavel h1 {
- /* Qual o seu primeiro : */
+  /*  Qual o nome complet: */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 24px;
 color: #FFFFFF;
-line-height: 44px;
-  margin-top: -80px;
-  margin-left: 25px;
-  width:280px;
+line-height: 38px;
+  left:50%; 
+margin-left:-140px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+  width:300px;
   position: relative;
+  text-align: justify;
 }
+
+
 section .content .responsavel input {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
@@ -366,17 +388,20 @@ border-radius: 8px;
 
 @media screen and (max-width:390px) { 
 
+
 section .content .responsavel h1 {
- /* Qual o seu primeiro : */
+  /*  Qual o nome complet: */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 24px;
 color: #FFFFFF;
-line-height: 44px;
-  margin-top: -80px;
-  margin-left: 20px;
-  width:280px;
+line-height: 38px;
+  left:50%; 
+margin-left:-140px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+  width:300px;
   position: relative;
+  text-align: justify;
 }
+
 section .content .responsavel input {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
@@ -409,17 +434,20 @@ border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
 
+
 section .content .responsavel h1 {
- /* Qual o seu primeiro : */
+  /*  Qual o nome complet: */
 font-family: Avenir-Book;
-font-size: 20px;
+font-size: 24px;
 color: #FFFFFF;
-line-height: 44px;
-  margin-top: -80px;
-  margin-left: -10px;
-  width:280px;
+line-height: 38px;
+  left:50%; 
+margin-left:-140px; /* Margem negativa para a esquerda com a metade do valor da largura da imagem */
+  width:270px;
   position: relative;
+  text-align: justify;
 }
+
 section .content .responsavel input {
  /* Qual o seu primeiro : */
 font-family: Avenir-Book;
@@ -519,6 +547,22 @@ QUARTA DIV
   top: 300%;
 }
 
+
+section .content .nomeuser h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -240px;
+  position: relative;
+   -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
 .progress4 progress {
   width:600px;
   position:absolute; 
@@ -578,11 +622,54 @@ border-radius: 8px;
 }
 
 
+section .content .nomeuser h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -40px;
+  position: relative;
+   -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+
 }
 
 /*
 QUINTA DIV
 */
+
+
+section .content .sobrenome h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -280px;
+  position: relative;
+}
+
+
+@media screen and (max-width:600px) { 
+  section .content .sobrenome h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: -80px;
+  margin-left: -70px;
+  position: relative;
+}
+}
+
 
 
 section .content .fotos h1 {
@@ -1267,6 +1354,32 @@ line-height: 44px;
 
 }
 
+
+@media screen and (max-width:320px) { 
+
+section .content .contato h1 {
+/* Qual celular para co: */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 38px;
+  margin-top: -110px;
+  margin-left: 2px;
+  position: relative;
+}
+
+section .content .contato input {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+  margin-top: 50px;
+  margin-left: -2px;
+  position: relative;
+}
+}
+
 /*
 NONA DIV
 */
@@ -1406,8 +1519,11 @@ font-family: Avenir-Book;
 font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
-  margin-top: -150px;
-  margin-left: -95px;
+width:320px;
+  margin-top: -170px;
+  margin-left: -150px;
+  left:50%;
+  text-align: justify;
   position: relative;
 }
 
@@ -1521,11 +1637,12 @@ border-radius: 8px;
 section .content .sexo h1 {
 /* Qual celular para co: */
 font-family: Avenir-Book;
-font-size: 28px;
+font-size: 24px;
 color: #FFFFFF;
-line-height: 38px;
+line-height: 36px;
   margin-top: -150px;
-  margin-left: -10px;
+  margin-left: -150px;
+  left:50%;
   position: relative;
 }
 
@@ -1582,14 +1699,17 @@ margin-top:-30px;
 
 @media screen and (max-width:320px) { 
 
+
 section .content .sexo h1 {
 /* Qual celular para co: */
 font-family: Avenir-Book;
-font-size: 28px;
+font-size: 24px;
 color: #FFFFFF;
-line-height: 38px;
-  margin-top: -150px;
-  margin-left: -10px;
+line-height: 36px;
+width:270px;
+  margin-top: -130px;
+  margin-left: -140px;
+  left:50%;
   position: relative;
 }
 
@@ -1643,7 +1763,7 @@ line-height: 44px;
 position:absolute;
 left:48%;
 top:40%;
-width:320px;
+width:340px;
 margin-left:-240px;
 margin-top:-30px;
 }
@@ -1691,6 +1811,21 @@ border: 1px solid #FFFFFF;
 border-radius: 8px;
 }
 
+
+section .content .raca h1 {
+ /* Qual o seu primeiro : */
+font-family: Avenir-Book;
+font-size: 28px;
+color: #FFFFFF;
+line-height: 44px;
+position:absolute;
+left:48%;
+top:40%;
+width:340px;
+margin-left:-220px;
+margin-top:-30px;
+}
+
 }
 
 @media screen and (max-width:600px) { 
@@ -1714,8 +1849,8 @@ font-size: 28px;
 color: #FFFFFF;
 line-height: 44px;
   position: relative;
-  margin-top: -80px;
-  margin-left: -240px;
+  margin-top: -90px;
+  margin-left: -230px;
 }
 
 
@@ -1740,9 +1875,9 @@ line-height: 44px;
 position:absolute;
 left:45%;
 top:40%;
-width:180px;
+width:190px;
 margin-left:-80px;
-margin-top:-30px;
+margin-top:-60px;
 }
 
 }
@@ -1790,7 +1925,7 @@ position:absolute;
 left:45%;
 top:40%;
 width:400px;
-margin-left:-205px;
+margin-left:-225px;
 margin-top:-30px;
 }
 
@@ -1862,8 +1997,8 @@ font-size: 25px;
 color: #FFFFFF;
 line-height: 44px;
   position: relative;
-  margin-top: -80px;
-  margin-left: -45px;
+  margin-top: -100px;
+  margin-left: -250px;
 }
 
 
@@ -3100,6 +3235,10 @@ transform: translateY(-50%);
 
 }
 
+ul.vs-vertical-nav {
+
+  list-style-type: none;
+}
 
 .vs-vertical-nav a {
 

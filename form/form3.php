@@ -80,76 +80,14 @@
 
 <section class="section3 gradient" id="3" data-section="3">
 
-  
-  <div class="content"> 
+    <div class="content"> 
 
-    <h1>Qual o primeiro nome da <br> pessoa sendo cadastrada?</h1>
-    <input name="nome3" id="nome3" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
-
-
-  <div class="progress4">
-  
-    <progress id="progressbar4" value="0"></progress>
-
-  </div>
-
-         <nav>
-    <ul class="vs-vertical-nav">
-
-      <li><a href="#3" class="vs-prev">Next</a></li>
-
-      <li><a href="#4" class="vs-next">Prev</a></li>
-
-    </ul>
-
-  </nav>
-
-  </div>
-
-</section>
-
-<section class="section4 gradient" id="4" data-section="4">
-
-
-  <div class="content"> 
-
-    <h1>Qual o seu o sobrenome?</h1>
-    <input name="sobrenome" id="sobrenome" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
-
-
-
-  <div class="progress3">
-  
-    <progress id="progressbar3" value="0"></progress>
-
-  </div>
-
-         <nav>
-    <ul class="vs-vertical-nav">
-
-      <li><a href="#2" class="vs-prev">Next</a></li>
-
-      <li><a href="#5" class="vs-next">Prev</a></li>
-
-    </ul>
-
-  </nav>
-
-  </div>
-
-
-</section>
-
-<section class="section5 gradient" id="5" data-section="5">
-
-  <div class="content"> 
-
-   <div class="sexo"> <h1>Qual o sexo d@ fulan@?</h1></div>
+   <div class="sexo"> <h1>Qual o sexo da pessoa sendo cadastrada?</h1></div>
 
     <div class="toggleswitch">
-      <input id="opt_a" name="option" type="radio" value="opt_a" onkeypress ="autoTab(this, event);">
+      <input id="opt_a" name="sexo" type="radio" value="feminino" onkeypress ="autoTab(this, event);"  onchange="exibeMsg2(this.value);">
       <label for="opt_a">Feminino</label>
-      <input id="opt_b" name="option" type="radio" value="opt_b" onkeypress ="autoTab(this, event);">
+      <input id="opt_b" name="sexo" type="radio" value="masculino" onkeypress ="autoTab(this, event);"  onchange="exibeMsg2(this.value);">
       <label for="opt_b">Masculino</label>  
     </div>
 
@@ -164,7 +102,70 @@
          <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#9" class="vs-prev">Next</a></li>
+      <li><a href="#2" class="vs-prev">Next</a></li>
+
+      <li><a href="#4" class="vs-next">Prev</a></li>
+
+    </ul>
+
+  </nav>
+
+
+  </div>
+
+</section>
+
+<section class="section4 gradient" id="4" data-section="4">
+  <div class="content"> 
+
+    <div class="nomeuser">
+      <h1>Qual o nome <span id="txt2"></span>?</h1>
+    </div>
+    <input name="nome3" id="nome3" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
+
+
+  <div class="progress4">
+  
+    <progress id="progressbar4" value="0"></progress>
+
+  </div>
+
+         <nav>
+    <ul class="vs-vertical-nav">
+
+      <li><a href="#3" class="vs-prev">Next</a></li>
+
+      <li><a href="#5" class="vs-next">Prev</a></li>
+
+    </ul>
+
+  </nav>
+
+  </div>
+
+
+
+
+</section>
+
+<section class="section5 gradient" id="5" data-section="5">
+  <div class="content"> 
+
+    <div class="sobrenome"><h1>E o sobrenome?</h1></div>
+    <input name="sobrenome" id="sobrenome" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
+
+
+
+  <div class="progress3">
+  
+    <progress id="progressbar3" value="0"></progress>
+
+  </div>
+
+         <nav>
+    <ul class="vs-vertical-nav">
+
+      <li><a href="#4" class="vs-prev">Next</a></li>
 
       <li><a href="#6" class="vs-next">Prev</a></li>
 
@@ -172,11 +173,8 @@
 
   </nav>
 
-
-
-
-
   </div>
+
 
 </section>
 
@@ -187,7 +185,7 @@
   <div class="content"> 
  
     <div class="camera"><img src="images/camera.svg" alt="camera"></div>  
-  <div class="fotos"> <h1 >Precisamos de duas fotos <br /> suas feitas hoje</h1></div> 
+  <div class="fotos"> <h1 >Para começar, <br />vamos precisar de duas fotos suas feitas hoje</h1></div> 
 
 
   <div class="progress5">
@@ -199,7 +197,7 @@
   <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#3" class="vs-prev">Next</a></li>
+      <li><a href="#5" class="vs-prev">Next</a></li>
 
       <li><a href="#7" class="vs-next">Prev</a></li>
 
@@ -216,7 +214,7 @@
 
   <div class="content"> 
 
-    <div class="sorria"><h1>Sorria!</h1></div>
+    <div class="sorria"><h1>Sorrindo!</h1></div>
 
 
 <label class="myFile">
@@ -234,7 +232,7 @@
          <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#5" class="vs-prev">Next</a></li>
+      <li><a href="#6" class="vs-prev">Next</a></li>
 
       <li><a href="#8" class="vs-next">Prev</a></li>
 
@@ -252,7 +250,7 @@
       <div class="gradient3"></div>
   <div class="content"> 
 
-    <div class="serio"><h1>Agora Séri@!</h1></div>
+    <div class="serio"><h1>Agora sem sorrir</h1></div>
 
 
 <label class="myFile2">
@@ -270,7 +268,7 @@
          <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#6" class="vs-prev">Next</a></li>
+      <li><a href="#7" class="vs-prev">Next</a></li>
 
       <li><a href="#9" class="vs-next">Prev</a></li>
 
@@ -303,7 +301,7 @@
          <nav>
     <ul class="vs-vertical-nav">
 
-      <li><a href="#7" class="vs-prev">Next</a></li>
+      <li><a href="#8" class="vs-prev">Next</a></li>
 
       <li><a href="#10" class="vs-next">Prev</a></li>
 
@@ -338,7 +336,7 @@
 
     <ul class="vs-vertical-nav">
 
-      <li><a href="#8" class="vs-prev">Next</a></li>
+      <li><a href="#9" class="vs-prev">Next</a></li>
 
       <li><a href="#11" class="vs-next">Prev</a></li>
 
@@ -354,7 +352,7 @@
 <section class="section11 gradient" id="11" data-section="11">
   <div class="content"> 
 
-     <div class="raca"> <h1>Qual a cor da sua pele?</h1></div>
+     <div class="raca"> <h1>Qual a cor da pele <span id="txt4"></span> ?</h1></div>
     
   <select name="raca" class="custom" onkeypress ="autoTab(this, event);">
     <option selected="selected"   value="">Selecione</option>
@@ -395,7 +393,7 @@
 <section class="section12 gradient" id="12" data-section="12">
   <div class="content"> 
      
-     <div class="bairro"> <h1>Em qual bairro fulan@ mora?</h1> </div>
+     <div class="bairro"> <h1>Em qual bairro <span id="txt3"></span> mora?</h1> </div>
 
     <div class="left">
 
@@ -590,6 +588,7 @@
 
 
 </form>
+
 
 
 

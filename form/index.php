@@ -1,174 +1,137 @@
 <!DOCTYPE html>
-
-<html lang="en" class="no-js">
-
+<html lang="pt-br">
 <head>
-
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
-	<meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/vertical-slider.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-
-	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-
-	<title>Cadastro Magneto Elenco</title>
+	<title>Magneto Elenco </title>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
 </head>
+<body>
 
-	<body>
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide" id="gradient">
+<div class="logo">
+    <img src="images/logo.svg" alt="logo">
+</div>
 
-		<div class="vs-slider" id="demo-slider">
+<div class="slide1">
+        <div class="container">
 
-			<div class="vs-section active">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h1>Prazer!</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <p>Somos uma  <br>  agência de <br> oportunidades!</p>
+                </div>
+            </div>
+        </div>
+</div>
+        <footer class="footer">
+            <a href="index2.php">Pular Introdução</a>  
+        </footer>
+        
+        </div>
 
+        <div class="swiper-slide"  id="gradient2">
 
-        <div id="carousel">
+<div class="logo">
+    <img src="images/logo.svg" alt="logo">
+</div>
 
-        <ul>
-            <li id="slide1" class="pane1">
-				
-    			<div class="bg-img one"></div>
-    
-				<div class="titre">
-					<p>Prazer!</p>
-				</div>
+<div class="slide2">
+         <div class="container">
+         <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <p>Para atores e <br /> modelos de <br> todos os perfis</p>
+                </div>
+            </div>
 
-				<div class="logo">
-					<img src="images/logo-elenco.png" height="81" width="147" align="right" alt="">
-				</div>
-					
-				<div class="contenu">
+        </div>
+</div>
+        <footer class="footer">
+            <a href="index2.php">Pular Introdução</a>  
+        </footer>
+        
+        </div>
 
-					<p>Somos uma <br /> agência de <br /> oportunidades</p>
+        <div class="swiper-slide"  id="gradient3">
 
-           		</div>
+<div class="logo">
+    <img src="images/logo.svg" alt="logo">
+</div>
 
+<div class="slide2">
+         <div class="container">
+         <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                   <p>Conectando<br /> pessoas a <br> anunciantes</p>
+                </div>
+            </div>
 
+        </div>
+</div>
 
-			 <div class="menu">
-    			<a href="#slide1"><span><i class="fa fa-circle "></i></span>&nbsp;</a>
-    			<a href="#slide2"><span><i class="fa fa-circle-o"></i></span>&nbsp;</a>
-    			<a href="#slide3"><span><i class="fa fa-circle-o"></i></span>&nbsp;</a>
-    			<a href="#slide4"><span><i class="fa fa-circle-o"></i></span></a>
-  			</div>
+        
+        <footer class="footer">
+            <a href="index2.php">Pular Introdução</a>  
+        </footer>
+        
+        </div>
+        
+<div class="swiper-slide"  id="gradient4">
 
-  			<div class="footer">
-  				<a href="index2.php"><h1>Pular introdução</h1></a>
-  			</div>
+<div class="logo">
+    <img src="images/logo.svg" alt="logo">
+</div>
 
-            </li>
+<div class="slide4">
+         <div class="container">
+         <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12 slide4p">
+                   <p>Faça parte do <br> nosso elenco!</p>
+                </div>
+         </div>
+         <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                   
+                       <a href="index2.php" class="btn">
+                           Iniciar
+                        </a>    
+                        <span>
+                             <img src="images/arrow-right.svg" alt="iniciar seta">
+                        </span>        
+                    
+                </div>
+         </div>
 
-            <li id="slide2" class="pane2">
+        </div>
+</div>
 
-    			<div class="bgimg"></div>
+</div>
 
-				<div class="logo">
-					<img src="images/logo-elenco.png" height="81" width="147" align="right" alt="">
-				</div>
-					
-				<div class="contenu2">
-
-					<p>Para atores e <br /> modelos de <br> todos os perfis</p>
-
-           		</div>
-
-			 <div class="menu">
-    			<a href="#slide1"><span><i class="fa fa-circle-o"></i></span>&nbsp;</a>
-    			<a href="#slide2"><span><i class="fa fa-circle"></i></span>&nbsp;</a>
-    			<a href="#slide3"><span><i class="fa fa-circle-o"></i></span>&nbsp;</a>
-    			<a href="#slide4"><span><i class="fa fa-circle-o"></i></span></a>
-  			</div>
-
-
-  			<div class="footer">
-  				<a href="index2.php"><h1>Pular introdução</h1></a>
-  			</div>
-
-            </li>
-
-            <li id="slide3" class="pane3">
-            	<div class="bgimg2"></div>
-
-				<div class="logo">
-					<img src="images/logo-elenco.png" height="81" width="147" align="right" alt="">
-				</div>
-					
-				<div class="contenu3">
-
-					<p>Conectando<br /> pessoas a <br> anunciantes</p>
-
-           		</div>
-
-			 <div class="menu">
-    			<a href="#slide1"><span><i class="fa fa-circle-o"></i></span>&nbsp;</a>
-    			<a href="#slide2"><span><i class="fa fa-circle-o"></i></span>&nbsp;</a>
-    			<a href="#slide3"><span><i class="fa fa-circle"></i></span>&nbsp;</a>
-    			<a href="#slide4"><span><i class="fa fa-circle-o"></i></span></a>
-  			</div>
-
-  			
-  			<div class="footer">
-  				<a href="index2.php"><h1>Pular introdução</h1></a>
-  			</div>
-
-            </li>
-
-            <li id="slide4" class="pane4">
-            	<div class="bgimg3"></div>
-            	
-				<div class="logo">
-					<img src="images/logo-elenco.png" height="81" width="147" align="right" alt="">
-				</div>
-					
-				<div class="contenu4">
-
-			
-				<p>Faça parte do <br> nosso elenco!</p>
-					
-			<div class="iniciar">
-				<a href="index2.php"><p>Iniciar <span><img src="images/arrow-right.svg" alt="seta"></span></p></a>
-			</div>
-
-           		</div>
-
-
-			 <div class="menu">
-    			<a href="#slide1"><span><i class="fa fa-circle-o"></i></span>&nbsp;</a>
-    			<a href="#slide2"><span><i class="fa fa-circle-o"></i></span>&nbsp;</a>
-    			<a href="#slide3"><span><i class="fa fa-circle-o"></i></span>&nbsp;</a>
-    			<a href="#slide4"><span><i class="fa fa-circle"></i></span></a>
-  			</div>
-
-            </li>
-
-        </ul>
     </div>
-			
-			</div>
+    <!-- bolinhas -->
+    <div class="swiper-pagination"></div>
+    
+</div>
+	
 
-		</div>
 
-		<script src="js/res/jquery-2.1.4.js"></script>
-		<script src="js/res/hammer.min.js"></script>
-		<script src="js/res/mousewheel.min.js"></script>
-		<script src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>
-		<script src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.ui.min.js"></script>
+<script src="js/jquery-1.12.1.min.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/hallo.js/1.0.2/hallo.js"></script>
-    <script src="js/horizontal-slider.js"></script>
-    <script src="http://arti.us/clients/concept/questionnaire/dist/js/bootstrap.min.js"></script>
-
-		<script src="js/vertical-slider.js"></script>
-		<script src="js/main.js"></script>
-
-	</body>
-
+</body>
 </html>

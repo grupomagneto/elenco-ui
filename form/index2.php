@@ -1,46 +1,68 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-	<title>Cadastro</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <title>Magneto Elenco </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
 </head>
-<body>
+<body id="gradient5">
 
-	<div class="hue2">
-
-
-	<div class="container">
-
-		<div class="row">
-
-		<h1>Quem você está cadastrando?</h1>	
-	</div>
-
-  	<div class="row link1">
-    	<a href="form2.php#1"><div class="col-xs-12 col-sm-12 col-md-10">Eu mesm@, sou maior de idade. <span><img src="arrow-right.svg" alt="seta"></span></div></a>
-  	</div>
-
-  	<div class="row link2">
-    	<a href="form3.php#1"><div class="col-xs-12 col-sm-12 col-md-10">Uma criança ou menor de idade. <span><img src="arrow-right.svg" alt="seta"></span></div></a>
-  	</div>
+<div class="wrapper_segunda">
 
 
-	</div>
+<div class="container">
+	
 
 
+         <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                   
+                       <h1>Quem você está cadastrando?</h1>     
+                    
+                </div>
+         </div>
+         <div class="row">
+                <div class="primeiro col-md-12 col-sm-12 col-xs-12">
+                   
+                       <a href="#" class="btn">
+                          Eu mesm@, sou maior de idade
+                        </a>    
+                        <span>
+                             <img src="images/arrow-right.svg" alt="iniciar seta">
+                        </span>        
+                    
+                </div>
+         </div>
+
+
+         <div class="row">
+                <div class="segunda col-md-12 col-sm-12 col-xs-12">
+                   
+                       <a href="#" class="btn">
+                          Uma criança ou adolescente
+                        </a>    
+                        <span>
+                             <img src="images/arrow-right.svg" alt="iniciar seta">
+                        </span>        
+                    
+                </div>
+         </div>
+
+
+    
 </div>
 
+</div>  
 
-		<script src="js/res/jquery-2.1.4.js"></script>
-    <script src="http://arti.us/clients/concept/questionnaire/dist/js/bootstrap.min.js"></script>
-		<script src="js/main.js"></script>
 
-	
+<script src="js/jquery-1.12.1.min.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+
 </body>
 </html>

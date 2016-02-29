@@ -19,7 +19,7 @@
  
 <form action="adiciona-usuario.php" method="post" enctype="multipart/form-data">
 
-<section class="section1" id="1">
+<section class="section1 active" id="1">
 
   <div class="content"> 
     <i class="arrow icon-arrow-up"></i>
@@ -60,7 +60,7 @@
 
 
   <div class="content"> 
-    <div class="responsavel"><h1>Qual seu sobrenome?</h1></div>
+    <div class="responsavel"><h1>E o sobrenome?</h1></div>
 
     <input name="sobrenome" id="sobrenome" type="text" onkeypress ="autoTab(this, event);" autofocus required  />
 
@@ -93,12 +93,11 @@
    <div class="sexo"> <h1>Qual o seu sexo?</h1></div>
 
     <div class="toggleswitch">
-      <input id="opt_a" name="sexo" type="radio" value="feminino"  onchange="exibeMsg(this.value);">
+      <input id="opt_a" name="sexo" type="radio" value="feminino" onkeypress ="autoTab(this, event);"  onchange="exibeMsg(this.value);">
       <label for="opt_a">Feminino</label>
-      <input id="opt_b" name="sexo" type="radio" value="masculino"  onchange="exibeMsg(this.value);">
+      <input id="opt_b" name="sexo" type="radio" value="masculino" onkeypress ="autoTab(this, event);"  onchange="exibeMsg(this.value);">
       <label for="opt_b">Masculino</label>  
     </div>
-
 
 
 
@@ -134,7 +133,7 @@
   <div class="content"> 
  
     <div class="camera"><img src="images/camera.svg" alt="camera"></div>  
-  <div class="fotos"> <h1 >Precisamos de duas fotos <br /> suas feitas hoje</h1></div> 
+  <div class="fotos"> <h1 >Para começar, vamos precisar de duas fotos suas feitas hoje</h1></div> 
 
 
   <div class="progress5">
@@ -164,7 +163,7 @@
 
   <div class="content"> 
 
-    <div class="sorria"><h1>Sorria!</h1></div>
+    <div class="sorria"><h1>Sorrindo!</h1></div>
 
 
 <label class="myFile">
@@ -201,7 +200,7 @@
       <div class="gradient3"></div>
   <div class="content"> 
 
-    <div class="serio"><h1>Agora Séri@!</h1></div>
+    <div class="serio"><h1>Agora sem sorrir</h1></div>
 
 
 <label class="myFile2">
@@ -352,7 +351,7 @@
 
 <select name="bairro" class="custom" onkeypress ="autoTab(this, event);">
     <option  selected="selected">Selecione</option>
-   <option selected="selected" value="aguasclaras"> Águas Claras</option>
+   <option  value="aguasclaras"> Águas Claras</option>
    <option value="asanorte"> Asa Norte</option>
    <option value="asanorte"> Asa Sul</option>
    <option value="brazlandia"> Brazlandia</option>
@@ -420,12 +419,12 @@
 <section class="section11 gradient" id="11" data-section="11">
   <div class="content"> 
 
-     <div class="ator"> <h1>Você é ator ou atriz com DRT?</h1> </div>  
+     <div class="ator"> <h1>Você é <span id="txt"></span> com DRT?</h1> </div>  
 
     <div class="toggleswitch2">
       <input id="sim" name="ator" type="radio" value="sim" required onkeypress ="autoTab(this, event);">
       <label for="sim">Sim</label>
-      <input checked="checked" id="nao" name="ator" type="radio" required value="nao" onkeypress ="autoTab(this, event);">
+      <input id="nao" name="ator" type="radio" required value="nao" onkeypress ="autoTab(this, event);">
       <label for="nao">Não</label>  
     </div>
 

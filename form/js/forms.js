@@ -10,6 +10,52 @@ $( "input" ).change(function() {
 $("#celular").mask("(00) 0000-00009");
 
 
+    function exibeMsg( valor )
+        {
+            
+            switch (valor)
+            {
+                case 'feminino':
+                document.getElementById( 'txt' ).innerHTML = 'atriz';
+                break;
+
+                case 'masculino':
+                document.getElementById( 'txt' ).innerHTML = 'ator';
+                break;
+
+                default:
+                document.getElementById( 'txt' ).innerHTML = 'Nenhum valor informado';
+                break;
+            }
+        }
+
+
+    function exibeMsg2( valor )
+        {
+            
+            switch (valor)
+            {
+                case 'feminino':
+                document.getElementById( 'txt2' ).innerHTML = 'dela';
+                document.getElementById( 'txt3' ).innerHTML = 'ela';
+                document.getElementById( 'txt4' ).innerHTML = 'dela';
+                break;
+
+                case 'masculino':
+                document.getElementById( 'txt2' ).innerHTML = 'dele';
+                document.getElementById( 'txt3' ).innerHTML = 'ele';
+                document.getElementById( 'txt4' ).innerHTML = 'ele';
+                break;
+
+                default:
+                document.getElementById( 'txt2' ).innerHTML = 'Nenhum valor informado';
+                document.getElementById( 'txt3' ).innerHTML = 'Nenhum valor informado';
+                break;
+            }
+        }
+
+
+
 //FIM MASCARA
 
 function autoTab(input, e)  {   

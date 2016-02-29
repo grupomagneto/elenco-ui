@@ -51,6 +51,7 @@
         }
 
           function gravar(){
+            document.getElementById("myText").disabled = false;
             var nome = document.getElementById("txtNome").value;
             var div = document.getElementById("divResultado");
             var div2 = document.getElementById("divResultado2");
@@ -61,12 +62,33 @@
             div3.innerHTML = "" + nome +"";
         }
 
+          function proximo(){
+
+            document.getElementById("myText2").disabled = false;
+          }
+
+
+          function verify_form(obj_form) {
+             if (obj_form.nome.value.length < 3) {
+             $( "p" ).toggle();
+              obj_form.nome.focus();
+              return false; // Isso que segura o submit
+             } else {
+              return true; // Agora envia o form
+             }
+
+          }
+
+function mostraBotao() {
+    document.getElementById('meuBotao').style.display = 'inline-block';    
+}
+
 
     </script>
 </head>
 	
 
-<form action="#">
+<form action="#" onSubmit="return verify_form(this);">
   
 
       <h1>Qual o seu sexo?</h1>
@@ -78,12 +100,21 @@
       <label for="opt_b">Masculino</label>  
         
         <br/>
-
         
     <div>
         <label>Escreva seu nome:</label>
-        <input type="text" id="txtNome"/>
-        <button id="btnEnviar" onclick="gravar()" >Gravar</button>
+        <input type="text" id="txtNome" name="nome"  onClick='mostraBotao()' onKeyDown='mostraBotao'/>
+        <button id='meuBotao' value='AlgumaCoisa' style='display:none' onclick="gravar()" >Gravar</button>
+        <p style="display: none">Por favor seu nome tem que ter no mínimo três letras</p>
+
+        <label>Escreva seu sobrenome:</label>
+        <input type="text" id="myText" disabled="disabled"/>
+        <button id="btnEnviar" onclick="proximo()" >Gravar</button>
+
+
+        <label>Escreva seu ultimo nome:</label>
+        <input type="text" id="myText2" disabled="disabled"/>
+
     </div>
 
         <br/>
@@ -96,6 +127,9 @@
         <h1>Você é, <span id="txt3"></span> ?</h1>
 
 </form>
+
+
+
 
 <!-- 
 <select name="sexo" id="sexo">

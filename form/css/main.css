@@ -65,10 +65,12 @@ i {
 }
 .menu i{
   transition:all .3s ease;
+  -webkit-transition:all .3s ease;
 }
 .menu i:hover {
   opacity:.5;
   transform:scale(1.10);
+  -webkit-transform:scale(1.10);
   cursor:pointer;
 }
 
@@ -262,7 +264,7 @@ background: linear-gradient(-135deg, #8124FA 0%, #FF2981 100%);
   -moz-animation: colors 30s ease infinite;
   -o-animation: colors 30s ease infinite;
   animation: colors 30s ease infinite;
-  opacity: .6;
+  opacity: .2;
 }
 
 @-o-keyframes colors {
