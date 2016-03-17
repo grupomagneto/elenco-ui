@@ -374,6 +374,14 @@ return false;
 
 
 /*JAVASCRIPT DO BAIRRO E RAÇA*/
+$(".sim2").hide();
+$('input[type="radio"]').click(function() {
+  if ($(this).attr("value") == "sim") {
+    $(".sim2").show();
+  } else {
+    $(".sim2").hide();
+  }
+});
 
 
 

@@ -1,3 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.js"></script>
+
+
+  
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+  <style type="text/css">
+    
+  </style>
+
+  <title></title>
+
+  
+    
+
+
+
+
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+$('input').keyup(function () {
+    if ($.trim(this.value).length > 0) $('#btSend').show()
+    else $('#btSend').hide()
+});
+});//]]> 
+
+</script>
+
+  
+</head>
+
+<body>
+  <input type="text" id="phoneNumber" name="Number" maxlength="10" size="15" onfocus="this.value=''" value="Enter your number" autocomplete="off">
+<br/>
+<br/>
+<span style="color:red" class="title1" id="checkPhone"></span>
+<br/>
+<input type="button" class="sendBtn" id="btSend" name="btSend" value="NextStep" style="display: none">
+  
+</body>
+
+</html>
+
+
+
+
 <!-- <?php 
 
 // $conexao = mysqli_connect ('localhost', 'root', '', 'vinigoulart18');	
@@ -7,12 +63,12 @@
 //           		echo "Erro ao se conectar com banco de dados: " . mysqli_connect_error();
 //         	}
 
-// ?> -->
+// ?> 
 <html>
 
 <head>
 	
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js'></script>
 
     <script type="text/javascript">
 // function myFunction()
@@ -72,9 +128,9 @@
              if (obj_form.nome.value.length < 3) {
              $( "p" ).toggle();
               obj_form.nome.focus();
-              return false; // Isso que segura o submit
+              return false; 
              } else {
-              return true; // Agora envia o form
+              return true; 
              }
 
           }
@@ -128,7 +184,7 @@ function mostraBotao() {
 
 </form>
 
-
+-->
 
 
 <!-- 
@@ -146,6 +202,6 @@ function mostraBotao() {
 <h1>Olá, car<span id="resposta"></span> cliente!</h1> -->
 
 
+<!-- 
 
-
-</html>
+</html> -->
