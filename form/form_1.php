@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  <form action="" id="form">
+  <form name="form" action="adiciona-usuario.php" id="form" method="post">
     <!-- Swiper Container -->
 <div class="swiper-container">
     <!-- Swiper W -->
@@ -32,17 +32,15 @@
                     </div>
                     <div class=" div1_box col-lg-offset-3 col-lg-5">
 
-                      <input name="nome" id="nome" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="1" autofocus autocomplete="off" required  />
+                      <input  name="nome" id="nome" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="1" autofocus autocomplete="off" required  />
                       <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
-
-                      <img id="seta" class="nextButton" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
+                      <img id="seta" src="images/seta_ok.svg" alt="seta" style="display: none;">
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
                     </div>
 
                   </div>
                 </div>
               </div>
-
 
 
 
@@ -56,7 +54,7 @@
                <nav>
                 <ul class="vs-vertical-nav none">
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next swiper-control next"></a></li>
 
                 </ul>
 
@@ -78,17 +76,15 @@
                     </div>
                     <div class=" div2_box col-lg-offset-3 col-lg-5">
 
-                      <input name="sobrenome" id="sobrenome" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="2"  autocomplete="off" required  />
-                      <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;">
-                      <img id="seta2" src="images/seta_ok.svg" alt="seta" style="display: none;"> 
+                      <input  name="sobrenome" id="sobrenome" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="2"  autocomplete="off" required  />
+                     <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;"> 
+                     <img class="swiper-control next" id="seta2" src="images/seta_ok.svg" alt="seta" style="display: none;">
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
                     </div>
 
                   </div>
                 </div>
               </div>
-
-
 
  <div class="progress2">
   
@@ -99,9 +95,9 @@
                <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next swiper-control next"></a></li>
 
                 </ul>
 
@@ -117,11 +113,11 @@
               <div class="row">
 
                 <div class=" div3_t col-lg-offset-3 col-lg-5">
-                  <h1>Qual o seu sexo?</h1>
+                  <h1 class=" TabOnEnter"  tabindex="3">Qual o seu sexo?</h1>
                 </div>
 
                   <div class="div3_box col-lg-offset-3 col-lg-5">
-                   <input  tabindex="3"  name="sexo" value="masculino" type="radio" id="radio0" class="radio TabOnEnter" onchange="exibeMsg(this.value);"
+                   <input name="sexo" value="masculino" type="radio" id="radio0" class="radio swiper-control next" onchange="exibeMsg(this.value);"
 onchange="exibeMsg(this.value);">
                     <label id="input3" for="radio0" class="radio-label2">
                      <span>Masculino</span>
@@ -129,7 +125,7 @@ onchange="exibeMsg(this.value);">
                  </div>
 
                  <div class="div3_box col-lg-offset-3 col-lg-5">
-                  <input name="sexo" type="radio" value="feminino" id="radio1" class="radio" onchange="exibeMsg(this.value);"
+                  <input name="sexo" type="radio" value="feminino" id="radio1" class="radio swiper-control next" onchange="exibeMsg(this.value);"
 onchange="exibeMsg(this.value);">
                   <label for="radio1" class="radio-label">
 
@@ -151,9 +147,9 @@ onchange="exibeMsg(this.value);">
                 <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next swiper-control next"></a></li>
 
                 </ul>
 
@@ -171,7 +167,7 @@ onchange="exibeMsg(this.value);">
                     </div>
                     <div class=" div4_box col-lg-offset-3 col-lg-5">
                         <h1>Para começar vamos precisar de duas fotos suas feitas hoje.</h1>
-                    <img class="" src="images/seta.svg" alt="seta">
+                    <img class="swiper-control next" src="images/seta.svg" alt="seta">
 
                     </div>
 
@@ -189,9 +185,9 @@ onchange="exibeMsg(this.value);">
                 <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next swiper-control next"></a></li>
 
                 </ul>
 
@@ -208,8 +204,8 @@ onchange="exibeMsg(this.value);">
                     <div class=" div5_box col-lg-offset-3 col-lg-5">
 
                     <div class="wrapper">
-                    <div class="file-upload">
-                     <input type="file" tabindex="5" class='TabOnEnter' />
+                    <div class="file-upload" tabindex="5" class='TabOnEnter'>
+                     <input type="file" name="foto"  class='TabOnEnter' />
                            <img src="images/upload.svg" alt="">
                           </div>
                     </div>
@@ -244,9 +240,9 @@ onchange="exibeMsg(this.value);">
                 <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next swiper-control next"></a></li>
 
                 </ul>
 
@@ -267,8 +263,8 @@ onchange="exibeMsg(this.value);">
                     <div class=" div6_box col-lg-offset-3 col-lg-5">
 
                       <div class="wrapper2">
-                          <div class="file-upload2">
-                          <input type="file" tabindex="6" class='TabOnEnter' />
+                          <div class="file-upload2" tabindex="6" class='TabOnEnter'>
+                          <input type="file" name="foto" class='TabOnEnter' />
                           <img src="images/upload.svg" alt="">
                           </div>
                       </div>
@@ -304,9 +300,9 @@ onchange="exibeMsg(this.value);">
                 <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next swiper-control next"></a></li>
 
                 </ul>
 
@@ -320,14 +316,14 @@ onchange="exibeMsg(this.value);">
                 <div class="div7">
                   <div class="row"> <div class="row">
                       <div class="div7_t col-sm-offset-3 col-sm-6">
-                          <h1>Qual a sua data de nascimento?</h1>
+                          <h1 tabindex="7" class='TabOnEnter'>Qual a sua data de nascimento?</h1>
                       </div>
                     </div>
                     <div class="div7_box col-xs-3 col-sm-offset-1 col-lg-offset-2">
                           <p>Dia</p>
                           <div class="left">
                                 
-                                <select name="buy" id="buy" class="mask" data-type="select" data-width="80">
+                                <select name="dia" id="select1" class="mask" data-type="select" data-width="80">
                                   <option selected disabled value="">selec..</option>
                                     <?php
                                         for($dia=1;$dia<=31;$dia++){
@@ -347,7 +343,7 @@ onchange="exibeMsg(this.value);">
 
                           <div class="left">
                                 
-                                <select name="buy" id="buy" class="mask" data-type="select" data-width="80">
+                                <select name="mes" id="select2" class="mask" data-type="select" data-width="80">
                                     <option selected disabled value="">selec..</option>
                                     <?php
                                       for($mes=1;$mes<=12;$mes++){
@@ -365,7 +361,7 @@ onchange="exibeMsg(this.value);">
 
                           <div class="left">
                                 
-                                <select name="buy" id="buy" class="mask" data-type="select" data-width="100">
+                                <select name="ano" id="select3" class="mask" data-type="select" data-width="100">
                                     <option selected disabled value="">selecione</option>
                                       <?php
                                       for($ano=date('Y');$ano > date('Y')-100;$ano--){
@@ -393,9 +389,9 @@ onchange="exibeMsg(this.value);">
             <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next swiper-control next"></a></li>
 
                 </ul>
 
@@ -415,10 +411,9 @@ onchange="exibeMsg(this.value);">
                     </div>
                     <div class=" div8_box col-lg-offset-3 col-lg-5">
 
-                      <input name="celular" id="celular" type="text" pattern="^(\(11\) [9][0-9]{4}-[0-9]{4})|(\(1[2-9]\) [5-9][0-9]{3}-[0-9]{4})|(\([2-9][1-9]\) [5-9][0-9]{3}-[0-9]{4})$
-" onfocus="this.value=''" autofocus autocomplete="off" required  />
+                      <input tabindex="8" class='TabOnEnter' name="celular" id="celular" type="text" pattern="^\d{4}-\d{3}-\d{4}$" onfocus="this.value=''" autofocus autocomplete="off" required  />
                       <input type="button" class="sendBtn8" id="btSend8" name="btSend8" style="display: none;">
-                      <img id="seta8" src="images/seta_ok.svg" alt="seta" style="display: none;">
+                      <img id="seta8" class="swiper-control next" src="images/seta_ok.svg" alt="seta" style="display: none;">
                     </div>
 
                   </div>
@@ -433,9 +428,9 @@ onchange="exibeMsg(this.value);">
             <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next swiper-control next"></a></li>
 
                 </ul>
 
@@ -455,9 +450,9 @@ onchange="exibeMsg(this.value);">
                     </div>
                     <div class=" div9_box col-lg-offset-3 col-lg-5">
 
-                      <input name="email" id="email" type="text" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" onfocus="this.value=''" autofocus autocomplete="off" required  />
+                      <input tabindex="9" class='TabOnEnter' name="email" id="email" type="text" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" onfocus="this.value=''" autofocus autocomplete="off" required  />
                       <input type="button" class="sendBtn9" id="btSend9" name="btSend9" style="display: none;">
-                      <img id="seta9" src="images/seta_ok.svg" alt="seta" style="display: none;">
+                      <img id="seta9" class="swiper-control next" src="images/seta_ok.svg" alt="seta" style="display: none;">
                     </div>
 
                   </div>
@@ -473,9 +468,9 @@ onchange="exibeMsg(this.value);">
              <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next swiper-control next"></a></li>
 
                 </ul>
 
@@ -490,7 +485,7 @@ onchange="exibeMsg(this.value);">
                   <div class="row">
                     <div class=" div10_t col-lg-offset-3 col-lg-5">
 
-                      <h1>Qual a cor da sua pele?</h1>
+                      <h1 tabindex="10" class='TabOnEnter'>Qual a cor da sua pele?</h1>
 
                     </div>
                     <div class=" div10_box col-lg-offset-3 col-lg-5">
@@ -523,7 +518,9 @@ onchange="exibeMsg(this.value);">
             <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev swiper-control prev"></a></li>
+
+                  <li><a href="#" class="vs-next swiper-control next"></a></li>
 
                 </ul>
 
@@ -539,7 +536,7 @@ onchange="exibeMsg(this.value);">
                   <div class="row">
                     <div class=" div11_t col-lg-offset-3 col-lg-5">
 
-                      <h1>Qual é o seu bairro?</h1>
+                      <h1 tabindex="11" class='TabOnEnter'>Qual é o seu bairro?</h1>
 
                     </div>
                     <div class=" div11_box col-lg-offset-3 col-lg-5">
@@ -607,7 +604,9 @@ onchange="exibeMsg(this.value);">
             <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev swiper-control prev"></a></li>
+
+                  <li><a href="#" class="vs-next swiper-control next"></a></li>
 
                 </ul>
 
@@ -625,18 +624,18 @@ onchange="exibeMsg(this.value);">
               <div class="row">
 
                 <div class=" div12_t col-lg-offset-3 col-lg-5">
-                   <h1>Você é <span id="txt"></span> com DRT?</h1>
+                   <h1  tabindex="12" class='TabOnEnter' >Você é <span id="txt"></span> com DRT?</h1>
                 </div>
 
                   <div class="div12_box col-lg-offset-3 col-lg-5">
-                   <input  tabindex="12"  name="ator"  value="sim" type="radio" id="radio2" class="radio2 TabOnEnter">
+                   <input  name="ator"  value="sim" type="radio" id="radio2" class="radio2 swiper-control next">
                     <label id="input3" for="radio2" class="radio-label4">
                      <span>Sim</span>
                    </label>
                  </div>
 
                  <div class="div12_box col-lg-offset-3 col-lg-5">
-                  <input name="ator" type="radio"  value="nao"  id="radio3" class="radio2">
+                  <input name="ator" type="radio"  value="nao"  id="radio3" class="radio2 swiper-control next">
                   <label for="radio3" class="radio-label3">
 
                     <span>Não</span>
@@ -665,8 +664,9 @@ onchange="exibeMsg(this.value);">
             <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
-                    <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                    <li><a href="#" class="vs-prev swiper-control prev"></a></li>
+
+                  <li><a href="#" class="vs-next swiper-control next"></a></li>
 
                 </ul>
 
@@ -701,9 +701,12 @@ onchange="exibeMsg(this.value);">
                     </div>
 
                   </div>
+
+
+                      <button class="enviar" id="cadastra" disabled name="submit" type="submit">Enviar Cadastro</button>
+
                 </div>
               </div>
-
 
  <div class="progress13">
   
@@ -714,7 +717,8 @@ onchange="exibeMsg(this.value);">
             <nav>
                 <ul class="vs-vertical-nav2 none">
 
-                    <li><a href="#" class="vs-prev2 swiper-button-prev"></a></li>
+
+                  <li><a href="#" class="vs-prev2 swiper-control prev"></a></li>
 
                 </ul>
 

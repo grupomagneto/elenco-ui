@@ -54,7 +54,7 @@ $('input').keyup(function () {
 
 
 
-<!-- <?php 
+ <?php 
 
 // $conexao = mysqli_connect ('localhost', 'root', '', 'vinigoulart18');	
 
@@ -184,7 +184,7 @@ function mostraBotao() {
 
 </form>
 
--->
+
 
 
 <!-- 

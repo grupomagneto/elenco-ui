@@ -56,7 +56,7 @@
                <nav>
                 <ul class="vs-vertical-nav none">
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -80,9 +80,9 @@
                     <div class=" div2_box col-lg-offset-3 col-lg-5">
 
                       <input name="nomeres" id="nomeres" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="2" autofocus autocomplete="off" required  />
-                      <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
+                      <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;">
 
-                      <img id="seta2" class="nextButton" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
+                      <img id="seta2" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
                     </div>
 
@@ -101,9 +101,9 @@
                <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -118,11 +118,11 @@
               <div class="row">
 
                 <div class=" div3_t col-lg-offset-3 col-lg-5">
-                  <h1>Qual o sexo da pessoa sendo cadastrada?</h1>
+                  <h1 class=" TabOnEnter"  tabindex="3">Qual o sexo da pessoa sendo cadastrada?</h1>
                 </div>
 
                   <div class="div3_box col-lg-offset-3 col-lg-5">
-                   <input  tabindex="3"  name="sexo" value="masculino" type="radio" id="radio0" class="radio TabOnEnter" onchange="exibeMsg2(this.value);"
+                   <input name="sexo" value="masculino" type="radio" id="radio0" class="radio swiper-control next" onchange="exibeMsg2(this.value);"
 onchange="exibeMsg2(this.value);">
                     <label id="input3" for="radio0" class="radio-label2">
                      <span>Masculino</span>
@@ -130,7 +130,7 @@ onchange="exibeMsg2(this.value);">
                  </div>
 
                  <div class="div3_box col-lg-offset-3 col-lg-5">
-                  <input name="sexo" type="radio" value="feminino" id="radio1" class="radio" onchange="exibeMsg2(this.value);"
+                  <input name="sexo" type="radio" value="feminino" id="radio1" class="radio swiper-control next" onchange="exibeMsg2(this.value);"
 onchange="exibeMsg2(this.value);">
                   <label for="radio1" class="radio-label">
 
@@ -152,9 +152,9 @@ onchange="exibeMsg2(this.value);">
                 <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -194,9 +194,9 @@ onchange="exibeMsg2(this.value);">
                 <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -217,7 +217,7 @@ onchange="exibeMsg2(this.value);">
                     <div class=" div5_box col-lg-offset-3 col-lg-5">
 
                       <input name="sobrenomeme" id="sobrenomeme" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="5" autofocus autocomplete="off" required  />
-                      <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
+                      <input type="button" class="sendBtn5" id="btSend5" name="btSend5" style="display: none;">
 
                       <img id="seta5" class="nextButton" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
@@ -236,9 +236,9 @@ onchange="exibeMsg2(this.value);">
                 <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -276,9 +276,9 @@ onchange="exibeMsg2(this.value);">
                 <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -296,8 +296,8 @@ onchange="exibeMsg2(this.value);">
                     <div class=" div7_box col-lg-offset-3 col-lg-5">
 
                     <div class="wrapper">
-                    <div class="file-upload">
-                     <input type="file" tabindex="7" class='TabOnEnter' />
+                    <div class="file-upload TabOnEnter" tabindex="7">
+                     <input type="file" />
                            <img src="images/upload.svg" alt="">
                           </div>
                     </div>
@@ -331,9 +331,9 @@ onchange="exibeMsg2(this.value);">
             <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -352,7 +352,7 @@ onchange="exibeMsg2(this.value);">
                     <div class=" div8_box col-lg-offset-3 col-lg-5">
 
                       <div class="wrapper2">
-                          <div class="file-upload2">
+                          <div class="file-upload2 TabOnEnter" tabindex="8">
                           <input type="file" tabindex="8" class='TabOnEnter' />
                           <img src="images/upload.svg" alt="">
                           </div>
@@ -387,9 +387,9 @@ onchange="exibeMsg2(this.value);">
             <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -403,7 +403,7 @@ onchange="exibeMsg2(this.value);">
                 <div class="div9">
                   <div class="row"> <div class="row">
                       <div class="div9_t col-sm-offset-3 col-sm-6">
-                          <h1>Qual é a data de nascimento da <span id="divResultado2"></span>?</h1>
+                          <h1 class='TabOnEnter' tabindex="9">Qual é a data de nascimento da <span id="divResultado2"></span>?</h1>
                       </div>
                     </div>
                     <div class="div9_box col-xs-3 col-sm-offset-1 col-lg-offset-2">
@@ -474,9 +474,9 @@ onchange="exibeMsg2(this.value);">
              <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
 
-                  <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -495,7 +495,7 @@ onchange="exibeMsg2(this.value);">
                     </div>
                     <div class=" div10_box col-lg-offset-3 col-lg-5">
 
-                      <input name="celular" id="celular" type="text" pattern="^(\(11\) [9][0-9]{4}-[0-9]{4})|(\(1[2-9]\) [5-9][0-9]{3}-[0-9]{4})|(\([2-9][1-9]\) [5-9][0-9]{3}-[0-9]{4})$
+                      <input name="celular" id="celular" class='TabOnEnter' tabindex="10" type="text" pattern="^(\(11\) [9][0-9]{4}-[0-9]{4})|(\(1[2-9]\) [5-9][0-9]{3}-[0-9]{4})|(\([2-9][1-9]\) [5-9][0-9]{3}-[0-9]{4})$
 " onfocus="this.value=''" autofocus autocomplete="off" required  />
                       <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;">
                       <img id="seta10" src="images/seta_ok.svg" alt="seta" style="display: none;">
@@ -515,7 +515,9 @@ onchange="exibeMsg2(this.value);">
             <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
+
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -535,7 +537,7 @@ onchange="exibeMsg2(this.value);">
                     </div>
                     <div class=" div11_box col-lg-offset-3 col-lg-5">
 
-                      <input name="email" id="email" type="text" onfocus="this.value=''" autofocus autocomplete="off" required  />
+                      <input name="email" id="email" class='TabOnEnter' tabindex="11"  type="text" onfocus="this.value=''" autocomplete="off" required  />
                       <input type="button" class="sendBtn9" id="btSend9" name="btSend9" style="display: none;">
                       <img id="seta9" src="images/seta_ok.svg" alt="seta" style="display: none;">
                     </div>
@@ -554,7 +556,9 @@ onchange="exibeMsg2(this.value);">
             <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
+
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -571,7 +575,7 @@ onchange="exibeMsg2(this.value);">
                   <div class="row">
                     <div class=" div12_t col-lg-offset-3 col-lg-5">
 
-                      <h1>Qual é a cor da pele <span id="txt3"></span>?</h1>
+                      <h1 class='TabOnEnter' tabindex="12" >Qual é a cor da pele <span id="txt3"></span>?</h1>
 
                     </div>
                     <div class=" div12_box col-lg-offset-3 col-lg-5">
@@ -607,8 +611,9 @@ onchange="exibeMsg2(this.value);">
             <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
-                    <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
+
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -624,7 +629,7 @@ onchange="exibeMsg2(this.value);">
                   <div class="row">
                     <div class=" div13_t col-lg-offset-3 col-lg-5">
 
-                      <h1>Em qual bairro <span id="txt4"></span> mora?</h1>
+                      <h1 class='TabOnEnter' tabindex="13" >Em qual bairro <span id="txt4"></span> mora?</h1>
 
                     </div>
                     <div class=" div13_box col-lg-offset-3 col-lg-5">
@@ -694,8 +699,9 @@ onchange="exibeMsg2(this.value);">
             <nav>
                 <ul class="vs-vertical-nav none">
 
-                    <li><a href="#" class="vs-prev swiper-button-prev"></a></li>
-                    <li><a href="#" class="vs-next swiper-button-next"></a></li>
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
+
+                  <li><a href="#" class="vs-next  swiper-control next"></a></li>
 
                 </ul>
 
@@ -715,21 +721,25 @@ onchange="exibeMsg2(this.value);">
                     </div>
                     <div class=" div14_box col-lg-offset-3 col-lg-5">
                         <img src="images/ig.svg" alt="">
-                      <input name="ig" id="ig" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="13"  autocomplete="off" required  />
+                      <input name="ig" id="ig" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="14"  autocomplete="off" required  />
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
                     </div>
                     <div class=" div14_box2 col-lg-offset-3 col-lg-5">
                         <img src="images/face.svg" alt="">
-                      <input name="face" id="face" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="14"  autocomplete="off" required  />
+                      <input name="face" id="face" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="15"  autocomplete="off" required  />
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
                     </div>
                     <div class=" div14_box3 col-lg-offset-3 col-lg-5">
                         <img src="images/tt.svg" alt="">
-                      <input name="tt" id="tt" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="15"  autocomplete="off" required  />
+                      <input name="tt" id="tt" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="16"  autocomplete="off" required  />
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
                     </div>
 
                   </div>
+
+
+                      <button class="enviar" id="cadastra" disabled name="submit" type="submit">Enviar Cadastro</button>
+
                 </div>
               </div>
 
@@ -743,8 +753,7 @@ onchange="exibeMsg2(this.value);">
             <nav>
                 <ul class="vs-vertical-nav2 none">
 
-                    <li><a href="#" class="vs-prev2 swiper-button-prev"></a></li>
-
+                    <li><a href="#" class="vs-prev  swiper-control prev"></a></li>
                 </ul>
 
               </nav>

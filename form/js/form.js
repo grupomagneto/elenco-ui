@@ -3,8 +3,8 @@
         paginationClickable: true,
         keyboardControl: true,
         direction: 'vertical',
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
+    nextButton: '.swiper-control.next',
+    prevButton: '.swiper-control.prev',
         speed: 900
     });
 /*
@@ -12,8 +12,6 @@
     e.preventDefault()
     mySwiper.swipeNext()
   });*/
-
-
 
 var colors = new Array(
 [165, 0, 200],
@@ -278,6 +276,68 @@ $('#nomeres').keyup(function () {
 });
 });
 
+
+$(window).load(function(){
+$('#sobrenomeme').keyup(function () {
+    if ($.trim(this.value).length > 2){
+
+       $('#btSend5').show()
+         $('#seta5').show()
+
+    }
+    else {
+      $('#btSend5').hide()
+      $('#seta5').hide()
+    }
+});
+});
+
+
+
+$(window).load(function(){
+$('#celular').keyup(function () {
+    if ($.trim(this.value).length > 7){
+
+       $('#btSend8').show()
+         $('#seta8').show()
+
+    }
+    else {
+      $('#btSend8').hide()
+      $('#seta8').hide()
+    }
+});
+});
+
+$(window).load(function(){
+$('#email').keyup(function () {
+    if ($.trim(this.value).length > 7){
+
+       $('#btSend9').show()
+         $('#seta9').show()
+
+    }
+    else {
+      $('#btSend9').hide()
+      $('#seta9').hide()
+    }
+});
+});
+
+$(window).load(function(){
+$('#tt').keyup(function () {
+    if ($.trim(this.value).length > 3){
+   document.getElementById("cadastra").disabled = false;
+
+    }
+    else {
+      document.getElementById("cadastra").disabled = true;
+    }
+});
+});
+
+
+
    $(document).ready(function() {
             
             //set focus to 1st input field
@@ -285,7 +345,7 @@ $('#nomeres').keyup(function () {
             
             //attach click event to button
             $("#seta").click(function(){
-                $("#sobrenome").focus();
+                $("#form [name='sobrenome']").focus();
             });
             
 
@@ -294,7 +354,7 @@ $('#nomeres').keyup(function () {
 $(function(){
     //Runs focus of div on click of button/link/whatever
     $("#seta2").click(function(){
-        $("#radio1").focus();
+        $("#3").focus();
     });
 });
 
@@ -349,7 +409,6 @@ function exibeMsg( valor )
 }
 
 
-
     function exibeMsg2( valor )
         {
             
@@ -387,6 +446,8 @@ function exibeMsg( valor )
             div2.innerHTML = "" + nome +"";
             div3.innerHTML = "" + nome +"";
         }
+
+
 
 
 

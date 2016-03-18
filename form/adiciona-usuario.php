@@ -5,12 +5,8 @@
         	{
           		echo "Erro ao se conectar com banco de dados: " . mysqli_connect_error();
         	}
-        	/*
-		
-        	{ '$sobrenome', $celular, '$email','$sexo','$raca','$bairro','$ator', '$instagram', '$facebook', '$twitter'
-        	, sobrenome, celular, email, sexo, raca, bairro, ator, instagram, facebook, twitter
-          		echo "Erro criando tabela: " . mysqli_error($con);
-        	}*/
+
+
     			$nome = $_POST['nome'];
 				$sobrenome = $_POST['sobrenome'];
 				$celular = $_POST['celular'];
@@ -24,8 +20,8 @@
 				$twitter = $_POST['twitter'];
 
 
-           if(isset($_FILES['foto']))//verifica se recebeu um arquivo 
-   {
+  if(isset($_FILES['foto']))//verifica se recebeu um arquivo 
+     {
       date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
  
       $ext = strtolower(substr($_FILES['foto']['name'],-4)); //Pegando extensão do arquivo
@@ -33,10 +29,10 @@
       $dir = 'clientesorrindo/'; //Diretório para uploads
  
       move_uploaded_file($_FILES['foto']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
-   }
+    }
 
              if(isset($_FILES['fotos']))//verifica se recebeu um arquivo 
-   {
+    {
       date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
  
       $ext = strtolower(substr($_FILES['fotos']['name'],-4)); //Pegando extensão do arquivo
@@ -44,10 +40,10 @@
       $dir = 'clienteserio/'; //Diretório para uploads
  
       move_uploaded_file($_FILES['fotos']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
-   }
+    }
 
 
-	      	$sql = "INSERT INTO usuario (nome, sobrenome, celular, email, sexo, raca, bairro, fotos, ator, instagram, facebook, twitter) VALUES ('$nome', '$sobrenome', '$celular', '$email','$sexo','$raca','$bairro', '$new_name','$ator', '$instagram', '$facebook', '$twitter')";
+	      	$sql = "INSERT INTO usuario (nome, sobrenome, nome_responsavel, cpf_responsavel, celular, email, d_nascimento, m_nascimento, a_nascimento, sexo, raca, bairro, fotos, ator, ig, face, tt) VALUES ('$nome', '$sobrenome', '$nomeres',  '$cpf', '$celular', '$email', '$dia', $mes', $ano', '$sexo','$raca','$bairro', '$new_name','$ator', '$ig', '$face', '$tt')";
 
       		$a = 0;
 

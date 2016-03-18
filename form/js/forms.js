@@ -6,8 +6,8 @@ $( "input" ).change(function() {
  }, 800);
 });*/
 
-//INICIO MASCARA de TELEFONE
-$("#celular").mask("(00) 0000-00009");
+
+
 
 
     function exibeMsg( valor )
