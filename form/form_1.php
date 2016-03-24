@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  <form name="form" action="adiciona-usuario.php" id="form" method="post">
+  <form name="form" action="adiciona-usuario.php" id="form" method="post" enctype="multipart/form-data">
     <!-- Swiper Container -->
 <div class="swiper-container">
     <!-- Swiper W -->
@@ -32,7 +32,7 @@
                     </div>
                     <div class=" div1_box col-lg-offset-3 col-lg-5">
 
-                      <input  name="nome" id="nome" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="1" autofocus autocomplete="off" required  />
+                      <input  name="nome" id="nome" type="text" class="TabOnEnter" tabindex="1" autofocus autocomplete="off"  required="required"  />
                       <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
                       <img id="seta" src="images/seta_ok.svg" alt="seta" style="display: none;">
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
@@ -43,7 +43,6 @@
               </div>
 
 
-
 <div class="progress1">
   
 <progress id="progressbar" value="5" max="50"></progress>
@@ -52,9 +51,9 @@
 
 
                <nav>
-                <ul class="vs-vertical-nav none">
+                <ul class="vs-vertical-nav1 none">
 
-                  <li><a href="#" class="vs-next swiper-control next"></a></li>
+                  <li><a href="#" class="vs-next1 swiper-control next"></a></li>
 
                 </ul>
 
@@ -76,7 +75,7 @@
                     </div>
                     <div class=" div2_box col-lg-offset-3 col-lg-5">
 
-                      <input  name="sobrenome" id="sobrenome" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="2"  autocomplete="off" required  />
+                      <input  name="sobrenome" id="sobrenome" type="text" onfocus="this.value=''" class="TabOnEnter" tabindex="2"  autocomplete="off"   required="required"  />
                      <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;"> 
                      <img class="swiper-control next" id="seta2" src="images/seta_ok.svg" alt="seta" style="display: none;">
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
@@ -113,29 +112,30 @@
               <div class="row">
 
                 <div class=" div3_t col-lg-offset-3 col-lg-5">
-                  <h1 class=" TabOnEnter"  tabindex="3">Qual o seu sexo?</h1>
+                  <h1 class="TabOnEnter"  tabindex="3">Qual o seu sexo?</h1>
                 </div>
 
                   <div class="div3_box col-lg-offset-3 col-lg-5">
-                   <input name="sexo" value="masculino" type="radio" id="radio0" class="radio swiper-control next" onchange="exibeMsg(this.value);"
-onchange="exibeMsg(this.value);">
+                   <input name="sexo" value="masculino" type="radio" id="radio0" class="radio" onchange="exibeMsg(this.value);"
+onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                     <label id="input3" for="radio0" class="radio-label2">
                      <span>Masculino</span>
                    </label>
                  </div>
 
                  <div class="div3_box col-lg-offset-3 col-lg-5">
-                  <input name="sexo" type="radio" value="feminino" id="radio1" class="radio swiper-control next" onchange="exibeMsg(this.value);"
-onchange="exibeMsg(this.value);">
+                  <input name="sexo" type="radio" value="feminino" id="radio1" class="radio" onchange="exibeMsg(this.value);"
+onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                   <label for="radio1" class="radio-label">
 
                     <span>Feminino</span>
                   </label>
                 </div>
             </div>
+
+
           </div>
         </div>
-
 
 
  <div class="progress3">
@@ -162,7 +162,7 @@ onchange="exibeMsg(this.value);">
                 <div class="div4">
                   <div class="row">
                     <div class=" div4_t col-lg-offset-3 col-lg-5">
-                          <img src="images/camera.svg" tabindex="4" class='TabOnEnter' alt="camera">
+                          <img src="images/camera.svg" tabindex="4" id="proxima" class="TabOnEnter" alt="camera">
 
                     </div>
                     <div class=" div4_box col-lg-offset-3 col-lg-5">
@@ -204,8 +204,8 @@ onchange="exibeMsg(this.value);">
                     <div class=" div5_box col-lg-offset-3 col-lg-5">
 
                     <div class="wrapper">
-                    <div class="file-upload" tabindex="5" class='TabOnEnter'>
-                     <input type="file" name="foto"  class='TabOnEnter' />
+                    <div class="file-upload" tabindex="5" class="TabOnEnter">
+                     <input type="file" name="foto"  required="required"  />
                            <img src="images/upload.svg" alt="">
                           </div>
                     </div>
@@ -263,8 +263,8 @@ onchange="exibeMsg(this.value);">
                     <div class=" div6_box col-lg-offset-3 col-lg-5">
 
                       <div class="wrapper2">
-                          <div class="file-upload2" tabindex="6" class='TabOnEnter'>
-                          <input type="file" name="foto" class='TabOnEnter' />
+                          <div class="file-upload2" tabindex="6" class="TabOnEnter">
+                          <input type="file" name="fotos"  required="required" />
                           <img src="images/upload.svg" alt="">
                           </div>
                       </div>
@@ -289,6 +289,7 @@ onchange="exibeMsg(this.value);">
                   </div>
                 </div>
               </div>
+
 
 
  <div class="progress6">
@@ -316,63 +317,59 @@ onchange="exibeMsg(this.value);">
                 <div class="div7">
                   <div class="row"> <div class="row">
                       <div class="div7_t col-sm-offset-3 col-sm-6">
-                          <h1 tabindex="7" class='TabOnEnter'>Qual a sua data de nascimento?</h1>
+                          <h1 tabindex="7" class="TabOnEnter">Qual a sua data de nascimento?</h1>
                       </div>
                     </div>
                     <div class="div7_box col-xs-3 col-sm-offset-1 col-lg-offset-2">
                           <p>Dia</p>
-                          <div class="left">
-                                
-                                <select name="dia" id="select1" class="mask" data-type="select" data-width="80">
-                                  <option selected disabled value="">selec..</option>
+
+                           <select   required="required" name="dia" id="dia">
+                              <option selected disabled value="hide">selec..
+                              </option>
                                     <?php
-                                        for($dia=1;$dia<=31;$dia++){
+                                        for($dia=1; $dia<=31; $dia++){
                                         ?>
-                                        <option value="<?=$dia?>"><?=$dia?></option>
+                                        <option value="<?= $dia?>"><?= $dia?></option>
                                         <?php
                                         }
                                     ?>
-                                </select> 
-                                
-                              </div>
+                          </select>
                     </div>
 
-                    <div class=" div7_box col-xs-3">
+                    <div class=" div7_box2 col-xs-3">
                           <p>Mês</p>
 
+                            <select   required="required"  name="mes" id="mes">
+                              <option selected disabled value="hide">selec..
+                              </option>
+                              <?php
+                                  $mes=1;
+                                  while($mes<=12)
+                                  {
+                                  ?>
+                                  <option value= "<?php echo $mes?>"> <?php echo $mes?> </option>
+                                  <?php $mes++;
+                                  }
+                              ?>
+                            </select> 
 
-                          <div class="left">
-                                
-                                <select name="mes" id="select2" class="mask" data-type="select" data-width="80">
-                                    <option selected disabled value="">selec..</option>
-                                    <?php
-                                      for($mes=1;$mes<=12;$mes++){
-                                      ?>
-                                      <option value="<?=$mes?>"><?=$mes?></option>
-                                      <?
-                                      }
-                                    ?>
-                                </select> 
-                                
-                              </div>
                     </div>
-                    <div class=" div7_box col-xs-3">
+                    <div class=" div7_box3 col-xs-3">
                           <p>Ano</p>
 
-                          <div class="left">
-                                
-                                <select name="ano" id="select3" class="mask" data-type="select" data-width="100">
-                                    <option selected disabled value="">selecione</option>
-                                      <?php
-                                      for($ano=date('Y');$ano > date('Y')-100;$ano--){
-                                      ?>
-                                      <option value="<?=$ano?>"><?=$ano?></option>
-                                      <?php
-                                      }
-                                      ?>
-                                </select> 
-                                
-                              </div>
+                          <select   required="required"  name="ano" id="ano">
+                              <option selected disabled value="hide">selec..
+                              </option>
+                              <?php
+                                  $ano=2020;
+                                  while($ano>=1900)
+                                  {
+                                  ?>
+                                  <option value= "<?php echo $ano?>"> <?php echo $ano?> </option>
+                                  <?php $ano--;
+                                  }
+                              ?>
+                          </select> 
                     </div>
 
                   </div>
@@ -411,7 +408,7 @@ onchange="exibeMsg(this.value);">
                     </div>
                     <div class=" div8_box col-lg-offset-3 col-lg-5">
 
-                      <input tabindex="8" class='TabOnEnter' name="celular" id="celular" type="text" pattern="^\d{4}-\d{3}-\d{4}$" onfocus="this.value=''" autofocus autocomplete="off" required  />
+                      <input tabindex="8" class="TabOnEnter" name="celular" id="celular" type="text" onfocus="this.value=''" autofocus autocomplete="off"   required="required"   />
                       <input type="button" class="sendBtn8" id="btSend8" name="btSend8" style="display: none;">
                       <img id="seta8" class="swiper-control next" src="images/seta_ok.svg" alt="seta" style="display: none;">
                     </div>
@@ -450,7 +447,7 @@ onchange="exibeMsg(this.value);">
                     </div>
                     <div class=" div9_box col-lg-offset-3 col-lg-5">
 
-                      <input tabindex="9" class='TabOnEnter' name="email" id="email" type="text" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" onfocus="this.value=''" autofocus autocomplete="off" required  />
+                      <input tabindex="9" class="TabOnEnter" name="email" id="email" type="text" onfocus="this.value=''" autofocus autocomplete="off"   required="required"   />
                       <input type="button" class="sendBtn9" id="btSend9" name="btSend9" style="display: none;">
                       <img id="seta9" class="swiper-control next" src="images/seta_ok.svg" alt="seta" style="display: none;">
                     </div>
@@ -485,23 +482,19 @@ onchange="exibeMsg(this.value);">
                   <div class="row">
                     <div class=" div10_t col-lg-offset-3 col-lg-5">
 
-                      <h1 tabindex="10" class='TabOnEnter'>Qual a cor da sua pele?</h1>
+                      <h1 tabindex="10" class="TabOnEnter">Qual a cor da sua pele?</h1>
 
                     </div>
                     <div class=" div10_box col-lg-offset-3 col-lg-5">
-
-                      <div class="left">
-                       
-                        <select name="topic" id="topic" class="mask" data-type="select" data-width="medium" >
-                          <option selected="selected" value="1">Selecione</option>
+                          <select required="required" name="raca" id="raca">
+                            <option disabled selected="selected" value="1">Selecione</option>
                           <option value="amarelo" >Amarelo</option>
                           <option value="branco">Branco</option>
                           <option value="indigena">Índigena</option>
                           <option value="negra">Negra</option>
                           <option value="pardo">Pardo</option>
-                        </select>
-                        
-                      </div>
+                          </select> 
+
 
                     </div>
 
@@ -536,16 +529,14 @@ onchange="exibeMsg(this.value);">
                   <div class="row">
                     <div class=" div11_t col-lg-offset-3 col-lg-5">
 
-                      <h1 tabindex="11" class='TabOnEnter'>Qual é o seu bairro?</h1>
+                      <h1 tabindex="11" class="TabOnEnter" id="proxima2">Qual é o seu bairro?</h1>
 
                     </div>
                     <div class=" div11_box col-lg-offset-3 col-lg-5">
 
-                      <div class="left">
-                       
-                        <select name="topic" id="topic" class="mask" data-type="select" data-width="small" >
-                           <option selected="selected" value="1">Selecione</option>
-                           <option  selected="selected">Selecione</option>
+
+                          <select  required="required"  name="bairro" id="bairro">
+                            <option disabled value="1">Selecione</option>
                            <option  value="aguasclaras"> Águas Claras</option>
                            <option value="asanorte"> Asa Norte</option>
                            <option value="asanorte"> Asa Sul</option>
@@ -585,9 +576,7 @@ onchange="exibeMsg(this.value);">
                            <option value="planalto"> Vila Planalto</option>
                            <option value="rural"> Zona Rural</option>
                            <option value="outros"> Outros</option>
-                        </select>
-                        
-                      </div>
+                          </select> 
 
                     </div>
 
@@ -624,18 +613,18 @@ onchange="exibeMsg(this.value);">
               <div class="row">
 
                 <div class=" div12_t col-lg-offset-3 col-lg-5">
-                   <h1  tabindex="12" class='TabOnEnter' >Você é <span id="txt"></span> com DRT?</h1>
+                   <h1  id="proxima3" tabindex="12" class="TabOnEnter">Você é <span id="txt"></span> com DRT?</h1>
                 </div>
 
                   <div class="div12_box col-lg-offset-3 col-lg-5">
-                   <input  name="ator"  value="sim" type="radio" id="radio2" class="radio2 swiper-control next">
+                   <input   name="ator"  value="sim" type="radio" id="radio2" class="radio2">
                     <label id="input3" for="radio2" class="radio-label4">
                      <span>Sim</span>
                    </label>
                  </div>
 
                  <div class="div12_box col-lg-offset-3 col-lg-5">
-                  <input name="ator" type="radio"  value="nao"  id="radio3" class="radio2 swiper-control next">
+                  <input name="ator" type="radio"  value="nao"  id="radio3" class="radio2">
                   <label for="radio3" class="radio-label3">
 
                     <span>Não</span>
@@ -685,28 +674,30 @@ onchange="exibeMsg(this.value);">
 
                     </div>
                     <div class=" div13_box col-lg-offset-3 col-lg-5">
-                        <img src="images/ig.svg" alt="">
-                      <input name="ig" id="ig" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="13"  autocomplete="off" required  />
+                        <img src="images/ig.svg" alt="instagram">
+                      <input name="ig" id="ig" type="text" onfocus="this.value=''" class="TabOnEnter" tabindex="13"  autocomplete="off" />
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
                     </div>
                     <div class=" div13_box2 col-lg-offset-3 col-lg-5">
-                        <img src="images/face.svg" alt="">
-                      <input name="face" id="face" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="14"  autocomplete="off" required  />
+                        <img src="images/face.svg" alt="facebook">
+                      <input name="face" id="face" type="text" onfocus="this.value=''" class="TabOnEnter" tabindex="14"  autocomplete="off" />
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
                     </div>
                     <div class=" div13_box3 col-lg-offset-3 col-lg-5">
-                        <img src="images/tt.svg" alt="">
-                      <input name="tt" id="tt" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="15"  autocomplete="off" required  />
+                        <img src="images/tt.svg" alt="twitter">
+                      <input name="tt" id="tt" type="text" onfocus="this.value=''" class="TabOnEnter" tabindex="15"  autocomplete="off" />
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
                     </div>
 
                   </div>
 
-
-                      <button class="enviar" id="cadastra" disabled name="submit" type="submit">Enviar Cadastro</button>
+                      <button  class="TabOnEnter enviar" tabindex="16" id="cadastra" name="submit" type="submit">Enviar Cadastro</button>
 
                 </div>
+
               </div>
+
+
 
  <div class="progress13">
   
@@ -729,6 +720,8 @@ onchange="exibeMsg(this.value);">
           </div>
         
 </div>
+
+
 </form>
     <!-- Swiper JS -->
 
@@ -737,15 +730,9 @@ onchange="exibeMsg(this.value);">
     <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mask.min.js"></script>
 
-
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
-<script src='http://alico.me/lib/slimscroll.js'></script>
-
     <script src="js/form.js"></script>
     <script src="js/select.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script src="js/select-widget-min.js"></script>
 
 </body>
 </html>

@@ -1,227 +1,252 @@
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$('#ano').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
   
-  jQuery.fn.clickoutside = function(callback) {
-    var outside = 1, self = $(this);
-    self.cb = callback;
-    this.click(function() { 
-      outside = 0; 
+    $this.addClass('select-hidden'); 
+    $this.wrap('<div class="select"></div>');
+    $this.after('<div class="select-styled"></div>');
+
+    var $styledSelect = $this.next('div.select-styled');
+    $styledSelect.text($this.children('option').eq(0).text());
+  
+    var $list = $('<ul />', {
+        'class': 'select-options'
+    }).insertAfter($styledSelect);
+  
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+  
+    var $listItems = $list.children('li');
+  
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active').each(function(){
+            $(this).removeClass('active').next('ul.select-options').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options').toggle();
     });
-    $(document).click(function() { 
-      outside && self.cb();
-      outside = 1;
+  
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $list.hide();
+        //console.log($this.val());
     });
-    return $(this);
-  } 
   
- // - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
- var fmask = {
-   
-   'select':{
-     
-     'scroll':{
-       
-       'status' : true,
-       'mod'    : {'small': 90, 'medium' : 120, 'large'  : 170 }
-     }
-   },
-   
-   'total' : $('.mask').length,
-   'count' : 1
-}
-    
-
-$('.mask').each(function(index){
-  
-  e = this ;
-  
-  // @ mask element : select 
-  
-  if($(e).attr('data-type')=='select')
-  {  
-    
-    option = '';
-   
-    i = 0;
-    
-    $(e).children('option').each(function(index){
-    
-      selected = $(this).attr('selected')? 'data-selected="on"' : '' ;
-      
-      label    = (i==0)? $(this).html() : label ;
-      
-      label    = selected!=''? $(this).html() :label; 
-      
-      option   = option+'<li '+selected+' data-value="'+$(this).attr('value')+'">'+$(this).html()+'</li>';
-     
-      i++;
-      
-    })  
-   
-    // @ data width
-    
-    width = '';
-    
-    if($(e).attr('data-width'))
-    {
-      width = Number($(e).attr('data-width'))? $(e).attr('data-width') : false;
-      width = (width)? 'style="width:'+width+'px"' : 'data-width="'+$(e).attr('data-width')+'"' ;
-    }
-     
-   
-    // @ data scroll
-    
-    scroll = '';
-    
-    fmask.select.scroll.status = $(e).attr('data-scroll')=='false' ? false : true ;
-   
-    scroll = $(e).attr('data-scroll')? 'data-scroll="'+$(e).attr('data-scroll')+'"': '' ;
-      
-    if(fmask.select.scroll.status)
-    {
-      
-      j = $(e).attr('data-scroll')? $(e).attr('data-scroll') : fmask.select.scroll.mod.medium ;
-      
-      if(!Number(j))
-      {
-        switch(j)
-        {
-          case 'medium'  : j=fmask.select.scroll.mod.medium; break;
-          case 'small'   : j=fmask.select.scroll.mod.small;  break;
-          case 'large'   : j=fmask.select.scroll.mod.large;  break;
-        }
-      }
-      
-    }
-       
-    // @ select dom html
-    
-    data  ='<div class="fmask select" id="select-'+$(e).attr('id')+'" '+width+' '+scroll+'>'
-            +'<div class="h">'
-              +'<i></i>'
-              +'<i data-icon="arrow"></i>'
-              +'<label>'+label+'</label>'
-            +'</div>'
-            +'<div class="b"><div class="s"><ol>'+option+'</ol></div></div>'
-          +'</div>';
-    
-    $(e).addClass('hidden').after(data);
-    
-    
-    // @ scroll status
-    
-    if(fmask.select.scroll.status)
-    {
-      $('#select-'+$(e).attr('id')+' .s').slimScroll({ height:j+'px' });  
-    }
-   
-  }
-  
-  // @ dongu sonrası tetikle
-  
-  if( fmask.total== fmask.count ) { formmask(); }
-  
-  fmask.count ++;
-   
-})
-  
-  
-  
-// form mask after function
-
-function formmask(){
- 
- $('.select .h').click(function(event){
-    
-    s = $(this).parent();
-    b = $(this).next();
-    
-    label  = $(this).children('label');
-    option = $(b).find('li');
-    select = $('#'+$(s).attr('id').replace('select-',''));
-    
-    
-    if(!$(b).hasClass('on')) 
-    {  
-      $('.select').removeClass('on');
-      $('.select .b').removeClass('on').slideUp('fast');
-      $(b).addClass('on').slideDown('fast'); 
-      $(s).addClass('on');
-       
-    }
-    else
-    {
-      $(b).removeClass('on').slideUp('fast');
-      $(s).removeClass('on');
-    }
-    
-    $(option).click(function(){
-    
-      $(b).removeClass('on').slideUp('fast');
-      $(label).html($(this).html());
-    
-      $(option).removeAttr('data-selected');
-      $(this).attr('data-selected','on');
-      $(select).val($(this).attr('data-value'));
-      $(s).removeClass('on');
-      
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
     });
-   
-  })
-    
- 
-  $('.fmask.select').clickoutside(function(){
-    
-    fmask_select_close();
-    
-  });
+
+});
+
+
+
+
+$('#dia').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
   
- 
-   $(document).keydown(function(e){
+    $this.addClass('select-hidden3'); 
+    $this.wrap('<div class="select3"></div>');
+    $this.after('<div class="select-styled3"></div>');
+
+    var $styledSelect = $this.next('div.select-styled3');
+    $styledSelect.text($this.children('option').eq(0).text());
   
-    if(e.keyCode==27) {
-      
-      fmask_select_close();
+    var $list = $('<ul />', {
+        'class': 'select-options3'
+    }).insertAfter($styledSelect);
+  
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
     }
-    
-   });
   
-}
+    var $listItems = $list.children('li');
+  
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active3').each(function(){
+            $(this).removeClass('active').next('ul.select-options3').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options3').toggle();
+    });
+  
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $list.hide();
+        //console.log($this.val());
+    });
+  
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
 
-
-function fmask_select_close(){
-   
-  $('.fmask.select .b').removeClass('on').slideUp('fast');
-  $('.fmask.select').removeClass('on');
-}
-
-
-
-
-
-
-
-
-
-
-
-
-//SEGUNDO select
-
-
-
-
-
-
+});
 
 
 
+$('#mes').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
+  
+    $this.addClass('select-hidden2'); 
+    $this.wrap('<div class="select2"></div>');
+    $this.after('<div class="select-styled2"></div>');
+
+    var $styledSelect = $this.next('div.select-styled2');
+    $styledSelect.text($this.children('option').eq(0).text());
+  
+    var $list = $('<ul />', {
+        'class': 'select-options2'
+    }).insertAfter($styledSelect);
+  
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+  
+    var $listItems = $list.children('li');
+  
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active2').each(function(){
+            $(this).removeClass('active').next('ul.select-options2').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options2').toggle();
+    });
+  
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $list.hide();
+        //console.log($this.val());
+    });
+  
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
+
+});
 
 
 
 
 
+$('#raca').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
+  
+    $this.addClass('select-hidden4'); 
+    $this.wrap('<div class="select4"></div>');
+    $this.after('<div class="select-styled4"></div>');
+
+    var $styledSelect = $this.next('div.select-styled4');
+    $styledSelect.text($this.children('option').eq(0).text());
+  
+    var $list = $('<ul />', {
+        'class': 'select-options4'
+    }).insertAfter($styledSelect);
+  
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+  
+    var $listItems = $list.children('li');
+  
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active4').each(function(){
+            $(this).removeClass('active').next('ul.select-options4').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options4').toggle(); 
+    });
+  
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        var delay = 1000;
+            setTimeout(function() {
+         $("#proxima2").focus();
+              }, 200);
+          
+        $list.hide();
+        //console.log($this.val());
+    });
+  
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
+
+});
 
 
 
+
+
+$('#bairro').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
+  
+    $this.addClass('select-hidden5'); 
+    $this.wrap('<div class="select5"></div>');
+    $this.after('<div class="select-styled5"></div>');
+
+    var $styledSelect = $this.next('div.select-styled5');
+    $styledSelect.text($this.children('option').eq(0).text());
+  
+    var $list = $('<ul />', {
+        'class': 'select-options5'
+    }).insertAfter($styledSelect);
+  
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+  
+    var $listItems = $list.children('li');
+  
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active5').each(function(){
+            $(this).removeClass('active').next('ul.select-options5').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options5').toggle();
+    });
+  
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel')); 
+        var delay = 1000;
+            setTimeout(function() {
+         $("#proxima3").focus();
+              }, 200);
+        $list.hide();
+        //console.log($this.val());
+    });
+  
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
+
+});

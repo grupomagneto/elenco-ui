@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  <form action="" id="form">
+  <form  name="form" action="adiciona-usuario2.php" id="form" method="post" enctype="multipart/form-data">
     <!-- Swiper Container -->
 <div class="swiper-container">
     <!-- Swiper W -->
@@ -32,10 +32,10 @@
                     </div>
                     <div class=" div1_box col-lg-offset-3 col-lg-5">
 
-                      <input name="cpf" id="cpf" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="1" autofocus autocomplete="off" required  />
+                      <input name="cpf" id="cpf" type="text" onfocus="this.value=''" class='TabOnEnter' autofocus tabindex="1" required  />
                       <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
 
-                      <img id="seta" class="nextButton" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
+                      <img id="seta" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
                     </div>
 
@@ -79,7 +79,7 @@
                     </div>
                     <div class=" div2_box col-lg-offset-3 col-lg-5">
 
-                      <input name="nomeres" id="nomeres" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="2" autofocus autocomplete="off" required  />
+                      <input name="nome_responsavel" id="nome_responsavel" type="text" onfocus="this.value=''" tabindex="2"  autocomplete="off" required  />
                       <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;">
 
                       <img id="seta2" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
@@ -118,11 +118,11 @@
               <div class="row">
 
                 <div class=" div3_t col-lg-offset-3 col-lg-5">
-                  <h1 class=" TabOnEnter"  tabindex="3">Qual o sexo da pessoa sendo cadastrada?</h1>
+                  <h1 class="TabOnEnter" tabindex="2" >Qual o sexo da pessoa sendo cadastrada?</h1>
                 </div>
 
                   <div class="div3_box col-lg-offset-3 col-lg-5">
-                   <input name="sexo" value="masculino" type="radio" id="radio0" class="radio swiper-control next" onchange="exibeMsg2(this.value);"
+                   <input name="sexo" value="masculino" type="radio" id="radio0" class="radio" onchange="exibeMsg2(this.value);"
 onchange="exibeMsg2(this.value);">
                     <label id="input3" for="radio0" class="radio-label2">
                      <span>Masculino</span>
@@ -130,7 +130,7 @@ onchange="exibeMsg2(this.value);">
                  </div>
 
                  <div class="div3_box col-lg-offset-3 col-lg-5">
-                  <input name="sexo" type="radio" value="feminino" id="radio1" class="radio swiper-control next" onchange="exibeMsg2(this.value);"
+                  <input name="sexo" type="radio" value="feminino" id="radio1" class="radio" onchange="exibeMsg2(this.value);"
 onchange="exibeMsg2(this.value);">
                   <label for="radio1" class="radio-label">
 
@@ -168,15 +168,15 @@ onchange="exibeMsg2(this.value);">
                   <div class="row">
                     <div class=" div4_t col-lg-offset-3 col-lg-5">
 
-                      <h1>Qual o nome <span id="txt2"></span>?</h1>
+                      <h1 >Qual o nome <span id="txt2"></span>?</h1>
 
                     </div>
                     <div class=" div4_box col-lg-offset-3 col-lg-5">
 
-                      <input name="nomem" id="nomem" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="4" autofocus autocomplete="off" required  />
+                      <input name="nome_menor" id="nome_menor" type="text" onfocus="this.value=''" tabindex="4" autofocus autocomplete="off" required  />
                       <input type="button" class="sendBtn" id="btSend4" name="btSend4" style="display: none;">
 
-                      <img id="seta4"  onclick="gravar()" class="nextButton" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
+                      <img id="seta4"  onclick="gravar()" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
                     </div>
 
@@ -216,10 +216,10 @@ onchange="exibeMsg2(this.value);">
                     </div>
                     <div class=" div5_box col-lg-offset-3 col-lg-5">
 
-                      <input name="sobrenomeme" id="sobrenomeme" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="5" autofocus autocomplete="off" required  />
+                      <input name="sobrenome_menor" id="sobrenome_menor" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="5" autofocus autocomplete="off" required  />
                       <input type="button" class="sendBtn5" id="btSend5" name="btSend5" style="display: none;">
 
-                      <img id="seta5" class="nextButton" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
+                      <img id="seta5" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
                       <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
                     </div>
 
@@ -258,7 +258,7 @@ onchange="exibeMsg2(this.value);">
                     </div>
                     <div class=" div6_box col-lg-offset-3 col-lg-5">
                         <h1>Para começar vamos precisar de duas fotos da <span id="divResultado"></span> suas feitas hoje.</h1>
-                    <img class="" src="images/seta.svg" alt="seta">
+                    <img class="swiper-control next" src="images/seta.svg" alt="seta">
 
                     </div>
 
@@ -297,7 +297,7 @@ onchange="exibeMsg2(this.value);">
 
                     <div class="wrapper">
                     <div class="file-upload TabOnEnter" tabindex="7">
-                     <input type="file" />
+                     <input type="file" name="foto" />
                            <img src="images/upload.svg" alt="">
                           </div>
                     </div>
@@ -353,7 +353,7 @@ onchange="exibeMsg2(this.value);">
 
                       <div class="wrapper2">
                           <div class="file-upload2 TabOnEnter" tabindex="8">
-                          <input type="file" tabindex="8" class='TabOnEnter' />
+                          <input type="file" name="fotos" tabindex="8" class='TabOnEnter' />
                           <img src="images/upload.svg" alt="">
                           </div>
                       </div>
@@ -398,68 +398,63 @@ onchange="exibeMsg2(this.value);">
             </div>
 
 <div id="9" class="swiper-slide gradient">               
-                
-<div class="container">
+  <div class="container">
                 <div class="div9">
                   <div class="row"> <div class="row">
                       <div class="div9_t col-sm-offset-3 col-sm-6">
-                          <h1 class='TabOnEnter' tabindex="9">Qual é a data de nascimento da <span id="divResultado2"></span>?</h1>
+                          <h1 tabindex="9" class='TabOnEnter'>Qual a sua data de nascimento?</h1>
                       </div>
                     </div>
                     <div class="div9_box col-xs-3 col-sm-offset-1 col-lg-offset-2">
                           <p>Dia</p>
-                          <div class="left">
-                                
-                                <select name="buy" id="buy" class="mask" data-type="select" data-width="80">
-                                  <option selected disabled value="">selec..</option>
+
+                           <select name="dia" id="dia">
+                              <option selected disabled value="hide">selec..
+                              </option>
                                     <?php
-                                        for($dia=1;$dia<=31;$dia++){
+                                        for($dia=1; $dia<=31; $dia++){
                                         ?>
-                                        <option value="<?=$dia?>"><?=$dia?></option>
+                                        <option value="<?= $dia?>"><?= $dia?></option>
                                         <?php
                                         }
                                     ?>
-                                </select> 
-                                
-                              </div>
+                          </select>
                     </div>
 
-                    <div class=" div9_box col-xs-3">
+                    <div class=" div9_box2 col-xs-3">
                           <p>Mês</p>
 
+                            <select name="mes" id="mes">
+                              <option selected disabled value="hide">selec..
+                              </option>
+                              <?php
+                                  $mes=1;
+                                  while($mes<=12)
+                                  {
+                                  ?>
+                                  <option value= "<?php echo $mes?>"> <?php echo $mes?> </option>
+                                  <?php $mes++;
+                                  }
+                              ?>
+                            </select> 
 
-                          <div class="left">
-                                
-                                <select name="buy" id="buy" class="mask" data-type="select" data-width="80">
-                                    <option selected disabled value="">selec..</option>
-                                    <?php
-                                      for($mes=1;$mes<=12;$mes++){
-                                      ?>
-                                      <option value="<?=$mes?>"><?=$mes?></option>
-                                      <?
-                                      }
-                                    ?>
-                                </select> 
-                                
-                              </div>
                     </div>
-                    <div class=" div9_box col-xs-3">
+                    <div class=" div9_box3 col-xs-3">
                           <p>Ano</p>
 
-                          <div class="left">
-                                
-                                <select name="buy" id="buy" class="mask" data-type="select" data-width="100">
-                                    <option selected disabled value="">selecione</option>
-                                      <?php
-                                      for($ano=date('Y');$ano > date('Y')-100;$ano--){
-                                      ?>
-                                      <option value="<?=$ano?>"><?=$ano?></option>
-                                      <?php
-                                      }
-                                      ?>
-                                </select> 
-                                
-                              </div>
+                          <select name="ano" id="ano">
+                              <option selected disabled value="hide">selec..
+                              </option>
+                              <?php
+                                  $ano=2020;
+                                  while($ano>=1900)
+                                  {
+                                  ?>
+                                  <option value= "<?php echo $ano?>"> <?php echo $ano?> </option>
+                                  <?php $ano--;
+                                  }
+                              ?>
+                          </select> 
                     </div>
 
                   </div>
@@ -495,8 +490,7 @@ onchange="exibeMsg2(this.value);">
                     </div>
                     <div class=" div10_box col-lg-offset-3 col-lg-5">
 
-                      <input name="celular" id="celular" class='TabOnEnter' tabindex="10" type="text" pattern="^(\(11\) [9][0-9]{4}-[0-9]{4})|(\(1[2-9]\) [5-9][0-9]{3}-[0-9]{4})|(\([2-9][1-9]\) [5-9][0-9]{3}-[0-9]{4})$
-" onfocus="this.value=''" autofocus autocomplete="off" required  />
+                      <input name="celular" id="celular" class='TabOnEnter' tabindex="10" type="text"  onfocus="this.value=''" autofocus autocomplete="off" />
                       <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;">
                       <img id="seta10" src="images/seta_ok.svg" alt="seta" style="display: none;">
                     </div>
@@ -537,9 +531,9 @@ onchange="exibeMsg2(this.value);">
                     </div>
                     <div class=" div11_box col-lg-offset-3 col-lg-5">
 
-                      <input name="email" id="email" class='TabOnEnter' tabindex="11"  type="text" onfocus="this.value=''" autocomplete="off" required  />
-                      <input type="button" class="sendBtn9" id="btSend9" name="btSend9" style="display: none;">
-                      <img id="seta9" src="images/seta_ok.svg" alt="seta" style="display: none;">
+                      <input name="email" id="email" class='TabOnEnter' tabindex="11"  type="text" onfocus="this.value=''" autocomplete="off"/>
+                      <input type="button" class="sendBtn11" id="btSend11" name="btSend11" style="display: none;">
+                      <img id="seta11" src="images/seta_ok.svg" alt="seta" style="display: none;">
                     </div>
 
                   </div>
@@ -570,6 +564,7 @@ onchange="exibeMsg2(this.value);">
 <div id="12" class="swiper-slide gradient">  
 
 
+
 <div class="container">
                 <div class="div12">
                   <div class="row">
@@ -579,25 +574,22 @@ onchange="exibeMsg2(this.value);">
 
                     </div>
                     <div class=" div12_box col-lg-offset-3 col-lg-5">
-
-                      <div class="left">
-                       
-                        <select name="topic" id="topic" class="mask" data-type="select" data-width="medium" >
-                          <option selected="selected" value="1">Selecione</option>
+                          <select name="raca" id="raca">
+                            <option disabled selected="selected" value="1">Selecione</option>
                           <option value="amarelo" >Amarelo</option>
                           <option value="branco">Branco</option>
                           <option value="indigena">Índigena</option>
                           <option value="negra">Negra</option>
                           <option value="pardo">Pardo</option>
-                        </select>
-                        
-                      </div>
+                          </select> 
+
 
                     </div>
 
                   </div>
                 </div>
 </div>
+
   
          
 
@@ -624,6 +616,7 @@ onchange="exibeMsg2(this.value);">
 <div id="13" class="swiper-slide gradient">               
 
 
+
 <div class="container">
                 <div class="div13">
                   <div class="row">
@@ -632,13 +625,11 @@ onchange="exibeMsg2(this.value);">
                       <h1 class='TabOnEnter' tabindex="13" >Em qual bairro <span id="txt4"></span> mora?</h1>
 
                     </div>
-                    <div class=" div13_box col-lg-offset-3 col-lg-5">
+                    <div class=" div11_box col-lg-offset-3 col-lg-5">
 
-                      <div class="left">
-                       
-                        <select name="topic" id="topic" class="mask" data-type="select" data-width="small" >
-                           <option selected="selected" value="1">Selecione</option>
-                           <option  selected="selected">Selecione</option>
+
+                          <select name="bairro" id="bairro">
+                            <option disabled value="1">Selecione</option>
                            <option  value="aguasclaras"> Águas Claras</option>
                            <option value="asanorte"> Asa Norte</option>
                            <option value="asanorte"> Asa Sul</option>
@@ -678,9 +669,7 @@ onchange="exibeMsg2(this.value);">
                            <option value="planalto"> Vila Planalto</option>
                            <option value="rural"> Zona Rural</option>
                            <option value="outros"> Outros</option>
-                        </select>
-                        
-                      </div>
+                          </select> 
 
                     </div>
 
@@ -738,7 +727,7 @@ onchange="exibeMsg2(this.value);">
                   </div>
 
 
-                      <button class="enviar" id="cadastra" disabled name="submit" type="submit">Enviar Cadastro</button>
+                      <button class="enviar TabOnEnter" id="cadastra" name="submit" tabindex="17" type="submit">Enviar Cadastro</button>
 
                 </div>
               </div>

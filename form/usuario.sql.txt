@@ -1,0 +1,82 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: 21-Mar-2016 às 13:00
+-- Versão do servidor: 5.1.73-community
+-- PHP Version: 5.5.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `magneto`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `sobrenome` varchar(100) DEFAULT NULL,
+  `nome_responsavel` varchar(100) DEFAULT NULL,
+  `cpf_responsavel` varchar(11) DEFAULT NULL,
+  `celular` varchar(60) DEFAULT NULL,
+  `email` varchar(80) DEFAULT NULL,
+  `d_nascimento` varchar(20) DEFAULT NULL,
+  `m_nascimento` varchar(20) DEFAULT NULL,
+  `a_nascimento` varchar(20) DEFAULT NULL,
+  `sexo` varchar(30) DEFAULT NULL,
+  `raca` varchar(50) DEFAULT NULL,
+  `bairro` varchar(100) DEFAULT NULL,
+  `fotos` varchar(200) DEFAULT NULL,
+  `ator` varchar(100) DEFAULT NULL,
+  `ig` varchar(100) DEFAULT NULL,
+  `face` varchar(100) DEFAULT NULL,
+  `tt` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nome`, `sobrenome`, `nome_responsavel`, `cpf_responsavel`, `celular`, `email`, `d_nascimento`, `m_nascimento`, `a_nascimento`, `sexo`, `raca`, `bairro`, `fotos`, `ator`, `ig`, `face`, `tt`) VALUES
+(1, 'karina', 'pereira', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'karina', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'karina', 'pereira', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 'karina', 'pereira', NULL, NULL, '6182837175', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'kakrina', 'pereira', NULL, NULL, '6182837175', 'kapcruz@hotmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, '2016.03.19-18.37.57.jpg', NULL, NULL, NULL, NULL),
+(9, 'karina', 'pereira', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'feminino', NULL, NULL, '2016.03.19-18.48.40.jpg', NULL, NULL, NULL, NULL),
+(10, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(11, NULL, NULL, NULL, NULL, NULL, NULL, '10', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(16, NULL, NULL, NULL, '03484087145', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(19, 'karina', 'pereira', 'pereira', '03484087145', '6182837175', 'karinape@gmail.com', '10', '11', '2008', 'feminino', 'negra', 'cruzeiro', '2016.03.20-09.58.16.jpg', NULL, 'ig', 'face', 'tt'),
+(20, 'karina', '', NULL, NULL, '', '', '', '', '', '', '', 'aguasclaras', '2016.03.20-17.05.08', '', '', '', ''),
+(21, 'karina', '', NULL, NULL, '', '', '', '', '', '', '', 'aguasclaras', '2016.03.20-17.05.08', '', '', '', ''),
+(22, 'karina', '', NULL, NULL, '', '', '', '', '', '', '', 'aguasclaras', '2016.03.20-17.41.01', 'nao', '', '', ''),
+(23, 'karina', '', NULL, NULL, '', '', '', '', '', '', '', 'aguasclaras', '2016.03.20-17.41.53', '', '', '', ''),
+(24, 'karina', '', NULL, NULL, '', '', '', '', '', '', '', 'aguasclaras', '2016.03.20-18.24.20', '', '', '', ''),
+(25, 'karina', '', NULL, NULL, '', '', '', '', '', '', '', 'aguasclaras', '2016.03.20-18.29.29', '', '', '', ''),
+(26, 'karina ', 'pereira', NULL, NULL, '6182837175', 'kapcruz@gmail.com', '5', '10', '2009', 'feminino', 'negra', 'cruzeiro', '2016.03.20-18.31.48.jpg', 'nao', 'ig', 'face', 'tt'),
+(27, 'karina', 'pereira', NULL, NULL, '6182837175', 'kapcruz@gmail.com', '10', '11', '2009', 'feminino', 'negra', 'cruzeiro', '2016.03.20-18.37.45.jpg', 'nao', 'ig', 'face', 'tt'),
+(28, 'karina', 'pereira', NULL, NULL, '6182837175', 'kapcruz@gmail.com', '8', '11', '2008', '', 'negra', 'granja', '2016.03.20-18.43.22.jpg', 'nao', 'ig', 'face', 'tt'),
+(29, 'karina', 'pereira', NULL, NULL, '6182837175', 'kapcruz@gmail.com', '8', '8', '1993', 'feminino', 'negra', 'cruzeiro', '2016.03.20-18.45.06.jpg', 'nao', 'ig', 'face', 'tt'),
+(30, 'karina', 'pereira', NULL, NULL, '6182837175', 'kapcruz@gmail.com', '23', '1', '1993', 'feminino', 'negra', 'ca do lago norte', '2016.03.21-00.04.44.jpg', 'nao', 'ig', 'face', 'tt'),
+(31, 'karina', 'pereira', 'karina pereira da cruz', '03484087145', '6182867495', 'kapcruz@gmail.com', '6', '10', '2008', 'feminino', 'pardo', 'cruzeiro', '2016.03.21-00.51.33.jpg', NULL, 'ig', 'FACE', 'tt');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

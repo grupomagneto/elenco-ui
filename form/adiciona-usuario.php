@@ -7,60 +7,66 @@
         	}
 
 
-    			$nome = $_POST['nome'];
-				$sobrenome = $_POST['sobrenome'];
-				$celular = $_POST['celular'];
-				$email = $_POST['email'];
-				$sexo = $_POST['sexo'];
-				$raca = $_POST['raca'];
-				$bairro = $_POST['bairro'];
-				$ator = $_POST['ator'];
-				$instagram = $_POST['instagram'];
-				$facebook = $_POST['facebook'];
-				$twitter = $_POST['twitter'];
-
+       $nome = $_POST['nome'];
+       $sobrenome = $_POST['sobrenome'];
+       $sexo = $_POST['sexo'];
+       $dia = $_POST['dia'];
+       $ano = $_POST['ano'];
+       $mes = $_POST['mes'];
+       $celular = $_POST['celular'];
+       $email = $_POST['email'];
+       $raca = $_POST['raca'];
+       $bairro = $_POST['bairro'];
+       $ator = $_POST['ator'];
+       $ig = $_POST['ig'];
+       $face = $_POST['face'];
+       $tt = $_POST['tt'];
 
   if(isset($_FILES['foto']))//verifica se recebeu um arquivo 
      {
       date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
  
       $ext = strtolower(substr($_FILES['foto']['name'],-4)); //Pegando extensão do arquivo
-      $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
+      $new_name = date("Y-m-d") . $ext; //Definindo um novo nome para o arquivo
       $dir = 'clientesorrindo/'; //Diretório para uploads
- 
+
       move_uploaded_file($_FILES['foto']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
     }
 
-             if(isset($_FILES['fotos']))//verifica se recebeu um arquivo 
+  if(isset($_FILES['fotos']))//verifica se recebeu um arquivo 
     {
       date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
  
       $ext = strtolower(substr($_FILES['fotos']['name'],-4)); //Pegando extensão do arquivo
-      $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
+      $new_name = date("Y-m-d") . $ext; //Definindo um novo nome para o arquivo
       $dir = 'clienteserio/'; //Diretório para uploads
- 
+
+
+
       move_uploaded_file($_FILES['fotos']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
     }
 
 
-	      	$sql = "INSERT INTO usuario (nome, sobrenome, nome_responsavel, cpf_responsavel, celular, email, d_nascimento, m_nascimento, a_nascimento, sexo, raca, bairro, fotos, ator, ig, face, tt) VALUES ('$nome', '$sobrenome', '$nomeres',  '$cpf', '$celular', '$email', '$dia', $mes', $ano', '$sexo','$raca','$bairro', '$new_name','$ator', '$ig', '$face', '$tt')";
+	      	$sql = "INSERT INTO usuario (nome, sobrenome, sexo,  d_nascimento, m_nascimento, a_nascimento, celular, email, raca, bairro, ator, instagram, facebook, twitter)
+           VALUES ('$nome', '$sobrenome', '$sexo', '$dia', '$mes', '$ano',  '$celular',  '$email',  '$raca',  '$bairro',  '$ator',  '$ig',  '$face',  '$tt')";
+
+           $sql2 = "INSERT INTO fotos_mobile (arquivo, data_foto) VALUES ('$new_name', '$new_name')";
+
 
       		$a = 0;
 
-      		if (!mysqli_query($con,$sql))
+      		if (mysqli_query($con,$sql) && mysqli_query($con,$sql2))
         	{
           		//die('Erro: ' . mysqli_error($con));
           		echo "<p>Erro ao se cadastrar. Por favor, tente novamente.</p>"; 
           		$a = 1;
-          		echo "<a href='form2.php'>Clique aqui para voltar</a>";
+          		echo "<a href='form_1.php'>Clique aqui para voltar</a>";
         	}
         	if ($a == 0) {
         		echo "<p>Cadastro efetuado com sucesso</p>";
-          		echo "<a href='form2.php'>Clique aqui para voltar</a>";
         	}
 
-header("location: sucesso.php");
-
+header ("Location: sucesso.php?sexo=$sexo");
 
 mysqli_close($con);
 
