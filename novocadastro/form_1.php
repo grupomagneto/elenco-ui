@@ -711,8 +711,8 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
   <p>fotos em estúdio feitas exclusivamente para cadastro</p>
 
       <ol>
-        <li>Por apenas 10x de R$ 29,90, pode se cadastrar em outras agências</li>
         <li>Recebe 80% do cachê líquido em todos os trabalhos</li>
+        <li>Por apenas 10x de R$ 29,90, pode se cadastrar em outras agências</li> 
         <li>Aviso de cachê liberado</li>
         <li>Contrato de 2 anos</li>
       </ol>
@@ -732,9 +732,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
     <h3>termos e condições</h3>
 
       <ol>
-        <li>Você,  <span class="concat_texto"></span> , está contratando a Magneto Elenco  para divulgar sua imagem e 
-            intermediar sua contratação junto a produtoras audiovisuais, 
-            clientes anunciantes e agências de publicidade e promoção de eventos;
+        <li>Você,  <span class="concat_texto"></span> , está contratando a MAGNETO ELENCO para divulgar sua imagem e intermediar sua contratação junto a PRODUTORAS AUDIOVISUAIS, CLIENTES ANUNCIANTES e AGÊNCIAS DE PUBLICIDADE E PROMOÇÃO DE EVENTOS;
         </li>
         <li>
           Para isso nos autoriza a utilizar sua imagem em nossos canais de comunicação;
@@ -748,7 +746,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
           você deverá realizá-lo ou poderá ter que pagar uma multa;
         </li>
         <li>
-          Você optou pelo cadastro Premium e por isso sua remuneração sempre será de 80% do cachê líquido 
+          Você optou pelo Cadastro Premium e por isso sua remuneração sempre será de 80% do cachê líquido 
           (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados os 20% de impostos);
         </li>
         <li>
@@ -791,8 +789,8 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
   <p>fotos em estúdio feitas exclusivamente para cadastro</p>
 
       <ol>
+        <li>Recebe 20% do cachê líquido no primeiro trabalho e 60% nos demais trabalhos</li>
         <li>Sem custo, mas deve ser agenciado exclusivamente pela Magneto Elenco</li>
-        <li>Recebe 20% do cachê líquido no primeiro trabalho e 60% nos demais trabalhos </li>
         <li>Contrato de 2 anos</li>
       </ol>
 
@@ -874,10 +872,10 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
 
 
         <ol>
-          <li>10x de R$ 99,90, pode se cadastrar em outras agências</li>
-          <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
-          <li>Aviso de cachê liberado</li>
           <li>DVD com 30 fotos tratadas</li>
+          <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
+          <li>10x de R$ 99,90, pode se cadastrar em outras agências</li>
+          <li>Aviso de cachê liberado</li>
           <li>Contrato de 3 anos</li>
         </ol>
 
@@ -912,18 +910,22 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
           você deverá realizá-lo ou poderá ter que pagar uma multa;
         </li>
         <li>
-            Você optou pelo CADASTRO GRATUITO e por isso sua remuneração será de apenas 20% do 
-            CACHÊ LÍQUIDO no seu PRIMEIRO TRABALHO e de 60% do CACHÊ LÍQUIDO no seu segundo trabalho em diante 
-            (Cachê Líquido é o Cachê Bruto recebido pela Magneto Elenco descontados 20% de impostos);
+            Você optou pelo CADASTRO PROFISSIONAL e por isso sua remuneração
+            sempre será de 90% do CACHÊ LÍQUIDO 
+            (Cachê Líquido é o Cachê Bruto recebido pela 
+            Magneto Elenco descontados 20% de impostos);
           </li>
           <li>
-              Você não precisa pagar para se agenciar;
+             Para efetivar seu contrato você deverá pagar R$ 999 em até 10x;
           </li>
           <li>
-            Você não poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;
+            Você poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;
           </li>
           <li>
-              Nosso contrato valerá por 24 meses;
+            Um Ensaio Fotográfico completo será realizado e entregue a você em DVD com mínimo de 30 fotos tratadas;
+          </li>
+          <li>
+             Nosso contrato valerá por 36 meses;
           </li>
       </ol>
 
@@ -953,8 +955,8 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                                 <p>fotos em estúdio feitas exclusivamente para cadastro</p>
 
                                 <ol>
-                                  <li>Por apenas 10x de R$ 29,90, pode se cadastrar em outras agências</li>
                                   <li>Recebe 80% do cachê líquido em todos os trabalhos</li>
+                                  <li>Por apenas 10x de R$ 29,90, pode se cadastrar em outras agências</li>
                                   <li>Aviso de cachê liberado</li>
                                   <li>Contrato de 2 anos</li>
                                 </ol>
@@ -975,9 +977,9 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                                         <p>fotos em estúdio feitas exclusivamente para cadastro</p>
 
                                     <ol>
-                                      <li>Por apenas 10x de R$ 29,90, pode se cadastrar em outras agências</li>
                                       <li>Recebe 80% do cachê líquido em todos os trabalhos</li>
-                                      <li></li>
+                                      <li>Por apenas 10x de R$ 29,90, pode se cadastrar em outras agências</li>
+                                      <li>Aviso de cachê liberado</li>
                                       <li>Contrato de 2 anos</li>
                                     </ol>
 
@@ -989,9 +991,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                                         <div class="termo_um">
                                         <ol>
                                           <li>
-                                            Você, <span class="concat_texto"></span>, está contratando a Magneto Elenco  
-                                            para divulgar sua imagem e intermediar sua contratação junto a produtoras audiovisuais, 
-                                            clientes anunciantes e agências de publicidade e promoção de eventos; 
+                                            Você, <span class="concat_texto"></span>, está contratando a MAGNETO ELENCO para divulgar sua imagem e intermediar sua contratação junto a PRODUTORAS AUDIOVISUAIS, CLIENTES ANUNCIANTES e AGÊNCIAS DE PUBLICIDADE E PROMOÇÃO DE EVENTOS; 
                                           </li>
                                           <li>
                                             Para isso nos autoriza a utilizar sua imagem em nossos canais de comunicação;
@@ -1010,10 +1010,10 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                                         <div class="termo_dois">
                                         <ol  start="5">
                                           <li>
-                                              Você optou pelo cadastro Premium e por isso sua remuneração
-                                               sempre será de 80% do cachê líquido 
-                                              (cachê líquido é o cachê bruto recebido pela 
-                                              Magneto Elenco descontados os 20% de impostos);
+                                              Você optou pelo CADASTRO PREMIUM e por isso sua remuneração
+                                               sempre será de 80% do CACHÊ LÍQUIDO 
+                                              (Cachê Líquido é o Cachê Bruto recebido pela 
+                                              Magneto Elenco descontados 20% de impostos);
                                           </li>
                                           <li>
                                               Para efetivar seu contrato você deverá pagar R$ 299 
@@ -1066,8 +1066,8 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                       <p>fotos em estúdio feitas exclusivamente para cadastro</p>
 
                       <ol>
+                        <li>Recebe 20% do cachê líquido no primeiro trabalho e 60% nos demais trabalhos</li>
                         <li>Sem custo, mas deve ser agenciado exclusivamente pela Magneto Elenco</li>
-                        <li>Recebe 20% do cachê líquido no primeiro trabalho e 60% nos demais trabalhos </li>
                         <li>Contrato de 2 anos</li>
                       </ol>
 
@@ -1084,8 +1084,8 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                                         <p>fotos em estúdio feitas exclusivamente para cadastro</p>
 
                                     <ol>
+                                        <li>Recebe 20% do cachê líquido no primeiro trabalho e 60% nos demais trabalhos</li>
                                         <li>Sem custo, mas deve ser agenciado exclusivamente pela Magneto Elenco</li>
-                                        <li>Recebe 20% do cachê líquido no primeiro trabalho e 60% nos demais trabalhos </li>
                                         <li>Contrato de 2 anos</li>
                                     </ol>
 
@@ -1170,10 +1170,10 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
 
 
                       <ol>
-                        <li>10x de R$ 99,90, pode se cadastrar em outras agências</li>
-                        <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
-                        <li>Aviso de cachê liberado</li>
                         <li>DVD com 30 fotos tratadas</li>
+                        <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
+                        <li>10x de R$ 99,90, pode se cadastrar em outras agências</li>
+                        <li>Aviso de cachê liberado</li>
                         <li>Contrato de 3 anos</li>
                       </ol>
 
@@ -1190,10 +1190,10 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
 
 
                                                   <ol>
-                                                    <li>10x de R$ 99,90, pode se cadastrar em outras agências</li>
-                                                    <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
-                                                    <li>Aviso de cachê liberado</li>
                                                     <li>DVD com 30 fotos tratadas</li>
+                                                    <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
+                                                    <li>10x de R$ 99,90, pode se cadastrar em outras agências</li>
+                                                    <li>Aviso de cachê liberado</li>
                                                     <li>Contrato de 3 anos</li>
                                                   </ol>
 
@@ -1224,18 +1224,22 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                                         <div class="termo_dois3">
                                         <ol  start="5">
                                           <li>
-                                            Você optou pelo CADASTRO GRATUITO e por isso sua remuneração será de apenas 20% do 
-                                            CACHÊ LÍQUIDO no seu PRIMEIRO TRABALHO e de 60% do CACHÊ LÍQUIDO no seu segundo trabalho em diante 
-                                            (Cachê Líquido é o Cachê Bruto recebido pela Magneto Elenco descontados 20% de impostos);
+                                            Você optou pelo CADASTRO PROFISSIONAL e por isso sua remuneração
+                                            sempre será de 90% do CACHÊ LÍQUIDO 
+                                            (Cachê Líquido é o Cachê Bruto recebido pela 
+                                            Magneto Elenco descontados 20% de impostos);
                                           </li>
                                           <li>
-                                             Você não precisa pagar para se agenciar;
+                                             Para efetivar seu contrato você deverá pagar R$ 999 em até 10x;
                                           </li>
                                           <li>
-                                            Você não poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;
+                                            Você poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;
+                                          </li>
+                                           <li>
+                                            Um Ensaio Fotográfico completo será realizado e entregue a você em DVD com mínimo de 30 fotos tratadas;
                                           </li>
                                           <li>
-                                             Nosso contrato valerá por 24 meses;
+                                             Nosso contrato valerá por 36 meses;
                                           </li>
                                         </ol>
 
