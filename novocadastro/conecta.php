@@ -3,7 +3,7 @@
 // DB Localhost
 $user = 'root';
 $password = 'root';
-$db = 'vinigoulart18';
+$db = 'testecadastro';
 $host = 'localhost';
 $port = 8889;
 

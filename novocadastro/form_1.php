@@ -21,7 +21,7 @@
         <div class="div1">
          <div class="row">
           <div class=" div1_t col-lg-offset-3 col-lg-5">
-           <h1>Qual o seu primeiro nome?*</h1>
+           <h1>Qual o seu primeiro nome?<sup>*</sup></h1>
           </div>
           <div class=" div1_box col-lg-offset-3 col-lg-5">
            <input name="nome" id="nome" type="text" class="TabOnEnter " tabindex="1" autofocus autocomplete="off" required="required" />
@@ -45,7 +45,7 @@
         <div class="div2">
          <div class="row">
           <div class=" div2_t col-lg-offset-3 col-lg-5">
-           <h1>E o sobrenome?*</h1>
+           <h1>E o sobrenome?<sup>*</sup></h1>
           </div>
           <div class=" div2_box col-lg-offset-3 col-lg-5">
            <input name="sobrenome" id="sobrenome" type="text" onfocus="this.value=''" class="TabOnEnter " tabindex="2" autocomplete="off"  required="required" />
@@ -70,7 +70,7 @@
       <div class="div3">
        <div class="row">
         <div class=" div3_t col-lg-offset-3 col-lg-5">
-         <h1 class="TabOnEnter obrigado" tabindex="3">Qual o seu sexo?*</h1>
+         <h1 class="TabOnEnter obrigado" tabindex="3">Qual o seu sexo?<sup>*</sup></h1>
         </div>
          <div class="div3_box col-lg-offset-3 col-lg-5">
           <input name="sexo" value="masculino" type="radio" id="radio0" class="radio" onchange="exibeMsg(this.value);"
@@ -130,11 +130,11 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
           <div class=" div5_box col-lg-offset-3 col-lg-5">
           <div class="wrapper">
           <div class="file-upload" tabindex="5" class="TabOnEnter">
-           <input type="file" name="foto" id="foto" required="required" />
+           <input type="file" name="foto_1" id="foto" required="required" />
               <img src="images/upload.svg" alt="">
              </div>
           </div>
-           <h4>upload*</h4>
+           <h4>upload<sup>*</sup></h4>
           </div>
           <div class=" div5_t col-lg-offset-3 col-lg-5">
             <h1>Sorrindo!</h1>
@@ -165,11 +165,11 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
           <div class=" div6_box col-lg-offset-3 col-lg-5">
            <div class="wrapper2">
              <div class="file-upload2" tabindex="6" class="TabOnEnter">
-             <input type="file" name="fotos" id="foto2" required="required" />
+             <input type="file" name="foto_2" id="foto2" required="required" />
              <img src="images/upload.svg" alt="">
              </div>
            </div>
-           <h4>upload*</h4>
+           <h4>upload<sup>*</sup></h4>
           </div>
           <div class=" div6_t col-lg-offset-3 col-lg-5">
             <h1>Agora sem sorrir!</h1>
@@ -199,10 +199,10 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
         <div class="div7">
          <div class="row">
           <div class="div7_t col-lg-offset-3 col-lg-5">
-           <h1>Qual a sua data de nascimento?*</h1>
+           <h1>Qual a sua data de nascimento?<sup>*</sup></h1>
           </div>
           <div class="div7_box col-lg-offset-3 col-lg-5">
-           <input type="date" name="data" id="data" data-mask="00-00-0000" onfocus="this.value=''" class="TabOnEnter" tabindex="7" autocomplete="off" required="required" />
+           <input type="date" name="data" id="data" data-mask="00/00/0000" onfocus="this.value=''" class="TabOnEnter" tabindex="7" autocomplete="off" required="required" />
            <input type="button" class="sendBtn7" id="btSend7" name="btSend7" style="display: none;"> 
            <img class="swiper-control next" id="seta7" src="images/seta_ok.svg" alt="seta" style="display: none;">
           </div>
@@ -224,7 +224,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
         <div class="div8">
          <div class="row">
           <div class=" div8_t col-lg-offset-3 col-lg-5">
-           <h1>Qual o seu celular?*</h1>
+           <h1>Qual o seu celular?<sup>*</sup></h1>
           </div>
           <div class=" div8_box col-lg-offset-3 col-lg-5">
            <input tabindex="8" class="TabOnEnter" data-mask="(00) 0000-00009" name="celular" id="celular" type="text" onfocus="this.value=''" autofocus autocomplete="off"  required="required"  />
@@ -249,7 +249,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
         <div class="div9">
          <div class="row">
           <div class=" div9_t col-lg-offset-3 col-lg-5">
-           <h1>E o seu email?*</h1>
+           <h1>E o seu email?<sup>*</sup></h1>
           </div>
           <div class=" div9_box col-lg-offset-3 col-lg-5">
            <input tabindex="9" class="TabOnEnter" name="email" id="email" type="text" onfocus="this.value=''" autofocus autocomplete="off"  required="required"  />
@@ -274,16 +274,16 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
         <div class="div10">
          <div class="row">
           <div class=" div10_t col-lg-offset-3 col-lg-5">
-           <h1 tabindex="10" class="TabOnEnter">Qual a cor da sua pele?*</h1>
+           <h1 tabindex="10" class="TabOnEnter">Qual a cor da sua pele?<sup>*</sup></h1>
           </div>
           <div class=" div10_box col-lg-offset-3 col-lg-5">
              <select required="required" name="raca" id="raca">
               <option disabled selected="selected" value="1">Selecione</option>
-             <option value="amarelo" >Amarela</option>
-             <option value="branco">Branca</option>
-             <option value="indigena">Índigena</option>
-             <option value="negra">Negra</option>
-             <option value="pardo">Parda</option>
+             <option value="Amarela" >Amarela</option>
+             <option value="Branca">Branca</option>
+             <option value="Indígena">Indígena</option>
+             <option value="Negra">Negra</option>
+             <option value="Parda">Parda</option>
              </select> 
           </div>
          </div>
@@ -304,7 +304,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
         <div class="div11">
          <div class="row">
           <div class=" div11_t col-lg-offset-3 col-lg-5">
-           <h1 tabindex="11" class="TabOnEnter" id="proxima2">Qual é o seu bairro?*</h1>
+           <h1 tabindex="11" class="TabOnEnter" id="proxima2">Qual é o seu bairro?<sup>*</sup></h1>
           </div>
           <div class=" div11_box col-lg-offset-3 col-lg-5">
              <select required="required" name="bairro" id="bairro">
@@ -373,7 +373,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
  <div class="div1">
   <div class="row">
    <div class=" div1_t col-lg-offset-3 col-lg-5">
-    <h1 >Qual é o seu CPF?*</h1>
+    <h1 >Qual é o seu CPF?<sup>*</sup></h1>
    </div>
    <div class=" div1_box col-lg-offset-3 col-lg-5">
     <input name="cpf" id="cpf" type="text" data-mask="000.000.000-00" onfocus="this.value=''" class='TabOnEnter' autofocus tabindex="12" required />
@@ -398,7 +398,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
       <div class="div13" id="drt">
        <div class="row">
         <div class=" div13_t col-lg-offset-3 col-lg-5">
-          <h1  tabindex="13" class="TabOnEnter">Você é <span id="txt"></span> com DRT?*</h1>
+          <h1  tabindex="13" class="TabOnEnter">Você é <span id="txt"></span> com DRT?<sup>*</sup></h1>
         </div>
          <div class="div13_box col-lg-offset-3 col-lg-5">
           <input name="ator" value="sim" type="radio" id="radio2" class="radio2">
@@ -421,7 +421,6 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
   </div>
      </div>
     </div>  
-     
  <div class="progress13">
  <progress id="progressbar13" value="70" max="80" ></progress>
 </div>
@@ -434,11 +433,10 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
 </div> 
 <div id="14" class="swiper-slide gradient">        
  <div class="container">
-        
    <div class="div14">
       <div class="row">
               <div class="div14_t col-lg-offset-3 col-lg-5">
-                <h1 class="penultimo_p" tabindex="14" class="TabOnEnter">Escolha uma opção para seu cadastro:*</h1>
+                <h1 class="penultimo_p" tabindex="14" class="TabOnEnter">Escolha uma opção para seu cadastro:<sup>*</sup></h1>
               </div>
       </div>
       <div class="row col-xs-12">
@@ -477,7 +475,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
     <li>Nosso contrato valerá por 24 meses;</li>
    </ol>
    <p class="acordo">Clicando abaixo você declara estar ciente e concordar com os termos acima apresentados</p>
-    <input name="opcao_m" value="premium" type="radio" id="premium_m" class="sim_acordo" >
+    <input name="opcao_m" value="Premium" type="radio" id="premium_m" class="sim_acordo" />
      <label for="premium_m" class="radio_sim_acordo">
       <span>CONCORDO</span>
      </label> 
@@ -517,7 +515,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
      <li>Nosso contrato valerá por 24 meses;</li>
    </ol>
    <p class="acordo_gratuito">Clicando abaixo você declara estar ciente e concordar com os termos acima apresentados</p>
-    <input name="opcao_m" value="gratuito" type="radio" id="gratuito_m" class="sim_acordo_gratuito" >
+    <input name="opcao_m" value="Gratuito" type="radio" id="gratuito_m" class="sim_acordo_gratuito" >
      <label for="gratuito_m" class="radio_sim_acordo_gratuito">
       <span>CONCORDO</span>
      </label> 
@@ -560,7 +558,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
      <li>Nosso contrato valerá por 36 meses;</li>
    </ol>
    <p class="acordo_gratuito3">Clicando abaixo você declara estar ciente e concordar com os termos acima apresentados</p>
-    <input name="opcao_m" value="profissional" type="radio" id="profissional_m" class="sim_acordo_gratuito3" >
+    <input name="opcao_m" value="Profissional" type="radio" id="profissional_m" class="sim_acordo_gratuito3" >
      <label for="profissional_m" class="radio_sim_acordo_gratuito3">
       <span>CONCORDO</span>
      </label> 
@@ -580,9 +578,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                  <li>Contrato de 2 anos</li>
                 </ol>
                 <!--modal -->
-                 <button type="button" class="botao_modal" data-toggle="modal" data-target="#myModal">
-                  Escolher
-                 </button>
+                 <button type="button" class="botao_modal" data-toggle="modal" data-target="#myModal" id="botao1">escolher</button>
                  <div class="modal hidden-xs modal2" id="myModal" role="dialog" >
                   <div class="modal-content conteudo_modal">
                    <div class="modal_esquerda">
@@ -616,7 +612,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                      Clicando abaixo você declara estar ciente e concordar com os termos acima apresentados
                     </p>
                    <div class="button">
-                     <input type="radio" name="opcao" value="premium" id="premium" class="sim_acordo" onClick="java script:mostrarDiv(1);" />
+                     <input type="radio" name="opcao" value="Premium" id="premium" class="sim_acordo" onclick="java script:mostrarDiv(1);" />
                      <label for="premium">CONCORDO</label>
                    </div>
     <div id="menos_d" data-dismiss="modal"></div>
@@ -641,9 +637,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
             <li>Contrato de 2 anos</li>
            </ol>
            <!--modal -->
-           <button type="button" class="botao_modal2" data-toggle="modal" data-target="#myModal2">
-            Escolher
-           </button>
+           <button type="button" class="botao_modal2" data-toggle="modal" data-target="#myModal2" id="botao2">escolher</button>
                  <div class="modal hidden-xs modal2" id="myModal2" role="dialog" >
                   <div class="modal-content conteudo_modal2">
                    <div class="modal_esquerda2">
@@ -677,7 +671,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                      concordar com os termos acima apresentados
                     </p>
                    <div class="button2">
-                     <input type="radio" name="opcao" value="gratuito" id="gratuito" class="sim_acordo2" />
+                     <input type="radio" name="opcao" value="Gratuito" id="gratuito" class="sim_acordo2" />
                      <label for="gratuito">CONCORDO</label>
                    </div>
               <div id="menos2_d" data-dismiss="modal"></div>
@@ -703,9 +697,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
             <li>Contrato de 3 anos</li>
            </ol>
            <!--modal -->
-           <button type="button" class="botao_modal3" data-toggle="modal" data-target="#myModal3">
-            Escolher
-           </button>
+           <button type="button" class="botao_modal3" data-toggle="modal" data-target="#myModal3" id="botao3">escolher</button>
                  <div class="modal modal2 hidden-xs" id="myModal3" role="dialog" >
                   <div class="modal-content conteudo_modal3">
                    <div class="modal_esquerda3">
@@ -742,7 +734,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                      concordar com os termos acima apresentados
                     </p>
                    <div class="button3">
-                     <input type="radio" name="opcao" value="profissional" id="profissional" class="sim_acordo3" />
+                     <input type="radio" name="opcao" value="Profissional" id="profissional" class="sim_acordo3" />
                      <label for="profissional">CONCORDO</label>
                    </div>
               <div id="menos3_d" data-dismiss="modal"></div>
@@ -791,7 +783,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
           </div>
          </div>
            <button class="TabOnEnter enviar" tabindex="17" id="cadastra" name="submit" type="submit">Enviar Cadastro</button>
-        <p id="erro" style="display: none;">Por favor verifique se preencheu todos os campos obrigatórios marcados com *</p>
+        <p id="erro" style="display: none;">Por favor verifique se preencheu todos os campos obrigatórios marcados com <sup>*</sup></p>
         </div>
        </div>
  <div class="progress15">
@@ -803,6 +795,12 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
         </ul>
        </nav>
 </div> 
+</div>
+</div>
+</nav>
+</div>
+</nav>
+</div>
 </div>
 </div>
 </form>
