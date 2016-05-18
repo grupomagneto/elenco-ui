@@ -36,7 +36,6 @@ include("conecta.php");
         $cadastro = $_POST['opcao'];
      }
 
-
     $sql = "INSERT INTO novo_cadastro (nome, sobrenome, sexo, dt_nascimento, d_nascimento, m_nascimento, celular, email, tipo_cadastro, cor_pele, bairro, instagram, facebook, twitter) VALUES ('$nome', '$sobrenome', '$sexo', '$data_comp', '$dia', '$mes', '$celular', '$email', '$cadastro', '$cor_pele', '$bairro', '$ig', '$face', '$tt')";
     mysqli_query($link, $sql);
 
