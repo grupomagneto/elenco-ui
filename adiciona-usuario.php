@@ -20,6 +20,10 @@ include("conecta.php");
      } if ($sexo == 'feminino') {
       $sexo = 'F';
      }
+   $cpf = $_POST['cpf'];
+   $nome_responsavel = $_POST['nome_responsavel'];
+   $nome_menor = $_POST['nome_menor'];
+   $sobrenome_menor = $_POST['sobrenome_menor'];
    $celular = $_POST['celular'];
    $celular = preg_replace('/\D+/', '', $celular);
    $email = $_POST['email'];

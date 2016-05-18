@@ -12,7 +12,7 @@
 
 </head>
 <body>
- <form name="form2" action="adiciona-usuario2.php" id="form2" method="post" enctype="multipart/form-data" onsubmit="return valida_form2(this)">
+ <form name="form2" action="adiciona-usuario.php" id="form2" method="post" enctype="multipart/form-data" onsubmit="return valida_form2(this)">
   <!-- Swiper Container -->
 <div class="swiper-container">
   <!-- Swiper W -->
@@ -169,7 +169,7 @@ onchange="exibeMsg2(this.value);">
           </div>
           <div class=" div4_box col-lg-offset-3 col-lg-5">
 
-           <input name="nome_menor" id="nome_menor" type="text" onfocus="this.value=''" tabindex="4" autofocus autocomplete="off" required />
+           <input name="nome_menor" id="nome_menor" type="text" onfocus="this.value=''" tabindex="4"  autocomplete="off" required />
            <input type="button" class="sendBtn" id="btSend4" name="btSend4" style="display: none;">
 
            <img id="seta4" onclick="gravar()" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
@@ -212,7 +212,7 @@ onchange="exibeMsg2(this.value);">
           </div>
           <div class=" div5_box col-lg-offset-3 col-lg-5">
 
-           <input name="sobrenome_menor" id="sobrenome_menor" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="5" autofocus autocomplete="off" required />
+           <input name="sobrenome_menor" id="sobrenome_menor" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="5"  autocomplete="off" required />
            <input type="button" class="sendBtn5" id="btSend5" name="btSend5" style="display: none;">
 
            <img id="seta5" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
@@ -446,7 +446,7 @@ onchange="exibeMsg2(this.value);">
           </div>
           <div class=" div10_box col-lg-offset-3 col-lg-5">
 
-           <input name="celular" id="celular" data-mask="(00) 0000-00009" class='TabOnEnter' tabindex="10" type="text" onfocus="this.value=''" autofocus autocomplete="off" />
+           <input name="celular" id="celular" data-mask="(00) 0000-00009" class='TabOnEnter' tabindex="10" type="text" onfocus="this.value=''"  autocomplete="off" />
            <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;">
            <img id="seta10" src="images/seta_ok.svg" alt="seta" style="display: none;">
           </div>
@@ -1158,75 +1158,46 @@ onchange="exibeMsg2(this.value);">
             Escolher
            </button>
 
-                        <div class="modal modal2 hidden-xs" id="myModal3" role="dialog" aria-labelledby="myLargeModalLabel">
+              <div class="modal modal2 hidden-xs" id="myModal3" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-content conteudo_modal3">
                    <div class="modal_esquerda3">
-                        <h3>Profissional</h3>
+                      <h3>Profissional</h3>
                          <p>ensaio fotográfico completo p/cadastro e entrega em DVD</p>
-
-
                          <ol>
-                          <li>10x de R$ 99,90, pode se cadastrar em outras agências</li>
-                          <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
-                          <li>Aviso de cachê liberado</li>
                           <li>DVD com 30 fotos tratadas</li>
+                          <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
+                          <li>10x de R$ 99,90, pode se cadastrar em outras agências</li>
+                          <li>Aviso de cachê liberado</li>
                           <li>Contrato de 3 anos</li>
                          </ol>
-
                    </div>
-
                    <div class="modal_direita3">
                     <h3>Termos e Condições</h3>
                     <div class="termo_um3">
                     <ol>
-                     <li>
-                      Você, <span class="concat_texto"></span>, está contratando a MAGNETO ELENCO para divulgar sua imagem e intermediar sua contratação junto
-                       a PRODUTORAS AUDIOVISUAIS, CLIENTES ANUNCIANTES e AGÊNCIAS DE PUBLICIDADE E PROMOÇÃO DE EVENTOS; 
-                     </li>
-                     <li>
-                      Para isso nos autoriza a utilizar sua imagem em nossos canais de comunicação;
-                     </li>
-                     <li>
-                      Nós não garantimos conseguir trabalhos para você, 
-                      assim como você não tem obrigação de aceitar os trabalhos que lhe oferecermos;
-                     </li>
-                     <li>
-                      Porém, uma vez que você aceite um trabalho que lhe oferecermos, 
-                      você deverá realizá-lo ou poderá ter que pagar uma multa;
-                     </li>
+                     <li>Você, <span class="concat_texto"></span>, está contratando a MAGNETO ELENCO para divulgar sua imagem e intermediar sua contratação junto a PRODUTORAS AUDIOVISUAIS, CLIENTES ANUNCIANTES e AGÊNCIAS DE PUBLICIDADE E PROMOÇÃO DE EVENTOS;</li>
+                     <li>Para isso nos autoriza a utilizar sua imagem em nossos canais de comunicação;</li>
+                     <li>Nós não garantimos conseguir trabalhos para você, assim como você não tem obrigação de aceitar os trabalhos que lhe oferecermos;</li>
+                     <li>Porém, uma vez que você aceite um trabalho que lhe oferecermos, você deverá realizá-lo ou poderá ter que pagar uma multa;</li>
                     </ol>
                     </div>
-
                     <div class="termo_dois3">
                     <ol start="5">
-                     <li>
-                      Você optou pelo CADASTRO GRATUITO e por isso sua remuneração será de apenas 20% do 
-                      CACHÊ LÍQUIDO no seu PRIMEIRO TRABALHO e de 60% do CACHÊ LÍQUIDO no seu segundo trabalho em diante 
-                      (Cachê Líquido é o Cachê Bruto recebido pela Magneto Elenco descontados 20% de impostos);
-                     </li>
-                     <li>
-                       Você não precisa pagar para se agenciar;
-                     </li>
-                     <li>
-                      Você não poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;
-                     </li>
-                     <li>
-                       Nosso contrato valerá por 24 meses;
-                     </li>
+                      <li>Você optou pelo CADASTRO PROFISSIONAL e por isso sua remuneração sempre será de 90% do CACHÊ LÍQUIDO (Cachê Líquido é o Cachê Bruto recebido pela Magneto Elenco descontados 20% de impostos);</li>
+                      <li>Para efetivar seu contrato você deverá pagar R$ 999 em até 10x;</li>
+                      <li>Você poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;</li>
+                      <li>Um Ensaio Fotográfico completo será realizado e entregue a você em DVD com mínimo de 30 fotos tratadas;</li>
+                      <li>Nosso contrato valerá por 36 meses;</li>
                     </ol>
-
                     <p class="descricao_contrato3">
                      Clicando abaixo você declara estar ciente e 
                      concordar com os termos acima apresentados
                     </p>
-
                    <div class="button3">
-                     <input type="radio" name="profissional" value="profissional" id="profissional" class="sim_acordo3" />
+                     <input type="radio" name="opcao" value="Profissional" id="profissional" class="sim_acordo3" />
                      <label for="profissional">CONCORDO</label>
                    </div>
-
-
-              <div id="menos3_d" data-dismiss="modal"></div>
+                  <div id="menos3_d" data-dismiss="modal"></div>
 
                     </div>
 
@@ -1327,21 +1298,13 @@ onchange="exibeMsg2(this.value);">
 </div>
 </form>
   <!-- Swiper JS -->
-
-<script src="js/jquery-1.12.1.min.js"></script>
+  <script src="js/jquery-1.12.1.min.js"></script>
   <script src="js/swiper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mask.min.js"></script>
-
-
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
-<script src='http://alico.me/lib/slimscroll.js'></script>
-
+  <script src="js/jquery.mask.min.js"></script>
   <script src="js/form.js"></script>
   <script src="js/select.js"></script>
   <script src="js/jquery-ui.min.js"></script>
-  <script src="js/select-widget-min.js"></script>
 
 </body>
 </html>

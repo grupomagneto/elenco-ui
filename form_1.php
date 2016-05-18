@@ -393,6 +393,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
         </ul>
        </nav>
 </div>
+
 <div id="13" class="swiper-slide gradient"> 
 <div class="container">
       <div class="div13" id="drt">
@@ -431,6 +432,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
         </ul>
        </nav>
 </div> 
+
 <div id="14" class="swiper-slide gradient">        
  <div class="container">
    <div class="div14">
@@ -484,7 +486,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
 </div>
 <!-- FIM MODAL PREMIUM-->
 <!-- INÍCIO MODAL GRATUITO -->
-<div class="div_m2" data-toggle="modal" data-target="#myModal1_m2">
+<div class="div_m2" id="div_m2" data-toggle="modal" data-target="#myModal1_m2">
  <h3>gratuito</h3>
  <p>fotos em estúdio feitas exclusivamente para cadastro</p>
  <div id="mais2"></div>
@@ -522,7 +524,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
      <div id="menos2_2m" data-dismiss="modal"></div>
  </div>
 </div>
-<!-- FIM GRATUITO MODAL -->
+<!-- FIM MODAL GRATUITO-->
 <div class="div_m3" data-toggle="modal" data-target="#myModal3_m1">
  <h3>profissional</h3>
  <p>ensaio fotográfico completo p/cadastro e entrega em DVD</p>
@@ -625,7 +627,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
               </div>
               </div>
         </div>
-       <div class="div14_box2">
+       <div class="div14_box2" id="div14_box2">
         <div class="versao_d">
          <div class="thumbnail">
           <div class="caption">

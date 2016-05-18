@@ -5683,8 +5683,8 @@ margin-top: 40px;
 border-radius: 6px;
 color: #FFFFFF;
 border: 1px solid #FFFFFF;
-margin-top: 30px;
-margin-left: 80px;
+margin-top: 20px;
+margin-left: 70px;
 width: 101px;
 height:31px;
 cursor: pointer;
@@ -5705,26 +5705,6 @@ background: rgba(215,215,215,0.30);
 width: 101px;
 height:31px;
 }
-/*
-input[type=radio] {display:none;}
-.radio_premium {
- display:inline-block;
- width:auto;
- height:30px;
- padding:0 20px;
- border:1px solid rgba(0,0,0,0.08);
- margin-right:20px;
- background:#ddd;
- line-height:30px;
- cursor:pointer;
-}
-.radio_premium1:checked + .radio_premium {background:rgba(4, 120, 193,0.1);
-}
-.radio_premium1:checked + .radio_premium i { opacity: 1;}
-.radio_premium1 + .radio_premium span {
-  display:inline-block;
-  font-size:13px;
-}*/
 #menos_d {
  position: absolute;
  right: 10px;
@@ -5965,9 +5945,9 @@ width:1200px;
 margin-top: -350px;
 }
 .modal_esquerda3{
- width: 300px;
-  height: 490px;
- float: left;
+  width: 300px;
+   height: 490px;
+  float: left;
 }
 .modal_esquerda3 h3{
 color: #fff;
@@ -5997,31 +5977,30 @@ width: 235px;
 height: 66px;
 margin-top: 130px;
 text-align: left;
-margin-left: 25px;
 margin-left: 55px;
 }
 .modal_esquerda3 ol { 
-  list-style-type: disc; 
-  color: #FFFFFF;
-  width:270px;
-  height: 78px;
-  text-align: left;
-  margin-left: 35px;
-  margin-top: 25px;/* Maiores cachês e pos: */
-  font-family: Avenir-Book;
-  font-size: 19.31px;
-  color: #FFFFFF;
+    list-style-type: disc; 
+    color: #FFFFFF;
+    width:270px;
+    height: 78px;
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 10px;/* Maiores cachês e pos: */
+    font-family: Avenir-Book;
+    font-size: 19.31px;
+    color: #FFFFFF;
 margin-left: 50px;
 } 
 .modal_esquerda3 ol li { 
-  padding: 10px
+   padding: 10px
 } 
 .modal_direita3{
- width: 420px;
-  height: 690px;
- padding-bottom: 600px;
- float: right;
- margin-right:370px;
+  width: 420px;
+   height: 690px;
+  padding-bottom: 600px;
+  float: right;
+  margin-right:370px;
 }
 .modal_direita3 h3{
 /* Termos e Condições: */
@@ -6033,18 +6012,19 @@ margin-top: 50px;
 width: 201px;
 }
 .modal_direita3 ol li { 
- padding: 2px;
- width:280px;
-  margin-left: -65px;
+  padding: 2px;
+  width:280px;
+    margin-left: -65px;
 } 
 .modal_direita3 ol { 
-  color: #FFFFFF;
-  text-align: left;
-  margin-top: 50px;
+    color: #FFFFFF;
+    text-align: left;
+    margin-top: 30px;
 font-family: Avenir-Book;
 font-size: 16.99px;
 color: #FFFFFF;
 margin-left: 70px;
+
 } 
 .termo_um3{
 float: left;
@@ -6075,19 +6055,6 @@ background: transparent;
 padding: 10px;
 margin-top: 230px;
 }
-/*
-.botao_nao3{
-border: 1px solid #FFFFFF;
-border-radius: 6px;
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-background: transparent;
-width: 101px;
-height:31px;
-margin-left: 10px;
-margin-top: 20px;
-}*/
 div.button3{
 border-radius: 6px;
 color: #FFFFFF;

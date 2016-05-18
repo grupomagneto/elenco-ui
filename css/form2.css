@@ -5543,8 +5543,6 @@ margin-top: 230px;
 }
 
 
-
-
 .botao_modal{
   /* Rectangle 4: */
 border: 1px solid #FFFFFF;
@@ -5918,20 +5916,6 @@ padding: 10px;
 margin-top: 230px;
 }
 
-/*
-.botao_nao2{
-border: 1px solid #FFFFFF;
-border-radius: 6px;
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-background: transparent;
-width: 101px;
-height:31px;
-margin-left: 10px;
-margin-top: 20px;
-}*/
-
 div.button2{
 border-radius: 6px;
 color: #FFFFFF;
@@ -6028,7 +6012,6 @@ margin-top: -350px;
    height: 490px;
   float: left;
 }
-
 .modal_esquerda3 h3{
 color: #fff;
 border-top: 1px solid #fff; 
@@ -6040,7 +6023,6 @@ width: 200px;
 margin-left: 50px;
 margin-top: 40px;
 }
-
 .modal_esquerda3 p{
 font-family: Avenir-Book;
 font-size: 14px;
@@ -6049,8 +6031,6 @@ width: 200px;
 margin-left: 50px;
 text-align: center;
 }
-
-
 .modal_esquerda3 p.preco3{
 /* Por apenas 10x R$ 29: */
 font-family: Avenir-Heavy;
@@ -6060,10 +6040,8 @@ width: 235px;
 height: 66px;
 margin-top: 130px;
 text-align: left;
-margin-left: 25px;
 margin-left: 55px;
 }
-
 .modal_esquerda3 ol { 
     list-style-type: disc; 
     color: #FFFFFF;
@@ -6071,17 +6049,15 @@ margin-left: 55px;
     height: 78px;
     text-align: left;
     margin-left: 35px;
-    margin-top: 25px;/* Maiores cachês e pos: */
+    margin-top: 10px;/* Maiores cachês e pos: */
     font-family: Avenir-Book;
     font-size: 19.31px;
     color: #FFFFFF;
 margin-left: 50px;
 } 
-
 .modal_esquerda3 ol li { 
    padding: 10px
 } 
-
 .modal_direita3{
   width: 420px;
    height: 690px;
@@ -6089,7 +6065,6 @@ margin-left: 50px;
   float: right;
   margin-right:370px;
 }
-
 .modal_direita3 h3{
 /* Termos e Condições: */
 font-family: Avenir-Book;
@@ -6099,17 +6074,15 @@ text-align: left;
 margin-top: 50px;
 width: 201px;
 }
-
 .modal_direita3 ol li { 
   padding: 2px;
   width:280px;
     margin-left: -65px;
 } 
-
 .modal_direita3 ol { 
     color: #FFFFFF;
     text-align: left;
-    margin-top: 50px;
+    margin-top: 30px;
 font-family: Avenir-Book;
 font-size: 16.99px;
 color: #FFFFFF;
@@ -6124,9 +6097,8 @@ float: left;
 float: right;
   width:20%;
 }
-
 p.descricao_contrato3{
-  /* Clicando abaixo você: */
+ /* Clicando abaixo você: */
 font-family: Avenir-Book;
 font-size: 11px;
 color: #FFFFFF;
@@ -6134,9 +6106,8 @@ width:250px;
 margin-left: 10px;
 margin-top: 30px;
 }
-
 .botao_modal3{
-  /* Rectangle 4: */
+ /* Rectangle 4: */
 border: 1px solid #FFFFFF;
 border-radius: 6px;
 /* escolher: */
@@ -6147,20 +6118,6 @@ background: transparent;
 padding: 10px;
 margin-top: 230px;
 }
-
-/*
-.botao_nao3{
-border: 1px solid #FFFFFF;
-border-radius: 6px;
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-background: transparent;
-width: 101px;
-height:31px;
-margin-left: 10px;
-margin-top: 20px;
-}*/
 div.button3{
 border-radius: 6px;
 color: #FFFFFF;
@@ -6171,7 +6128,6 @@ width: 101px;
 height:31px;
 cursor: pointer;
 }
-
 .button3 input[type="radio"] {
     display: none;
 }
@@ -6190,7 +6146,6 @@ width: 101px;
 height:31px;
 cursor: pointer;
 }
-
 #menos3_d {
   position: absolute;
   right: 10px;
@@ -6203,7 +6158,6 @@ cursor: pointer;
   border-radius: 100%;
   background: #4AA4E2;
 }
-
 #menos3_d::before {
     font-size: 2em;
     line-height: 32px;
@@ -6428,7 +6382,7 @@ font-family: Avenir-Book;
 font-size: 11px;
 color: #FFFFFF;
 width:250px;
-margin-left: 10px;
+margin-left: 40px;
 margin-top: 10px;
 }
 
@@ -6451,7 +6405,7 @@ border-radius: 6px;
 color: #FFFFFF;
 border: 1px solid #FFFFFF;
 margin-top: -30px;
-margin-left: 120px;
+margin-left: 180px;
 width: 101px;
 height:31px;
 cursor: pointer;

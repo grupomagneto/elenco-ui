@@ -463,20 +463,36 @@ $("#nome_menor").keyup(function() {
   $(".concat2_texto").html($(this).val());
 })
 
+//Código da div ator
+
 $(document).ready(function() {
   $(".blue").hide();
   $('input[type="radio"]').click(function() {
     if ($(this).attr("value") == "sim") {
+
       $(".box").not(".blue").hide();
       $(".blue").show();
+
+     document.getElementById("div14_box2").setAttribute("style","opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50)"); 
+      document.getElementById('botao2').setAttribute("disabled","disabled");
+      $(".div_m2").css({ opacity: 0.5 }); 
+      $('.div_m2').removeAttr('data-toggle');
+
       var delay = 1000;
       setTimeout(function() {
         $(".penultimo_p ").focus()();
       }, 3000);
     }
     if ($(this).attr("value") == "nao") {
+
       $(".box").not(".blue").hide();
       $(".blue").hide();
+
+      document.getElementById("div14_box2").removeAttribute("style","opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50)"); 
+      document.getElementById('botao2').removeAttribute("disabled","disabled");
+      $(".div_m2").css({ opacity: 1.0 }); 
+      $('.div_m2').attr('data-toggle','modal');
+
       var delay = 1000;
       setTimeout(function() {
         $(".penultimo_p ").focus()();
@@ -484,6 +500,7 @@ $(document).ready(function() {
     }
   });
 });
+
 
 function valida_form() {
   if (document.getElementById("nome").value == "") {
@@ -740,9 +757,8 @@ $(".sim_acordo_gratuito").click(function() {
   $("#ig").focus();
 });
 
-// ESCONDER MODAL PREMIUM
+// ESCONDER MODAL PROFISSIONAL
 $(".button3").click(function() {
-  // $('#myModal3').modal('h');
   $("#ig").focus();
   $('#myModal3').modal('hide');
 });
@@ -752,29 +768,4 @@ $(".sim_acordo_gratuito3").click(function() {
   $("#ig").focus();
 });
 
-// validar form
-/* must apply only after HTML has loaded */
-$(document).ready(function() {
-  $("#contact_form").on("submit", function(e) {
-    var postData = $(this).serializeArray();
-    var formURL = $(this).attr("action");
-    $.ajax({
-      url: formURL,
-      type: "POST",
-      data: postData,
-      success: function(data, textStatus, jqXHR) {
-        $('#myModal .modal-content').html("Result");
-        $('#myModal .modal_esquerda').html(data);
-        $("#cadastra").remove();
-      },
-      error: function(jqXHR, status, error) {
-        console.log(status + ": " + error);
-      }
-    });
-    e.preventDefault();
-  });
 
-  $("#cadastra").on('click', function() {
-    $("#contact_form").submit();
-  });
-});
