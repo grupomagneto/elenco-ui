@@ -1,11 +1,9 @@
-jQuery( document ).ready(function( $ ) {
-
-    // Initialise the vertical slider
-    verticalSlider.init();
-
+jQuery(document).ready(function($) {
+  // Initialise the vertical slider
+  verticalSlider.init();
 });
 
-//cÓDIGO DOS FORMS
+// CÓDIGO DOS FORMS
 $(function() {
   $('input.getName').keyup("keyup", function() {
     $('.cName').html($('.getName').val());
@@ -37,7 +35,6 @@ $(function() {
     $('.nxt').removeClass("fadeInUp").addClass('fadeOutDown');
 
     if ($('.progress-form li').hasClass('activate')) {
-
       $('p.alerted').removeClass('fadeInLeft').addClass('fadeOutUp');
 
       var $activate = $('li.activate');
@@ -46,7 +43,6 @@ $(function() {
       $inactive.removeClass("hide inactive").addClass("activate fadeInRightBig").next().addClass('inactive');
 
       var img_cnt = $('li.activate').index() + 1;
-
       var img_amt = $('li.form-group').length;
       $('.img_cnt').html(img_cnt);
       $('.img_amt').html(img_amt);
@@ -54,20 +50,14 @@ $(function() {
       $('.progress-bar').css("width", progress + "%");
 
       if ($('.img_cnt').html() == $('.img_amt').html()) {
-
         $('.count, .nxt').hide();
         $('.submit').removeClass("hide");
-
       }
-
-    } //End Else
-
+    }
   });
-
 });
 
 $(function() {
-
   $('#q1').keyup(function() {
     var nameValue = $(this).val();
     $('.answer1').html(nameValue);
@@ -92,8 +82,4 @@ $(function() {
     var nameValue = $(this).val();
     $('.answer5').html(nameValue);
   });
-
 });
-
-
-
