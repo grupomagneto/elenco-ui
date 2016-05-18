@@ -1,6 +1,7 @@
 <?php
 include("conecta.php");
 
+
    $sdata = $_POST['data'];
    $data_comp = $_POST['data'];
    date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
@@ -32,10 +33,10 @@ include("conecta.php");
      if ($ator == 'sim') {
       $cadastro = 'Ator';
      } if ($ator == 'nao') {
-        $cadastro = $_POST['cadastro'];
-        $opcao = $_POST['opcao'];
+        $cadastro = $_POST['opcao'];
      }
-   
+
+
     $sql = "INSERT INTO novo_cadastro (nome, sobrenome, sexo, dt_nascimento, d_nascimento, m_nascimento, celular, email, tipo_cadastro, cor_pele, bairro, instagram, facebook, twitter) VALUES ('$nome', '$sobrenome', '$sexo', '$data_comp', '$dia', '$mes', '$celular', '$email', '$cadastro', '$cor_pele', '$bairro', '$ig', '$face', '$tt')";
     mysqli_query($link, $sql);
 

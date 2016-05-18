@@ -694,17 +694,17 @@ $(".face").keypress(function(e) {
   }
 });
 
-$('#myModal').appendTo("body");
-$('#myModal1_m').appendTo("body");
-$('#myModal2_m').appendTo("body");
+$('#myModal').appendTo("form");
+$('#myModal1_m').appendTo("form");
+$('#myModal2_m').appendTo("form");
 
-$('#myModal2').appendTo("body");
-$('#myModal1_m2').appendTo("body");
-$('#gratuito_mobile').appendTo("body");
+$('#myModal2').appendTo("form");
+$('#myModal1_m2').appendTo("form");
+$('#gratuito_mobile').appendTo("form");
 
-$('#myModal3').appendTo("body");
-$('#myModal3_m1').appendTo("body");
-$('#gratuito_mobile3').appendTo("body");
+$('#myModal3').appendTo("form");
+$('#myModal3_m1').appendTo("form");
+$('#gratuito_mobile3').appendTo("form");
 
 $(".botao_escolha_m").click(function() {
   $('#myModal1_m').modal('hide');

@@ -737,7 +737,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                      <input type="radio" name="opcao" value="Profissional" id="profissional" class="sim_acordo3" />
                      <label for="profissional">CONCORDO</label>
                    </div>
-              <div id="menos3_d" data-dismiss="modal"></div>
+                  <div id="menos3_d" data-dismiss="modal"></div>
                     </div>
                    </div>
                  </div>
