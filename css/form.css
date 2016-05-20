@@ -132,7 +132,7 @@ display: block;
 transform: rotate(180deg);
 }
 }
-@media only screen and (max-width: 490px){
+@media only screen and (max-width: 550px){
 .vs-vertical-nav {
 position: absolute;
 z-index: 9999;
@@ -5402,6 +5402,38 @@ color: #FFFFFF;
 width: 200px;
 margin-left: 50px;
 }
+
+.div14_box .thumbnail .caption h2{  
+margin-top: -50px;
+margin-bottom: 18px;
+margin-left: 25px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  46px;
+font-weight: bold;
+}
+.div14_box .thumbnail .caption h2 span{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
+
+.div14_box .thumbnail .caption ul{  
+margin-top: 182px;
+margin-bottom: 5px;
+margin-left: 105px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  46px;
+font-weight: bold;
+}
+.div14_box .thumbnail .caption ul li{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
 .div14_box .thumbnail .caption p.preco{
 /* Por apenas 10x R$ 29: */
 font-family: Avenir-Heavy;
@@ -5420,9 +5452,9 @@ margin-left: 45px;
   height: 78px;
   text-align: left;
   margin-left: 35px;
-  margin-top: 25px;/* Maiores cachês e pos: */
+  margin-top: 25px;
   font-family: Avenir-Book;
-  font-size: 19.31px;
+  font-size: 16px;
   color: #FFFFFF;
 } 
 .div14_box .thumbnail .caption ol li { 
@@ -5454,6 +5486,14 @@ color: #FFFFFF;
 width: 200px;
 margin-left: 50px;
 }
+.div14_box2 .thumbnail .caption h2{  
+  margin-top: 190px;
+  margin-bottom: 32px;
+color: #fff;
+font-family: Avenir-Book;
+font-size: 36px;
+font-weight: bold;
+}
 .div14_box2 .thumbnail .caption ol { 
   list-style-type: disc; 
   color: #FFFFFF;
@@ -5461,9 +5501,9 @@ margin-left: 50px;
   height: 78px;
   text-align: left;
   margin-left: 35px;
-  margin-top: 25px;/* Maiores cachês e pos: */
+  margin-top: 25px;
   font-family: Avenir-Book;
-  font-size: 19.31px;
+  font-size: 16px;
   color: #FFFFFF;
 } 
 .div14_box2 .thumbnail .caption ol li { 
@@ -5495,6 +5535,36 @@ color: #FFFFFF;
 width: 200px;
 margin-left: 50px;
 }
+.div14_box3 .thumbnail .caption h2{  
+margin-top: -50px;
+margin-bottom: 30px;
+margin-left: 25px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  46px;
+font-weight: bold;
+}
+.div14_box3 .thumbnail .caption h2 span{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
+.div14_box3 .thumbnail .caption ul{  
+margin-top: 182px;
+margin-bottom: 5px;
+margin-left: 105px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  46px;
+font-weight: bold;
+}
+.div14_box3 .thumbnail .caption ul li{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
 .div14_box3 .thumbnail .caption ol { 
   list-style-type: disc; 
   color: #FFFFFF;
@@ -5504,25 +5574,32 @@ margin-left: 50px;
   margin-left: 35px;
   margin-top: 25px;/* Maiores cachês e pos: */
   font-family: Avenir-Book;
-  font-size: 19.31px;
+  font-size: 16px;
   color: #FFFFFF;
 } 
 .div14_box3 .thumbnail .caption ol li { 
   padding: 10px
 } 
-.botao_modal3{
- /* Rectangle 4: */
+button#botao3.botao_modal3{
 border: 1px solid #FFFFFF;
 border-radius: 6px;
-/* escolher: */
 font-family: Avenir-Book;
 font-size: 18.86px;
 color: #FFFFFF;
 background: transparent;
 padding: 10px;
-margin-top: 230px;
+margin-top: -30px;
 }
 .botao_modal{
+border: 1px solid #FFFFFF;
+border-radius: 6px;
+font-family: Avenir-Book;
+font-size: 18.86px;
+color: #FFFFFF;
+background: transparent;
+padding: 10px;
+}
+button#botao2.botao_modal2{
  /* Rectangle 4: */
 border: 1px solid #FFFFFF;
 border-radius: 6px;
@@ -5532,7 +5609,7 @@ font-size: 18.86px;
 color: #FFFFFF;
 background: transparent;
 padding: 10px;
-margin-top: 230px;
+margin-top: -30px;
 }
 div.conteudo_modal
 {
@@ -5569,6 +5646,36 @@ padding-left: 50px;
 width: 190px;
 margin-left: 50px;
 margin-top: 40px;
+}
+.modal_esquerda h2{  
+margin-top: -50px;
+margin-bottom: 26px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  46px;
+font-weight: bold;
+}
+.modal_esquerda h2 span{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
+
+.modal_esquerda ul{  
+margin-top: 190px;
+margin-bottom: 5px;
+margin-left: 90px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  46px;
+font-weight: bold;
+}
+.modal_esquerda ul li{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
 }
 .modal_esquerda p{
 font-family: Avenir-Book;
@@ -5652,18 +5759,6 @@ color: #FFFFFF;
 width:250px;
 margin-left: 10px;
 margin-top: 30px;
-}
-.botao_modal2{
- /* Rectangle 4: */
-border: 1px solid #FFFFFF;
-border-radius: 6px;
-/* escolher: */
-font-family: Avenir-Book;
-font-size: 18.86px;
-color: #FFFFFF;
-background: transparent;
-padding: 10px;
-margin-top: 230px;
 }
 .botao_nao{
  /* Rectangle 4: */
@@ -5757,6 +5852,13 @@ padding-left: 50px;
 width: 190px;
 margin-left: 50px;
 margin-top: 40px;
+}
+.modal_esquerda2 h2{
+color: #fff;
+font-size: 36px; 
+font-family: Avenir-Book;
+margin-left: 90px;
+margin-top: 200px;
 }
 .modal_esquerda2 p{
 font-family: Avenir-Book;
@@ -5854,19 +5956,6 @@ background: transparent;
 padding: 10px;
 margin-top: 230px;
 }
-/*
-.botao_nao2{
-border: 1px solid #FFFFFF;
-border-radius: 6px;
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-background: transparent;
-width: 101px;
-height:31px;
-margin-left: 10px;
-margin-top: 20px;
-}*/
 div.button2{
 border-radius: 6px;
 color: #FFFFFF;
@@ -5959,6 +6048,36 @@ padding-left: 40px;
 width: 200px;
 margin-left: 50px;
 margin-top: 40px;
+}
+.modal_esquerda3 h2{  
+margin-top: -50px;
+margin-bottom: 26px;
+margin-left: 25px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  46px;
+font-weight: bold;
+}
+.modal_esquerda3 h2 span{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
+.modal_esquerda3 ul{  
+margin-top: 250px;
+margin-bottom: 5px;
+margin-left: 105px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  46px;
+font-weight: bold;
+}
+.modal_esquerda3 ul li{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
 }
 .modal_esquerda3 p{
 font-family: Avenir-Book;
@@ -6164,7 +6283,7 @@ border: 1px solid #4AA4E2;
  height:665px;
  left: 50%;
  top:50%;
- margin-left: -535px;
+ margin-left: -550px;
 margin-top: -320px;
 }
 div.conteudo_modal
@@ -6197,7 +6316,7 @@ overflow-y: hidden;
  height:665px;
  left: 50%;
  top:50%;
- margin-left: -535px;
+ margin-left: -550px;
 margin-top: -320px;
 }
 div.conteudo_modal2
@@ -6263,7 +6382,7 @@ cursor: pointer;
  height:665px;
  left: 50%;
  top:50%;
- margin-left: -535px;
+ margin-left: -550px;
 margin-top: -320px;
 }
 div.conteudo_modal3
@@ -6352,6 +6471,12 @@ height: 600px;
 div.modal-content.conteudo_modal_m h3{
  display:none; 
 }
+div.modal-content.conteudo_modal_m h2{
+ display:none; 
+}
+div.modal-content.conteudo_modal_m ul{
+ display:none; 
+}
 div.modal-content.conteudo_modal_m p{
  display:none; 
 }
@@ -6428,6 +6553,12 @@ height: 600px;
 div.modal-content.conteudo_modal_m2_2 h3{
  display:none; 
 }
+div.modal-content.conteudo_modal_m2_2 h2{
+ display:none; 
+}
+div.modal-content.conteudo_modal_m2_2 ul{
+ display:none; 
+}
 div.modal-content.conteudo_modal_m2_2 p{
  display:none; 
 }
@@ -6500,6 +6631,12 @@ width:600px;
 height: 600px;
 }
 div.modal-content.conteudo_modal_m3_m1 h3{
+ display:none; 
+}
+div.modal-content.conteudo_modal_m3_m1 h2{
+ display:none; 
+}
+div.modal-content.conteudo_modal_m3_m1 ul{
  display:none; 
 }
 div.modal-content.conteudo_modal_m3_m1 p{
@@ -6612,6 +6749,19 @@ display: none;
 #menos_d::before {
  display:none; 
 }
+
+div.modal-content.conteudo_modal_m h2{
+ display:block; 
+}
+div.modal-content.conteudo_modal_m ul{
+ display:block; 
+}
+div.modal-content.conteudo_modal_m3_m1 h2{
+ display:block; 
+}
+div.modal-content.conteudo_modal_m3_m1 ul{
+ display:block; 
+}
 .modal2.in ~ .modal-backdrop.in {
  display:none; 
 }
@@ -6692,6 +6842,7 @@ margin-left: -140px;
 margin-top: 110px;
 padding: 30px;
 }
+
 #mais {
  position: absolute;
  right: 10px;
@@ -6713,9 +6864,9 @@ padding: 30px;
 #myModal1_m{
  position: absolute;
  left: 50%;
- margin-left: -300px;
+ margin-left: -315px;
  top: 50%;
- margin-top: -300px;
+ margin-top: -270px;
 }
 div.modal-content.conteudo_modal_m{
 border-radius: 0;/* Rectangle 2: */
@@ -6768,20 +6919,38 @@ font-family: Avenir-Book;
 font-size: 16.99px;
 color: #FFFFFF;
 margin-left: 70px;
-} /*
-div.modal-content.conteudo_modal_m p.preco_m{
- display: block;
+}
+div.modal-content.conteudo_modal_m h2{  
+margin-top: -50px;
+margin-left: 25px; 
+margin-bottom: 40px;
+color: #fff;
 font-family: Avenir-Book;
-font-size: 18px;
-color: #FFFFFF;
+font-size:  46px;
 font-weight: bold;
-width:290px;
-position: absolute;
-left: 50%;
-margin-left: -105px;
-text-align: left;
-margin-top: 60px;
-}*/
+}
+div.modal-content.conteudo_modal_m h2 span{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
+
+div.modal-content.conteudo_modal_m ul{  
+margin-top: 20px;
+margin-bottom: 5px;
+margin-left: 250px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  46px;
+font-weight: bold;
+}
+div.modal-content.conteudo_modal_m ul li{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
 div.modal-content.conteudo_modal_m button.botao_escolha_m{
  display: block;
 border: 1px solid #FFFFFF;
@@ -6798,7 +6967,7 @@ left: 50%;
 padding-top: 8px;
 padding-bottom: 15px;
 margin-left: -44px;
-margin-top: 100px;
+margin-top: -20px;
 }
 #menos {
  display: block;
@@ -6965,9 +7134,9 @@ padding: 30px;
 #myModal1_m2{
  position: absolute;
  left: 50%;
- margin-left: -300px;
+ margin-left: -315px;
  top: 50%;
- margin-top: -300px;
+ margin-top: -270px;
 }
 div.modal-content.conteudo_modal_m2_2{
 border-radius: 0;/* Rectangle 2: */
@@ -6990,6 +7159,18 @@ position: absolute;
 left: 50%;
 margin-left: -125px;
 padding: 20px;
+}
+div.modal-content.conteudo_modal_m2_2 h2{
+ display: block;
+font-family: Avenir-Book;
+font-size: 36px;
+color: #FFFFFF;
+text-align: center;
+width:250px;
+position: absolute;
+left: 50%;
+margin-left: -125px;
+margin-top: 30px;
 }
 div.modal-content.conteudo_modal_m2_2 p{
  display: block;
@@ -7038,7 +7219,7 @@ left: 50%;
 padding-top: 8px;
 padding-bottom: 15px;
 margin-left: -44px;
-margin-top: 100px;
+margin-top: 110px;
 }
 #menos2_2 {
  display: block;
@@ -7206,9 +7387,9 @@ padding: 30px;
 #myModal3_m1{
  position: absolute;
  left: 50%;
- margin-left: -300px;
+ margin-left: -315px;
  top: 50%;
- margin-top: -300px;
+ margin-top: -270px;
 }
 div.modal-content.conteudo_modal_m3_m1{
 border-radius: 0;/* Rectangle 2: */
@@ -7231,6 +7412,38 @@ position: absolute;
 left: 50%;
 margin-left: -125px;
 padding: 20px;
+}
+
+div.modal-content.conteudo_modal_m3_m1 h2{  
+margin-top: -50px;
+margin-left: 25px; 
+margin-bottom: 20px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  46px;
+font-weight: bold;
+}
+div.modal-content.conteudo_modal_m3_m1 h2 span{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
+
+div.modal-content.conteudo_modal_m3_m1 ul{  
+margin-top: 45px;
+margin-bottom: 5px;
+margin-left: 250px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  46px;
+font-weight: bold;
+}
+div.modal-content.conteudo_modal_m3_m1 ul li{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
 }
 div.modal-content.conteudo_modal_m3_m1 p{
  display: block;
@@ -7279,7 +7492,7 @@ left: 50%;
 padding-top: 8px;
 padding-bottom: 15px;
 margin-left: -44px;
-margin-top: 100px;
+margin-top: 10px;
 }
 #menos3_m1 {
  display: block;
@@ -7467,6 +7680,41 @@ left: 50%;
 margin-left: -125px;
 padding: 20px;
 top: 8%;
+}
+div.modal-content.conteudo_modal_m h2{  
+color: #fff;
+font-family: Avenir-Book;
+font-size:  36px;
+font-weight: bold;
+width:100px;
+position: relative;
+left: 50%;
+margin-left: -50px;
+position: relative;
+margin-top: -40px;
+}
+div.modal-content.conteudo_modal_m h2 span{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
+div.modal-content.conteudo_modal_m ul{  
+color: #fff;
+font-family: Avenir-Book;
+font-weight: bold;
+width:120px;
+position: relative;
+left: 50%;
+margin-left: -60px;
+position: relative;
+margin-top: 80px;
+}
+div.modal-content.conteudo_modal_m ul li{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
 }
 div.modal-content.conteudo_modal_m p{
 font-family: Avenir-Book;
@@ -7913,6 +8161,41 @@ margin-left: -125px;
 padding: 20px;
 top: 8%;
 }
+div.modal-content.conteudo_modal_m3_m1 h2{  
+color: #fff;
+font-family: Avenir-Book;
+font-size:  36px;
+font-weight: bold;
+width:100px;
+position: relative;
+left: 50%;
+margin-left: -50px;
+position: relative;
+margin-top: -40px;
+}
+div.modal-content.conteudo_modal_m3_m1 h2 span{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
+div.modal-content.conteudo_modal_m3_m1 ul{  
+color: #fff;
+font-family: Avenir-Book;
+font-weight: bold;
+width:120px;
+position: relative;
+left: 50%;
+margin-left: -60px;
+position: relative;
+margin-top: 80px;
+}
+div.modal-content.conteudo_modal_m3_m1 ul li{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
 div.modal-content.conteudo_modal_m3_m1 p{
 font-family: Avenir-Book;
 font-size: 14px;
@@ -8340,6 +8623,16 @@ background: #4AA4E2;
 }
 }
 @media only screen and (max-width: 550px){
+.div14{
+   position: absolute;
+  top: 27%;
+  left: -4%;
+  width: 100%;
+  text-align: center;
+  -webkit-transform: translateY( -50% );
+  -moz-transform: translateY( -50% );
+  transform: translateY( -50% );
+}
 #myModal1_m{
  height: 95%; /* Set your own height: percents, ems, whatever! */
  width: 95%; /* Set your own width: percents, ems, whatever! */
@@ -8707,6 +9000,42 @@ position: absolute;
 left: 50%;
 margin-left: -125px;
 padding: 20px;
+}
+
+div.modal-content.conteudo_modal_m3_m1 h2{  
+color: #fff;
+font-family: Avenir-Book;
+font-size:  36px;
+font-weight: bold;
+width:100px;
+position: relative;
+left: 50%;
+margin-left: -50px;
+position: relative;
+margin-top: -40px;
+}
+div.modal-content.conteudo_modal_m3_m1 h2 span{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
+div.modal-content.conteudo_modal_m3_m1 ul{  
+color: #fff;
+font-family: Avenir-Book;
+font-weight: bold;
+width:120px;
+position: relative;
+left: 50%;
+margin-left: -60px;
+position: relative;
+margin-top: 3vh;
+}
+div.modal-content.conteudo_modal_m3_m1 ul li{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
 }
 div.modal-content.conteudo_modal_m3_m1 p{
 font-family: Avenir-Book;
@@ -9138,6 +9467,41 @@ margin-left: -18vh;
 padding-top: 1vh;
 padding-bottom: 1vh;
 }
+div.modal-content.conteudo_modal_m h2{  
+color: #fff;
+font-family: Avenir-Book;
+font-size:  36px;
+font-weight: bold;
+width:100px;
+position: relative;
+left: 50%;
+margin-left: -50px;
+position: relative;
+margin-top: -40px;
+}
+div.modal-content.conteudo_modal_m h2 span{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
+div.modal-content.conteudo_modal_m ul{  
+color: #fff;
+font-family: Avenir-Book;
+font-weight: bold;
+width:120px;
+position: relative;
+left: 50%;
+margin-left: -60px;
+position: relative;
+margin-top: 65vh;
+}
+div.modal-content.conteudo_modal_m ul li{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
 div.modal-content.conteudo_modal_m p{
 font-family: Avenir-Book;
 font-size: 3vw;
@@ -9259,6 +9623,18 @@ bottom:79%;
 margin-left: -18vh;
 padding-top: 1vh;
 padding-bottom: 1vh;
+}
+div.modal-content.conteudo_modal_m2_2 h2{  
+color: #fff;
+font-family: Avenir-Book;
+font-size:  26px;
+font-weight: bold;
+width:100px;
+position: relative;
+left: 50%;
+margin-left: -50px;
+position: relative;
+margin-top: 67vh;
 }
 div.modal-content.conteudo_modal_m2_2 p{
 font-family: Avenir-Book;
@@ -9455,6 +9831,42 @@ bottom:79%;
 margin-left: -18vh;
 padding-top: 1vh;
 padding-bottom: 1vh;
+}
+
+div.modal-content.conteudo_modal_m3_m1 h2{  
+color: #fff;
+font-family: Avenir-Book;
+font-size:  36px;
+font-weight: bold;
+width:100px;
+position: relative;
+left: 50%;
+margin-left: -50px;
+position: relative;
+margin-top: -40px;
+}
+div.modal-content.conteudo_modal_m3_m1 h2 span{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
+div.modal-content.conteudo_modal_m3_m1 ul{  
+color: #fff;
+font-family: Avenir-Book;
+font-weight: bold;
+width:120px;
+position: relative;
+left: 50%;
+margin-left: -60px;
+position: relative;
+margin-top: 65vh;
+}
+div.modal-content.conteudo_modal_m3_m1 ul li{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
 }
 div.modal-content.conteudo_modal_m3_m1 p{
 font-family: Avenir-Book;

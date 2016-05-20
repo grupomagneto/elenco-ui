@@ -17,48 +17,48 @@
 <div class="swiper-container">
   <!-- Swiper W -->
     <div class="swiper-wrapper">
+<!-- 
+
+<div class="swiper-slide gradient">
 
 
-      <div class="swiper-slide gradient">
+        <div class="container">
+          <div class="div1">
+            <div class="row">
+              <div class=" div1_t col-lg-offset-3 col-lg-5">
 
+                <h1>Qual o cpf do seu responsável?*</h1>
 
-       <div class="container">
-        <div class="div1">
-         <div class="row">
-          <div class=" div1_t col-lg-offset-3 col-lg-5">
+              </div>
+              <div class=" div1_box col-lg-offset-3 col-lg-5">
 
-           <h1>Qual o cpf do seu responsável?*</h1>
+                <input name="cpf" id="cpf" type="text" data-mask="000.000.000-00" onfocus="this.value=''" class='TabOnEnter' autofocus tabindex="1" required />
+                <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
 
+                <img id="seta" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
+               
+              </div>
+
+            </div>
           </div>
-          <div class=" div1_box col-lg-offset-3 col-lg-5">
-
-           <input name="cpf" id="cpf" type="text" data-mask="000.000.000-00" onfocus="this.value=''" class='TabOnEnter' autofocus tabindex="1" required />
-           <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
-
-           <img id="seta" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
-           <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
-          </div>
-
-         </div>
         </div>
-       </div>
 
-<div class="progress1">
- 
-<progress id="progressbar" value="5" max="50"></progress>
+        <div class="progress1">
+
+          <progress id="progressbar" value="5" max="50"></progress>
+
+        </div>
+
+        <nav>
+          <ul class="vs-vertical-nav1 none">
+
+            <li><a href="#" class="vs-next1 swiper-control next"></a></li>
+
+          </ul>
+
+        </nav>
 
 </div>
-
-       <nav>
-        <ul class="vs-vertical-nav1 none">
-
-         <li><a href="#" class="vs-next1 swiper-control next"></a></li>
-
-        </ul>
-
-       </nav>
-
-      </div>
 
 
 <div id="2" class="swiper-slide gradient">
@@ -79,7 +79,7 @@
            <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;">
 
            <img id="seta2" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
-           <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
+          
           </div>
 
          </div>
@@ -88,7 +88,7 @@
 
 
 
- <div class="progress2">
+<div class="progress2">
  
 <progress id="progressbar2" value="10" max="50" ></progress>
 </div>
@@ -105,7 +105,7 @@
 
        </nav>
 
-      </div>
+</div>
 
  <div id="3" class="swiper-slide gradient">
 
@@ -173,7 +173,7 @@ onchange="exibeMsg2(this.value);">
            <input type="button" class="sendBtn" id="btSend4" name="btSend4" style="display: none;">
 
            <img id="seta4" onclick="gravar()" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
-           <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
+           
           </div>
 
          </div>
@@ -216,7 +216,7 @@ onchange="exibeMsg2(this.value);">
            <input type="button" class="sendBtn5" id="btSend5" name="btSend5" style="display: none;">
 
            <img id="seta5" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
-           <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
+          
           </div>
 
          </div>
@@ -652,7 +652,7 @@ onchange="exibeMsg2(this.value);">
 
        </nav>
 
-</div> 
+</div>  -->
 
 <div id="14" class="swiper-slide gradient">        
 
@@ -687,16 +687,17 @@ onchange="exibeMsg2(this.value);">
  <div class="modal-content conteudo_modal_m">
    <h3>premium</h3>
  <p>fotos em estúdio feitas exclusivamente para cadastro</p>
-
    <ol>
-    <li>Por apenas 10x de R$ 29,90, pode se cadastrar em outras agências</li>
     <li>Recebe 80% do cachê líquido em todos os trabalhos</li>
+    <li>Pode se cadastrar em outras agências</li> 
     <li>Aviso de cachê liberado</li>
     <li>Contrato de 2 anos</li>
    </ol>
-
-<!-- 
-   <p class="preco_m">Por apenas 10x R$ 29,90 ou já incluso na compra qualquer ensaio.</p> -->
+  <ul class="text-left list-unstyled">
+    <li>10x</li>
+    <li>R$</li>
+  </ul>
+  <h2 class="text-center">29<span>,90</span></h2>
 
    <button type="button" class="botao_escolha_m" data-toggle="modal" data-target="#myModal2_m">escolher</button>
  <div id="menos" data-dismiss="modal"></div>
@@ -773,6 +774,8 @@ onchange="exibeMsg2(this.value);">
     <li>Recebe 20% do cachê líquido no primeiro trabalho e 60% nos demais trabalhos </li>
     <li>Contrato de 2 anos</li>
    </ol>
+   
+    <h2>GRÁTIS</h2>
 
 
 
@@ -859,6 +862,11 @@ onchange="exibeMsg2(this.value);">
      <li>Contrato de 3 anos</li>
     </ol>
 
+    <ul class="text-left list-unstyled">
+      <li>10x</li>
+      <li>R$</li>
+    </ul>
+    <h2 class="text-center">99<span>,90</span></h2>
 
 
    <button type="button" class="botao_escolha_m3_m1" data-toggle="modal" data-target="#gratuito_mobile3">escolher</button>
@@ -929,18 +937,17 @@ onchange="exibeMsg2(this.value);">
                <div class="caption">
                 <h3>Premium</h3>
                 <p>fotos em estúdio feitas exclusivamente para cadastro</p>
-
                 <ol>
-                 <li>Por apenas 10x de R$ 29,90, pode se cadastrar em outras agências</li>
                  <li>Recebe 80% do cachê líquido em todos os trabalhos</li>
+                 <li>Pode se cadastrar em outras agências</li>
                  <li>Aviso de cachê liberado</li>
                  <li>Contrato de 2 anos</li>
                 </ol>
-
-<!-- 
-                <p class="preco">Por apenas 10x R$ 29,90 ou já incluso na compra de qualquer ensaio.</p> -->
-
-    
+                <ul class="text-left list-unstyled">
+                  <li>10x</li>
+                  <li>R$</li>
+                </ul>
+                <h2 class="text-center">29<span>,90</span></h2>
                 <!--modal -->
                  <button type="button" class="botao_modal" data-toggle="modal" data-target="#myModal">
                   Escolher
@@ -955,7 +962,7 @@ onchange="exibeMsg2(this.value);">
                   <ol>
                    <li>Por apenas 10x de R$ 29,90, pode se cadastrar em outras agências</li>
                    <li>Recebe 80% do cachê líquido em todos os trabalhos</li>
-                   <li></li>
+                   <li>Aviso de cachê liberado</li>
                    <li>Contrato de 2 anos</li>
                   </ol>
 
@@ -1039,13 +1046,12 @@ onchange="exibeMsg2(this.value);">
           <div class="caption">
            <h3>Gratuito</h3>
            <p>fotos em estúdio feitas exclusivamente para cadastro</p>
-
            <ol>
             <li>Sem custo, mas deve ser agenciado exclusivamente pela Magneto Elenco</li>
             <li>Recebe 20% do cachê líquido no primeiro trabalho e 60% nos demais trabalhos </li>
             <li>Contrato de 2 anos</li>
            </ol>
-
+            <h2>GRÁTIS</h2>
            <!--modal -->
            <button type="button" class="botao_modal2" data-toggle="modal" data-target="#myModal2">
             Escolher
@@ -1057,15 +1063,13 @@ onchange="exibeMsg2(this.value);">
                    <div class="modal_esquerda2">
                     <h3>gratuito</h3>
                     <p>fotos em estúdio feitas exclusivamente para cadastro</p>
-
-                  <ol>
-                    <li>Sem custo, mas deve ser agenciado exclusivamente pela Magneto Elenco</li>
-                    <li>Recebe 20% do cachê líquido no primeiro trabalho e 60% nos demais trabalhos </li>
-                    <li>Contrato de 2 anos</li>
-                  </ol>
-
+                    <ol>
+                      <li>Recebe 20% do cachê líquido no primeiro trabalho e 60% nos demais trabalhos </li>
+                      <li>Deve ser agenciado exclusivamente pela Magneto Elenco</li>
+                      <li>Contrato de 2 anos</li>
+                    </ol>
+                  <h2>GRÁTIS</h2>
                    </div>
-
                    <div class="modal_direita2">
                     <h3>Termos e Condições</h3>
                     <div class="termo_um2">
@@ -1115,44 +1119,33 @@ onchange="exibeMsg2(this.value);">
                      <input type="radio" name="gratuito" value="gratuito" id="gratuito" class="sim_acordo2" />
                      <label for="gratuito">CONCORDO</label>
                    </div>
-
-              <div id="menos2_d" data-dismiss="modal"></div>
-
+                      <div id="menos2_d" data-dismiss="modal"></div>
                     </div>
-
                    </div>
                  </div>
                  </div>
-
-
-
-
           </div>
          </div>
         </div>
        </div>
-
-
-
        <div class="div14_box3">
-
-          
            <div class="versao_d">
            <div class="thumbnail">
             <div class="caption">
              <h3>Profissional</h3>
-           <p>ensaio fotográfico completo p/cadastro e entrega em DVD</p>
-
-
-
-                         <ol>
-                          <li>10x de R$ 99,90, pode se cadastrar em outras agências</li>
-                          <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
-                          <li>Aviso de cachê liberado</li>
-                          <li>DVD com 30 fotos tratadas</li>
-                          <li>Contrato de 3 anos</li>
-                         </ol>
-
+             <p>ensaio fotográfico completo p/cadastro e entrega em DVD</p>
+            <ol>
+              <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
+              <li>Pode se cadastrar em outras agências</li>
+              <li>Aviso de cachê liberado</li>
+              <li>DVD com 30 fotos tratadas</li>
+              <li>Contrato de 3 anos</li>
+            </ol>
+            <ul class="text-left list-unstyled">
+              <li>10x</li>
+              <li>R$</li>
+            </ul>
+            <h2 class="text-center">99<span>,90</span></h2>
            <!--modal -->
            <button type="button" class="botao_modal3" data-toggle="modal" data-target="#myModal3">
             Escolher

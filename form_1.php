@@ -455,10 +455,15 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
  <p>fotos em estúdio feitas exclusivamente para cadastro</p>
    <ol>
     <li>Recebe 80% do cachê líquido em todos os trabalhos</li>
-    <li>Por apenas 10x de R$ 29,90, pode se cadastrar em outras agências</li> 
+    <li>Pode se cadastrar em outras agências</li> 
     <li>Aviso de cachê liberado</li>
     <li>Contrato de 2 anos</li>
    </ol>
+  <ul class="text-left list-unstyled">
+    <li>10x</li>
+    <li>R$</li>
+  </ul>
+  <h2 class="text-center">29<span>,90</span></h2>
    <button type="button" class="botao_escolha_m" data-toggle="modal" data-target="#myModal2_m">escolher</button>
  <div id="menos" data-dismiss="modal"></div>
  </div>
@@ -500,6 +505,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
     <li>Sem custo, mas deve ser agenciado exclusivamente pela Magneto Elenco</li>
     <li>Contrato de 2 anos</li>
    </ol>
+    <h2>GRÁTIS</h2>
    <button type="button" class="botao_escolha_m2_2" data-toggle="modal" data-target="#gratuito_mobile">escolher</button>
  <div id="menos2_2" data-dismiss="modal"></div>
  </div>
@@ -537,10 +543,15 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
     <ol>
      <li>DVD com 30 fotos tratadas</li>
      <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
-     <li>10x de R$ 99,90, pode se cadastrar em outras agências</li>
+     <li>Pode se cadastrar em outras agências</li>
      <li>Aviso de cachê liberado</li>
      <li>Contrato de 3 anos</li>
     </ol>
+    <ul class="text-left list-unstyled">
+      <li>10x</li>
+      <li>R$</li>
+    </ul>
+    <h2 class="text-center">99<span>,90</span></h2>
    <button type="button" class="botao_escolha_m3_m1" data-toggle="modal" data-target="#gratuito_mobile3">escolher</button>
  <div id="menos3_m1" data-dismiss="modal"></div>
  </div>
@@ -575,10 +586,15 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                 <p>fotos em estúdio feitas exclusivamente para cadastro</p>
                 <ol>
                  <li>Recebe 80% do cachê líquido em todos os trabalhos</li>
-                 <li>Por apenas 10x de R$ 29,90, pode se cadastrar em outras agências</li>
+                 <li>Pode se cadastrar em outras agências</li>
                  <li>Aviso de cachê liberado</li>
                  <li>Contrato de 2 anos</li>
                 </ol>
+                <ul class="text-left list-unstyled">
+                  <li>10x</li>
+                  <li>R$</li>
+                </ul>
+                <h2 class="text-center">29<span>,90</span></h2>
                 <!--modal -->
                  <button type="button" class="botao_modal" data-toggle="modal" data-target="#myModal" id="botao1">escolher</button>
                  <div class="modal hidden-xs modal2" id="myModal" role="dialog" >
@@ -588,10 +604,15 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                     <p>fotos em estúdio feitas exclusivamente para cadastro</p>
                   <ol>
                    <li>Recebe 80% do cachê líquido em todos os trabalhos</li>
-                   <li>Por apenas 10x de R$ 29,90, pode se cadastrar em outras agências</li>
+                   <li>Pode se cadastrar em outras agências</li>
                    <li>Aviso de cachê liberado</li>
                    <li>Contrato de 2 anos</li>
                   </ol>
+                  <ul class="text-left list-unstyled">
+                    <li>10x</li>
+                    <li>R$</li>
+                  </ul>
+                  <h2 class="text-center">29<span>,90</span></h2>
                    </div>
                    <div class="modal_direita">
                     <h3>Termos e Condições</h3>
@@ -635,9 +656,10 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
            <p>fotos em estúdio feitas exclusivamente para cadastro</p>
            <ol>
             <li>Recebe 20% do cachê líquido no primeiro trabalho e 60% nos demais trabalhos</li>
-            <li>Sem custo, mas deve ser agenciado exclusivamente pela Magneto Elenco</li>
+            <li><!-- Sem custo, mas  -->Deve ser agenciado exclusivamente pela Magneto Elenco</li>
             <li>Contrato de 2 anos</li>
            </ol>
+            <h2>GRÁTIS</h2>
            <!--modal -->
            <button type="button" class="botao_modal2" data-toggle="modal" data-target="#myModal2" id="botao2">escolher</button>
                  <div class="modal hidden-xs modal2" id="myModal2" role="dialog" >
@@ -647,9 +669,10 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                     <p>fotos em estúdio feitas exclusivamente para cadastro</p>
                   <ol>
                     <li>Recebe 20% do cachê líquido no primeiro trabalho e 60% nos demais trabalhos</li>
-                    <li>Sem custo, mas deve ser agenciado exclusivamente pela Magneto Elenco</li>
+                    <li>Deve ser agenciado exclusivamente pela Magneto Elenco</li>
                     <li>Contrato de 2 anos</li>
                   </ol>
+                  <h2>GRÁTIS</h2>
                    </div>
                    <div class="modal_direita2">
                     <h3>Termos e Condições</h3>
@@ -692,12 +715,17 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
              <h3>Profissional</h3>
            <p>ensaio fotográfico completo p/cadastro e entrega em DVD</p>
            <ol>
-            <li>DVD com 30 fotos tratadas</li>
             <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
-            <li>10x de R$ 99,90, pode se cadastrar em outras agências</li>
+            <li><!-- 10x de R$ 99,90,  -->Pode se cadastrar em outras agências</li>
+            <li>DVD com 30 fotos tratadas</li>
             <li>Aviso de cachê liberado</li>
             <li>Contrato de 3 anos</li>
            </ol>
+            <ul class="text-left list-unstyled">
+              <li>10x</li>
+              <li>R$</li>
+            </ul>
+            <h2 class="text-center">99<span>,90</span></h2>
            <!--modal -->
            <button type="button" class="botao_modal3" data-toggle="modal" data-target="#myModal3" id="botao3">escolher</button>
                  <div class="modal modal2 hidden-xs" id="myModal3" role="dialog" >
@@ -708,10 +736,15 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                          <ol>
                           <li>DVD com 30 fotos tratadas</li>
                           <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
-                          <li>10x de R$ 99,90, pode se cadastrar em outras agências</li>
+                          <li>Pode se cadastrar em outras agências</li>
                           <li>Aviso de cachê liberado</li>
                           <li>Contrato de 3 anos</li>
                          </ol>
+                      <ul class="text-left list-unstyled">
+                        <li>10x</li>
+                        <li>R$</li>
+                      </ul>
+                      <h2 class="text-center">99<span>,90</span></h2>
                    </div>
                    <div class="modal_direita3">
                     <h3>Termos e Condições</h3>
