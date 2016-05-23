@@ -441,12 +441,26 @@ function exibeMsg2(valor) {
       document.getElementById('txt3').innerHTML = 'dela';
       document.getElementById('txt4').innerHTML = 'ela';
       document.getElementById('txt5').innerHTML = 'da';
+      document.getElementById('txt6').innerHTML = 'dela';
+      document.getElementById('txt7').innerHTML = 'da';
+      document.getElementById('txt8').innerHTML = 'dela';
+      document.getElementById('txt9').innerHTML = 'ela';
+      document.getElementById('txt10').innerHTML = 'ela';
+      document.getElementById('txt11').innerHTML = 'dela';
+      document.getElementById('txt12').innerHTML = 'da';
       break;
     case 'masculino':
       document.getElementById('txt2').innerHTML = 'dele';
       document.getElementById('txt3').innerHTML = 'dele';
       document.getElementById('txt4').innerHTML = 'ele';
       document.getElementById('txt5').innerHTML = 'do';
+      document.getElementById('txt6').innerHTML = 'dele';
+      document.getElementById('txt7').innerHTML = 'do';
+      document.getElementById('txt8').innerHTML = 'dele';
+      document.getElementById('txt9').innerHTML = 'ele';
+      document.getElementById('txt10').innerHTML = 'ele';
+      document.getElementById('txt11').innerHTML = 'dele';
+      document.getElementById('txt12').innerHTML = 'do';
       break;
     default:
       document.getElementById('txt2').innerHTML = 'Nenhum valor informado';
