@@ -157,7 +157,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
          <li><a href="#" class="vs-next swiper-control next"></a></li>
         </ul>
        </nav>
-     </div>
+</div>
 <div id="6" class="swiper-slide gradient3"><nav>
       <div class="container">
         <div class="div6">
@@ -402,13 +402,15 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
           <h1  tabindex="13" class="TabOnEnter">Você é <span id="txt"></span> com DRT?<sup>*</sup></h1>
         </div>
          <div class="div13_box col-lg-offset-3 col-lg-5">
-          <input name="ator" value="sim" type="radio" id="radio2" class="radio2">
+          <input name="ator" value="sim" type="radio" id="radio2" class="radio2" onchange="exibeMsg3(this.value);"
+            onchange="exibeMsg3(this.value);">
           <label id="input3" for="radio2" class="radio-label4">
            <span>Sim</span>
           </label>
          </div>
          <div class="div13_box col-lg-offset-3 col-lg-5">
-         <input name="ator" type="radio" value="nao" id="radio3" class="radio2">
+         <input name="ator" type="radio" value="nao" id="radio3" class="radio2"  onchange="exibeMsg3(this.value);"
+            onchange="exibeMsg3(this.value);">
          <label for="radio3" class="radio-label3">
           <span>Não</span>
          </label>
@@ -459,11 +461,12 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
     <li>Aviso de cachê liberado</li>
     <li>Contrato de 2 anos</li>
    </ol>
-  <ul class="text-left list-unstyled">
+  <ul class="text-left list-unstyled premium_desktop" id="premium_desktop1_mobile">
     <li>10x</li>
     <li>R$</li>
   </ul>
-  <h2 class="text-center">29<span>,90</span></h2>
+  <h2 class="text-center premium_desktop"  id="premium_desktop2_mobile">29<span>,90</span></h2>
+  <h2 id="premium_desktop3_mobile" >GRÁTIS</h2>
    <button type="button" class="botao_escolha_m" data-toggle="modal" data-target="#myModal2_m">escolher</button>
  <div id="menos" data-dismiss="modal"></div>
  </div>
@@ -477,7 +480,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
     <li>Nós não garantimos conseguir trabalhos para você, assim como você não tem obrigação de aceitar os trabalhos que lhe oferecermos;</li>
     <li>Porém, uma vez que você aceite um trabalho que lhe oferecermos, você deverá realizá-lo ou poderá ter que pagar uma multa;</li>
     <li>Você optou pelo Cadastro Premium e por isso sua remuneração sempre será de 80% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados os 20% de impostos);</li>
-    <li>Para efetivar seu contrato você deverá pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;</li>
+    <li><span id="txtpremium1_mobile" class="txtpremium1_mobile"></span> <span id="txtpremium2_mobile" class="txtpremium2_mobile"></span></li>
     <li>Você poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;</li>
     <li>Nosso contrato valerá por 24 meses;</li>
    </ol>
@@ -590,11 +593,12 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                  <li>Aviso de cachê liberado</li>
                  <li>Contrato de 2 anos</li>
                 </ol>
-                <ul class="text-left list-unstyled">
+                <ul class="text-left list-unstyled premium_desktop" id="premium_desktop1">
                   <li>10x</li>
                   <li>R$</li>
                 </ul>
-                <h2 class="text-center">29<span>,90</span></h2>
+                <h2 class="text-center premium_desktop"  id="premium_desktop2">29<span>,90</span></h2>
+                <h2 id="premium_desktop3" >GRÁTIS</h2>
                 <!--modal -->
                  <button type="button" class="botao_modal" data-toggle="modal" data-target="#myModal" id="botao1">escolher</button>
                  <div class="modal hidden-xs modal2" id="myModal" role="dialog" >
@@ -608,11 +612,12 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                    <li>Aviso de cachê liberado</li>
                    <li>Contrato de 2 anos</li>
                   </ol>
-                  <ul class="text-left list-unstyled">
+                  <ul class="text-left list-unstyled premium_desktop" id="premium_desktop1_1">
                     <li>10x</li>
                     <li>R$</li>
                   </ul>
-                  <h2 class="text-center">29<span>,90</span></h2>
+                  <h2 class="text-center premium_desktop"  id="premium_desktop2_1">29<span>,90</span></h2>
+                  <h2 id="premium_desktop3_1" >GRÁTIS</h2>
                    </div>
                    <div class="modal_direita">
                     <h3>Termos e Condições</h3>
@@ -627,7 +632,7 @@ onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)">
                     <div class="termo_dois">
                     <ol start="5">
                      <li>Você optou pelo CADASTRO PREMIUM e por isso sua remuneração sempre será de 80% do CACHÊ LÍQUIDO (Cachê Líquido é o Cachê Bruto recebido pela Magneto Elenco descontados 20% de impostos);</li>
-                     <li>Para efetivar seu contrato você deverá pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;</li>
+                     <li><span id="txtpremium1"></span> <span id="txtpremium2" class="test"></span></li>
                      <li>Você poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;</li>
                      <li>Nosso contrato valerá por 24 meses;</li>
                     </ol>

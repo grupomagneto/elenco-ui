@@ -469,6 +469,34 @@ function exibeMsg2(valor) {
   }
 }
 
+
+function exibeMsg3(valor) {
+  switch (valor) {
+    case 'sim':
+      document.getElementById('txtpremium1').innerHTML = 'Você não precisa pagar para se agenciar;';
+     document.getElementById("txtpremium2").setAttribute("style","display:none"); 
+     document.getElementById("txtpremium1").setAttribute("style","display:block"); 
+      document.getElementById('txtpremium1_mobile').innerHTML = 'Você não precisa pagar para se agenciar;';
+     document.getElementById("txtpremium2_mobile").setAttribute("style","display:none"); 
+     document.getElementById("txtpremium1_mobile").setAttribute("style","display:block"); 
+      break;
+    case 'nao':
+      document.getElementById('txtpremium2').innerHTML = 'Para efetivar seu contrato você deverá pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;';
+      document.getElementById("txtpremium1").setAttribute("style","display:none");
+      document.getElementById("txtpremium2").setAttribute("style","display:block");
+      document.getElementById('txtpremium2_mobile').innerHTML = 'Para efetivar seu contrato você deverá pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;';
+      document.getElementById("txtpremium1_mobile").setAttribute("style","display:none");
+      document.getElementById("txtpremium2_mobile").setAttribute("style","display:block");  
+      break;
+    default:
+      document.getElementById('txtpremium3').innerHTML = 'não clicou';
+      break;
+  }
+}
+
+
+
+
 $("#nome").keyup(function() {
   $(".concat_texto").html($(this).val());
 })
@@ -486,6 +514,17 @@ $(document).ready(function() {
 
       $(".box").not(".blue").hide();
       $(".blue").show();
+     document.getElementById("premium_desktop1").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop2").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop3").setAttribute("style","display:block");
+     document.getElementById("premium_desktop1_1").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop2_1").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop3_1").setAttribute("style","display:block"); 
+
+     document.getElementById("premium_desktop1_mobile").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop2_mobile").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop3_mobile").setAttribute("style","display:block");
+ 
 
      document.getElementById("div14_box2").setAttribute("style","opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50)"); 
       document.getElementById('botao2').setAttribute("disabled","disabled");
@@ -501,6 +540,17 @@ $(document).ready(function() {
 
       $(".box").not(".blue").hide();
       $(".blue").hide();
+     document.getElementById("premium_desktop1").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop2").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop3").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop1_1").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop2_1").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop3_1").setAttribute("style","display:none"); 
+
+
+     document.getElementById("premium_desktop1_mobile").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop2_mobile").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop3_mobile").setAttribute("style","display:none");
 
       document.getElementById("div14_box2").removeAttribute("style","opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50)"); 
       document.getElementById('botao2').removeAttribute("disabled","disabled");

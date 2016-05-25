@@ -5411,12 +5411,25 @@ color: #fff;
 font-family: Avenir-Book;
 font-size:  46px;
 font-weight: bold;
+display: none;
 }
 .div14_box .thumbnail .caption h2 span{
 color: #fff;
 font-family: Avenir-Book;
 font-size: 16px;
 font-weight: bold;
+display: none;
+}
+
+.div14_box .thumbnail .caption h2#premium_desktop3{  
+  margin-top: 190px;
+  margin-bottom: 22px;
+  margin-left: -8px;
+color: #fff;
+font-family: Avenir-Book;
+font-size: 36px;
+font-weight: bold;
+display: none;
 }
 
 .div14_box .thumbnail .caption ul{  
@@ -5660,6 +5673,14 @@ color: #fff;
 font-family: Avenir-Book;
 font-size: 16px;
 font-weight: bold;
+}
+
+.modal_esquerda h2#premium_desktop3_1{
+color: #fff;
+font-size: 36px; 
+font-family: Avenir-Book;
+margin-left: 90px;
+margin-top: 200px;
 }
 
 .modal_esquerda ul{  
@@ -6810,12 +6831,13 @@ margin-left: -400px;
 margin-top: -90px;
 }
 .div_m {
-background: #C957DE;
+ background: #C957DE;
  width:600px;
  height: 200px;
  position: absolute;
  left:50%;
  margin-left: -400px;
+ margin-top: 200px;
  cursor: pointer;
 }
 .div_m h3{
@@ -6936,6 +6958,16 @@ font-size: 16px;
 font-weight: bold;
 }
 
+div.modal-content.conteudo_modal_m h2#premium_desktop3_mobile{
+margin-top: -50px;
+margin-left: 235px; 
+margin-bottom: 40px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  36px;
+margin-top: 20px;
+}
+
 div.modal-content.conteudo_modal_m ul{  
 margin-top: 20px;
 margin-bottom: 5px;
@@ -6967,7 +6999,7 @@ left: 50%;
 padding-top: 8px;
 padding-bottom: 15px;
 margin-left: -44px;
-margin-top: -20px;
+margin-top: 10px;
 }
 #menos {
  display: block;
@@ -7078,14 +7110,13 @@ background: rgba(215,215,215,0.30);
   display:inline-block;
   font-size:13px;
 }
-.div_m2 {/* Rectangle 2 Copy: */
+.div_m2 {
 background: #F75486;
  width:600px;
  height: 200px;
  position: absolute;
  left:50%;
  margin-left: -400px;
- margin-top: 200px;
  cursor: pointer;
 }
 .div_m2 h3{
@@ -7716,6 +7747,14 @@ font-family: Avenir-Book;
 font-size: 16px;
 font-weight: bold;
 }
+div.modal-content.conteudo_modal_m h2#premium_desktop3_mobile{
+margin-top: 40px;
+margin-left: -80px; 
+margin-bottom: 40px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  36px;
+}
 div.modal-content.conteudo_modal_m p{
 font-family: Avenir-Book;
 font-size: 14px;
@@ -7770,7 +7809,7 @@ left: 50%;
 padding-top: 8px;
 padding-bottom: 15px;
 margin-left: -50px;
-margin-top: 150px;
+margin-top: 120px;
 }
 #menos {
  position: absolute;
@@ -8357,13 +8396,14 @@ left:50%;
 margin-left: -200px;
 margin-top: -90px;
 }
-.div_m {
-background: #C957DE;
+.div_m { 
+ background: #C957DE;
  width:800px;
  height: 150px;
  position: absolute;
  left:50%;
  margin-left: -300px;
+ margin-top: 150px;
 }
 .div_m h3{
 font-family: Avenir-Book;
@@ -8414,7 +8454,6 @@ background: #F75486;
  position: absolute;
  left:50%;
  margin-left: -300px;
- margin-top: 150px;
 }
 .div_m2 h3{
 font-family: Avenir-Book;
@@ -8686,6 +8725,14 @@ font-size: 16px;
 color: #FFFFFF;
 margin-left: 70px;
 } 
+div.modal-content.conteudo_modal_m h2#premium_desktop3_mobile{
+margin-top: 490px;
+margin-left: -60px; 
+margin-bottom: 40px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  36px;
+}
 div.modal-content.conteudo_modal_m p.preco_m{
 font-family: Avenir-Book;
 font-size: 16px;
@@ -9502,6 +9549,16 @@ font-family: Avenir-Book;
 font-size: 16px;
 font-weight: bold;
 }
+
+
+div.modal-content.conteudo_modal_m h2#premium_desktop3_mobile{
+margin-top: 68vh;
+margin-left: -50px;
+margin-bottom: 40px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  26px;
+}
 div.modal-content.conteudo_modal_m p{
 font-family: Avenir-Book;
 font-size: 3vw;
@@ -10176,10 +10233,10 @@ margin-top: -90px;
  background: #C957DE;
  width:800px;
  height: 110px;
- box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
  position: absolute;
  left:50%;
  margin-left: -300px;
+ margin-top: 110px;
 }
 .div_m h3{
 font-family: Avenir-Roman;
@@ -10227,11 +10284,9 @@ padding: 30px;
  background: #F75486;
  width:800px;
  height: 110px;
- box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
  position: absolute;
  left:50%;
  margin-left: -300px;
- margin-top: 110px;
 }
 .div_m2 h3{
 font-family: Avenir-Roman;
@@ -11003,6 +11058,7 @@ margin-left: -80px;
  position: absolute;
  left:50%;
  margin-left: -300px;
+ margin-top: 100px;
 }
 .div14_t h1{
 font-family: Avenir-Book;
@@ -11048,7 +11104,6 @@ padding: 30px;
  position: absolute;
  left:50%;
  margin-left: -300px;
- margin-top: 100px;
 }
 .div_m2 h3{
 font-family: Avenir-Roman;
