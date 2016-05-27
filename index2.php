@@ -29,7 +29,7 @@
                 <div class="primeiro col-md-12 col-sm-12 col-xs-12">
                    
                        <a href="form_1.php" class="btn">
-                          Eu mesm@, sou maior de idade
+                          Eu mesmo(a), sou maior de idade
                         </a>    
                         <span>
                              <img src="images/arrow-right.svg" alt="iniciar seta">

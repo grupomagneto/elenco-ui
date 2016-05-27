@@ -448,6 +448,14 @@ function exibeMsg2(valor) {
       document.getElementById('txt10').innerHTML = 'ela';
       document.getElementById('txt11').innerHTML = 'dela';
       document.getElementById('txt12').innerHTML = 'da';
+      document.getElementById('txt13').innerHTML = 'da';
+      document.getElementById('txt14').innerHTML = 'dela';
+      document.getElementById('txt15').innerHTML = 'dela';
+      document.getElementById('txt16').innerHTML = 'ela';
+      document.getElementById('txt17').innerHTML = 'da';
+      document.getElementById('txt18').innerHTML = 'A';
+      document.getElementById('txt19').innerHTML = 'a';
+      document.getElementById('txt20').innerHTML = 'a';
       break;
     case 'masculino':
       document.getElementById('txt2').innerHTML = 'dele';
@@ -461,6 +469,14 @@ function exibeMsg2(valor) {
       document.getElementById('txt10').innerHTML = 'ele';
       document.getElementById('txt11').innerHTML = 'dele';
       document.getElementById('txt12').innerHTML = 'do';
+      document.getElementById('txt13').innerHTML = 'do';
+      document.getElementById('txt14').innerHTML = 'dele';
+      document.getElementById('txt15').innerHTML = 'dele';
+      document.getElementById('txt16').innerHTML = 'ele';
+      document.getElementById('txt17').innerHTML = 'do';
+      document.getElementById('txt18').innerHTML = 'O';
+      document.getElementById('txt19').innerHTML = 'o';
+      document.getElementById('txt20').innerHTML = 'o';
       break;
     default:
       document.getElementById('txt2').innerHTML = 'Nenhum valor informado';
@@ -503,6 +519,10 @@ $("#nome").keyup(function() {
 
 $("#nome_menor").keyup(function() {
   $(".concat2_texto").html($(this).val());
+})
+
+$("#nome_responsavel").keyup(function() {
+  $(".concat3_texto").html($(this).val());
 })
 
 //Código da div ator

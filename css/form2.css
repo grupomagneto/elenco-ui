@@ -4140,13 +4140,13 @@ text-align: left;
 background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
-width: 265px;
+width: 300px;
 height: 58px;
 padding-left: 10px;
 color:#fff;
 font-family: Avenir-Book;
 font-size:24px; 
-text-transform: capitalize;
+/*text-transform: capitalize;*/
 position: absolute;
 left:50%;
 margin-left: -170px;
@@ -4209,13 +4209,13 @@ text-align: left;
 background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
-width: 225px;
+width: 300px;
 height: 58px;
 padding-left: 10px;
 color:#fff;
 font-family: Avenir-Book;
 font-size:24px; 
-text-transform: capitalize;
+/*text-transform: capitalize;*/
 position: absolute;
 left:50%;
 margin-left: -130px;
@@ -4279,13 +4279,13 @@ text-align: left;
 background: rgba(215,215,215,0.30);
 border: 2px solid #ECECEC;
 border-radius: 8px;
-width: 225px;
+width: 300px;
 height: 58px;
 padding-left: 10px;
 color:#fff;
 font-family: Avenir-Book;
 font-size:24px; 
-text-transform: capitalize;
+/*text-transform: capitalize;*/
 position: absolute;
 left:50%;
 margin-left: -130px;
@@ -4557,18 +4557,18 @@ ESTILOS DA NONA DIV
 **********************/
 
 .div11{
-      position: absolute;
-    top: 45%;
-    left: 25%;
-    width: 50%;
-    text-align: center;
-    -webkit-transform: translateY( -50% );
-    -moz-transform: translateY( -50% );
-    transform: translateY( -50% );
+position: absolute;
+top: 45%;
+left: 25%;
+width: 50%;
+text-align: center;
+-webkit-transform: translateY( -50% );
+-moz-transform: translateY( -50% );
+transform: translateY( -50% );
 }
 
 .div11_t h1{
-  /* Qual o seu primeiro : */
+  /* Qual o seu email : */
 font-family: Avenir-Book;
 font-size: 32px;
 color: #FFFFFF;
@@ -4579,7 +4579,7 @@ width:431px;
 position: absolute;
 left:50%;
 margin-left: -380px;
-margin-top: -80px;
+margin-top: -120px;
 }
 
 .div11_box input[type="text"] {
@@ -4650,7 +4650,7 @@ margin-top:-10px;
 }
 
 .div11_t h1{
-  /* Qual o seu primeiro : */
+  /* Qual o seu email : */
 font-family: Avenir-Book;
 font-size: 28px;
 color: #FFFFFF;
@@ -4721,7 +4721,7 @@ margin-top:-10px;
 }
 
 .div11_t h1{
-  /* Qual o seu primeiro : */
+  /* Qual o seu email : */
 font-family: Avenir-Book;
 font-size: 28px;
 color: #FFFFFF;
@@ -4780,24 +4780,25 @@ margin-top:-8px;
 
 
 /**************
-ESTILOS DÉCIMA DIV
+ESTILOS DÉCIMA SEGUNDA DIV
 *********/
 
 
 
 .div12{
-      position: absolute;
-    top: 45%;
-    left: 25%;
-    width: 50%;
-    text-align: center;
-    -webkit-transform: translateY( -50% );
-    -moz-transform: translateY( -50% );
-    transform: translateY( -50% );
+position: absolute;
+top: 45%;
+left: 25%;
+width: 50%;
+text-align: center;
+-webkit-transform: translateY( -50% );
+-moz-transform: translateY( -50% );
+transform: translateY( -50% );
 }
 
 
 .div12_t h1{
+/* Qual a cor da pele :*/
 font-family: Avenir-Book;
 font-size: 32px;
 color: #FFFFFF;
@@ -4807,8 +4808,8 @@ margin-bottom: 16px;
 width:431px;
 position: absolute;
 left:50%;
-margin-left: -290px;
-margin-top: -80px;
+margin-left: -310px;
+margin-top: -120px;
 }
 
 
@@ -4858,7 +4859,7 @@ margin-left: 10px;
   height: 0;
   border: 7px solid transparent;
   border-color: #fff transparent transparent transparent;
-  top: 15px;
+  top: 30px;
   position: absolute;
   right: 10px;
 }
@@ -4884,7 +4885,7 @@ margin-left: 10px;
   padding: 0;
   list-style: none;
   overflow: auto;
-  height: 100px;
+  height: 200px;
   border-radius: 5px;
   border: 2px solid #fff;
   background-color:rgba(215,215,215,0.30);
@@ -5117,8 +5118,8 @@ margin-bottom: 16px;
 width:431px;
 position: absolute;
 left:50%;
-margin-left: -300px;
-margin-top: -80px;
+margin-left: -315px;
+margin-top: -120px;
 }
 
 
@@ -5194,7 +5195,7 @@ margin-left: 10px;
   padding: 0;
   list-style: none;
   overflow: auto;
-  height: 100px;
+  height: 200px;
   border-radius: 5px;
   border: 2px solid #fff;
   background-color:rgba(215,215,215,0.30);
@@ -5454,14 +5455,14 @@ ESTILOS DA DÉCIMA QUARTA DIV
 *****************************/
 
 .div14{
-      position: absolute;
-    top: 25%;
-    left: 30%;
-    width: 50%;
-    text-align: center;
-    -webkit-transform: translateY( -50% );
-    -moz-transform: translateY( -50% );
-    transform: translateY( -50% );
+position: absolute;
+top: 25%;
+left: 30%;
+width: 50%;
+text-align: center;
+-webkit-transform: translateY( -50% );
+-moz-transform: translateY( -50% );
+transform: translateY( -50% );
 }
 .div14_t h1{
 /* Escolha uma opção pa: */
@@ -5469,19 +5470,19 @@ font-family: Avenir-Book;
 font-size: 32px;
 color: #FFFFFF;
 margin-bottom: 16px;
-width:700px;
+width:1000px;
 position: absolute;
-text-align: left;
-left:50%;
-margin-left: -315px;
+text-align: center;
+left:60%;
+margin-left: -600px;
 margin-top: -120px;
 }
 .div14_box .thumbnail{
- width:340px;
-  height:553px;
-  position: absolute;
-  left: 50%;
-  margin-left: -270px;/* Rectangle 2 Copy: */
+width:340px;
+height:553px;
+position: absolute;
+left: 50%;
+margin-left: -270px;/* Rectangle 2 Copy: */
 background: #C957DE;
 box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
 border: 1px solid #C957DE;
@@ -5502,7 +5503,8 @@ font-family: Avenir-Book;
 font-size: 14px;
 color: #FFFFFF;
 width: 200px;
-margin-left: 50px;
+margin-left: 65px;
+line-height: 115%;
 }
 
 .div14_box .thumbnail .caption p.preco{
@@ -5514,16 +5516,17 @@ width: 235px;
 height: 66px;
 margin-top: 130px;
 text-align: left;
-margin-left: 45px;
+/*margin-left: 30px;*/
 }
 
 .div14_box .thumbnail .caption h2{  
 margin-top: -55px;
-margin-bottom: 10px;
+margin-bottom: 20px;
 color: #fff;
 font-family: Avenir-Book;
 font-size:  46px;
 font-weight: bold;
+margin-left: 30px;
 }
 .div14_box .thumbnail .caption h2 span{
 color: #fff;
@@ -5533,9 +5536,9 @@ font-weight: bold;
 }
 
 .div14_box .thumbnail .caption ul{  
-margin-top: 190px;
+margin-top: 170px;
 margin-bottom: 10px;
-margin-left: 90px;
+margin-left: 105px;
 color: #fff;
 font-family: Avenir-Book;
 font-size:  46px;
@@ -5546,30 +5549,31 @@ color: #fff;
 font-family: Avenir-Book;
 font-size: 16px;
 font-weight: bold;
+/*margin-left: 10px;*/
 }
 .div14_box .thumbnail .caption ol { 
-    list-style-type: disc; 
-    color: #FFFFFF;
-    width:270px;
-    height: 78px;
-    text-align: left;
-    margin-left: 35px;
-    margin-top: 25px;/* Maiores cachês e pos: */
-    font-family: Avenir-Book;
-    font-size: 19.31px;
-    color: #FFFFFF;
+list-style-type: disc; 
+color: #FFFFFF;
+width:270px;
+height: 78px;
+text-align: left;
+margin-left: 35px;
+margin-top: 25px;/* Maiores cachês e pos: */
+font-family: Avenir-Book;
+font-size: 19.31px;
+color: #FFFFFF;
 } 
 
 .div14_box .thumbnail .caption ol li { 
-   padding: 10px
+padding: 4px
 } 
 
 .div14_box2 .thumbnail{
-    width:340px;
-  height:553px;
-  position: absolute;
-  left: 50%;
-  margin-left: -650px;
+width:340px;
+height:553px;
+position: absolute;
+left: 50%;
+margin-left: -650px;
 background: #F75486;
 box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
 border: 1px solid #F75486;
@@ -5592,42 +5596,48 @@ font-family: Avenir-Book;
 font-size: 14px;
 color: #FFFFFF;
 width: 200px;
-margin-left: 50px;
+margin-left: 65px;
+}
+
+.div14_box2 .thumbnail .caption h4{  
+margin-top: 170px;
+color: #fff;
+font-family: Avenir-Book;
+font-size: 20px;
 }
 
 .div14_box2 .thumbnail .caption h2{  
-  margin-top: 200px;
-  margin-bottom: 23px;
+margin-top: -5px;
+margin-bottom: 33px;
 color: #fff;
 font-family: Avenir-Book;
-font-size: 36px;
-font-weight: bold;
+font-size: 20px;
 }
 
 .div14_box2 .thumbnail .caption ol { 
-    list-style-type: disc; 
-    color: #FFFFFF;
-    width:270px;
-    height: 78px;
-    text-align: left;
-    margin-left: 35px;
-    margin-top: 25px;/* Maiores cachês e pos: */
-    font-family: Avenir-Book;
-    font-size: 19.31px;
-    color: #FFFFFF;
+list-style-type: disc; 
+color: #FFFFFF;
+width:280px;
+height: 78px;
+text-align: left;
+margin-left: 27px;
+margin-top: 25px;/* Maiores cachês e pos: */
+font-family: Avenir-Book;
+font-size: 19.31px;
+color: #FFFFFF;
 } 
 
 .div14_box2 .thumbnail .caption ol li { 
-   padding: 10px
+padding: 2px
 } 
 
 
 .div14_box3 .thumbnail{
-  width:340px;
-  height:553px;
-  position: absolute;
-  left: 50%;
-  margin-left: 110px;/* Rectangle 2 Copy 2: */
+width:340px;
+height:553px;
+position: absolute;
+left: 50%;
+margin-left: 110px;/* Rectangle 2 Copy 2: */
 background: #4AA4E2;
 box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
 border: 1px solid #4AA4E2;
@@ -5649,16 +5659,17 @@ font-family: Avenir-Book;
 font-size: 14px;
 color: #FFFFFF;
 width: 200px;
-margin-left: 50px;
+margin-left: 55px;
 }
 
 .div14_box3 .thumbnail .caption h2{  
 margin-top: -50px;
-margin-bottom: 26px;
+margin-bottom: 27px;
 color: #fff;
 font-family: Avenir-Book;
 font-size:  46px;
 font-weight: bold;
+margin-left: 30px;
 }
 .div14_box3 .thumbnail .caption h2 span{
 color: #fff;
@@ -5668,9 +5679,9 @@ font-weight: bold;
 }
 
 .div14_box3 .thumbnail .caption ul{  
-margin-top: 190px;
-margin-bottom: 5px;
-margin-left: 90px;
+margin-top: 170px;
+margin-bottom: 6px;
+margin-left: 105px;
 color: #fff;
 font-family: Avenir-Book;
 font-size:  46px;
@@ -5684,16 +5695,16 @@ font-weight: bold;
 }
 
 .div14_box3 .thumbnail .caption ol { 
-    list-style-type: disc; 
-    color: #FFFFFF;
-    width:270px;
-    height: 78px;
-    text-align: left;
-    margin-left: 35px;
-    margin-top: 25px;/* Maiores cachês e pos: */
-    font-family: Avenir-Book;
-    font-size: 19.31px;
-    color: #FFFFFF;
+list-style-type: disc; 
+color: #FFFFFF;
+width:270px;
+height: 78px;
+text-align: left;
+margin-left: 35px;
+margin-top: 25px;/* Maiores cachês e pos: */
+font-family: Avenir-Book;
+font-size: 19.31px;
+color: #FFFFFF;
 } 
 
 .div14_box3 .thumbnail .caption ol li { 
@@ -5703,7 +5714,7 @@ font-weight: bold;
 border: 1px solid #FFFFFF;
 border-radius: 6px;
 font-family: Avenir-Book;
-font-size: 18.86px;
+font-size: 14px;
 color: #FFFFFF;
 background: transparent;
 padding: 10px;
@@ -5717,7 +5728,7 @@ border: 1px solid #FFFFFF;
 border-radius: 6px;
 /* escolher: */
 font-family: Avenir-Book;
-font-size: 18.86px;
+font-size: 14px;
 color: #FFFFFF;
 background: transparent;
 padding: 10px;
@@ -5725,42 +5736,42 @@ margin-top: 2px;
 }
 div.conteudo_modal
 {
-    background: #C957DE;
+background: #C957DE;
 border-radius: 0;/* Rectangle 2: */
 background: #C957DE;
 box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
 border: 1px solid #C957DE;
 width:1200px;
-  height:695px;
+height:695px;
 }
 
 #myModal{
-  position: absolute;
-  z-index: 9999;
-  width:1200px;
-  height:695px;
-  left: 50%;
-  top:50%;
-  margin-left: -600px;
+position: absolute;
+z-index: 9999;
+width:1200px;
+height:695px;
+left: 50%;
+top:50%;
+margin-left: -600px;
 
 margin-top: -350px;
 }
 
 .modal_esquerda{
-  width: 300px;
-   height: 490px;
-  float: left;
+width: 300px;
+height: 490px;
+float: left;
 }
 
 .modal_esquerda h3{
 color: #fff;
 border-top: 1px solid #fff; 
 border-bottom: 1px solid #fff; 
-padding-top: 20px;
-padding-bottom: 20px;
+padding-top: 10px;
+padding-bottom: 10px;
 padding-left: 50px;
 width: 190px;
-margin-left: 50px;
+margin-left: 80px;
 margin-top: 40px;
 }
 
@@ -5769,7 +5780,7 @@ font-family: Avenir-Book;
 font-size: 14px;
 color: #FFFFFF;
 width: 200px;
-margin-left: 50px;
+margin-left: 75px;
 text-align: center;
 }
 
@@ -5788,16 +5799,16 @@ margin-left: 55px;
 }
 
 .modal_esquerda ol { 
-    list-style-type: disc; 
-    color: #FFFFFF;
-    width:270px;
-    height: 78px;
-    text-align: left;
-    margin-left: 35px;
-    margin-top: 25px;/* Maiores cachês e pos: */
-    font-family: Avenir-Book;
-    font-size: 19.31px;
-    color: #FFFFFF;
+list-style-type: disc; 
+color: #FFFFFF;
+width:270px;
+height: 78px;
+text-align: left;
+margin-left: 35px;
+margin-top: 25px;/* Maiores cachês e pos: */
+font-family: Avenir-Book;
+font-size: 19.31px;
+color: #FFFFFF;
 margin-left: 50px;
 } 
 
@@ -5806,11 +5817,11 @@ margin-left: 50px;
 } 
 
 .modal_direita{
-  width: 420px;
-   height: 690px;
-  padding-bottom: 600px;
-  float: right;
-  margin-right:370px;
+width: 420px;
+height: 690px;
+padding-bottom: 600px;
+float: right;
+margin-right:370px;
 }
 
 .modal_direita h3{
@@ -5819,20 +5830,20 @@ font-family: Avenir-Book;
 font-size: 22px;
 color: #FFFFFF;
 text-align: left;
-margin-top: 50px;
+margin-top: 55px;
 width: 201px;
 }
 .modal_direita ol li { 
-  padding: 2px;
-  width:280px;
-    margin-left: -65px;
+padding: 2px;
+width:280px;
+margin-left: -65px;
 } 
 .modal_direita ol { 
 color: #FFFFFF;
 text-align: left;
-margin-top: 50px;
+margin-top: 30px;
 font-family: Avenir-Book;
-font-size: 16.99px;
+font-size: 15px;
 color: #FFFFFF;
 margin-left: 70px;
 } 
@@ -5858,7 +5869,7 @@ border: 1px solid #FFFFFF;
 border-radius: 6px;
 /* escolher: */
 font-family: Avenir-Book;
-font-size: 18.86px;
+font-size: 14px;
 color: #FFFFFF;
 background: transparent;
 padding: 10px;
@@ -5907,77 +5918,83 @@ height:31px;
 }
 
 #menos_d {
-  position: absolute;
-  right: 10px;
-  top: 15px;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  text-align: center;
-  border: 1px solid #fff;
-  border-radius: 100%;
-  background: #C957DE;
+position: absolute;
+right: 10px;
+top: 15px;
+width: 40px;
+height: 40px;
+cursor: pointer;
+text-align: center;
+border: 1px solid #fff;
+border-radius: 100%;
+background: #C957DE;
 }
 
 #menos_d::before {
-    font-size: 2em;
-    line-height: 32px;
-    content: '-';
-    color: #fff;
+font-size: 2em;
+line-height: 32px;
+content: '-';
+color: #fff;
 }
 
 
-div.conteudo_modal2
-{
+div.conteudo_modal2 {
 background: #F75486;
 border-radius: 0;
 box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
 border: 1px solid #F75486;
 width:1200px;
-  height:695px;
+height:695px;
 }
 
 #myModal2{
-  position: absolute;
-  z-index: 9999;
-  width:1200px;
-  height:695px;
-  left: 50%;
-  top:50%;
-  margin-left: -600px;
-
+position: absolute;
+z-index: 9999;
+width:1200px;
+height:695px;
+left: 50%;
+top:50%;
+margin-left: -600px;
 margin-top: -350px;
 }
 
 .modal_esquerda2{
-  width: 300px;
-   height: 490px;
-  float: left;
+width: 300px;
+height: 490px;
+float: left;
 }
 
 .modal_esquerda2 h3{
 color: #fff;
 border-top: 1px solid #fff; 
 border-bottom: 1px solid #fff; 
-padding-top: 20px;
-padding-bottom: 20px;
+padding-top: 10px;
+padding-bottom: 10px;
 padding-left: 50px;
 width: 190px;
-margin-left: 50px;
+margin-left: 80px;
 margin-top: 40px;
 }
 .modal_esquerda2 h2{
 color: #fff;
-font-size: 26px; 
-margin-left: 90px;
+font-family: Avenir-Book;
+font-size: 20px; 
+margin-left: 100px;
+margin-top: -5px;
+}
+.modal_esquerda2 h4{
 margin-top: 200px;
+margin-left: 90px;
+color: #fff;
+font-family: Avenir-Book;
+font-size: 20px;
 }
 .modal_esquerda2 p{
 font-family: Avenir-Book;
 font-size: 14px;
 color: #FFFFFF;
 width: 200px;
-margin-left: 50px;
+margin-left: 75px;
 text-align: center;
 }
 .modal_esquerda2 p.preco2{
@@ -5993,16 +6010,16 @@ margin-left: 25px;
 margin-left: 55px;
 }
 .modal_esquerda2 ol { 
-    list-style-type: disc; 
-    color: #FFFFFF;
-    width:270px;
-    height: 78px;
-    text-align: left;
-    margin-left: 35px;
-    margin-top: 25px;/* Maiores cachês e pos: */
-    font-family: Avenir-Book;
-    font-size: 19.31px;
-    color: #FFFFFF;
+list-style-type: disc; 
+color: #FFFFFF;
+width:270px;
+height: 78px;
+text-align: left;
+margin-left: 35px;
+margin-top: 25px;/* Maiores cachês e pos: */
+font-family: Avenir-Book;
+font-size: 19.31px;
+color: #FFFFFF;
 margin-left: 50px;
 } 
 .modal_esquerda2 ol li { 
@@ -6010,12 +6027,12 @@ margin-left: 50px;
 } 
 
 .modal_direita2{
-  width: 420px;
-   height: 690px;
-  padding-bottom: 600px;
-  float: right;
-  margin-right:370px;
-  margin-top: -20px;
+width: 420px;
+height: 690px;
+padding-bottom: 600px;
+float: right;
+margin-right:370px;
+margin-top: -20px;
 }
 
 .modal_direita2 h3{
@@ -6024,33 +6041,34 @@ font-family: Avenir-Book;
 font-size: 22px;
 color: #FFFFFF;
 text-align: left;
-margin-top: 50px;
+margin-top: 75px;
 width: 201px;
 }
 
 .modal_direita2 ol li { 
-  padding: 2px;
-  width:280px;
-    margin-left: -65px;
+padding: 2px;
+width:280px;
+margin-left: -65px;
+/*line-height: 150%;*/
 } 
 
 .modal_direita2 ol { 
-    color: #FFFFFF;
-    text-align: left;
-    margin-top: 50px;
+color: #FFFFFF;
+text-align: left;
+margin-top: 30px;
 font-family: Avenir-Book;
-font-size: 16.99px;
+font-size: 15px;
 color: #FFFFFF;
 margin-left: 70px;
 
 } 
 .termo_um2{
 float: left;
-  width:20%;
+width:20%;
 }
 .termo_dois2{
 float: right;
-  width:20%;
+width:20%;
 }
 
 p.descricao_contrato2{
@@ -6127,31 +6145,31 @@ width:1200px;
 
 
 #myModal3{
-  position: absolute;
-  z-index: 9999;
-  width:1200px;
-  height:695px;
-  left: 50%;
-  top:50%;
-  margin-left: -600px;
+position: absolute;
+z-index: 9999;
+width:1200px;
+height:695px;
+left: 50%;
+top:50%;
+margin-left: -600px;
 
 margin-top: -350px;
 }
 
 .modal_esquerda3{
-  width: 300px;
-   height: 490px;
-  float: left;
+width: 300px;
+height: 490px;
+float: left;
 }
 .modal_esquerda3 h3{
 color: #fff;
 border-top: 1px solid #fff; 
 border-bottom: 1px solid #fff; 
-padding-top: 20px;
-padding-bottom: 20px;
-padding-left: 40px;
-width: 200px;
-margin-left: 50px;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 30px;
+width: 190px;
+margin-left: 80px;
 margin-top: 40px;
 }
 .modal_esquerda3 p{
@@ -6159,7 +6177,7 @@ font-family: Avenir-Book;
 font-size: 14px;
 color: #FFFFFF;
 width: 200px;
-margin-left: 50px;
+margin-left: 75px;
 text-align: center;
 }
 .modal_esquerda3 p.preco3{
@@ -6174,27 +6192,27 @@ text-align: left;
 margin-left: 55px;
 }
 .modal_esquerda3 ol { 
-    list-style-type: disc; 
-    color: #FFFFFF;
-    width:270px;
-    height: 78px;
-    text-align: left;
-    margin-left: 35px;
-    margin-top: 10px;/* Maiores cachês e pos: */
-    font-family: Avenir-Book;
-    font-size: 19.31px;
-    color: #FFFFFF;
+list-style-type: disc; 
+color: #FFFFFF;
+width:270px;
+height: 78px;
+text-align: left;
+margin-left: 35px;
+margin-top: 10px;/* Maiores cachês e pos: */
+font-family: Avenir-Book;
+font-size: 19.31px;
+color: #FFFFFF;
 margin-left: 50px;
 } 
 .modal_esquerda3 ol li { 
    padding: 10px
 } 
 .modal_direita3{
-  width: 420px;
-   height: 690px;
-  padding-bottom: 600px;
-  float: right;
-  margin-right:370px;
+width: 420px;
+height: 690px;
+padding-bottom: 600px;
+float: right;
+margin-right:370px;
 }
 .modal_direita3 h3{
 /* Termos e Condições: */
@@ -6202,24 +6220,23 @@ font-family: Avenir-Book;
 font-size: 22px;
 color: #FFFFFF;
 text-align: left;
-margin-top: 50px;
+margin-top: 55px;
 width: 201px;
 }
 .modal_direita3 ol li { 
-  padding: 2px;
-  width:280px;
-    margin-left: -65px;
+padding: 2px;
+width:280px;
+margin-left: -65px;
 } 
 .modal_direita3 ol { 
-    color: #FFFFFF;
-    text-align: left;
-    margin-top: 30px;
+color: #FFFFFF;
+text-align: left;
+margin-top: 30px;
 font-family: Avenir-Book;
-font-size: 16.99px;
+font-size: 15px;
 color: #FFFFFF;
 margin-left: 70px;
-
-} 
+}
 .termo_um3{
 float: left;
   width:20%;
@@ -6378,11 +6395,11 @@ overflow-y: hidden;
   float: left;
 }
 .modal_direita{
-  width: 420px;
-   height: 690px;
-  padding-bottom: 600px;
-  float: right;
-  margin-right:270px;
+width: 420px;
+height: 690px;
+padding-bottom: 600px;
+float: right;
+margin-right:370px;
 }
 
 #myModal2{
@@ -6479,19 +6496,32 @@ height:645px;
 overflow-y: hidden;
 }
 .modal_esquerda3{
-  width: 300px;
-   height: 490px;
-  float: left;
+width: 300px;
+height: 490px;
+float: left;
 }
 .modal_direita3{
-  width: 420px;
-   height: 690px;
-  padding-bottom: 600px;
-  float: right;
-  margin-right:270px;
+width: 420px;
+height: 690px;
+padding-bottom: 600px;
+float: right;
+margin-right:270px;
 }
-
-
+.modal_esquerda3 .thumbnail .caption ul{  
+margin-top: 170px;
+margin-bottom: 6px;
+margin-left: 105px;
+color: #fff;
+font-family: Avenir-Book;
+font-size:  46px;
+font-weight: bold;
+}
+.modal_esquerda3 .thumbnail .caption ul li{
+color: #fff;
+font-family: Avenir-Book;
+font-size: 16px;
+font-weight: bold;
+}
 p.descricao_contrato3{
   /* Clicando abaixo você: */
 font-family: Avenir-Book;
@@ -6501,7 +6531,6 @@ width:250px;
 margin-left: 40px;
 margin-top: 10px;
 }
-
 .botao_nao3{
   /* Rectangle 4: */
 border: 1px solid #FFFFFF;
@@ -6897,11 +6926,11 @@ font-family: Avenir-Book;
 font-size: 32px;
 color: #FFFFFF;
 margin-bottom: 16px;
-width:650px;
+width: 700px;
 position: absolute;
-text-align: left;
-left:50%;
-margin-left: -400px;
+text-align: center;
+/*left:50%;*/
+/*margin-left: -400px;*/
 margin-top: -90px;
 }
 
@@ -7053,7 +7082,7 @@ color: #FFFFFF;
 text-align: left;
 margin-top: 50px;
 font-family: Avenir-Book;
-font-size: 16.99px;
+font-size: 16px;
 color: #FFFFFF;
 margin-left: 70px;
 } 
@@ -7322,7 +7351,7 @@ div.modal-content.conteudo_modal_m2_2 ol {
     text-align: left;
     margin-top: 50px;
 font-family: Avenir-Book;
-font-size: 16.99px;
+font-size: 16px;
 color: #FFFFFF;
 margin-left: 20px;
 } 
@@ -7620,7 +7649,7 @@ div.modal-content.conteudo_modal_m3_m1 ol {
     text-align: left;
     margin-top: 50px;
 font-family: Avenir-Book;
-font-size: 16.99px;
+font-size: 16px;
 color: #FFFFFF;
 margin-left: 20px;
 } 
@@ -7914,7 +7943,7 @@ div.modal-content.conteudo_modal_m ol {
     text-align: left;
     margin-top: 70px;
 font-family: Avenir-Book;
-font-size: 16.99px;
+font-size: 16px;
 color: #FFFFFF;
 margin-left: 70px;
 } 
@@ -8179,7 +8208,7 @@ div.modal-content.conteudo_modal_m2_2 ol {
     text-align: left;
     margin-top: 50px;
 font-family: Avenir-Book;
-font-size: 16.99px;
+font-size: 16px;
 color: #FFFFFF;
 margin-left: 70px;
 } 
@@ -8445,7 +8474,7 @@ div.modal-content.conteudo_modal_m3_m1 ol {
     text-align: left;
     margin-top: 50px;
 font-family: Avenir-Book;
-font-size: 16.99px;
+font-size: 16px;
 color: #FFFFFF;
 margin-left: 70px;
 } 
