@@ -18,13 +18,12 @@
   <!-- Swiper wrapper -->
     <div class="swiper-wrapper">
     <!-- DIV CPF RESPONSÁVEL  -->
-<div class="swiper-slide gradient">
+<!-- <div class="swiper-slide gradient">
   <div class="container">
     <div class="div1">
       <div class="row">
         <div class=" div1_t col-lg-offset-3 col-lg-5">
-          <h1><A HREF="#jump">Qual o seu cpf?<sup>*</sup></A></h1>
-          <!-- <h1>Qual o seu cpf?<sup>*</sup></h1> -->
+          <h1>Qual o seu cpf?<sup>*</sup></h1>
         </div>
         <div class=" div1_box col-lg-offset-3 col-lg-5">
           <input name="cpf" id="cpf" type="text" data-mask="000.000.000-00" onfocus="this.value=''" class='TabOnEnter' autofocus tabindex="1" required />
@@ -42,10 +41,10 @@
       <li><a href="#" class="vs-next1 swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- DIV CPF RESPONSÁVEL -->
 <!-- DIV NOME RESPONSÁVEL -->
-<div id="2" class="swiper-slide gradient">
+<!-- <div id="2" class="swiper-slide gradient">
   <div class="container">
     <div class="div2">
       <div class="row">
@@ -69,10 +68,10 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- FIM DIV NOME RESPONSÁVEL -->
 <!-- DIV SEXO -->
-<div id="3" class="swiper-slide gradient">
+<!-- <div id="3" class="swiper-slide gradient">
   <div class="container">
     <div class="div3">
       <div class="row">
@@ -105,10 +104,10 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- DIV SEXO -->
 <!-- DIV NOME DA PESSOA SENDO CADASTRADA -->
-<div id="4" class="swiper-slide gradient">
+<!-- <div id="4" class="swiper-slide gradient">
   <div class="container">
     <div class="div4">
       <div class="row">
@@ -132,10 +131,10 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- FIM DIV NOME DA PESSOA SENDO CADASTRADA -->
 <!-- DIV SOBRENOME -->
-<div id="5" class="swiper-slide gradient">
+<!-- <div id="5" class="swiper-slide gradient">
   <nav>
   <div class="container">
     <div class="div5">
@@ -160,10 +159,10 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- FIM DIV SOBRENOME -->
 <!-- DIV ANTES DAS FOTOS -->
-<div id="6" class="swiper-slide gradient">
+<!-- <div id="6" class="swiper-slide gradient">
   <nav>
   <div class="container">
     <div class="div6">
@@ -187,10 +186,10 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- FIM DIV ANTES DAS FOTOS -->
 <!-- DIV PRIMEIRA FOTO -->
-<div id="7" class="swiper-slide gradient2">
+<!-- <div id="7" class="swiper-slide gradient2">
   <div class="container">
     <div class="div7">
       <div class="row">
@@ -224,10 +223,10 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- FIM DIV PRIMEIRA FOTO -->
 <!-- DIV SEGUNDA FOTO -->
-<div id="8" class="swiper-slide gradient3">
+<!-- <div id="8" class="swiper-slide gradient3">
   <div class="container">
     <div class="div8">
       <div class="row">
@@ -261,10 +260,10 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- FIM DIV SEGUNDA FOTO -->
 <!-- DIV DATA DE NASCIMENTO -->
-<div id="9" class="swiper-slide gradient">
+<!-- <div id="9" class="swiper-slide gradient">
   <div class="container">
     <div class="div9">
       <div class="row">
@@ -286,10 +285,10 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- FIM DIV DATA DE NASCIMENTO -->
 <!-- DIV CELULAR PARA CONTATO -->
-<div id="10" class="swiper-slide gradient">
+<!-- <div id="10" class="swiper-slide gradient">
   <div class="container">
     <div class="div10">
       <div class="row">
@@ -313,10 +312,10 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- FIM DIV CELULAR PARA CONTATO -->
 <!-- DIV EMAIL -->
-<div id="11" class="swiper-slide gradient">
+<!-- <div id="11" class="swiper-slide gradient">
   <div class="container">
     <div class="div11">
       <div class="row">
@@ -340,10 +339,10 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- FIM DIV EMAIL -->
 <!-- DIV COR DA PELE -->
-<div id="12" class="swiper-slide gradient">
+<!-- <div id="12" class="swiper-slide gradient">
   <div class="container">
     <div class="div12">
       <div class="row">
@@ -372,10 +371,10 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- FIM DIV COR DA PELE -->
 <!-- DIV BAIRRO -->
-<div id="13" class="swiper-slide gradient">
+<!-- <div id="13" class="swiper-slide gradient">
   <div class="container">
     <div class="div13">
       <div class="row">
@@ -443,7 +442,7 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 <!-- FIM DIV BAIRRO -->
 <!-- DIV PLANOS -->
 
@@ -462,7 +461,9 @@
 <div class="div_m" data-toggle="modal" data-target="#myModal1_m">
   <h3>Premium</h3>
   <p>fotos simples em estúdio apenas para site</p>
-  <div id="mais"></div>
+  <div id="mais">
+    <i class="glyphicon glyphicon-plus-sign"></i>
+  </div>
 </div>
 <div class="modal modal1_m modal2_m" id="myModal1_m" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_modal_m">
@@ -480,7 +481,9 @@
     </ul>
     <h2 class="text-center">29<span>,90</span></h2>
     <button type="button" class="botao_escolha_m" data-toggle="modal" data-target="#myModal2_m">ESCOLHER</button>
-    <div id="menos" data-dismiss="modal"></div>
+    <div id="menos" data-dismiss="modal">   
+      <i class="glyphicon glyphicon-minus-sign"></i>
+    </div>
   </div>
 </div>
 
@@ -620,8 +623,6 @@
     <div id="menos3_m1" data-dismiss="modal"></div>
   </div>
 </div>
-
-
 <div class="modal modal_gratuito_mobile3" id="gratuito_mobile3" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_gratuito_mobile3">
     <h3>Termos e Condições</h3>
@@ -683,7 +684,7 @@
         <li>R$</li>
       </ul>
       <h2 class="text-center">29<span>,90</span></h2>
-      <A NAME="jump">
+      <!-- <A NAME="jump"> -->
       <!--modal -->
       <button type="button" class="botao_modal" data-toggle="modal" data-target="#myModal">ESCOLHER</button>
       <div class="modal hidden-xs modal2" id="myModal" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -741,13 +742,15 @@
                 </li>
               </ol>
               <p class="descricao_contrato">
-                Clicando abaixo você declara estar ciente e concordar com os termos acima apresentados
+                Você concorda com os termos do agenciamento?
               </p>
               <div class="button">
                 <input type="radio" name="premium" value="premium" id="premium" class="sim_acordo" />
                 <label for="premium">CONCORDO</label>
               </div>
-              <div id="menos_d" data-dismiss="modal"></div>
+              <div id="menos_d" data-dismiss="modal">
+                <i class="glyphicon glyphicon-minus-sign"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -820,14 +823,15 @@
                   </li>
                 </ol>
                 <p class="descricao_contrato2">
-                  Clicando abaixo você declara estar ciente e 
-                  concordar com os termos acima apresentados
+                  Você concorda com os termos do agenciamento?
                 </p>
                 <div class="button2">
                   <input type="radio" name="gratuito" value="gratuito" id="gratuito" class="sim_acordo2" />
                   <label for="gratuito">CONCORDO</label>
                 </div>
-                <div id="menos2_d" data-dismiss="modal"></div>
+                <div id="menos2_d" data-dismiss="modal">
+                  <i class="glyphicon glyphicon-minus-sign"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -900,7 +904,9 @@
                   <input type="radio" name="opcao" value="Profissional" id="profissional" class="sim_acordo3" />
                   <label for="profissional">CONCORDO</label>
                 </div>
-                <div id="menos3_d" data-dismiss="modal"></div>
+                <div id="menos3_d" data-dismiss="modal">
+                  <i class="glyphicon glyphicon-minus-sign"></i>
+                </div>
               </div>
             </div>
           </div>
