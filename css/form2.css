@@ -322,85 +322,29 @@ PROGRESS
 .progress14 progress { width:600px; top:95%; margin-left:-300px; z-index: 9999; }
 .progress15 progress { width:600px; top:95%; margin-left:-300px; z-index: 9999; }
 /**********************
-Extra small devices Phones (<768px) Landscape
-***********************/
-@media only screen and (max-width: 767px) and (orientation: landscape){
-body {
-background-image: url(../images/gire.png);
-}
-}
-/**********************
-Extra small devices Phones (<768px) Portrait
-***********************/
-@media only screen and (max-width: 767px) and (orientation: portrait){
-/**********************
-SETAS
-***********************/
-.vs-vertical-nav { top: 93%; right: 36%; }
-.vs-vertical-nav1 { top: 93%; right: 45%; }
-.vs-vertical-nav2 { top: 93%; right: 45%; }
-.vs-vertical-nav a.vs-prev { margin-bottom: -40px; margin-left: 50px; }
-/**********************
-PROGRESS
-***********************/
-.progress1 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress2 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress3 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress4 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress5 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress6 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress7 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress8 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress9 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress10 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress11 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress12 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress13 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress14 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-.progress15 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
-}
-/**********************
-Small devices Tablets and Desktops (≥768px)
-***********************/
-@media only screen and (min-width: 768px) and (max-width: 991px){
-.vs-vertical-nav { top: 50%; right: 2%; }
-.vs-vertical-nav1 { top: 50%; right: 2%; }
-.vs-vertical-nav2 { top: 50%; right: 2%; }
-.vs-vertical-nav a.vs-prev { margin-bottom: 10px; }
-}
-/**********************
-Medium devices Desktops (≥992px)
-***********************/
-@media only screen and (min-width: 992px) and (max-width: 1199px){
-/**********************
 SETAS
 ***********************/
 .vs-vertical-nav { top: 50%; right: 2%; }
 .vs-vertical-nav1 { top: 50%; right: 2%; }
 .vs-vertical-nav2 { top: 50%; right: 2%; }
 .vs-vertical-nav a.vs-prev { margin-bottom: 10px; }
-}
-/**********************
-Large devices Desktops (≥1200px)
-***********************/
-@media only screen and (min-width: 1200px){
 /*********************
 DIVS DO PRIMEIRO FORMULÁRIO
 **********************/
-.div0{ position: absolute; top:45%; left:13%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div1{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div2{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div3{ position: absolute; top:45%; left:13%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div4{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div5{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div6{ position: absolute; top:35%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div7{ position: absolute; top:8%; left:27%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div8{ position: absolute; top:8%; left:27%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div9{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div10{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div11{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div12{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div13{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div0{ position: absolute; top:42%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div1{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div2{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div3{ position: absolute; top:40%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div4{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div5{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div6{ position: absolute; top:35%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div7{ position: absolute; top:8%; left:26%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div8{ position: absolute; top:8%; left:26%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div9{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div10{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div11{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div12{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div13{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
 .div14{ position: absolute; top:25%; left:33%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
 .pergunta h1{
 font-family: Avenir-Book;
@@ -1729,10 +1673,58 @@ border-radius: 100%;
 }
 /*FIM MODAL PROFISSIONAL*/
 /**********************
+Extra small devices Phones (<768px) Landscape
+***********************/
+@media only screen and (max-width: 767px) and (orientation: landscape){
+body {
+background-image: url(../images/gire.png);
+}
+}
+/**********************
+Extra small devices Phones (<768px) Portrait
+***********************/
+@media only screen and (max-width: 767px) and (orientation: portrait){
+/**********************
 SETAS
 ***********************/
-.vs-vertical-nav { top: 50%; right: 2%; }
-.vs-vertical-nav1 { top: 50%; right: 2%; }
-.vs-vertical-nav2 { top: 50%; right: 2%; }
-.vs-vertical-nav a.vs-prev { margin-bottom: 10px; }
+.vs-vertical-nav { top: 93%; right: 36%; }
+.vs-vertical-nav1 { top: 93%; right: 45%; }
+.vs-vertical-nav2 { top: 93%; right: 45%; }
+.vs-vertical-nav a.vs-prev { margin-bottom: -40px; margin-left: 50px; }
+/**********************
+PROGRESS
+***********************/
+.progress1 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress2 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress3 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress4 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress5 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress6 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress7 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress8 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress9 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress10 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress11 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress12 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress13 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress14 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+.progress15 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+}
+/**********************
+Small devices Tablets and Desktops (≥768px)
+***********************/
+@media only screen and (min-width: 768px) and (max-width: 991px){
+
+}
+/**********************
+Medium devices Desktops (≥992px)
+***********************/
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+
+}
+/**********************
+Large devices Desktops (≥1200px)
+***********************/
+@media only screen and (min-width: 1200px){
+
 }
