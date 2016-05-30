@@ -1,17 +1,17 @@
-var swiper = new Swiper('.swiper-container', {
-  pagination: '.swiper-pagination',
-  keyboardControl: true,
-  direction: 'vertical',
-  simulateTouch: false,
-  onlyExternal: true,
-  nextButton: '.swiper-control.next',
-  prevButton: '.swiper-control.prev',
-  speed: 900
-});
+var Swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        keyboardControl: true,
+        direction: 'vertical',
+        simulateTouch: false,
+        onlyExternal: true,
+        nextButton: '.swiper-control.next',
+        prevButton: '.swiper-control.prev',
+        speed: 900
+    });
 
 var colors = new Array(
-  [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
-);
+        [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
+        );
 
 var step = 0;
 // color table indices for:
@@ -25,6 +25,116 @@ var colorIndices = [0, 1, 2, 3];
 var gradientSpeed = 0.001;
 
 function updateGradient(container) {
+    var c0_0 = colors[colorIndices[0]];
+    var c0_1 = colors[colorIndices[1]];
+    var c1_0 = colors[colorIndices[2]];
+    var c1_1 = colors[colorIndices[3]];
+
+    var istep = 1 - step;
+    var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+    var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+    var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+    var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
+
+    var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+    var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+    var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+    var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
+
+    $(container).css({
+        background: "-webkit-gradient(linear, left top, right top, from(" + color1 + "), to(" + color2 + "))"
+    }).css({
+        background: "-moz-linear-gradient(left, " + color1 + " 0%, " + color2 + " 100%)"
+    });
+
+    step += gradientSpeed;
+    if (step >= 1) {
+        step %= 1;
+        colorIndices[0] = colorIndices[1];
+        colorIndices[2] = colorIndices[3];
+
+    //pick two new target color indices
+    //do not pick the same as the current one
+        colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+        colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+    }
+}
+setInterval(function() {
+  updateGradient('.gradient');
+}, 10);
+
+
+var colors = new Array(
+        [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
+    );
+
+var step = 0;
+//color table indices for:
+// current color left
+// next color left
+// current color right
+// next color right
+var colorIndices = [0, 1, 2, 3];
+
+//transition speed
+var gradientSpeed = 0.001;
+
+function updateGradient(container) {
+      var c0_0 = colors[colorIndices[0]];
+      var c0_1 = colors[colorIndices[1]];
+      var c1_0 = colors[colorIndices[2]];
+      var c1_1 = colors[colorIndices[3]];
+
+      var istep = 1 - step;
+      var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+      var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+      var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+      var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
+
+      var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+      var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+      var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+      var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
+
+  $(container).css({
+    background: "-webkit-gradient(linear, left top, right top, from(" + color1 + "), to(" + color2 + "))"
+  }).css({
+    background: "-moz-linear-gradient(left, " + color1 + " 0%, " + color2 + " 100%)"
+  });
+
+  step += gradientSpeed;
+  if (step >= 1) {
+    step %= 1;
+    colorIndices[0] = colorIndices[1];
+    colorIndices[2] = colorIndices[3];
+
+    //pick two new target color indices
+    //do not pick the same as the current one
+    colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+    colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
+
+  }
+}
+setInterval(function() {
+  updateGradient('.gradient2');
+}, 10);
+
+var colors = new Array(
+  [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
+);
+
+var step = 0;
+//color table indices for:
+// current color left
+// next color left
+// current color right
+// next color right
+var colorIndices = [0, 1, 2, 3];
+
+//transition speed
+var gradientSpeed = 0.001;
+
+function updateGradient(container) {
   var c0_0 = colors[colorIndices[0]];
   var c0_1 = colors[colorIndices[1]];
   var c1_0 = colors[colorIndices[2]];
@@ -57,13 +167,11 @@ function updateGradient(container) {
     //do not pick the same as the current one
     colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
     colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
-
   }
 }
 setInterval(function() {
-  updateGradient('.gradient')
+  updateGradient('.gradient3');
 }, 10);
-
 
 var colors = new Array(
   [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
@@ -117,116 +225,7 @@ function updateGradient(container) {
   }
 }
 setInterval(function() {
-  updateGradient('.gradient2')
-}, 10);
-
-var colors = new Array(
-  [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
-);
-
-var step = 0;
-//color table indices for:
-// current color left
-// next color left
-// current color right
-// next color right
-var colorIndices = [0, 1, 2, 3];
-
-//transition speed
-var gradientSpeed = 0.001;
-
-function updateGradient(container) {
-  var c0_0 = colors[colorIndices[0]];
-  var c0_1 = colors[colorIndices[1]];
-  var c1_0 = colors[colorIndices[2]];
-  var c1_1 = colors[colorIndices[3]];
-
-  var istep = 1 - step;
-  var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
-  var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
-  var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
-  var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
-
-  var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
-  var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
-  var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
-  var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
-
-  $(container).css({
-    background: "-webkit-gradient(linear, left top, right top, from(" + color1 + "), to(" + color2 + "))"
-  }).css({
-    background: "-moz-linear-gradient(left, " + color1 + " 0%, " + color2 + " 100%)"
-  });
-
-  step += gradientSpeed;
-  if (step >= 1) {
-    step %= 1;
-    colorIndices[0] = colorIndices[1];
-    colorIndices[2] = colorIndices[3];
-
-    //pick two new target color indices
-    //do not pick the same as the current one
-    colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
-    colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
-  }
-}
-setInterval(function() {
-  updateGradient('.gradient3')
-}, 10);
-
-var colors = new Array(
-  [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
-);
-
-var step = 0;
-//color table indices for:
-// current color left
-// next color left
-// current color right
-// next color right
-var colorIndices = [0, 1, 2, 3];
-
-//transition speed
-var gradientSpeed = 0.001;
-
-function updateGradient(container) {
-  var c0_0 = colors[colorIndices[0]];
-  var c0_1 = colors[colorIndices[1]];
-  var c1_0 = colors[colorIndices[2]];
-  var c1_1 = colors[colorIndices[3]];
-
-  var istep = 1 - step;
-  var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
-  var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
-  var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
-  var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
-
-  var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
-  var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
-  var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
-  var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
-
-  $(container).css({
-    background: "-webkit-gradient(linear, left top, right top, from(" + color1 + "), to(" + color2 + "))"
-  }).css({
-    background: "-moz-linear-gradient(left, " + color1 + " 0%, " + color2 + " 100%)"
-  });
-
-  step += gradientSpeed;
-  if (step >= 1) {
-    step %= 1;
-    colorIndices[0] = colorIndices[1];
-    colorIndices[2] = colorIndices[3];
-
-    //pick two new target color indices
-    //do not pick the same as the current one
-    colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
-    colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
-
-  }
-}
-setInterval(function() {
-  updateGradient('.gradient4')
+  updateGradient('.gradient4');
 }, 10);
 
 // JAVACRIPT PROGRESS BAR
@@ -244,11 +243,11 @@ $(document).ready(function() {
 $(window).load(function() {
   $('#nome').keyup(function() {
     if ($.trim(this.value).length > 2) {
-      $('#btSend').show()
-      $('#seta').show()
+      $('#btSend').show();
+      $('#seta').show();
     } else {
-      $('#btSend').hide()
-      $('#seta').hide()
+      $('#btSend').hide();
+      $('#seta').hide();
     }
   });
 });
@@ -256,11 +255,11 @@ $(window).load(function() {
 $(window).load(function() {
   $('#cpf').keyup(function() {
     if ($.trim(this.value).length > 2) {
-      $('#btSend').show()
-      $('#seta').show()
+      $('#btSend').show();
+      $('#seta').show();
     } else {
-      $('#btSend').hide()
-      $('#seta').hide()
+      $('#btSend').hide();
+      $('#seta').hide();
     }
   });
 });
@@ -268,11 +267,11 @@ $(window).load(function() {
 $(window).load(function() {
   $('#sobrenome').keyup(function() {
     if ($.trim(this.value).length > 2) {
-      $('#btSend2').show()
-      $('#seta2').show()
+      $('#btSend2').show();
+      $('#seta2').show();
     } else {
-      $('#btSend2').hide()
-      $('#seta2').hide()
+      $('#btSend2').hide();
+      $('#seta2').hide();
     }
   });
 });
@@ -281,11 +280,11 @@ $(window).load(function() {
 $(window).load(function() {
   $('#nome_menor').keyup(function() {
     if ($.trim(this.value).length > 2) {
-      $('#btSend4').show()
-      $('#seta4').show()
+      $('#btSend4').show();
+      $('#seta4').show();
     } else {
-      $('#btSend4').hide()
-      $('#seta4').hide()
+      $('#btSend4').hide();
+      $('#seta4').hide();
     }
   });
 });
@@ -294,11 +293,11 @@ $(window).load(function() {
 $(window).load(function() {
   $('#nome_responsavel').keyup(function() {
     if ($.trim(this.value).length > 2) {
-      $('#btSend2').show()
-      $('#seta2').show()
+      $('#btSend2').show();
+      $('#seta2').show();
     } else {
-      $('#btSend2').hide()
-      $('#seta2').hide()
+      $('#btSend2').hide();
+      $('#seta2').hide();
     }
   });
 });
@@ -307,11 +306,11 @@ $(window).load(function() {
 $(window).load(function() {
   $('#sobrenome_menor').keyup(function() {
     if ($.trim(this.value).length > 2) {
-      $('#btSend5').show()
-      $('#seta5').show()
+      $('#btSend5').show();
+      $('#seta5').show();
     } else {
-      $('#btSend5').hide()
-      $('#seta5').hide()
+      $('#btSend5').hide();
+      $('#seta5').hide();
     }
   });
 });
@@ -319,15 +318,15 @@ $(window).load(function() {
 $(window).load(function() {
   $('#celular').keyup(function() {
     if ($.trim(this.value).length > 7) {
-      $('#btSend8').show()
-      $('#seta8').show()
-      $('#btSend10').show()
-      $('#seta10').show()
+      $('#btSend8').show();
+      $('#seta8').show();
+      $('#btSend10').show();
+      $('#seta10').show();
     } else {
-      $('#btSend8').hide()
-      $('#seta8').hide()
-      $('#btSend10').hide()
-      $('#seta10').hide()
+      $('#btSend8').hide();
+      $('#seta8').hide();
+      $('#btSend10').hide();
+      $('#seta10').hide();
     }
   });
 });
@@ -335,13 +334,13 @@ $(window).load(function() {
 $(window).load(function() {
   $('#email').keyup(function() {
     if ($.trim(this.value).length > 7) {
-      $('#btSend9').show()
-      $('#seta9').show()
-      $('#btSend11').show()
-      $('#seta11').show()
+      $('#btSend9').show();
+      $('#seta9').show();
+      $('#btSend11').show();
+      $('#seta11').show();
     } else {
-      $('#btSend11').hide()
-      $('#seta11').hide()
+      $('#btSend11').hide();
+      $('#seta11').hide();
     }
   });
 });
@@ -402,7 +401,7 @@ $(document).on("keypress", ".TabOnEnter", function(e) {
     var nextElement = $('[tabindex="' + (this.tabIndex + 1) + '"]');
     console.log(this, nextElement);
     if (nextElement.length)
-      nextElement.focus()
+      nextElement.focus();
     else
       $('[tabindex="1"]').focus();
   }
@@ -417,7 +416,7 @@ $('form')[0].addEventListener('focus', function(e) {
     $('.swiper-container')[0].scrollTop = 0;
   }, 0);
   //Slide to focused slide
-  swiper.slideTo(focusIndex);
+  Swiper.slideTo(focusIndex);
 }, true);
 
 function exibeMsg(valor) {
@@ -456,6 +455,45 @@ function exibeMsg2(valor) {
       document.getElementById('txt18').innerHTML = 'A';
       document.getElementById('txt19').innerHTML = 'a';
       document.getElementById('txt20').innerHTML = 'a';
+      document.getElementById('txt21').innerHTML = 'a';
+      document.getElementById('txt22').innerHTML = 'da';
+      document.getElementById('txt23').innerHTML = 'dela';
+      document.getElementById('txt24').innerHTML = 'dela';
+      document.getElementById('txt25').innerHTML = 'ela';
+      document.getElementById('txt26').innerHTML = 'da';
+      document.getElementById('txt27').innerHTML = 'A';
+      document.getElementById('txt28').innerHTML = 'a';
+      document.getElementById('txt29').innerHTML = 'da';
+      document.getElementById('txt30').innerHTML = 'dela';
+      document.getElementById('txt31').innerHTML = 'dela';
+      document.getElementById('txt32').innerHTML = 'ela';
+      document.getElementById('txt33').innerHTML = 'da';
+      document.getElementById('txt34').innerHTML = 'A';
+      document.getElementById('txt35').innerHTML = 'a';
+      document.getElementById('txt36').innerHTML = 'da';
+      document.getElementById('txt37').innerHTML = 'dela';
+      document.getElementById('txt38').innerHTML = 'dela';
+      document.getElementById('txt39').innerHTML = 'ela';
+      document.getElementById('txt40').innerHTML = 'da';
+      document.getElementById('txt41').innerHTML = 'A';
+      document.getElementById('txt42').innerHTML = 'a';
+      document.getElementById('txt43').innerHTML = 'da';
+      document.getElementById('txt44').innerHTML = 'dela';
+      document.getElementById('txt45').innerHTML = 'dela';
+      document.getElementById('txt46').innerHTML = 'ela';
+      document.getElementById('txt47').innerHTML = 'da';
+      document.getElementById('txt48').innerHTML = 'A';
+      document.getElementById('txt49').innerHTML = 'a';
+      document.getElementById('txt50').innerHTML = 'da';
+      document.getElementById('txt51').innerHTML = 'dela';
+      document.getElementById('txt52').innerHTML = 'dela';
+      document.getElementById('txt53').innerHTML = 'ela';
+      document.getElementById('txt54').innerHTML = 'da';
+      document.getElementById('txt55').innerHTML = 'A';
+      document.getElementById('txt56').innerHTML = 'a';
+      document.getElementById('txt57').innerHTML = 'a';
+      document.getElementById('txt58').innerHTML = 'da';
+      document.getElementById('txt59').innerHTML = 'a';
       break;
     case 'masculino':
       document.getElementById('txt2').innerHTML = 'dele';
@@ -477,6 +515,45 @@ function exibeMsg2(valor) {
       document.getElementById('txt18').innerHTML = 'O';
       document.getElementById('txt19').innerHTML = 'o';
       document.getElementById('txt20').innerHTML = 'o';
+      document.getElementById('txt21').innerHTML = 'o';
+      document.getElementById('txt22').innerHTML = 'do';
+      document.getElementById('txt23').innerHTML = 'dele';
+      document.getElementById('txt24').innerHTML = 'dele';
+      document.getElementById('txt25').innerHTML = 'ele';
+      document.getElementById('txt26').innerHTML = 'do';
+      document.getElementById('txt27').innerHTML = 'O';
+      document.getElementById('txt28').innerHTML = 'o';
+      document.getElementById('txt29').innerHTML = 'do';
+      document.getElementById('txt30').innerHTML = 'dele';
+      document.getElementById('txt31').innerHTML = 'dele';
+      document.getElementById('txt32').innerHTML = 'ele';
+      document.getElementById('txt33').innerHTML = 'do';
+      document.getElementById('txt34').innerHTML = 'O';
+      document.getElementById('txt35').innerHTML = 'o';
+      document.getElementById('txt36').innerHTML = 'do';
+      document.getElementById('txt37').innerHTML = 'dele';
+      document.getElementById('txt38').innerHTML = 'dele';
+      document.getElementById('txt39').innerHTML = 'ele';
+      document.getElementById('txt40').innerHTML = 'do';
+      document.getElementById('txt41').innerHTML = 'O';
+      document.getElementById('txt42').innerHTML = 'o';
+      document.getElementById('txt43').innerHTML = 'do';
+      document.getElementById('txt44').innerHTML = 'dele';
+      document.getElementById('txt45').innerHTML = 'dele';
+      document.getElementById('txt46').innerHTML = 'ele';
+      document.getElementById('txt47').innerHTML = 'do';
+      document.getElementById('txt48').innerHTML = 'O';
+      document.getElementById('txt49').innerHTML = 'o';
+      document.getElementById('txt50').innerHTML = 'do';
+      document.getElementById('txt51').innerHTML = 'dele';
+      document.getElementById('txt52').innerHTML = 'dele';
+      document.getElementById('txt53').innerHTML = 'ele';
+      document.getElementById('txt54').innerHTML = 'do';
+      document.getElementById('txt55').innerHTML = 'O';
+      document.getElementById('txt56').innerHTML = 'o';
+      document.getElementById('txt57').innerHTML = 'o';
+      document.getElementById('txt58').innerHTML = 'do';
+      document.getElementById('txt59').innerHTML = 'o';
       break;
     default:
       document.getElementById('txt2').innerHTML = 'Nenhum valor informado';
@@ -510,19 +587,17 @@ function exibeMsg3(valor) {
   }
 }
 
-
-
 $("#nome").keyup(function() {
   $(".concat_texto").html($(this).val());
-})
+});
 
 $("#nome_menor").keyup(function() {
   $(".concat2_texto").html($(this).val());
-})
+});
 
 $("#nome_responsavel").keyup(function() {
   $(".concat3_texto").html($(this).val());
-})
+});
 
 //Código da div ator
 

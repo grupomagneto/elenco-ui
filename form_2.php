@@ -17,50 +17,57 @@
 <div class="swiper-container">
   <!-- Swiper wrapper -->
     <div class="swiper-wrapper">
-    <!-- DIV CPF RESPONSÁVEL  -->
-<!-- <div class="swiper-slide gradient">
+<!-- DIV VOCÊ É O RESPONSÁVEL  -->
+<div class="swiper-slide gradient">
   <div class="container">
-    <div class="div1">
+    <div class="div0">
       <div class="row">
-        <div class=" div1_t col-lg-offset-3 col-lg-5">
-          <h1>Qual o seu cpf?<sup>*</sup></h1>
+        <div class="pergunta col-lg-offset-3 col-lg-5">
+          <h1>Você é legalmente responsável por essa criança/adolescente?<sup>*</sup></h1>
         </div>
-        <div class=" div1_box col-lg-offset-3 col-lg-5">
-          <input name="cpf" id="cpf" type="text" data-mask="000.000.000-00" onfocus="this.value=''" class='TabOnEnter' autofocus tabindex="1" required />
-          <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
-          <img id="seta" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
+        <div class="input_box col-lg-offset-3 col-lg-5">
+          <input name="reponsavel" type="radio" value="nao" id="responsavel_nao" class="radio_0" autofocus />
+          <label id="reponsavel_nao_label" for="reponsavel_sim" class="radio-label4">
+          <span>Não</span>
+          </label>
+        </div>
+        <div class="input_box col-lg-offset-3 col-lg-5">
+          <input name="responsavel" type="radio" value="sim" id="responsavel_sim" class="radio_0" />
+          <label id="reponsavel_sim_label" for="reponsavel_nao" class="radio-label3">
+          <span>Sim</span>
+          </label>
         </div>
       </div>
     </div>
   </div>
-  <div class="progress1">
-    <progress id="progressbar" value="5" max="75"></progress>
+  <div class="progress0">
+    <progress id="progressbar0" value="5" max="80"></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav1 none">
       <li><a href="#" class="vs-next1 swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
-<!-- DIV CPF RESPONSÁVEL -->
-<!-- DIV NOME RESPONSÁVEL -->
-<!-- <div id="2" class="swiper-slide gradient">
+</div>
+<!-- DIV VOCÊ É O RESPONSÁVEL -->
+<!-- DIV CPF RESPONSÁVEL  -->
+<div id="1" class="swiper-slide gradient">
   <div class="container">
-    <div class="div2">
+    <div class="div1">
       <div class="row">
-        <div class=" div2_t col-lg-offset-3 col-lg-5">
-          <h1>E o seu nome completo?<sup>*</sup></h1>
+        <div class="pergunta col-lg-offset-3 col-lg-5">
+          <h1>Qual o seu cpf?<sup>*</sup></h1>
         </div>
-        <div class=" div2_box col-lg-offset-3 col-lg-5">
-          <input name="nome_responsavel" id="nome_responsavel" type="text" onfocus="this.value=''" tabindex="2" autocomplete="off" required />
-          <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;">
-          <img id="seta2" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
+        <div class="input_box col-lg-offset-3 col-lg-5">
+          <input type="text" name="cpf" id="cpf" data-mask="000.000.000-00" onfocus="this.value=''" class='TabOnEnter' tabindex="1" required />
+          <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
+          <img id="seta" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
   </div>
-  <div class="progress2">
-    <progress id="progressbar2" value="10" max="75" ></progress>
+  <div class="progress1">
+    <progress id="progressbar" value="10" max="80"></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -68,26 +75,51 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
+</div>
+<!-- DIV CPF RESPONSÁVEL -->
+<!-- DIV NOME RESPONSÁVEL -->
+<div id="2" class="swiper-slide gradient">
+  <div class="container">
+    <div class="div2">
+      <div class="row">
+        <div class="pergunta col-lg-offset-3 col-lg-5">
+          <h1>E o seu nome completo?<sup>*</sup></h1>
+        </div>
+        <div class="input_box col-lg-offset-3 col-lg-5">
+          <input type="text" name="nome_responsavel" id="nome_responsavel" onfocus="this.value=''" tabindex="2" autocomplete="off" required />
+          <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;">
+          <img id="seta2" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="progress2">
+    <progress id="progressbar2" value="15" max="80"></progress>
+  </div>
+  <nav>
+    <ul class="vs-vertical-nav none">
+      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
+      <li><a href="#" class="vs-next swiper-control next"></a></li>
+    </ul>
+  </nav>
+</div>
 <!-- FIM DIV NOME RESPONSÁVEL -->
 <!-- DIV SEXO -->
-<!-- <div id="3" class="swiper-slide gradient">
+<div id="3" class="swiper-slide gradient">
   <div class="container">
     <div class="div3">
       <div class="row">
-        <div class=" div3_t col-lg-offset-3 col-lg-5">
+        <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1 class="TabOnEnter" tabindex="3" >Qual o sexo do menor sendo cadastrado?<sup>*</sup></h1>
         </div>
-        <div class="div3_box col-lg-offset-3 col-lg-5">
-          <input name="sexo" value="masculino" type="radio" id="radio0" class="radio" onchange="exibeMsg2(this.value);"
-            onchange="exibeMsg2(this.value);">
-          <label id="input3" for="radio0" class="radio-label2">
+        <div class="input_box col-lg-offset-3 col-lg-5">
+         <input name="sexo" value="masculino" type="radio" id="radio0" class="radio" onchange="exibeMsg2(this.value);">
+          <label for="radio0" class="radio-label2">
           <span>Masculino</span>
           </label>
         </div>
-        <div class="div3_box col-lg-offset-3 col-lg-5">
-          <input name="sexo" type="radio" value="feminino" id="radio1" class="radio" onchange="exibeMsg2(this.value);"
-            onchange="exibeMsg2(this.value);">
+        <div class="input_box col-lg-offset-3 col-lg-5">
+          <input name="sexo" type="radio" value="feminino" id="radio1" class="radio" onchange="exibeMsg2(this.value);">
           <label for="radio1" class="radio-label">
           <span>Feminino</span>
           </label>
@@ -96,7 +128,7 @@
     </div>
   </div>
   <div class="progress3">
-    <progress id="progressbar3" value="15" max="75" ></progress>
+    <progress id="progressbar3" value="20" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -104,26 +136,26 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
+</div>
 <!-- DIV SEXO -->
 <!-- DIV NOME DA PESSOA SENDO CADASTRADA -->
-<!-- <div id="4" class="swiper-slide gradient">
+<div id="4" class="swiper-slide gradient">
   <div class="container">
     <div class="div4">
       <div class="row">
-        <div class=" div4_t col-lg-offset-3 col-lg-5">
+        <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1 id="proxima">Qual o primeiro nome <span id="txt2"></span>?<sup>*</sup></h1>
         </div>
-        <div class=" div4_box col-lg-offset-3 col-lg-5">
+        <div class="input_box col-lg-offset-3 col-lg-5">
           <input name="nome_menor" id="nome_menor" type="text" onfocus="this.value=''" tabindex="4"  autocomplete="off" required />
           <input type="button" class="sendBtn" id="btSend4" name="btSend4" style="display: none;">
-          <img id="seta4" onclick="gravar()" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
+          <img id="seta4" onclick="gravar()" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
   </div>
   <div class="progress4">
-    <progress id="progressbar4" value="20" max="75" ></progress>
+    <progress id="progressbar4" value="25" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -131,27 +163,27 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
+</div>
 <!-- FIM DIV NOME DA PESSOA SENDO CADASTRADA -->
 <!-- DIV SOBRENOME -->
-<!-- <div id="5" class="swiper-slide gradient">
+<div id="5" class="swiper-slide gradient">
   <nav>
   <div class="container">
     <div class="div5">
       <div class="row">
-        <div class=" div5_t col-lg-offset-3 col-lg-5">
+        <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>E o sobrenome?<sup>*</sup></h1>
         </div>
-        <div class=" div5_box col-lg-offset-3 col-lg-5">
-          <input name="sobrenome_menor" id="sobrenome_menor" type="text" onfocus="this.value=''" class='TabOnEnter' tabindex="5"  autocomplete="off" required />
+        <div class="input_box col-lg-offset-3 col-lg-5">
+          <input type="text" name="sobrenome_menor" id="sobrenome_menor" onfocus="this.value=''" class='TabOnEnter' tabindex="5"  autocomplete="off" required />
           <input type="button" class="sendBtn5" id="btSend5" name="btSend5" style="display: none;">
-          <img id="seta5" class="swiper-control next" onclick="focusFoo()" src="images/seta_ok.svg" alt="seta" style="display: none;">
+          <img id="seta5" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
   </div>
   <div class="progress5">
-    <progress id="progressbar5" value="25" max="75" ></progress>
+    <progress id="progressbar5" value="30" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -159,26 +191,26 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
+</div>
 <!-- FIM DIV SOBRENOME -->
 <!-- DIV ANTES DAS FOTOS -->
-<!-- <div id="6" class="swiper-slide gradient">
+<div id="6" class="swiper-slide gradient">
   <nav>
   <div class="container">
     <div class="div6">
       <div class="row">
-        <div class=" div6_t col-lg-offset-3 col-lg-5">
+        <div class="div6_t col-lg-offset-3 col-lg-5">
           <img src="images/camera.svg" tabindex="6" class='TabOnEnter' alt="camera">
         </div>
-        <div class=" div6_box col-lg-offset-3 col-lg-5">
+        <div class="div6_box col-lg-offset-3 col-lg-5">
           <h1>Para começar vamos precisar de duas fotos <span id="txt5"></span> <span class="concat2_texto"></span> feitas hoje.</h1>
-          <img class="swiper-control next" src="images/seta.svg" alt="seta">
+          <img class="swiper-control next" src="images/arrow-right.svg" alt="seta">
         </div>
       </div>
     </div>
   </div>
   <div class="progress6">
-    <progress id="progressbar6" value="30" max="75" ></progress>
+    <progress id="progressbar6" value="35" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -186,10 +218,10 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
+</div>
 <!-- FIM DIV ANTES DAS FOTOS -->
 <!-- DIV PRIMEIRA FOTO -->
-<!-- <div id="7" class="swiper-slide gradient2">
+<div id="7" class="swiper-slide gradient2">
   <div class="container">
     <div class="div7">
       <div class="row">
@@ -200,13 +232,13 @@
               <img src="images/upload.svg" alt="">
             </div>
           </div>
-          <h4>clique aqui<sup>*</sup></h4>
+          <h4>clique para upload<sup>*</sup></h4>
         </div>
         <div class=" div7_t col-lg-offset-3 col-lg-5">
-          <h1>Sorrindo!</h1>
+          <h1>A primeira foto sorrindo!</h1>
           <ol>
-            <li>Enquadre os ombros para cima;</li>
-            <li>Gire levemente o rosto <span id="txt8"></span> para <b>ESQUERDA</b>;</li>
+            <li>Enquadre dos ombros para cima;</li>
+            <li>Deixe o rosto <span id="txt8"></span> <b>bem reto</b>;</li>
             <li>Peça para <span id="txt9"></span> olhar para a câmera <b>SORRINDO!</b></li>
           </ol>
           <p>DICA: Use a luz de uma janela à sua frente para um melhor resultado.</p>
@@ -215,7 +247,7 @@
     </div>
   </div>
   <div class="progress7">
-    <progress id="progressbar7" value="35" max="75" ></progress>
+    <progress id="progressbar7" value="40" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -223,26 +255,26 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
+</div>
 <!-- FIM DIV PRIMEIRA FOTO -->
 <!-- DIV SEGUNDA FOTO -->
-<!-- <div id="8" class="swiper-slide gradient3">
+<div id="8" class="swiper-slide gradient3">
   <div class="container">
     <div class="div8">
       <div class="row">
         <div class=" div8_box col-lg-offset-3 col-lg-5">
           <div class="wrapper2">
             <div class="file-upload2 TabOnEnter" tabindex="8">
-              <input type="file" id="foto2" name="fotos" tabindex="8" class='TabOnEnter' />
+              <input type="file" id="foto2" name="fotos" />
               <img src="images/upload.svg" alt="">
             </div>
           </div>
-          <h4>clique aqui<sup>*</sup></h4>
+          <h4>clique para upload<sup>*</sup></h4>
         </div>
         <div class=" div8_t col-lg-offset-3 col-lg-5">
-          <h1>Agora sem sorrir!</h1>
+          <h1>Agora sem sorrir.</h1>
           <ol>
-            <li>Enquadre os ombros para cima;</li>
+            <li>Enquadre dos ombros para cima;</li>
             <li>Gire levemente o rosto <span id="txt11"></span> para <b>DIREITA</b>;</li>
             <li>Peça para <span id="txt10"></span> olhar para a câmera <b>SEM SORRIR!</b></li>
           </ol>
@@ -252,7 +284,7 @@
     </div>
   </div>
   <div class="progress8">
-    <progress id="progressbar8" value="40" max="75" ></progress>
+    <progress id="progressbar8" value="45" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -260,24 +292,24 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
+</div>
 <!-- FIM DIV SEGUNDA FOTO -->
 <!-- DIV DATA DE NASCIMENTO -->
-<!-- <div id="9" class="swiper-slide gradient">
+<div id="9" class="swiper-slide gradient">
   <div class="container">
     <div class="div9">
       <div class="row">
-        <div class="div9_t col-lg-offset-3 col-lg-5">
+        <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>Qual a data de nascimento <span id="txt6"></span>?<sup>*</sup></h1>
         </div>
-        <div class="div9_box col-lg-offset-3 col-lg-5">
-          <input name="data" id="data" type="date" data-mask="00/00/0000" onfocus="this.value=''" class="TabOnEnter " tabindex="9" autocomplete="off"  required="required" />
+        <div class="input_box col-lg-offset-3 col-lg-5">
+          <input type="date" name="data" id="data" data-mask="00/00/0000" onfocus="this.value=''" class="TabOnEnter" tabindex="9" autocomplete="off" required placeholder="dd/mm/aaaa" />
         </div>
       </div>
     </div>
   </div>
   <div class="progress9">
-    <progress id="progressbar9" value="45" max="75" ></progress>
+    <progress id="progressbar9" value="50" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -285,26 +317,26 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
+</div>
 <!-- FIM DIV DATA DE NASCIMENTO -->
 <!-- DIV CELULAR PARA CONTATO -->
-<!-- <div id="10" class="swiper-slide gradient">
+<div id="10" class="swiper-slide gradient">
   <div class="container">
     <div class="div10">
       <div class="row">
-        <div class=" div10_t col-lg-offset-3 col-lg-5">
+        <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>Qual o celular para contato?<sup>*</sup></h1>
         </div>
-        <div class=" div10_box col-lg-offset-3 col-lg-5">
-          <input name="celular" id="celular" data-mask="(00) 0000-00009" class='TabOnEnter' tabindex="10" type="text" onfocus="this.value=''"  autocomplete="off" />
+        <div class="input_box col-lg-offset-3 col-lg-5">
+          <input name="celular" id="celular" data-mask="(00) 00000-0000" class="TabOnEnter" tabindex="10" type="text" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
           <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;">
-          <img id="seta10" src="images/seta_ok.svg" alt="seta" style="display: none;">
+          <img id="seta10" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
   </div>
   <div class="progress10">
-    <progress id="progressbar10" value="50" max="75" ></progress>
+    <progress id="progressbar10" value="55" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -312,26 +344,26 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
+</div>
 <!-- FIM DIV CELULAR PARA CONTATO -->
 <!-- DIV EMAIL -->
-<!-- <div id="11" class="swiper-slide gradient">
+<div id="11" class="swiper-slide gradient">
   <div class="container">
     <div class="div11">
       <div class="row">
-        <div class=" div11_t col-lg-offset-3 col-lg-5">
+        <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>E o email?<sup>*</sup></h1>
         </div>
-        <div class=" div11_box col-lg-offset-3 col-lg-5">
-          <input name="email" id="email" class='TabOnEnter' tabindex="11" type="text" onfocus="this.value=''" autocomplete="off"/>
+        <div class="input_box col-lg-offset-3 col-lg-5">
+          <input name="email" id="email" class='TabOnEnter' tabindex="11" type="email" onfocus="this.value=''" autocomplete="off" required />
           <input type="button" class="sendBtn11" id="btSend11" name="btSend11" style="display: none;">
-          <img id="seta11" src="images/seta_ok.svg" alt="seta" style="display: none;">
+          <img id="seta11" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
   </div>
   <div class="progress11">
-    <progress id="progressbar11" value="55" max="75" ></progress>
+    <progress id="progressbar11" value="60" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -339,19 +371,19 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
+</div>
 <!-- FIM DIV EMAIL -->
 <!-- DIV COR DA PELE -->
-<!-- <div id="12" class="swiper-slide gradient">
+<div id="12" class="swiper-slide gradient">
   <div class="container">
     <div class="div12">
       <div class="row">
-        <div class=" div12_t col-lg-offset-3 col-lg-5">
+        <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1 class='TabOnEnter' tabindex="12" >Qual é a cor da pele <span id="txt3"></span>?<sup>*</sup></h1>
         </div>
-        <div class=" div12_box col-lg-offset-3 col-lg-5">
-          <select required="required" name="raca" id="raca">
-            <option disabled selected="selected" value="1"> > Selecione</option>
+        <div class="div12_box col-lg-offset-3 col-lg-5">
+          <select id="raca" name="raca">
+            <option disabled value="1">Selecione...</option>
             <option value="Amarela" >Amarela</option>
             <option value="Branca">Branca</option>
             <option value="Indígena">Indígena</option>
@@ -363,7 +395,7 @@
     </div>
   </div>
   <div class="progress12">
-    <progress id="progressbar12" value="60" max="75" ></progress>
+    <progress id="progressbar12" value="65" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -371,19 +403,19 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
+</div>
 <!-- FIM DIV COR DA PELE -->
 <!-- DIV BAIRRO -->
-<!-- <div id="13" class="swiper-slide gradient">
+<div id="13" class="swiper-slide gradient">
   <div class="container">
     <div class="div13">
       <div class="row">
-        <div class=" div13_t col-lg-offset-3 col-lg-5">
+        <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1 id="proxima2" class='TabOnEnter' tabindex="13" >Em qual bairro <span id="txt4"></span> mora?<sup>*</sup></h1>
         </div>
-        <div class=" div11_box col-lg-offset-3 col-lg-5">
+        <div class="div11_box col-lg-offset-3 col-lg-5">
           <select name="bairro" id="bairro2">
-            <option disabled value="1"> > Selecione</option>
+            <option disabled value="1">Selecione...</option>
             <option value="Águas Claras"> Águas Claras</option>
             <option value="Asa Norte"> Asa Norte</option>
             <option value="Asa Sul"> Asa Sul</option>
@@ -434,7 +466,7 @@
     </div>
   </div>
   <div class="progress13">
-    <progress id="progressbar13" value="65" max="75" ></progress>
+    <progress id="progressbar13" value="70" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -442,10 +474,9 @@
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
-</div> -->
+</div>
 <!-- FIM DIV BAIRRO -->
 <!-- DIV PLANOS -->
-
 <div id="14" class="swiper-slide gradient">        
  <div class="container">     
    <div class="div14">
@@ -461,9 +492,7 @@
 <div class="div_m" data-toggle="modal" data-target="#myModal1_m">
   <h3>Premium</h3>
   <p>fotos simples em estúdio apenas para site</p>
-  <div id="mais">
-    <i class="glyphicon glyphicon-plus-sign"></i>
-  </div>
+  <div id="mais"></div>
 </div>
 <div class="modal modal1_m modal2_m" id="myModal1_m" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_modal_m">
@@ -481,9 +510,7 @@
     </ul>
     <h2 class="text-center">29<span>,90</span></h2>
     <button type="button" class="botao_escolha_m" data-toggle="modal" data-target="#myModal2_m">ESCOLHER</button>
-    <div id="menos" data-dismiss="modal">   
-      <i class="glyphicon glyphicon-minus-sign"></i>
-    </div>
+    <div id="menos" data-dismiss="modal"></div>
   </div>
 </div>
 
@@ -491,36 +518,16 @@
   <div class="modal-content conteudo_modal_m2">
     <h3>Termos e Condições</h3>
     <ol>
-      <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar sua imagem e 
-        intermediar sua contratação junto a produtoras audiovisuais, 
-        clientes anunciantes e agências de publicidade e promoção de eventos;
-      </li>
-      <li>
-        Para isso nos autoriza a utilizar sua imagem em nossos canais de comunicação;
-      </li>
-      <li>
-        Nós não garantimos conseguir trabalhos para você, 
-        assim como você não tem obrigação de aceitar os trabalhos que lhe oferecermos;
-      </li>
-      <li>
-        Porém, uma vez que você aceite um trabalho que lhe oferecermos, 
-        você deverá realizá-lo ou poderá ter que pagar uma multa;
-      </li>
-      <li>
-        Você optou pelo cadastro Premium e por isso sua remuneração sempre será de 80% do cachê líquido 
-        (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados os 20% de impostos);
-      </li>
-      <li>
-        Para efetivar seu contrato você deverá pagar R$ 299 ou comprar um de nossos ensaios fotográficos;
-      </li>
-      <li>
-        Você poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;
-      </li>
-      <li>
-        Nosso contrato valerá por 24 meses;
-      </li>
+      <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt43"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt44"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li>
+      <li>Para isso nos autoriza a utilizar a imagem <span id="txt45"></span> em nossos canais de comunicação;</li>
+      <li>Nós não garantimos conseguir trabalhos para <span id="txt46"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li>
+      <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
+      <li>Você optou pelo Cadastro Premium e por isso a remuneração <span id="txt47"></span> <span class="concat2_texto"></span> sempre será de 80% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li>
+      <li>Para efetivar o cadastro <span id="txt58"></span> <span class="concat2_texto"></span> você deverá pagar R$ 299,00 em até 10x sem juros;</li>
+      <li><span id="txt48"></span> <span class="concat2_texto"></span> poderá estar inscrit<span id="txt49"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li>
+      <li>Este contrato valerá por 24 meses a partir da data do pagamento;</li>
     </ol>
-    <p class="acordo">Clicando abaixo você declara estar ciente e concordar com os termos acima apresentados</p>
+    <p class="acordo">Você concorda com os termos do agenciamento?</p>
     <input name="premium" type="radio" id="premium" class="sim_acordo" />
     <label for="premium" class="radio_sim_acordo">
     <span>CONCORDO</span>
@@ -530,7 +537,6 @@
 </div>
 <!-- FIM MODAL PREMIUM-->
 <!-- INÍCIO MODAL GRATUITO -->
-
 <div class="div_m2" data-toggle="modal" data-target="#myModal1_m2">
   <h3>Gratuito</h3>
   <p>fotos simples em estúdio apenas para site</p>
@@ -542,7 +548,7 @@
     <h3>Gratuito</h3>
     <p>fotos simples em estúdio apenas para site</p>
     <ol>
-      <li>Recebe 20% do cachê líquido no 1º trabalho e 60% nos demais</li>
+      <li>Recebe 20% do cachê líquido no 1º trabalho, 60% nos demais</li>
       <li>Deve ser agenciado apenas pela Magneto Elenco</li>
       <li>Contrato de 2 anos</li>
     </ol>
@@ -552,42 +558,20 @@
     <div id="menos2_2" data-dismiss="modal"></div>
   </div>
 </div>
-
 <div class="modal modal_gratuito_mobile" id="gratuito_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_gratuito_mobile">
-    <h3>Termos e Condições</h3>
-    <ol>
-      <li>
-        Você, <span class="concat3_texto"></span>, está contratando a MAGNETO ELENCO para divulgar sua imagem e intermediar sua contratação junto
-        a PRODUTORAS AUDIOVISUAIS, CLIENTES ANUNCIANTES e AGÊNCIAS DE PUBLICIDADE E PROMOÇÃO DE EVENTOS; 
-      </li>
-      <li>
-        Para isso nos autoriza a utilizar sua imagem em nossos canais de comunicação;
-      </li>
-      <li>
-        Nós não garantimos conseguir trabalhos para você, 
-        assim como você não tem obrigação de aceitar os trabalhos que lhe oferecermos;
-      </li>
-      <li>
-        Porém, uma vez que você aceite um trabalho que lhe oferecermos, 
-        você deverá realizá-lo ou poderá ter que pagar uma multa;
-      </li>
-      <li>
-        Você optou pelo CADASTRO GRATUITO e por isso sua remuneração será de apenas 20% do 
-        CACHÊ LÍQUIDO no seu PRIMEIRO TRABALHO e de 60% do CACHÊ LÍQUIDO no seu segundo trabalho em diante 
-        (Cachê Líquido é o Cachê Bruto recebido pela Magneto Elenco descontados 20% de impostos);
-      </li>
-      <li>
-        Você não precisa pagar para se agenciar;
-      </li>
-      <li>
-        Você não poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;
-      </li>
-      <li>
-        Nosso contrato valerá por 24 meses;
-      </li>
-    </ol>
-    <p class="acordo_gratuito">Clicando abaixo você declara estar ciente e concordar com os termos acima apresentados</p>
+                  <h3>Termos e Condições</h3>
+                <ol>
+                  <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt36"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt37"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e promoção de eventos;</li>
+                  <li>Para isso nos autoriza a utilizar a imagem <span id="txt38"></span> em nossos canais de comunicação;</li>
+                  <li>Nós não garantimos conseguir trabalhos para <span id="txt39"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li>
+                  <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
+                  <li>Você optou pelo Cadastro Gratuito e por isso a remuneração <span id="txt40"></span> <span class="concat2_texto"></span> será de apenas 20% do cachê líquido no primeiro trabalho e de 60% do cachê líquido nos demais trabalhos (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li>
+                  <li>Você não precisa desembolsar nada para cadastrar <span id="txt57"></span> <span class="concat2_texto"></span>;</li>
+                  <li><span id="txt41"></span> <span class="concat2_texto"></span> não poderá estar inscrit<span id="txt42"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li>
+                  <li>Este contrato valerá por 24 meses;</li>
+                </ol>
+      <p class="acordo_gratuito">Você concorda com os termos do agenciamento?</p>
     <input name="gratuito_m" type="radio" id="gratuito_m" class="sim_acordo_gratuito" />
     <label for="gratuito_m" class="radio_sim_acordo_gratuito">
     <span>CONCORDO</span>
@@ -620,44 +604,24 @@
     </ul>
     <h2 class="text-center">99<span>,90</span></h2>
     <button type="button" class="botao_escolha_m3_m1" data-toggle="modal" data-target="#gratuito_mobile3">ESCOLHER</button>
-    <div id="menos3_m1" data-dismiss="modal"></div>
+    <div id="menos3_m1" data-dismiss="modal"><i class="glyphicon glyphicon-minus-sign"></i></div>
   </div>
 </div>
 <div class="modal modal_gratuito_mobile3" id="gratuito_mobile3" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_gratuito_mobile3">
     <h3>Termos e Condições</h3>
     <ol>
-      <li>
-        Você, <span class="concat3_texto"></span>, está contratando a MAGNETO ELENCO para divulgar sua imagem e intermediar sua contratação junto
-        a PRODUTORAS AUDIOVISUAIS, CLIENTES ANUNCIANTES e AGÊNCIAS DE PUBLICIDADE E PROMOÇÃO DE EVENTOS; 
-      </li>
-      <li>
-        Para isso nos autoriza a utilizar sua imagem em nossos canais de comunicação;
-      </li>
-      <li>
-        Nós não garantimos conseguir trabalhos para você, 
-        assim como você não tem obrigação de aceitar os trabalhos que lhe oferecermos;
-      </li>
-      <li>
-        Porém, uma vez que você aceite um trabalho que lhe oferecermos, 
-        você deverá realizá-lo ou poderá ter que pagar uma multa;
-      </li>
-      <li>
-        Você optou pelo CADASTRO GRATUITO e por isso sua remuneração será de apenas 20% do 
-        CACHÊ LÍQUIDO no seu PRIMEIRO TRABALHO e de 60% do CACHÊ LÍQUIDO no seu segundo trabalho em diante 
-        (Cachê Líquido é o Cachê Bruto recebido pela Magneto Elenco descontados 20% de impostos);
-      </li>
-      <li>
-        Você não precisa pagar para se agenciar;
-      </li>
-      <li>
-        Você não poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;
-      </li>
-      <li>
-        Nosso contrato valerá por 24 meses;
-      </li>
+      <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt50"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt51"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li>
+      <li>Para isso nos autoriza a utilizar a imagem <span id="txt52"></span> em nossos canais de comunicação;</li>
+      <li>Nós não garantimos conseguir trabalhos para <span id="txt53"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li>
+      <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
+      <li>Você optou pelo Cadastro Profissional e por isso a remuneração <span id="txt54"></span> <span class="concat2_texto"></span> sempre será de 90% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li>
+      <li>Para efetivar o cadastro você deverá pagar R$ 999,00 em até 10x sem juros;</li>
+      <li><span id="txt55"></span> <span class="concat2_texto"></span> poderá estar inscrit<span id="txt56"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li>
+      <li>Um Ensaio Fotográfico Completo com <span id="txt59"></span> <span class="concat2_texto"></span> será realizado e entregue a você em DVD com mínimo de 30 fotos tratadas em até 30 dias;</li>
+      <li>Este contrato valerá por 36 meses a partir da data do pagamento;</li>
     </ol>
-    <p class="acordo_gratuito3">Clicando abaixo você declara estar ciente e concordar com os termos acima apresentados</p>
+    <p class="acordo_gratuito3">Você concorda com os termos do agenciamento?</p>
     <input name="profissional_m" type="radio" id="profissional_m" class="sim_acordo_gratuito3" />
     <label for="profissional_m" class="radio_sim_acordo_gratuito3">
     <span>CONCORDO</span>
@@ -706,51 +670,27 @@
           </div>
           <div class="modal_direita">
             <h3>Termos e Condições</h3>
-            <div class="termo_um">
-              <ol>
-                <li>
-                  Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco 
-                  para divulgar sua imagem e intermediar sua contratação junto a produtoras audiovisuais, 
-                  clientes anunciantes e agências de publicidade e promoção de eventos; 
-                </li><BR />
-                <li>
-                  Para isso nos autoriza a utilizar sua imagem em nossos canais de comunicação;
-                </li><BR />
-                <li>
-                  Nós não garantimos conseguir trabalhos para você,
-                  assim como você não tem obrigação de aceitar os trabalhos que lhe oferecermos;
-                </li><BR />
-                <li>
-                  Porém, uma vez que você aceite um trabalho que lhe oferecermos, 
-                  você deverá realizá-lo ou poderá ter que pagar uma multa;
-                </li>
-              </ol>
-            </div>
-            <div class="termo_dois">
-              <ol start="5">
-                <li>
-                  Você optou pelo cadastro Premium e por isso sua remuneração sempre será de 80% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados os 20% de impostos);
-                </li><BR />
-                <li>
-                  Para efetivar seu contrato você deverá pagar R$ 299 ou comprar um de nossos ensaios fotográficos;
-                </li><BR />
-                <li>
-                  Você poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;
-                </li><BR />
-                <li>
-                  Nosso contrato valerá por 24 meses;
-                </li>
-              </ol>
-              <p class="descricao_contrato">
-                Você concorda com os termos do agenciamento?
-              </p>
+              <div class="termo_um3">
+                <ol>
+                  <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt13"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt14"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li><BR />
+                  <li>Para isso nos autoriza a utilizar a imagem <span id="txt15"></span> em nossos canais de comunicação;</li><BR />
+                  <li>Nós não garantimos conseguir trabalhos para <span id="txt16"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li><BR />
+                  <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
+                </ol>
+              </div>
+              <div class="termo_dois3">
+                <ol start="5">
+                  <li>Você optou pelo Cadastro Premium e por isso a remuneração <span id="txt17"></span> <span class="concat2_texto"></span> sempre será de 80% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li><BR />
+                  <li>Para efetivar o cadastro você deverá pagar R$ 299,00 em até 10x sem juros;</li><BR />
+                  <li><span id="txt18"></span> <span class="concat2_texto"></span> poderá estar inscrit<span id="txt19"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li><BR />
+                  <li>Este contrato valerá por 24 meses a partir da data do pagamento;</li>
+                </ol>
+                <p class="descricao_contrato">Você concorda com os termos do agenciamento?</p>
               <div class="button">
                 <input type="radio" name="premium" value="premium" id="premium" class="sim_acordo" />
                 <label for="premium">CONCORDO</label>
               </div>
-              <div id="menos_d" data-dismiss="modal">
-                <i class="glyphicon glyphicon-minus-sign"></i>
-              </div>
+              <div id="menos_d" data-dismiss="modal"></div>
             </div>
           </div>
         </div>
@@ -791,47 +731,25 @@
               <h3>Termos e Condições</h3>
               <div class="termo_um2">
                 <ol>
-                  <li>
-                    Você, <span class="concat3_texto"></span>, está contratando a MAGNETO ELENCO para divulgar sua imagem e intermediar sua contratação junto a PRODUTORAS AUDIOVISUAIS, CLIENTES ANUNCIANTES e AGÊNCIAS DE PUBLICIDADE E PROMOÇÃO DE EVENTOS; 
-                  </li><BR />
-                  <li>
-                    Para isso nos autoriza a utilizar sua imagem em nossos canais de comunicação;
-                  </li><BR />
-                  <li>
-                    Nós não garantimos conseguir trabalhos para você, 
-                    assim como você não tem obrigação de aceitar os trabalhos que lhe oferecermos;
-                  </li><BR />
-                  <li>
-                    Porém, uma vez que você aceite um trabalho que lhe oferecermos, 
-                    você deverá realizá-lo ou poderá ter que pagar uma multa;
-                  </li>
+                  <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt22"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt23"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e promoção de eventos;</li><BR />
+                  <li>Para isso nos autoriza a utilizar a imagem <span id="txt24"></span> em nossos canais de comunicação;</li><BR />
+                  <li>Nós não garantimos conseguir trabalhos para <span id="txt25"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li><BR />
+                  <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
                 </ol>
               </div>
               <div class="termo_dois2">
                 <ol start="5">
-                  <li>
-                    Você optou pelo CADASTRO GRATUITO e por isso sua remuneração será de apenas 20% do CACHÊ LÍQUIDO no seu PRIMEIRO TRABALHO e de 60% do CACHÊ LÍQUIDO no seu segundo trabalho em diante (Cachê Líquido é o Cachê Bruto recebido pela Magneto Elenco descontados 20% de impostos);
-                  </li><BR />
-                  <li>
-                    Você não precisa pagar para se agenciar;
-                  </li><BR />
-                  <li>
-                    Você não poderá estar inscrito em outra agência enquanto nosso contrato estiver valendo;
-                  </li><BR />
-                  <li>
-                    Nosso contrato valerá por 24 meses;
-                  </li>
+                  <li>Você optou pelo Cadastro Gratuito e por isso a remuneração <span id="txt26"></span> <span class="concat2_texto"></span> será de apenas 20% do cachê líquido no primeiro trabalho e de 60% do cachê líquido nos demais trabalhos (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li><BR />
+                  <li>Você não precisa desembolsar nada para cadastrar <span id="txt21"></span> <span class="concat2_texto"></span>;</li><BR />
+                  <li><span id="txt27"></span> <span class="concat2_texto"></span> não poderá estar inscrit<span id="txt28"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li><BR />
+                  <li>Nosso contrato valerá por 24 meses;</li>
                 </ol>
-                <p class="descricao_contrato2">
-                  Você concorda com os termos do agenciamento?
-                </p>
+                <p class="descricao_contrato2">Você concorda com os termos do agenciamento?</p>
                 <div class="button2">
                   <input type="radio" name="gratuito" value="gratuito" id="gratuito" class="sim_acordo2" />
                   <label for="gratuito">CONCORDO</label>
                 </div>
-                <div id="menos2_d" data-dismiss="modal">
-                  <i class="glyphicon glyphicon-minus-sign"></i>
-                </div>
+                <div id="menos2_d" data-dismiss="modal"></div>
               </div>
             </div>
           </div>
@@ -849,7 +767,7 @@
         <p>ensaio fotográfico completo para site + entrega em DVD</p>
         <ol>
           <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
-          <li>Pode se cadastrar em outras agências</li>
+          <li>Pode se cadastrar em outra(s) agência(s)</li>
           <li>Aviso de cachê liberado</li>
           <li>Ensaio com 30 fotos tratadas</li>
           <li>Contrato de 3 anos</li>
@@ -868,7 +786,7 @@
               <p>ensaio fotográfico completo para site + entrega em DVD</p>
               <ol>
                 <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
-                <li>Pode se cadastrar em outras agências</li>
+                <li>Pode se cadastrar em outra(s) agência(s)</li>
                 <li>Aviso de cachê liberado</li>
                 <li>Ensaio com 30 fotos tratadas</li>
                 <li>Contrato de 3 anos</li>
@@ -883,17 +801,17 @@
               <h3>Termos e Condições</h3>
               <div class="termo_um3">
                 <ol>
-                  <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt13"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt14"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li><BR />
-                  <li>Para isso nos autoriza a utilizar a imagem <span id="txt15"></span> em nossos canais de comunicação;</li><BR />
-                  <li>Nós não garantimos conseguir trabalhos para <span id="txt16"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li><BR />
+                  <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt29"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt30"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li><BR />
+                  <li>Para isso nos autoriza a utilizar a imagem <span id="txt31"></span> em nossos canais de comunicação;</li><BR />
+                  <li>Nós não garantimos conseguir trabalhos para <span id="txt32"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li><BR />
                   <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
                 </ol>
               </div>
               <div class="termo_dois3">
                 <ol start="5">
-                  <li>Você optou pelo Cadastro Profissional e por isso a remuneração <span id="txt17"></span> <span class="concat2_texto"></span> sempre será de 90% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li><BR />
+                  <li>Você optou pelo Cadastro Profissional e por isso a remuneração <span id="txt33"></span> <span class="concat2_texto"></span> sempre será de 90% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li><BR />
                   <li>Para efetivar o cadastro você deverá pagar R$ 999,00 em até 10x sem juros;</li><BR />
-                  <li><span id="txt18"></span> <span class="concat2_texto"></span> poderá estar inscrit<span id="txt19"></span> em outra agência enquanto nosso contrato estiver valendo;</li><BR />
+                  <li><span id="txt34"></span> <span class="concat2_texto"></span> poderá estar inscrit<span id="txt35"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li><BR />
                   <li>Um Ensaio Fotográfico Completo com <span id="txt20"></span> <span class="concat2_texto"></span> será realizado e entregue a você em DVD com mínimo de 30 fotos tratadas em até 30 dias;</li><BR />
                   <li>Este contrato valerá por 36 meses a partir da data do pagamento;</li>
                 </ol>
@@ -904,9 +822,7 @@
                   <input type="radio" name="opcao" value="Profissional" id="profissional" class="sim_acordo3" />
                   <label for="profissional">CONCORDO</label>
                 </div>
-                <div id="menos3_d" data-dismiss="modal">
-                  <i class="glyphicon glyphicon-minus-sign"></i>
-                </div>
+                <div id="menos3_d" data-dismiss="modal"></div>
               </div>
             </div>
           </div>
@@ -918,7 +834,7 @@
 </div>
 </div>
 <div class="progress14">
-      <progress id="progressbar14" value="70" max="75" ></progress>
+      <progress id="progressbar14" value="75" max="80" ></progress>
     </div>
     <nav>
       <ul class="vs-vertical-nav none">
@@ -958,7 +874,7 @@
     </div>
   </div>
   <div class="progress15">
-    <progress id="progressbar15" value="75" max="75" ></progress>
+    <progress id="progressbar15" value="80" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav2 none">
