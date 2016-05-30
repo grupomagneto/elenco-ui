@@ -45,7 +45,7 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav1 none">
-      <li><a href="#" class="vs-next1 swiper-control next"></a></li>
+      <li><a href="#" class="vs-next1 swiper-control next focus1"></a></li>
     </ul>
   </nav>
 </div>
@@ -59,7 +59,7 @@
           <h1>Qual o seu cpf?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="text" name="cpf" id="cpf" data-mask="000.000.000-00" onfocus="this.value=''" class='TabOnEnter' tabindex="1" required />
+          <input type="text" name="cpf" id="cpf" data-mask="000.000.000-00" onfocus="this.value=''" class="TabOnEnter" tabindex="1" required />
           <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
           <img id="seta" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
         </div>
@@ -71,8 +71,8 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev "></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus2"></a></li>
     </ul>
   </nav>
 </div>
@@ -86,7 +86,7 @@
           <h1>E o seu nome completo?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="text" name="nome_responsavel" id="nome_responsavel" onfocus="this.value=''" tabindex="2" autocomplete="off" required />
+          <input type="text" name="nome_responsavel" id="nome_responsavel" onfocus="this.value=''"  tabindex="2" autocomplete="off" required />
           <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;">
           <img id="seta2" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
         </div>
@@ -98,8 +98,8 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev focus1"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus3"></a></li>
     </ul>
   </nav>
 </div>
@@ -132,8 +132,8 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev focus2"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus4"></a></li>
     </ul>
   </nav>
 </div>
@@ -160,7 +160,7 @@
   <nav>
     <ul class="vs-vertical-nav none">
       <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus5"></a></li>
     </ul>
   </nav>
 </div>
@@ -187,8 +187,8 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev focus3"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus6"></a></li>
     </ul>
   </nav>
 </div>
@@ -214,7 +214,7 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev focus4"></a></li>
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
@@ -289,7 +289,7 @@
   <nav>
     <ul class="vs-vertical-nav none">
       <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus9"></a></li>
     </ul>
   </nav>
 </div>
@@ -314,7 +314,7 @@
   <nav>
     <ul class="vs-vertical-nav none">
       <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus10"></a></li>
     </ul>
   </nav>
 </div>
@@ -340,8 +340,8 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev focus7"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus11"></a></li>
     </ul>
   </nav>
 </div>
@@ -367,8 +367,8 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev focus8"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus12"></a></li>
     </ul>
   </nav>
 </div>
@@ -399,8 +399,8 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev focus9"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus13"></a></li>
     </ul>
   </nav>
 </div>
@@ -839,7 +839,7 @@
     <nav>
       <ul class="vs-vertical-nav none">
         <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-        <li><a href="#" class="vs-next swiper-control next"></a></li>
+        <li><a href="#" class="vs-next swiper-control next focus15"></a></li>
       </ul>
     </nav> 
  </div> 
