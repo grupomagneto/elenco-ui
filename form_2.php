@@ -110,7 +110,7 @@
     <div class="div3">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
-          <h1 class="TabOnEnter" tabindex="3" >Qual o sexo do menor sendo cadastrado?<sup>*</sup></h1>
+          <h1 class="TabOnEnter" tabindex="3" >Qual o sexo do menor?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
          <input name="sexo" value="masculino" type="radio" id="radio0" class="radio" onchange="exibeMsg2(this.value);">
@@ -328,7 +328,7 @@
           <h1>Qual o celular para contato?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="celular" id="celular" data-mask="(00) 00000-0000" class="TabOnEnter" tabindex="10" type="text" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
+          <input name="celular" id="celular" data-mask="(00) 00000-0000" class="TabOnEnter" tabindex="10" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
           <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;">
           <img id="seta10" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
         </div>
@@ -850,20 +850,20 @@
   <div class="container">
     <div class="div15">
       <div class="row">
-        <div class=" div15_t col-lg-offset-3 col-lg-5">
+        <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1 class="ultimo_p">Que tal deixar o perfil <span id="txt7"></span> <span class="concat2_texto"></span> mais completo?</h1>
         </div>
-        <div class=" div15_box col-lg-offset-3 col-lg-5">
+        <div class="input_ig col-lg-offset-3 col-lg-5">
           <img src="images/ig.svg" alt="instagram">
           <input name="ig" id="ig" type="text" onfocus="this.value=''" class="TabOnEnter ig" tabindex="14" autocomplete="off" />
           <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
         </div>
-        <div class=" div15_box2 col-lg-offset-3 col-lg-5">
+        <div class="input_fb col-lg-offset-3 col-lg-5">
           <img src="images/face.svg" alt="facebook">
           <input name="face" id="face" type="text" onfocus="this.value=''" class="TabOnEnter face" tabindex="15" autocomplete="off" />
           <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
         </div>
-        <div class=" div15_box3 col-lg-offset-3 col-lg-5">
+        <div class="input_tt col-lg-offset-3 col-lg-5">
           <img src="images/tt.svg" alt="twitter">
           <input name="tt" id="tt" type="text" onfocus="this.value=''" class="TabOnEnter tt" tabindex="16" autocomplete="off" />
           <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
@@ -882,7 +882,6 @@
     </ul>
   </nav>
 </div>
-
 </div>
 </nav>
 </div>

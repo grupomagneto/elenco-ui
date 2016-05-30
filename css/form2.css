@@ -222,6 +222,10 @@ display: block;
 -o-transform: rotate(180deg);
 transform: rotate(180deg);
 }
+.vs-vertical-nav { top: 50%; right: 2%; }
+.vs-vertical-nav1 { top: 50%; right: 2%; }
+.vs-vertical-nav2 { top: 50%; right: 2%; }
+.vs-vertical-nav a.vs-prev { margin-bottom: 10px; }
 /**********************
 PROGRESS
 ***********************/
@@ -321,31 +325,9 @@ PROGRESS
 .progress13 progress { width:600px; top:95%; margin-left:-300px; z-index: 9999; }
 .progress14 progress { width:600px; top:95%; margin-left:-300px; z-index: 9999; }
 .progress15 progress { width:600px; top:95%; margin-left:-300px; z-index: 9999; }
-/**********************
-SETAS
-***********************/
-.vs-vertical-nav { top: 50%; right: 2%; }
-.vs-vertical-nav1 { top: 50%; right: 2%; }
-.vs-vertical-nav2 { top: 50%; right: 2%; }
-.vs-vertical-nav a.vs-prev { margin-bottom: 10px; }
 /*********************
-DIVS DO PRIMEIRO FORMULÁRIO
+FORMATAÇÃO PADRÃO DAS PERGUNTAS E BOXES
 **********************/
-.div0{ position: absolute; top:42%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div1{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div2{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div3{ position: absolute; top:40%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div4{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div5{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div6{ position: absolute; top:35%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div7{ position: absolute; top:8%; left:26%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div8{ position: absolute; top:8%; left:26%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div9{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div10{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div11{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div12{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div13{ position: absolute; top:46%; left:26%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div14{ position: absolute; top:25%; left:33%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
 .pergunta h1{
 font-family: Avenir-Book;
 font-size: 32px;
@@ -371,6 +353,34 @@ color:#fff;
 font-family: Avenir-Book;
 font-size:24px; 
 text-transform: capitalize;
+position: absolute;
+left:50%;
+margin-left:-250px;
+}
+.input_box input[type="tel"]{
+background:rgba(215,215,215,0.30);
+border:2px solid #ECECEC;
+border-radius:8px;
+width:500px;
+height:80px;
+padding-left:10px;
+color:#fff;
+font-family: Avenir-Book;
+font-size:24px; 
+position: absolute;
+left:50%;
+margin-left:-250px;
+}
+.input_box input[type="number"]{
+background:rgba(215,215,215,0.30);
+border:2px solid #ECECEC;
+border-radius:8px;
+width:500px;
+height:80px;
+padding-left:10px;
+color:#fff;
+font-family: Avenir-Book;
+font-size:24px; 
 position: absolute;
 left:50%;
 margin-left:-250px;
@@ -421,6 +431,52 @@ img#seta4{ width:60px; height:60px; position: absolute; left:50%; margin-left:27
 img#seta5{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; }
 img#seta10{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; }
 img#seta11{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; }
+/*BOXES DAS MÍDIAS SOCIAIS*/
+.input_ig input[type="text"]{
+background:rgba(215,215,215,0.30);
+border:2px solid #ECECEC;
+border-radius:8px;
+width:500px;
+height:80px;
+padding-left:10px;
+color:#fff;
+font-family: Avenir-Book;
+font-size:24px; 
+text-transform: capitalize;
+position: absolute;
+left:50%;
+margin-left:-250px;
+}
+.input_fb input[type="text"]{
+background:rgba(215,215,215,0.30);
+border:2px solid #ECECEC;
+border-radius:8px;
+width:500px;
+height:80px;
+padding-left:10px;
+color:#fff;
+font-family: Avenir-Book;
+font-size:24px; 
+text-transform: capitalize;
+position: absolute;
+left:50%;
+margin-left:-250px;
+}
+.input_tt input[type="text"]{
+background:rgba(215,215,215,0.30);
+border:2px solid #ECECEC;
+border-radius:8px;
+width:500px;
+height:80px;
+padding-left:10px;
+color:#fff;
+font-family: Avenir-Book;
+font-size:24px; 
+text-transform: capitalize;
+position: absolute;
+left:50%;
+margin-left:-250px;
+}
 /* Responsável Legal */
 .radio-label3 {
 display:inline-block;
@@ -863,11 +919,11 @@ text-align: left;
 font-family: Avenir-Book;
 font-size: 32px;
 color: #FFFFFF;
-/*margin-bottom: 16px;*/
+margin-bottom: 16px;
 width:1000px;
 position: absolute;
 text-align: center;
-left:50%;
+left:20%;
 margin-left: -500px;
 margin-top: -120px;
 }
@@ -1714,17 +1770,186 @@ PROGRESS
 Small devices Tablets and Desktops (≥768px)
 ***********************/
 @media only screen and (min-width: 768px) and (max-width: 991px){
-
+/*********************
+POSIÇÃO DAS DIVS
+**********************/
+.div0{ position: absolute; top:44%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div1{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div2{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div3{ position: absolute; top:44%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div4{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div5{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div6{ position: absolute; top:35%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div7{ position: absolute; top:8%; left:23%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div8{ position: absolute; top:8%; left:23%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div9{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div10{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div11{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div12{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div13{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div14{ position: absolute; top:25%; left:33%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div15{ position: absolute; top:25%; left:33%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.pergunta h1{
+font-size: 26px;
+line-height: 40px;
+margin-bottom: 16px;
+width:400px;
+margin-left: -200px;
+margin-top: -120px;
+}
+.input_box input[type="text"]{
+width:400px;
+height:60px;
+font-size:20px; 
+margin-left:-200px;
+}
+.input_box input[type="tel"]{
+width:400px;
+height:60px;
+font-size:20px; 
+margin-left:-200px;
+}
+.input_box input[type="email"]{
+width:400px;
+height:60px;
+font-size:20px; 
+margin-left:-200px;
+}
+.input_box input[type="date"] {
+-webkit-appearance: textfield;
+-moz-appearance: textfield;
+width: 400px;
+height: 60px;
+padding-left: 10px;
+font-size:20px; 
+margin-left: -200px;
+}
+.input_box input[type="button"]{
+background: transparent;
+border:0px;
+border-radius:8px;
+height:60px;
+width:60px;
+position: absolute;
+left:50%;
+margin-left:270px;
+margin-top:0px;
+cursor: pointer;
+}
+img#seta{ margin-left:220px; margin-top:0px; }
+img#seta2{ margin-left:220px; margin-top:0px; }
+img#seta4{ margin-left:220px; margin-top:0px; }
+img#seta5{ margin-left:220px; margin-top:0px; }
+img#seta10{ margin-left:220px; margin-top:0px; }
+img#seta11{ margin-left:220px; margin-top:0px; }
+/* Responsável Legal */
+.radio-label3 {
+width: 400px;
+height: 60px;
+font-size:20px; 
+margin-left: -200px;
+margin-top: -15px;
+}
+.radio-label4 {
+width: 400px;
+height: 60px;
+font-size:20px; 
+margin-left: -200px;
+margin-top: 80px;
+}
+.radio_0 + .radio-label3 span { font-size: 20px; padding-top: 15px; margin-left: -320px; }
+.radio_0 + .radio-label4 span { font-size: 20px; padding-top: 15px; margin-left: -315px; }
+.radio_0:checked + .radio-label3 span { font-size: 20px; padding-top: 15px; margin-left: -320px; }
+.radio_0:checked + .radio-label4 span { font-size: 20px; padding-top: 15px; margin-left: -315px; }
+/* Sexo */
+.radio-label {
+width: 400px;
+height: 60px;
+font-size:20px; 
+margin-left: -200px;
+margin-top: -35px;
+}
+.radio-label2 {
+width: 400px;
+height: 60px;
+font-size:20px; 
+margin-left: -200px;
+margin-top: 60px;
+}
+.radio + .radio-label span { font-size: 20px; padding-top: 15px; margin-left: -280px; }
+.radio + .radio-label2 span { font-size: 20px; padding-top: 15px; margin-left: -275px; }
+.radio:checked + .radio-label span { font-size: 20px; padding-top: 15px; margin-left: -280px; }
+.radio:checked + .radio-label2 span { font-size: 20px; padding-top: 15px; margin-left: -275px; }
+/* Para começar, vamos precisar de duas fotos */
+.div6_box h1{
+font-size: 32px;
+line-height: 40px;
+margin-bottom: 16px;
+width:400px;
+margin-left: -200px;
+margin-top: 20px;
+}
+.div6_box img{
+margin-left: -30px;
+margin-top: 190px;
+}
+.div6_t img{
+width:162px;
+height:136px;
+}
 }
 /**********************
 Medium devices Desktops (≥992px)
 ***********************/
 @media only screen and (min-width: 992px) and (max-width: 1199px){
-
+/*********************
+POSIÇÃO DAS DIVS
+**********************/
+.div0{ position: absolute; top:39%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div1{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div2{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div3{ position: absolute; top:36%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div4{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div5{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div6{ position: absolute; top:35%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div7{ position: absolute; top:8%; left:25%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div8{ position: absolute; top:8%; left:25%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div9{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div10{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div11{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div12{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div13{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div14{ position: absolute; top:25%; left:31%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div15{ position: absolute; top:25%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
 }
 /**********************
 Large devices Desktops (≥1200px)
 ***********************/
 @media only screen and (min-width: 1200px){
-
+/*********************
+POSIÇÃO DAS DIVS
+**********************/
+.div0{ position: absolute; top:42%; left:13%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div1{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div2{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div3{ position: absolute; top:42%; left:13%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div4{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div5{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div6{ position: absolute; top:35%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div7{ position: absolute; top:8%; left:27%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div8{ position: absolute; top:8%; left:27%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div9{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div10{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div11{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div12{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div13{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div14{ position: absolute; top:25%; left:31%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div15{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+/* Sexo */
+.radio-label {
+margin-top: -35px;
+}
+.radio-label2 {
+margin-top: 80px;
+}
 }
