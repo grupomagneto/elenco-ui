@@ -33,7 +33,6 @@ height: 100%;
 }
 .swiper-slide {
 text-align: center;
-/* Center slide text vertically */
 display: -webkit-box;
 display: -ms-flexbox;
 display: -webkit-flex;
@@ -57,7 +56,7 @@ margin: 0px;
 padding-top: 40px;
 margin-top: -40px;
 }
-input[type=radio] {
+input[type="radio"] {
 opacity:0;
 }
 /*Gifs animados "Como fazer uma selfie"*/
@@ -442,7 +441,6 @@ padding-left:10px;
 color:#fff;
 font-family: Avenir-Book;
 font-size:24px; 
-text-transform: capitalize;
 position: absolute;
 left:50%;
 margin-left:-250px;
@@ -457,11 +455,10 @@ padding-left:10px;
 color:#fff;
 font-family: Avenir-Book;
 font-size:24px; 
-text-transform: capitalize;
 position: absolute;
 left:50%;
 margin-left:-250px;
-margin-top: 40px;
+margin-top: 90px;
 }
 .input_tt input[type="text"]{
 background:rgba(215,215,215,0.30);
@@ -473,11 +470,33 @@ padding-left:10px;
 color:#fff;
 font-family: Avenir-Book;
 font-size:24px; 
-text-transform: capitalize;
 position: absolute;
 left:50%;
 margin-left:-250px;
-margin-top: 80px;
+margin-top: 180px;
+}
+.input_ig img {
+position: absolute;
+left:50%;
+padding-top: 10px;
+margin-left: -320px;
+float: left;
+}
+.input_fb img {
+position: absolute;
+left:50%;
+padding-top: 10px;
+margin-left: -320px;
+float: left;
+margin-top: 90px;
+}
+.input_tt img {
+position: absolute;
+left:50%;
+padding-top: 10px;
+margin-left: -320px;
+float: left;
+margin-top: 180px;
 }
 /* Responsável Legal */
 .radio-label3 {
@@ -916,820 +935,6 @@ text-align: left;
 .select-options5::-webkit-scrollbar { width: 12px; }
 .select-options5::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(215,215,215,0.30); color:#fff; border-radius: 10px; }
 .select-options5::-webkit-scrollbar-thumb { border-radius: 10px; -webkit-box-shadow: inset 0 0 20px #fff; }
-/*Selecione uma modalidade para o cadastro*/
-.div14_t h1{
-font-family: Avenir-Book;
-font-size: 32px;
-color: #FFFFFF;
-margin-bottom: 16px;
-width:1000px;
-position: absolute;
-text-align: center;
-left:20%;
-margin-left: -500px;
-margin-top: -120px;
-}
-.div14_box .thumbnail{
-width:340px;
-height:553px;
-position: absolute;
-left: 50%;
-margin-left: -270px;/* Rectangle 2 Copy: */
-background: #C957DE;
-box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
-border: 1px solid #C957DE;
-}
-.div14_box .thumbnail .caption h3{
-color: #fff;
-border-top: 1px solid #fff; 
-border-bottom: 1px solid #fff; 
-padding-top: 10px;
-padding-bottom: 10px;
-width: 190px;
-margin-left: 60px;
-}
-.div14_box .thumbnail .caption p{
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-width: 200px;
-margin-left: 65px;
-line-height: 115%;
-}
-.div14_box .thumbnail .caption p.preco{
-/* Por apenas 10x R$ 29: */
-font-family: Avenir-Heavy;
-font-size: 16px;
-color: #FFFFFF;
-width: 235px;
-height: 66px;
-margin-top: 130px;
-text-align: left;
-/*margin-left: 30px;*/
-}
-.div14_box .thumbnail .caption h2{  
-margin-top: -55px;
-margin-bottom: 20px;
-color: #fff;
-font-family: Avenir-Book;
-font-size:  46px;
-font-weight: bold;
-margin-left: 30px;
-}
-.div14_box .thumbnail .caption h2 span{
-color: #fff;
-font-family: Avenir-Book;
-font-size: 16px;
-font-weight: bold;
-}
-.div14_box .thumbnail .caption ul{  
-margin-top: 180px;
-margin-bottom: 10px;
-margin-left: 105px;
-color: #fff;
-font-family: Avenir-Book;
-font-size:  46px;
-font-weight: bold;
-}
-.div14_box .thumbnail .caption ul li{
-color: #fff;
-font-family: Avenir-Book;
-font-size: 16px;
-font-weight: bold;
-/*margin-left: 10px;*/
-}
-.div14_box .thumbnail .caption ol { 
-list-style-type: disc; 
-color: #FFFFFF;
-width:270px;
-height: 78px;
-text-align: left;
-margin-left: 35px;
-margin-top: 25px;/* Maiores cachês e pos: */
-font-family: Avenir-Book;
-font-size: 19.31px;
-color: #FFFFFF;
-} 
-.div14_box .thumbnail .caption ol li { 
-padding: 4px
-} 
-.div14_box2 .thumbnail{
-width:340px;
-height:553px;
-position: absolute;
-left: 50%;
-margin-left: -650px;
-background: #F75486;
-box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
-border: 1px solid #F75486;
-}
-.div14_box2 .thumbnail .caption h3{
-color: #fff;
-border-top: 1px solid #fff; 
-border-bottom: 1px solid #fff; 
-padding-top: 10px;
-padding-bottom: 10px;
-width: 190px;
-margin-left: 60px;
-}
-.div14_box2 .thumbnail .caption p{
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-width: 200px;
-margin-left: 65px;
-/*line-height: 115%;*/
-}
-.div14_box2 .thumbnail .caption h4{  
-margin-top: 170px;
-color: #fff;
-font-family: Avenir-Book;
-font-size: 20px;
-}
-.div14_box2 .thumbnail .caption h2{  
-margin-top: -5px;
-margin-bottom: 33px;
-color: #fff;
-font-family: Avenir-Book;
-font-size: 20px;
-}
-.div14_box2 .thumbnail .caption ol { 
-list-style-type: disc; 
-color: #FFFFFF;
-width:280px;
-height: 78px;
-text-align: left;
-margin-left: 27px;
-margin-top: 25px;/* Maiores cachês e pos: */
-font-family: Avenir-Book;
-font-size: 19.31px;
-color: #FFFFFF;
-} 
-.div14_box2 .thumbnail .caption ol li { 
-padding: 2px
-} 
-.div14_box3 .thumbnail{
-width:340px;
-height:553px;
-position: absolute;
-left: 50%;
-margin-left: 110px;/* Rectangle 2 Copy 2: */
-background: #4AA4E2;
-box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
-border: 1px solid #4AA4E2;
-}
-.div14_box3 .thumbnail .caption h3{
-color: #fff;
-border-top: 1px solid #fff; 
-border-bottom: 1px solid #fff; 
-padding-top: 10px;
-padding-bottom: 10px;
-width: 190px;
-margin-left: 60px;
-}
-.div14_box3 .thumbnail .caption p{
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-width: 200px;
-margin-left: 65px;
-/*line-height: 115%;*/
-}
-.div14_box3 .thumbnail .caption h2{  
-margin-top: -50px;
-margin-bottom: 27px;
-color: #fff;
-font-family: Avenir-Book;
-font-size:  46px;
-font-weight: bold;
-margin-left: 30px;
-}
-.div14_box3 .thumbnail .caption h2 span{
-color: #fff;
-font-family: Avenir-Book;
-font-size: 16px;
-font-weight: bold;
-}
-.div14_box3 .thumbnail .caption ul{  
-margin-top: 180px;
-margin-bottom: 6px;
-margin-left: 105px;
-color: #fff;
-font-family: Avenir-Book;
-font-size:  46px;
-font-weight: bold;
-}
-.div14_box3 .thumbnail .caption ul li{
-color: #fff;
-font-family: Avenir-Book;
-font-size: 16px;
-font-weight: bold;
-}
-.div14_box3 .thumbnail .caption ol { 
-list-style-type: disc; 
-color: #FFFFFF;
-width:270px;
-height: 78px;
-text-align: left;
-margin-left: 35px;
-margin-top: 25px;/* Maiores cachês e pos: */
-font-family: Avenir-Book;
-font-size: 19.31px;
-color: #FFFFFF;
-} 
-.div14_box3 .thumbnail .caption ol li { 
-   padding: 4px
-} 
-.botao_modal3{
-border: 1px solid #FFFFFF;
-border-radius: 6px;
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-background: transparent;
-padding: 5px;
-margin-top: -30px;
-}
-.botao_modal{
-  /* Rectangle 4: */
-border: 1px solid #FFFFFF;
-border-radius: 6px;
-/* escolher: */
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-background: transparent;
-padding: 5px;
-margin-top: 2px;
-}
-.botao_modal2{
-  /* Rectangle 4: */
-border: 1px solid #FFFFFF;
-border-radius: 6px;
-/* escolher: */
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-background: transparent;
-padding: 5px;
-margin-top: -18px;
-}
-div.conteudo_modal
-{
-background: #C957DE;
-border-radius: 0;/* Rectangle 2: */
-background: #C957DE;
-box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
-border: 1px solid #C957DE;
-width:1200px;
-height:695px;
-}
-#myModal{
-position: absolute;
-z-index: 9999;
-width:1200px;
-height:695px;
-left: 50%;
-top:50%;
-margin-left: -600px;
-margin-top: -350px;
-}
-.modal_esquerda{
-width: 300px;
-height: 490px;
-float: left;
-}
-.modal_esquerda h3{
-color: #fff;
-border-top: 1px solid #fff; 
-border-bottom: 1px solid #fff; 
-padding-top: 10px;
-padding-bottom: 10px;
-padding-left: 50px;
-width: 190px;
-margin-left: 80px;
-margin-top: 40px;
-}
-.modal_esquerda p{
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-width: 200px;
-margin-left: 75px;
-text-align: center;
-}
-.modal_esquerda p.preco{
-/* Por apenas 10x R$ 29: */
-font-family: Avenir-Heavy;
-font-size: 16px;
-color: #FFFFFF;
-width: 235px;
-height: 66px;
-margin-top: 130px;
-text-align: left;
-margin-left: 25px;
-margin-left: 55px;
-}
-.modal_esquerda ol { 
-list-style-type: disc; 
-color: #FFFFFF;
-width:270px;
-height: 78px;
-text-align: left;
-margin-left: 35px;
-margin-top: 25px;/* Maiores cachês e pos: */
-font-family: Avenir-Book;
-font-size: 19.31px;
-color: #FFFFFF;
-margin-left: 50px;
-} 
-.modal_esquerda ol li { 
-   padding: 10px
-} 
-.modal_esquerda h2{  
-margin-top: -50px;
-margin-bottom: 26px;
-color: #fff;
-font-family: Avenir-Book;
-font-size:  46px;
-font-weight: bold;
-}
-.modal_esquerda h2 span{
-color: #fff;
-font-family: Avenir-Book;
-font-size: 16px;
-font-weight: bold;
-}
-.modal_esquerda ul{  
-margin-top: 190px;
-margin-bottom: 5px;
-margin-left: 90px;
-color: #fff;
-font-family: Avenir-Book;
-font-size:  46px;
-font-weight: bold;
-}
-.modal_esquerda ul li{
-color: #fff;
-font-family: Avenir-Book;
-font-size: 16px;
-font-weight: bold;
-}
-.modal_direita{
-width: 420px;
-height: 690px;
-padding-bottom: 600px;
-float: right;
-margin-right:370px;
-}
-.modal_direita h3{
-/* Termos e Condições: */
-font-family: Avenir-Book;
-font-size: 22px;
-color: #FFFFFF;
-text-align: left;
-margin-top: 55px;
-width: 201px;
-margin-left: 60px;
-}
-.modal_direita ol li { 
-padding: 2px;
-width:280px;
-margin-left: -5px;
-} 
-.modal_direita ol { 
-color: #FFFFFF;
-text-align: left;
-margin-top: 30px;
-font-family: Avenir-Book;
-font-size: 15px;
-color: #FFFFFF;
-margin-left: 70px;
-} 
-.termo_um{
-float: left;
-  width:20%;
-}
-.termo_dois{
-float: right;
-  width:20%;
-}
-p.descricao_contrato{
-font-family: Avenir-Book;
-font-size: 11px;
-color: #FFFFFF;
-width:250px;
-margin-left: 65px;
-margin-top: 30px;
-}
-.button{
-border-radius: 6px;
-color: #FFFFFF;
-border: 1px solid #FFFFFF;
-margin-top: 30px;
-margin-left: 120px;
-width: 101px;
-height:31px;
-cursor: pointer;
-}
-.button input[type="radio"] {
-display: none;
-}
-.button input[type="radio"] + label {
-padding-left: 7px;
-padding-top: 5px;
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-cursor: pointer;
-}
-.button input[type="radio"]:checked + label {
-background: rgba(215,215,215,0.30);
-width: 101px;
-height:31px;
-}
-#menos_d {
-content:url(../images/menos.svg);
-position: absolute;
-right: 10px;
-top: 10px;
-width: 30px;
-height: 30px;
-cursor: pointer;
-text-align: center;
-background: #C957DE;
-}
-div.conteudo_modal2 {
-background: #F75486;
-border-radius: 0;
-box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
-border: 1px solid #F75486;
-width:1200px;
-height:695px;
-}
-#myModal2{
-position: absolute;
-z-index: 9999;
-width:1200px;
-height:695px;
-left: 50%;
-top:50%;
-margin-left: -600px;
-margin-top: -350px;
-}
-.modal_esquerda2{
-width: 300px;
-height: 490px;
-float: left;
-}
-.modal_esquerda2 h3{
-color: #fff;
-border-top: 1px solid #fff; 
-border-bottom: 1px solid #fff; 
-padding-top: 10px;
-padding-bottom: 10px;
-padding-left: 50px;
-width: 190px;
-margin-left: 80px;
-margin-top: 40px;
-}
-.modal_esquerda2 h2{
-color: #fff;
-font-family: Avenir-Book;
-font-size: 20px; 
-margin-left: 100px;
-margin-top: -5px;
-}
-.modal_esquerda2 h4{
-margin-top: 200px;
-margin-left: 90px;
-color: #fff;
-font-family: Avenir-Book;
-font-size: 20px;
-}
-.modal_esquerda2 p{
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-width: 200px;
-margin-left: 75px;
-text-align: center;
-}
-.modal_esquerda2 p.preco2{
-/* Por apenas 10x R$ 29: */
-font-family: Avenir-Heavy;
-font-size: 16px;
-color: #FFFFFF;
-width: 235px;
-height: 66px;
-margin-top: 130px;
-text-align: left;
-margin-left: 25px;
-margin-left: 55px;
-}
-.modal_esquerda2 ol { 
-list-style-type: disc; 
-color: #FFFFFF;
-width:270px;
-height: 78px;
-text-align: left;
-margin-left: 35px;
-margin-top: 25px;/* Maiores cachês e pos: */
-font-family: Avenir-Book;
-font-size: 19.31px;
-color: #FFFFFF;
-margin-left: 50px;
-} 
-.modal_esquerda2 ol li { 
-   padding: 10px
-} 
-.modal_direita2{
-width: 420px;
-height: 690px;
-padding-bottom: 600px;
-float: right;
-margin-right:370px;
-margin-top: -20px;
-}
-.modal_direita2 h3{
-/* Termos e Condições: */
-font-family: Avenir-Book;
-font-size: 22px;
-color: #FFFFFF;
-text-align: left;
-margin-top: 75px;
-width: 201px;
-}
-.modal_direita2 ol li { 
-padding: 2px;
-width:280px;
-margin-left: -65px;
-/*line-height: 150%;*/
-} 
-.modal_direita2 ol { 
-color: #FFFFFF;
-text-align: left;
-margin-top: 30px;
-font-family: Avenir-Book;
-font-size: 15px;
-color: #FFFFFF;
-margin-left: 70px;
-margin-bottom: 30px;
-} 
-.termo_um2{
-float: left;
-width:20%;
-}
-.termo_dois2{
-float: right;
-width:20%;
-}
-p.descricao_contrato2{
-  /* Clicando abaixo você: */
-font-family: Avenir-Book;
-font-size: 11px;
-color: #FFFFFF;
-width:250px;
-margin-left: 10px;
-margin-top: 30px;
-}
-div.button2{
-border-radius: 6px;
-color: #FFFFFF;
-border: 1px solid #FFFFFF;
-margin-top: 20px;
-margin-left: 80px;
-width: 101px;
-height:31px;
-cursor: pointer;
-}
-.button2 input[type="radio"] {
-    display: none;
-}
-.button2 input[type="radio"] + label {
-padding-left: 7px;
-padding-top: 5px;
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-cursor: pointer;
-}
-.button2 input[type="radio"]:checked + label {
-background: rgba(215,215,215,0.30);
-width: 101px;
-height:31px;
-cursor: pointer;
-}
-#menos2_d {
-content:url(../images/menos.svg);
-position: absolute;
-right: 10px;
-top: 10px;
-width: 30px;
-height: 30px;
-cursor: pointer;
-text-align: center;
-/*background: #F75486;*/
-}
-/*MODAL PROFISSIONAL*/
-div.conteudo_modal3
-{
-background: #4AA4E2;
-border-radius: 0;
-box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30);
-border: 1px solid #4AA4E2;
-width:1200px;
-  height:695px;
-}
-#myModal3{
-position: absolute;
-z-index: 9999;
-width:1200px;
-height:695px;
-left: 50%;
-top:50%;
-margin-left: -600px;
-margin-top: -350px;
-}
-.modal_esquerda3{
-width: 300px;
-height: 490px;
-float: left;
-}
-.modal_esquerda3 h3{
-color: #fff;
-border-top: 1px solid #fff; 
-border-bottom: 1px solid #fff; 
-padding-top: 10px;
-padding-bottom: 10px;
-padding-left: 30px;
-width: 190px;
-margin-left: 80px;
-margin-top: 40px;
-}
-.modal_esquerda3 p{
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-width: 200px;
-margin-left: 75px;
-text-align: center;
-}
-.modal_esquerda3 p.preco3{
-/* Por apenas 10x R$ 29: */
-font-family: Avenir-Heavy;
-font-size: 16px;
-color: #FFFFFF;
-width: 235px;
-height: 66px;
-margin-top: 130px;
-text-align: left;
-margin-left: 55px;
-}
-.modal_esquerda3 ol { 
-list-style-type: disc; 
-color: #FFFFFF;
-width:270px;
-height: 78px;
-text-align: left;
-margin-left: 35px;
-margin-top: 10px;/* Maiores cachês e pos: */
-font-family: Avenir-Book;
-font-size: 19.31px;
-color: #FFFFFF;
-margin-left: 50px;
-} 
-.modal_esquerda3 ol li { 
-   padding: 10px
-} 
-.modal_direita3{
-width: 420px;
-height: 690px;
-padding-bottom: 600px;
-float: right;
-margin-right:370px;
-}
-.modal_esquerda3 h2{  
-margin-top: -50px;
-margin-bottom: 26px;
-margin-left: 25px;
-color: #fff;
-font-family: Avenir-Book;
-font-size:  46px;
-font-weight: bold;
-}
-.modal_esquerda3 h2 span{
-color: #fff;
-font-family: Avenir-Book;
-font-size: 16px;
-font-weight: bold;
-}
-.modal_esquerda3 ul{  
-margin-top: 250px;
-margin-bottom: 5px;
-margin-left: 100px;
-color: #fff;
-font-family: Avenir-Book;
-font-size:  46px;
-font-weight: bold;
-}
-.modal_esquerda3 ul li{
-color: #fff;
-font-family: Avenir-Book;
-font-size: 16px;
-font-weight: bold;
-}
-.modal_direita3 h3{
-/* Termos e Condições: */
-font-family: Avenir-Book;
-font-size: 22px;
-color: #FFFFFF;
-text-align: left;
-margin-top: 55px;
-width: 201px;
-}
-.modal_direita3 ol li { 
-padding: 2px;
-width:280px;
-margin-left: -65px;
-} 
-.modal_direita3 ol { 
-color: #FFFFFF;
-text-align: left;
-margin-top: 30px;
-font-family: Avenir-Book;
-font-size: 15px;
-color: #FFFFFF;
-margin-left: 70px;
-}
-.termo_um3{
-float: left;
-  width:20%;
-}
-.termo_dois3{
-float: right;
-  width:20%;
-}
-p.descricao_contrato3{
- /* Clicando abaixo você: */
-font-family: Avenir-Book;
-font-size: 11px;
-color: #FFFFFF;
-width:250px;
-margin-left: 20px;
-margin-top: 30px;
-}
-div.button3{
-border-radius: 6px;
-color: #FFFFFF;
-border: 1px solid #FFFFFF;
-margin-top: 10px;
-margin-left: 80px;
-width: 101px;
-height:31px;
-cursor: pointer;
-}
-.button3 input[type="radio"] {
-display: none;
-}
-.button3 input[type="radio"] + label {
-padding-left: 7px;
-padding-top: 5px;
-font-family: Avenir-Book;
-font-size: 14px;
-color: #FFFFFF;
-cursor: pointer;
-}
-.button3 input[type="radio"]:checked + label {
-background: rgba(215,215,215,0.30);
-width: 101px;
-height:31px;
-cursor: pointer;
-}
-#menos3_d {
-content:url(../images/menos.svg);
-position: absolute;
-right: 10px;
-top: 10px;
-width: 30px;
-height: 30px;
-cursor: pointer;
-text-align: center;
-}
-#menos3_d i {
-font-size: 30px;
-color: #4AA4E2;
-background-color: #fff;
-padding-top: 1px;
-padding-bottom: 1px;
-padding-left: 1px;
-padding-right: 1px;
-border-radius: 100%;
-}
-.versao_m{
-  display: none;
-}
-/*FIM MODAL PROFISSIONAL*/
 /**********************
 Extra small devices Phones (<768px) Landscape
 ***********************/
@@ -1747,7 +952,7 @@ width: 100%;
 height: 100%;
 background: url("../images/gire.png") center center;
 background-size: cover;
-opacity: 0.4;
+/*opacity: 0.4;*/
 z-index: -1;
 }
 .gradient2 {
@@ -1763,7 +968,7 @@ width: 100%;
 height: 100%;
 background: url("../images/gire.png") center center;
 background-size: cover;
-opacity: 0.4;
+/*opacity: 0.4;*/
 z-index: -1;
 }.gradient3 {
 display: block;
@@ -1907,12 +1112,10 @@ z-index: -1;
 .progress13 progress { display:none; }
 .progress14 progress { display:none; }
 .progress15 progress { display:none; }
-
 .vs-vertical-nav { display:none; }
 .vs-vertical-nav1 { display:none; }
 .vs-vertical-nav2 { display:none; }
 .vs-vertical-nav a.vs-prev { display:none; }
-
 }
 /**********************
 Extra small devices Phones (<768px) Portrait
@@ -1921,13 +1124,14 @@ Extra small devices Phones (<768px) Portrait
 /**********************
 SETAS
 ***********************/
-.vs-vertical-nav { top: 93%; right: 36%; }
+.vs-vertical-nav { top: 93%; right: 38%; }
 .vs-vertical-nav1 { top: 93%; right: 45%; }
 .vs-vertical-nav2 { top: 93%; right: 45%; }
-.vs-vertical-nav a.vs-prev { margin-bottom: -40px; margin-left: 50px; }
+.vs-vertical-nav a.vs-prev { margin-bottom: -40px; margin-left: -50px; }
 /**********************
 PROGRESS
 ***********************/
+.progress0 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
 .progress1 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
 .progress2 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
 .progress3 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
@@ -1943,6 +1147,134 @@ PROGRESS
 .progress13 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
 .progress14 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
 .progress15 progress { width:280px; top:5%; margin-left:-140px; z-index: 9999; }
+/*********************
+POSIÇÃO DAS DIVS
+**********************/
+.div0{ position: absolute; top:50%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div1{ position: absolute; top:50%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div2{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div3{ position: absolute; top:44%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div4{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div5{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div6{ position: absolute; top:35%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div7{ position: absolute; top:8%; left:23%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div8{ position: absolute; top:8%; left:23%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div9{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div10{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div11{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div12{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div13{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div14{ position: absolute; top:25%; left:33%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div15{ position: absolute; top:25%; left:33%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.pergunta h1{
+font-size: 24px;
+line-height: 30px;
+margin-bottom: 16px;
+width:280px;
+margin-left: -140px;
+margin-top: -120px;
+}
+.input_box input[type="text"]{
+width:280px;
+height:60px;
+font-size:20px; 
+margin-left: -140px;
+margin-top: -60px;
+}
+.input_box input[type="tel"]{
+width:280px;
+height:60px;
+font-size:20px; 
+margin-left: -140px;
+}
+.input_box input[type="email"]{
+width:280px;
+height:60px;
+font-size:20px; 
+margin-left: -140px;
+}
+.input_box input[type="date"] {
+-webkit-appearance: textfield;
+-moz-appearance: textfield;
+width:280px;
+height: 60px;
+padding-left: 10px;
+font-size:20px; 
+margin-left: -140px;
+}
+.input_box input[type="button"]{
+background: transparent;
+border:0px;
+border-radius:8px;
+height:60px;
+width:60px;
+position: absolute;
+left:50%;
+margin-left:270px;
+margin-top:0px;
+cursor: pointer;
+}
+img#seta{ margin-left:220px; margin-top:0px; }
+img#seta2{ margin-left:220px; margin-top:0px; }
+img#seta4{ margin-left:220px; margin-top:0px; }
+img#seta5{ margin-left:220px; margin-top:0px; }
+img#seta10{ margin-left:220px; margin-top:0px; }
+img#seta11{ margin-left:220px; margin-top:0px; }
+/* Responsável Legal */
+.radio-label3 {
+width:280px;
+height: 60px;
+font-size:20px; 
+margin-left: -140px;
+margin-top: -15px;
+}
+.radio-label4 {
+width:280px;
+height: 60px;
+font-size:20px; 
+margin-left: -140px;
+margin-top: 80px;
+}
+.radio_0 + .radio-label3 span { font-size: 20px; padding-top: 15px; margin-left: -210px; }
+.radio_0 + .radio-label4 span { font-size: 20px; padding-top: 15px; margin-left: -205px; }
+.radio_0:checked + .radio-label3 span { font-size: 20px; padding-top: 15px; margin-left: -210px; }
+.radio_0:checked + .radio-label4 span { font-size: 20px; padding-top: 15px; margin-left: -205px; }
+/* Sexo */
+.radio-label {
+width:280px;
+height: 60px;
+font-size:20px; 
+margin-left: -140px;
+margin-top: -35px;
+}
+.radio-label2 {
+width:280px;
+height: 60px;
+font-size:20px; 
+margin-left: -140px;
+margin-top: 60px;
+}
+.radio + .radio-label span { font-size: 20px; padding-top: 15px; margin-left: -170px; }
+.radio + .radio-label2 span { font-size: 20px; padding-top: 15px; margin-left: -165px; }
+.radio:checked + .radio-label span { font-size: 20px; padding-top: 15px; margin-left: -170px; }
+.radio:checked + .radio-label2 span { font-size: 20px; padding-top: 15px; margin-left: -165px; }
+/* Para começar, vamos precisar de duas fotos */
+.div6_box h1{
+font-size: 32px;
+line-height: 40px;
+margin-bottom: 16px;
+width:280px;
+margin-left: -140px;
+margin-top: 20px;
+}
+.div6_box img{
+margin-left: -30px;
+margin-top: 190px;
+}
+.div6_t img{
+width:162px;
+height:136px;
+}
 }
 /**********************
 Small devices Tablets and Desktops (≥768px)
@@ -1979,7 +1311,7 @@ margin-top: -120px;
 width:400px;
 height:60px;
 font-size:20px; 
-margin-left:-200px;
+margin-left:-120px;
 }
 .input_box input[type="tel"]{
 width:400px;
@@ -1991,7 +1323,7 @@ margin-left:-200px;
 width:400px;
 height:60px;
 font-size:20px; 
-margin-left:-200px;
+margin-left:-120px;
 }
 .input_box input[type="date"] {
 -webkit-appearance: textfield;
@@ -2000,7 +1332,7 @@ width: 400px;
 height: 60px;
 padding-left: 10px;
 font-size:20px; 
-margin-left: -200px;
+margin-left: -120px;
 }
 .input_box input[type="button"]{
 background: transparent;
@@ -2045,14 +1377,14 @@ width: 400px;
 height: 60px;
 font-size:20px; 
 margin-left: -200px;
-margin-top: -35px;
+margin-top: -15px;
 }
 .radio-label2 {
 width: 400px;
 height: 60px;
 font-size:20px; 
 margin-left: -200px;
-margin-top: 60px;
+margin-top: 80px;
 }
 .radio + .radio-label span { font-size: 20px; padding-top: 15px; margin-left: -280px; }
 .radio + .radio-label2 span { font-size: 20px; padding-top: 15px; margin-left: -275px; }
@@ -2079,7 +1411,7 @@ height:136px;
 /**********************
 Medium devices Desktops (≥992px)
 ***********************/
-@media only screen and (min-width: 992px) and (max-width: 1199px){
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
 /*********************
 POSIÇÃO DAS DIVS
 **********************/
@@ -2103,7 +1435,191 @@ POSIÇÃO DAS DIVS
 /**********************
 Large devices Desktops (≥1200px)
 ***********************/
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+/*********************
+POSIÇÃO DAS DIVS
+**********************/
+.div0{ position: absolute; top:39%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div1{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div2{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div3{ position: absolute; top:36%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div4{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div5{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div6{ position: absolute; top:35%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div7{ position: absolute; top:8%; left:25%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div8{ position: absolute; top:8%; left:25%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div9{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div10{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div11{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div12{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div13{ position: absolute; top:44%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div14{ position: absolute; top:25%; left:31%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div15{ position: absolute; top:25%; left:25%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+/*********************
+MODALIDADES DE CADASTRO
+**********************/
+/* TÍTULO: Selecione uma modalidade para o cadastro*/
+.div14_t h1{ font-family: Avenir-Book; font-size: 24px; color: #FFFFFF; width:1100px; position: absolute; text-align: center; left:20%; margin-left: -500px; margin-top: -120px; }
+/* Box Premium */
+.div14_box .thumbnail{ margin-top: -50px; width:340px; height:470px; position: absolute; left: 50%; margin-left: -260px;/* Rectangle 2 Copy: */ background: #C957DE; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); border: 1px solid #C957DE; }
+.div14_box .thumbnail .caption h3{ color: #fff; border-top: 1px solid #fff;  border-bottom: 1px solid #fff;  padding-top: 10px; padding-bottom: 10px; width: 200px; margin-left: 63px; }
+.div14_box .thumbnail .caption p{ font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; width: 150px; margin-left: 83px; line-height: 120%; }
+.div14_box .thumbnail .caption ol {  list-style-type: disc;  color: #FFFFFF; width:260px; height: 200px; text-align: left; margin-left: 30px; margin-top: 20px; font-family: Avenir-Book; font-size: 16px; color: #FFFFFF; } 
+.div14_box .thumbnail .caption ol li { padding: 5px }
+.div14_box .thumbnail .caption ul{  margin-top: 20px; margin-bottom: 0px; margin-left: 105px; height: 0px; color: #fff; font-family: Avenir-Book; font-size: 46px; font-weight: bold; }
+.div14_box .thumbnail .caption ul li{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+.div14_box .thumbnail .caption h2{ color: #fff; font-family: Avenir-Book; font-size: 46px; font-weight: bold; margin-left: 25px; margin-top: 0px; }
+.div14_box .thumbnail .caption h2 span{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+/* Botão Escolher Premium */
+.botao_modal{ border: 1px solid #FFFFFF; border-radius: 6px; font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; background: transparent; padding: 5px; margin-top: -10px; }
+/* Box Gratuito */
+.div14_box2 .thumbnail{ margin-top: -50px; width:340px; height:470px; position: absolute; left: 50%; margin-left: -640px; background: #F75486; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); border: 1px solid #F75486; }
+.div14_box2 .thumbnail .caption h3{ color: #fff; border-top: 1px solid #fff;  border-bottom: 1px solid #fff;  padding-top: 10px; padding-bottom: 10px; width: 200px; margin-left: 60px; }
+.div14_box2 .thumbnail .caption p{ font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; width: 150px; margin-left: 80px; line-height: 120%; }
+.div14_box2 .thumbnail .caption ol {  list-style-type: disc;  color: #FFFFFF; width:260px; height: 200px; text-align: left; margin-left: 30px; margin-top: 20px; font-family: Avenir-Book; font-size: 16px; color: #FFFFFF; } 
+.div14_box2 .thumbnail .caption ol li { padding: 5px }
+/*.div14_box2 .thumbnail .caption h2{  margin-top: -5px; margin-bottom: 33px; color: #fff; font-family: Avenir-Book; font-size: 20px; }*/
+.div14_box2 .thumbnail .caption h2{ margin-top: 17px; width: 170px; margin-left: 75px; color: #fff; font-family: Avenir-Book; line-height: 24px; font-size: 20px; }
+/* Botão Escolher gratuito */
+.botao_modal2{ border: 1px solid #FFFFFF; border-radius: 6px; font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; background: transparent; padding: 5px; margin-top: 0px; }
+/* Box Profissional */
+.div14_box3 .thumbnail{ margin-top: -50px; width:340px; height:470px; position: absolute; left: 50%; margin-left: 120px;/* Rectangle 2 Copy 2: */ background: #4AA4E2; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); border: 1px solid #4AA4E2; }
+.div14_box3 .thumbnail .caption h3{ color: #fff; border-top: 1px solid #fff;  border-bottom: 1px solid #fff;  padding-top: 10px; padding-bottom: 10px; width: 200px; margin-left: 63px; }
+.div14_box3 .thumbnail .caption p{ font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; width: 170px; margin-left: 83px; line-height: 120%; }
+.div14_box3 .thumbnail .caption ol {  list-style-type: disc;  color: #FFFFFF; width:260px; height: 200px; text-align: left; margin-left: 30px; margin-top: 20px; font-family: Avenir-Book; font-size: 16px; color: #FFFFFF; } 
+.div14_box3 .thumbnail .caption ol li { padding: 5px }
+.div14_box3 .thumbnail .caption ul{  margin-top: 20px; margin-bottom: 0px; margin-left: 105px; height: 0px; color: #fff; font-family: Avenir-Book; font-size: 46px; font-weight: bold; }
+.div14_box3 .thumbnail .caption ul li{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+.div14_box3 .thumbnail .caption h2{ color: #fff; font-family: Avenir-Book; font-size: 46px; font-weight: bold; margin-left: 25px; margin-top: 0px; }
+.div14_box3 .thumbnail .caption h2 span{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+/* Botão Escolher Profissional */
+.botao_modal3{ border: 1px solid #FFFFFF; border-radius: 6px; font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; background: transparent; padding: 5px; margin-top: -10px; }
+/*********************
+CONTEÚDO MODAL PREMIUM DESKTOP
+**********************/
+div.conteudo_modal { background: #C957DE; border-radius: 0; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); border: 1px solid #C957DE; width:1100px; height:600px; }
+#myModal { position: absolute; z-index: 9999; width:1100px; height:600px; left: 50%; top:50%; margin-left: -550px; margin-top: -300px; }
+/* Box Produto: */
+.modal_esquerda { width: 360px; height: 500px; float: left; border-right: 1px solid rgba(255,255,255,0.50); border-right-style: dashed; margin-top: 50px;}
+.modal_esquerda h3{ color: #fff; border-top: 1px solid #fff; border-bottom: 1px solid #fff; padding-top: 10px; padding-bottom: 10px; padding-left: 50px; width: 200px; margin-left: 75px; margin-top: 20px; }
+.modal_esquerda p{ font-family: Avenir-Book; font-size: 13px; color: #FFFFFF; width: 180px; margin-left: 85px; text-align: center; }
+.modal_esquerda ol { list-style-type: disc; color: #FFFFFF; width:290px; text-align: left; font-family: Avenir-Book; font-size: 18px; color: #FFFFFF; margin-left: 50px; margin-top: 30px; }
+.modal_esquerda ol li { padding: 5px }
+.modal_esquerda h2{ margin-top: -63px; color: #fff; font-family: Avenir-Book; font-size: 50px; font-weight: bold; margin-left: 20px; }
+.modal_esquerda h2 span{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+.modal_esquerda ul{  margin-top: 50px; margin-bottom: 17px; margin-left: 125px; color: #fff; }
+.modal_esquerda ul li{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+/* Termos e Condições: */
+.modal_direita { width: 350px; height: 595px; float: left; }
+/* Título */
+.modal_direita h3{ font-family: Avenir-Book; font-size: 22px; color: #FFFFFF; text-align: left; margin-top: 40px; width: 300px; margin-left: 60px; }
+/* Texto */
+.modal_direita ol li { padding: 0px; width:280px; } 
+.modal_direita ol { height: 415px; color: #FFFFFF; text-align: left; margin-top: 20px; font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; margin-left: 60px; } 
+/* BOTÃO CONCORDO DESKTOP */
+div.button { border-radius: 6px; color: #FFFFFF; border: 1px solid #FFFFFF; margin-top: 10px; margin-left: -10px; width: 94px; height:28px; cursor: pointer; }
+.button { background: rgba(215,215,215,0.0); border-radius: 8px; color: #FFFFFF; border: 1px solid #FFFFFF; margin-top: 10px; margin-left: -20px; width: 90px; height:28px; cursor: pointer; }
+.button input[type="radio"] { display: none; }
+.button input[type="radio"] + label { padding-left: 7px; padding-top: 5px; font-family: Avenir-Book; font-size: 13px; color: #FFFFFF; cursor: pointer; }
+.button input[type="radio"]:checked + label { background: transparent; width: 90px; height:28px; }
+/* Botão menos */
+#menos_d { content:url(../images/menos.svg); position: absolute; right: 10px; top: 10px; width: 25px; height: 25px; cursor: pointer; }
+p.descricao_contrato { font-family: Avenir-Book; font-size: 13px; color: #FFFFFF; text-align: center; width:590px; margin-left: -255px; margin-top: 0px; }
+.termo_um { float: left; width:20%; }
+.termo_dois { float: right; width:10%; }
+/*********************
+CONTEÚDO MODAL GRATUITO DESKTOP
+**********************/
+div.conteudo_modal2 { background: #F75486; border-radius: 0; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); border: 1px solid #F75486; width:1100px; height:600px; }
+#myModal2 { position: absolute; z-index: 9999; width:1100px; height:600px; left: 50%; top:50%; margin-left: -550px; margin-top: -300px; }
+/* Box Produto: */
+.modal_esquerda2 { width: 360px; height: 500px; float: left; border-right: 1px solid rgba(255,255,255,0.50); border-right-style: dashed; margin-top: 50px;}
+.modal_esquerda2 h3{ color: #fff; border-top: 1px solid #fff; border-bottom: 1px solid #fff; padding-top: 10px; padding-bottom: 10px; padding-left: 55px; width: 200px; margin-left: 75px; margin-top: 20px; }
+.modal_esquerda2 p{ font-family: Avenir-Book; font-size: 13px; color: #FFFFFF; width: 180px; margin-left: 85px; text-align: center; }
+.modal_esquerda2 ol { list-style-type: disc; color: #FFFFFF; width:290px; text-align: left; font-family: Avenir-Book; font-size: 18px; color: #FFFFFF; margin-left: 50px; margin-top: 40px; }
+.modal_esquerda2 ol li { padding: 5px }
+.modal_esquerda2 ul{  margin-top: 50px; margin-bottom: 17px; margin-left: 125px; color: #fff; }
+.modal_esquerda2 ul li{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+.modal_esquerda2 h2{ margin-top: -5px; color: #fff; font-family: Avenir-Book; font-size: 24px; font-weight: bold; text-align: center; }
+.modal_esquerda2 h2 span{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+.modal_esquerda2 h4 { margin-top: 50px; color: #fff; font-family: Avenir-Book; font-size: 24px; text-align: center; }
+/* Termos e Condições: */
+.modal_direita2 { width: 400px; height: 695px; float: left; }
+/* Título */
+.modal_direita2 h3{ font-family: Avenir-Book; font-size: 24px; color: #FFFFFF; text-align: left; margin-top: 50px; width: 300px; margin-left: 50px; }
+/* Texto */
+.modal_direita2 ol li { padding: 0px; width:280px; /*margin-left: -5px;*/ } 
+.modal_direita2 ol { height: 480px; color: #FFFFFF; text-align: left; margin-top: 30px; font-family: Avenir-Book; font-size: 16px; color: #FFFFFF; margin-left: 50px; } 
+/* BOTÃO CONCORDO DESKTOP */
+div.button2 { border-radius: 6px; color: #FFFFFF; border: 1px solid #FFFFFF; margin-top: 10px; margin-left: -10px; width: 94px; height:28px; cursor: pointer; }
+.button2 { background: rgba(215,215,215,0.0); border-radius: 8px; color: #FFFFFF; border: 1px solid #FFFFFF; margin-top: 10px; margin-left: -20px; width: 90px; height:28px; cursor: pointer; }
+.button2 input[type="radio"] { display: none; }
+.button2 input[type="radio"] + label { padding-left: 7px; padding-top: 5px; font-family: Avenir-Book; font-size: 13px; color: #FFFFFF; cursor: pointer; }
+.button2 input[type="radio"]:checked + label { background: transparent; width: 90px; height:28px; }
+/* Botão menos */
+#menos2_d { content:url(../images/menos.svg); position: absolute; right: 10px; top: 10px; width: 25px; height: 25px; cursor: pointer; }
+p.descricao_contrato2 { font-family: Avenir-Book; font-size: 13px; color: #FFFFFF; text-align: center; width:590px; margin-left: -255px; margin-bottom: 0px; }
+.termo_um2 { float: left; width:20%; }
+.termo_dois2 { float: right; width:10%; }
+/*********************
+CONTEÚDO MODAL PROFISSIONAL DESKTOP
+**********************/
+div.conteudo_modal3 { background: #4AA4E2; border-radius: 0; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); border: 1px solid #4AA4E2; width:1100px; height:600px; }
+#myModal3 { position: absolute; z-index: 9999; width:1100px; height:600px; left: 50%; top:50%; margin-left: -550px; margin-top: -300px; }
+/* Box Produto: */
+.modal_esquerda3 { width: 360px; height: 500px; float: left; border-right: 1px solid rgba(255,255,255,0.50); border-right-style: dashed; margin-top: 50px;}
+.modal_esquerda3 h3{ color: #fff; border-top: 1px solid #fff; border-bottom: 1px solid #fff; padding-top: 10px; padding-bottom: 10px; padding-left: 35px; width: 200px; margin-left: 75px; margin-top: 20px; }
+.modal_esquerda3 p{ font-family: Avenir-Book; font-size: 13px; color: #FFFFFF; width: 180px; margin-left: 85px; text-align: center; }
+.modal_esquerda3 ol { list-style-type: disc; color: #FFFFFF; width:290px; text-align: left; font-family: Avenir-Book; font-size: 18px; color: #FFFFFF; margin-left: 50px; margin-top: 30px; }
+.modal_esquerda3 ol li { padding: 5px }
+.modal_esquerda3 h2{ margin-top: -63px; color: #fff; font-family: Avenir-Book; font-size: 50px; font-weight: bold; margin-left: 20px; }
+.modal_esquerda3 h2 span{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+.modal_esquerda3 ul{  margin-top: 50px; margin-bottom: 17px; margin-left: 125px; color: #fff; }
+.modal_esquerda3 ul li{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+/* Termos e Condições: */
+.modal_direita3 { width: 350px; height: 595px; float: left; }
+/* Título */
+.modal_direita3 h3{ font-family: Avenir-Book; font-size: 22px; color: #FFFFFF; text-align: left; margin-top: 40px; width: 300px; margin-left: 60px; }
+/* Texto */
+.modal_direita3 ol li { padding: 0px; width:280px; } 
+.modal_direita3 ol { height: 415px; color: #FFFFFF; text-align: left; margin-top: 20px; font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; margin-left: 60px; } 
+/* BOTÃO CONCORDO DESKTOP */
+div.button3 { border-radius: 6px; color: #FFFFFF; border: 1px solid #FFFFFF; margin-top: 10px; margin-left: -10px; width: 94px; height:28px; cursor: pointer; }
+.button3 { background: rgba(215,215,215,0.0); border-radius: 8px; color: #FFFFFF; border: 1px solid #FFFFFF; margin-top: 10px; margin-left: -20px; width: 90px; height:28px; cursor: pointer; }
+.button3 input[type="radio"] { display: none; }
+.button3 input[type="radio"] + label { padding-left: 7px; padding-top: 5px; font-family: Avenir-Book; font-size: 13px; color: #FFFFFF; cursor: pointer; }
+.button3 input[type="radio"]:checked + label { background: transparent; width: 90px; height:28px; }
+/* Botão menos */
+#menos3_d { content:url(../images/menos.svg); position: absolute; right: 10px; top: 10px; width: 25px; height: 25px; cursor: pointer; }
+p.descricao_contrato3 { font-family: Avenir-Book; font-size: 13px; color: #FFFFFF; text-align: center; width:590px; margin-left: -255px; margin-top: 0px; }
+.termo_um3 { float: left; width:20%; }
+.termo_dois3 { float: right; width:10%; }
+/*FIM MODAIS */
+.versao_m{ display: none; }
+/* Perfis Redes Sociais e Enviar Cadastro */
+button.enviar{
+cursor: pointer;
+}
+.enviar{
+border: 2px solid #ECECEC;
+border-radius: 8px;
+background: transparent;
+font-family: Avenir-Book;
+font-size: 16px;
+color: #FFFFFF;
+line-height: 24px;
+padding: 7px;
+margin-top: 300px;
+margin-left: 120px;
+margin-left: -130px;
+position: absolute;
+text-transform: uppercase;
+}
+}
+/**********************
+Super Large devices Desktops (≥1400px)
+***********************/
+@media only screen and (min-width: 1400px) {
 /*********************
 POSIÇÃO DAS DIVS
 **********************/
@@ -2122,12 +1638,172 @@ POSIÇÃO DAS DIVS
 .div12{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
 .div13{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
 .div14{ position: absolute; top:25%; left:31%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div15{ position: absolute; top:45%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div15{ position: absolute; top:35%; left:27%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
 /* Sexo */
 .radio-label {
 margin-top: -35px;
 }
 .radio-label2 {
 margin-top: 80px;
+}
+/*********************
+MODALIDADES DE CADASTRO
+**********************/
+/* TÍTULO: Selecione uma modalidade para o cadastro*/
+.div14_t h1{ font-family: Avenir-Book; font-size: 32px; color: #FFFFFF; margin-bottom: 16px; width:1100px; position: absolute; text-align: center; left:20%; margin-left: -500px; margin-top: -120px; }
+/* Box Premium */
+.div14_box .thumbnail{ width:350px; height:550px; position: absolute; left: 50%; margin-left: -270px;/* Rectangle 2 Copy: */ background: #C957DE; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); border: 1px solid #C957DE; }
+.div14_box .thumbnail .caption h3{ color: #fff; border-top: 1px solid #fff;  border-bottom: 1px solid #fff;  padding-top: 10px; padding-bottom: 10px; width: 200px; margin-left: 63px; }
+.div14_box .thumbnail .caption p{ font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; width: 200px; margin-left: 63px; line-height: 120%; }
+.div14_box .thumbnail .caption ol {  list-style-type: disc;  color: #FFFFFF; width:290px; height: 230px; text-align: left; margin-left: 30px; margin-top: 25px; font-family: Avenir-Book; font-size: 20px; color: #FFFFFF; } 
+.div14_box .thumbnail .caption ol li { padding: 5px }
+.div14_box .thumbnail .caption ul{  margin-top: 30px; margin-bottom: 0px; margin-left: 110px; height: 0px; color: #fff; font-family: Avenir-Book; font-size: 46px; font-weight: bold; }
+.div14_box .thumbnail .caption ul li{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+.div14_box .thumbnail .caption h2{ color: #fff; font-family: Avenir-Book; font-size: 46px; font-weight: bold; margin-left: 25px; margin-top: 0px; }
+.div14_box .thumbnail .caption h2 span{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+/* Botão Escolher Premium */
+.botao_modal{ border: 1px solid #FFFFFF; border-radius: 6px; font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; background: transparent; padding: 5px; margin-top: 10px; }
+/* Box Gratuito */
+.div14_box2 .thumbnail{ width:350px; height:550px; position: absolute; left: 50%; margin-left: -650px; background: #F75486; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); border: 1px solid #F75486; }
+.div14_box2 .thumbnail .caption h3{ color: #fff; border-top: 1px solid #fff;  border-bottom: 1px solid #fff;  padding-top: 10px; padding-bottom: 10px; width: 200px; margin-left: 60px; }
+.div14_box2 .thumbnail .caption p{ font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; width: 200px; margin-left: 60px; line-height: 120%; }
+.div14_box2 .thumbnail .caption ol {  list-style-type: disc;  color: #FFFFFF; width:290px; height: 230px; text-align: left; margin-left: 30px; margin-top: 25px; font-family: Avenir-Book; font-size: 20px; color: #FFFFFF; } 
+.div14_box2 .thumbnail .caption ol li { padding: 5px }
+/*.div14_box2 .thumbnail .caption h2{  margin-top: -5px; margin-bottom: 33px; color: #fff; font-family: Avenir-Book; font-size: 20px; }*/
+.div14_box2 .thumbnail .caption h2{ margin-top: 33px; width: 170px; margin-left: 75px; color: #fff; font-family: Avenir-Book; line-height: 24px; font-size: 20px; }
+/* Botão Escolher gratuito */
+.botao_modal2{ border: 1px solid #FFFFFF; border-radius: 6px; font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; background: transparent; padding: 5px; margin-top: 10px; }
+/* Box Profissional */
+.div14_box3 .thumbnail{ width:350px; height:550px; position: absolute; left: 50%; margin-left: 110px;/* Rectangle 2 Copy 2: */ background: #4AA4E2; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); border: 1px solid #4AA4E2; }
+.div14_box3 .thumbnail .caption h3{ color: #fff; border-top: 1px solid #fff;  border-bottom: 1px solid #fff;  padding-top: 10px; padding-bottom: 10px; width: 200px; margin-left: 63px; }
+.div14_box3 .thumbnail .caption p{ font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; width: 200px; margin-left: 63px; line-height: 120%; }
+.div14_box3 .thumbnail .caption ol {  list-style-type: disc;  color: #FFFFFF; width:290px; height: 230px; text-align: left; margin-left: 30px; margin-top: 25px; font-family: Avenir-Book; font-size: 20px; color: #FFFFFF; } 
+.div14_box3 .thumbnail .caption ol li { padding: 5px }
+.div14_box3 .thumbnail .caption ul{  margin-top: 30px; margin-bottom: 0px; margin-left: 110px; height: 0px; color: #fff; font-family: Avenir-Book; font-size: 46px; font-weight: bold; }
+.div14_box3 .thumbnail .caption ul li{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+.div14_box3 .thumbnail .caption h2{ color: #fff; font-family: Avenir-Book; font-size: 46px; font-weight: bold; margin-left: 25px; margin-top: 0px; }
+.div14_box3 .thumbnail .caption h2 span{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+/* Botão Escolher Profissional */
+.botao_modal3{ border: 1px solid #FFFFFF; border-radius: 6px; font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; background: transparent; padding: 5px; margin-top: 10px; }
+/*********************
+CONTEÚDO MODAL PREMIUM DESKTOP
+**********************/
+div.conteudo_modal { background: #C957DE; border-radius: 0; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); border: 1px solid #C957DE; width:1200px; height:700px; }
+#myModal{ position: absolute; z-index: 9999; width:1200px; height:700px; left: 50%; top:50%; margin-left: -600px; margin-top: -350px; }
+/* Box Produto: */
+.modal_esquerda { width: 400px; height: 595px; float: left; border-right: 1px solid rgba(255,255,255,0.50); border-right-style: dashed; margin-top: 50px;}
+.modal_esquerda h3{ color: #fff; border-top: 1px solid #fff; border-bottom: 1px solid #fff; padding-top: 10px; padding-bottom: 10px; padding-left: 50px; width: 200px; margin-left: 100px; margin-top: 50px; }
+.modal_esquerda p{ font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; width: 200px; margin-left: 100px; text-align: center; }
+.modal_esquerda ol { list-style-type: disc; color: #FFFFFF; width:300px; text-align: left; font-family: Avenir-Book; font-size: 22px; color: #FFFFFF; margin-left: 60px; margin-top: 45px; }
+.modal_esquerda ol li { padding: 5px }
+.modal_esquerda h2{ margin-top: -58px; color: #fff; font-family: Avenir-Book; font-size: 60px; font-weight: bold; margin-left: 30px;}
+.modal_esquerda h2 span{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+.modal_esquerda ul{  margin-top: 50px; margin-bottom: 5px; margin-left: 145px; color: #fff; font-family: Avenir-Book; font-size: 46px; font-weight: bold; }
+.modal_esquerda ul li{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+/* Termos e Condições: */
+.modal_direita{ width: 400px; height: 695px; float: left; }
+/* Título */
+.modal_direita h3{ font-family: Avenir-Book; font-size: 24px; color: #FFFFFF; text-align: left; margin-top: 50px; width: 300px; margin-left: 80px; }
+/* Texto */
+.modal_direita ol li { padding: 0px; width:280px; /*margin-left: -5px;*/ } 
+.modal_direita ol { height: 480px; color: #FFFFFF; text-align: left; margin-top: 30px; font-family: Avenir-Book; font-size: 16px; color: #FFFFFF; margin-left: 80px; } 
+/* BOTÃO CONCORDO DESKTOP */
+div.button { border-radius: 6px; color: #FFFFFF; border: 1px solid #FFFFFF; margin-top: 10px; margin-left: -15px; width: 100px; height:31px; cursor: pointer; }
+.button{ background: rgba(215,215,215,0.0); border-radius: 8px; color: #FFFFFF; border: 1px solid #FFFFFF; margin-top: 10px; margin-left: -20px; width: 100px; height:31px; cursor: pointer; }
+.button input[type="radio"] { display: none; }
+.button input[type="radio"] + label { padding-left: 7px; padding-top: 5px; font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; cursor: pointer; }
+.button input[type="radio"]:checked + label { background: transparent; width: 100px; height:31px; }
+/* Botão menos */
+#menos_d { content:url(../images/menos.svg); position: absolute; right: 10px; top: 10px; width: 30px; height: 30px; cursor: pointer; }
+p.descricao_contrato { font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; text-align: center; width:640px; margin-left: -280px; margin-top: 0px; }
+.termo_um { float: left; width:20%; }
+.termo_dois { float: right; width:10%; }
+/*********************
+CONTEÚDO MODAL GRATUITO DESKTOP
+**********************/
+div.conteudo_modal2 { background: #F75486; border-radius: 0; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); border: 1px solid #F75486; width:1200px; height:700px; }
+#myModal2 { position: absolute; z-index: 9999; width:1200px; height:700px; left: 50%; top:50%; margin-left: -600px; margin-top: -350px; }
+/* Box Produto: */
+.modal_esquerda2 { width: 400px; height: 595px; float: left; border-right: 1px solid rgba(255,255,255,0.50); border-right-style: dashed; margin-top: 50px;}
+.modal_esquerda2 h3{ color: #fff; border-top: 1px solid #fff; border-bottom: 1px solid #fff; padding-top: 10px; padding-bottom: 10px; padding-left: 50px; width: 200px; margin-left: 100px; margin-top: 50px; }
+.modal_esquerda2 p{ font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; width: 200px; margin-left: 100px; text-align: center; }
+.modal_esquerda2 ol { list-style-type: disc; color: #FFFFFF; width:300px; text-align: left; font-family: Avenir-Book; font-size: 22px; color: #FFFFFF; margin-left: 60px; margin-top: 45px; }
+.modal_esquerda2 ol li { padding: 5px }
+.modal_esquerda2 h2{ margin-top: -5px; color: #fff; font-family: Avenir-Book; font-size: 24px; font-weight: bold; text-align: center; }
+.modal_esquerda2 h2 span{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+.modal_esquerda2 h4 { margin-top: 80px; color: #fff; font-family: Avenir-Book; font-size: 24px; text-align: center; }
+.modal_esquerda2 ul{  margin-top: 50px; margin-bottom: 5px; margin-left: 145px; color: #fff; font-family: Avenir-Book; font-size: 46px; font-weight: bold; }
+.modal_esquerda2 ul li{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+/* Termos e Condições: */
+.modal_direita2 { width: 400px; height: 695px; float: left; }
+/* Título */
+.modal_direita2 h3{ font-family: Avenir-Book; font-size: 24px; color: #FFFFFF; text-align: left; margin-top: 50px; width: 300px; margin-left: 80px; }
+/* Texto */
+.modal_direita2 ol li { padding: 0px; width:280px; /*margin-left: -5px;*/ } 
+.modal_direita2 ol { height: 480px; color: #FFFFFF; text-align: left; margin-top: 30px; font-family: Avenir-Book; font-size: 16px; color: #FFFFFF; margin-left: 80px; } 
+/* BOTÃO CONCORDO DESKTOP */
+div.button2 { border-radius: 6px; color: #FFFFFF; border: 1px solid #FFFFFF; margin-top: 10px; margin-left: -15px; width: 100px; height:31px; cursor: pointer; }
+.button2 { background: rgba(215,215,215,0.0); border-radius: 8px; color: #FFFFFF; border: 1px solid #FFFFFF; margin-top: 10px; margin-left: -20px; width: 100px; height:31px; cursor: pointer; }
+.button2 input[type="radio"] { display: none; }
+.button2 input[type="radio"] + label { padding-left: 7px; padding-top: 5px; font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; cursor: pointer; }
+.button2 input[type="radio"]:checked + label { background: transparent; width: 100px; height:31px; }
+/* Botão menos */
+#menos2_d { content:url(../images/menos.svg); position: absolute; right: 10px; top: 10px; width: 30px; height: 30px; cursor: pointer; }
+p.descricao_contrato2 { font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; text-align: center; width:640px; margin-left: -280px; margin-top: 0px; }
+.termo_um2 { float: left; width:20%; }
+.termo_dois2 { float: right; width:10%; }
+/*********************
+CONTEÚDO MODAL PROFISSIONAL DESKTOP
+**********************/
+div.conteudo_modal3 { background: #4AA4E2; border-radius: 0; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); border: 1px solid #4AA4E2; width:1200px; height:700px; }
+#myModal3 { position: absolute; z-index: 9999; width:1200px; height:700px; left: 50%; top:50%; margin-left: -600px; margin-top: -350px; }
+/* Box Produto: */
+.modal_esquerda3 { width: 400px; height: 595px; float: left; border-right: 1px solid rgba(255,255,255,0.50); border-right-style: dashed; margin-top: 50px;}
+.modal_esquerda3 h3{ color: #fff; border-top: 1px solid #fff; border-bottom: 1px solid #fff; padding-top: 10px; padding-bottom: 10px; padding-left: 50px; width: 200px; margin-left: 100px; margin-top: 50px; }
+.modal_esquerda3 p{ font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; width: 200px; margin-left: 100px; text-align: center; }
+.modal_esquerda3 ol { list-style-type: disc; color: #FFFFFF; width:300px; text-align: left; font-family: Avenir-Book; font-size: 22px; color: #FFFFFF; margin-left: 60px; margin-top: 45px; }
+.modal_esquerda3 ol li { padding: 5px }
+.modal_esquerda3 h2{ margin-top: -58px; color: #fff; font-family: Avenir-Book; font-size: 60px; font-weight: bold; margin-left: 30px;}
+.modal_esquerda3 h2 span{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+.modal_esquerda3 ul{  margin-top: 50px; margin-bottom: 5px; margin-left: 145px; color: #fff; font-family: Avenir-Book; font-size: 46px; font-weight: bold; }
+.modal_esquerda3 ul li{ color: #fff; font-family: Avenir-Book; font-size: 16px; font-weight: bold; }
+/* Termos e Condições: */
+.modal_direita3 { width: 400px; height: 695px; float: left; }
+/* Título */
+.modal_direita3 h3{ font-family: Avenir-Book; font-size: 24px; color: #FFFFFF; text-align: left; margin-top: 50px; width: 300px; margin-left: 80px; }
+/* Texto */
+.modal_direita3 ol li { padding: 0px; width:280px; /*margin-left: -5px;*/ } 
+.modal_direita3 ol { height: 480px; color: #FFFFFF; text-align: left; margin-top: 30px; font-family: Avenir-Book; font-size: 16px; color: #FFFFFF; margin-left: 80px; } 
+/* BOTÃO CONCORDO DESKTOP */
+div.button3 { border-radius: 6px; color: #FFFFFF; border: 1px solid #FFFFFF; margin-top: 10px; margin-left: -15px; width: 100px; height:31px; cursor: pointer; }
+.button3 { background: rgba(215,215,215,0.0); border-radius: 8px; color: #FFFFFF; border: 1px solid #FFFFFF; margin-top: 10px; margin-left: -20px; width: 100px; height:31px; cursor: pointer; }
+.button3 input[type="radio"] { display: none; }
+.button3 input[type="radio"] + label { padding-left: 7px; padding-top: 5px; font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; cursor: pointer; }
+.button3 input[type="radio"]:checked + label { background: transparent; width: 100px; height:31px; }
+/* Botão menos */
+#menos3_d { content:url(../images/menos.svg); position: absolute; right: 10px; top: 10px; width: 30px; height: 30px; cursor: pointer; }
+p.descricao_contrato3 { font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; text-align: center; width:640px; margin-left: -280px; margin-top: 0px; }
+.termo_um3 { float: left; width:20%; }
+.termo_dois3 { float: right; width:10%; }    
+/*FIM MODAIS */
+.versao_m{ display: none; }
+/* Perfis Redes Sociais e Enviar Cadastro */
+button.enviar{
+cursor: pointer;
+}
+.enviar{
+border: 2px solid #ECECEC;
+border-radius: 8px;
+background: transparent;
+font-family: Avenir-Book;
+font-size: 16px;
+color: #FFFFFF;
+line-height: 24px;
+padding: 7px;
+margin-top: 300px;
+margin-left: 120px;
+margin-left: -130px;
+position: absolute;
+text-transform: uppercase;
 }
 }

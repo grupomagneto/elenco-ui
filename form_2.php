@@ -59,7 +59,7 @@
           <h1>Qual o seu cpf?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="text" name="cpf" id="cpf" data-mask="000.000.000-00" onfocus="this.value=''" class="TabOnEnter" tabindex="1" required />
+          <input type="text" name="cpf" id="cpf" data-mask="000.000.000-00" onfocus="this.value=''" min="11" max= "11" class="TabOnEnter" tabindex="1" placeholder="000.000.000-00" required />
           <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
           <img id="seta" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
         </div>
@@ -303,7 +303,7 @@
           <h1>Qual a data de nascimento <span id="txt6"></span>?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="date" name="data" id="data" data-mask="00/00/0000" onfocus="this.value=''" class="TabOnEnter" tabindex="9" autocomplete="off" required placeholder="dd/mm/aaaa" />
+          <input type="date" name="data" id="data" onfocus="this.value=''" class="TabOnEnter" tabindex="9" autocomplete="off" placeholder="dd/mm/aaaa" required  />
         </div>
       </div>
     </div>
@@ -500,7 +500,7 @@
     <p>fotos simples em estúdio apenas para site</p>
     <ol>
       <li>Recebe 80% do cachê líquido em todos os trabalhos</li>
-      <li>Pode se cadastrar em outras agências</li>
+      <li>Pode se cadastrar em outra(s) agência(s)</li>
       <li>Aviso de cachê liberado</li>
       <li>Contrato de 2 anos</li>
     </ol>
@@ -520,7 +520,7 @@
     <ol>
       <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt43"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt44"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li>
       <li>Para isso nos autoriza a utilizar a imagem <span id="txt45"></span> em nossos canais de comunicação;</li>
-      <li>Nós não garantimos conseguir trabalhos para <span id="txt46"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li>
+      <li>Nós não garantimos conseguir trabalhos para <span id="txt46"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li>
       <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
       <li>Você optou pelo Cadastro Premium e por isso a remuneração <span id="txt47"></span> <span class="concat2_texto"></span> sempre será de 80% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li>
       <li>Para efetivar o cadastro <span id="txt58"></span> <span class="concat2_texto"></span> você deverá pagar R$ 299,00 em até 10x sem juros;</li>
@@ -550,7 +550,7 @@
     <ol>
       <li>Recebe 20% do cachê líquido no 1º trabalho, 60% nos demais</li>
       <li>Deve ser agenciado apenas pela Magneto Elenco</li>
-      <li>Contrato de 2 anos</li>
+      <li>Contrato de 1 ano</li>
     </ol>
     <h4>CADASTRO SEM</h4>
     <h2>DESEMBOLSO</h2>
@@ -564,12 +564,12 @@
                 <ol>
                   <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt36"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt37"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e promoção de eventos;</li>
                   <li>Para isso nos autoriza a utilizar a imagem <span id="txt38"></span> em nossos canais de comunicação;</li>
-                  <li>Nós não garantimos conseguir trabalhos para <span id="txt39"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li>
+                  <li>Nós não garantimos conseguir trabalhos para <span id="txt39"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li>
                   <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
                   <li>Você optou pelo Cadastro Gratuito e por isso a remuneração <span id="txt40"></span> <span class="concat2_texto"></span> será de apenas 20% do cachê líquido no primeiro trabalho e de 60% do cachê líquido nos demais trabalhos (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li>
                   <li>Você não precisa desembolsar nada para cadastrar <span id="txt57"></span> <span class="concat2_texto"></span>;</li>
                   <li><span id="txt41"></span> <span class="concat2_texto"></span> não poderá estar inscrit<span id="txt42"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li>
-                  <li>Este contrato valerá por 24 meses;</li>
+                  <li>Este contrato valerá por 12 meses;</li>
                 </ol>
       <p class="acordo_gratuito">Você concorda com os termos do agenciamento?</p>
     <input name="gratuito_m" type="radio" id="gratuito_m" class="sim_acordo_gratuito" />
@@ -593,7 +593,7 @@
     <p>ensaio fotográfico completo para site + entrega em DVD</p>
     <ol>
       <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
-      <li>Pode se cadastrar em outras agências</li>
+      <li>Pode se cadastrar em outra(s) agência(s)</li>
       <li>Aviso de cachê liberado</li>
       <li>Ensaio com 30 fotos tratadas</li>
       <li>Contrato de 3 anos</li>
@@ -613,7 +613,7 @@
     <ol>
       <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt50"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt51"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li>
       <li>Para isso nos autoriza a utilizar a imagem <span id="txt52"></span> em nossos canais de comunicação;</li>
-      <li>Nós não garantimos conseguir trabalhos para <span id="txt53"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li>
+      <li>Nós não garantimos conseguir trabalhos para <span id="txt53"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li>
       <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
       <li>Você optou pelo Cadastro Profissional e por isso a remuneração <span id="txt54"></span> <span class="concat2_texto"></span> sempre será de 90% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li>
       <li>Para efetivar o cadastro você deverá pagar R$ 999,00 em até 10x sem juros;</li>
@@ -639,7 +639,7 @@
       <p>fotos simples em estúdio apenas para site</p>
       <ol>
         <li>Recebe 80% do cachê líquido em todos os trabalhos</li>
-        <li>Pode se cadastrar em outras agências</li>
+        <li>Pode se cadastrar em outra(s) agência(s)</li>
         <li>Aviso de cachê liberado</li>
         <li>Contrato de 2 anos</li>
       </ol>
@@ -658,7 +658,7 @@
             <p>fotos simples em estúdio apenas para site</p>
             <ol>
               <li>Recebe 80% do cachê líquido em todos os trabalhos</li>
-              <li>Pode se cadastrar em outras agências</li>
+              <li>Pode se cadastrar em outra(s) agência(s)</li>
               <li>Aviso de cachê liberado</li>
               <li>Contrato de 2 anos</li>
             </ol>
@@ -670,15 +670,15 @@
           </div>
           <div class="modal_direita">
             <h3>Termos e Condições</h3>
-              <div class="termo_um3">
+              <div class="termo_um">
                 <ol>
                   <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt13"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt14"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li><BR />
                   <li>Para isso nos autoriza a utilizar a imagem <span id="txt15"></span> em nossos canais de comunicação;</li><BR />
-                  <li>Nós não garantimos conseguir trabalhos para <span id="txt16"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li><BR />
+                  <li>Nós não garantimos conseguir trabalhos para <span id="txt16"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li><BR />
                   <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
                 </ol>
               </div>
-              <div class="termo_dois3">
+              <div class="termo_dois">
                 <ol start="5">
                   <li>Você optou pelo Cadastro Premium e por isso a remuneração <span id="txt17"></span> <span class="concat2_texto"></span> sempre será de 80% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li><BR />
                   <li>Para efetivar o cadastro você deverá pagar R$ 299,00 em até 10x sem juros;</li><BR />
@@ -708,10 +708,9 @@
         <ol>
           <li>Recebe 20% do cachê líquido no 1º trabalho, 60% nos demais</li>
           <li>Deve ser agenciado apenas pela Magneto Elenco</li>
-          <li>Contrato de 2 anos</li>
+          <li>Contrato de 1 ano</li>
         </ol>
-        <h4>CADASTRO SEM</h4>
-        <h2>DESEMBOLSO</h2>
+       <h2>CADASTRO SEM DESEMBOLSO</h2>
         <!--modal -->
         <button type="button" class="botao_modal2" data-toggle="modal" data-target="#myModal2">ESCOLHER</button>
         <div class="modal hidden-xs modal2" id="myModal2" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -722,18 +721,18 @@
               <ol>
                 <li>Recebe 20% do cachê líquido no 1º trabalho, 60% nos demais</li>
                 <li>Deve ser agenciado apenas pela Magneto Elenco</li>
-                <li>Contrato de 2 anos</li>
+                <li>Contrato de 1 ano</li>
               </ol>
               <h4>CADASTRO SEM</h4>
               <h2>DESEMBOLSO</h2>
             </div>
-            <div class="modal_direita2">
+            <div class="modal_direita">
               <h3>Termos e Condições</h3>
               <div class="termo_um2">
                 <ol>
                   <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt22"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt23"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e promoção de eventos;</li><BR />
                   <li>Para isso nos autoriza a utilizar a imagem <span id="txt24"></span> em nossos canais de comunicação;</li><BR />
-                  <li>Nós não garantimos conseguir trabalhos para <span id="txt25"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li><BR />
+                  <li>Nós não garantimos conseguir trabalhos para <span id="txt25"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li><BR />
                   <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
                 </ol>
               </div>
@@ -742,7 +741,7 @@
                   <li>Você optou pelo Cadastro Gratuito e por isso a remuneração <span id="txt26"></span> <span class="concat2_texto"></span> será de apenas 20% do cachê líquido no primeiro trabalho e de 60% do cachê líquido nos demais trabalhos (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li><BR />
                   <li>Você não precisa desembolsar nada para cadastrar <span id="txt21"></span> <span class="concat2_texto"></span>;</li><BR />
                   <li><span id="txt27"></span> <span class="concat2_texto"></span> não poderá estar inscrit<span id="txt28"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li><BR />
-                  <li>Nosso contrato valerá por 24 meses;</li>
+                  <li>Nosso contrato valerá por 12 meses;</li>
                 </ol>
                 <p class="descricao_contrato2">Você concorda com os termos do agenciamento?</p>
                 <div class="button2">
@@ -758,7 +757,6 @@
     </div>
   </div>
 </div>
-
 <div class="div14_box3">
   <div class="versao_d">
     <div class="thumbnail">
@@ -803,7 +801,7 @@
                 <ol>
                   <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt29"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt30"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li><BR />
                   <li>Para isso nos autoriza a utilizar a imagem <span id="txt31"></span> em nossos canais de comunicação;</li><BR />
-                  <li>Nós não garantimos conseguir trabalhos para <span id="txt32"></span>, assim como vocês não tem obrigação de aceitar os trabalhos oferecidos;</li><BR />
+                  <li>Nós não garantimos conseguir trabalhos para <span id="txt32"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li><BR />
                   <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
                 </ol>
               </div>
@@ -855,17 +853,17 @@
         </div>
         <div class="input_ig col-lg-offset-3 col-lg-5">
           <img src="images/ig.svg" alt="instagram">
-          <input name="ig" id="ig" type="text" onfocus="this.value=''" class="TabOnEnter ig" tabindex="14" autocomplete="off" />
+          <input name="ig" id="ig" type="text" onfocus="this.value=''" class="TabOnEnter ig" tabindex="14" autocomplete="off" placeholder="http://www.instagram.com/nome.de.usuario" />
           <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
         </div>
         <div class="input_fb col-lg-offset-3 col-lg-5">
           <img src="images/face.svg" alt="facebook">
-          <input name="face" id="face" type="text" onfocus="this.value=''" class="TabOnEnter face" tabindex="15" autocomplete="off" />
+          <input name="face" id="face" type="text" onfocus="this.value=''" class="TabOnEnter face" tabindex="15" autocomplete="off" placeholder="http://www.facebook.com/nome.de.usuario" />
           <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
         </div>
         <div class="input_tt col-lg-offset-3 col-lg-5">
           <img src="images/tt.svg" alt="twitter">
-          <input name="tt" id="tt" type="text" onfocus="this.value=''" class="TabOnEnter tt" tabindex="16" autocomplete="off" />
+          <input name="tt" id="tt" type="text" onfocus="this.value=''" class="TabOnEnter tt" tabindex="16" autocomplete="off" placeholder="http://www.twitter.com/nome.de.usuario" />
           <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
         </div>
       </div>

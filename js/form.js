@@ -6,7 +6,7 @@ var Swiper = new Swiper('.swiper-container', {
         onlyExternal: true,
         nextButton: '.swiper-control.next',
         prevButton: '.swiper-control.prev',
-        speed: 900
+        speed: 200
     });
 
 var colors = new Array(
