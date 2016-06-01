@@ -256,7 +256,7 @@ $(window).load(function() {
 
 $(window).load(function() {
   $('#cpf').keyup(function() {
-    if ($.trim(this.value).length > 2) {
+    if ($.trim(this.value).length > 13) {
       $('#btSend').show();
       $('#seta').show();
     } else {
@@ -319,7 +319,7 @@ $(window).load(function() {
 
 $(window).load(function() {
   $('#celular').keyup(function() {
-    if ($.trim(this.value).length > 7) {
+    if ($.trim(this.value).length > 14) {
       $('#btSend8').show();
       $('#seta8').show();
       $('#btSend10').show();

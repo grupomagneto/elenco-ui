@@ -53,7 +53,7 @@
 <!-- DIV CPF RESPONSÁVEL  -->
 <div id="1" class="swiper-slide gradient">
   <div class="container">
-    <div class="div1">
+    <div class="div1" onload="element.scrollIntoView(alignToTop);">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>Qual o seu cpf?<sup>*</sup></h1>
@@ -61,7 +61,7 @@
         <div class="input_box col-lg-offset-3 col-lg-5">
           <input type="text" name="cpf" id="cpf" data-mask="000.000.000-00" onfocus="this.value=''" min="11" max= "11" class="TabOnEnter" tabindex="1" placeholder="000.000.000-00" required />
           <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
-          <img id="seta" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
+          <img id="seta" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
@@ -86,9 +86,9 @@
           <h1>E o seu nome completo?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="text" name="nome_responsavel" id="nome_responsavel" onfocus="this.value=''"  tabindex="2" autocomplete="off" required />
+          <input type="text" name="nome_responsavel" id="nome_responsavel" onfocus="this.value=''"  tabindex="2" autocomplete="off" required placeholder=" " />
           <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;">
-          <img id="seta2" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
+          <img id="seta2" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
@@ -147,9 +147,9 @@
           <h1 id="proxima">Qual o primeiro nome <span id="txt2"></span>?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="nome_menor" id="nome_menor" type="text" onfocus="this.value=''" tabindex="4"  autocomplete="off" required />
+          <input name="nome_menor" id="nome_menor" type="text" onfocus="this.value=''" tabindex="4"  autocomplete="off" placeholder=" " required />
           <input type="button" class="sendBtn" id="btSend4" name="btSend4" style="display: none;">
-          <img id="seta4" onclick="gravar()" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
+          <img id="seta4" onclick="gravar()" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
@@ -175,9 +175,9 @@
           <h1>E o sobrenome?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="text" name="sobrenome_menor" id="sobrenome_menor" onfocus="this.value=''" class='TabOnEnter' tabindex="5"  autocomplete="off" required />
+          <input type="text" name="sobrenome_menor" id="sobrenome_menor" onfocus="this.value=''" class='TabOnEnter' tabindex="5"  autocomplete="off" placeholder=" " required />
           <input type="button" class="sendBtn5" id="btSend5" name="btSend5" style="display: none;">
-          <img id="seta5" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
+          <img id="seta5" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
@@ -203,8 +203,9 @@
           <img src="images/camera.svg" tabindex="6" class='TabOnEnter' alt="camera">
         </div>
         <div class="div6_box col-lg-offset-3 col-lg-5">
-          <h1>Para começar vamos precisar de duas fotos <span id="txt5"></span> <span class="concat2_texto"></span> feitas hoje.</h1>
-          <img class="swiper-control next" src="images/arrow-right.svg" alt="seta">
+          <h1>Legal! Agora precisamos de duas fotos <span id="txt5"></span> <span class="concat2_texto"></span> feitas hoje.</h1>
+          <button class="swiper-control next TabOnEnter botao" >Continuar</button>
+<!--            <img  src="images/ok_neg.svg" alt="seta">-->
         </div>
       </div>
     </div>
@@ -330,7 +331,7 @@
         <div class="input_box col-lg-offset-3 col-lg-5">
           <input name="celular" id="celular" data-mask="(00) 00000-0000" class="TabOnEnter" tabindex="10" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
           <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;">
-          <img id="seta10" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
+          <img id="seta10" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
@@ -355,9 +356,9 @@
           <h1>E o email?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="email" id="email" class='TabOnEnter' tabindex="11" type="email" onfocus="this.value=''" autocomplete="off" required />
+          <input name="email" id="email" class='TabOnEnter' tabindex="11" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
           <input type="button" class="sendBtn11" id="btSend11" name="btSend11" style="display: none;">
-          <img id="seta11" class="swiper-control next" onclick="focusFoo()" src="images/arrow-right.svg" alt="seta" style="display: none;">
+          <img id="seta11" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
@@ -854,20 +855,20 @@
         <div class="input_ig col-lg-offset-3 col-lg-5">
           <img src="images/ig.svg" alt="instagram">
           <input name="ig" id="ig" type="text" onfocus="this.value=''" class="TabOnEnter ig" tabindex="14" autocomplete="off" placeholder="http://www.instagram.com/nome.de.usuario" />
-          <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
+          <!-- <button ></button><span class="seta"><img src="img/seta_ok_neg.svg" alt="seta"></span> -->
         </div>
         <div class="input_fb col-lg-offset-3 col-lg-5">
           <img src="images/face.svg" alt="facebook">
           <input name="face" id="face" type="text" onfocus="this.value=''" class="TabOnEnter face" tabindex="15" autocomplete="off" placeholder="http://www.facebook.com/nome.de.usuario" />
-          <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
+          <!-- <button ></button><span class="seta"><img src="img/seta_ok_neg.svg" alt="seta"></span> -->
         </div>
         <div class="input_tt col-lg-offset-3 col-lg-5">
           <img src="images/tt.svg" alt="twitter">
           <input name="tt" id="tt" type="text" onfocus="this.value=''" class="TabOnEnter tt" tabindex="16" autocomplete="off" placeholder="http://www.twitter.com/nome.de.usuario" />
-          <!-- <button ></button><span class="seta"><img src="img/seta_ok.svg" alt="seta"></span> -->
+          <!-- <button ></button><span class="seta"><img src="img/seta_ok_neg.svg" alt="seta"></span> -->
         </div>
       </div>
-      <button class="TabOnEnter enviar" tabindex="17" id="cadastra" name="submit" type="submit">Enviar Cadastro</button>
+      <button class="TabOnEnter botao" tabindex="17" id="cadastra" name="submit" type="submit">Enviar Cadastro</button>
       <p id="erro" style="display: none;">Por favor verifique se preencheu todos os campos obrigatórios marcados com <sup>*</sup></p>
     </div>
   </div>

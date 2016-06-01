@@ -413,7 +413,8 @@ left:50%;
 margin-left: -250px;
 }
 .input_box input[type="button"]{
-background: transparent;
+/*background: transparent;*/
+background-color: rgba(215,215,215,0.30);
 border:0px;
 border-radius:8px;
 height:60px;
@@ -424,12 +425,28 @@ margin-left:270px;
 margin-top:0px;
 cursor: pointer;
 }
-img#seta{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; }
-img#seta2{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; }
-img#seta4{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; }
-img#seta5{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; }
-img#seta10{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; }
-img#seta11{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; }
+button.botao{
+cursor: pointer;
+}
+.botao{
+border: 2px solid #ECECEC;
+border-radius: 8px;
+background-color: rgba(215,215,215,0.30);
+font-family: Avenir-Heavy;
+letter-spacing: 1px;
+font-size: 16px;
+color: #FFFFFF;
+line-height: 24px;
+padding: 10px;
+position: absolute;
+text-transform: uppercase;
+}
+img#seta{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; opacity: 0.8; cursor: pointer; }
+img#seta2{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; opacity: 0.8; cursor: pointer; }
+img#seta4{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; opacity: 0.8; cursor: pointer; }
+img#seta5{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; opacity: 0.8; cursor: pointer; }
+img#seta10{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; opacity: 0.8; cursor: pointer; }
+img#seta11{ width:60px; height:60px; position: absolute; left:50%; margin-left:270px; margin-top:10px; opacity: 0.8; cursor: pointer; }
 /*BOXES DAS MÍDIAS SOCIAIS*/
 .input_ig input[type="text"]{
 background:rgba(215,215,215,0.30);
@@ -503,6 +520,7 @@ margin-top: 180px;
 display:inline-block;
 border: 2px solid #ECECEC;
 border-radius: 8px;
+background-color: rgba(215,215,215,0.30);
 width: 500px;
 height: 80px;
 color:#fff;
@@ -513,11 +531,13 @@ position: absolute;
 left:50%;
 margin-left: -250px;
 margin-top: -15px;
+cursor: pointer;
 }
 .radio-label4 {
 display:inline-block;
 border: 2px solid #ECECEC;
 border-radius: 8px;
+background-color: rgba(215,215,215,0.30);
 width: 500px;
 height: 80px;
 color:#fff;
@@ -528,18 +548,20 @@ position: absolute;
 left:50%;
 margin-left: -250px;
 margin-top: 100px;
+cursor: pointer;
 }
+.radio-label3:hover { background-color: rgba(215,215,215,0.60); }
+.radio-label4:hover { background-color: rgba(215,215,215,0.60); }
 .radio_0 + .radio-label3 span { display:inline-block; font-family: Avenir-Book; font-size: 25px; color: #FFFFFF; padding-top: 20px; margin-left: -390px; }
 .radio_0 + .radio-label4 span { display:inline-block; font-family: Avenir-Book; font-size: 25px; color: #FFFFFF; padding-top: 20px; margin-left: -380px; }
-.radio_0:checked + .radio-label3 { background:rgba(215,215,215,0.30); }
-.radio_0:checked + .radio-label4 { background:rgba(215,215,215,0.30); }
-.radio_0:checked + .radio-label3 span { font-family: Avenir-Book; font-size: 25px; color: #FFFFFF; padding-top: 20px; margin-left: -390px; }
-.radio_0:checked + .radio-label4 span { font-family: Avenir-Book; font-size: 25px; color: #FFFFFF; padding-top: 20px; margin-left: -380px; }
+.radio_0:checked + .radio-label3 { background:rgba(215,215,215,0.60); }
+.radio_0:checked + .radio-label4 { background:rgba(215,215,215,0.60); }
 /* Sexo */
 .radio-label {
 display:inline-block;
 border: 2px solid #ECECEC;
 border-radius: 8px;
+background-color: rgba(215,215,215,0.30);
 width: 500px;
 height: 80px;
 color:#fff;
@@ -550,11 +572,13 @@ position: absolute;
 left:50%;
 margin-left: -250px;
 margin-top: -15px;
+cursor: pointer;
 }
 .radio-label2 {
 display:inline-block;
 border: 2px solid #ECECEC;
 border-radius: 8px;
+background-color: rgba(215,215,215,0.30);
 width: 500px;
 height: 80px;
 color:#fff;
@@ -565,13 +589,14 @@ position: absolute;
 left:50%;
 margin-left: -250px;
 margin-top: 100px;
+cursor: pointer;
 }
+.radio-label:hover { background-color: rgba(215,215,215,0.60); }
+.radio-label2:hover { background-color: rgba(215,215,215,0.60); }
 .radio + .radio-label span { display:inline-block; font-family: Avenir-Book; font-size: 25px; color: #FFFFFF; padding-top: 20px; margin-left: -330px; }
 .radio + .radio-label2 span { display:inline-block; font-family: Avenir-Book; font-size: 25px; color: #FFFFFF; padding-top: 20px; margin-left: -320px; }
-.radio:checked + .radio-label { background:rgba(215,215,215,0.30); }
-.radio:checked + .radio-label2 { background:rgba(215,215,215,0.30); }
-.radio:checked + .radio-label span { font-family: Avenir-Book; font-size: 25px; color: #FFFFFF; padding-top: 20px; margin-left: -330px; }
-.radio:checked + .radio-label2 span { font-family: Avenir-Book; font-size: 25px; color: #FFFFFF; padding-top: 20px; margin-left: -320px; }
+.radio:checked + .radio-label { background:rgba(215,215,215,0.60); }
+.radio:checked + .radio-label2 { background:rgba(215,215,215,0.60); }
 /* Para começar, vamos precisar de duas fotos */
 .div6_box h1{
 font-family: Avenir-Book;
@@ -948,12 +973,11 @@ margin: 0px;
 .gradient:after {
 content: '';
 display:block;
-margin-top: 50px;
-margin-left: 150px;
-width: 338px;
-height: 258px;
 background: url("../images/gire.svg") center center;
-background-size: cover;
+width: 100%;
+height: 100%;
+position:static;
+background-repeat: no-repeat;
 z-index: -1;
 }
 .gradient2 {
@@ -965,12 +989,11 @@ margin: 0px;
 .gradient2:after {
 content: '';
 display:block;
-margin-top: 50px;
-margin-left: 150px;
-width: 338px;
-height: 258px;
 background: url("../images/gire.svg") center center;
-background-size: cover;
+width: 100%;
+height: 100%;
+position:static;
+background-repeat: no-repeat;
 z-index: -1;
 }
 .gradient3 {
@@ -982,12 +1005,11 @@ margin: 0px;
 .gradient3:after {
 content: '';
 display:block;
-margin-top: 50px;
-margin-left: 150px;
-width: 338px;
-height: 258px;
 background: url("../images/gire.svg") center center;
-background-size: cover;
+width: 100%;
+height: 100%;
+position:static;
+background-repeat: no-repeat;
 z-index: -1;
 }
 .gradient4 {
@@ -999,12 +1021,11 @@ margin: 0px;
 .gradient4:after {
 content: '';
 display:block;
-margin-top: 50px;
-margin-left: 150px;
-width: 338px;
-height: 258px;
 background: url("../images/gire.svg") center center;
-background-size: cover;
+width: 100%;
+height: 100%;
+position:static;
+background-repeat: no-repeat;
 z-index: -1;
 }
 .div0{display:none;}
@@ -1133,7 +1154,7 @@ SETAS
 .vs-vertical-nav { top: 93%; right: 38%; }
 .vs-vertical-nav1 { top: 93%; right: 45%; }
 .vs-vertical-nav2 { top: 93%; right: 45%; }
-.vs-vertical-nav a.vs-prev { margin-bottom: -40px; margin-left: -50px; }
+.vs-vertical-nav a.vs-prev { margin-bottom: -39px; margin-left: -50px; }
 /**********************
 PROGRESS
 ***********************/
@@ -1157,28 +1178,28 @@ PROGRESS
 POSIÇÃO DAS DIVS
 **********************/
 .div0{ position: absolute; top:50%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div1{ position: absolute; top:50%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div2{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div3{ position: absolute; top:44%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div4{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div5{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div6{ position: absolute; top:35%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div7{ position: absolute; top:8%; left:23%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div8{ position: absolute; top:8%; left:23%; width:50%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div9{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div10{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div11{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div12{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div13{ position: absolute; top:46%; left:23%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div14{ position: absolute; top:25%; left:33%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
-.div15{ position: absolute; top:25%; left:33%; width:50%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div1{ position: absolute; top:50%; left:23%; width:55%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div2{ position: absolute; top:50%; left:23%; width:55%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div3{ position: absolute; top:53%; left:11%; width:80%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div4{ position: absolute; top:50%; left:23%; width:55%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div5{ position: absolute; top:50%; left:23%; width:55%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div6{ position: absolute; top:25%; left:23%; width:55%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div7{ position: absolute; top:8%; left:23%; width:55%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div8{ position: absolute; top:8%; left:23%; width:55%; z-index: 9999; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div9{ position: absolute; top:50%; left:23%; width:55%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div10{ position: absolute; top:50%; left:23%; width:55%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div11{ position: absolute; top:50%; left:23%; width:55%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div12{ position: absolute; top:50%; left:23%; width:55%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div13{ position: absolute; top:50%; left:23%; width:55%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div14{ position: absolute; top:25%; left:33%; width:55%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
+.div15{ position: absolute; top:25%; left:33%; width:55%; text-align: center; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); transform: translateY(-50%); }
 .pergunta h1{
 font-size: 24px;
 line-height: 30px;
 margin-bottom: 16px;
 width:280px;
 margin-left: -140px;
-margin-top: -120px;
+margin-top: -150px;
 }
 .input_box input[type="text"]{
 width:280px;
@@ -1186,18 +1207,24 @@ height:60px;
 font-size:20px; 
 margin-left: -140px;
 margin-top: -60px;
+/*padding-right: 60px;*/
 }
 .input_box input[type="tel"]{
 width:280px;
 height:60px;
 font-size:20px; 
 margin-left: -140px;
+margin-top: -60px;
+/*padding-right: 60px;*/
 }
 .input_box input[type="email"]{
 width:280px;
 height:60px;
 font-size:20px; 
 margin-left: -140px;
+margin-top: -60px;
+text-transform: lowercase;
+/*padding-right: 60px;*/
 }
 .input_box input[type="date"] {
 -webkit-appearance: textfield;
@@ -1207,6 +1234,7 @@ height: 60px;
 padding-left: 10px;
 font-size:20px; 
 margin-left: -140px;
+margin-top: -60px;
 }
 .input_box input[type="button"]{
 background: transparent;
@@ -1216,30 +1244,56 @@ height:60px;
 width:60px;
 position: absolute;
 left:50%;
-margin-left:270px;
+/*margin-left:270px;*/
 margin-top:0px;
 cursor: pointer;
 }
-img#seta{ margin-left:220px; margin-top:0px; }
-img#seta2{ margin-left:220px; margin-top:0px; }
-img#seta4{ margin-left:220px; margin-top:0px; }
-img#seta5{ margin-left:220px; margin-top:0px; }
-img#seta10{ margin-left:220px; margin-top:0px; }
-img#seta11{ margin-left:220px; margin-top:0px; }
+/*Placeholder transparente*/
+::-webkit-input-placeholder {
+background: url("../images/keyboard.svg");
+background-repeat: no-repeat;
+background-size: 60px 30px;
+background-position:200px 0px;
+}
+:-moz-placeholder {
+background: url("../images/keyboard.svg");
+background-repeat: no-repeat;
+background-size: 60px 30px;
+background-position:200px 0px;
+}
+::-moz-placeholder {
+background: url("../images/keyboard.svg");
+background-repeat: no-repeat;
+background-size: 60px 30px;
+background-position:200px 0px;
+}
+:-ms-input-placeholder {
+background: url("../images/keyboard.svg");
+background-repeat: no-repeat;
+background-size: 60px 30px;
+background-position:200px 0px;
+}
+/*Botões de OK*/
+img#seta{ margin-left:90px; margin-top:-50px; width: 40px; height: 40px; }
+img#seta2{ margin-left:90px; margin-top:-50px; width: 40px; height: 40px; }
+img#seta4{ margin-left:90px; margin-top:-50px; width: 40px; height: 40px; }
+img#seta5{ margin-left:90px; margin-top:-50px; width: 40px; height: 40px; }
+img#seta10{ margin-left:90px; margin-top:-50px; width: 40px; height: 40px; }
+img#seta11{ margin-left:90px; margin-top:-50px; width: 40px; height: 40px; }
 /* Responsável Legal */
 .radio-label3 {
 width:280px;
 height: 60px;
 font-size:20px; 
 margin-left: -140px;
-margin-top: -15px;
+margin-top: -60px;
 }
 .radio-label4 {
 width:280px;
 height: 60px;
 font-size:20px; 
 margin-left: -140px;
-margin-top: 80px;
+margin-top: 35px;
 }
 .radio_0 + .radio-label3 span { font-size: 20px; padding-top: 15px; margin-left: -210px; }
 .radio_0 + .radio-label4 span { font-size: 20px; padding-top: 15px; margin-left: -205px; }
@@ -1251,14 +1305,14 @@ width:280px;
 height: 60px;
 font-size:20px; 
 margin-left: -140px;
-margin-top: -35px;
+margin-top: -95px;
 }
 .radio-label2 {
 width:280px;
 height: 60px;
 font-size:20px; 
 margin-left: -140px;
-margin-top: 60px;
+margin-top: -3px;
 }
 .radio + .radio-label span { font-size: 20px; padding-top: 15px; margin-left: -170px; }
 .radio + .radio-label2 span { font-size: 20px; padding-top: 15px; margin-left: -165px; }
@@ -1266,25 +1320,27 @@ margin-top: 60px;
 .radio:checked + .radio-label2 span { font-size: 20px; padding-top: 15px; margin-left: -165px; }
 /* Para começar, vamos precisar de duas fotos */
 .div6_box h1{
-font-size: 32px;
-line-height: 40px;
+font-size: 24px;
+line-height: 36px;
 margin-bottom: 16px;
 width:280px;
 margin-left: -140px;
 margin-top: 20px;
 }
 .div6_box img{
-margin-left: -30px;
-margin-top: 190px;
+width: 40px;
+height: 40px;
+margin-left: -25px;
+margin-top: 180px;
+opacity: 0.8;
 }
 .div6_t img{
-width:162px;
-height:136px;
+width:80px;
+height:68px;
 }
 .versao_m{
 display: block;
 }
-
 /*.div14_t h1{
 /* Escolha uma opção pa: */
 font-family: Avenir-Book;
@@ -2499,23 +2555,10 @@ p.descricao_contrato3 { font-family: Avenir-Book; font-size: 13px; color: #FFFFF
 /*FIM MODAIS */
 .versao_m{ display: none; }
 /* Perfis Redes Sociais e Enviar Cadastro */
-button.enviar{
-cursor: pointer;
-}
-.enviar{
-border: 2px solid #ECECEC;
-border-radius: 8px;
-background: transparent;
-font-family: Avenir-Book;
+.botao{
 font-size: 16px;
-color: #FFFFFF;
-line-height: 24px;
-padding: 7px;
 margin-top: 300px;
-margin-left: 120px;
 margin-left: -130px;
-position: absolute;
-text-transform: uppercase;
 }
 }
 /**********************
@@ -2690,22 +2733,9 @@ p.descricao_contrato3 { font-family: Avenir-Book; font-size: 12px; color: #FFFFF
 /*FIM MODAIS */
 .versao_m{ display: none; }
 /* Perfis Redes Sociais e Enviar Cadastro */
-button.enviar{
-cursor: pointer;
-}
-.enviar{
-border: 2px solid #ECECEC;
-border-radius: 8px;
-background: transparent;
-font-family: Avenir-Book;
+.botao{
 font-size: 16px;
-color: #FFFFFF;
-line-height: 24px;
-padding: 7px;
 margin-top: 300px;
-margin-left: 120px;
 margin-left: -130px;
-position: absolute;
-text-transform: uppercase;
 }
 }
