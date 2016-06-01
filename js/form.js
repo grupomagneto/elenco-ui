@@ -390,6 +390,53 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $("#form2 [name='responsavel']").click(function() {
+    if ($(this).attr("value") == "sim") {   
+     document.getElementById("1").setAttribute("style","display:block"); 
+     document.getElementById("2").setAttribute("style","display:block");
+     document.getElementById("3").setAttribute("style","display:block");
+     document.getElementById("4").setAttribute("style","display:block");
+     document.getElementById("5").setAttribute("style","display:block");
+     document.getElementById("6").setAttribute("style","display:block");
+     document.getElementById("7").setAttribute("style","display:block");
+     document.getElementById("8").setAttribute("style","display:block");
+     document.getElementById("9").setAttribute("style","display:block");
+     document.getElementById("10").setAttribute("style","display:block");
+     document.getElementById("11").setAttribute("style","display:block");
+     document.getElementById("12").setAttribute("style","display:block");
+     document.getElementById("13").setAttribute("style","display:block");
+     document.getElementById("14").setAttribute("style","display:block");
+     document.getElementById("15").setAttribute("style","display:block"); 
+     var delay = 1000;
+      setTimeout(function() {
+         $("#cpf").focus();
+      }, 200);
+     Swiper.update();
+    }
+    if ($(this).attr("value") == "nao") {
+     document.getElementById("1").setAttribute("style","display:none");
+     document.getElementById("2").setAttribute("style","display:none");
+     document.getElementById("3").setAttribute("style","display:none");
+     document.getElementById("4").setAttribute("style","display:none");
+     document.getElementById("5").setAttribute("style","display:none");
+     document.getElementById("6").setAttribute("style","display:none");
+     document.getElementById("7").setAttribute("style","display:none");
+     document.getElementById("8").setAttribute("style","display:none");
+     document.getElementById("9").setAttribute("style","display:none");
+     document.getElementById("10").setAttribute("style","display:none");
+     document.getElementById("11").setAttribute("style","display:none");
+     document.getElementById("12").setAttribute("style","display:none");
+     document.getElementById("13").setAttribute("style","display:none");
+     document.getElementById("14").setAttribute("style","display:none");
+     document.getElementById("15").setAttribute("style","display:none"); 
+       
+        Swiper.update();
+    }
+  });
+});
+
+
 $(function() {
   $("#seta2").click(function() {
     $("#3").focus();

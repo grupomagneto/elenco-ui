@@ -26,14 +26,14 @@
           <h1>Você é legalmente responsável por essa criança/adolescente?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="reponsavel" type="radio" value="nao" id="responsavel_nao" class="radio_0" autofocus />
-          <label id="reponsavel_nao_label" for="reponsavel_sim" class="radio-label4">
+          <input name="responsavel" type="radio" value="nao" id="responsavel_nao" class="radio_0" autofocus />
+          <label id="reponsavel_nao_label" for="responsavel_nao" class="radio-label4">
           <span>Não</span>
           </label>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
           <input name="responsavel" type="radio" value="sim" id="responsavel_sim" class="radio_0" />
-          <label id="reponsavel_sim_label" for="reponsavel_nao" class="radio-label3">
+          <label id="reponsavel_sim_label" for="responsavel_sim" class="radio-label3">
           <span>Sim</span>
           </label>
         </div>
@@ -45,7 +45,7 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav1 none">
-      <li><a href="#" class="vs-next1 swiper-control next focus1"></a></li>
+      <li><a href="#" class="vs-next1 swiper-control next"></a></li>
     </ul>
   </nav>
 </div>
@@ -53,7 +53,7 @@
 <!-- DIV CPF RESPONSÁVEL  -->
 <div id="1" class="swiper-slide gradient">
   <div class="container">
-    <div class="div1" onload="element.scrollIntoView(alignToTop);">
+    <div class="div1">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>Qual o seu cpf?<sup>*</sup></h1>
