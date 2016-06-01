@@ -205,7 +205,7 @@
         <div class="div6_box col-lg-offset-3 col-lg-5">
           <h1>Legal! Agora precisamos de duas fotos <span id="txt5"></span> <span class="concat2_texto"></span> feitas hoje.</h1>
           <button class="swiper-control next TabOnEnter botao" >Continuar</button>
-<!--            <img  src="images/ok_neg.svg" alt="seta">-->
+<!--            <img src="images/ok_neg.svg" alt="seta">-->
         </div>
       </div>
     </div>
