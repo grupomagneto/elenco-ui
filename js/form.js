@@ -228,7 +228,63 @@ setInterval(function() {
   updateGradient('.gradient4');
 }, 10);
 
+//PADDING-RIGHT NA SETA MOBILE
 
+$(document).ready(function(){ 
+
+var ravenous = function() { 
+
+if (window.matchMedia('(max-width: 767px)').matches)
+{
+
+    $('#nome_responsavel').keyup(function() {
+    if ($.trim(this.value).length > 2) {
+      $('#btSend2').show();
+      $('#seta2').show();
+      $('input#nome_responsavel').css('padding-right', '60px');
+    } else {
+      $('#btSend2').hide();
+      $('#seta2').hide();
+    }
+  });
+
+    $(window).load(function() {
+  $('#nome_menor').keyup(function() {
+    if ($.trim(this.value).length > 2) {
+      $('#btSend4').show();
+      $('#seta4').show();
+      $('input#nome_menor').css('padding-right', '60px');
+    } else {
+      $('#btSend4').hide();
+      $('#seta4').hide();
+    }
+  });
+});
+$(window).load(function() {
+  $('#sobrenome_menor').keyup(function() {
+    if ($.trim(this.value).length > 2) {
+      $('#btSend5').show();
+      $('#seta5').show();
+      $('input#sobrenome_menor').css('padding-right', '60px');
+    } else {
+      $('#btSend5').hide();
+      $('#seta5').hide();
+    }
+  });
+});
+
+
+} else {
+
+$('.input_box input[type="text"]').removeAttr('style');
+$('.input_box input[type="tel"]').removeAttr('style');
+$('.input_box input[type="email"]').removeAttr('style');
+ 
+ }
+};
+  $(window).resize(ravenous);
+  ravenous();  
+});
 
 // JAVACRIPT PROGRESS BAR
 $(document).ready(function() {
@@ -241,6 +297,8 @@ $(document).ready(function() {
     $("#progressbar").attr('value', position);
   });
 });
+
+
 
 $(window).load(function() {
   $('#nome').keyup(function() {
@@ -389,53 +447,29 @@ $(document).ready(function() {
     }
   });
 });
+     $( "#senao" ).hide();
+        $( "#responsavel_sim" ).click(function( event ) {
+            event.preventDefault();
+            $( this ).hide();
+                
+        });
 
+//SCRIPT SE FOR RESPONSÁVEL
 $(document).ready(function() {
   $("#form2 [name='responsavel']").click(function() {
     if ($(this).attr("value") == "sim") {   
-     document.getElementById("1").setAttribute("style","display:block"); 
-     document.getElementById("2").setAttribute("style","display:block");
-     document.getElementById("3").setAttribute("style","display:block");
-     document.getElementById("4").setAttribute("style","display:block");
-     document.getElementById("5").setAttribute("style","display:block");
-     document.getElementById("6").setAttribute("style","display:block");
-     document.getElementById("7").setAttribute("style","display:block");
-     document.getElementById("8").setAttribute("style","display:block");
-     document.getElementById("9").setAttribute("style","display:block");
-     document.getElementById("10").setAttribute("style","display:block");
-     document.getElementById("11").setAttribute("style","display:block");
-     document.getElementById("12").setAttribute("style","display:block");
-     document.getElementById("13").setAttribute("style","display:block");
-     document.getElementById("14").setAttribute("style","display:block");
-     document.getElementById("15").setAttribute("style","display:block"); 
-     var delay = 1000;
+      var delay = 1000;
       setTimeout(function() {
          $("#cpf").focus();
       }, 200);
-     Swiper.update();
     }
     if ($(this).attr("value") == "nao") {
-     document.getElementById("1").setAttribute("style","display:none");
-     document.getElementById("2").setAttribute("style","display:none");
-     document.getElementById("3").setAttribute("style","display:none");
-     document.getElementById("4").setAttribute("style","display:none");
-     document.getElementById("5").setAttribute("style","display:none");
-     document.getElementById("6").setAttribute("style","display:none");
-     document.getElementById("7").setAttribute("style","display:none");
-     document.getElementById("8").setAttribute("style","display:none");
-     document.getElementById("9").setAttribute("style","display:none");
-     document.getElementById("10").setAttribute("style","display:none");
-     document.getElementById("11").setAttribute("style","display:none");
-     document.getElementById("12").setAttribute("style","display:none");
-     document.getElementById("13").setAttribute("style","display:none");
-     document.getElementById("14").setAttribute("style","display:none");
-     document.getElementById("15").setAttribute("style","display:none"); 
-       
-        Swiper.update();
+      //LINK CASO NÃO FOR RESPONSÁVEL
+        location="sucesso.php";
     }
   });
 });
-
+//SCRIPT SE FOR RESPONSÁVEL
 
 $(function() {
   $("#seta2").click(function() {
@@ -1073,6 +1107,9 @@ $(".sim_acordo_gratuito3").click(function() {
   $('#gratuito_mobile3').modal('hide');
   $("#ig").focus();
 });
+
+
+
 
 
 

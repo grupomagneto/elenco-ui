@@ -60,9 +60,10 @@ if ( $sexo == "feminino" ) {
             <div class="row">
                 <div class=" divsucesso_box col-lg-offset-3 col-lg-5">
                    
-                 <p>Você já está cadastrad<?php echo $oa; ?> e pront<?php echo $oa; ?> para trabalhar. 
+                 <p>
+                 Você já está cadastrad<?php echo $oa; ?> e pront<?php echo $oa; ?> para trabalhar. 
                  Sempre que precisar de algo, dê um alô em nossa página do <a href="http://www.facebook.com/magnetoelenco">Facebook.</a>
-               </p>
+                </p>
                 </div>
             </div>
 
