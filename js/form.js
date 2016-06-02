@@ -468,104 +468,104 @@ $('form')[0].addEventListener('focus', function(e) {
 }, true);
 
 
-// SETAS AUTOFOCUS INPUT NEXT FORMULÁRIO 2
-$(function() {
-  $(".swiper-control.next.focus1").click(function() {
-        $('#cpf').focus();
-  });
-});
-$(function() {
-  $(".swiper-control.next.focus2").click(function() {
-        $('#nome_responsavel').focus();
-  });
-});
-$(function() {
-  $(".swiper-control.next.focus3").click(function() {
-        $("#form2 [name='sexo']").focus();
-  });
-});
-$(function() {
-  $(".swiper-control.next.focus4").click(function() {
-        $("#form2 [name='nome_menor']").focus();
-  });
-});
-$(function() {
-  $(".swiper-control.next.focus5").click(function() {
-        $("#form2 [name='sobrenome_menor']").focus();
-  });
-});
-$(function() {
-  $(".swiper-control.next.focus6").click(function() {
-      $('[tabindex="6"]').focus();
-  });
-});
-$(function() {
-  $(".swiper-control.next.focus9").click(function() {
-      $("#form2 [name='data']").focus();
-  });
-});
-$(function() {
-  $(".swiper-control.next.focus10").click(function() {
-      $("#form2 [name='celular']").focus();
-  });
-});
-$(function() {
-  $(".swiper-control.next.focus11").click(function() {
-      $("#form2 [name='email']").focus();
-  });
-});
-$(function() {
-  $(".swiper-control.next.focus12").click(function() {
-      $("#form2 [name='raca']").focus();
-  });
-});
-$(function() {
-  $(".swiper-control.next.focus13").click(function() {
-      $("#form2 [name='bairro']").focus();
-  });
-});
-$(function() {
-  $(".swiper-control.next.focus15").click(function() {
-      $("#form2 [name='ig']").focus();
-  });
-});
+// // SETAS AUTOFOCUS INPUT NEXT FORMULÁRIO 2
+// $(function() {
+//   $(".swiper-control.next.focus1").click(function() {
+//         $('#cpf').focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.next.focus2").click(function() {
+//         $('#nome_responsavel').focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.next.focus3").click(function() {
+//         $("#form2 [name='sexo']").focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.next.focus4").click(function() {
+//         $("#form2 [name='nome_menor']").focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.next.focus5").click(function() {
+//         $("#form2 [name='sobrenome_menor']").focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.next.focus6").click(function() {
+//       $('[tabindex="6"]').focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.next.focus9").click(function() {
+//       $("#form2 [name='data']").focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.next.focus10").click(function() {
+//       $("#form2 [name='celular']").focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.next.focus11").click(function() {
+//       $("#form2 [name='email']").focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.next.focus12").click(function() {
+//       $("#form2 [name='raca']").focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.next.focus13").click(function() {
+//       $("#form2 [name='bairro']").focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.next.focus15").click(function() {
+//       $("#form2 [name='ig']").focus();
+//   });
+// });
 
-// SETAS AUTOFOCUS INPUT PREV FORMULÁRIO 2
-$(function() {
-  $(".swiper-control.prev.focus1").click(function() {
-        $('#cpf').focus();
-  });
-});
-$(function() {
-  $(".swiper-control.prev.focus2").click(function() {
-        $('#nome_responsavel').focus();
-  });
-});
-$(function() {
-  $(".swiper-control.prev.focus3").click(function() {
-        $('#nome_menor').focus();
-  });
-});
-$(function() {
-  $(".swiper-control.prev.focus4").click(function() {
-        $('#sobrenome_menor').focus();
-  });
-});
-$(function() {
-  $(".swiper-control.prev.focus7").click(function() {
-      $("#form2 [name='data']").focus();
-  });
-});
-$(function() {
-  $(".swiper-control.prev.focus8").click(function() {
-      $("#form2 [name='celular']").focus();
-  });
-});
-$(function() {
-  $(".swiper-control.prev.focus9").click(function() {
-      $("#form2 [name='email']").focus();
-  });
-});
+// // SETAS AUTOFOCUS INPUT PREV FORMULÁRIO 2
+// $(function() {
+//   $(".swiper-control.prev.focus1").click(function() {
+//         $('#cpf').focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.prev.focus2").click(function() {
+//         $('#nome_responsavel').focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.prev.focus3").click(function() {
+//         $('#nome_menor').focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.prev.focus4").click(function() {
+//         $('#sobrenome_menor').focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.prev.focus7").click(function() {
+//       $("#form2 [name='data']").focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.prev.focus8").click(function() {
+//       $("#form2 [name='celular']").focus();
+//   });
+// });
+// $(function() {
+//   $(".swiper-control.prev.focus9").click(function() {
+//       $("#form2 [name='email']").focus();
+//   });
+// });
 
 function exibeMsg(valor) {
   switch (valor) {
