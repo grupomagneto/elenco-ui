@@ -600,20 +600,20 @@ BOTÕES DOS TIPOS DE CADASTRO
 .div14_t h1{ font-family: Avenir-Book; font-size: 24px; color: #FFFFFF; margin-bottom: 16px; width:280px; position: absolute; text-align: left; left:50%; margin-left: -180px; margin-top: -85px; }
 /* Botão Cadastro Gratuito */
 .div_m2 { background: #F75486; width:280px; height: 100px; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); position: absolute; left:50%; margin-left:-165px; margin-top: 0px; z-index: 20; }
-.div_m2 h3{ font-family: Avenir-Book; font-size: 22px; color: #FFFFFF; border-top: 1px solid #fff; border-bottom: 1px solid #fff; width:160px; position: absolute; left: 50%; margin-left: -95px; margin-top: 17px; padding: 4px; }
-.div_m2 p{ font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; width:150px; position: absolute; left: 50%; margin-left: -90px; margin-top: 55px; }
+.div_m2 h3{ font-family: Avenir-Book; font-size: 22px; color: #FFFFFF; border-top: 1px solid #fff; border-bottom: 1px solid #fff; width:200px; position: absolute; left: 50%; margin-left: -115px; margin-top: 12px; padding: 8px; }
+.div_m2 p{ font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; width:150px; position: absolute; left: 50%; margin-left: -90px; margin-top: 60px; }
 #mais2 { position: absolute; right:10px; top:10px; width: 20px; height: 20px; cursor: pointer; }
 #mais2::before { background-image: url('../images/mais.svg'); background-size: 20px 20px; display: inline-block; width: 20px; height: 20px; content:""; }
 /* Botão Cadastro Premium */
 .div_m { background: #C957DE; width:280px; height: 100px; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); position: absolute; left:50%; margin-left:-165px; margin-top: 100px; z-index: 10; }
-.div_m h3{ font-family: Avenir-Book; font-size: 22px; color: #FFFFFF; border-top: 1px solid #fff; border-bottom: 1px solid #fff; width:160px; position: absolute; left: 50%; margin-left: -95px; margin-top: 17px; padding: 4px; }
-.div_m p{ font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; width:150px; position: absolute; left: 50%; margin-left: -90px; margin-top: 55px; }
+.div_m h3{ font-family: Avenir-Book; font-size: 22px; color: #FFFFFF; border-top: 1px solid #fff; border-bottom: 1px solid #fff; width:200px; position: absolute; left: 50%; margin-left: -115px; margin-top: 12px; padding: 8px; }
+.div_m p{ font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; width:150px; position: absolute; left: 50%; margin-left: -90px; margin-top: 60px; }
 #mais { position: absolute; right:10px; top:10px; width: 20px; height: 20px; cursor: pointer; }
 #mais::before { background-image: url('../images/mais.svg'); background-size: 20px 20px; display: inline-block; width: 20px; height: 20px; content:""; }
 /* Botão Cadastro Profissional */
 .div_m3 { background: #4AA4E2; width:280px; height: 100px; box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.30); position: absolute; left:50%; margin-left:-165px; margin-top: 200px; z-index: 0; }
-.div_m3 h3{ font-family: Avenir-Book; font-size: 22px; color: #FFFFFF; border-top: 1px solid #fff; border-bottom: 1px solid #fff; width:160px; position: absolute; left: 50%; margin-left: -95px; margin-top: 17px; padding: 4px; }
-.div_m3 p{ font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; width:160px; position: absolute; left: 50%; margin-left: -95px; margin-top: 55px; }
+.div_m3 h3{ font-family: Avenir-Book; font-size: 22px; color: #FFFFFF; border-top: 1px solid #fff; border-bottom: 1px solid #fff; width:200px; position: absolute; left: 50%; margin-left: -115px; margin-top: 12px; padding: 8px; }
+.div_m3 p{ font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; width:160px; position: absolute; left: 50%; margin-left: -95px; margin-top: 60px; }
 #mais3 { position: absolute; right:10px; top:10px; width: 20px; height: 20px; cursor: pointer; }
 #mais3::before { background-image: url('../images/mais.svg'); background-size: 20px 20px; display: inline-block; width: 20px; height: 20px; content:""; }
 }
