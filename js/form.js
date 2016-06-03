@@ -744,16 +744,15 @@ function exibeMsg2(valor) {
   }
 }
 
-
 function exibeMsg3(valor) {
   switch (valor) {
     case 'sim':
       document.getElementById('txtpremium1').innerHTML = 'Você não precisa pagar para se agenciar;';
-     document.getElementById("txtpremium2").setAttribute("style","display:none"); 
-     document.getElementById("txtpremium1").setAttribute("style","display:block"); 
+      document.getElementById("txtpremium2").setAttribute("style","display:none"); 
+      document.getElementById("txtpremium1").setAttribute("style","display:block"); 
       document.getElementById('txtpremium1_mobile').innerHTML = 'Você não precisa pagar para se agenciar;';
-     document.getElementById("txtpremium2_mobile").setAttribute("style","display:none"); 
-     document.getElementById("txtpremium1_mobile").setAttribute("style","display:block"); 
+      document.getElementById("txtpremium2_mobile").setAttribute("style","display:none"); 
+      document.getElementById("txtpremium1_mobile").setAttribute("style","display:block"); 
       break;
     case 'nao':
       document.getElementById('txtpremium2').innerHTML = 'Para efetivar seu contrato você deverá pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;';
@@ -1053,15 +1052,15 @@ $(".face").keypress(function(e) {
 
 $('#myModal').appendTo("form");
 $('#myModal1_m').appendTo("form");
-$('#myModal2_m').appendTo("form");
+$('#termo_premium_mobile').appendTo("form");
 
 $('#myModal2').appendTo("form");
 $('#myModal1_m2').appendTo("form");
-$('#gratuito_mobile').appendTo("form");
+$('#termo_gratuito_mobile').appendTo("form");
 
 $('#myModal3').appendTo("form");
 $('#myModal3_m1').appendTo("form");
-$('#gratuito_mobile3').appendTo("form");
+$('#termo_profissional_mobile').appendTo("form");
 
 $(".botao_escolha_m").click(function() {
   $('#myModal1_m').modal('hide');
@@ -1081,8 +1080,8 @@ $(".button").click(function() {
   $("#ig").focus();
 });
 
-$(".sim_acordo").click(function() {
-  $('#myModal2_m').modal('hide');
+$(".sim_acordo_termo_premium_mobile").click(function() {
+  $('#termo_premium_mobile').modal('hide');
   $("#ig").focus();
 });
 
@@ -1092,19 +1091,19 @@ $(".button2").click(function() {
   $("#ig").focus();
 });
 
-$(".sim_acordo_gratuito").click(function() {
-  $('#gratuito_mobile').modal('hide');
+$(".sim_acordo_termo_gratuito_mobile").click(function() {
+  $('#termo_gratuito_mobile').modal('hide');
   $("#ig").focus();
 });
 
 // ESCONDER MODAL PROFISSIONAL
 $(".button3").click(function() {
-  $("#ig").focus();
   $('#myModal3').modal('hide');
+  $("#ig").focus();
 });
 
-$(".sim_acordo_gratuito3").click(function() {
-  $('#gratuito_mobile3').modal('hide');
+$(".sim_acordo_termo_profissional_mobile").click(function() {
+  $('#termo_profissional_mobile').modal('hide');
   $("#ig").focus();
 });
 

@@ -510,13 +510,13 @@
       <li>R$</li>
     </ul>
     <h2 class="text-center">29<span>,90</span></h2>
-    <button type="button" class="botao_escolha_m" data-toggle="modal" data-target="#myModal2_m">ESCOLHER</button>
+    <button type="button" class="botao_escolha_m" data-toggle="modal" data-target="#termo_premium_mobile">ESCOLHER</button>
     <div id="menos" data-dismiss="modal"></div>
   </div>
 </div>
 
-<div class="modal modal2_m" id="myModal2_m" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-content conteudo_modal_m2">
+<div class="modal modal2_m" id="termo_premium_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-content conteudo_termo_premium_mobile">
     <h3>Termos e Condições</h3>
     <ol>
       <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt43"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt44"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li>
@@ -528,9 +528,9 @@
       <li><span id="txt48"></span> <span class="concat2_texto"></span> poderá estar inscrit<span id="txt49"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li>
       <li>Este contrato valerá por 24 meses a partir da data do pagamento;</li>
     </ol>
-    <p class="acordo">Você concorda com os termos do agenciamento?</p>
-    <input name="premium" type="radio" id="premium" class="sim_acordo" />
-    <label for="premium" class="radio_sim_acordo">
+    <p class="acordo_termo_premium_mobile">Você concorda com os termos do agenciamento?</p>
+    <input name="premium_m" type="radio" id="premium_m" class="sim_acordo_termo_premium_mobile" />
+    <label for="premium_m" class="radio_sim_acordo_termo_premium_mobile">
     <span>CONCORDO</span>
     </label> 
     <div id="menos1_1m" data-dismiss="modal"></div>
@@ -553,14 +553,13 @@
       <li>Deve ser agenciado apenas pela Magneto Elenco</li>
       <li>Contrato de 1 ano</li>
     </ol>
-    <h4>CADASTRO SEM</h4>
-    <h2>DESEMBOLSO</h2>
-    <button type="button" class="botao_escolha_m2_2" data-toggle="modal" data-target="#gratuito_mobile">ESCOLHER</button>
+    <h2>CADASTRO SEM DESEMBOLSO</h2>
+    <button type="button" class="botao_escolha_m2_2" data-toggle="modal" data-target="#termo_gratuito_mobile">ESCOLHER</button>
     <div id="menos2_2" data-dismiss="modal"></div>
   </div>
 </div>
-<div class="modal modal_gratuito_mobile" id="gratuito_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-content conteudo_gratuito_mobile">
+<div class="modal modal_termo_gratuito_mobile" id="termo_gratuito_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-content conteudo_termo_gratuito_mobile">
                   <h3>Termos e Condições</h3>
                 <ol>
                   <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt36"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt37"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e promoção de eventos;</li>
@@ -572,9 +571,9 @@
                   <li><span id="txt41"></span> <span class="concat2_texto"></span> não poderá estar inscrit<span id="txt42"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li>
                   <li>Este contrato valerá por 12 meses;</li>
                 </ol>
-      <p class="acordo_gratuito">Você concorda com os termos do agenciamento?</p>
-    <input name="gratuito_m" type="radio" id="gratuito_m" class="sim_acordo_gratuito" />
-    <label for="gratuito_m" class="radio_sim_acordo_gratuito">
+      <p class="acordo_termo_gratuito_mobile">Você concorda com os termos do agenciamento?</p>
+    <input name="gratuito_m" type="radio" id="gratuito_m" class="sim_acordo_termo_gratuito_mobile" />
+    <label for="gratuito_m" class="radio_sim_acordo_termo_gratuito_mobile">
     <span>CONCORDO</span>
     </label> 
     <div id="menos2_2m" data-dismiss="modal"></div>
@@ -604,12 +603,12 @@
       <li>R$</li>
     </ul>
     <h2 class="text-center">99<span>,90</span></h2>
-    <button type="button" class="botao_escolha_m3_m1" data-toggle="modal" data-target="#gratuito_mobile3">ESCOLHER</button>
-    <div id="menos3_m1" data-dismiss="modal"><i class="glyphicon glyphicon-minus-sign"></i></div>
+    <button type="button" class="botao_escolha_m3_m1" data-toggle="modal" data-target="#termo_profissional_mobile">ESCOLHER</button>
+    <div id="menos3_m1" data-dismiss="modal"></div>
   </div>
 </div>
-<div class="modal modal_gratuito_mobile3" id="gratuito_mobile3" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-content conteudo_gratuito_mobile3">
+<div class="modal modal_termo_profissional_mobile" id="termo_profissional_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-content conteudo_termo_profissional_mobile">
     <h3>Termos e Condições</h3>
     <ol>
       <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt50"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt51"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li>
@@ -622,9 +621,9 @@
       <li>Um Ensaio Fotográfico Completo com <span id="txt59"></span> <span class="concat2_texto"></span> será realizado e entregue a você em DVD com mínimo de 30 fotos tratadas em até 30 dias;</li>
       <li>Este contrato valerá por 36 meses a partir da data do pagamento;</li>
     </ol>
-    <p class="acordo_gratuito3">Você concorda com os termos do agenciamento?</p>
-    <input name="profissional_m" type="radio" id="profissional_m" class="sim_acordo_gratuito3" />
-    <label for="profissional_m" class="radio_sim_acordo_gratuito3">
+    <p class="acordo_termo_profissional_mobile">Você concorda com os termos do agenciamento?</p>
+    <input name="profissional_m" type="radio" id="profissional_m" class="sim_acordo_termo_profissional_mobile" />
+    <label for="profissional_m" class="radio_sim_acordo_termo_profissional_mobile">
     <span>CONCORDO</span>
     </label> 
     <div id="menos3_3m" data-dismiss="modal"></div>
@@ -854,17 +853,17 @@
         </div>
         <div class="input_ig col-lg-offset-3 col-lg-5">
           <img src="images/ig.svg" alt="instagram">
-          <input name="ig" id="ig" type="text" onfocus="this.value=''" class="TabOnEnter ig" tabindex="14" autocomplete="off" placeholder="http://www.instagram.com/nome.de.usuario" />
+          <input name="ig" id="ig" type="text" onfocus="this.value=''" class="TabOnEnter ig" tabindex="14" autocomplete="off" placeholder="www.instagram.com/usuario" />
           <!-- <button ></button><span class="seta"><img src="img/seta_ok_neg.svg" alt="seta"></span> -->
         </div>
         <div class="input_fb col-lg-offset-3 col-lg-5">
           <img src="images/face.svg" alt="facebook">
-          <input name="face" id="face" type="text" onfocus="this.value=''" class="TabOnEnter face" tabindex="15" autocomplete="off" placeholder="http://www.facebook.com/nome.de.usuario" />
+          <input name="face" id="face" type="text" onfocus="this.value=''" class="TabOnEnter face" tabindex="15" autocomplete="off" placeholder="www.facebook.com/usuario" />
           <!-- <button ></button><span class="seta"><img src="img/seta_ok_neg.svg" alt="seta"></span> -->
         </div>
         <div class="input_tt col-lg-offset-3 col-lg-5">
           <img src="images/tt.svg" alt="twitter">
-          <input name="tt" id="tt" type="text" onfocus="this.value=''" class="TabOnEnter tt" tabindex="16" autocomplete="off" placeholder="http://www.twitter.com/nome.de.usuario" />
+          <input name="tt" id="tt" type="text" onfocus="this.value=''" class="TabOnEnter tt" tabindex="16" autocomplete="off" placeholder="www.twitter.com/usuario" />
           <!-- <button ></button><span class="seta"><img src="img/seta_ok_neg.svg" alt="seta"></span> -->
         </div>
       </div>
