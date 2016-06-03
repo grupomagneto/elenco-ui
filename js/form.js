@@ -228,6 +228,20 @@ setInterval(function() {
   updateGradient('.gradient4');
 }, 10);
 
+//MASK APENAS PARA SAFARI
+
+var ua = navigator.userAgent.toLowerCase(); 
+if (ua.indexOf('safari') != -1) { 
+  if (ua.indexOf('chrome') > -1) {
+    
+  } else {
+
+    $('#data').mask('99/99/9999');
+  }
+}
+//MASK APENAS PARA SAFARI
+
+
 //PADDING-RIGHT NA SETA MOBILE
 
 $(document).ready(function(){ 
@@ -236,6 +250,20 @@ var ravenous = function() {
 
 if (window.matchMedia('(max-width: 767px)').matches)
 {
+
+$(window).load(function() {
+  $('#cpf').keyup(function() {
+    if ($.trim(this.value).length > 13) {
+      $('#btSend').show();
+      $('#seta').show();
+
+      $('input#cpf').css('padding-right', '60px');
+    } else {
+      $('#btSend').hide();
+      $('#seta').hide();
+    }
+  });
+});
 
     $('#nome_responsavel').keyup(function() {
     if ($.trim(this.value).length > 2) {
@@ -258,8 +286,9 @@ if (window.matchMedia('(max-width: 767px)').matches)
       $('#btSend4').hide();
       $('#seta4').hide();
     }
-  });
-});
+      });
+    });
+
 $(window).load(function() {
   $('#sobrenome_menor').keyup(function() {
     if ($.trim(this.value).length > 2) {
@@ -269,6 +298,44 @@ $(window).load(function() {
     } else {
       $('#btSend5').hide();
       $('#seta5').hide();
+    }
+  });
+
+});
+
+$(window).load(function() {
+  $('#celular').keyup(function() {
+    if ($.trim(this.value).length > 14) {
+      $('#btSend8').show();
+      $('#seta8').show();
+      $('#btSend10').show();
+      $('#seta10').show();
+
+      $('input#celular').css('padding-right', '60px');
+
+    } else {
+      $('#btSend8').hide();
+      $('#seta8').hide();
+      $('#btSend10').hide();
+      $('#seta10').hide();
+    }
+  });
+});
+
+
+$(window).load(function() {
+  $('#email').keyup(function() {
+    if ($.trim(this.value).length > 7) {
+      $('#btSend9').show();
+      $('#seta9').show();
+      $('#btSend11').show();
+      $('#seta11').show();
+
+      $('input#email').css('padding-right', '60px');
+
+    } else {
+      $('#btSend11').hide();
+      $('#seta11').hide();
     }
   });
 });
@@ -284,6 +351,226 @@ $('.input_box input[type="email"]').removeAttr('style');
 };
   $(window).resize(ravenous);
   ravenous();  
+
+});
+//PADDING-RIGHT NA SETA MOBILE
+
+//PADDING-RIGHT NA SETA MOBILE
+
+$(document).ready(function(){ 
+
+var tabletedesktop = function() { 
+
+if (window.matchMedia('(min-width: 767px)').matches)
+{
+// SETAS AUTOFOCUS INPUT NEXT FORMULÁRIO 2
+$(function() {
+  $(".swiper-control.next.focus1").click(function() {
+        $('#cpf').focus();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus2").click(function() {
+        $('#nome_responsavel').focus();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus3").click(function() {
+        $("#form2 [name='sexo']").focus();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus4").click(function() {
+        $("#form2 [name='nome_menor']").focus();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus5").click(function() {
+        $("#form2 [name='sobrenome_menor']").focus();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus6").click(function() {
+      $('[tabindex="6"]').focus();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus9").click(function() {
+      $("#form2 [name='data']").focus();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus10").click(function() {
+      $("#form2 [name='celular']").focus();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus11").click(function() {
+      $("#form2 [name='email']").focus();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus12").click(function() {
+      $("#form2 [name='raca']").focus();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus13").click(function() {
+      $("#form2 [name='bairro']").focus();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus15").click(function() {
+      $("#form2 [name='ig']").focus();
+  });
+});
+
+// SETAS AUTOFOCUS INPUT PREV FORMULÁRIO 2
+$(function() {
+  $(".swiper-control.prev.focus1").click(function() {
+        $('#cpf').focus();
+  });
+});
+$(function() {
+  $(".swiper-control.prev.focus2").click(function() {
+        $('#nome_responsavel').focus();
+  });
+});
+$(function() {
+  $(".swiper-control.prev.focus3").click(function() {
+        $('#nome_menor').focus();
+  });
+});
+$(function() {
+  $(".swiper-control.prev.focus4").click(function() {
+        $('#sobrenome_menor').focus();
+  });
+});
+$(function() {
+  $(".swiper-control.prev.focus7").click(function() {
+      $("#form2 [name='data']").focus();
+  });
+});
+$(function() {
+  $(".swiper-control.prev.focus8").click(function() {
+      $("#form2 [name='celular']").focus();
+  });
+});
+$(function() {
+  $(".swiper-control.prev.focus9").click(function() {
+      $("#form2 [name='email']").focus();
+  });
+});
+
+
+} else {
+
+  // SETAS AUTOFOCUS INPUT NEXT FORMULÁRIO 2
+$(function() {
+  $(".swiper-control.next.focus1").click(function() {
+        $('#cpf').blur();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus2").click(function() {
+        $('#nome_responsavel').blur();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus3").click(function() {
+        $("#form2 [name='sexo']").blur();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus4").click(function() {
+        $("#form2 [name='nome_menor']").blur();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus5").click(function() {
+        $("#form2 [name='sobrenome_menor']").blur();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus6").click(function() {
+      $('[tabindex="6"]').blur();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus9").click(function() {
+      $("#form2 [name='data']").blur();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus10").click(function() {
+      $("#form2 [name='celular']").blur();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus11").click(function() {
+      $("#form2 [name='email']").blur();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus12").click(function() {
+      $("#form2 [name='raca']").blur();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus13").click(function() {
+      $("#form2 [name='bairro']").blur();
+  });
+});
+$(function() {
+  $(".swiper-control.next.focus15").click(function() {
+      $("#form2 [name='ig']").blur();
+  });
+});
+
+// SETAS AUTOFOCUS INPUT PREV FORMULÁRIO 2
+$(function() {
+  $(".swiper-control.prev.focus1").click(function() {
+        $('#cpf').blur();
+  });
+});
+$(function() {
+  $(".swiper-control.prev.focus2").click(function() {
+        $('#nome_responsavel').blur();
+  });
+});
+$(function() {
+  $(".swiper-control.prev.focus3").click(function() {
+        $('#nome_menor').blur();
+  });
+});
+$(function() {
+  $(".swiper-control.prev.focus4").click(function() {
+        $('#sobrenome_menor').blur();
+  });
+});
+$(function() {
+  $(".swiper-control.prev.focus7").click(function() {
+      $("#form2 [name='data']").blur();
+  });
+});
+$(function() {
+  $(".swiper-control.prev.focus8").click(function() {
+      $("#form2 [name='celular']").blur();
+  });
+});
+$(function() {
+  $(".swiper-control.prev.focus9").click(function() {
+      $("#form2 [name='email']").blur();
+  });
+});
+
+
+ 
+ }
+};
+  $(window).resize(tabletedesktop);
+  tabletedesktop();  
+
 });
 
 // JAVACRIPT PROGRESS BAR
