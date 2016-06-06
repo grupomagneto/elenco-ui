@@ -431,6 +431,18 @@ img#seta11{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 .radio + .radio-label2 span{ font-size:20px; padding-top:15px; margin-left:-165px; }
 .radio:checked + .radio-label span{ font-size:20px; padding-top:15px; margin-left:-170px; }
 .radio:checked + .radio-label2 span{ font-size:20px; padding-top:15px; margin-left:-165px; }
+/* Cor da Pele */
+.select4{ font-size:16px; width:280px; height:60px; margin-left:-140px; margin-top:-65px; }
+.select-styled4{ font-size:20px; padding:15px 10px; }
+.select-styled4:after{ top:25px; right:10px; }
+.select-options4{ font-size:14px; line-height:5px; height:120px; margin-top:8px; }
+.select-options4 li{ text-indent:10px; }
+/* Bairro */
+.select5{ font-size:16px; width:280px; height:60px; margin-left:-140px; margin-top:-65px; }
+.select-styled5{ font-size:20px; padding:15px 10px; }
+.select-styled5:after{ top:25px; right:10px; }
+.select-options5{ font-size:14px; line-height:5px; height:120px; margin-top:8px; }
+.select-options5 li{ text-indent:10px; }
 /* Para começar, vamos precisar de duas fotos */
 .div6_box h1{ font-size:24px; line-height:36px; margin-bottom:16px; width:280px; margin-left:-140px; margin-top:20px; }
 .div6_box img{ width:40px; height:40px; margin-left:-25px; margin-top:180px; opacity:0.8; }
@@ -458,23 +470,23 @@ BOTÕES DOS TIPOS DE CADASTRO
 .versao_d{ display:none; }
 .versao_m{ display:block; }
 /* Título Tipos de Cadastro */
-.div14_t h1{ font-family:Avenir-Book; font-size:24px; color:#FFFFFF; margin-bottom:16px; width:280px; position:absolute; text-align:left; left:50%; margin-left:-180px; margin-top:-85px; }
+.div14_t h1{ font-family:Avenir-Book; font-size:24px; color:#FFFFFF; margin-bottom:16px; width:280px; position:absolute; text-align:left; left:50%; margin-left:-160px; margin-top:-70px; }
 /* Botão Cadastro Gratuito */
-.div_m2{ background:#F75486; width:280px; height:100px; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); position:absolute; left:50%; margin-left:-165px; margin-top:0px; z-index:20; }
-.div_m2 h3{ font-family:Avenir-Book; font-size:22px; color:#FFFFFF; border-top:1px solid #fff; border-bottom:1px solid #fff; width:160px; position:absolute; left:50%; margin-left:-95px; margin-top:16px; padding:4px; }
-.div_m2 p{ font-family:Avenir-Book; font-size:12px; color:#FFFFFF; width:150px; position:absolute; left:50%; margin-left:-90px; margin-top:52px; }
+.div_m2{ background:#F75486; width:280px; height:100px; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); position:absolute; left:50%; margin-left:-160px; margin-top:0px; z-index:20; }
+.div_m2 h3{ font-family:Avenir-Book; font-size:22px; color:#FFFFFF; border-top:1px solid #fff; border-bottom:1px solid #fff; width:160px; position:absolute; left:50%; margin-left:-85px; margin-top:16px; padding:4px; }
+.div_m2 p{ font-family:Avenir-Book; font-size:12px; color:#FFFFFF; width:150px; position:absolute; left:50%; margin-left:-80px; margin-top:52px; }
 #mais2{ position:absolute; right:10px; top:10px; width:20px; height:20px; cursor:pointer; }
 #mais2::before{ background-image:url('../images/mais.svg'); background-size:20px 20px; display:inline-block; width:20px; height:20px; content:""; }
 /* Botão Cadastro Premium */
-.div_m{ background:#C957DE; width:280px; height:100px; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); position:absolute; left:50%; margin-left:-165px; margin-top:100px; z-index:10; }
-.div_m h3{ font-family:Avenir-Book; font-size:22px; color:#FFFFFF; border-top:1px solid #fff; border-bottom:1px solid #fff; width:160px; position:absolute; left:50%; margin-left:-95px; margin-top:16px; padding:4px; }
-.div_m p{ font-family:Avenir-Book; font-size:12px; color:#FFFFFF; width:150px; position:absolute; left:50%; margin-left:-90px; margin-top:52px; }
+.div_m{ background:#C957DE; width:280px; height:100px; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); position:absolute; left:50%; margin-left:-160px; margin-top:100px; z-index:10; }
+.div_m h3{ font-family:Avenir-Book; font-size:22px; color:#FFFFFF; border-top:1px solid #fff; border-bottom:1px solid #fff; width:160px; position:absolute; left:50%; margin-left:-85px; margin-top:16px; padding:4px; }
+.div_m p{ font-family:Avenir-Book; font-size:12px; color:#FFFFFF; width:150px; position:absolute; left:50%; margin-left:-80px; margin-top:52px; }
 #mais{ position:absolute; right:10px; top:10px; width:20px; height:20px; cursor:pointer; }
 #mais::before{ background-image:url('../images/mais.svg'); background-size:20px 20px; display:inline-block; width:20px; height:20px; content:""; }
 /* Botão Cadastro Profissional */
-.div_m3{ background:#4AA4E2; width:280px; height:100px; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); position:absolute; left:50%; margin-left:-165px; margin-top:200px; z-index:0; }
-.div_m3 h3{ font-family:Avenir-Book; font-size:22px; color:#FFFFFF; border-top:1px solid #fff; border-bottom:1px solid #fff; width:160px; position:absolute; left:50%; margin-left:-95px; margin-top:16px; padding:4px; }
-.div_m3 p{ font-family:Avenir-Book; font-size:12px; color:#FFFFFF; width:160px; position:absolute; left:50%; margin-left:-95px; margin-top:52px; }
+.div_m3{ background:#4AA4E2; width:280px; height:100px; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); position:absolute; left:50%; margin-left:-160px; margin-top:200px; z-index:0; }
+.div_m3 h3{ font-family:Avenir-Book; font-size:22px; color:#FFFFFF; border-top:1px solid #fff; border-bottom:1px solid #fff; width:160px; position:absolute; left:50%; margin-left:-85px; margin-top:16px; padding:4px; }
+.div_m3 p{ font-family:Avenir-Book; font-size:12px; color:#FFFFFF; width:160px; position:absolute; left:50%; margin-left:-85px; margin-top:52px; }
 #mais3{ position:absolute; right:10px; top:10px; width:20px; height:20px; cursor:pointer; }
 #mais3::before{ background-image:url('../images/mais.svg'); background-size:20px 20px; display:inline-block; width:20px; height:20px; content:""; }
 /*********************
@@ -576,27 +588,28 @@ div.modal-content.conteudo_termo_profissional_mobile p.acordo_termo_profissional
 /*********************
 MÍDIAS SOCIAIS
 **********************/
+.ultimo_p{ width:400px; margin-left:-200px; margin-top:-60px !important;}
 /* BOXES DAS MÍDIAS SOCIAIS */
-.input_ig input[type="text"]{ width:240px; height:60px; font-size:20px; margin-left:-100px; margin-top:-60px; }
-.input_fb input[type="text"]{ width:240px; height:60px; font-size:20px; margin-left:-100px; margin-top:10px; }
-.input_tt input[type="text"]{ width:240px; height:60px; font-size:20px; margin-left:-100px; margin-top:80px; }
-.input_ig img{ position:absolute; left:50%; padding-top:10px; margin-left:-142px; float:left; margin-top:-60px; width:40px; }
-.input_fb img{ position:absolute; left:50%; padding-top:10px; margin-left:-145px; float:left; margin-top:10px; width:40px; }
-.input_tt img{ position:absolute; left:50%; padding-top:10px; margin-left:-143px; float:left; margin-top:80px; width:40px; }
+.input_ig input[type="text"]{ width:220px; height:50px; font-size:20px; margin-left:-130px; margin-top:20px; }
+.input_fb input[type="text"]{ width:220px; height:50px; font-size:20px; margin-left:-130px; margin-top:80px; }
+.input_tt input[type="text"]{ width:220px; height:50px; font-size:20px; margin-left:-130px; margin-top:140px; }
+.input_ig img{ position:absolute; left:50%; padding-top:10px; margin-left:-173px; float:left; margin-top:20px; width:40px; }
+.input_fb img{ position:absolute; left:50%; padding-top:10px; margin-left:-173px; float:left; margin-top:80px; width:40px; }
+.input_tt img{ position:absolute; left:50%; padding-top:10px; margin-left:-173px; float:left; margin-top:140px; width:40px; }
 /* Placeholder transparente */
-#ig::-webkit-input-placeholder{ content:none; font-size:0px; background-position:155px 0px; }
-#ig:-moz-placeholder{ content:none; font-size:0px; background-position:155px 0px; }
-#ig::-moz-placeholder{ content:none; font-size:0px; background-position:155px 0px; }
-#ig:-ms-input-placeholder{ content:none; font-size:0px; background-position:155px 0px; }
-#face::-webkit-input-placeholder{ content:none; font-size:0px; background-position:155px 0px; }
-#face:-moz-placeholder{ content:none; font-size:0px; background-position:155px 0px; }
-#face::-moz-placeholder{ content:none; font-size:0px; background-position:155px 0px; }
-#face:-ms-input-placeholder{ content:none; font-size:0px; background-position:155px 0px; }
-#tt::-webkit-input-placeholder{ content:none; font-size:0px; background-position:155px 0px; }
-#tt:-moz-placeholder{ content:none; font-size:0px; background-position:155px 0px; }
-#tt::-moz-placeholder{ content:none; font-size:0px; background-position:155px 0px; }
-#tt:-ms-input-placeholder{ content:none; font-size:0px; background-position:155px 0px; }
-#cadastra.botao{ width:280px; height:60px; padding:0px; padding-left:0px; margin-top:180px; margin-left:-140px; font-size:20px; }
+#ig::-webkit-input-placeholder{ content:none; font-size:0px; background-position:130px 0px; }
+#ig:-moz-placeholder{ content:none; font-size:0px; background-position:130px 0px; }
+#ig::-moz-placeholder{ content:none; font-size:0px; background-position:130px 0px; }
+#ig:-ms-input-placeholder{ content:none; font-size:0px; background-position:130px 0px; }
+#face::-webkit-input-placeholder{ content:none; font-size:0px; background-position:130px 0px; }
+#face:-moz-placeholder{ content:none; font-size:0px; background-position:130px 0px; }
+#face::-moz-placeholder{ content:none; font-size:0px; background-position:130px 0px; }
+#face:-ms-input-placeholder{ content:none; font-size:0px; background-position:130px 0px; }
+#tt::-webkit-input-placeholder{ content:none; font-size:0px; background-position:130px 0px; }
+#tt:-moz-placeholder{ content:none; font-size:0px; background-position:130px 0px; }
+#tt::-moz-placeholder{ content:none; font-size:0px; background-position:130px 0px; }
+#tt:-ms-input-placeholder{ content:none; font-size:0px; background-position:130px 0px; }
+#cadastra.botao{ width:270px; height:50px; padding:0px; padding-left:0px; margin-top:230px; margin-left:-170px; font-size:18px; }
 }
 /**********************
 Small devices Phones (<768px) Portrait
@@ -926,19 +939,19 @@ BOTÕES DOS TIPOS DE CADASTRO
 /* Escolha uma modalidade para o cadastro */
 .div14_t h1{ font-family:Avenir-Book; font-size:26px; color:#FFFFFF; margin-bottom:16px; width:400px; position:absolute; left:50%; margin-left:-200px; margin-top:-125px; text-align:left; }
 /* Botão Gratuito */
-.div_m2{ background:#F75486; width:600px; height:150px; position:absolute; left:55%; margin-left:-300px; cursor: pointer; }
+.div_m2{ background:#F75486; width:600px; height:150px; position:absolute; left:55%; margin-left:-300px; cursor: pointer; margin-top:-30px; }
 .div_m2 h3{ font-family:Avenir-Book; font-size:32px; color:#FFFFFF; border-top:1px solid #fff; border-bottom:1px solid #fff; width:200px; position:absolute; left:0%; margin-left:200px; margin-top:25px; padding:10px; }
 .div_m2 p{ font-family:Avenir-Book; font-size:15px; color:#FFFFFF; width:200px; position:absolute; left:0%; margin-left:200px; margin-top:90px; padding:0px; }
 #mais2{ position:absolute; right:30px; top:60px; width:30px; height:30px; cursor:pointer; }
 #mais2::before{ background-image:url('../images/mais.svg'); background-size:25px 25px; display:inline-block; width:25px; height:25px; content:""; }
 /* Botão Premium */
-.div_m{ background:#C957DE; width:600px; height:150px; position:absolute; left:55%; margin-left:-300px; margin-top:150px; cursor: pointer; }
+.div_m{ background:#C957DE; width:600px; height:150px; position:absolute; left:55%; margin-left:-300px; margin-top:120px; cursor: pointer; }
 .div_m h3{ font-family:Avenir-Book; font-size:32px; color:#FFFFFF; border-top:1px solid #fff; border-bottom:1px solid #fff; width:200px; position:absolute; left:0%; margin-left:200px; margin-top:25px; padding:10px; }
 .div_m p{ font-family:Avenir-Book; font-size:15px; color:#FFFFFF; width:200px; position:absolute; left:0%; margin-left:200px; margin-top:90px; padding:0px; }
 #mais{ position:absolute; right:30px; top:60px; width:30px; height:30px; cursor:pointer; }
 #mais::before{ background-image:url('../images/mais.svg'); background-size:25px 25px; display:inline-block; width:25px; height:25px; content:""; }
 /* Botão Profissional */
-.div_m3{ background:#4AA4E2; width:600px; height:150px; position:absolute; left:55%; margin-left:-300px; margin-top:300px; cursor: pointer; }
+.div_m3{ background:#4AA4E2; width:600px; height:150px; position:absolute; left:55%; margin-left:-300px; margin-top:270px; cursor: pointer; }
 .div_m3 h3{ font-family:Avenir-Book; font-size:32px; color:#FFFFFF; border-top:1px solid #fff; border-bottom:1px solid #fff; width:200px; position:absolute; left:0%; margin-left:200px; margin-top:25px; padding:10px; }
 .div_m3 p{ font-family:Avenir-Book; font-size:15px; color:#FFFFFF; width:200px; position:absolute; left:0%; margin-left:200px; margin-top:90px; padding:0px; }
 #mais3{ position:absolute; right:30px; top:60px; width:30px; height:30px; cursor:pointer; }
@@ -1042,6 +1055,40 @@ div.modal-content.conteudo_termo_profissional_mobile p.acordo_termo_profissional
 .sim_acordo_termo_profissional_mobile + .radio_sim_acordo_termo_profissional_mobile span{ display:inline-block; font-size:16px; }
 #menos3_3m{ position:absolute; right:15px; top:15px; width:30px; height:30px; cursor:pointer; text-align:center; }
 #menos3_3m::before{ content:''; background-image:url('../images/menos.svg'); background-size:25px 25px; display:inline-block; width:25px; height:25px; }
+/*********************
+CONTEÚDO MODAL PREMIUM DESKTOP
+**********************/
+div.conteudo_modal{ background:#C957DE; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; width:1100px; height:600px; }
+#myModal{ position:absolute; z-index:9999; width:950px; height:600px; left:50%; top:50%; margin-left:-475px; margin-top:-300px; }
+/* Box Produto:*/
+.modal_esquerda{ width:260px; height:500px; float:left; border-right:1px solid rgba(255,255,255,0.50); border-right-style:dashed; margin-top:50px;}
+.modal_esquerda h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:50px; width:180px; margin-left:35px; margin-top:20px; }
+.modal_esquerda p{ font-family:Avenir-Book; font-size:13px; color:#FFFFFF; width:180px; margin-left:40px; text-align:center; }
+.modal_esquerda ol{ list-style-type:disc; color:#FFFFFF; width:200px; text-align:left; font-family:Avenir-Book; font-size:18px; color:#FFFFFF; margin-left:50px; margin-top:30px; }
+.modal_esquerda ol li{ padding:5px }
+.modal_esquerda h2{ margin-top:-63px; color:#fff; font-family:Avenir-Book; font-size:50px; font-weight:bold; margin-left:20px; }
+.modal_esquerda h2 span{ color:#fff; font-family:Avenir-Book; font-size:16px; font-weight:bold; }
+.modal_esquerda ul{ margin-top:50px; margin-bottom:17px; margin-left:70px; color:#fff; }
+.modal_esquerda ul li{ color:#fff; font-family:Avenir-Book; font-size:16px; font-weight:bold; }
+/* Termos e Condições:*/
+.modal_direita{ width:350px; height:595px; float:left; }
+/* Título */
+.modal_direita h3{ font-family:Avenir-Book; font-size:22px; color:#FFFFFF; text-align:left; margin-top:40px; width:300px; margin-left:60px; }
+/* Texto */
+.modal_direita ol li{ padding:0px; width:280px; }
+.modal_direita ol{ height:415px; color:#FFFFFF; text-align:left; margin-top:20px; font-family:Avenir-Book; font-size:14px; color:#FFFFFF; margin-left:60px; }
+/* BOTÃO CONCORDO DESKTOP */
+div.button{ border-radius:6px; color:#FFFFFF; border:1px solid #FFFFFF; margin-top:10px; margin-left:-10px; width:94px; height:28px; cursor:pointer; }
+.button{ background:rgba(215,215,215,0.0); border-radius:8px; color:#FFFFFF; border:1px solid #FFFFFF; margin-top:10px; margin-left:-20px; width:90px; height:28px; cursor:pointer; }
+.button input[type="radio"]{ display:none; }
+.button input[type="radio"] + label{ padding-left:7px; padding-top:5px; font-family:Avenir-Book; font-size:13px; color:#FFFFFF; cursor:pointer; }
+.button input[type="radio"]:checked + label{ background:rgba(255,255,255,0.30); width:90px; height:28px; }
+div.button:hover{ background-color:rgba(215,215,215,0.60); }
+/* Botão menos */
+#menos_d{ content:url(../images/menos.svg); position:absolute; right:160px; top:10px; width:25px; height:25px; cursor:pointer; }
+p.descricao_contrato{ font-family:Avenir-Book; font-size:13px; color:#FFFFFF; text-align:center; width:590px; margin-left:-255px; margin-top:0px; }
+.termo_um{ float:left; width:20%; }
+.termo_dois{ float:right; width:10%; }
 /*********************
 MÍDIAS SOCIAIS
 **********************/
@@ -1152,10 +1199,80 @@ div.button{ border-radius:6px; color:#FFFFFF; border:1px solid #FFFFFF; margin-t
 .button input[type="radio"]:checked + label{ background:rgba(255,255,255,0.30); width:90px; height:28px; }
 div.button:hover{ background-color:rgba(215,215,215,0.60); }
 /* Botão menos */
-#menos_d{ content:url(../images/menos.svg); position:absolute; right:10px; top:10px; width:25px; height:25px; cursor:pointer; }
+#menos_d{ content:url(../images/menos.svg); position:absolute; right:160px; top:10px; width:25px; height:25px; cursor:pointer; }
 p.descricao_contrato{ font-family:Avenir-Book; font-size:13px; color:#FFFFFF; text-align:center; width:590px; margin-left:-255px; margin-top:0px; }
 .termo_um{ float:left; width:20%; }
 .termo_dois{ float:right; width:10%; }
+/*********************
+CONTEÚDO MODAL GRATUITO DESKTOP
+**********************/
+div.conteudo_modal2{ background:#F75486; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #F75486; width:1100px; height:600px; }
+#myModal2{ position:absolute; z-index:9999; width:950px; height:600px; left:50%; top:50%; margin-left:-475px; margin-top:-300px;  }
+/* Box Produto:*/
+.modal_esquerda2{width:260px; height:500px; float:left; border-right:1px solid rgba(255,255,255,0.50); border-right-style:dashed; margin-top:50px;}
+.modal_esquerda2 h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:50px; width:180px; margin-left:35px; margin-top:20px; }
+.modal_esquerda2 p{ font-family:Avenir-Book; font-size:13px; color:#FFFFFF; width:180px; margin-left:40px; text-align:center;}
+.modal_esquerda2 ol{ list-style-type:disc; color:#FFFFFF; width:200px; text-align:left; font-family:Avenir-Book; font-size:18px; color:#FFFFFF; margin-left:50px; margin-top:30px; }
+.modal_esquerda2 ol li{ padding:5px }
+.modal_esquerda2 ul{ margin-top:50px; margin-bottom:17px; margin-left:125px; color:#fff; }
+.modal_esquerda2 ul li{ color:#fff; font-family:Avenir-Book; font-size:16px; font-weight:bold; }
+.modal_esquerda2 h2{ margin-top:-5px; margin-left:-10px; color:#fff; font-family:Avenir-Book; font-size:24px; font-weight:bold; text-align:center; }
+.modal_esquerda2 h2 span{ color:#fff; font-family:Avenir-Book; font-size:16px; font-weight:bold; }
+.modal_esquerda2 h4{ margin-top:50px; margin-left:-10px; color:#fff; font-family:Avenir-Book; font-size:24px; text-align:center; }
+/* Termos e Condições:*/
+.modal_direita2{ width:350px; height:695px; float:left; }
+/* Título */
+.modal_direita2 h3{ font-family:Avenir-Book; font-size:24px; color:#FFFFFF; text-align:left; margin-top:50px; width:300px; margin-left:50px; }
+/* Texto */
+.modal_direita2 ol li{ padding:0px; width:280px; /*margin-left:-5px;*/ }
+.modal_direita2 ol{ height:480px; color:#FFFFFF; text-align:left; margin-top:30px; font-family:Avenir-Book; font-size:16px; color:#FFFFFF; margin-left:50px; }
+/* BOTÃO CONCORDO DESKTOP */
+div.button2{ border-radius:6px; color:#FFFFFF; border:1px solid #FFFFFF; margin-top:10px; margin-left:-10px; width:94px; height:28px; cursor:pointer; }
+.button2{ background:rgba(215,215,215,0.3); border-radius:6px; color:#FFFFFF; border:1px solid #FFFFFF; margin-top:10px; margin-left:-20px; width:94px; height:28px; cursor:pointer; }
+.button2 input[type="radio"]{ display:none; }
+.button2 input[type="radio"] + label{ padding-left:7px; padding-top:5px; font-family:Avenir-Book; font-size:13px; color:#FFFFFF; cursor:pointer; }
+.button2 input[type="radio"]:checked + label{ background:rgba(255,255,255,0.6); width:94px; height:28px; border-radius:6px; }
+.button2:hover{ background-color:rgba(215,215,215,0.6); width:94px; height:28px; border-radius:6px; }
+/* Botão menos */
+#menos2_d{ content:url(../images/menos.svg); position:absolute; right:160px; top:10px; width:25px; height:25px; cursor:pointer; }
+p.descricao_contrato2{ font-family:Avenir-Book; font-size:13px; color:#FFFFFF; text-align:center; width:590px; margin-left:-255px; margin-bottom:0px; }
+.termo_um2{ float:left; width:20%; }
+.termo_dois2{ float:right; width:10%; }
+/*********************
+CONTEÚDO MODAL PROFISSIONAL DESKTOP
+**********************/
+div.conteudo_modal3{ background:#4AA4E2; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #4AA4E2; width:1100px; height:600px; }
+#myModal3{ position:absolute; z-index:9999; width:950px; height:600px; left:50%; top:50%; margin-left:-475px; margin-top:-300px;   }
+/* Box Produto:*/
+.modal_esquerda3{ width:260px; height:500px; float:left; border-right:1px solid rgba(255,255,255,0.50); border-right-style:dashed; margin-top:10px;}
+.modal_esquerda3 h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:30px; width:180px; margin-left:35px; margin-top:20px;  }
+.modal_esquerda3 p{ font-family:Avenir-Book; font-size:13px; color:#FFFFFF; width:180px; margin-left:40px; text-align:center; }
+.modal_esquerda3 ol{ list-style-type:disc; color:#FFFFFF; width:200px; text-align:left; font-family:Avenir-Book; font-size:18px; color:#FFFFFF; margin-left:50px; margin-top:30px; }
+.modal_esquerda3 ol li{ padding:5px }
+.modal_esquerda3 h2{ margin-top:-63px; color:#fff; font-family:Avenir-Book; font-size:50px; font-weight:bold; margin-left:20px; }
+.modal_esquerda3 h2 span{ color:#fff; font-family:Avenir-Book; font-size:16px; font-weight:bold; }
+.modal_esquerda3 ul{ margin-top:50px; margin-bottom:17px; margin-left:70px; color:#fff; }
+.modal_esquerda3 ul li{ color:#fff; font-family:Avenir-Book; font-size:16px; font-weight:bold; }
+/* Termos e Condições:*/
+.modal_direita3{ width:350px; height:595px; float:left; }
+/* Título */
+.modal_direita3 h3{ font-family:Avenir-Book; font-size:22px; color:#FFFFFF; text-align:left; margin-top:40px; width:300px; margin-left:60px; }
+/* Texto */
+.modal_direita3 ol li{ padding:0px; width:280px; }
+.modal_direita3 ol{ height:415px; color:#FFFFFF; text-align:left; margin-top:20px; font-family:Avenir-Book; font-size:14px; color:#FFFFFF; margin-left:60px; }
+/* BOTÃO CONCORDO DESKTOP */
+div.button3{ border-radius:6px; color:#FFFFFF; border:1px solid #FFFFFF; margin-top:10px; margin-left:-10px; width:94px; height:28px; cursor:pointer; }
+.button3{ background:rgba(215,215,215,0.3); border-radius:6px; color:#FFFFFF; border:1px solid #FFFFFF; margin-top:10px; margin-left:-20px; width:94px; height:28px; cursor:pointer; }
+.button3 input[type="radio"]{ display:none; }
+.button3 input[type="radio"] + label{ padding-left:7px; padding-top:5px; font-family:Avenir-Book; font-size:13px; color:#FFFFFF; cursor:pointer; }
+.button3 input[type="radio"]:checked + label{ background:rgba(255,255,255,0.6); width:94px; height:28px; border-radius:6px; }
+.button3:hover{ background-color:rgba(215,215,215,0.6); width:94px; height:28px; border-radius:6px; }
+/* Botão menos */
+#menos3_d{ content:url(../images/menos.svg); position:absolute; right:160px; top:10px; width:25px; height:25px; cursor:pointer; }
+p.descricao_contrato3{ font-family:Avenir-Book; font-size:13px; color:#FFFFFF; text-align:center; width:590px; margin-left:-255px; margin-top:0px; }
+.termo_um3{ float:left; width:20%; }
+.termo_dois3{ float:right; width:10%; }
+/*FIM MODAIS */
 
 }
 /**********************
