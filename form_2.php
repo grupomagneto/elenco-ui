@@ -45,7 +45,7 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav1 none">
-      <li><a href="#" class="vs-next1 swiper-control next"></a></li>
+      <li><a href="#" class="vs-next1 swiper-control next focus1"></a></li>
     </ul>
   </nav>
 </div>

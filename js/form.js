@@ -257,7 +257,7 @@ $(window).load(function() {
       $('#btSend').show();
       $('#seta').show();
 
-      $('input#cpf').css('padding-right', '60px');
+      $('input#cpf').css('padding-right', '55px');
     } else {
       $('#btSend').hide();
       $('#seta').hide();
@@ -269,7 +269,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 2) {
       $('#btSend2').show();
       $('#seta2').show();
-      $('input#nome_responsavel').css('padding-right', '60px');
+      $('input#nome_responsavel').css('padding-right', '55px');
     } else {
       $('#btSend2').hide();
       $('#seta2').hide();
@@ -281,7 +281,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 2) {
       $('#btSend4').show();
       $('#seta4').show();
-      $('input#nome_menor').css('padding-right', '60px');
+      $('input#nome_menor').css('padding-right', '55px');
     } else {
       $('#btSend4').hide();
       $('#seta4').hide();
@@ -294,7 +294,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 2) {
       $('#btSend5').show();
       $('#seta5').show();
-      $('input#sobrenome_menor').css('padding-right', '60px');
+      $('input#sobrenome_menor').css('padding-right', '55px');
     } else {
       $('#btSend5').hide();
       $('#seta5').hide();
@@ -311,7 +311,7 @@ $(window).load(function() {
       $('#btSend10').show();
       $('#seta10').show();
 
-      $('input#celular').css('padding-right', '60px');
+      $('input#celular').css('padding-right', '55px');
 
     } else {
       $('#btSend8').hide();
@@ -331,7 +331,7 @@ $(window).load(function() {
       $('#btSend11').show();
       $('#seta11').show();
 
-      $('input#email').css('padding-right', '60px');
+      $('input#email').css('padding-right', '55px');
 
     } else {
       $('#btSend11').hide();
@@ -361,7 +361,7 @@ $(document).ready(function(){
 
 var tabletedesktop = function() { 
 
-if (window.matchMedia('(min-width: 767px)').matches)
+if (window.matchMedia('(min-width: 1199px)').matches)
 {
 // SETAS AUTOFOCUS INPUT NEXT FORMULÁRIO 2
 $(function() {
