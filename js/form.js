@@ -230,6 +230,14 @@ setInterval(function() {
 
 //MASK APENAS PARA SAFARI
 
+$(document).ready(function(){
+  
+var mascara = function() { 
+
+
+if (window.matchMedia('(min-width: 1199px)').matches)
+{
+  
 var ua = navigator.userAgent.toLowerCase(); 
 if (ua.indexOf('safari') != -1) { 
   if (ua.indexOf('chrome') > -1) {
@@ -239,8 +247,21 @@ if (ua.indexOf('safari') != -1) {
     $('#data').mask('99/99/9999');
   }
 }
-//MASK APENAS PARA SAFARI
+  
+} else {
 
+  
+ $('#data').unmask();
+}
+};
+ 
+  $(window).resize(mascara);
+ 
+  mascara();  
+});
+
+
+//MASK APENAS PARA SAFARI
 
 //PADDING-RIGHT NA SETA MOBILE
 
@@ -354,6 +375,7 @@ $('.input_box input[type="email"]').removeAttr('style');
 
 });
 //PADDING-RIGHT NA SETA MOBILE
+
 
 //PADDING-RIGHT NA SETA MOBILE
 
