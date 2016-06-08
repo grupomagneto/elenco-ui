@@ -3,8 +3,7 @@ form1 e form2.php
 ***********************/
 *{ margin:0; padding:0; }
 *:focus{ outline:none; }
-@font-face { font-family:Avenir-Book; src: url('../fonts/AvenirLTStd-Light.eot'); /* IE9 Compat Modes */ src: url('../fonts/AvenirLTStd-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/AvenirLTStd-Light.woff') format('woff'), /* Modern Browsers */ url('../fonts/AvenirLTStd-Light.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/AvenirLTStd-Light.svg#a3894d49b0c62da6d619d8a85ab36753') format('svg'); /* Legacy iOS */ font-style: normal; font-weight: 600; }
-@font-face { font-family:Avenir-Heavy; src: url('../fonts/AvenirLTStd-Black.eot'); /* IE9 Compat Modes */ src: url('../fonts/AvenirLTStd-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/AvenirLTStd-Black.woff') format('woff'), /* Modern Browsers */ url('../fonts/AvenirLTStd-Black.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/AvenirLTStd-Black.svg#2d55e36446b90be6f85f84e74f83cb6c') format('svg'); /* Legacy iOS */ font-style: normal; font-weight: 400; }
+@font-face { font-family: Avenir-Book; font-style: normal; font-weight:600; src: local('../fonts/Avenir-Light.woff'), url('../fonts/Avenir-Light.woff') format('woff'); }
 html, body{ position:relative; height:100%; width:100%; font-weight:600; }
 body{ margin:0; padding:0; }
 form{ height:100%; }
