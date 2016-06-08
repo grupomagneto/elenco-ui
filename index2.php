@@ -19,10 +19,7 @@
         <div class="primeiro col-md-12 col-sm-12 col-xs-12">
             <a href="form_1.php" class="btn">
                 Eu mesmo(a), sou maior de idade
-            </a>    
-            <span>
-                <img src="images/arrow-right.svg" alt="iniciar seta">
-            </span>   
+            </a> 
         </div>
     </div>
     <div class="row">
@@ -30,13 +27,10 @@
             <a href="form_2.php" class="btn">
                 Uma criança ou adolescente
             </a>    
-            <span>
-                <img src="images/arrow-right.svg" alt="iniciar seta">
-            </span>  
         </div>
     </div>
 </div>
-</div>  
+</div>
     <script src="js/jquery-1.12.1.min.js"></script>
     <script src="js/swiper.jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

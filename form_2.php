@@ -518,16 +518,22 @@
 <div class="modal modal2_m" id="termo_premium_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_termo_premium_mobile">
     <h3>Termos e Condições</h3>
+    <div class="termo_um_premium_desktop">
     <ol>
       <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt43"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt44"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li>
       <li>Para isso nos autoriza a utilizar a imagem <span id="txt45"></span> em nossos canais de comunicação;</li>
       <li>Nós não garantimos conseguir trabalhos para <span id="txt46"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li>
       <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
+    </ol>
+    </div>
+    <div class="termo_dois_premium_desktop">
+    <ol start="5">
       <li>Você optou pelo Cadastro Premium e por isso a remuneração <span id="txt47"></span> <span class="concat2_texto"></span> sempre será de 80% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li>
       <li>Para efetivar o cadastro <span id="txt58"></span> <span class="concat2_texto"></span> você deverá pagar R$ 299,00 em até 10x sem juros;</li>
       <li><span id="txt48"></span> <span class="concat2_texto"></span> poderá estar inscrit<span id="txt49"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li>
       <li>Este contrato valerá por 24 meses a partir da data do pagamento;</li>
     </ol>
+    </div>
     <p class="acordo_termo_premium_mobile">Você concorda com os termos do agenciamento?</p>
     <input name="premium_m" type="radio" id="premium_m" class="sim_acordo_termo_premium_mobile" />
     <label for="premium_m" class="radio_sim_acordo_termo_premium_mobile">
@@ -561,16 +567,22 @@
 <div class="modal modal_termo_gratuito_mobile" id="termo_gratuito_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_termo_gratuito_mobile">
                   <h3>Termos e Condições</h3>
+                <div class="termo_um_gratuito_desktop">
                 <ol>
                   <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt36"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt37"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e promoção de eventos;</li>
                   <li>Para isso nos autoriza a utilizar a imagem <span id="txt38"></span> em nossos canais de comunicação;</li>
                   <li>Nós não garantimos conseguir trabalhos para <span id="txt39"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li>
                   <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
+                </ol>
+                </div>
+                <div class="termo_dois_gratuito_desktop">
+                <ol start="5">
                   <li>Você optou pelo Cadastro Gratuito e por isso a remuneração <span id="txt40"></span> <span class="concat2_texto"></span> será de apenas 20% do cachê líquido no primeiro trabalho e de 60% do cachê líquido nos demais trabalhos (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li>
                   <li>Você não precisa desembolsar nada para cadastrar <span id="txt57"></span> <span class="concat2_texto"></span>;</li>
                   <li><span id="txt41"></span> <span class="concat2_texto"></span> não poderá estar inscrit<span id="txt42"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li>
                   <li>Este contrato valerá por 12 meses;</li>
                 </ol>
+                </div>
       <p class="acordo_termo_gratuito_mobile">Você concorda com os termos do agenciamento?</p>
     <input name="gratuito_m" type="radio" id="gratuito_m" class="sim_acordo_termo_gratuito_mobile" />
     <label for="gratuito_m" class="radio_sim_acordo_termo_gratuito_mobile">
@@ -610,17 +622,23 @@
 <div class="modal modal_termo_profissional_mobile" id="termo_profissional_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_termo_profissional_mobile">
     <h3>Termos e Condições</h3>
+    <div class="termo_um_profissional_desktop">
     <ol>
       <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt50"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt51"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li>
       <li>Para isso nos autoriza a utilizar a imagem <span id="txt52"></span> em nossos canais de comunicação;</li>
       <li>Nós não garantimos conseguir trabalhos para <span id="txt53"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li>
       <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
+    </ol>
+    </div>
+    <div class="termo_dois_profissional_desktop">
+    <ol start="5">
       <li>Você optou pelo Cadastro Profissional e por isso a remuneração <span id="txt54"></span> <span class="concat2_texto"></span> sempre será de 90% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li>
       <li>Para efetivar o cadastro você deverá pagar R$ 999,00 em até 10x sem juros;</li>
       <li><span id="txt55"></span> <span class="concat2_texto"></span> poderá estar inscrit<span id="txt56"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li>
       <li>Um Ensaio Fotográfico Completo com <span id="txt59"></span> <span class="concat2_texto"></span> será realizado e entregue a você em DVD com mínimo de 30 fotos tratadas em até 30 dias;</li>
       <li>Este contrato valerá por 36 meses a partir da data do pagamento;</li>
     </ol>
+    </div>
     <p class="acordo_termo_profissional_mobile">Você concorda com os termos do agenciamento?</p>
     <input name="profissional_m" type="radio" id="profissional_m" class="sim_acordo_termo_profissional_mobile" />
     <label for="profissional_m" class="radio_sim_acordo_termo_profissional_mobile">
@@ -896,6 +914,5 @@
   <script src="js/form.js"></script>
   <script src="js/select.js"></script>
   <script src="js/jquery-ui.min.js"></script>
-
 </body>
 </html>
