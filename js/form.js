@@ -263,6 +263,14 @@ if (ua.indexOf('safari') != -1) {
 
 //MASK APENAS PARA SAFARI
 
+//LANDSCAPE ANDROID
+var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1; //&& ua.indexOf("mobile");
+if(isAndroid) {
+    document.write('<meta name="viewport" content="width=device-width,height='+window.innerHeight+', initial-scale=1.0">');
+}
+//LANDSCAPE ANDROID
+
+
 //PADDING-RIGHT NA SETA MOBILE
 
 $(document).ready(function(){ 
