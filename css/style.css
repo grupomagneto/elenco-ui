@@ -3,12 +3,16 @@
 margin: 0;
 padding: 0;
 }
-@font-face{ font-family:Avenir-Book; font-weight:normal; src:local('../fonts/AvenirLTStd-Light.woff'), url('../fonts/AvenirLTStd-Light.woff') format('woff'); }
+@font-face {
+font-family: Avenir-Light;
+font-style: normal;
+font-weight: normal;
+src: local('../fonts/Avenir-Light.woff'), url('../fonts/Avenir-Light.woff') format('woff');
+}
 html, body {
 position: relative;
 height: 100%;
 width: 100%;
-font-weight:600;
 }
 body {
 margin: 0;
@@ -17,22 +21,21 @@ padding: 0;
 =======
 *{ margin:0; padding:0; }
 *:focus{ outline:none; }
-@font-face { font-family:Avenir-Book; src: url('../fonts/AvenirLTStd-Light.eot'); src: url('../fonts/AvenirLTStd-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/AvenirLTStd-Light.woff') format('woff'), url('../fonts/AvenirLTStd-Light.ttf') format('truetype'), url('../fonts/AvenirLTStd-Light.svg#a3894d49b0c62da6d619d8a85ab36753') format('svg'); font-style: normal; font-weight: 600; }
-html, body{ position:relative; height:100%; width:100%; font-weight: 600; }
+html, body{ position:relative; height:100%; width:100%; }
 body{ margin:0; padding:0; }
 #gradient5 { display: block; width: 100%; padding: 0px; margin: 0px; }
 .wrapper_segunda{ margin-top: 10px; position: absolute; top: calc(40% - 100px); left:50%; margin-left: -600px; width:600px; }
 .container{ position: absolute; z-index: 9999; }
 .row .primeiro{ margin-bottom: 90px; }
-.row .primeiro a{ font-family:Avenir-Book; font-size: 25px; color: #FFFFFF; font-weight: 600; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; width:488px; height:79px; padding-bottom: 10px; padding-top: 20px; position: absolute; left:50%; margin-left: -234px; background-color:rgba(215,215,215,0.30); }
+.row .primeiro a{ font-family: Avenir-Light; font-size: 25px; color: #FFFFFF; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; width:488px; height:79px; padding-bottom: 10px; padding-top: 20px; position: absolute; left:50%; margin-left: -234px; background-color:rgba(215,215,215,0.30); }
 .row .primeiro span{ margin-left: 180px; width:18px; height:23px; position: absolute; left:50%; }
 .row .primeiro a:hover{ background: rgba(215,215,215,0.60); }
-.row .segunda a{ font-family:Avenir-Book; font-size: 25px; color: #FFFFFF; font-weight: 600; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; width:488px; height:79px; padding-bottom: 10px; padding-top: 20px; position: absolute; left:50%; margin-left: -234px; background-color:rgba(215,215,215,0.30); }
+.row .segunda a{ font-family: Avenir-Light; font-size: 25px; color: #FFFFFF; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; width:488px; height:79px; padding-bottom: 10px; padding-top: 20px; position: absolute; left:50%; margin-left: -234px; background-color:rgba(215,215,215,0.30); }
 .row .segunda span{ margin-left: 180px; width:18px; height:23px; position: absolute; left:50%; }
 .row .segunda a:hover{ background: rgba(215,215,215,0.60); }
 /*.btn span{ display:inline-block; font-family:Avenir-Book; font-size:25px; color:#FFFFFF; padding-top:20px; margin-left:-380px; }*/
->>>>>>> 7ea5ceba48ac0423f92e39555800169caa8eee57
-.pergunta h1{ font-family:Avenir-Book; font-size:32px; color:#FFFFFF; line-height:40px; font-weight:600; margin-bottom:16px; width:500px; position:absolute; left:50%; margin-left:-250px; margin-top:-120px; text-align:left; }
+
+.pergunta h1{ font-family: Avenir-Light; font-style: normal; font-weight: normal; font-size:32px; color:#FFFFFF; line-height:40px; margin-bottom:16px; width:500px; position:absolute; left:50%; margin-left:-250px; margin-top:-120px; text-align:left; }
 /**********************
 Extra small devices Phones (<768px) Landscape
 ***********************/
@@ -67,3 +70,4 @@ Large devices Desktops (≥1200px)
 Extra Large devices Desktops (≥1400px)
 ***********************/
 @media only screen and (min-width:1400px){
+}
