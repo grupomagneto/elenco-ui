@@ -160,8 +160,8 @@ img#seta5{ width:60px; height:60px; position:absolute; left:50%; margin-left:270
 img#seta10{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
 img#seta11{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
 /* Responsável Legal */
-.radio-label3{ display:inline-block; border:2px solid #ECECEC; border-radius:8px; background-color:rgba(215,215,215,0.30); width:500px; height:80px; color:#fff; font-family:Avenir-Book; font-size:24px; text-transform:capitalize; position:absolute; left:50%; margin-left:-250px; margin-top:-15px; cursor:pointer; }
-.radio-label4{ display:inline-block; border:2px solid #ECECEC; border-radius:8px; background-color:rgba(215,215,215,0.30); width:500px; height:80px; color:#fff; font-family:Avenir-Book; font-size:24px; text-transform:capitalize; position:absolute; left:50%; margin-left:-250px; margin-top:100px; cursor:pointer; }
+.radio-label3{ display:inline-block; border:2px solid #ECECEC; border-radius:8px; background-color:rgba(215,215,215,0.30); width:500px; height:80px; color:#fff; font-family:Avenir-Book; position:absolute; left:50%; margin-left:-250px; margin-top:-15px; cursor:pointer; }
+.radio-label4{ display:inline-block; border:2px solid #ECECEC; border-radius:8px; background-color:rgba(215,215,215,0.30); width:500px; height:80px; color:#fff; font-family:Avenir-Book; position:absolute; left:50%; margin-left:-250px; margin-top:100px; cursor:pointer; }
 .radio-label3:hover{ background-color:rgba(215,215,215,0.60); }
 .radio-label4:hover{ background-color:rgba(215,215,215,0.60); }
 .radio_0 + .radio-label3 span{ display:inline-block; font-family:Avenir-Book; font-size:25px; color:#FFFFFF; padding-top:20px; margin-left:-390px; }
@@ -169,8 +169,8 @@ img#seta11{ width:60px; height:60px; position:absolute; left:50%; margin-left:27
 .radio_0:checked + .radio-label3{ background:rgba(215,215,215,0.60); }
 .radio_0:checked + .radio-label4{ background:rgba(215,215,215,0.60); }
 /* Sexo */
-.radio-label{ display:inline-block; border:2px solid #ECECEC; border-radius:8px; background-color:rgba(215,215,215,0.30); width:500px; height:80px; color:#fff; font-family:Avenir-Book; font-size:24px; text-transform:capitalize; position:absolute; left:50%; margin-left:-250px; margin-top:-15px; cursor:pointer; }
-.radio-label2{ display:inline-block; border:2px solid #ECECEC; border-radius:8px; background-color:rgba(215,215,215,0.30); width:500px; height:80px; color:#fff; font-family:Avenir-Book; font-size:24px; text-transform:capitalize; position:absolute; left:50%; margin-left:-250px; margin-top:100px; cursor:pointer; }
+.radio-label{ display:inline-block; border:2px solid #ECECEC; border-radius:8px; background-color:rgba(215,215,215,0.30); width:500px; height:80px; color:#fff; font-family:Avenir-Book; position:absolute; left:50%; margin-left:-250px; margin-top:-15px; cursor:pointer; }
+.radio-label2{ display:inline-block; border:2px solid #ECECEC; border-radius:8px; background-color:rgba(215,215,215,0.30); width:500px; height:80px; color:#fff; font-family:Avenir-Book; position:absolute; left:50%; margin-left:-250px; margin-top:100px; cursor:pointer; }
 .radio-label:hover{ background-color:rgba(215,215,215,0.60); }
 .radio-label2:hover{ background-color:rgba(215,215,215,0.60); }
 .radio + .radio-label span{ display:inline-block; font-family:Avenir-Book; font-size:25px; color:#FFFFFF; padding-top:20px; margin-left:-330px; }
@@ -878,22 +878,22 @@ Tablets and Desktops (≥768px)
 /*********************
 POSIÇÃO DAS DIVS
 **********************/
-.div0{ position:absolute; top:44%; left:8%; width:80%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div1{ position:absolute; top:46%; left:23%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div2{ position:absolute; top:46%; left:23%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div3{ position:absolute; top:48%; left:8%; width:80%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div4{ position:absolute; top:46%; left:23%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div5{ position:absolute; top:46%; left:23%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div6{ position:absolute; top:35%; left:23%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div7{ position:absolute; top:8%; left:23%; width:50%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div8{ position:absolute; top:8%; left:23%; width:50%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div9{ position:absolute; top:46%; left:23%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div10{ position:absolute; top:46%; left:23%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div11{ position:absolute; top:46%; left:23%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div12{ position:absolute; top:46%; left:23%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div13{ position:absolute; top:46%; left:23%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div14{ position:absolute; top:26%; left:23%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div15{ position:absolute; top:37%; left:23%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div0{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div1{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div2{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div3{ position:absolute; top:48%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div4{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div5{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div6{ position:absolute; top:35%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div7{ position:absolute; top:8%; left:0%; width:100%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div8{ position:absolute; top:8%; left:0%; width:100%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div9{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div10{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div11{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div12{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div13{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div14{ position:absolute; top:26%; left:50%; width:100%; margin-left:-54%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div15{ position:absolute; top:37%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .pergunta h1{ font-size:26px; line-height:40px; width:400px; margin-left:-200px; margin-top:-100px; }
 .input_box input[type="text"]{ width:400px; height:60px; font-size:20px; margin-left:-200px; }
 .input_box input[type="tel"]{ width:400px; height:60px; font-size:20px; margin-left:-200px; }
@@ -1180,22 +1180,22 @@ Medium devices Desktops (≥992px)
 /*********************
 POSIÇÃO DAS DIVS
 **********************/
-.div0{ position:absolute; top:39%; left:11%; width:80%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div1{ position:absolute; top:44%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div2{ position:absolute; top:44%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div3{ position:absolute; top:36%; left:11%; width:80%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div4{ position:absolute; top:44%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div5{ position:absolute; top:44%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div6{ position:absolute; top:35%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div7{ position:absolute; top:8%; left:25%; width:50%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div8{ position:absolute; top:8%; left:25%; width:50%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div9{ position:absolute; top:44%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div10{ position:absolute; top:44%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div11{ position:absolute; top:44%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div12{ position:absolute; top:44%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div13{ position:absolute; top:44%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div14{ position:absolute; top:25%; left:31%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div15{ position:absolute; top:30%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div0{ position:absolute; top:39%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div1{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div2{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div3{ position:absolute; top:36%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div4{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div5{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div6{ position:absolute; top:35%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div7{ position:absolute; top:8%; left:0%; width:100%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div8{ position:absolute; top:8%; left:0%; width:100%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div9{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div10{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div11{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div12{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div13{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div14{ position:absolute; top:25%; left:50%; width:100%; margin-left:-44%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div15{ position:absolute; top:30%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 #cadastra.botao{ width:280px; height:60px; padding:0px; padding-left:0px; margin-top:300px; margin-left:-140px; font-size:20px; }
 /* Placeholder transparente */
 ::-webkit-input-placeholder{ background:url("../images/keyboard.svg"); background-repeat:no-repeat; background-size:60px 30px; background-position:410px 0px; }
@@ -1454,10 +1454,10 @@ Large devices Desktops (≥1200px)
 /*********************
 POSIÇÃO DAS DIVS
 **********************/
-.div0{ position:absolute; top:43%; left:11%; width:80%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div0{ position:absolute; top:43%; left:2%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div1{ position:absolute; top:46%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div2{ position:absolute; top:46%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div3{ position:absolute; top:47%; left:11%; width:80%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div3{ position:absolute; top:47%; left:2%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div4{ position:absolute; top:46%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div5{ position:absolute; top:46%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div6{ position:absolute; top:25%; left:25%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
@@ -1665,10 +1665,10 @@ Extra Large devices Desktops (≥1400px)
 /*********************
 POSIÇÃO DAS DIVS
 **********************/
-.div0{ position:absolute; top:42%; left:13%; width:80%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div0{ position:absolute; top:42%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div1{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div2{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div3{ position:absolute; top:42%; left:13%; width:80%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div3{ position:absolute; top:42%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div4{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div5{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div6{ position:absolute; top:35%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
