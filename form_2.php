@@ -9,152 +9,117 @@
   <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="css/form2.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+
 </head>
 <body>
-<form name="form2" action="adiciona-usuario.php" id="form2" method="post" enctype="multipart/form-data" onsubmit="return valida_form2(this)">
+ <form name="form2" action="adiciona-usuario.php" id="form2" method="post" enctype="multipart/form-data" onsubmit="return valida_form2(this)">
   <!-- Swiper Container -->
 <div class="swiper-container">
   <!-- Swiper wrapper -->
     <div class="swiper-wrapper">
-<!-- DIV QUEM VOCÊ ESTÁ CADASTRANDO  -->
+<!-- DIV VOCÊ É O RESPONSÁVEL  -->
 <div class="swiper-slide gradient">
   <div class="container">
     <div class="div0">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
-          <h1>Quem você está cadastrando?</h1>
-        </div>
-        <div class="row">
-        <div class="primeiro col-lg-offset-3 col-lg-5">
-          <a href="#maior" class="btn">
-              Eu mesmo(a), sou maior de idade
-          </a> 
-        </div>
-        </div>
-        <div class="row">
-        <div class="segunda col-lg-offset-3 col-lg-5">
-          <a href="#" class="vs-next swiper-control next btn">
-              Uma criança ou adolescente
-          </a> 
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="progress0">
-    <progress id="progressbar" value="0" max="80"></progress>
-  </div>
- <nav>
-    <ul class="vs-vertical-nav1 none">
-      <li><a href="#" class="vs-next1 swiper-control next"></a></li>
-    </ul>
-  </nav>
-</div>
-<!-- FIM DIV QUEM VOCÊ ESTÁ CADASTRANDO -->
-<!-- DIV VOCÊ É O RESPONSÁVEL  -->
-<div id="1" class="swiper-slide gradient">
-  <div class="container">
-    <div class="div1">
-      <div class="row">
-        <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>Você é legalmente responsável por essa criança/adolescente?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="responsavel" type="radio" value="nao" id="responsavel_nao" class="radio_0" class="TabOnEnter" />
-          <label id="responsavel_nao_label" for="responsavel_nao" class="radio-label4">
+          <input name="responsavel" type="radio" value="nao" id="responsavel_nao" class="radio_0" autofocus />
+          <label id="reponsavel_nao_label" for="responsavel_nao" class="radio-label4">
           <span>Não</span>
           </label>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
           <input name="responsavel" type="radio" value="sim" id="responsavel_sim" class="radio_0" />
-          <label id="responsavel_sim_label" for="responsavel_sim" class="radio-label3">
+          <label id="reponsavel_sim_label" for="responsavel_sim" class="radio-label3">
           <span>Sim</span>
           </label>
         </div>
       </div>
     </div>
   </div>
-  <div class="progress1">
-    <progress id="progressbar1" value="5" max="80"></progress>
+  <div class="progress0">
+    <progress id="progressbar0" value="5" max="80"></progress>
   </div>
   <nav>
-    <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next focus1"></a></li>
+    <ul class="vs-vertical-nav1 none">
+      <li><a href="#" class="vs-next1 swiper-control next focus1"></a></li>
     </ul>
   </nav>
 </div>
 <!-- DIV VOCÊ É O RESPONSÁVEL -->
 <!-- DIV CPF RESPONSÁVEL  -->
-<div id="2" class="swiper-slide gradient">
+<div id="1" class="swiper-slide gradient">
   <div class="container">
-    <div class="div2">
+    <div class="div1">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>Qual o seu cpf?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="text" name="cpf" id="cpf" data-mask="000.000.000-00" onfocus="this.value=''" min="11" max= "11" class="TabOnEnter" placeholder="000.000.000-00" required />
+          <input type="text" name="cpf" id="cpf" data-mask="000.000.000-00" onfocus="this.value=''" min="11" max= "11" class="TabOnEnter" tabindex="1" placeholder="000.000.000-00" required />
           <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
           <img id="seta" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
   </div>
-  <div class="progress2">
-    <progress id="progressbar2" value="10" max="80"></progress>
+  <div class="progress1">
+    <progress id="progressbar" value="10" max="80"></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev "></a></li>
       <li><a href="#" class="vs-next swiper-control next focus2"></a></li>
     </ul>
   </nav>
 </div>
 <!-- DIV CPF RESPONSÁVEL -->
 <!-- DIV NOME RESPONSÁVEL -->
-<div id="3" class="swiper-slide gradient">
+<div id="2" class="swiper-slide gradient">
   <div class="container">
-    <div class="div3">
+    <div class="div2">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>E o seu nome completo?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="text" name="nome_responsavel" id="nome_responsavel" onfocus="this.value=''" class="TabOnEnter" autocomplete="off" required placeholder=" " />
+          <input type="text" name="nome_responsavel" id="nome_responsavel" onfocus="this.value=''"  tabindex="2" autocomplete="off" required placeholder=" " />
           <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;">
           <img id="seta2" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
   </div>
-  <div class="progress3">
-    <progress id="progressbar3" value="15" max="80"></progress>
+  <div class="progress2">
+    <progress id="progressbar2" value="15" max="80"></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
       <li><a href="#" class="vs-prev swiper-control prev focus1"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus3"></a></li>
     </ul>
   </nav>
 </div>
 <!-- FIM DIV NOME RESPONSÁVEL -->
 <!-- DIV SEXO -->
-<div id="4" class="swiper-slide gradient">
+<div id="3" class="swiper-slide gradient">
   <div class="container">
-    <div class="div4">
+    <div class="div3">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
-          <h1>Qual o sexo do menor?<sup>*</sup></h1>
+          <h1 class="TabOnEnter" tabindex="3" >Qual o sexo do menor?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-         <input name="sexo" value="masculino" type="radio" id="radio0" class="radio" onchange="exibeMsg2(this.value);" class="TabOnEnter" />
+         <input name="sexo" value="masculino" type="radio" id="radio0" class="radio" onchange="exibeMsg2(this.value);">
           <label for="radio0" class="radio-label2">
           <span>Masculino</span>
           </label>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="sexo" type="radio" value="feminino" id="radio1" class="radio" onchange="exibeMsg2(this.value);" />
+          <input name="sexo" type="radio" value="feminino" id="radio1" class="radio" onchange="exibeMsg2(this.value);">
           <label for="radio1" class="radio-label">
           <span>Feminino</span>
           </label>
@@ -162,115 +127,115 @@
       </div>
     </div>
   </div>
-  <div class="progress4">
-    <progress id="progressbar4" value="20" max="80" ></progress>
+  <div class="progress3">
+    <progress id="progressbar3" value="20" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
       <li><a href="#" class="vs-prev swiper-control prev focus2"></a></li>
-      <li><a href="#" class="vs-next swiper-control next focus3"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus4"></a></li>
     </ul>
   </nav>
 </div>
 <!-- DIV SEXO -->
 <!-- DIV NOME DA PESSOA SENDO CADASTRADA -->
-<div id="5" class="swiper-slide gradient">
+<div id="4" class="swiper-slide gradient">
   <div class="container">
-    <div class="div5">
+    <div class="div4">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1 id="proxima">Qual o primeiro nome <span id="txt2"></span>?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="nome_menor" id="nome_menor" type="text" onfocus="this.value=''" class="TabOnEnter" autocomplete="off" placeholder=" " required />
+          <input name="nome_menor" id="nome_menor" type="text" onfocus="this.value=''" tabindex="4"  autocomplete="off" placeholder=" " required />
           <input type="button" class="sendBtn" id="btSend4" name="btSend4" style="display: none;">
           <img id="seta4" onclick="gravar()" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
   </div>
-  <div class="progress5">
-    <progress id="progressbar5" value="25" max="80" ></progress>
+  <div class="progress4">
+    <progress id="progressbar4" value="25" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
       <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus5"></a></li>
     </ul>
   </nav>
 </div>
 <!-- FIM DIV NOME DA PESSOA SENDO CADASTRADA -->
 <!-- DIV SOBRENOME -->
-<div id="6" class="swiper-slide gradient">
+<div id="5" class="swiper-slide gradient">
   <nav>
   <div class="container">
-    <div class="div6">
+    <div class="div5">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>E o sobrenome?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="text" name="sobrenome_menor" id="sobrenome_menor" onfocus="this.value=''" class="TabOnEnter" autocomplete="off" placeholder=" " required />
+          <input type="text" name="sobrenome_menor" id="sobrenome_menor" onfocus="this.value=''" class='TabOnEnter' tabindex="5"  autocomplete="off" placeholder=" " required />
           <input type="button" class="sendBtn5" id="btSend5" name="btSend5" style="display: none;">
           <img id="seta5" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
   </div>
-  <div class="progress6">
-    <progress id="progressbar6" value="30" max="80" ></progress>
+  <div class="progress5">
+    <progress id="progressbar5" value="30" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev focus3"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus6"></a></li>
     </ul>
   </nav>
 </div>
 <!-- FIM DIV SOBRENOME -->
 <!-- DIV ANTES DAS FOTOS -->
-<div id="7" class="swiper-slide gradient">
+<div id="6" class="swiper-slide gradient">
   <nav>
   <div class="container">
-    <div class="div7">
+    <div class="div6">
       <div class="row">
-        <div class="div7_t col-lg-offset-3 col-lg-5">
-          <img src="images/camera.svg" alt="camera">
+        <div class="div6_t col-lg-offset-3 col-lg-5">
+          <img src="images/camera.svg" tabindex="6" class='TabOnEnter' alt="camera">
         </div>
-        <div class="div7_box col-lg-offset-3 col-lg-5">
+        <div class="div6_box col-lg-offset-3 col-lg-5">
           <h1>Legal! Agora precisamos de duas fotos <span id="txt5"></span> <span class="concat2_texto"></span> feitas hoje.</h1>
-          <button class="swiper-control next TabOnEnter botao" tabindex="7" class="TabOnEnter">Continuar</button>
+          <button class="swiper-control next TabOnEnter botao" >Continuar</button>
 <!--            <img src="images/ok_neg.svg" alt="seta">-->
         </div>
       </div>
     </div>
   </div>
-  <div class="progress7">
-    <progress id="progressbar7" value="35" max="80" ></progress>
+  <div class="progress6">
+    <progress id="progressbar6" value="35" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev focus4"></a></li>
       <li><a href="#" class="vs-next swiper-control next"></a></li>
     </ul>
   </nav>
 </div>
 <!-- FIM DIV ANTES DAS FOTOS -->
 <!-- DIV PRIMEIRA FOTO -->
-<div id="8" class="swiper-slide gradient2">
+<div id="7" class="swiper-slide gradient2">
   <div class="container">
-    <div class="div8">
+    <div class="div7">
       <div class="row">
-        <div class="div8_box col-lg-offset-3 col-lg-5">
+        <div class=" div7_box col-lg-offset-3 col-lg-5">
           <div class="wrapper">
-            <div class="file-upload TabOnEnter">
+            <div class="file-upload TabOnEnter" tabindex="7">
               <input type="file" id="foto" name="foto" />
               <img src="images/upload.svg" alt="">
             </div>
           </div>
           <h4>clique para upload<sup>*</sup></h4>
         </div>
-        <div class=" div8_t col-lg-offset-3 col-lg-5">
+        <div class=" div7_t col-lg-offset-3 col-lg-5">
           <h1>A primeira foto sorrindo!</h1>
           <ol>
             <li>Enquadre dos ombros para cima;</li>
@@ -282,8 +247,8 @@
       </div>
     </div>
   </div>
-  <div class="progress8">
-    <progress id="progressbar8" value="40" max="80" ></progress>
+  <div class="progress7">
+    <progress id="progressbar7" value="40" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -294,20 +259,20 @@
 </div>
 <!-- FIM DIV PRIMEIRA FOTO -->
 <!-- DIV SEGUNDA FOTO -->
-<div id="9" class="swiper-slide gradient3">
+<div id="8" class="swiper-slide gradient3">
   <div class="container">
-    <div class="div9">
+    <div class="div8">
       <div class="row">
-        <div class=" div9_box col-lg-offset-3 col-lg-5">
+        <div class=" div8_box col-lg-offset-3 col-lg-5">
           <div class="wrapper2">
-            <div class="file-upload2 TabOnEnter">
+            <div class="file-upload2 TabOnEnter" tabindex="8">
               <input type="file" id="foto2" name="fotos" />
               <img src="images/upload.svg" alt="">
             </div>
           </div>
           <h4>clique para upload<sup>*</sup></h4>
         </div>
-        <div class=" div9_t col-lg-offset-3 col-lg-5">
+        <div class=" div8_t col-lg-offset-3 col-lg-5">
           <h1>Agora sem sorrir.</h1>
           <ol>
             <li>Enquadre dos ombros para cima;</li>
@@ -319,106 +284,106 @@
       </div>
     </div>
   </div>
-  <div class="progress9">
-    <progress id="progressbar9" value="45" max="80" ></progress>
+  <div class="progress8">
+    <progress id="progressbar8" value="45" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
       <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus9"></a></li>
     </ul>
   </nav>
 </div>
 <!-- FIM DIV SEGUNDA FOTO -->
 <!-- DIV DATA DE NASCIMENTO -->
-<div id="10" class="swiper-slide gradient">
+<div id="9" class="swiper-slide gradient">
   <div class="container">
-    <div class="div10">
+    <div class="div9">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>Qual a data de nascimento <span id="txt6"></span>?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="date" name="data" id="data" onfocus="this.value=''" class="TabOnEnter" autocomplete="off" placeholder="dd/mm/aaaa" required  />
+          <input type="date" name="data" id="data" onfocus="this.value=''" class="TabOnEnter" tabindex="9" autocomplete="off" placeholder="dd/mm/aaaa" required  />
         </div>
       </div>
     </div>
   </div>
-  <div class="progress10">
-    <progress id="progressbar10" value="50" max="80" ></progress>
+  <div class="progress9">
+    <progress id="progressbar9" value="50" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
       <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus10"></a></li>
     </ul>
   </nav>
 </div>
 <!-- FIM DIV DATA DE NASCIMENTO -->
 <!-- DIV CELULAR PARA CONTATO -->
-<div id="11" class="swiper-slide gradient">
+<div id="10" class="swiper-slide gradient">
   <div class="container">
-    <div class="div11">
+    <div class="div10">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>Qual o celular para contato?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="celular" id="celular" data-mask="(00) 00000-0000" class="TabOnEnter" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
+          <input name="celular" id="celular" data-mask="(00) 00000-0000" class="TabOnEnter" tabindex="10" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
           <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;">
           <img id="seta10" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
   </div>
-  <div class="progress11">
-    <progress id="progressbar11" value="55" max="80" ></progress>
+  <div class="progress10">
+    <progress id="progressbar10" value="55" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev focus7"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus11"></a></li>
     </ul>
   </nav>
 </div>
 <!-- FIM DIV CELULAR PARA CONTATO -->
 <!-- DIV EMAIL -->
-<div id="12" class="swiper-slide gradient">
+<div id="11" class="swiper-slide gradient">
   <div class="container">
-    <div class="div12">
+    <div class="div11">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1>E o email?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="email" id="email" class="TabOnEnter" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
+          <input name="email" id="email" class='TabOnEnter' tabindex="11" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
           <input type="button" class="sendBtn11" id="btSend11" name="btSend11" style="display: none;">
           <img id="seta11" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
         </div>
       </div>
     </div>
   </div>
-  <div class="progress12">
-    <progress id="progressbar12" value="60" max="80" ></progress>
+  <div class="progress11">
+    <progress id="progressbar11" value="60" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev focus8"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus12"></a></li>
     </ul>
   </nav>
 </div>
 <!-- FIM DIV EMAIL -->
 <!-- DIV COR DA PELE -->
-<div id="13" class="swiper-slide gradient">
+<div id="12" class="swiper-slide gradient">
   <div class="container">
-    <div class="div13">
+    <div class="div12">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
-          <h1>Qual é a cor da pele <span id="txt3"></span>?<sup>*</sup></h1>
+          <h1 class='TabOnEnter' tabindex="12" >Qual é a cor da pele <span id="txt3"></span>?<sup>*</sup></h1>
         </div>
-        <div class="div13_box col-lg-offset-3 col-lg-5">
-          <select id="raca" name="raca" class="TabOnEnter">
+        <div class="div12_box col-lg-offset-3 col-lg-5">
+          <select id="raca" name="raca">
             <option disabled value="1">Selecione...</option>
             <option value="Amarela" >Amarela</option>
             <option value="Branca">Branca</option>
@@ -430,27 +395,27 @@
       </div>
     </div>
   </div>
-  <div class="progress13">
-    <progress id="progressbar13" value="65" max="80" ></progress>
+  <div class="progress12">
+    <progress id="progressbar12" value="65" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-      <li><a href="#" class="vs-next swiper-control next"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev focus9"></a></li>
+      <li><a href="#" class="vs-next swiper-control next focus13"></a></li>
     </ul>
   </nav>
 </div>
 <!-- FIM DIV COR DA PELE -->
 <!-- DIV BAIRRO -->
-<div id="14" class="swiper-slide gradient">
+<div id="13" class="swiper-slide gradient">
   <div class="container">
-    <div class="div14">
+    <div class="div13">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
-          <h1 id="proxima2">Em qual bairro <span id="txt4"></span> mora?<sup>*</sup></h1>
+          <h1 id="proxima2" class='TabOnEnter' tabindex="13" >Em qual bairro <span id="txt4"></span> mora?<sup>*</sup></h1>
         </div>
-        <div class="div14_box col-lg-offset-3 col-lg-5">
-          <select name="bairro" id="bairro2" class="TabOnEnter">
+        <div class="div11_box col-lg-offset-3 col-lg-5">
+          <select name="bairro" id="bairro2">
             <option disabled value="1">Selecione...</option>
             <option value="Águas Claras"> Águas Claras</option>
             <option value="Asa Norte"> Asa Norte</option>
@@ -501,8 +466,8 @@
       </div>
     </div>
   </div>
-  <div class="progress14">
-    <progress id="progressbar14" value="70" max="80" ></progress>
+  <div class="progress13">
+    <progress id="progressbar13" value="70" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
@@ -513,16 +478,16 @@
 </div>
 <!-- FIM DIV BAIRRO -->
 <!-- DIV PLANOS -->
-<div id="15" class="swiper-slide gradient">        
+<div id="14" class="swiper-slide gradient">        
  <div class="container">     
-   <div class="div15">
+   <div class="div14">
       <div class="row">
-              <div class="div15_t col-lg-offset-3 col-lg-5">
-                <h1 class="penultimo_p" class="TabOnEnter">Escolha uma modalidade para o cadastro <span id="txt12"></span> <span class="concat2_texto"></span>:<sup>*</sup></h1>
+              <div class="div14_t col-lg-offset-3 col-lg-5">
+                <h1 class="penultimo_p" tabindex="14" class="TabOnEnter">Escolha uma modalidade para o cadastro <span id="txt12"></span> <span class="concat2_texto"></span>:<sup>*</sup></h1>
               </div>
       </div>
       <div class="row col-xs-12">
-       <div class="div15_box">
+       <div class="div14_box">
 <!--DIV PLANO MOBILE -->
 <div class="versao_m">
 <div class="div_m" data-toggle="modal" data-target="#myModal1_m">
@@ -752,7 +717,7 @@
   </div>
 </div>
 </div>
-<div class="div15_box2">
+<div class="div14_box2">
   <div class="versao_d">
     <div class="thumbnail">
       <div class="caption">
@@ -810,7 +775,7 @@
     </div>
   </div>
 </div>
-<div class="div15_box3">
+<div class="div14_box3">
   <div class="versao_d">
     <div class="thumbnail">
       <div class="caption">
@@ -884,48 +849,48 @@
 </div>
 </div>
 </div>
-<div class="progress15">
-      <progress id="progressbar15" value="75" max="80" ></progress>
+<div class="progress14">
+      <progress id="progressbar14" value="75" max="80" ></progress>
     </div>
     <nav>
       <ul class="vs-vertical-nav none">
         <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-        <li><a href="#" class="vs-next swiper-control next"></a></li>
+        <li><a href="#" class="vs-next swiper-control next focus15"></a></li>
       </ul>
     </nav> 
  </div> 
 </div>
 <!-- FIM DIV PLANOS -->
 <!-- ÚLTIMA DIV -->
-<div id="16" class="swiper-slide gradient">
+<div id="15" class="swiper-slide gradient">
   <div class="container">
-    <div class="div16">
+    <div class="div15">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1 class="ultimo_p">Que tal deixar o perfil <span id="txt7"></span> <span class="concat2_texto"></span> mais completo?</h1>
         </div>
         <div class="input_ig col-lg-offset-3 col-lg-5">
           <img src="images/ig.svg" alt="instagram">
-          <input name="ig" id="ig" type="text" onfocus="this.value=''" class="TabOnEnter ig"autocomplete="off" placeholder="www.instagram.com/usuario" />
+          <input name="ig" id="ig" type="text" onfocus="this.value=''" class="TabOnEnter ig" tabindex="14" autocomplete="off" placeholder="www.instagram.com/usuario" />
           <!-- <button ></button><span class="seta"><img src="img/seta_ok_neg.svg" alt="seta"></span> -->
         </div>
         <div class="input_fb col-lg-offset-3 col-lg-5">
           <img src="images/face.svg" alt="facebook">
-          <input name="face" id="face" type="text" onfocus="this.value=''" class="TabOnEnter face" autocomplete="off" placeholder="www.facebook.com/usuario" />
+          <input name="face" id="face" type="text" onfocus="this.value=''" class="TabOnEnter face" tabindex="15" autocomplete="off" placeholder="www.facebook.com/usuario" />
           <!-- <button ></button><span class="seta"><img src="img/seta_ok_neg.svg" alt="seta"></span> -->
         </div>
         <div class="input_tt col-lg-offset-3 col-lg-5">
           <img src="images/tt.svg" alt="twitter">
-          <input name="tt" id="tt" type="text" onfocus="this.value=''" class="TabOnEnter tt" autocomplete="off" placeholder="www.twitter.com/usuario" />
+          <input name="tt" id="tt" type="text" onfocus="this.value=''" class="TabOnEnter tt" tabindex="16" autocomplete="off" placeholder="www.twitter.com/usuario" />
           <!-- <button ></button><span class="seta"><img src="img/seta_ok_neg.svg" alt="seta"></span> -->
         </div>
       </div>
-      <button class="botao" id="cadastra" name="submit" type="submit">Enviar Cadastro</button>
+      <button class="TabOnEnter botao" tabindex="17" id="cadastra" name="submit" type="submit">Enviar Cadastro</button>
       <p id="erro" style="display: none;">Por favor verifique se preencheu todos os campos obrigatórios marcados com <sup>*</sup></p>
     </div>
   </div>
-  <div class="progress16">
-    <progress id="progressbar16" value="80" max="80" ></progress>
+  <div class="progress15">
+    <progress id="progressbar15" value="80" max="80" ></progress>
   </div>
   <nav>
     <ul class="vs-vertical-nav2 none">
@@ -941,65 +906,6 @@
 </div>
 </div>
 </form>
-<a name="maior"></a>
-<form name="form" action="adiciona-usuario.php" id="form" method="post" enctype="multipart/form-data" onsubmit="return valida_form2(this)">
-  <!-- Swiper Container -->
-<div class="swiper-container">
-  <!-- Swiper W -->
-    <div class="swiper-wrapper">
-       <div id="17" class="swiper-slide gradient">
-       <div class="container">
-        <div class="div17">
-         <div class="row">
-          <div class="pergunta col-lg-offset-3 col-lg-5">
-           <h1>Qual o seu primeiro nome?<sup>*</sup></h1>
-          </div>
-          <div class="input_box col-lg-offset-3 col-lg-5">
-           <input name="nome_maior" id="nome_maior" type="text" onfocus="this.value=''" class="TabOnEnter" tabindex="20" autocomplete="off" required="required" />
-           <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
-           <img id="seta" src="images/seta_ok.svg" alt="seta" style="display: none;">
-          </div>
-         </div>
-        </div>
-       </div>
-       </div>
-       <div class="progress17">
-<progress id="progressbar17" value="5" max="80"></progress>
-</div>
-    <nav>
-      <ul class="vs-vertical-nav none">
-        <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-        <li><a href="#" class="vs-next swiper-control next"></a></li>
-      </ul>
-    </nav> 
-<div id="18" class="swiper-slide gradient">
-       <div class="container">
-        <div class="div18">
-         <div class="row">
-          <div class="pergunta col-lg-offset-3 col-lg-5">
-           <h1>E o sobrenome?<sup>*</sup></h1>
-          </div>
-          <div class="input_box col-lg-offset-3 col-lg-5">
-           <input name="sobrenome_maior" id="sobrenome_maior" type="text" onfocus="this.value=''" class="TabOnEnter" tabindex="21" autocomplete="off"  required="required" />
-           <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;"> 
-
-          </div>
-         </div>
-        </div>
-       </div>
-        <div class="progress18">
-          <progress id="progressbar18" value="10" max="80"></progress>
-        </div>
-        <nav>
-        <ul class="vs-vertical-nav none">
-          <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-         <li><a href="#" class="vs-next swiper-control next"></a></li>
-        </ul>
-       </nav>
-      </div>
-      </div>
-      </div>
-       </form>
   <!-- Swiper JS -->
   <script src="js/jquery-1.12.1.min.js"></script>
   <script src="js/swiper.min.js"></script>
