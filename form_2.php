@@ -511,11 +511,19 @@
               <h1 class="pergunta TabOnEnter">Escolha uma modalidade para o cadastro <span id="txt12"></span> <span class="concat2_texto"></span>:<sup>*</sup></h1>
             </div>
           </div>
+<<<<<<< HEAD
           <div class="row col-xs-12">  
             <!-- DIV PLANOS MOBILE -->
             <div class="versao_m">
               <!-- INÍCIO MODAL GRATUITO -->
               <div class="div15_box">
+=======
+          <div class="row col-xs-12">
+            <div class="div15_box">
+              <!-- DIV PLANOS MOBILE -->
+              <div class="versao_m">
+                <!-- INÍCIO MODAL GRATUITO -->
+>>>>>>> 987cfdfc203e652d4253546a630c5f63b3b3316b
                 <div class="div_m2" data-toggle="modal" data-target="#myModal1_m2">
                   <h3>Gratuito</h3>
                   <p>fotos simples em estúdio apenas para site</p>
