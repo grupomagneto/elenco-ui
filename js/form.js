@@ -281,12 +281,12 @@ if (window.matchMedia('(max-width: 767px)').matches)
 {
 
 $(window).load(function() {
-  $('#cpf').keyup(function() {
+  $('#cpf_responsavel').keyup(function() {
     if ($.trim(this.value).length > 13) {
       $('#btSend').show();
       $('#seta').show();
 
-      $('input#cpf').css('padding-right', '55px');
+      $('input#cpf_responsavel').css('padding-right', '55px');
     } else {
       $('#btSend').hide();
       $('#seta').hide();
@@ -396,7 +396,7 @@ if (window.matchMedia('(min-width: 1199px)').matches)
 // SETAS AUTOFOCUS INPUT NEXT FORMULÁRIO 2
 $(function() {
   $(".swiper-control.next.focus1").click(function() {
-        $('#cpf').focus();
+        $('#cpf_responsavel').focus();
   });
 });
 $(function() {
@@ -458,7 +458,7 @@ $(function() {
 // SETAS AUTOFOCUS INPUT PREV FORMULÁRIO 2
 $(function() {
   $(".swiper-control.prev.focus1").click(function() {
-        $('#cpf').focus();
+        $('#cpf_responsavel').focus();
   });
 });
 $(function() {
@@ -498,7 +498,7 @@ $(function() {
   // SETAS AUTOFOCUS INPUT NEXT FORMULÁRIO 2
 $(function() {
   $(".swiper-control.next.focus1").click(function() {
-        $('#cpf').blur();
+        $('#cpf_responsavel').blur();
   });
 });
 $(function() {
@@ -560,7 +560,7 @@ $(function() {
 // SETAS AUTOFOCUS INPUT PREV FORMULÁRIO 2
 $(function() {
   $(".swiper-control.prev.focus1").click(function() {
-        $('#cpf').blur();
+        $('#cpf_responsavel').blur();
   });
 });
 $(function() {
@@ -630,7 +630,7 @@ $(window).load(function() {
 });
 
 $(window).load(function() {
-  $('#cpf').keyup(function() {
+  $('#cpf_responsavel').keyup(function() {
     if ($.trim(this.value).length > 13) {
       $('#btSend').show();
       $('#seta').show();
@@ -777,7 +777,7 @@ $(document).ready(function() {
     if ($(this).attr("value") == "sim") {   
       var delay = 1000;
       setTimeout(function() {
-         $("#cpf").focus();
+         $("#cpf_responsavel").focus();
       }, 200);
     }
     if ($(this).attr("value") == "nao") {
@@ -822,7 +822,7 @@ $('form')[0].addEventListener('focus', function(e) {
 // // SETAS AUTOFOCUS INPUT NEXT FORMULÁRIO 2
 // $(function() {
 //   $(".swiper-control.next.focus1").click(function() {
-//         $('#cpf').focus();
+//         $('#cpf_responsavel').focus();
 //   });
 // });
 // $(function() {
@@ -884,7 +884,7 @@ $('form')[0].addEventListener('focus', function(e) {
 // // SETAS AUTOFOCUS INPUT PREV FORMULÁRIO 2
 // $(function() {
 //   $(".swiper-control.prev.focus1").click(function() {
-//         $('#cpf').focus();
+//         $('#cpf_responsavel').focus();
 //   });
 // });
 // $(function() {
@@ -1210,7 +1210,7 @@ function valida_form() {
 }
 
 function valida_form2() {
-  if (document.getElementById("cpf").value == "") {
+  if (document.getElementById("cpf_responsavel").value == "") {
     $("#erro").toggle();
     return false
   }
@@ -1264,7 +1264,7 @@ function valida_form2() {
   }
 }
 
-$("#cpf").keypress(function(e) {
+$("#cpf_responsavel").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
   }

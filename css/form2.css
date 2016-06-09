@@ -14,9 +14,9 @@ form{ height:100%; }
 input[type="radio"]{ opacity:0; }
 /* Primeira Pergunta */
 .wrapper_segunda{ position:absolute; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.row .primeiro a{ font-family: Avenir-Light; color: #FFFFFF; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; position:absolute; background-color:rgba(215,215,215,0.30); }
+.row .primeiro a{ font-family: Avenir-Book; color: #FFFFFF; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; position:absolute; background-color:rgba(215,215,215,0.30); }
 .row .primeiro a:hover{ background: rgba(215,215,215,0.60); }
-.row .segunda a{ font-family: Avenir-Light; color: #FFFFFF; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; position:absolute; background-color:rgba(215,215,215,0.30); }
+.row .segunda a{ font-family: Avenir-Book; color: #FFFFFF; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; position:absolute; background-color:rgba(215,215,215,0.30); }
 .row .segunda a:hover{ background: rgba(215,215,215,0.60); }
 /*Gifs animados "Como fazer uma selfie"*/
 .gradient2{ display:block; width:100%; padding:0px; margin:0px; z-index:-1; }
@@ -1537,31 +1537,29 @@ Large devices Desktops (≥1200px)
 /*********************
 POSIÇÃO DAS DIVS
 **********************/
-.div0{ position:absolute; top:43%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div1{ position:absolute; top:43%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div2{ position:absolute; top:46%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div3{ position:absolute; top:46%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div4{ position:absolute; top:47%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div5{ position:absolute; top:46%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div6{ position:absolute; top:46%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div0{ position:absolute; top:46%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div1{ position:absolute; top:39%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div2{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div3{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div4{ position:absolute; top:44.5%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div5{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div6{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div7{ position:absolute; top:25%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div8{ position:absolute; top:8%; left:4%; width:100%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div9{ position:absolute; top:8%; left:4%; width:100%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div10{ position:absolute; top:46%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div11{ position:absolute; top:46%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div12{ position:absolute; top:46%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div13{ position:absolute; top:46%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div14{ position:absolute; top:46%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div10{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div11{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div12{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div13{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div14{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div15{ position:absolute; top:25%; left:6%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div16{ position:absolute; top:28%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div17{ position:absolute; top:46%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div18{ position:absolute; top:46%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div17{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div18{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 /*Primeira Pergunta*/
-.wrapper_segunda{ top:41%; left:50%; width:100%; margin-left: -30.5%;}
-.row .primeiro{ margin-bottom: 93px; }
-.row .primeiro a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
+.row .primeiro{ margin-bottom: 66px; }
+.row .primeiro a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; margin-top:-30px; }
 .row .segunda a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
-.pergunta h1{ font-size:32px; margin-top:-120px; width:500px; left:50%; margin-left:-250px; }
 /* Sexo */
 .radio-label{ margin-top:-77px; }
 .radio-label2{ margin-top:38px; }
@@ -1757,31 +1755,29 @@ Extra Large devices Desktops (≥1400px)
 /*********************
 POSIÇÃO DAS DIVS
 **********************/
-.div0{ position:absolute; top:42%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div0{ position:absolute; top:45.5%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div1{ position:absolute; top:42%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div2{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div3{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div2{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div3{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div4{ position:absolute; top:42%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div5{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div6{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div7{ position:absolute; top:35%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div8{ position:absolute; top:8%; left:27%; width:50%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div9{ position:absolute; top:8%; left:27%; width:50%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div10{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div11{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div12{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div13{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div14{ position:absolute; top:45%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div15{ position:absolute; top:25%; left:31%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div16{ position:absolute; top:35%; left:27%; width:50%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div5{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div6{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div7{ position:absolute; top:35%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div8{ position:absolute; top:8%; left:4%; width:100%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div9{ position:absolute; top:8%; left:4%; width:100%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div10{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div11{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div12{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div13{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div14{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div15{ position:absolute; top:25%; left:6%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div16{ position:absolute; top:35%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div17{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div18{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 /*Primeira Pergunta*/
-.wrapper_segunda{ top:41%; left:50%; width:100%; margin-left: -30.5%;}
-.row .primeiro{ margin-bottom: 93px; }
-.row .primeiro a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
+.row .primeiro{ margin-bottom: 96px; }
+.row .primeiro a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; margin-top:0px; }
 .row .segunda a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
-.pergunta h1{ font-size:32px; margin-top:-120px; width:500px; left:50%; margin-left:-250px; }
 /* Sexo */
 .radio-label{ margin-top:-35px; }
 .radio-label2{ margin-top:80px; }
