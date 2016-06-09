@@ -24,18 +24,13 @@ padding: 0;
 html, body{ position:relative; height:100%; width:100%; }
 body{ margin:0; padding:0; }
 #gradient5 { display: block; width: 100%; padding: 0px; margin: 0px; }
-.wrapper_segunda{ margin-top: 10px; position: absolute; top: calc(40% - 100px); left:50%; margin-left: -600px; width:600px; }
-.container{ position: absolute; z-index: 9999; }
-.row .primeiro{ margin-bottom: 90px; }
-.row .primeiro a{ font-family: Avenir-Light; font-size: 25px; color: #FFFFFF; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; width:488px; height:79px; padding-bottom: 10px; padding-top: 20px; position: absolute; left:50%; margin-left: -234px; background-color:rgba(215,215,215,0.30); }
-.row .primeiro span{ margin-left: 180px; width:18px; height:23px; position: absolute; left:50%; }
+.wrapper_segunda{ position:absolute; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.container{ position:absolute; z-index: 9999; }
+.row .primeiro a{ font-family: Avenir-Light; color: #FFFFFF; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; position:absolute; background-color:rgba(215,215,215,0.30); }
 .row .primeiro a:hover{ background: rgba(215,215,215,0.60); }
-.row .segunda a{ font-family: Avenir-Light; font-size: 25px; color: #FFFFFF; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; width:488px; height:79px; padding-bottom: 10px; padding-top: 20px; position: absolute; left:50%; margin-left: -234px; background-color:rgba(215,215,215,0.30); }
-.row .segunda span{ margin-left: 180px; width:18px; height:23px; position: absolute; left:50%; }
+.row .segunda a{ font-family: Avenir-Light; color: #FFFFFF; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; position:absolute; background-color:rgba(215,215,215,0.30); }
 .row .segunda a:hover{ background: rgba(215,215,215,0.60); }
-/*.btn span{ display:inline-block; font-family:Avenir-Book; font-size:25px; color:#FFFFFF; padding-top:20px; margin-left:-380px; }*/
-
-.pergunta h1{ font-family: Avenir-Light; font-style: normal; font-weight: normal; font-size:32px; color:#FFFFFF; line-height:40px; margin-bottom:16px; width:500px; position:absolute; left:50%; margin-left:-250px; margin-top:-120px; text-align:left; }
+.pergunta h1{ font-family: Avenir-Light; font-style: normal; font-weight: normal; color:#FFFFFF; line-height:40px; position:absolute; text-align:left; }
 /**********************
 Extra small devices Phones (<768px) Landscape
 ***********************/
@@ -65,9 +60,19 @@ Medium devices Desktops (≥992px)
 Large devices Desktops (≥1200px)
 ***********************/
 @media only screen and (min-width:1200px) and (max-width:1399px){
+.wrapper_segunda{ top:41.5%; left:7%; width:100%; }
+.row .primeiro{ margin-bottom: 93px; }
+.row .primeiro a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
+.row .segunda a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
+.pergunta h1{ font-size:32px; margin-top:-120px; width:500px; left:50%; margin-left:-250px; }
 }
 /**********************
 Extra Large devices Desktops (≥1400px)
 ***********************/
 @media only screen and (min-width:1400px){
+.wrapper_segunda{ top:41%; left:50%; width:100%; margin-left: -30.5%;}
+.row .primeiro{ margin-bottom: 93px; }
+.row .primeiro a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
+.row .segunda a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
+.pergunta h1{ font-size:32px; margin-top:-120px; width:500px; left:50%; margin-left:-250px; }
 }
