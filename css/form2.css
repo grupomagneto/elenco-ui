@@ -144,6 +144,71 @@ PROGRESS
 .progress18 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
 .progress18 progress::-webkit-progress-value{ background-color:#fff; }
 .progress18 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress19*/
+.progress19 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress19 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress19 progress::-webkit-progress-value{ background-color:#fff; }
+.progress19 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress20*/
+.progress20 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress20 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress20 progress::-webkit-progress-value{ background-color:#fff; }
+.progress20 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress21*/
+.progress21 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress21 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress21 progress::-webkit-progress-value{ background-color:#fff; }
+.progress21 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress22*/
+.progress22 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress22 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress22 progress::-webkit-progress-value{ background-color:#fff; }
+.progress22 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress23*/
+.progress23 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress23 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress23 progress::-webkit-progress-value{ background-color:#fff; }
+.progress23 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress24*/
+.progress24 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress24 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress24 progress::-webkit-progress-value{ background-color:#fff; }
+.progress24 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress25*/
+.progress25 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress25 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress25 progress::-webkit-progress-value{ background-color:#fff; }
+.progress25 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress26*/
+.progress26 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress26 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress26 progress::-webkit-progress-value{ background-color:#fff; }
+.progress26 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress27*/
+.progress27 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress27 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress27 progress::-webkit-progress-value{ background-color:#fff; }
+.progress27 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress28*/
+.progress28 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress28 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress28 progress::-webkit-progress-value{ background-color:#fff; }
+.progress28 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress29*/
+.progress29 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress29 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress29 progress::-webkit-progress-value{ background-color:#fff; }
+.progress29 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress30*/
+.progress30 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress30 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress30 progress::-webkit-progress-value{ background-color:#fff; }
+.progress30 progress::-moz-progress-bar{ background-color:#fff; }
+/*progress31*/
+.progress31 progress{ position:absolute; color:#FFFFFF; left:50%; height:5px; background:rgba(215,215,215,0.1); border:1px solid #FFFFFF; border-radius:8px; }
+.progress31 progress::-webkit-progress-bar{ background:rgba(215,215,215,0.1); }
+.progress31 progress::-webkit-progress-value{ background-color:#fff; }
+.progress31 progress::-moz-progress-bar{ background-color:#fff; }
 .progress0 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
 .progress1 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
 .progress2 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
@@ -163,6 +228,19 @@ PROGRESS
 .progress16 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
 .progress17 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
 .progress18 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress19 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress20 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress21 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress22 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress23 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress24 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress25 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress26 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress27 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress28 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress29 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress30 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
+.progress31 progress{ width:600px; top:95%; margin-left:-300px; z-index:9999; }
 /*********************
 FORMATAÇÃO PADRÃO DAS PERGUNTAS E BOXES
 **********************/
@@ -368,6 +446,71 @@ Extra small devices Phones (<768px) Landscape
 .progress18 progress::-webkit-progress-bar{ display:none; }
 .progress18 progress::-webkit-progress-value{ display:none; }
 .progress18 progress::-moz-progress-bar{ display:none; }
+/*progress19*/
+.progress19 progress{ display:none; }
+.progress19 progress::-webkit-progress-bar{ display:none; }
+.progress19 progress::-webkit-progress-value{ display:none; }
+.progress19 progress::-moz-progress-bar{ display:none; }
+/*progress20*/
+.progress20 progress{ display:none; }
+.progress20 progress::-webkit-progress-bar{ display:none; }
+.progress20 progress::-webkit-progress-value{ display:none; }
+.progress20 progress::-moz-progress-bar{ display:none; }
+/*progress21*/
+.progress21 progress{ display:none; }
+.progress21 progress::-webkit-progress-bar{ display:none; }
+.progress21 progress::-webkit-progress-value{ display:none; }
+.progress21 progress::-moz-progress-bar{ display:none; }
+/*progress22*/
+.progress22 progress{ display:none; }
+.progress22 progress::-webkit-progress-bar{ display:none; }
+.progress22 progress::-webkit-progress-value{ display:none; }
+.progress22 progress::-moz-progress-bar{ display:none; }
+/*progress23*/
+.progress23 progress{ display:none; }
+.progress23 progress::-webkit-progress-bar{ display:none; }
+.progress23 progress::-webkit-progress-value{ display:none; }
+.progress23 progress::-moz-progress-bar{ display:none; }
+/*progress24*/
+.progress24 progress{ display:none; }
+.progress24 progress::-webkit-progress-bar{ display:none; }
+.progress24 progress::-webkit-progress-value{ display:none; }
+.progress24 progress::-moz-progress-bar{ display:none; }
+/*progress25*/
+.progress25 progress{ display:none; }
+.progress25 progress::-webkit-progress-bar{ display:none; }
+.progress25 progress::-webkit-progress-value{ display:none; }
+.progress25 progress::-moz-progress-bar{ display:none; }
+/*progress26*/
+.progress26 progress{ display:none; }
+.progress26 progress::-webkit-progress-bar{ display:none; }
+.progress26 progress::-webkit-progress-value{ display:none; }
+.progress26 progress::-moz-progress-bar{ display:none; }
+/*progress27*/
+.progress27 progress{ display:none; }
+.progress27 progress::-webkit-progress-bar{ display:none; }
+.progress27 progress::-webkit-progress-value{ display:none; }
+.progress27 progress::-moz-progress-bar{ display:none; }
+/*progress28*/
+.progress28 progress{ display:none; }
+.progress28 progress::-webkit-progress-bar{ display:none; }
+.progress28 progress::-webkit-progress-value{ display:none; }
+.progress28 progress::-moz-progress-bar{ display:none; }
+/*progress29*/
+.progress29 progress{ display:none; }
+.progress29 progress::-webkit-progress-bar{ display:none; }
+.progress29 progress::-webkit-progress-value{ display:none; }
+.progress29 progress::-moz-progress-bar{ display:none; }
+/*progress30*/
+.progress30 progress{ display:none; }
+.progress30 progress::-webkit-progress-bar{ display:none; }
+.progress30 progress::-webkit-progress-value{ display:none; }
+.progress30 progress::-moz-progress-bar{ display:none; }
+/*progress31*/
+.progress31 progress{ display:none; }
+.progress31 progress::-webkit-progress-bar{ display:none; }
+.progress31 progress::-webkit-progress-value{ display:none; }
+.progress31 progress::-moz-progress-bar{ display:none; }
 .progress0 progress{ display:none; }
 .progress1 progress{ display:none; }
 .progress2 progress{ display:none; }
@@ -387,6 +530,19 @@ Extra small devices Phones (<768px) Landscape
 .progress16 progress{ display:none; }
 .progress17 progress{ display:none; }
 .progress18 progress{ display:none; }
+.progress19 progress{ display:none; }
+.progress20 progress{ display:none; }
+.progress21 progress{ display:none; }
+.progress22 progress{ display:none; }
+.progress23 progress{ display:none; }
+.progress24 progress{ display:none; }
+.progress25 progress{ display:none; }
+.progress26 progress{ display:none; }
+.progress27 progress{ display:none; }
+.progress28 progress{ display:none; }
+.progress29 progress{ display:none; }
+.progress30 progress{ display:none; }
+.progress31 progress{ display:none; }
 .vs-vertical-nav{ display:none; }
 .vs-vertical-nav1{ display:none; }
 .vs-vertical-nav2{ display:none; }
@@ -425,6 +581,19 @@ PROGRESS
 .progress16 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
 .progress17 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
 .progress18 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress19 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress20 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress21 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress22 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress23 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress24 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress25 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress26 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress27 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress28 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress29 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress30 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress31 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
 /*********************
 POSIÇÃO DAS DIVS
 **********************/
@@ -698,6 +867,19 @@ PROGRESS
 .progress16 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
 .progress17 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
 .progress18 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress19 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress20 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress21 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress22 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress23 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress24 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress25 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress26 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress27 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress28 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress29 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress30 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
+.progress31 progress{ width:280px; top:5%; margin-left:-140px; z-index:9999; }
 /*********************
 POSIÇÃO DAS DIVS
 **********************/

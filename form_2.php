@@ -14,7 +14,7 @@
 <div class="swiper-container"> <!-- Swiper Container -->
   <div class="swiper-wrapper"> <!-- Swiper wrapper -->
     <!-- DIV QUEM VOCÊ ESTÁ CADASTRANDO  -->
-    <div class="swiper-slide gradient">
+    <div id="0" class="swiper-slide gradient">
       <div class="container">
         <div class="div0">
           <div class="row">
@@ -36,11 +36,11 @@
         <div class="progress0">
           <progress id="progressbar0" value="0" max="80"></progress>
         </div>
-          <nav>
+<!--           <nav>
             <ul class="vs-vertical-nav1 none">
               <li><a href="#" class="vs-next1 swiper-control next"></a></li>
             </ul>
-          </nav>
+          </nav> -->
       </div>
     </div>
     <!-- FIM DIV QUEM VOCÊ ESTÁ CADASTRANDO -->
@@ -511,38 +511,29 @@
               <h1 class="pergunta TabOnEnter">Escolha uma modalidade para o cadastro <span id="txt12"></span> <span class="concat2_texto"></span>:<sup>*</sup></h1>
             </div>
           </div>
-<<<<<<< HEAD
-          <div class="row col-xs-12">  
+          <div class="row col-xs-12">
             <!-- DIV PLANOS MOBILE -->
             <div class="versao_m">
               <!-- INÍCIO MODAL GRATUITO -->
-              <div class="div15_box">
-=======
-          <div class="row col-xs-12">
-            <div class="div15_box">
-              <!-- DIV PLANOS MOBILE -->
-              <div class="versao_m">
-                <!-- INÍCIO MODAL GRATUITO -->
->>>>>>> 987cfdfc203e652d4253546a630c5f63b3b3316b
-                <div class="div_m2" data-toggle="modal" data-target="#myModal1_m2">
+              <div class="div_m2" data-toggle="modal" data-target="#myModal1_m2">
                   <h3>Gratuito</h3>
                   <p>fotos simples em estúdio apenas para site</p>
                   <div id="mais2"></div>
+              </div>
+              <div class="modal modal1_m2" id="myModal1_m2" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-content conteudo_modal_m2_2">
+                  <h3>Gratuito</h3>
+                  <p>fotos simples em estúdio apenas para site</p>
+                  <ol>
+                    <li>Recebe 20% do cachê líquido no 1º trabalho, 60% nos demais</li>
+                    <li>Deve ser agenciado apenas pela Magneto Elenco</li>
+                    <li>Contrato de 1 ano</li>
+                  </ol>
+                  <h2>CADASTRO SEM DESEMBOLSO</h2>
+                  <button type="button" class="botao_escolha_m2_2" data-toggle="modal" data-target="#termo_gratuito_mobile">ESCOLHER</button>
+                  <div id="menos2_2" data-dismiss="modal"></div>
                 </div>
-                <div class="modal modal1_m2" id="myModal1_m2" role="dialog" aria-labelledby="myLargeModalLabel">
-                  <div class="modal-content conteudo_modal_m2_2">
-                    <h3>Gratuito</h3>
-                    <p>fotos simples em estúdio apenas para site</p>
-                    <ol>
-                      <li>Recebe 20% do cachê líquido no 1º trabalho, 60% nos demais</li>
-                      <li>Deve ser agenciado apenas pela Magneto Elenco</li>
-                      <li>Contrato de 1 ano</li>
-                    </ol>
-                    <h2>CADASTRO SEM DESEMBOLSO</h2>
-                    <button type="button" class="botao_escolha_m2_2" data-toggle="modal" data-target="#termo_gratuito_mobile">ESCOLHER</button>
-                    <div id="menos2_2" data-dismiss="modal"></div>
-                  </div>
-                </div>
+              </div>
                 <div class="modal modal_termo_gratuito_mobile" id="termo_gratuito_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
                   <div class="modal-content conteudo_termo_gratuito_mobile">
                     <h3>Termos e Condições</h3>
@@ -680,10 +671,11 @@
                 </div>
                 <!-- FIM DIV PROFISSIONAL MOBILE -->
             <!-- FIM DIV PLANOS MOBILE -->
+            </div>
             <!-- DIV PLANOS DESKTOP -->
             <div class="versao_d">
               <!-- DIV PLANO GRATUITO DESTOP -->
-<!--              <div class="div15_box1">-->
+              <div class="div15_box2">
                 <div class="thumbnail">
                   <div class="caption">
                     <h3>Gratuito</h3>
@@ -697,7 +689,7 @@
                     <button type="button" class="botao_modal2" data-toggle="modal" data-target="#myModal2">ESCOLHER</button>
                   </div>
                 </div>
-<!--              </div>-->
+              </div>
               <div class="modal hidden-xs modal2" id="myModal2" role="dialog" aria-labelledby="myLargeModalLabel">
                 <div class="modal-content conteudo_modal2">
                   <div class="modal_esquerda2">
@@ -740,7 +732,7 @@
               </div>
               <!-- FIM DIV PLANO GRATUITO DESTOP -->
               <!-- DIV PLANO PREMIUM DESTOP -->
-              <div class="div15_box2">
+              <div class="div15_box">
                 <div class="thumbnail">
                   <div class="caption">
                     <h3>Premium</h3>
@@ -874,7 +866,11 @@
                 </div>
               </div>
               <!-- FIM DIV PLANO PROFISSIONAL DESTOP -->
-              <div class="progress15">
+              </div>
+            </div>
+            <!-- FIM DIV PLANOS DESKTOP -->
+          </div>
+          <div class="progress15">
                 <progress id="progressbar15" value="75" max="80"></progress>
               </div>
               <nav>
@@ -883,12 +879,6 @@
                   <li><a href="#" class="vs-next swiper-control next"></a></li>
                 </ul>
               </nav> 
-            </div>
-            <!-- FIM DIV PLANOS DESKTOP -->
-          </div>
-        </div>
-      </div>
-    </div>
         </div>
       </div>
     <!-- FIM DIV PLANOS -->
@@ -929,6 +919,8 @@
         </ul>
       </nav>
     </div>
+    </div>
+    </div>
     <!-- FIM DIV REDES SOCIAIS -->
     </form>
 <a name="maior"></a>
@@ -937,31 +929,33 @@
 <div class="swiper-container">
   <!-- Swiper W -->
     <div class="swiper-wrapper">
-       <div id="17" class="swiper-slide gradient">
-       <div class="container">
+    <!-- DIV NOME DA PESSOA SENDO CADASTRADA -->
+    <div id="17" class="swiper-slide gradient">
+      <div class="container">
         <div class="div17">
-         <div class="row">
-          <div class="pergunta col-lg-offset-3 col-lg-5">
-           <h1>Qual o seu primeiro nome?<sup>*</sup></h1>
+          <div class="row">
+            <div class="pergunta col-lg-offset-3 col-lg-5">
+              <h1 id="proxima">Qual o primeiro nome <span id="txt2"></span>?<sup>*</sup></h1>
+            </div>
+            <div class="input_box col-lg-offset-3 col-lg-5">
+              <input name="nome_menor" id="nome_menor" type="text" onfocus="this.value=''" class="TabOnEnter" autocomplete="off" placeholder=" " required />
+                <input type="button" class="sendBtn" id="btSend4" name="btSend4" style="display: none;" />
+                  <img id="seta4" onclick="gravar()" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
+            </div>
           </div>
-          <div class="input_box col-lg-offset-3 col-lg-5">
-           <input name="nome_maior" id="nome_maior" type="text" onfocus="this.value=''" class="TabOnEnter" tabindex="20" autocomplete="off" required="required" />
-           <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
-           <img id="seta10" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" alt="seta" style="display: none;">
-          </div>
-         </div>
         </div>
-       </div>
-       </div>
-       <div class="progress17">
-<progress id="progressbar17" value="5" max="75"></progress>
-</div>
-    <nav>
-      <ul class="vs-vertical-nav none">
-        <li><a href="#form2" class="vs-prev swiper-control"></a></li>
-        <li><a href="#" class="vs-next swiper-control next"></a></li>
-      </ul>
-    </nav> 
+      </div>
+      <div class="progress17">
+        <progress id="progressbar17" value="5" max="80"></progress>
+      </div>
+      <nav>
+        <ul class="vs-vertical-nav none">
+          <li><a href="#div0" class="vs-prev swiper-control prev"></a></li>
+          <li><a href="#" class="vs-next swiper-control next"></a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- FIM DIV NOME DA PESSOA SENDO CADASTRADA -->
 <div id="18" class="swiper-slide gradient">
        <div class="container">
         <div class="div18">
@@ -1734,28 +1728,28 @@
                   <label for="profissional">CONCORDO</label>
                 </div>
                 <div id="menos3_d" data-dismiss="modal"></div>
+                    </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="progress30">
+        <progress id="progressbar30" value="70" max="75"></progress>
+      </div>
+      <nav>
+        <ul class="vs-vertical-nav none">
+          <li><a href="#" class="vs-prev swiper-control prev"></a></li>
+          <li><a href="#" class="vs-next swiper-control next"></a></li>
+        </ul>
+      </nav> 
+      </div> 
     </div>
-  </div>
-</div>
-</div>
-</div>
-<div class="progress30">
-      <progress id="progressbar30" value="70" max="75"></progress>
-    </div>
-    <nav>
-      <ul class="vs-vertical-nav none">
-        <li><a href="#" class="vs-prev swiper-control prev"></a></li>
-        <li><a href="#" class="vs-next swiper-control next"></a></li>
-      </ul>
-    </nav> 
- </div> 
-</div>
-<!-- FIM DIV PLANOS -->
+    <!-- FIM DIV PLANOS -->
     <!-- ÚLTIMA DIV -->
     <div id="31" class="swiper-slide gradient">
       <div class="container">
