@@ -1,5 +1,6 @@
-var Swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
+
+   var menor = new Swiper('.menor', {
+             pagination: '.swiper-pagination',
         keyboardControl: true,
         direction: 'vertical',
         simulateTouch: false,
@@ -8,6 +9,17 @@ var Swiper = new Swiper('.swiper-container', {
         prevButton: '.swiper-control.prev',
         speed: 200
     });
+    var maior = new Swiper('.maior', {
+            pagination: '.swiper-pagination',
+        keyboardControl: true,
+        direction: 'vertical',
+        simulateTouch: false,
+        onlyExternal: true,
+        nextButton: '.swiper-control.next2',
+        prevButton: '.swiper-control.prev2',
+        speed: 200
+    });
+
 
 var colors = new Array(
         [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
@@ -383,8 +395,11 @@ $('.input_box input[type="email"]').removeAttr('style');
 
 });
 //PADDING-RIGHT NA SETA MOBILE
-
-
+$(function() {
+  $(".teste").click(function() {
+        $('#responsavel_nao').focus();
+  });
+});
 //PADDING-RIGHT NA SETA MOBILE
 
 $(document).ready(function(){ 
