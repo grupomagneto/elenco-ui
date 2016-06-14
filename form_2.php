@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/form2.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
   </head>
-<body>
+<body >
 <form name="form2" action="adiciona-usuario.php" id="form2" method="post" enctype="multipart/form-data" onsubmit="return valida_form2(this)">
 <div class="swiper-container menor"> <!-- Swiper Container -->
   <div class="swiper-wrapper"> <!-- Swiper wrapper -->
@@ -28,7 +28,7 @@
             </div>
             <div class="row">
               <div class="segunda col-lg-offset-3 col-lg-5">
-                <a href="#" class="btn vs-next swiper-control next">Uma criança ou adolescente</a> 
+                <a href="#" class="btn swiper-control next">Uma criança ou adolescente</a> 
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@
         <div class="div1">
           <div class="row">
             <div class="pergunta col-lg-offset-3 col-lg-5">
-              <h1>Você é legalmente responsável por essa criança/adolescente?<sup>*</sup></h1>
+              <h1 class="TabOnEnter" tabindex="1" >Você é legalmente responsável por essa criança/adolescente?<sup>*</sup></h1>
             </div>
             <div class="input_box col-lg-offset-3 col-lg-5">
               <input name="responsavel" type="radio" value="nao" id="responsavel_nao" class="radio_0"  />
@@ -59,7 +59,7 @@
                 </label>
             </div>
             <div class="input_box col-lg-offset-3 col-lg-5">
-              <input name="responsavel" type="radio" value="sim" id="responsavel_sim" class="radio_0 vs-next swiper-control next focus1 TabOnEnter" tabindex="1" />
+              <input name="responsavel" type="radio" value="sim" id="responsavel_sim" class="radio_0" />
                 <label id="responsavel_sim_label" for="responsavel_sim" class="radio-label3">
                   <span>Sim</span>
                 </label>
@@ -141,7 +141,7 @@
               <h1 class="TabOnEnter" tabindex="4">Qual o sexo do menor?<sup>*</sup></h1>
             </div>
             <div class="input_box col-lg-offset-3 col-lg-5">
-              <input type="radio" name="sexo_menor" value="masculino" id="radio0" class="radio" onchange="exibeMsg2(this.value);" />
+              <input type="radio" name="c" value="masculino" id="radio0" class="radio" onchange="exibeMsg2(this.value);" />
                 <label for="radio0" class="radio-label2">
                   <span>Masculino</span>
                 </label>
@@ -937,7 +937,7 @@
             <div class="input_box col-lg-offset-3 col-lg-5">
               <input name="nome_maior" id="nome_maior" type="text" class="TabOnEnter" tabindex="17" autocomplete="off" placeholder=" " required />
                 <input type="button" class="sendBtn" id="btSend17" name="btSend17" style="display: none;" />
-                  <img id="seta17" onclick="gravar()" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+                  <img id="seta17" onclick="gravar()" class="swiper-control next2" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
             </div>
           </div>
         </div>
@@ -963,7 +963,7 @@
           <div class="input_box col-lg-offset-3 col-lg-5">
            <input name="sobrenome_maior" id="sobrenome_maior" type="text" class="TabOnEnter" tabindex="18" autocomplete="off"  required="required" />
            <input type="button" class="sendBtn" id="btSend18" name="btSend18" style="display: none;">
-           <img id="seta18" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+           <img id="seta18" class="swiper-control next2" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
           </div>
          </div>
         </div>
@@ -1021,7 +1021,7 @@
         </div>
         <div class="div7_box col-lg-offset-3 col-lg-5">
           <h1>Legal! Agora precisamos de duas fotos suas feitas hoje.</h1>
-          <button class="swiper-control next TabOnEnter botao" tabindex="20" class="TabOnEnter">Continuar</button>
+          <button class="swiper-control next2 TabOnEnter botao" tabindex="20" class="TabOnEnter">Continuar</button>
 <!--            <img src="images/ok_neg.svg">-->
         </div>
       </div>
@@ -1148,7 +1148,7 @@
         <div class="input_box col-lg-offset-3 col-lg-5">
           <input name="celular" id="celular" data-mask="(00) 00000-0000" class="TabOnEnter" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
           <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;">
-          <img id="seta10" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+          <img id="seta10" class="swiper-control next2" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
         </div>
       </div>
     </div>
@@ -1175,7 +1175,7 @@
         <div class="input_box col-lg-offset-3 col-lg-5">
           <input name="email" id="email" class="TabOnEnter" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
           <input type="button" class="sendBtn11" id="btSend11" name="btSend11" style="display: none;">
-          <img id="seta11" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+          <img id="seta11" class="swiper-control next2" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
         </div>
       </div>
     </div>
@@ -1305,7 +1305,7 @@
         <div class="input_box col-lg-offset-3 col-lg-5">
           <input type="text" name="cpf" id="cpf" data-mask="000.000.000-00" onfocus="this.value=''" min="11" max= "11" placeholder="000.000.000-00" required />
           <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
-          <img id="seta" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+          <img id="seta" class="swiper-control next2" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
         </div>
       </div>
     </div>
