@@ -421,17 +421,17 @@ $(function() {
 });
 $(function() {
   $(".swiper-control.next.focus3").click(function() {
-        $("#form2 [name='sexo']").focus();
+        $('#sexo_menor').focus();
   });
 });
 $(function() {
   $(".swiper-control.next.focus4").click(function() {
-        $("#form2 [name='nome_menor']").focus();
+        $('#nome_menor').focus();
   });
 });
 $(function() {
   $(".swiper-control.next.focus5").click(function() {
-        $("#form2 [name='sobrenome_menor']").focus();
+        $('#sobrenome_menor').focus();
   });
 });
 $(function() {
@@ -523,7 +523,7 @@ $(function() {
 });
 $(function() {
   $(".swiper-control.next.focus3").click(function() {
-        $("#form2 [name='sexo']").blur();
+        $("#form2 [name='sexo_menor']").blur();
   });
 });
 $(function() {
@@ -764,7 +764,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  $("#form2 [name='sexo']").click(function() {
+  $("#form2 [name='sexo_menor']").click(function() {
     if ($(this).attr("value") == "masculino") {
       var delay = 1000;
       setTimeout(function() {
@@ -805,7 +805,7 @@ $(document).ready(function() {
 
 $(function() {
   $("#seta2").click(function() {
-    $("#3").focus();
+    $("#4").focus();
   });
 });
 
@@ -847,7 +847,7 @@ $('form')[0].addEventListener('focus', function(e) {
 // });
 // $(function() {
 //   $(".swiper-control.next.focus3").click(function() {
-//         $("#form2 [name='sexo']").focus();
+//         $("#form2 [name='sexo_menor']").focus();
 //   });
 // });
 // $(function() {
@@ -1233,7 +1233,7 @@ function valida_form2() {
     $("#erro").toggle();
     return false
   }
-  if (document.form2.sexo[0].checked == false && document.form2.sexo[1].checked == false) {
+  if (document.form2.sexo_menor[0].checked == false && document.form2.sexo_menor[1].checked == false) {
     $("#erro").toggle();
     return false
   }
