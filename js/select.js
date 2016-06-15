@@ -181,10 +181,8 @@ $('#raca').each(function(){
         e.stopPropagation();
         $styledSelect.text($(this).text()).removeClass('active');
         $this.val($(this).attr('rel'));
-        var delay = 1000;
-            setTimeout(function() {
-         $("#proxima2").focus();
-              }, 200);
+    
+            menor.slideNext();
           
         $list.hide();
         //console.log($this.val());
@@ -199,9 +197,56 @@ $('#raca').each(function(){
 
 
 
+$('#raca_maior').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
+  
+    $this.addClass('select-hidden4'); 
+    $this.wrap('<div class="select4"></div>');
+    $this.after('<div class="select-styled4"></div>');
 
+    var $styledSelect = $this.next('div.select-styled4');
+    $styledSelect.text($this.children('option').eq(0).text());
+  
+    var $list = $('<ul />', {
+        'class': 'select-options4'
+    }).insertAfter($styledSelect);
+  
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+  
+    var $listItems = $list.children('li');
+  
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active4').each(function(){
+            $(this).removeClass('active').next('ul.select-options4').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options4').toggle(); 
+    });
+  
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+    
+            maior.slideNext();
+          
+        $list.hide();
+        //console.log($this.val());
+    });
+  
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
 
-$('#bairro').each(function(){
+});
+
+$('#bairro_maior').each(function(){
     var $this = $(this), numberOfOptions = $(this).children('option').length;
   
     $this.addClass('select-hidden5'); 
@@ -236,10 +281,8 @@ $('#bairro').each(function(){
         e.stopPropagation();
         $styledSelect.text($(this).text()).removeClass('active');
         $this.val($(this).attr('rel')); 
-        var delay = 1000;
-            setTimeout(function() {
-         $("#cpf").focus();
-              }, 200);
+        
+            maior.slideNext();
         $list.hide();
         //console.log($this.val());
     });
@@ -290,10 +333,8 @@ $('#bairro2').each(function(){
         e.stopPropagation();
         $styledSelect.text($(this).text()).removeClass('active');
         $this.val($(this).attr('rel')); 
-        var delay = 1000;
-            setTimeout(function() {
-         $(".penultimo_p").focus();
-              }, 200);
+        
+            menor.slideNext();
         $list.hide();
         //console.log($this.val());
     });

@@ -17,7 +17,8 @@
         onlyExternal: true,
         nextButton: '.swiper-control.next2',
         prevButton: '.swiper-control.prev2',
-        speed: 200
+        speed: 200,
+        initialSlide: 0
     });
 
 
@@ -1112,7 +1113,7 @@ $("#nome_responsavel").keyup(function() {
 
 $(document).ready(function() {
   $(".blue").hide();
-  $('input[type="radio"]').click(function() {
+  $("#form [name='ator']").click(function() {
     if ($(this).attr("value") == "sim") {
 
       $(".box").not(".blue").hide();
@@ -1160,10 +1161,8 @@ $(document).ready(function() {
       $(".div_m2").css({ opacity: 1.0 }); 
       $('.div_m2').attr('data-toggle','modal');
 
-      var delay = 1000;
-      setTimeout(function() {
-        $(".penultimo_p ").focus()();
-      }, 200);
+        
+         maior.slideNext();
     }
   });
 });
@@ -1296,6 +1295,19 @@ $(document).ready(function() {
 });
 //SCRIPT FOCUS MASCULINO E FEMININO
 
+//FOCUS SLIDER MAIOR
+$(function() {
+  $(".teste").click(function() {
+     menor.slideNext();
+         $("#nome_maior").focus();
+    
+  });
+});
+
+//FOCUS SLIDER MAIOR
+
+
+
 $("#cpf_responsavel").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
@@ -1346,18 +1358,34 @@ $(".div9_box").keypress(function(e) {
   }
 });
 
-$(".div10_box").keypress(function(e) {
+$("#data").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
     menor.slideNext();
   }
 });
-$(".div11_box").keypress(function(e) {
+
+$("#celular_responsavel").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
     menor.slideNext();
   }
 });
+
+$("#email_responsavel").keypress(function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    menor.slideNext();
+  }
+});
+
+$("input#ig_responsavel").keypress(function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+      $("#form2 [name='facebook']").focus();
+  }
+});
+
 $(".div12_box").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
@@ -1389,9 +1417,10 @@ $(".div16_box").keypress(function(e) {
   }
 });
 
-$("#nome").keypress(function(e) {
+$("#nome_maior").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
+    maior.slideNext();
   }
 });
 
@@ -1454,19 +1483,6 @@ $("#email").keypress(function(e) {
   }
 });
 
-$(".ig").keypress(function(e) {
-  if (e.keyCode === 13) {
-    e.preventDefault();
-    $(".face").focus();
-  }
-});
-
-$(".face").keypress(function(e) {
-  if (e.keyCode === 13) {
-    e.preventDefault();
-    $(".tt").focus();
-  }
-});
 
 $('#myModal').appendTo("form");
 $('#myModal1_m').appendTo("form");
@@ -1495,6 +1511,7 @@ $(".botao_escolha_m3_m1").click(function() {
 // ESCONDER MODAL PREMIUM
 $(".button").click(function() {
   $('#myModal').modal('hide');
+  menor.slideNext();
   $("#ig").focus();
 });
 
@@ -1506,6 +1523,7 @@ $(".sim_acordo_termo_premium_mobile").click(function() {
 // ESCONDER MODAL GRATUITO
 $(".button2").click(function() {
   $('#myModal2').modal('hide');
+  menor.slideNext();
   $("#ig").focus();
 });
 
@@ -1517,6 +1535,7 @@ $(".sim_acordo_termo_gratuito_mobile").click(function() {
 // ESCONDER MODAL PROFISSIONAL
 $(".button3").click(function() {
   $('#myModal3').modal('hide');
+  menor.slideNext();
   $("#ig").focus();
 });
 

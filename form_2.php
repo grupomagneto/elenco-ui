@@ -23,7 +23,7 @@
               </div>
             <div class="row">
               <div class="primeiro col-lg-offset-3 col-lg-5">
-                <a href="#maior" class="btn swiper-control">Eu mesmo(a), sou maior de idade</a> 
+                <a href="#form_maior" class="btn teste">Eu mesmo(a), sou maior de idade</a> 
               </div>
             </div>
             <div class="row">
@@ -116,7 +116,7 @@
             <div class="input_box col-lg-offset-3 col-lg-5">
               <input type="text" name="nome_responsavel" id="nome_responsavel" tabindex="3" autocomplete="off" required placeholder=" " />
                 <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;" />
-                  <img id="seta2" class="vs-next swiper-control next focus3" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+                  <img id="seta2" class="vs-next swiper-control next focus3" src="images/ok_neg.svg" style="display: none;">
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@
             <div class="input_box col-lg-offset-3 col-lg-5">
               <input name="nome_menor" id="nome_menor" type="text" onfocus="this.value=''" class="TabOnEnter" tabindex="5" autocomplete="off" placeholder=" " required />
                 <input type="button" class="sendBtn" id="btSend4" name="btSend4" style="display: none;" />
-                  <img id="seta4" onclick="gravar()" class="swiper-control next focus5" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+                  <img id="seta4" onclick="gravar()" class="swiper-control next focus5" src="images/ok_neg.svg" style="display: none;">
             </div>
           </div>
         </div>
@@ -204,7 +204,7 @@
             <div class="input_box col-lg-offset-3 col-lg-5">
               <input type="text" name="sobrenome_menor" id="sobrenome_menor" onfocus="this.value=''" class="TabOnEnter" tabindex="6" autocomplete="off" placeholder=" " required />
                 <input type="button" class="sendBtn5" id="btSend5" name="btSend5" style="display: none;" />
-                  <img id="seta5" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+                  <img id="seta5" class="swiper-control next" src="images/ok_neg.svg" style="display: none;">
             </div>
           </div>
         </div>
@@ -354,9 +354,9 @@
               <h1>Qual o celular para contato?<sup>*</sup></h1>
             </div>
             <div class="input_box col-lg-offset-3 col-lg-5">
-              <input name="celular" id="celular" data-mask="(00) 00000-0000" class="TabOnEnter" tabindex="11" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
+              <input name="celular" id="celular_responsavel" data-mask="(00) 00000-0000" class="TabOnEnter" tabindex="11" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
               <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;" />
-              <img id="seta10" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+              <img id="seta10" class="swiper-control next" src="images/ok_neg.svg" style="display: none;">
             </div>
           </div>
         </div>
@@ -381,9 +381,9 @@
               <h1>E o email?<sup>*</sup></h1>
             </div>
             <div class="input_box col-lg-offset-3 col-lg-5">
-              <input name="email" id="email" class="TabOnEnter" tabindex="12" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
+              <input name="email" id="email_responsavel" class="TabOnEnter" tabindex="12" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
                 <input type="button" class="sendBtn11" id="btSend11" name="btSend11" style="display: none;" />
-                  <img id="seta11" class="swiper-control next" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+                  <img id="seta11" class="swiper-control next" src="images/ok_neg.svg" style="display: none;">
             </div>
           </div>
         </div>
@@ -892,15 +892,15 @@
             </div>
             <div class="input_ig col-lg-offset-3 col-lg-5">
               <img src="images/ig.svg" alt="instagram">
-                <input name="ig" id="ig" type="text" onfocus="this.value=''" class="TabOnEnter ig"autocomplete="off" placeholder="www.instagram.com/usuario" />
+                <input name="ig" id="ig_responsavel" type="text" onfocus="this.value=''" class="TabOnEnter ig"autocomplete="off" placeholder="www.instagram.com/usuario" tabindex="16"/>
             </div>
             <div class="input_fb col-lg-offset-3 col-lg-5">
               <img src="images/face.svg" alt="facebook">
-                <input name="face" id="face" type="text" onfocus="this.value=''" class="TabOnEnter face" autocomplete="off" placeholder="www.facebook.com/usuario" />
+                <input name="facebook" id="face_responsavel" type="text" onfocus="this.value=''" class="TabOnEnter face" autocomplete="off" placeholder="www.facebook.com/usuario" />
             </div>
             <div class="input_tt col-lg-offset-3 col-lg-5">
               <img src="images/tt.svg" alt="twitter">
-                <input name="tt" id="tt" type="text" onfocus="this.value=''" class="TabOnEnter tt" autocomplete="off" placeholder="www.twitter.com/usuario" />
+                <input name="tt" id="tt_responsavel" type="text" onfocus="this.value=''" class="TabOnEnter tt" autocomplete="off" placeholder="www.twitter.com/usuario" />
             </div>
           </div>
           <button class="botao" id="cadastra" name="submit" type="submit">Enviar Cadastro</button>
@@ -920,7 +920,7 @@
 </div>
     <!-- FIM DIV REDES SOCIAIS -->
     </form>
-<a name="maior"></a>
+<a name="form_maior"></a>
 <form name="form" action="adiciona-usuario.php" id="form" method="post" enctype="multipart/form-data" onsubmit="return valida_form2(this)">
   <!-- Swiper Container -->
 <div class="swiper-container maior">
@@ -937,7 +937,7 @@
             <div class="input_box col-lg-offset-3 col-lg-5">
               <input name="nome_maior" id="nome_maior" type="text" class="TabOnEnter" tabindex="17" autocomplete="off" placeholder=" " required />
                 <input type="button" class="sendBtn" id="btSend17" name="btSend17" style="display: none;" />
-                  <img id="seta17" onclick="gravar()" class="swiper-control next2" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+                  <img id="seta17" onclick="gravar()" class="swiper-control next2" src="images/ok_neg.svg" style="display: none;">
             </div>
           </div>
         </div>
@@ -963,7 +963,7 @@
           <div class="input_box col-lg-offset-3 col-lg-5">
            <input name="sobrenome_maior" id="sobrenome_maior" type="text" class="TabOnEnter" tabindex="18" autocomplete="off"  required="required" />
            <input type="button" class="sendBtn" id="btSend18" name="btSend18" style="display: none;">
-           <img id="seta18" class="swiper-control next2" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+           <img id="seta18" class="swiper-control next2" src="images/ok_neg.svg" style="display: none;">
           </div>
          </div>
         </div>
@@ -1148,7 +1148,7 @@
         <div class="input_box col-lg-offset-3 col-lg-5">
           <input name="celular" id="celular" data-mask="(00) 00000-0000" class="TabOnEnter" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
           <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;">
-          <img id="seta10" class="swiper-control next2" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+          <img id="seta10" class="swiper-control next2" src="images/ok_neg.svg" style="display: none;">
         </div>
       </div>
     </div>
@@ -1175,7 +1175,7 @@
         <div class="input_box col-lg-offset-3 col-lg-5">
           <input name="email" id="email" class="TabOnEnter" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
           <input type="button" class="sendBtn11" id="btSend11" name="btSend11" style="display: none;">
-          <img id="seta11" class="swiper-control next2" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+          <img id="seta11" class="swiper-control next2" src="images/ok_neg.svg" style="display: none;">
         </div>
       </div>
     </div>
@@ -1200,7 +1200,7 @@
           <h1>Qual é a cor da pele <span id="txt3"></span>?<sup>*</sup></h1>
         </div>
         <div class="div13_box col-lg-offset-3 col-lg-5">
-          <select id="raca" name="raca" class="TabOnEnter">
+          <select id="raca_maior" name="raca" class="TabOnEnter">
             <option disabled value="1">Selecione...</option>
             <option value="Amarela" >Amarela</option>
             <option value="Branca">Branca</option>
@@ -1232,7 +1232,7 @@
           <h1 id="proxima2">Em qual bairro <span id="txt4"></span> mora?<sup>*</sup></h1>
         </div>
         <div class="div14_box col-lg-offset-3 col-lg-5">
-          <select name="bairro" id="bairro2" class="TabOnEnter">
+          <select name="bairro" id="bairro_maior" class="TabOnEnter">
             <option disabled value="1">Selecione...</option>
             <option value="Águas Claras"> Águas Claras</option>
             <option value="Asa Norte"> Asa Norte</option>
@@ -1305,7 +1305,7 @@
         <div class="input_box col-lg-offset-3 col-lg-5">
           <input type="text" name="cpf" id="cpf" data-mask="000.000.000-00" onfocus="this.value=''" min="11" max= "11" placeholder="000.000.000-00" required />
           <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
-          <img id="seta" class="swiper-control next2" onclick="focusFoo()" src="images/ok_neg.svg" style="display: none;">
+          <img id="seta" class="swiper-control next2" src="images/ok_neg.svg" style="display: none;">
         </div>
       </div>
     </div>
