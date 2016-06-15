@@ -291,7 +291,7 @@ img#seta11{ width:60px; height:60px; position:absolute; left:50%; margin-left:27
 .div8_box h4{ font-family:Avenir-Book; font-size:18px; color:#FFFFFF; line-height:24px; font-weight:600; margin-bottom:16px; width:400px; position:absolute; left:50%; margin-left:-200px; margin-top:300px; }
 .file-upload{ background-color:rgba(215,215,215,0.30); height:150px; width:150px; border-radius:100px; position:absolute; left:50%; margin-top:140px; margin-left:-75px; text-align:center; display:flex; justify-content:center; align-items:center; border:2px solid #FFFFFF; overflow:hidden; background-size:100% 200%; color:#FFFFFF; font-size:100px; }
 .file-upload:hover{ background-color:rgba(215,215,215,0.60); }
-.file-upload:selected{ background-color:rgba(215,215,215,0.60); }
+.file-upload:active{ background-color:rgba(215,215,215,0.60); }
 .div8_box input[type='file']{ height:200px; width:200px; position:absolute; top:0; left:0; opacity:0; margin-left:-27px; margin-top:-12px; cursor:pointer; }
 /* Agora sem sorrir */
 .div9_t h1{ font-family:Avenir-Book; color:#FFFFFF; font-size:32px; line-height:40px; margin-bottom:16px; width:400px; position:absolute; left:50%; margin-left:-200px; margin-top:50px; }
@@ -301,6 +301,8 @@ img#seta11{ width:60px; height:60px; position:absolute; left:50%; margin-left:27
 .div9_box h4{ font-family:Avenir-Book; font-size:18px; color:#FFFFFF; line-height:24px; font-weight:600; margin-bottom:16px; width:400px; position:absolute; left:50%; margin-left:-200px; margin-top:300px; }
 .div9_box input[type='file']{ height:200px; width:200px; position:absolute; top:0; left:0; opacity:0; cursor:pointer; }
 .file-upload2{ background-color:rgba(215,215,215,0.30); height:150px; width:150px; border-radius:100px; position:absolute; left:50%; margin-top:140px; margin-left:-75px; text-align:center; display:flex; justify-content:center; align-items:center; border:2px solid #FFFFFF; overflow:hidden; background-size:100% 200%; color:#FFFFFF; font-size:100px; }
+.file-upload2:hover{ background-color:rgba(215,215,215,0.60); }
+.file-upload2:active{ background-color:rgba(215,215,215,0.60); }
 /*Cor da Pele*/
 .select-hidden4{ display:none; visibility:hidden; padding-right:10px; }
 .select4{ cursor:pointer; display:inline-block; position:absolute; font-size:16px; color:#fff; width:500px; height:80px; margin-left:-250px; }
@@ -761,7 +763,7 @@ div.modal-content.conteudo_modal_m3_m1 button.botao_escolha_m3_m1:hover{ backgro
 TERMOS E CONDIÇÕES
 **********************/
 /* Termos e Condições - Gratuito */
-#termo_gratuito_mobile{ height:95%; width:95%; overflow-y:auto; overflow-x:none; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; }
+#termo_gratuito_mobile{ height:95%; width:95%; overflow-y:auto; overflow-x:hidden; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; }
 #termo_gratuito_mobile::-webkit-scrollbar{ width:12px; background:#fdd4e1; }
 #termo_gratuito_mobile::-webkit-scrollbar-track{ -webkit-box-shadow:inset 0 0 6px #F75486; color:#fff; border-radius:10px; }
 #termo_gratuito_mobile::-webkit-scrollbar-thumb{ border-radius:10px; -webkit-box-shadow:inset 0 0 20px #F75486; }
@@ -777,7 +779,7 @@ div.modal-content.conteudo_termo_gratuito_mobile p.acordo_termo_gratuito_mobile{
 #menos2_2m{ position:absolute; right:40px; top:10px; width:30px; height:30px; cursor:pointer; text-align:center; }
 #menos2_2m::before{ content:''; background-image:url('../images/menos.svg'); background-size:20px 20px; display:inline-block; width:20px; height:20px; }
 /* Termos e Condições - Premium */
-#termo_premium_mobile{ height:95%; width:95%; overflow-y:auto; overflow-x:none; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; }
+#termo_premium_mobile{ height:95%; width:95%; overflow-y:auto; overflow-x:hidden; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; }
 #termo_premium_mobile::-webkit-scrollbar{ width:12px; background:#f1d5f7; }
 #termo_premium_mobile::-webkit-scrollbar-track{ -webkit-box-shadow:inset 0 0 6px #C957DE; color:#fff; border-radius:10px; }
 #termo_premium_mobile::-webkit-scrollbar-thumb{ border-radius:10px; -webkit-box-shadow:inset 0 0 20px #C957DE; }
@@ -793,7 +795,7 @@ div.modal-content.conteudo_termo_premium_mobile p.acordo_termo_premium_mobile{ f
 #menos1_1m{ position:absolute; right:40px; top:10px; width:30px; height:30px; cursor:pointer; text-align:center; }
 #menos1_1m::before{ content:''; background-image:url('../images/menos.svg'); background-size:20px 20px; display:inline-block; width:20px; height:20px; }
 /* Termos e Condições - Profissional */
-#termo_profissional_mobile{ height:95%; width:95%; overflow-y:auto; overflow-x:none; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; }
+#termo_profissional_mobile{ height:95%; width:95%; overflow-y:auto; overflow-x:hidden; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; }
 #termo_profissional_mobile::-webkit-scrollbar{ width:12px; background:#d2e8f8; }
 #termo_profissional_mobile::-webkit-scrollbar-track{ -webkit-box-shadow:inset 0 0 6px #4AA4E2; color:#fff; border-radius:10px; }
 #termo_profissional_mobile::-webkit-scrollbar-thumb{ border-radius:10px; -webkit-box-shadow:inset 0 0 20px #4AA4E2; }
@@ -903,10 +905,10 @@ POSIÇÃO DAS DIVS
 .div17{ position:absolute; top:50%; left:23%; width:55%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div18{ position:absolute; top:50%; left:23%; width:55%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 /*Primeira Pergunta*/
-.wrapper_segunda{ top:41%; left:50%; width:100%; margin-left: -30.5%;}
-.row .primeiro{ margin-bottom: 93px; }
-.row .primeiro a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
-.row .segunda a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
+.wrapper_segunda{ top:50%; left:50%; width:100%; }
+.row .primeiro{ margin-bottom: 73px; }
+.row .primeiro a{ font-size: 20px; width:280px; height:60px; padding-left: 10px; padding-top: 15px; left:50%; margin-left:-140px; }
+.row .segunda a{ font-size: 20px; width:280px; height:60px; padding-left: 10px; padding-top: 15px; left:50%; margin-left:-140px; }
 /*Padrões*/
 .pergunta h1{ font-size:24px; line-height:30px; margin-bottom:16px; width:280px; margin-left:-140px; margin-top:-150px; }
 .input_box input[type="text"]{ width:280px; height:60px; font-size:20px; margin-left:-140px; margin-top:-60px; padding-right:0px; }
@@ -1001,7 +1003,7 @@ BOTÕES DOS TIPOS DE CADASTRO
 MODAIS DOS TIPOS DE CADASTRO
 **********************/
 /* Modal Gratuito */
-#myModal1_m2{ height:95%; width:95%; overflow:none; margin:auto; position:absolute; top:5%; left:7%; bottom:0; right:0; }
+#myModal1_m2{ height:95%; width:95%; overflow:hidden; margin:auto; position:absolute; top:5%; left:7%; bottom:0; right:0; }
 div.modal-content.conteudo_modal_m2_2{ border-radius:0; background:#F75486; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #F75486; width:90%; height:95%; }
 div.modal-content.conteudo_modal_m2_2 h3{ font-family:Avenir-Book; font-size:24px; color:#FFFFFF; text-align:center; border-top:1px solid #fff; border-bottom:1px solid #fff; width:200px; position:absolute; left:50%; bottom:82%; margin-left:-100px; padding-top:10px; padding-bottom:10px; }
 div.modal-content.conteudo_modal_m2_2 p{ font-family:Avenir-Book; font-size:12px; color:#FFFFFF; text-align:center; position:absolute; left:50%; bottom:73%; width:170px; margin-left:-85px; }
@@ -1013,7 +1015,7 @@ div.modal-content.conteudo_modal_m2_2 button.botao_escolha_m2_2:hover{ backgroun
 #menos2_2{ position:absolute; right:10px; top:10px; width:30px; height:30px; cursor:pointer; text-align:center; }
 #menos2_2::before{ content:''; background-image:url('../images/menos.svg'); background-size:20px 20px; display:inline-block; width:20px; height:20px; }
 /* Modal Premium */
-#myModal1_m{ height:95%; width:95%; overflow:none; margin:auto; position:absolute; top:5%; left:7%; bottom:0; right:0; }
+#myModal1_m{ height:95%; width:95%; overflow:hidden; margin:auto; position:absolute; top:5%; left:7%; bottom:0; right:0; }
 div.modal-content.conteudo_modal_m{ border-radius:0; background:#C957DE; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; width:90%; height:95%; }
 div.modal-content.conteudo_modal_m h3{ font-family:Avenir-Book; font-size:24px; color:#FFFFFF; text-align:center; border-top:1px solid #fff; border-bottom:1px solid #fff; width:200px; position:absolute; left:50%; bottom:82%; margin-left:-100px; padding-top:10px; padding-bottom:10px; }
 div.modal-content.conteudo_modal_m p{ font-family:Avenir-Book; font-size:12px; color:#FFFFFF; text-align:center; position:absolute; left:50%; bottom:73%; width:150px; margin-left:-75px; }
@@ -1028,7 +1030,7 @@ div.modal-content.conteudo_modal_m button.botao_escolha_m:hover{ background:rgba
 #menos{ position:absolute; right:10px; top:10px; width:30px; height:30px; cursor:pointer; text-align:center; }
 #menos::before{ content:''; background-image:url('../images/menos.svg'); background-size:20px 20px; display:inline-block; width:20px; height:20px; }
 /* Modal Profissional */
-#myModal3_m1{ height:95%; width:95%; overflow:none; margin:auto; position:absolute; top:5%; left:7%; bottom:0; right:0; }
+#myModal3_m1{ height:95%; width:95%; overflow:hidden; margin:auto; position:absolute; top:5%; left:7%; bottom:0; right:0; }
 div.modal-content.conteudo_modal_m3_m1{ border-radius:0; background:#4AA4E2; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #4AA4E2; width:90%; height:95%; }
 div.modal-content.conteudo_modal_m3_m1 h3{ font-family:Avenir-Book; font-size:24px; color:#FFFFFF; text-align:center; border-top:1px solid #fff; border-bottom:1px solid #fff; width:200px; position:absolute; left:50%; bottom:82%; margin-left:-100px; padding-top:10px; padding-bottom:10px; }
 div.modal-content.conteudo_modal_m3_m1 p{ font-family:Avenir-Book; font-size:12px; color:#FFFFFF; text-align:center; position:absolute; left:50%; bottom:73%; width:170px; margin-left:-85px; }
@@ -1046,7 +1048,7 @@ div.modal-content.conteudo_modal_m3_m1 button.botao_escolha_m3_m1:hover{ backgro
 TERMOS E CONDIÇÕES
 **********************/
 /* Termos e Condições - Gratuito */
-#termo_gratuito_mobile{ height:95%; width:95%; overflow-y:auto; overflow-x:none; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; }
+#termo_gratuito_mobile{ height:95%; width:95%; overflow-y:auto; overflow-x:hidden; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; }
 #termo_gratuito_mobile::-webkit-scrollbar{ width:12px; background:#fdd4e1; }
 #termo_gratuito_mobile::-webkit-scrollbar-track{ -webkit-box-shadow:inset 0 0 6px #F75486; color:#fff; border-radius:10px; }
 #termo_gratuito_mobile::-webkit-scrollbar-thumb{ border-radius:10px; -webkit-box-shadow:inset 0 0 20px #F75486; }
@@ -1062,7 +1064,7 @@ div.modal-content.conteudo_termo_gratuito_mobile p.acordo_termo_gratuito_mobile{
 #menos2_2m{ position:absolute; right:40px; top:10px; width:30px; height:30px; cursor:pointer; text-align:center; }
 #menos2_2m::before{ content:''; background-image:url('../images/menos.svg'); background-size:20px 20px; display:inline-block; width:20px; height:20px; }
 /* Termos e Condições - Premium */
-#termo_premium_mobile{ height:95%; width:95%; overflow-y:auto; overflow-x:none; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; }
+#termo_premium_mobile{ height:95%; width:95%; overflow-y:auto; overflow-x:hidden; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; }
 #termo_premium_mobile::-webkit-scrollbar{ width:12px; background:#f1d5f7; }
 #termo_premium_mobile::-webkit-scrollbar-track{ -webkit-box-shadow:inset 0 0 6px #C957DE; color:#fff; border-radius:10px; }
 #termo_premium_mobile::-webkit-scrollbar-thumb{ border-radius:10px; -webkit-box-shadow:inset 0 0 20px #C957DE; }
@@ -1078,7 +1080,7 @@ div.modal-content.conteudo_termo_premium_mobile p.acordo_termo_premium_mobile{ f
 #menos1_1m{ position:absolute; right:40px; top:10px; width:30px; height:30px; cursor:pointer; text-align:center; }
 #menos1_1m::before{ content:''; background-image:url('../images/menos.svg'); background-size:20px 20px; display:inline-block; width:20px; height:20px; }
 /* Termos e Condições - Profissional */
-#termo_profissional_mobile{ height:95%; width:95%; overflow-y:auto; overflow-x:none; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; }
+#termo_profissional_mobile{ height:95%; width:95%; overflow-y:auto; overflow-x:hidden; margin:auto; position:absolute; top:0; left:0; bottom:0; right:0; }
 #termo_profissional_mobile::-webkit-scrollbar{ width:12px; background:#d2e8f8; }
 #termo_profissional_mobile::-webkit-scrollbar-track{ -webkit-box-shadow:inset 0 0 6px #4AA4E2; color:#fff; border-radius:10px; }
 #termo_profissional_mobile::-webkit-scrollbar-thumb{ border-radius:10px; -webkit-box-shadow:inset 0 0 20px #4AA4E2; }
@@ -1125,7 +1127,7 @@ Tablets and Desktops (≥768px)
 /*********************
 POSIÇÃO DAS DIVS
 **********************/
-.div0{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div0{ position:absolute; top:46.5%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div1{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div2{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div3{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
@@ -1145,10 +1147,10 @@ POSIÇÃO DAS DIVS
 .div17{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div18{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 /*Primeira Pergunta*/
-.wrapper_segunda{ top:41%; left:50%; width:100%; margin-left: -30.5%;}
-.row .primeiro{ margin-bottom: 93px; }
-.row .primeiro a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
-.row .segunda a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
+.wrapper_segunda{ top:50%; left:50%; width:100%; margin-left: -30.5%;}
+.row .primeiro{ margin-bottom: 73px; }
+.row .primeiro a{ font-size: 20px; width:400px; height:60px; padding-left:20px; padding-top: 15px; left:50%; margin-left:-200px; }
+.row .segunda a{ font-size: 20px; width:400px; height:60px; padding-left:20px;  padding-top: 15px; left:50%; margin-left:-200px; }
 /*Padrões*/
 .pergunta h1{ font-size:26px; line-height:40px; width:400px; margin-left:-200px; margin-top:-100px; }
 .input_box input[type="text"]{ width:400px; height:60px; font-size:20px; margin-left:-200px; }
@@ -2111,5 +2113,5 @@ p.descricao_contrato3{ font-family:Avenir-Book; font-size:12px; color:#FFFFFF; t
 .termo_dois3{ float:right; width:10%; }
 /*FIM MODAIS */
 /* Perfis Redes Sociais e Enviar Cadastro */
-#cadastra.botao{ width:280px; height:60px; padding:0px; padding-left:0px; margin-top:300px; margin-left:-170px; font-size:20px; }
+#cadastra.botao{ position:relative; width:280px; height:60px; padding:0px; padding-left:0px; margin-top:300px; margin-left:-140px; font-size:20px; }
 }

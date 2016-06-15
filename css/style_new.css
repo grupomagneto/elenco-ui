@@ -1,0 +1,78 @@
+<<<<<<< HEAD
+*{
+margin: 0;
+padding: 0;
+}
+@font-face {
+font-family: Avenir-Light;
+font-style: normal;
+font-weight: normal;
+src: local('../fonts/Avenir-Light.woff'), url('../fonts/Avenir-Light.woff') format('woff');
+}
+html, body {
+position: relative;
+height: 100%;
+width: 100%;
+}
+body {
+margin: 0;
+padding: 0;
+}
+=======
+*{ margin:0; padding:0; }
+*:focus{ outline:none; }
+html, body{ position:relative; height:100%; width:100%; }
+body{ margin:0; padding:0; }
+#gradient5 { display: block; width: 100%; padding: 0px; margin: 0px; }
+.wrapper_segunda{ position:absolute; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.container{ position:absolute; z-index: 9999; }
+.row .primeiro a{ font-family: Avenir-Light; color: #FFFFFF; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; position:absolute; background-color:rgba(215,215,215,0.30); }
+.row .primeiro a:hover{ background: rgba(215,215,215,0.60); }
+.row .segunda a{ font-family: Avenir-Light; color: #FFFFFF; text-align: left; border: 2px solid #ECECEC; border-radius: 8px; position:absolute; background-color:rgba(215,215,215,0.30); }
+.row .segunda a:hover{ background: rgba(215,215,215,0.60); }
+.pergunta h1{ font-family: Avenir-Light; font-style: normal; font-weight: normal; color:#FFFFFF; line-height:40px; position:absolute; text-align:left; }
+/**********************
+Extra small devices Phones (<768px) Landscape
+***********************/
+@media only screen and (max-width:767px) and (orientation:landscape){
+}
+/**********************
+Extra small devices Phones (<340px) Portrait
+***********************/
+@media only screen and (max-width:340px) and (orientation:portrait){
+}
+/**********************
+Small devices Phones (<768px) Portrait
+***********************/
+@media only screen and (min-width:341px) and (orientation:portrait) and (max-width:767px){
+}
+/**********************
+Tablets and Desktops (≥768px)
+***********************/
+@media only screen and (min-width:768px) and (max-width:991px){
+}
+/**********************
+Medium devices Desktops (≥992px)
+***********************/
+@media only screen and (min-width:992px) and (max-width:1199px){
+}
+/**********************
+Large devices Desktops (≥1200px)
+***********************/
+@media only screen and (min-width:1200px) and (max-width:1399px){
+.wrapper_segunda{ top:41.5%; left:7%; width:100%; }
+.row .primeiro{ margin-bottom: 93px; }
+.row .primeiro a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
+.row .segunda a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
+.pergunta h1{ font-size:32px; margin-top:-120px; width:500px; left:50%; margin-left:-250px; }
+}
+/**********************
+Extra Large devices Desktops (≥1400px)
+***********************/
+@media only screen and (min-width:1400px){
+.wrapper_segunda{ top:41%; left:50%; width:100%; margin-left: -30.5%;}
+.row .primeiro{ margin-bottom: 93px; }
+.row .primeiro a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
+.row .segunda a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; }
+.pergunta h1{ font-size:32px; margin-top:-120px; width:500px; left:50%; margin-left:-250px; }
+}
