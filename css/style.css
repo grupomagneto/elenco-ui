@@ -7,12 +7,15 @@ body{ margin:0; padding:0; overflow: hidden; }
 width: 100%;
 height: 100%;
 }
+a {
+	text-decoration: none;
+}
 .btn{
 	border:2px solid #ECECEC; 
 	border-radius:8px; 
 	background-color:rgba(215,215,215,0.30); 
 	font-family:Avenir-Book;
-	letter-spacing:1px; 
+/*	letter-spacing:1px;*/ 
 	font-size:14px;
 	color:#FFFFFF;
 	line-height:24px; 
@@ -102,8 +105,10 @@ height: 100%;
 	position: absolute;
     width: 100%;
     height: 100%;
-    display: -webkit-flex;
-    display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
     justify-content: flex-start;
     -webkit-justify-content: flex-start;
     flex-wrap: nowrap;
@@ -116,8 +121,10 @@ height: 100%;
 	position: absolute;
     width: 100%;
     height: 100%;
-    display: -webkit-flex;
-    display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
     justify-content: flex-start;
     -webkit-justify-content: flex-start;
     flex-wrap: nowrap;
@@ -130,8 +137,10 @@ height: 100%;
 	position: absolute;
     width: 100%;
     height: 100%;
-    display: -webkit-flex;
-    display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
     justify-content: flex-start;
     -webkit-justify-content: flex-start;
     flex-wrap: nowrap;
@@ -144,8 +153,10 @@ height: 100%;
 	position: absolute;
     width: 100%;
     height: 100%;
-    display: -webkit-flex;
-    display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
     justify-content: flex-start;
     -webkit-justify-content: flex-start;
     flex-wrap: nowrap;
@@ -155,47 +166,74 @@ height: 100%;
     z-index: 2;
 }
 .index__body-container {
-    display: -webkit-flex;
-    display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
     width: 100%;
     height: 95%;
     align-items: flex-start;
     justify-content: center;
+    flex-wrap: nowrap;
+    -webkit-align-items: flex-start;
+    -webkit-justify-content: center;
     -webkit-flex-wrap: nowrap;
 }
 .index__sub-container-right {
-    display: -webkit-flex;
-    display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
     width: 50%;
     height: 100%;
     align-items: flex-end;
     justify-content: flex-start;
+    flex-wrap: wrap;
+    -webkit-align-items: flex-end;
+    -webkit-justify-content: flex-start;
     -webkit-flex-wrap: wrap;
 }
 .index__sub-container-left {
-    display: -webkit-flex;
-    display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
     width: 50%;
     height: 100%;
     align-items: flex-start;
     justify-content: flex-end;
+    flex-wrap: wrap;
+    -webkit-align-items: flex-start;
+    -webkit-justify-content: flex-end;
     -webkit-flex-wrap: wrap;
 }
 .logo {
-    width: 200px;
-    height: 100px;
-    margin: 50px;
+    width: 150px;
+    height: 100%;
+    margin-top: 50px;
+    margin-right: 20%;
+    background: url('../images/logo.svg');
+    background-repeat: no-repeat;
+    background-size: 150px;
 }
 .index__title-text-block {
-    display: -webkit-flex;
-    display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
     align-items: flex-start;
+    -webkit-align-items: flex-start;
     justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    flex-wrap: nowrap;
     -webkit-flex-wrap: nowrap;
-    margin: 40%;
+    margin-left: 40%;
     flex-direction: column-reverse;
-    height: 100%;
-    align-self: flex-end;
+    -webkit-flex-direction: column-reverse;
+    height: 30%;
+    align-self: center;
+    -webkit-align-self: center;
+    z-index: 9;
 }
 .index__title {
 	color: #fff;
@@ -203,7 +241,7 @@ height: 100%;
     width: 150px;
     height: 50px;
     font-size: 46px;
-    margin-bottom: 20px;   
+    margin-bottom: 30px;   
 }
 .index__text {
 	color: #fff;
@@ -218,8 +256,10 @@ height: 100%;
     flex-wrap: nowrap;
 }
 .index__footer {
-	display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: -webkit-flex;
+	display: flex;
     width: 100%;
     height: 5%;
     margin: 0px;
@@ -235,17 +275,27 @@ height: 100%;
 .index__footer a {
 	font-family: Avenir-Book;
 	font-size: 16px;
-	color: rgba(255,255,255,0.80);
-	text-decoration: none;
+	color: rgba(255,255,255,1.0);
+	cursor: pointer;
 }
 .swiper-pagination{
 	color: #fff;
 	background: transparent;
-	margin-bottom: 50px;
+	bottom: 5%;
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	align-self: center;
+	align-items: center;
+	justify-content: center;
+	z-index: 9;
 }
 .swiper-pagination-bullet {
 	width: 10px;
 	height: 10px;
+	margin: 5px;
 	background: none;
 	border:1px solid #fff;
 	opacity:1;
@@ -254,4 +304,136 @@ height: 100%;
 .swiper-pagination-bullet-active {
 	background: #fff;
 	border-color: #fff;
-}  
+}
+/**********************
+Extra small devices Phones (<768px) Landscape
+***********************/
+@media only screen and (max-width:767px) and (orientation:landscape){
+.index__body-container { display: none; }
+.index__footer {display: none; }
+.swiper-pagination{ display: none; }
+#gradient{ display:block; width:100%; padding:0px; margin:0px; z-index: -1; }
+#gradient:after{ content:''; display:block; background:url("../images/gire.svg") center center; width:100%; height:100%; position:static; background-repeat:no-repeat; z-index:9999; opacity: 1.0; }
+}
+/**********************
+Extra small devices Phones (<340px) Portrait
+***********************/
+@media only screen and (max-width:340px) and (orientation:portrait){
+}
+/**********************
+Small devices Phones (<768px) Portrait
+***********************/
+@media only screen and (min-width:341px) and (orientation:portrait) and (max-width:767px){
+.logo {
+    background-size: 120px;
+    margin-right: -10px;
+    margin-top: 30px;
+}
+.swiper-pagination{
+	bottom: 10%;
+}
+.index__footer {
+    height: 10%;
+}
+.btn{
+	font-size:18px; 
+	padding:20px;
+	width: 180px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.index__text {
+	display: flex;
+	display: -webkit-flex;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+    width: 180px;
+    text-align: center;
+    flex-wrap: nowrap;
+    font-size: 24px;
+}
+.index__start-btn {
+    flex-wrap: nowrap;
+}
+.index__sub-container-left {
+
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    -webkit-flex-wrap: nowrap;
+}
+.index__title-text-block {
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    margin-left: 0px;
+    height: 300px;
+    align-self: center;
+    -webkit-align-self: center;
+    z-index: 9;
+}
+
+.index__sub-container-right { display:none;}
+.index__sub-container-left { display:none;}
+.index__title-text-block { display:none; margin: 0px; }
+.index__body-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    height: 95%;
+    -webkit-flex-wrap: nowrap;
+flex-direction: column-reverse;
+}
+.index__sub-container-center {
+width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    -webkit-flex-wrap: nowrap;
+    align-self: center;
+
+}
+.index__text {
+width: 180px;
+text-align: center;
+font-size: 24px;
+margin-bottom: 400px;
+}
+.index__title{
+width: 180px;
+margin: 80px;
+}
+.logo {
+margin-top: 50px;
+}
+
+}
+/**********************
+Tablets and Desktops (≥768px)
+***********************/
+@media only screen and (min-width:768px) and (max-width:991px){
+}
+/**********************
+Medium devices Desktops (≥992px)
+***********************/
+@media only screen and (min-width:992px) and (max-width:1199px){
+}
+/**********************
+Large devices Desktops (≥1200px)
+***********************/
+@media only screen and (min-width:1200px) and (max-width:1399px){
+}
+/**********************
+Extra Large devices Desktops (≥1400px)
+***********************/
+@media only screen and (min-width:1400px){
+}
