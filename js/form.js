@@ -1485,6 +1485,9 @@ $("#email").keypress(function(e) {
 
 
 $('#myModal').appendTo("form");
+$('#Modalmaior-premium').appendTo("form");
+$('#Modalmaior-gratuito').appendTo("form");
+$('#Modalmaior-profissional').appendTo("form");
 $('#myModal1_m').appendTo("form");
 $('#termo_premium_mobile').appendTo("form");
 

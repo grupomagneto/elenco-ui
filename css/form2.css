@@ -1321,6 +1321,8 @@ CONTEÚDO MODAL GRATUITO TABLET HORIZONTAL-VERTICAL
 **********************/
 div.conteudo_modal2{ background:#F75486; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #F75486; width:700px; height:600px; }
 #myModal2{ position:absolute; z-index:9999; width:700px; height:600px; left:50%; top:50%; margin-left:-350px; margin-top:-300px; }
+.modal-content.modal-content-maior-gratuito{ background:#F75486; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #F75486; width:700px; height:600px; }
+#Modalmaior-gratuito{width:700px; height:600px; left:50%; top:50%; margin-left:-350px; margin-top:-300px; }
 /* Box Produto:*/
 .modal_esquerda2{ display: none; }
 .modal_esquerda2 h3{ display: none; }
@@ -1355,6 +1357,8 @@ CONTEÚDO MODAL PREMIUM TABLET HORIZONTAL-VERTICAL
 **********************/
 div.conteudo_modal{ background:#C957DE; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; width:700px; height:600px; }
 #myModal{ position:absolute; z-index:9999; width:700px; height:600px; left:50%; top:50%; margin-left:-350px; margin-top:-300px; }
+#Modalmaior-premium{width:700px; height:600px; left:50%; top:50%; margin-left:-350px; margin-top:-300px; }
+.modal-content.modal-content-maior-premium{ background:#C957DE; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; width:700px; height:600px; }
 /* Box Produto:*/
 .modal_esquerda{ display: none; }
 .modal_esquerda h3{ display: none; }
@@ -1389,6 +1393,8 @@ CONTEÚDO MODAL PROFISSIONAL TABLET HORIZONTAL-VERTICAL
 **********************/
 div.conteudo_modal3{ background:#4AA4E2; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #4AA4E2; width:700px; height:600px; }
 #myModal3{ position:absolute; z-index:9999; width:700px; height:600px; left:50%; top:50%; margin-left:-350px; margin-top:-300px; }
+.modal-content.modal-content-maior-profissional{ background:#4AA4E2; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #4AA4E2; width:700px; height:600px; }
+#Modalmaior-profissional{width:700px; height:600px; left:50%; top:50%; margin-left:-350px; margin-top:-300px; }
 /* Box Produto:*/
 .modal_esquerda3{ display: none; }
 .modal_esquerda3 h3{ display: none; }
@@ -1517,6 +1523,8 @@ CONTEÚDO MODAL GRATUITO DESKTOP
 **********************/
 div.conteudo_modal2{ background:#F75486; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #F75486; width:900px; height:600px; }
 #myModal2{ position:absolute; z-index:9999; width:900px; height:600px; left:50%; top:50%; margin-left:-450px; margin-top:-300px; }
+#Modalmaior-gratuito{width:900px; height:600px; left:50%; top:50%; margin-left:-450px; margin-top:-300px; }
+.modal-content.modal-content-maior-gratuito{ background:#F75486; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #F75486; width:900px; height:600px; }
 /* Box Produto:*/
 .modal_esquerda2{width:300px; height:500px; float:left; border-right:1px solid rgba(255,255,255,0.50); border-right-style:dashed; margin-top:50px;}
 .modal_esquerda2 h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:0px; width:200px; margin-left:-100px; margin-top:20px; left: 50%; position: relative; text-align: center; }
@@ -1552,6 +1560,8 @@ CONTEÚDO MODAL PREMIUM DESKTOP
 **********************/
 div.conteudo_modal{ background:#C957DE; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; width:900px; height:600px; }
 #myModal{ position:absolute; z-index:9999; width:900px; height:600px; left:50%; top:50%; margin-left:-450px; margin-top:-300px; }
+#Modalmaior-premium{ width:900px; height:600px; left:50%; top:50%; margin-left:-450px; margin-top:-300px; }
+.modal-content.modal-content-maior-premium{ background:#C957DE; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; width:900px; height:600px; }
 /* Box Produto:*/
 .modal_esquerda{ width:300px; height:500px; float:left; border-right:1px solid rgba(255,255,255,0.60); border-right-style:dashed; margin-top:50px; }
 .modal_esquerda h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:0px; width:200px; margin-left:-100px; margin-top:20px; left: 50%; position: relative; text-align: center; }
@@ -1586,6 +1596,8 @@ CONTEÚDO MODAL PROFISSIONAL DESKTOP
 **********************/
 div.conteudo_modal3{ background:#4AA4E2; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #4AA4E2; width:900px; height:600px; }
 #myModal3{ position:absolute; z-index:9999; width:900px; height:600px; left:50%; top:50%; margin-left:-450px; margin-top:-300px; }
+.modal-content.modal-content-maior-profissional{ background:#4AA4E2; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #4AA4E2; width:900px; height:600px; }
+#Modalmaior-profissional{width:900px; height:600px; left:50%; top:50%; margin-left:-450px; margin-top:-300px; }
 /* Box Produto:*/
 .modal_esquerda3{ width:300px; height:500px; float:left; border-right:1px solid rgba(255,255,255,0.60); border-right-style:dashed; margin-top:50px; }
 .modal_esquerda3 h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:0px; width:200px; margin-left:-100px; margin-top:20px; left: 50%; position: relative; text-align: center; }
@@ -1796,6 +1808,8 @@ CONTEÚDO MODAL PREMIUM DESKTOP
 **********************/
 div.conteudo_modal{ background:#C957DE; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; width:1100px; height:600px; }
 #myModal{ position:absolute; z-index:9999; width:1100px; height:600px; left:50%; top:50%; margin-left:-550px; margin-top:-300px; }
+#Modalmaior-premium{width:1100px; height:600px; left:50%; top:50%; margin-left:-550px; margin-top:-300px; }
+.modal-content.modal-content-maior-premium{background:#C957DE; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; width:1100px; height:600px;}
 /* Box Produto:*/
 .modal_esquerda{ width:360px; height:500px; float:left; border-right:1px solid rgba(255,255,255,0.50); border-right-style:dashed; margin-top:50px;}
 .modal_esquerda h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:50px; width:200px; margin-left:75px; margin-top:20px; }
@@ -1830,6 +1844,8 @@ CONTEÚDO MODAL GRATUITO DESKTOP
 **********************/
 div.conteudo_modal2{ background:#F75486; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #F75486; width:1100px; height:600px; }
 #myModal2{ position:absolute; z-index:9999; width:1100px; height:600px; left:50%; top:50%; margin-left:-550px; margin-top:-300px; }
+#Modalmaior-gratuito{width:1100px; height:600px; left:50%; top:50%; margin-left:-550px; margin-top:-300px; }
+.modal-content.modal-content-maior-gratuito{ background:#F75486; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #F75486; width:1100px; height:600px; }
 /* Box Produto:*/
 .modal_esquerda2{ width:360px; height:500px; float:left; border-right:1px solid rgba(255,255,255,0.60); border-right-style:dashed; margin-top:50px;}
 .modal_esquerda2 h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:55px; width:200px; margin-left:75px; margin-top:20px; }
@@ -1865,6 +1881,8 @@ CONTEÚDO MODAL PREMIUM DESKTOP
 **********************/
 div.conteudo_modal{ background:#C957DE; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; width:1100px; height:600px; }
 #myModal{ position:absolute; z-index:9999; width:1100px; height:600px; left:50%; top:50%; margin-left:-550px; margin-top:-300px; }
+#Modalmaior-premium{width:1100px; height:600px; left:50%; top:50%; margin-left:-550px; margin-top:-300px; }
+.modal-content.modal-content-maior-premium{ background:#C957DE; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; width:1100px; height:600px; }
 /* Box Produto:*/
 .modal_esquerda{ width:360px; height:500px; float:left; border-right:1px solid rgba(255,255,255,0.60); border-right-style:dashed; margin-top:50px;}
 .modal_esquerda h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:50px; width:200px; margin-left:75px; margin-top:20px; }
@@ -1899,6 +1917,8 @@ CONTEÚDO MODAL PROFISSIONAL DESKTOP
 **********************/
 div.conteudo_modal3{ background:#4AA4E2; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #4AA4E2; width:1100px; height:600px; }
 #myModal3{ position:absolute; z-index:9999; width:1100px; height:600px; left:50%; top:50%; margin-left:-550px; margin-top:-300px; }
+.modal-content.modal-content-maior-profissional{ background:#4AA4E2; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #4AA4E2; width:1100px; height:600px; }
+#Modalmaior-profissional{width:1100px; height:600px; left:50%; top:50%; margin-left:-550px; margin-top:-300px; }
 /* Box Produto:*/
 .modal_esquerda3{ width:360px; height:500px; float:left; border-right:1px solid rgba(255,255,255,0.60); border-right-style:dashed; margin-top:50px;}
 .modal_esquerda3 h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:35px; width:200px; margin-left:75px; margin-top:20px; }
@@ -2013,6 +2033,8 @@ CONTEÚDO MODAL PREMIUM DESKTOP
 **********************/
 div.conteudo_modal{ background:#C957DE; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; width:1200px; height:700px; }
 #myModal{ position:absolute; z-index:9999; width:1200px; height:700px; left:50%; top:50%; margin-left:-600px; margin-top:-350px; }
+#Modalmaior-premium{ width:1200px; height:700px; left:50%; top:50%; margin-left:-600px; margin-top:-350px; }
+.modal-content.modal-content-maior-premium{background:#C957DE; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; width:1200px; height:700px; }
 /* Box Produto:*/
 .modal_esquerda{ width:400px; height:595px; float:left; border-right:1px solid rgba(255,255,255,0.60); border-right-style:dashed; margin-top:50px;}
 .modal_esquerda h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:50px; width:200px; margin-left:100px; margin-top:50px; }
@@ -2047,6 +2069,8 @@ CONTEÚDO MODAL GRATUITO DESKTOP
 **********************/
 div.conteudo_modal2{ background:#F75486; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #F75486; width:1200px; height:700px; }
 #myModal2{ position:absolute; z-index:9999; width:1200px; height:700px; left:50%; top:50%; margin-left:-600px; margin-top:-350px; }
+#Modalmaior-gratuito{width:1200px; height:700px; left:50%; top:50%; margin-left:-600px; margin-top:-350px; }
+.modal-content.modal-content-maior-gratuito{ background:#F75486; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #F75486; width:1200px; height:700px; }
 /* Box Produto:*/
 .modal_esquerda2{ width:400px; height:595px; float:left; border-right:1px solid rgba(255,255,255,0.60); border-right-style:dashed; margin-top:50px;}
 .modal_esquerda2 h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:50px; width:200px; margin-left:100px; margin-top:50px; }
@@ -2082,6 +2106,8 @@ CONTEÚDO MODAL PROFISSIONAL DESKTOP
 **********************/
 div.conteudo_modal3{ background:#4AA4E2; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #4AA4E2; width:1200px; height:700px; }
 #myModal3{ position:absolute; z-index:9999; width:1200px; height:700px; left:50%; top:50%; margin-left:-600px; margin-top:-350px; }
+.modal-content.modal-content-maior-profissional{ background:#4AA4E2; border-radius:0; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #4AA4E2; width:1200px; height:700px; }
+#Modalmaior-profissional{width:1200px; height:700px; left:50%; top:50%; margin-left:-600px; margin-top:-350px; }
 /* Box Produto:*/
 .modal_esquerda3{ width:400px; height:595px; float:left; border-right:1px solid rgba(255,255,255,0.60); border-right-style:dashed; margin-top:50px;}
 .modal_esquerda3 h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; padding-left:0px; width:200px; margin-left:100px; margin-top:50px; text-align:center; }

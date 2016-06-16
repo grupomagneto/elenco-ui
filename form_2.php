@@ -1011,7 +1011,7 @@
   </nav>
 </div>
 <!-- DIV ANTES DAS FOTOS -->
-<div id="20" class="swiper-slide gradient">
+ <div id="20" class="swiper-slide gradient">
   <nav>
   <div class="container">
     <div class="div7">
@@ -1022,7 +1022,7 @@
         <div class="div7_box col-lg-offset-3 col-lg-5">
           <h1>Legal! Agora precisamos de duas fotos suas feitas hoje.</h1>
           <button class="swiper-control next2 TabOnEnter botao" tabindex="20" class="TabOnEnter">Continuar</button>
-<!--            <img src="images/ok_neg.svg">-->
+<!--            <img src="images/ok_neg.svg"> -->
         </div>
       </div>
     </div>
@@ -1037,7 +1037,7 @@
     </ul>
   </nav>
 </div>
-<!-- FIM DIV ANTES DAS FOTOS -->
+<!-- FIM DIV ANTES DAS FOTOS
 <!-- DIV PRIMEIRA FOTO -->
 <div id="21" class="swiper-slide gradient2">
   <div class="container">
@@ -1554,9 +1554,9 @@
       <h2 class="text-center">29<span>,90</span></h2>
       <!-- <A NAME="jump"> -->
       <!--modal -->
-      <button type="button" class="botao_modal" data-toggle="modal" data-target="#myModal">ESCOLHER</button>
-      <div class="modal hidden-xs modal2" id="myModal" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-content conteudo_modal">
+       <button type="button" class="botao_modal" data-toggle="modal" data-target="#Modalmaior-premium">ESCOLHER</button>
+<div class="modal fade" id="Modalmaior-premium" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-content modal-content-maior-premium">
           <div class="modal_esquerda">
             <h3>Premium</h3>
             <p>fotos simples em estúdio apenas para site</p>
@@ -1572,6 +1572,7 @@
               </ul>
               <h2 class="text-center">29<span>,90</span></h2>
           </div>
+
           <div class="modal_direita">
             <h3>Termos e Condições</h3>
               <div class="termo_um">
@@ -1597,12 +1598,16 @@
               <div id="menos_d" data-dismiss="modal"></div>
             </div>
           </div>
-        </div>
-      </div>
     </div>
+</div>
+
+
+  </div>
   </div>
 </div>
 </div>
+
+
 <div class="div15_box2">
   <div class="versao_d">
     <div class="thumbnail">
@@ -1616,51 +1621,55 @@
         </ol>
        <h2>CADASTRO SEM DESEMBOLSO</h2>
         <!--modal -->
-        <button type="button" class="botao_modal2" data-toggle="modal" data-target="#myModal2">ESCOLHER</button>
-        <div class="modal hidden-xs modal2" id="myModal2" role="dialog" aria-labelledby="myLargeModalLabel">
-          <div class="modal-content conteudo_modal2">
-            <div class="modal_esquerda2">
-              <h3>Gratuito</h3>
-              <p>fotos simples em estúdio apenas para site</p>
-              <ol>
-                <li>Recebe 20% do cachê líquido no 1º trabalho, 60% nos demais</li>
-                <li>Deve ser agenciado apenas pela Magneto Elenco</li>
-                <li>Contrato de 1 ano</li>
-              </ol>
-              <h4>CADASTRO SEM</h4>
-              <h2>DESEMBOLSO</h2>
-            </div>
-            <div class="modal_direita">
-              <h3>Termos e Condições</h3>
-              <div class="termo_um2">
-                <ol>
-                  <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt22"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt23"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e promoção de eventos;</li><BR />
-                  <li>Para isso nos autoriza a utilizar a imagem <span id="txt24"></span> em nossos canais de comunicação;</li><BR />
-                  <li>Nós não garantimos conseguir trabalhos para <span id="txt25"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li><BR />
-                  <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
-                </ol>
+        <button type="button" class="botao_modal2" data-toggle="modal" data-target="#Modalmaior-gratuito">ESCOLHER</button>
+            <div class="modal fade" id="Modalmaior-gratuito" role="dialog" aria-labelledby="exampleModalLabel">
+              <div class="modal-content modal-content-maior-gratuito">
+                <div class="modal_esquerda2">
+                        <h3>Gratuito</h3>
+                        <p>fotos simples em estúdio apenas para site</p>
+                        <ol>
+                          <li>Recebe 20% do cachê líquido no 1º trabalho, 60% nos demais</li>
+                          <li>Deve ser agenciado apenas pela Magneto Elenco</li>
+                          <li>Contrato de 1 ano</li>
+                        </ol>
+                        <h4>CADASTRO SEM</h4>
+                        <h2>DESEMBOLSO</h2>
+                      </div>
+
+                      <div class="modal_direita">
+                        <h3>Termos e Condições</h3>
+                        <div class="termo_um2">
+                          <ol>
+                            <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt22"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt23"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e promoção de eventos;</li><BR />
+                            <li>Para isso nos autoriza a utilizar a imagem <span id="txt24"></span> em nossos canais de comunicação;</li><BR />
+                            <li>Nós não garantimos conseguir trabalhos para <span id="txt25"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li><BR />
+                            <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
+                          </ol>
+                        </div>
+                        <div class="termo_dois2">
+                          <ol start="5">
+                            <li>Você optou pelo Cadastro Gratuito e por isso a remuneração <span id="txt26"></span> <span class="concat2_texto"></span> será de apenas 20% do cachê líquido no primeiro trabalho e de 60% do cachê líquido nos demais trabalhos (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li><BR />
+                            <li>Você não precisa desembolsar nada para cadastrar <span id="txt21"></span> <span class="concat2_texto"></span>;</li><BR />
+                            <li><span id="txt27"></span> <span class="concat2_texto"></span> não poderá estar inscrit<span id="txt28"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li><BR />
+                            <li>Nosso contrato valerá por 12 meses;</li>
+                          </ol>
+                          <p class="descricao_contrato2">Você concorda com os termos do agenciamento?</p>
+                          <div class="button2">
+                            <input type="radio" name="gratuito" value="gratuito" id="gratuito" class="sim_acordo2" />
+                            <label for="gratuito">CONCORDO</label>
+                          </div>
+                          <div id="menos2_d" data-dismiss="modal"></div>
+                        </div>
+                      </div>
               </div>
-              <div class="termo_dois2">
-                <ol start="5">
-                  <li>Você optou pelo Cadastro Gratuito e por isso a remuneração <span id="txt26"></span> <span class="concat2_texto"></span> será de apenas 20% do cachê líquido no primeiro trabalho e de 60% do cachê líquido nos demais trabalhos (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li><BR />
-                  <li>Você não precisa desembolsar nada para cadastrar <span id="txt21"></span> <span class="concat2_texto"></span>;</li><BR />
-                  <li><span id="txt27"></span> <span class="concat2_texto"></span> não poderá estar inscrit<span id="txt28"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li><BR />
-                  <li>Nosso contrato valerá por 12 meses;</li>
-                </ol>
-                <p class="descricao_contrato2">Você concorda com os termos do agenciamento?</p>
-                <div class="button2">
-                  <input type="radio" name="gratuito" value="gratuito" id="gratuito" class="sim_acordo2" />
-                  <label for="gratuito">CONCORDO</label>
-                </div>
-                <div id="menos2_d" data-dismiss="modal"></div>
-              </div>
             </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
 </div>
+
+
 <div class="div15_box3">
   <div class="versao_d">
     <div class="thumbnail">
@@ -1680,61 +1689,60 @@
         </ul>
         <h2 class="text-center">99<span>,90</span></h2>
         <!--modal -->
-        <button type="button" class="botao_modal3" data-toggle="modal" data-target="#myModal3">ESCOLHER</button>
-        <div class="modal modal2 hidden-xs" id="myModal3" role="dialog" aria-labelledby="myLargeModalLabel">
-          <div class="modal-content conteudo_modal3">
-            <div class="modal_esquerda3">
-              <h3>Profissional</h3>
-              <p>ensaio fotográfico completo para site + entrega em DVD</p>
-              <ol>
-                <li>Recebe 90% do cachê líquido em todos os trabalhos</li>
-                <li>Pode se cadastrar em outra(s) agência(s)</li>
-                <li>Aviso de cachê liberado</li>
-                <li>Ensaio com 30 fotos tratadas</li>
-                <li>Contrato de 3 anos</li>
-              </ol>
-              <ul class="text-left list-unstyled">
-                <li>10x</li>
-                <li>R$</li>
-              </ul>
-              <h2 class="text-center">99<span>,90</span></h2>
-            </div>
-            <div class="modal_direita3">
-              <h3>Termos e Condições</h3>
-              <div class="termo_um3">
-                <ol>
-                  <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt29"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt30"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e/ou promoção de eventos;</li><BR />
-                  <li>Para isso nos autoriza a utilizar a imagem <span id="txt31"></span> em nossos canais de comunicação;</li><BR />
-                  <li>Nós não garantimos conseguir trabalhos para <span id="txt32"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li><BR />
-                  <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
-                </ol>
-              </div>
-              <div class="termo_dois3">
-                <ol start="5">
-                  <li>Você optou pelo Cadastro Profissional e por isso a remuneração <span id="txt33"></span> <span class="concat2_texto"></span> sempre será de 90% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li><BR />
-                  <li>Para efetivar o cadastro você deverá pagar R$ 999,00 em até 10x sem juros;</li><BR />
-                  <li><span id="txt34"></span> <span class="concat2_texto"></span> poderá estar inscrit<span id="txt35"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li><BR />
-                  <li>Um Ensaio Fotográfico Completo com <span id="txt20"></span> <span class="concat2_texto"></span> será realizado e entregue a você em DVD com mínimo de 30 fotos tratadas em até 30 dias;</li><BR />
-                  <li>Este contrato valerá por 36 meses a partir da data do pagamento;</li>
-                </ol>
-                <p class="descricao_contrato3">
-                  Você concorda com os termos do agenciamento?
-                </p>
-                <div class="button3">
-                  <input type="radio" name="opcao" value="Profissional" id="profissional" class="sim_acordo3" />
-                  <label for="profissional">CONCORDO</label>
-                </div>
-                <div id="menos3_d" data-dismiss="modal"></div>
-                    </div>
+        <button type="button" class="botao_modal3" data-toggle="modal" data-target="#Modalmaior-profissional">ESCOLHER</button>
+            <div class="modal fade" id="Modalmaior-profissional" role="dialog" aria-labelledby="exampleModalLabel">
+              <div class="modal-content modal-content-maior-profissional">
+                <div class="modal_esquerda2">
+                        <h3>Gratuito</h3>
+                        <p>fotos simples em estúdio apenas para site</p>
+                        <ol>
+                          <li>Recebe 20% do cachê líquido no 1º trabalho, 60% nos demais</li>
+                          <li>Deve ser agenciado apenas pela Magneto Elenco</li>
+                          <li>Contrato de 1 ano</li>
+                        </ol>
+                        <h4>CADASTRO SEM</h4>
+                        <h2>DESEMBOLSO</h2>
                       </div>
-                    </div>
-                  </div>
+
+                      <div class="modal_direita">
+                        <h3>Termos e Condições</h3>
+                        <div class="termo_um2">
+                          <ol>
+                            <li>Você, <span class="concat3_texto"></span>, está contratando a Magneto Elenco para divulgar a imagem <span id="txt22"></span> <span class="concat2_texto"></span> e intermediar a contratação <span id="txt23"></span> junto a produtoras audiovisuais, clientes anunciantes e agências de publicidade e promoção de eventos;</li><BR />
+                            <li>Para isso nos autoriza a utilizar a imagem <span id="txt24"></span> em nossos canais de comunicação;</li><BR />
+                            <li>Nós não garantimos conseguir trabalhos para <span id="txt25"></span>, assim como vocês não têm obrigação de aceitar os trabalhos oferecidos;</li><BR />
+                            <li>Porém, uma vez que aceitem participar de um trabalho, vocês deverão realizá-lo ou poderão ter que pagar uma multa;</li>
+                          </ol>
+                        </div>
+                        <div class="termo_dois2">
+                          <ol start="5">
+                            <li>Você optou pelo Cadastro Gratuito e por isso a remuneração <span id="txt26"></span> <span class="concat2_texto"></span> será de apenas 20% do cachê líquido no primeiro trabalho e de 60% do cachê líquido nos demais trabalhos (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li><BR />
+                            <li>Você não precisa desembolsar nada para cadastrar <span id="txt21"></span> <span class="concat2_texto"></span>;</li><BR />
+                            <li><span id="txt27"></span> <span class="concat2_texto"></span> não poderá estar inscrit<span id="txt28"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li><BR />
+                            <li>Nosso contrato valerá por 12 meses;</li>
+                          </ol>
+                          <p class="descricao_contrato2">Você concorda com os termos do agenciamento?</p>
+                          <div class="button2">
+                            <input type="radio" name="gratuito" value="gratuito" id="gratuito" class="sim_acordo2" />
+                            <label for="gratuito">CONCORDO</label>
+                          </div>
+                          <div id="menos2_d" data-dismiss="modal"></div>
+                        </div>
+                      </div>
+              </div>
+            </div>  
+
+
                 </div>
               </div>
             </div>
           </div>
+
+
         </div>
       </div>
+
+
       <div class="progress30">
         <progress id="progressbar30" value="70" max="75"></progress>
       </div>
