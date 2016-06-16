@@ -63,9 +63,9 @@
             <div class="slide4">
                 <div class="index__body-container">
                     <div class="index__sub-container-right index__sub-container-center">
-                        <div class="index__title index__title-text-block index__sub-container-center">
-                            <a href="form_2.php"><div class="btn btn--primary btn--medium index__start-btn">Iniciar Cadastro</div></a>
-                            <div class="index__text index__sub-container-center">Faça parte do nosso elenco!</div>
+                        <div class="index__title-text-block">
+                            <a href="form_2.php" class="btn index__start-btn">Iniciar Cadastro</a>
+                            <div class="index__text index__text--slide4">Faça parte do nosso elenco!</div>
                         </div>
                     </div>
                     <div class="index__sub-container-left index__sub-container-center">

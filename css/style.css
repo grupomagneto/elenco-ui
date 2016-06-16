@@ -1,7 +1,7 @@
 *{ margin:0; padding:0; }
 *:focus{ outline:none; }
 @font-face { font-family: Avenir-Book; font-style: normal; font-weight:600; src: local('../fonts/Avenir-Light.woff'), url('../fonts/Avenir-Light.woff') format('woff'); }
-html, body{ position:relative; height:100%; width:100%; font-weight:600; }
+html, body{ position:relative; height:100%; width:100%; }
 body{ margin:0; padding:0; overflow: hidden; }
 .swiper-container {
 width: 100%;
@@ -18,7 +18,7 @@ a {
 /*	letter-spacing:1px;*/ 
 	font-size:14px;
 	color:#FFFFFF;
-	line-height:24px; 
+	/*line-height:24px; */
 	padding:30px;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -27,7 +27,7 @@ a {
 }
 .btn:hover{ background-color:rgba(215,215,215,0.60); }
 .swiper-slide {
-	text-align: center;
+/*	text-align: center;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: -webkit-flex;
@@ -39,7 +39,7 @@ a {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	-webkit-align-items: center;
-	align-items: center;
+	align-items: center;*/
 }
 #gradient {
 	display: block;
@@ -239,7 +239,6 @@ a {
 	color: #fff;
 	font-family: Avenir-Book;
     width: 150px;
-    height: 50px;
     font-size: 46px;
     margin-bottom: 30px;   
 }
@@ -314,108 +313,49 @@ Extra small devices Phones (<768px) Landscape
 .swiper-pagination{ display: none; }
 #gradient{ display:block; width:100%; padding:0px; margin:0px; z-index: -1; }
 #gradient:after{ content:''; display:block; background:url("../images/gire.svg") center center; width:100%; height:100%; position:static; background-repeat:no-repeat; z-index:9999; opacity: 1.0; }
+#gradient2{ display:block; width:100%; padding:0px; margin:0px; z-index: -1; }
+#gradient2:after{ content:''; display:block; background:url("../images/gire.svg") center center; width:100%; height:100%; position:static; background-repeat:no-repeat; z-index:9999; opacity: 1.0; }
+#gradient3{ display:block; width:100%; padding:0px; margin:0px; z-index: -1; }
+#gradient3:after{ content:''; display:block; background:url("../images/gire.svg") center center; width:100%; height:100%; position:static; background-repeat:no-repeat; z-index:9999; opacity: 1.0; }
+#gradient4{ display:block; width:100%; padding:0px; margin:0px; z-index: -1; }
+#gradient4:after{ content:''; display:block; background:url("../images/gire.svg") center center; width:100%; height:100%; position:static; background-repeat:no-repeat; z-index:9999; opacity: 1.0; }
 }
 /**********************
 Extra small devices Phones (<340px) Portrait
 ***********************/
 @media only screen and (max-width:340px) and (orientation:portrait){
+.index__text--slide4{ margin-top: 0px; display: -webkit-box; display: -ms-flexbox; display: flex; display: -webkit-flex; justify-content: flex-end; }
+.index__text { display: -webkit-box; display: -ms-flexbox; display: flex; display: -webkit-flex; align-self: center; justify-content: center; align-items: center; width: 120px; text-align: center; flex-wrap: nowrap; font-size: 18px; margin-top: 10px; }
+
+.index__title{ width: 120px; font-size: 46px; }
+.index__start-btn { width: 120px; display: -webkit-box; display: -ms-flexbox; display: flex; display: -webkit-flex; align-self: center; justify-content: center; align-items: center; flex-wrap: nowrap; margin-top: 0px; text-align: center; padding: 10px; padding-bottom: 10px; padding-top: 10px; font-size: 16px; }
+.index__body-container { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; width: 100%; height: 85%; -webkit-flex-wrap: nowrap; flex-direction: column-reverse; }
+.swiper-pagination{ bottom: 15%; }
+.index__footer { height: 15%; z-index: 9; width: 100%; }
+.logo { background-size: 90px; margin-right: 0px; margin-top: 20px; }
+/*.index__sub-container-left { position: absolute; z-index: -2;}
+.index__sub-container-right { position: absolute; z-index: -1; }*/
+.btn{ display: -webkit-box; display: -ms-flexbox; display: flex; display: -webkit-flex; align-self: center; justify-content: center; align-items: center; padding:15px; width: 120px; padding-top: 10px; padding-bottom: 10px; margin-top: 0px; }
+.index__sub-container-center { width: 100%; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; align-items: flex-start; justify-content: center; -webkit-flex-wrap: nowrap; align-self: center; }
+.index__title-text-block { display: -webkit-box; display: -ms-flexbox; display: flex; display: -webkit-flex; align-items: center; -webkit-align-items: center; justify-content: flex-end; -webkit-justify-content: flex-end; flex-wrap: nowrap; -webkit-flex-wrap: nowrap; margin: 0px; align-self: center; -webkit-align-self: center; z-index: 9; height: 100px; margin-top: 20px; }
+
 }
 /**********************
 Small devices Phones (<768px) Portrait
 ***********************/
 @media only screen and (min-width:341px) and (orientation:portrait) and (max-width:767px){
-.logo {
-    background-size: 120px;
-    margin-right: -10px;
-    margin-top: 30px;
-}
-.swiper-pagination{
-	bottom: 10%;
-}
-.index__footer {
-    height: 10%;
-}
-.btn{
-	font-size:18px; 
-	padding:20px;
-	width: 180px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
-.index__text {
-	display: flex;
-	display: -webkit-flex;
-	align-self: center;
-	justify-content: center;
-	align-items: center;
-    width: 180px;
-    text-align: center;
-    flex-wrap: nowrap;
-    font-size: 24px;
-}
-.index__start-btn {
-    flex-wrap: nowrap;
-}
-.index__sub-container-left {
-
-    width: 100%;
-
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    -webkit-align-items: center;
-    -webkit-justify-content: center;
-    -webkit-flex-wrap: nowrap;
-}
-.index__title-text-block {
-    align-items: center;
-    -webkit-align-items: center;
-    justify-content: center;
-    -webkit-justify-content: center;
-    flex-wrap: nowrap;
-    -webkit-flex-wrap: nowrap;
-    margin-left: 0px;
-    height: 300px;
-    align-self: center;
-    -webkit-align-self: center;
-    z-index: 9;
-}
-
-.index__sub-container-right { display:none;}
-.index__sub-container-left { display:none;}
-.index__title-text-block { display:none; margin: 0px; }
-.index__body-container {
-    display: -webkit-flex;
-    display: flex;
-    width: 100%;
-    height: 95%;
-    -webkit-flex-wrap: nowrap;
-flex-direction: column-reverse;
-}
-.index__sub-container-center {
-width: 100%;
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    -webkit-flex-wrap: nowrap;
-    align-self: center;
-
-}
-.index__text {
-width: 180px;
-text-align: center;
-font-size: 24px;
-margin-bottom: 400px;
-}
-.index__title{
-width: 180px;
-margin: 80px;
-}
-.logo {
-margin-top: 50px;
-}
-
+.index__body-container { display: -webkit-flex; display: flex; width: 100%; height: 95%; -webkit-flex-wrap: nowrap; flex-direction: column-reverse; }
+.swiper-pagination{ bottom: 10%; }
+.index__footer { height: 10%; z-index: 9; }
+.logo { background-size: 120px; margin-right: -10px; margin-top: 50px; }
+.index__sub-container-left { position: absolute; }
+.index__sub-container-center { width: 100%; display: -webkit-flex; display: flex; align-items: flex-start; justify-content: center; -webkit-flex-wrap: nowrap; align-self: center; }
+.index__title-text-block { display: flex; display: -webkit-flex; align-items: center; -webkit-align-items: center; justify-content: flex-end; -webkit-justify-content: flex-end; flex-wrap: nowrap; -webkit-flex-wrap: nowrap; margin: 0px; align-self: center; -webkit-align-self: center; z-index: 9; height: 180px; margin-top: 40px; }
+.index__text--slide4{ margin-top: 0px; display: flex; display: -webkit-flex; justify-content: flex-end; }
+.index__title{ width: 180px; font-size: 60px; }
+.index__text { display: flex; display: -webkit-flex; align-self: center; justify-content: center; align-items: center; width: 180px; text-align: center; flex-wrap: nowrap; font-size: 24px; margin-top: 30px; }
+.index__start-btn { width: 180px; display: flex; display: -webkit-flex; align-self: center; justify-content: center; align-items: center; flex-wrap: nowrap; margin-top: 0px; text-align: center; padding: 20px; padding-bottom: 15px; padding-top: 15px; font-size: 16px; }
+.btn{ display: flex; display: -webkit-flex; align-self: center; justify-content: center; align-items: center; padding:20px; width: 180px; padding-top: 15px; padding-bottom: 15px; margin-top: 0px; }
 }
 /**********************
 Tablets and Desktops (≥768px)
