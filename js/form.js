@@ -1488,9 +1488,14 @@ $('#myModal').appendTo("form");
 $('#Modalmaior-premium').appendTo("form");
 $('#Modalmaior-gratuito').appendTo("form");
 $('#Modalmaior-profissional').appendTo("form");
+$('#Modalm-maior-premium').appendTo("form");
+$('#Modalm-maior-gratuito').appendTo("form");
+$('#Modalm-maior-profissional').appendTo("form");
 $('#myModal1_m').appendTo("form");
 $('#termo_premium_mobile').appendTo("form");
-
+$('#termo_maior_premium_mobile').appendTo("form");
+$('#termo_maior_gratuito_mobile').appendTo("form");
+$('#termo_maior_profissional_mobile').appendTo("form");
 $('#myModal2').appendTo("form");
 $('#myModal1_m2').appendTo("form");
 $('#termo_gratuito_mobile').appendTo("form");

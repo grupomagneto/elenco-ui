@@ -1376,12 +1376,12 @@
        <div class="div15_box">
 <!--DIV PLANO MOBILE -->
 <div class="versao_m">
-<div class="div_m" data-toggle="modal" data-target="#myModal1_m">
+<div class="div_m" data-toggle="modal" data-target="#Modalm-maior-premium">
   <h3>Premium</h3>
   <p>fotos simples em estúdio apenas para site</p>
   <div id="mais"></div>
 </div>
-<div class="modal modal1_m modal2_m" id="myModal1_m" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal modal1_m modal2_m" id="Modalm-maior-premium" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_modal_m">
     <h3>Premium</h3>
     <p>fotos simples em estúdio apenas para site</p>
@@ -1396,12 +1396,12 @@
       <li>R$</li>
     </ul>
     <h2 class="text-center">29<span>,90</span></h2>
-    <button type="button" class="botao_escolha_m" data-toggle="modal" data-target="#termo_premium_mobile">ESCOLHER</button>
+    <button type="button" class="botao_escolha_m" data-toggle="modal" data-target="#termo_maior_premium_mobile">ESCOLHER</button>
     <div id="menos" data-dismiss="modal"></div>
   </div>
 </div>
 
-<div class="modal modal2_m" id="termo_premium_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal modal2_m" id="termo_maior_premium_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_termo_premium_mobile">
     <h3>Termos e Condições</h3>
     <div class="termo_um_premium_desktop">
@@ -1430,13 +1430,13 @@
 </div>
 <!-- FIM MODAL PREMIUM-->
 <!-- INÍCIO MODAL GRATUITO -->
-<div class="div_m2" data-toggle="modal" data-target="#myModal1_m2">
+<div class="div_m2" data-toggle="modal" data-target="#Modalm-maior-gratuito">
   <h3>Gratuito</h3>
   <p>fotos simples em estúdio apenas para site</p>
   <div id="mais2"></div>
 </div>
 
-<div class="modal modal1_m2" id="myModal1_m2" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal modal1_m2" id="Modalm-maior-gratuito" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_modal_m2_2">
     <h3>Gratuito</h3>
     <p>fotos simples em estúdio apenas para site</p>
@@ -1446,11 +1446,12 @@
       <li>Contrato de 1 ano</li>
     </ol>
     <h2>CADASTRO SEM DESEMBOLSO</h2>
-    <button type="button" class="botao_escolha_m2_2" data-toggle="modal" data-target="#termo_gratuito_mobile">ESCOLHER</button>
+    <button type="button" class="botao_escolha_m2_2" data-toggle="modal" data-target="#termo_maior_gratuito_mobile">ESCOLHER</button>
     <div id="menos2_2" data-dismiss="modal"></div>
   </div>
 </div>
-<div class="modal modal_termo_gratuito_mobile" id="termo_gratuito_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
+
+<div class="modal modal_termo_gratuito_mobile" id="termo_maior_gratuito_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_termo_gratuito_mobile">
                   <h3>Termos e Condições</h3>
                 <div class="termo_um_gratuito_desktop">
@@ -1479,13 +1480,13 @@
 </div>
 <!-- FIM GRATUITO MODAL MOBILE -->
 <!-- DIV PROFISSIONAL MODAL MOBILE -->
-<div class="div_m3" data-toggle="modal" data-target="#myModal3_m1">
+<div class="div_m3" data-toggle="modal" data-target="#Modalm-maior-profissional">
   <h3>Profissional</h3>
   <p>ensaio fotográfico completo para site + entrega em DVD</p>
   <div id="mais3"></div>
 </div>
 
-<div class="modal modal3_m1" id="myModal3_m1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal modal3_m1" id="Modalm-maior-profissional" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_modal_m3_m1">
     <h3>Profissional</h3>
     <p>ensaio fotográfico completo para site + entrega em DVD</p>
@@ -1501,11 +1502,11 @@
       <li>R$</li>
     </ul>
     <h2 class="text-center">99<span>,90</span></h2>
-    <button type="button" class="botao_escolha_m3_m1" data-toggle="modal" data-target="#termo_profissional_mobile">ESCOLHER</button>
+    <button type="button" class="botao_escolha_m3_m1" data-toggle="modal" data-target="#termo_maior_profissional_mobile">ESCOLHER</button>
     <div id="menos3_m1" data-dismiss="modal"></div>
   </div>
 </div>
-<div class="modal modal_termo_profissional_mobile" id="termo_profissional_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal modal_termo_profissional_mobile" id="termo_maior_profissional_mobile" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-content conteudo_termo_profissional_mobile">
     <h3>Termos e Condições</h3>
     <div class="termo_um_profissional_desktop">
