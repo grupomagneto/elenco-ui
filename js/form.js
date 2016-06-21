@@ -1,6 +1,5 @@
-
-   var menor = new Swiper('.menor', {
-             pagination: '.swiper-pagination',
+var menor = new Swiper('.menor', {
+        pagination: '.swiper-pagination',
         keyboardControl: true,
         direction: 'vertical',
         simulateTouch: false,
@@ -9,8 +8,7 @@
         prevButton: '.swiper-control.prev',
         speed: 200
     });
-    var maior = new Swiper('.maior', {
-            pagination: '.swiper-pagination',
+var maior = new Swiper('.maior', {
         keyboardControl: true,
         direction: 'vertical',
         simulateTouch: false,
@@ -265,6 +263,41 @@ if (ua.indexOf('safari') != -1) {
 
   
  $('#data').unmask();
+}
+};
+ 
+  $(window).resize(mascara);
+ 
+  mascara();  
+});
+
+
+//MASK APENAS PARA SAFARI
+
+//MASK APENAS PARA SAFARI
+
+$(document).ready(function(){
+  
+var mascara = function() { 
+
+
+if (window.matchMedia('(min-width: 1199px)').matches)
+{
+  
+var ua = navigator.userAgent.toLowerCase(); 
+if (ua.indexOf('safari') != -1) { 
+  if (ua.indexOf('chrome') > -1) {
+    
+  } else {
+
+    $('#data_maior').mask('99/99/9999');
+  }
+}
+  
+} else {
+
+  
+ $('#data_maior').unmask();
 }
 };
  
@@ -736,26 +769,26 @@ $(window).load(function() {
 
 $(document).ready(function() {
   //set focus to 1st input field
-  $("#form [name='nome']").focus();
+  $("#form [name='nome_maior']").focus();
   //attach click event to button
   $("#seta").click(function() {
-    $("#form [name='sobrenome']").focus();
+    $("#form [name='sobrenome_maior']").focus();
   });
 });
 
 $(document).ready(function() {
-  $("#form [name='sexo']").click(function() {
+  $("#form [name='sexo_maior']").click(function() {
     if ($(this).attr("value") == "masculino") {
-      var delay = 1000;
-      setTimeout(function() {
-        $("#proxima").focus();
-      }, 200);
+    
+         maior.slideNext();
+         $("#camera_maior").focus();
+     
     }
     if ($(this).attr("value") == "feminino") {
-      var delay = 1000;
-      setTimeout(function() {
-        $("#proxima").focus();
-      }, 200);
+     
+         maior.slideNext();
+          $("#camera_maior").focus();
+      
     }
   });
 });
@@ -1274,7 +1307,7 @@ function valida_form2() {
   }
 }
 
-//SCRIPT FOCUS MASCULINO E FEMININO
+//SCRIPT FOCUS MASCULINO E FEMININO MENOR
 $(document).ready(function() {
   $("#form2 [name='sexo_menor']").click(function() {
     if ($(this).attr("value") == "masculino") {   
@@ -1293,12 +1326,31 @@ $(document).ready(function() {
     }
   });
 });
-//SCRIPT FOCUS MASCULINO E FEMININO
-
+//SCRIPT FOCUS MASCULINO E FEMININO MENOR
+//SCRIPT FOCUS MASCULINO E FEMININO MAIOR
+$(document).ready(function() {
+  $("#form [name='sexo_maior']").click(function() {
+    if ($(this).attr("value") == "masculino") {   
+         var delay = 1000;
+      setTimeout(function() {
+         $("#camera_maior").focus();
+      }, 200);
+    }
+    if ($(this).attr("value") == "feminino") {
+  var delay = 1000;
+      setTimeout(function() {
+         $("#camera_maior").focus();
+      }, 200);
+     
+    }
+  });
+});
+//SCRIPT FOCUS MASCULINO E FEMININO MAIOR
 //FOCUS SLIDER MAIOR
 $(function() {
   $(".teste").click(function() {
-     menor.slideNext();
+
+         maior.slideNext();
          $("#nome_maior").focus();
     
   });
@@ -1421,13 +1473,14 @@ $("#nome_maior").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
     maior.slideNext();
+      $("#form [name='sobrenome_maior']").focus();
   }
 });
 
-$("#sobrenome").keypress(function(e) {
+$("#sobrenome_maior").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
-    $("#radio0").focus();
+    maior.slideNext();
   }
 });
 
@@ -1442,12 +1495,6 @@ $("#radio1").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
     menor.slideNext();
-  }
-});
-
-$("#proxima").keypress(function(e) {
-  if (e.keyCode === 13) {
-    e.preventDefault();
   }
 });
 

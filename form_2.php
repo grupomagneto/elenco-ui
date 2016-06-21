@@ -763,6 +763,7 @@
                       <li>Aviso de cachê liberado</li>
                       <li>Contrato de 2 anos</li>
                     </ol>
+
                     <ul class="text-left list-unstyled">
                       <li>10x</li>
                       <li>R$</li>
@@ -919,23 +920,24 @@
 </div>
 </div>
     <!-- FIM DIV REDES SOCIAIS -->
-    </form>
-<a name="form_maior"></a>
-<form name="form" action="adiciona-usuario.php" id="form" method="post" enctype="multipart/form-data" onsubmit="return valida_form2(this)">
+</form>
+<div id="form_maior"></div>
+<form name="form" action="adiciona-usuario.php" id="form" method="post" enctype="multipart/form-data">
   <!-- Swiper Container -->
 <div class="swiper-container maior">
-  <!-- Swiper W -->
+  <!-- Swiper Wrapper -->
     <div class="swiper-wrapper">
+
     <!-- DIV NOME DA PESSOA SENDO CADASTRADA -->
     <div id="17" class="swiper-slide gradient">
       <div class="container">
         <div class="div17">
           <div class="row">
             <div class="pergunta col-lg-offset-3 col-lg-5">
-              <h1 id="proxima">Qual o seu primeiro nome?<sup>*</sup></h1>
+              <h1>Qual o seu primeiro nome?<sup>*</sup></h1>
             </div>
             <div class="input_box col-lg-offset-3 col-lg-5">
-              <input name="nome_maior" id="nome_maior" type="text" class="TabOnEnter" tabindex="17" autocomplete="off" placeholder=" " required />
+              <input name="nome_maior" id="nome_maior" type="text" class="TabOnEnter" tabindex="17" autocomplete="off" placeholder=" " required="required" />
                 <input type="button" class="sendBtn" id="btSend17" name="btSend17" style="display: none;" />
                   <img id="seta17" onclick="gravar()" class="swiper-control next2" src="images/ok_neg.svg" style="display: none;">
             </div>
@@ -952,7 +954,8 @@
         </ul>
       </nav>
     </div>
-    <!-- FIM DIV NOME DA PESSOA SENDO CADASTRADA -->
+<!-- FIM DIV NOME DA PESSOA SENDO CADASTRADA -->
+<!-- FIM DIV SOBRENOME DA PESSOA SENDO CADASTRADA -->
 <div id="18" class="swiper-slide gradient">
        <div class="container">
         <div class="div18">
@@ -978,6 +981,7 @@
     </ul>
   </nav>
 </div>
+  <!-- FIM DIV SOBRENOME DA PESSOA SENDO CADASTRADA -->
 <div id="19" class="swiper-slide gradient">
   <div class="container">
     <div class="div3">
@@ -986,14 +990,14 @@
           <h1 class="TabOnEnter" tabindex="19">Qual o seu sexo?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="sexo" value="masculino" type="radio" id="radio0" class="radio" onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)" />
-            <label id="input3" for="radio0" class="radio-label2">
+          <input name="sexo_maior" value="masculino" type="radio" id="sexo_maior_m" class="radio" onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)" />
+            <label id="input3" for="sexo_maior_m" class="radio-label2">
               <span>Masculino</span>
             </label>
         </div>
         <div class="div3_box col-lg-offset-3 col-lg-5">
-          <input name="sexo" type="radio" value="feminino" id="radio1" class="radio" onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)" />
-            <label for="radio1" class="radio-label">
+          <input name="sexo_maior" type="radio" value="feminino" id="sexo_maior_f" class="radio" onchange="exibeMsg(this.value);" onclick="setTimeout(myFunction, 2000)" />
+            <label for="sexo_maior_f" class="radio-label">
               <span>Feminino</span>
             </label>
         </div>
@@ -1017,11 +1021,11 @@
     <div class="div7">
       <div class="row">
         <div class="div7_t col-lg-offset-3 col-lg-5">
-          <img src="images/camera.svg" alt="camera">
+          <img src="images/camera.svg" alt="camera" id="camera_maior">
         </div>
         <div class="div7_box col-lg-offset-3 col-lg-5">
           <h1>Legal! Agora precisamos de duas fotos suas feitas hoje.</h1>
-          <button class="swiper-control next2 TabOnEnter botao" tabindex="20" class="TabOnEnter">Continuar</button>
+          <button class="swiper-control next2 TabOnEnter botao" tabindex="20">Continuar</button>
 <!--            <img src="images/ok_neg.svg"> -->
         </div>
       </div>
@@ -1037,7 +1041,7 @@
     </ul>
   </nav>
 </div>
-<!-- FIM DIV ANTES DAS FOTOS
+<!-- FIM DIV ANTES DAS FOTOS -->
 <!-- DIV PRIMEIRA FOTO -->
 <div id="21" class="swiper-slide gradient2">
   <div class="container">
@@ -1046,7 +1050,7 @@
         <div class="div8_box col-lg-offset-3 col-lg-5">
           <div class="wrapper">
             <div class="file-upload TabOnEnter">
-              <input type="file" id="foto" name="foto" />
+              <input type="file" id="foto_maior1" name="foto" />
               <img src="images/upload.svg" alt="">
             </div>
           </div>
@@ -1083,7 +1087,7 @@
         <div class="div9_box col-lg-offset-3 col-lg-5">
           <div class="wrapper2">
             <div class="file-upload2 TabOnEnter">
-              <input type="file" id="foto2" name="fotos" />
+              <input type="file" id="foto_maior2" name="fotos" />
               <img src="images/upload.svg" alt="">
             </div>
           </div>
@@ -1121,7 +1125,7 @@
           <h1>Qual sua data de nascimento?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="date" name="data" id="data" onfocus="this.value=''" class="TabOnEnter" autocomplete="off" placeholder="dd/mm/aaaa" required  />
+          <input type="date" name="data_maior" id="data_maior" onfocus="this.value=''" class="TabOnEnter" autocomplete="off" placeholder="dd/mm/aaaa" required  />
         </div>
       </div>
     </div>
@@ -1146,7 +1150,7 @@
           <h1>Qual seu celular para contato?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="celular" id="celular" data-mask="(00) 00000-0000" class="TabOnEnter" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
+          <input name="celular_maior" id="celular_maior" data-mask="(00) 00000-0000" class="TabOnEnter" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
           <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;">
           <img id="seta10" class="swiper-control next2" src="images/ok_neg.svg" style="display: none;">
         </div>
@@ -1173,7 +1177,7 @@
           <h1>E seu email?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="email" id="email" class="TabOnEnter" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
+          <input name="email_maior" id="email_maior" class="TabOnEnter" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
           <input type="button" class="sendBtn11" id="btSend11" name="btSend11" style="display: none;">
           <img id="seta11" class="swiper-control next2" src="images/ok_neg.svg" style="display: none;">
         </div>
@@ -1200,7 +1204,7 @@
           <h1>Qual é a cor da pele <span id="txt3"></span>?<sup>*</sup></h1>
         </div>
         <div class="div13_box col-lg-offset-3 col-lg-5">
-          <select id="raca_maior" name="raca" class="TabOnEnter">
+          <select id="raca_maior" name="raca_maior" class="TabOnEnter">
             <option disabled value="1">Selecione...</option>
             <option value="Amarela" >Amarela</option>
             <option value="Branca">Branca</option>
@@ -1232,7 +1236,7 @@
           <h1 id="proxima2">Em qual bairro <span id="txt4"></span> mora?<sup>*</sup></h1>
         </div>
         <div class="div14_box col-lg-offset-3 col-lg-5">
-          <select name="bairro" id="bairro_maior" class="TabOnEnter">
+          <select name="bairro_maior" id="bairro_maior" class="TabOnEnter">
             <option disabled value="1">Selecione...</option>
             <option value="Águas Claras"> Águas Claras</option>
             <option value="Asa Norte"> Asa Norte</option>
@@ -1303,7 +1307,7 @@
           <h1>Qual o seu cpf?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="text" name="cpf" id="cpf" data-mask="000.000.000-00" onfocus="this.value=''" min="11" max= "11" placeholder="000.000.000-00" required />
+          <input type="text" name="cpf_maior" id="cpf_maior" data-mask="000.000.000-00" onfocus="this.value=''" min="11" max= "11" placeholder="000.000.000-00" required />
           <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;">
           <img id="seta" class="swiper-control next2" src="images/ok_neg.svg" style="display: none;">
         </div>
@@ -1766,17 +1770,17 @@
             </div>
             <div class="input_ig col-lg-offset-3 col-lg-5">
               <img src="images/ig.svg" alt="instagram">
-              <input name="ig" id="ig" type="text" onfocus="this.value=''" class="TabOnEnter ig"autocomplete="off" placeholder="www.instagram.com/usuario" />
+              <input name="ig_maior" id="ig_maior" type="text" onfocus="this.value=''" class="TabOnEnter ig"autocomplete="off" placeholder="www.instagram.com/usuario" />
               <!-- <button ></button><span class="seta"><img src="img/seta_ok_neg.svg"></span> -->
             </div>
             <div class="input_fb col-lg-offset-3 col-lg-5">
               <img src="images/face.svg" alt="facebook">
-              <input name="face" id="face" type="text" onfocus="this.value=''" class="TabOnEnter face" autocomplete="off" placeholder="www.facebook.com/usuario" />
+              <input name="face_maior" id="face_maior" type="text" onfocus="this.value=''" class="TabOnEnter face" autocomplete="off" placeholder="www.facebook.com/usuario" />
               <!-- <button ></button><span class="seta"><img src="img/seta_ok_neg.svg"></span> -->
             </div>
             <div class="input_tt col-lg-offset-3 col-lg-5">
               <img src="images/tt.svg" alt="twitter">
-              <input name="tt" id="tt" type="text" onfocus="this.value=''" class="TabOnEnter tt" autocomplete="off" placeholder="www.twitter.com/usuario" />
+              <input name="tt_maior" id="tt_maior" type="text" onfocus="this.value=''" class="TabOnEnter tt" autocomplete="off" placeholder="www.twitter.com/usuario" />
               <!-- <button ></button><span class="seta"><img src="img/seta_ok_neg.svg"></span> -->
             </div>
           </div>
@@ -1802,7 +1806,7 @@
   <script src="js/swiper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.mask.min.js"></script>
-  <script src="js/form.js"></script>
+  <script src="js/script-form.js"></script>
   <script src="js/select.js"></script>
   <script src="js/jquery-ui.min.js"></script>
 </body>
