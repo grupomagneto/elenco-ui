@@ -1,5 +1,5 @@
     var menor = new Swiper('.menor', {
-             pagination: '.swiper-pagination',
+        pagination: '.swiper-pagination',
         keyboardControl: true,
         direction: 'vertical',
         simulateTouch: false,
@@ -353,6 +353,7 @@ function exibeMsg(valor) {
       break;
   }
 }
+
 //FIM MUDANÇA DE ACORDO COM O SEXO
 $('form')[0].addEventListener('focus', function(e) {
   //Index of focused slide
@@ -366,9 +367,7 @@ $('form')[0].addEventListener('focus', function(e) {
   Swiper.slideTo(focusIndex);
 }, true);
 
-
-
-//FOCUS DIV RESPONSÁVEL FORM MAIOR
+//FOCUS DIV RESPONSÁVEL FORM MENOR
 $(document).ready(function() {
   $("#form2 [name='responsavel']").click(function() {
     if ($(this).attr("value") == "sim") {   
@@ -384,7 +383,51 @@ $(document).ready(function() {
     }
   });
 });
-//FOCUS DIV RESPONSÁVEL FORM MAIOR
+//FOCUS DIV RESPONSÁVEL FORM MENOR
+
+//FOCUS DIV SEXO MENOR FORM MENOR
+$(document).ready(function() {
+  $("#form2 [name='sexo_menor']").click(function() {
+    if ($(this).attr("value") == "feminino") {   
+      var delay = 1000;
+      setTimeout(function() {
+         $("#nome_menor").focus();
+         menor.slideNext();
+      }, 200);
+    }
+    if ($(this).attr("value") == "masculino") {
+      //MASCULINO
+         var delay = 1000;
+      setTimeout(function() {
+         $("#nome_menor").focus();
+         menor.slideNext();
+      }, 200);
+    }
+  });
+});
+//FOCUS DIV SEXO MENOR FORM MENOR
+
+//FOCUS DIV SEXO MENOR FORM MAIOR
+$(document).ready(function() {
+  $("#form [name='sexo_maior']").click(function() {
+    if ($(this).attr("value") == "feminino") {   
+      var delay = 1000;
+      setTimeout(function() {
+         $("#camera_maior").focus();
+         maior.slideNext();
+      }, 200);
+    }
+    if ($(this).attr("value") == "masculino") {
+      //MASCULINO
+         var delay = 1000;
+      setTimeout(function() {
+         $("#camera_maior").focus();
+         maior.slideNext();
+      }, 200);
+    }
+  });
+});
+//FOCUS DIV SEXO MENOR FORM MAIOR
 
 //BUTTON OK INPUTS
 
@@ -403,7 +446,6 @@ $(window).load(function() {
 
 //FOCUS BUTTON OK
 $(document).ready(function() {
-  $("#form2 [name='cpf_responsavel']").focus();
   $("#seta").click(function() {
     $("#form2 [name='nome_responsavel']").focus();
   });
@@ -419,27 +461,158 @@ $("#cpf_responsavel").keypress(function(e) {
   }
 });
 
-$("#nome_maior").keypress(function(e) {
+$("#nome_responsavel").keypress(function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    menor.slideNext();
+    $("#form2 [name='sexo_menor']").focus();
+  }
+});
+
+
+$("#nome_menor").keypress(function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    menor.slideNext();
+    $("#form2 [name='sobrenome_menor']").focus();
+  }
+});
+
+$("#data_menor").keypress(function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    menor.slideNext();
+    $("#form2 [name='celular_responsavel']").focus();
+  }
+});
+
+$("#celular_responsavel").keypress(function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    menor.slideNext();
+    $("#form2 [name='email_responsavel']").focus();
+  }
+});
+
+$("#ig_menor").keypress(function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    $("#form2 [name='face_menor']").focus();
+  }
+});
+
+$("#face_menor").keypress(function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    $("#form2 [name='tt_menor']").focus();
+  }
+});
+
+$("#data_maior").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
     maior.slideNext();
-    $("#form [name='sobrenome_maior']").focus();
   }
 });
+
+$("#celular_maior").keypress(function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    maior.slideNext();
+  }
+});
+
+$("#email_maior").keypress(function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    maior.slideNext();
+  }
+});
+
 
 //TAB ENTER
 
 //FOCUS MENOR PARA MAIOR
-$(document).ready(function() {
-  $(".teste").click(function() {
-    $("#form_maior").slideUp("fast");
-  });
-});
-
+// $(document).ready(function() {
+//   $(".teste").click(function() {
+//  
+//     maior.slideNext();
+//   });
+// });
 
 //FOCUS MENOR PARA MAIOR
 
+//SCRIPT MODAL
 
+$('#myModal').appendTo("form");
+$('#Modalmaior-premium').appendTo("form");
+$('#Modalmaior-gratuito').appendTo("form");
+$('#Modalmaior-profissional').appendTo("form");
+$('#Modalm-maior-premium').appendTo("form");
+$('#Modalm-maior-gratuito').appendTo("form");
+$('#Modalm-maior-profissional').appendTo("form");
+$('#myModal1_m').appendTo("form");
+$('#termo_premium_mobile').appendTo("form");
+$('#termo_maior_premium_mobile').appendTo("form");
+$('#termo_maior_gratuito_mobile').appendTo("form");
+$('#termo_maior_profissional_mobile').appendTo("form");
+$('#myModal2').appendTo("form");
+$('#myModal1_m2').appendTo("form");
+$('#termo_gratuito_mobile').appendTo("form");
+
+$('#myModal3').appendTo("form");
+$('#myModal3_m1').appendTo("form");
+$('#termo_profissional_mobile').appendTo("form");
+
+$(".botao_escolha_m").click(function() {
+  $('#myModal1_m').modal('hide');
+});
+
+$(".botao_escolha_m2_2").click(function() {
+  $('#myModal1_m2').modal('hide');
+});
+
+$(".botao_escolha_m3_m1").click(function() {
+  $('#myModal3_m1').modal('hide');
+});
+
+// ESCONDER MODAL PREMIUM
+$(".button").click(function() {
+  $('#myModal').modal('hide');
+  menor.slideNext();
+  $("#ig").focus();
+});
+
+$(".sim_acordo_termo_premium_mobile").click(function() {
+  $('#termo_premium_mobile').modal('hide');
+  $("#ig").focus();
+});
+
+// ESCONDER MODAL GRATUITO
+$(".button2").click(function() {
+  $('#myModal2').modal('hide');
+  menor.slideNext();
+  $("#ig").focus();
+});
+
+$(".sim_acordo_termo_gratuito_mobile").click(function() {
+  $('#termo_gratuito_mobile').modal('hide');
+  $("#ig").focus();
+});
+
+// ESCONDER MODAL PROFISSIONAL
+$(".button3").click(function() {
+  $('#myModal3').modal('hide');
+  menor.slideNext();
+  $("#ig").focus();
+});
+
+$(".sim_acordo_termo_profissional_mobile").click(function() {
+  $('#termo_profissional_mobile').modal('hide');
+  $("#ig").focus();
+});
+
+//SCRIPT MODAL
 
 
 

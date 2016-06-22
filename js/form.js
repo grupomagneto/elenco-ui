@@ -13,6 +13,7 @@ var maior = new Swiper('.maior', {
         direction: 'vertical',
         simulateTouch: false,
         onlyExternal: true,
+        slideActiveClass : 'swiper-slide-active',
         nextButton: '.swiper-control.next2',
         prevButton: '.swiper-control.prev2',
         speed: 200,

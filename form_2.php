@@ -141,7 +141,7 @@
               <h1 class="TabOnEnter" tabindex="4">Qual o sexo do menor?<sup>*</sup></h1>
             </div>
             <div class="input_box col-lg-offset-3 col-lg-5">
-              <input type="radio" name="c" value="masculino" id="radio0" class="radio" onchange="exibeMsg2(this.value);" />
+              <input type="radio" name="sexo_menor" value="masculino" id="radio0" class="radio" onchange="exibeMsg2(this.value);" />
                 <label for="radio0" class="radio-label2">
                   <span>Masculino</span>
                 </label>
@@ -329,7 +329,7 @@
               <h1>Qual a data de nascimento <span id="txt6"></span>?<sup>*</sup></h1>
             </div>
             <div class="input_box col-lg-offset-3 col-lg-5">
-              <input type="date" name="data" id="data" onfocus="this.value=''" class="TabOnEnter" tabindex="10" autocomplete="off" placeholder="dd/mm/aaaa" required  />
+              <input type="date" name="data_menor" id="data_menor" onfocus="this.value=''" class="TabOnEnter" tabindex="10" autocomplete="off" placeholder="dd/mm/aaaa" required  />
             </div>
           </div>
         </div>
@@ -354,7 +354,7 @@
               <h1>Qual o celular para contato?<sup>*</sup></h1>
             </div>
             <div class="input_box col-lg-offset-3 col-lg-5">
-              <input name="celular" id="celular_responsavel" data-mask="(00) 00000-0000" class="TabOnEnter" tabindex="11" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
+              <input name="celular_responsavel" id="celular_responsavel" data-mask="(00) 00000-0000" class="TabOnEnter" tabindex="11" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
               <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;" />
               <img id="seta10" class="swiper-control next" src="images/ok_neg.svg" style="display: none;">
             </div>
@@ -381,7 +381,7 @@
               <h1>E o email?<sup>*</sup></h1>
             </div>
             <div class="input_box col-lg-offset-3 col-lg-5">
-              <input name="email" id="email_responsavel" class="TabOnEnter" tabindex="12" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
+              <input name="email_responsavel" id="email_responsavel" class="TabOnEnter" tabindex="12" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
                 <input type="button" class="sendBtn11" id="btSend11" name="btSend11" style="display: none;" />
                   <img id="seta11" class="swiper-control next" src="images/ok_neg.svg" style="display: none;">
             </div>
@@ -893,15 +893,15 @@
             </div>
             <div class="input_ig col-lg-offset-3 col-lg-5">
               <img src="images/ig.svg" alt="instagram">
-                <input name="ig" id="ig_responsavel" type="text" onfocus="this.value=''" class="TabOnEnter ig"autocomplete="off" placeholder="www.instagram.com/usuario" tabindex="16"/>
+                <input name="ig_menor" id="ig_responsavel" type="text" onfocus="this.value=''" class="TabOnEnter ig"autocomplete="off" placeholder="www.instagram.com/usuario" tabindex="16"/>
             </div>
             <div class="input_fb col-lg-offset-3 col-lg-5">
               <img src="images/face.svg" alt="facebook">
-                <input name="facebook" id="face_responsavel" type="text" onfocus="this.value=''" class="TabOnEnter face" autocomplete="off" placeholder="www.facebook.com/usuario" />
+                <input name="face_menor" id="face_responsavel" type="text" onfocus="this.value=''" class="TabOnEnter face" autocomplete="off" placeholder="www.facebook.com/usuario" />
             </div>
             <div class="input_tt col-lg-offset-3 col-lg-5">
               <img src="images/tt.svg" alt="twitter">
-                <input name="tt" id="tt_responsavel" type="text" onfocus="this.value=''" class="TabOnEnter tt" autocomplete="off" placeholder="www.twitter.com/usuario" />
+                <input name="tt_menor" id="tt_responsavel" type="text" onfocus="this.value=''" class="TabOnEnter tt" autocomplete="off" placeholder="www.twitter.com/usuario" />
             </div>
           </div>
           <button class="botao" id="cadastra" name="submit" type="submit">Enviar Cadastro</button>
