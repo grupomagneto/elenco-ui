@@ -354,16 +354,87 @@ function exibeMsg(valor) {
   }
 }
 
+
+//MASK APENAS PARA SAFARI
+
+$(document).ready(function(){
+  
+var mascara = function() { 
+
+
+if (window.matchMedia('(min-width: 1199px)').matches)
+{
+  
+var ua = navigator.userAgent.toLowerCase(); 
+if (ua.indexOf('safari') != -1) { 
+  if (ua.indexOf('chrome') > -1) {
+    
+  } else {
+
+    $('#data_menor').mask('99/99/9999');
+  }
+}
+  
+} else {
+
+  
+ $('#data_menor').unmask();
+}
+};
+ 
+  $(window).resize(mascara);
+ 
+  mascara();  
+});
+
+
+//MASK APENAS PARA SAFARI
+
+//MASK APENAS PARA SAFARI
+
+$(document).ready(function(){
+  
+var mascara = function() { 
+
+
+if (window.matchMedia('(min-width: 1199px)').matches)
+{
+  
+var ua = navigator.userAgent.toLowerCase(); 
+if (ua.indexOf('safari') != -1) { 
+  if (ua.indexOf('chrome') > -1) {
+    
+  } else {
+
+    $('#data_maior').mask('99/99/9999');
+  }
+}
+  
+} else {
+
+  
+ $('#data_maior').unmask();
+}
+};
+ 
+  $(window).resize(mascara);
+ 
+  mascara();  
+});
+
+
+//MASK APENAS PARA SAFARI
+
 //FIM MUDANÇA DE ACORDO COM O SEXO
 $('form')[0].addEventListener('focus', function(e) {
-  //Index of focused slide
+  
   var focusIndex = $(e.target).parents('.swiper-slide').index();
-  //Reset scrolltop set by browser on focus
+  
   $('.swiper-container')[0].scrollTop = 0;
   setTimeout(function() {
     $('.swiper-container')[0].scrollTop = 0;
   }, 0);
-  //Slide to focused slide
+
   Swiper.slideTo(focusIndex);
 }, true);
 
@@ -508,6 +579,20 @@ $("#face_menor").keypress(function(e) {
   }
 });
 
+$("#nome_maior").keypress(function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+      // $("html, body").animate({ scrollTop: 0 });
+  }
+});
+
+$("#sobrenome_maior").keypress(function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    maior.slideNext();
+  }
+});
+
 $("#data_maior").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
@@ -529,18 +614,16 @@ $("#email_maior").keypress(function(e) {
   }
 });
 
-
 //TAB ENTER
 
 //FOCUS MENOR PARA MAIOR
-// $(document).ready(function() {
-//   $(".teste").click(function() {
-//  
-//     maior.slideNext();
-//   });
-// });
+function inputFocus(){
+    $('html, body').animate({ scrollTop: $("#17").offset().top }, 200);
+    $("#form [name='nome_maior']").focus();
+}
 
 //FOCUS MENOR PARA MAIOR
+
 
 //SCRIPT MODAL
 

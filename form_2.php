@@ -23,7 +23,7 @@
               </div>
             <div class="row">
               <div class="primeiro col-lg-offset-3 col-lg-5">
-                <a href="#form_maior" class="btn teste">Eu mesmo(a), sou maior de idade</a> 
+                <a href="#form_maior" class="btn teste"  onClick="inputFocus()">Eu mesmo(a), sou maior de idade</a> 
               </div>
             </div>
             <div class="row">
