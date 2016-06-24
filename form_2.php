@@ -1050,7 +1050,7 @@
         <div class="div8_box col-lg-offset-3 col-lg-5">
           <div class="wrapper">
             <div class="file-upload TabOnEnter">
-              <input type="file" id="foto_maior1" name="foto" />
+              <input type="file" id="foto_maior1" name="foto" tabindex="21" />
               <img src="images/upload.svg" alt="">
             </div>
           </div>
@@ -1087,7 +1087,7 @@
         <div class="div9_box col-lg-offset-3 col-lg-5">
           <div class="wrapper2">
             <div class="file-upload2 TabOnEnter">
-              <input type="file" id="foto_maior2" name="fotos" />
+              <input type="file" id="foto_maior2" name="fotos" tabindex="22"  />
               <img src="images/upload.svg" alt="">
             </div>
           </div>
@@ -1125,7 +1125,7 @@
           <h1>Qual sua data de nascimento?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input type="date" name="data_maior" id="data_maior" onfocus="this.value=''" class="TabOnEnter" autocomplete="off" placeholder="dd/mm/aaaa" required  />
+          <input type="date" name="data_maior" id="data_maior" onfocus="this.value=''" class="TabOnEnter" tabindex="23" autocomplete="off" placeholder="dd/mm/aaaa" required  />
         </div>
       </div>
     </div>
@@ -1150,7 +1150,7 @@
           <h1>Qual seu celular para contato?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="celular_maior" id="celular_maior" data-mask="(00) 00000-0000" class="TabOnEnter" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
+          <input name="celular_maior" id="celular_maior" data-mask="(00) 00000-0000" class="TabOnEnter" tabindex="24" type="tel" onfocus="this.value=''" autocomplete="off" placeholder="(61) 9xxxx-xxxx" required />
           <input type="button" class="sendBtn10" id="btSend10" name="btSend10" style="display: none;">
           <img id="seta10" class="swiper-control next2" src="images/ok_neg.svg" style="display: none;">
         </div>
@@ -1177,7 +1177,7 @@
           <h1>E seu email?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="email_maior" id="email_maior" class="TabOnEnter" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
+          <input name="email_maior" id="email_maior" class="TabOnEnter" tabindex="25" type="email" onfocus="this.value=''" autocomplete="off" placeholder=" " required />
           <input type="button" class="sendBtn11" id="btSend11" name="btSend11" style="display: none;">
           <img id="seta11" class="swiper-control next2" src="images/ok_neg.svg" style="display: none;">
         </div>

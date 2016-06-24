@@ -478,7 +478,7 @@ $(document).ready(function() {
 });
 //FOCUS DIV SEXO MENOR FORM MENOR
 
-//FOCUS DIV SEXO MENOR FORM MAIOR
+//FOCUS DIV SEXO  FORM MAIOR
 $(document).ready(function() {
   $("#form [name='sexo_maior']").click(function() {
     if ($(this).attr("value") == "feminino") {   
@@ -494,11 +494,33 @@ $(document).ready(function() {
       setTimeout(function() {
          $("#camera_maior").focus();
          maior.slideNext();
+      }, 600);
+    }
+  });
+});
+//FOCUS DIV SEXO FORM MAIOR
+
+//FOCUS DIV ATOR
+$(document).ready(function() {
+  $("#form [name='ator']").click(function() {
+    if ($(this).attr("value") == "sim") {   
+      var delay = 1000;
+      setTimeout(function() {
+         $(".penultimo_p").focus();
+         maior.slideNext();
+      }, 200);
+    }
+    if ($(this).attr("value") == "nao") {
+      //MASCULINO
+         var delay = 1000;
+      setTimeout(function() {
+         $(".penultimo_p").focus();
+         maior.slideNext();
       }, 200);
     }
   });
 });
-//FOCUS DIV SEXO MENOR FORM MAIOR
+//FOCUS DIV ATOR
 
 //BUTTON OK INPUTS
 
@@ -539,7 +561,6 @@ $("#nome_responsavel").keypress(function(e) {
     $("#form2 [name='sexo_menor']").focus();
   }
 });
-
 
 $("#nome_menor").keypress(function(e) {
   if (e.keyCode === 13) {
@@ -582,7 +603,10 @@ $("#face_menor").keypress(function(e) {
 $("#nome_maior").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
-      // $("html, body").animate({ scrollTop: 0 });
+ $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+    $('#sobrenome_maior').focus();
+});
+    return false;
   }
 });
 
@@ -593,19 +617,54 @@ $("#sobrenome_maior").keypress(function(e) {
   }
 });
 
-$("#data_maior").keypress(function(e) {
+$("#22").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
     maior.slideNext();
   }
 });
 
-$("#celular_maior").keypress(function(e) {
+$("#23").keypress(function(e) {
   if (e.keyCode === 13) {
     e.preventDefault();
     maior.slideNext();
   }
 });
+
+$("#data_maior").keypress(function(e) {
+var ENTER = 13;
+
+var getKey = function(e) {
+  if(window.event) { return e.keyCode; }  // IE
+  else if(e.which) { return e.which; }    // Netscape/Firefox/Opera
+};
+var keynum = getKey(e);
+
+if(keynum === ENTER) {
+  //code focus   
+  $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+    $('#celular_maior').focus();
+});
+}
+});
+
+$("#celular_maior").keypress(function(e) {
+var ENTER = 13;
+
+var getKey = function(e) {
+  if(window.event) { return e.keyCode; }  // IE
+  else if(e.which) { return e.which; }    // Netscape/Firefox/Opera
+};
+var keynum = getKey(e);
+
+if(keynum === ENTER) {
+  //code focus    
+  $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+    $('#email_maior').focus();
+});
+}
+});
+
 
 $("#email_maior").keypress(function(e) {
   if (e.keyCode === 13) {
@@ -613,6 +672,7 @@ $("#email_maior").keypress(function(e) {
     maior.slideNext();
   }
 });
+
 
 //TAB ENTER
 
@@ -623,7 +683,6 @@ function inputFocus(){
 }
 
 //FOCUS MENOR PARA MAIOR
-
 
 //SCRIPT MODAL
 
