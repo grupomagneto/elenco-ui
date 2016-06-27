@@ -10,9 +10,10 @@
 
   if ($nome_responsavel != '' || $nome_responsavel != NULL) {
     $cpf = $_POST['cpf_responsavel'];
+    $cpf = preg_replace('/\D+/', '', $cpf);
     $sdata = $_POST['data_menor'];
     $data_menor = $_POST['data_menor'];
-    $data = explode("/", $sdata);
+    $data = explode("-", $sdata);
     $ano = $data[0];
     $mes = $data[1];
     $dia = $data[2];
@@ -35,26 +36,26 @@
     $face = $_POST['face_menor'];
     $tt = $_POST['tt_menor'];
 
-echo "Menor:";
-echo $cpf;
-echo $nome_responsavel;
-echo $sexo;
-echo $nome;
-echo $sobrenome;
-echo $data_menor;
-echo $celular;
-echo $email;
-echo $cor_pele;
-echo $bairro;
-echo $modalidade;
-echo $ig;
-echo $face;
-echo $tt;
+echo "Menor:"."<BR/>";
+echo "CPF:".$cpf."<BR/>";
+echo "Nome Responsável:".$nome_responsavel."<BR/>";
+echo "Sexo:".$sexo."<BR/>";
+echo "Nome:".$nome."<BR/>";
+echo "Sobrenome:".$sobrenome."<BR/>";
+echo "Data Nascimento:".$data_menor."<BR/>";
+echo "Celular:".$celular."<BR/>";
+echo "E-mail:".$email."<BR/>";
+echo "Cor Pele:".$cor_pele."<BR/>";
+echo "Bairro:".$bairro."<BR/>";
+echo "Modalidade:".$modalidade."<BR/>";
+echo "IG:".$ig."<BR/>";
+echo "FB:".$face."<BR/>";
+echo "TT:".$tt."<BR/>";
   }
   elseif ($ator != '' || $ator != NULL) {
     $sdata = $_POST['data_maior'];
     $data_maior = $_POST['data_maior'];
-    $data = explode("/", $sdata);
+    $data = explode("-", $sdata);
     $ano = $data[0];
     $mes = $data[1];
     $dia = $data[2];
@@ -72,31 +73,32 @@ echo $tt;
     $cor_pele = $_POST['raca_maior'];
     $bairro = $_POST['bairro_maior'];
     $cpf = $_POST['cpf_maior'];
+    $cpf = preg_replace('/\D+/', '', $cpf);
     $modalidade = $_POST['modalidade_maior'];
     $ig = $_POST['ig_maior'];
     $face = $_POST['face_maior'];
     $tt = $_POST['tt_maior'];
 
-echo "Maior";
-echo $nome;
-echo $sobrenome;
-echo $sexo;
-echo $data_maior;
-echo $celular;
-echo $email;
-echo $cor_pele;
-echo $bairro;
-echo $cpf;
-echo $ator;
-echo $modalidade;
-echo $ig;
-echo $face;
-echo $tt;
+echo "Maior"."<BR/>";
+echo "Nome: ".$nome."<BR/>";
+echo "Sobrenome: ".$sobrenome."<BR/>";
+echo "Sexo: ".$sexo."<BR/>";
+echo "Data Nascimento: ".$data_maior."<BR/>";
+echo "Celular: ".$celular."<BR/>";
+echo "E-mail: ".$email."<BR/>";
+echo "Cor da Pele: ".$cor_pele."<BR/>";
+echo "Bairro: ".$bairro."<BR/>";
+echo "CPF: ".$cpf."<BR/>";
+echo "Ator?: ".$ator."<BR/>";
+echo "Modalidade: ".$modalidade."<BR/>";
+echo "IG: ".$ig."<BR/>";
+echo "FB: ".$face."<BR/>";
+echo "TT: ".$tt."<BR/>";
   }
 
 
 
-   
+
 //      if ($ator == 'sim') {
 //       $cadastro = 'Ator';
 //      } if ($ator == 'nao') {
@@ -114,7 +116,7 @@ echo $tt;
 //     $row = mysqli_fetch_array($result);
 //     $id = $row['id_elenco'];
 
-//     if(isset($_FILES['foto_1'])) { //verifica se recebeu um arquivo 
+//     if(isset($_FILES['foto_1'])) { //verifica se recebeu um arquivo
 //     $ext = strtolower(substr($_FILES['foto_1']['name'],-4)); //Pegando extensão do arquivo
 //     $new_name = $id."-".$hoje."-"."01".$ext; //Definindo um novo nome para o arquivo
 //      move_uploaded_file($_FILES['foto_1']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
@@ -122,7 +124,7 @@ echo $tt;
 //      mysqli_query($link, $sql2);
 //     }
 
-//     if(isset($_FILES['foto_2'])) { //verifica se recebeu um arquivo 
+//     if(isset($_FILES['foto_2'])) { //verifica se recebeu um arquivo
 //     $ext = strtolower(substr($_FILES['foto_2']['name'],-4)); //Pegando extensão do arquivo
 //     $new_name = $id."-".$hoje."-"."02".$ext; //Definindo um novo nome para o arquivo
 //      move_uploaded_file($_FILES['foto_2']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
