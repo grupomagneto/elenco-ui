@@ -258,8 +258,15 @@ img#seta{ width:60px; height:60px; position:absolute; left:50%; margin-left:270p
 img#seta2{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
 img#seta4{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
 img#seta5{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
+img#seta6{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
 img#seta10{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
 img#seta11{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
+img#seta17{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
+img#seta18{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
+img#seta19{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
+img#seta20{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
+img#seta21{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
+img#seta22{ width:60px; height:60px; position:absolute; left:50%; margin-left:270px; margin-top:10px; opacity:0.8; cursor:pointer; }
 /* Responsável Legal */
 .radio-label3{ display:inline-block; border:2px solid #ECECEC; border-radius:8px; background-color:rgba(215,215,215,0.30); width:500px; height:80px; color:#fff; font-family:Avenir-Book; position:absolute; left:50%; margin-left:-250px; margin-top:-15px; cursor:pointer; }
 .radio-label4{ display:inline-block; border:2px solid #ECECEC; border-radius:8px; background-color:rgba(215,215,215,0.30); width:500px; height:80px; color:#fff; font-family:Avenir-Book; position:absolute; left:50%; margin-left:-250px; margin-top:100px; cursor:pointer; }
@@ -278,6 +285,26 @@ img#seta11{ width:60px; height:60px; position:absolute; left:50%; margin-left:27
 .radio + .radio-label2 span{ display:inline-block; font-family:Avenir-Book; font-size:25px; color:#FFFFFF; padding-top:20px; margin-left:-320px; }
 .radio:checked + .radio-label{ background:rgba(215,215,215,0.60); }
 .radio:checked + .radio-label2{ background:rgba(215,215,215,0.60); }
+/* DRT */
+.radio-label5{ display:inline-block; border:2px solid #ECECEC; border-radius:8px; background-color:rgba(215,215,215,0.30); width:500px; height:80px; color:#fff; font-family:Avenir-Book; position:absolute; left:50%; margin-left:-250px; margin-top:0px; cursor:pointer; }
+.radio-label6{ display:inline-block; border:2px solid #ECECEC; border-radius:8px; background-color:rgba(215,215,215,0.30); width:500px; height:80px; color:#fff; font-family:Avenir-Book; position:absolute; left:50%; margin-left:-250px; margin-top:85px; cursor:pointer; }
+.radio-label5:hover{ background-color:rgba(215,215,215,0.60); }
+.radio-label6:hover{ background-color:rgba(215,215,215,0.60); }
+.radio + .radio-label5 span{ display:inline-block; font-family:Avenir-Book; font-size:25px; color:#FFFFFF; padding-top:20px; margin-left:-390px; }
+.radio + .radio-label6 span{ display:inline-block; font-family:Avenir-Book; font-size:25px; color:#FFFFFF; padding-top:20px; margin-left:-385px; }
+.radio:checked + .radio-label5{ background:rgba(215,215,215,0.60); }
+.radio:checked + .radio-label6{ background:rgba(215,215,215,0.60); }
+p.descricao{ width:500px; position: absolute; left:50%; margin-left: -220px; font-family: Avenir-Book; font-size: 14px; color: #FFFFFF; text-align: left; margin-top: 185px; }
+b a { color:#fff; text-decoration: underline; }
+b a:hover{ color:#fff; }
+.box{ padding: 20px; display: none; margin-top: 230px; margin-left: -220px; position: absolute; left:50%; width:300px; }
+.blue{ background: rgba(215,215,215,0.30); }
+/* Ótimo!: */
+.blue h1{ font-family: Avenir-Book; font-size: 20px; color: #FFFFFF; text-align: left; }
+/* Isso quer dizer que : */
+p.p1{ font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; text-align: left; }
+/* Isso quer dizer que : */
+p.p2{ font-family: Avenir-Book; font-size: 12px; color: #FFFFFF; text-align: left; }
 /* Para começar, vamos precisar de duas fotos */
 .div7_box h1{ font-family:Avenir-Book; font-size:32px; color:#FFFFFF; line-height:40px; margin-bottom:16px; width:400px; position:absolute; left:50%; margin-left:-200px; margin-top:20px; }
 .div7_box img{ width:60px; height:60px; position:absolute; z-index:9999; left:50%; margin-left:-30px; margin-top:190px; }
@@ -320,9 +347,9 @@ img#seta11{ width:60px; height:60px; position:absolute; left:50%; margin-left:27
 .select-options4::-webkit-scrollbar-thumb{ border-radius:10px; -webkit-box-shadow:inset 0 0 20px #fff; }
 /* Bairro */
 .select-hidden5{ display:none; visibility:hidden; padding-right:10px; }
-.select5{ cursor:pointer; display:inline-block; position:absolute; font-size:16px; color:#fff; width:500px; height:70px; margin-left:-250px; }
-.select-styled5{ font-family:Avenir-Book; font-size:24px; position:absolute; top:0; right:0; bottom:0; left:0; background-color:rgba(215,215,215,0.30); padding:20px 10px; border-radius:6px; border:2px solid #fff; -moz-transition:all 0.2s ease-in; -o-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition:all 0.2s ease-in; text-align:left; }
-.select-styled5:after{ content:""; width:0; height:0; border:7px solid transparent; border-color:#fff transparent transparent transparent; top:30px; position:absolute; right:10px; }
+.select5{ cursor:pointer; display:inline-block; position:absolute; font-size:16px; color:#fff; width:500px; height:80px; margin-left:-250px; }
+.select-styled5{ font-family:Avenir-Book; font-size:24px; position:absolute; top:0; right:0; bottom:0; left:0; background-color:rgba(215,215,215,0.30); padding:20px 20px; border-radius:6px; border:2px solid #fff; -moz-transition:all 0.2s ease-in; -o-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition:all 0.2s ease-in; text-align:left; }
+.select-styled5:after{ content:""; width:0; height:0; border:7px solid transparent; border-color:#fff transparent transparent transparent; top:35px; position:absolute; right:10px; }
 .select-styled5:hover{ background-color:rgba(215,215,215,0.30); }
 .select-styled5:active, .select-styled5.active{ background-color:rgba(215,215,215,0.30); }
 .select-styled5:active:after, .select-styl5.active:after{ top:15px; border-color:transparent transparent #fff transparent; }
@@ -640,8 +667,15 @@ img#seta{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 img#seta2{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 img#seta4{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 img#seta5{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta6{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 img#seta10{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 img#seta11{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta17{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta18{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta19{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta20{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta21{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta22{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 /* Responsável Legal */
 .radio-label3{ width:280px; height:60px; font-size:20px; margin-left:-140px; margin-top:-60px; }
 .radio-label4{ width:280px; height:60px; font-size:20px; margin-left:-140px; margin-top:35px; }
@@ -938,8 +972,15 @@ img#seta{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 img#seta2{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 img#seta4{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 img#seta5{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta6{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 img#seta10{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 img#seta11{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta17{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta18{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta19{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta20{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta21{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
+img#seta22{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 /* Responsável Legal */
 .radio-label3{ width:280px; height:60px; font-size:20px; margin-left:-140px; margin-top:-60px; }
 .radio-label4{ width:280px; height:60px; font-size:20px; margin-left:-140px; margin-top:35px; }
@@ -1189,8 +1230,15 @@ img#seta{ margin-left:220px; margin-top:0px; }
 img#seta2{ margin-left:220px; margin-top:0px; }
 img#seta4{ margin-left:220px; margin-top:0px; }
 img#seta5{ margin-left:220px; margin-top:0px; }
+img#seta6{ margin-left:220px; margin-top:0px; }
 img#seta10{ margin-left:220px; margin-top:0px; }
 img#seta11{ margin-left:220px; margin-top:0px; }
+img#seta17{ margin-left:220px; margin-top:0px; }
+img#seta18{ margin-left:220px; margin-top:0px; }
+img#seta19{ margin-left:220px; margin-top:0px; }
+img#seta20{ margin-left:220px; margin-top:0px; }
+img#seta21{ margin-left:220px; margin-top:0px; }
+img#seta22{ margin-left:220px; margin-top:0px; }
 /* Placeholder transparente */
 ::-webkit-input-placeholder{ background:url("../images/keyboard.svg"); background-repeat:no-repeat; background-size:60px 30px; background-position:310px 0px; }
 :-moz-placeholder{ background:url("../images/keyboard.svg"); background-repeat:no-repeat; background-size:60px 30px; background-position:310px 0px; }
@@ -1513,7 +1561,7 @@ MODALIDADES DE CADASTRO
 .versao_m{ display:none; }
 .versao_d{ display:block; }
 /* TÍTULO:Selecione uma modalidade para o cadastro*/
-.div15_t h1{ font-family:Avenir-Book; font-size:24px; color:#FFFFFF; width:160%; position:relative; text-align:center; left:50%; margin-left:-92%; margin-top:-120px; }
+.div15_t h1{ font-family:Avenir-Book; font-size:24px; color:#FFFFFF; width:500px; position:absolute; text-align:center; left:50%; margin-left:-250px; margin-top:-120px; }
 /* Box Gratuito */
 .div15_box2 .thumbnail{ margin-top:-50px; width:280px; height:470px; position:absolute; left:50%; margin-left:-520px; background:#F75486; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #F75486; }
 .div15_box2 .thumbnail .caption h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; width:180px; margin-left:35px; }
@@ -1526,7 +1574,7 @@ MODALIDADES DE CADASTRO
 .botao_modal2{ border:1px solid #FFFFFF; border-radius:6px; font-family:Avenir-Book; font-size:14px; color:#FFFFFF; background:rgba(215,215,215,0.30); padding:5px; margin-top:0px; }
 .botao_modal2:hover{ background-color:rgba(215,215,215,0.60); }
 /* Box Premium */
-.div15_box .thumbnail{ margin-top:-50px; width:280px; height:470px; position:absolute; left:50%; margin-left:-215px;/* Rectangle 2 Copy:*/ background:#C957DE; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; }
+.div15_box .thumbnail{ margin-top:-50px; width:280px; height:470px; position:absolute; left:50%; margin-left:-215px; background:#C957DE; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; }
 .div15_box .thumbnail .caption h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; width:180px; margin-left:35px; }
 .div15_box .thumbnail .caption p{ font-family:Avenir-Book; font-size:12px; color:#FFFFFF; width:150px; margin-left:49px; line-height:120%; }
 .div15_box .thumbnail .caption ol{ list-style-type:disc; color:#FFFFFF; width:240px; height:200px; text-align:left; margin-left:20px; margin-top:20px; font-family:Avenir-Book; font-size:16px; color:#FFFFFF; }
@@ -1804,9 +1852,9 @@ MODALIDADES DE CADASTRO
 **********************/
 .versao_m{ display:none; }
 /* TÍTULO:Selecione uma modalidade para o cadastro*/
-.div15_t h1{ font-family:Avenir-Book; font-size:24px; color:#FFFFFF; width:1100px; position:absolute; text-align:center; left:20%; margin-left:-500px; margin-top:-120px; }
+.div15_t h1{ font-family:Avenir-Book; font-size:24px; color:#FFFFFF; width:1100px; position:absolute; text-align:center; left:50%; margin-left:-550px; margin-top:-120px; }
 /* Box Premium */
-.div15_box .thumbnail{ margin-top:-50px; width:340px; height:470px; position:absolute; left:50%; margin-left:-260px;/* Rectangle 2 Copy:*/ background:#C957DE; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; }
+.div15_box .thumbnail{ margin-top:-50px; width:340px; height:470px; position:absolute; left:50%; margin-left:-260px; background:#C957DE; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; }
 .div15_box .thumbnail .caption h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; width:200px; margin-left:60px; }
 .div15_box .thumbnail .caption p{ font-family:Avenir-Book; font-size:12px; color:#FFFFFF; width:150px; margin-left:83px; line-height:120%; }
 .div15_box .thumbnail .caption ol{ list-style-type:disc; color:#FFFFFF; width:260px; height:200px; text-align:left; margin-left:30px; margin-top:20px; font-family:Avenir-Book; font-size:16px; color:#FFFFFF; }
@@ -2014,9 +2062,10 @@ POSIÇÃO DAS DIVS
 .div13{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div14{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div15{ position:absolute; top:25%; left:6%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div16{ position:absolute; top:35%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div16{ position:absolute; top:55%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div17{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div18{ position:absolute; top:45%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div29{ position:absolute; top:40%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 /*Primeira Pergunta*/
 .row .primeiro{ margin-bottom: 96px; }
 .row .primeiro a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; margin-top:0px; }
@@ -2029,9 +2078,9 @@ MODALIDADES DE CADASTRO
 **********************/
 .versao_m{ display:none; }
 /* TÍTULO:Selecione uma modalidade para o cadastro*/
-.div15_t h1{ font-family:Avenir-Book; font-size:32px; color:#FFFFFF; margin-bottom:16px; width:1100px; position:absolute; text-align:center; left:20%; margin-left:-500px; margin-top:-120px; }
+.div15_t h1{ font-family:Avenir-Book; font-size:32px; color:#FFFFFF; margin-bottom:16px; position:absolute; margin-top:-120px; width:1100px; text-align:center; left:50%; margin-left:-550px; }
 /* Box Premium */
-.div15_box .thumbnail{ width:350px; height:550px; position:absolute; left:50%; margin-left:-270px;/* Rectangle 2 Copy:*/ background:#C957DE; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; }
+.div15_box .thumbnail{ width:350px; height:550px; position:absolute; left:50%; margin-left:-270px; background:#C957DE; box-shadow:0px 6px 8px 0px rgba(0,0,0,0.30); border:1px solid #C957DE; }
 .div15_box .thumbnail .caption h3{ color:#fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding-top:10px; padding-bottom:10px; width:200px; margin-left:63px; }
 .div15_box .thumbnail .caption p{ font-family:Avenir-Book; font-size:14px; color:#FFFFFF; width:200px; margin-left:63px; line-height:120%; }
 .div15_box .thumbnail .caption ol{ list-style-type:disc; color:#FFFFFF; width:290px; height:230px; text-align:left; margin-left:30px; margin-top:25px; font-family:Avenir-Book; font-size:20px; color:#FFFFFF; }

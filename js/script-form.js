@@ -344,9 +344,21 @@ function exibeMsg(valor) {
   switch (valor) {
     case 'feminino':
       document.getElementById('txt').innerHTML = 'atriz';
+      document.getElementById('txt60').innerHTML = 'a';
+      document.getElementById('txt61').innerHTML = 'a';
+      document.getElementById('txt62').innerHTML = 'a';
+      document.getElementById('txt63').innerHTML = 'a';
+      document.getElementById('txt64').innerHTML = 'a';
+      document.getElementById('txt65').innerHTML = 'a';
       break;
     case 'masculino':
       document.getElementById('txt').innerHTML = 'ator';
+      document.getElementById('txt60').innerHTML = 'o';
+      document.getElementById('txt61').innerHTML = 'o';
+      document.getElementById('txt62').innerHTML = 'o';
+      document.getElementById('txt63').innerHTML = 'o';
+      document.getElementById('txt64').innerHTML = 'o';
+      document.getElementById('txt65').innerHTML = 'o';
       break;
     default:
       document.getElementById('txt').innerHTML = 'Nenhum valor informado';
@@ -494,7 +506,7 @@ $(document).ready(function() {
       setTimeout(function() {
          $("#camera_maior").focus();
          maior.slideNext();
-      }, 600);
+      }, 200);
     }
   });
 });
@@ -508,7 +520,7 @@ $(document).ready(function() {
       setTimeout(function() {
          $(".penultimo_p").focus();
          maior.slideNext();
-      }, 200);
+      }, 10000);
     }
     if ($(this).attr("value") == "nao") {
       //MASCULINO
@@ -535,12 +547,175 @@ $(window).load(function() {
     }
   });
 });
+
+$(window).load(function() {
+  $('#nome_responsavel').keyup(function() {
+    if ($.trim(this.value).length > 2) {
+      $('#btSend2').show();
+      $('#seta2').show();
+    } else {
+      $('#btSend2').hide();
+      $('#seta2').hide();
+    }
+  });
+});
+
+$(window).load(function() {
+  $('#nome_menor').keyup(function() {
+    if ($.trim(this.value).length > 2) {
+      $('#btSend4').show();
+      $('#seta4').show();
+    } else {
+      $('#btSend4').hide();
+      $('#seta4').hide();
+    }
+  });
+});
+
+$(window).load(function() {
+  $('#sobrenome_menor').keyup(function() {
+    if ($.trim(this.value).length > 2) {
+      $('#btSend5').show();
+      $('#seta5').show();
+    } else {
+      $('#btSend5').hide();
+      $('#seta5').hide();
+    }
+  });
+});
+
+$(window).load(function() {
+  $('#data_menor').keyup(function() {
+    if ($.trim(this.value).length > 2) {
+      $('#btSend6').show();
+      $('#seta6').show();
+    } else {
+      $('#btSend6').hide();
+      $('#seta6').hide();
+    }
+  });
+});
+
+$(window).load(function() {
+  $('#celular_responsavel').keyup(function() {
+    if ($.trim(this.value).length > 13) {
+      $('#btSend10').show();
+      $('#seta10').show();
+    } else {
+      $('#btSend10').hide();
+      $('#seta10').hide();
+    }
+  });
+});
+
+$(window).load(function() {
+  $('#email_responsavel').keyup(function() {
+    if ($.trim(this.value).length > 7) {
+      $('#btSend11').show();
+      $('#seta11').show();
+    } else {
+      $('#btSend11').hide();
+      $('#seta11').hide();
+    }
+  });
+});
+
+$(window).load(function() {
+  $('#nome_maior').keyup(function() {
+    if ($.trim(this.value).length > 2) {
+      $('#btSend17').show();
+      $('#seta17').show();
+    } else {
+      $('#btSend17').hide();
+      $('#seta17').hide();
+    }
+  });
+});
+
+$(window).load(function() {
+  $('#sobrenome_maior').keyup(function() {
+    if ($.trim(this.value).length > 2) {
+      $('#btSend18').show();
+      $('#seta18').show();
+    } else {
+      $('#btSend18').hide();
+      $('#seta18').hide();
+    }
+  });
+});
+
+$(window).load(function() {
+  $('#data_maior').keyup(function() {
+    if ($.trim(this.value).length > 2) {
+      $('#btSend19').show();
+      $('#seta19').show();
+    } else {
+      $('#btSend19').hide();
+      $('#seta19').hide();
+    }
+  });
+});
+
+$(window).load(function() {
+  $('#celular_maior').keyup(function() {
+    if ($.trim(this.value).length > 13) {
+      $('#btSend20').show();
+      $('#seta20').show();
+    } else {
+      $('#btSend20').hide();
+      $('#seta20').hide();
+    }
+  });
+});
+
+$(window).load(function() {
+  $('#email_maior').keyup(function() {
+    if ($.trim(this.value).length > 7) {
+      $('#btSend21').show();
+      $('#seta21').show();
+    } else {
+      $('#btSend21').hide();
+      $('#seta21').hide();
+    }
+  });
+});
+
+$(window).load(function() {
+  $('#cpf_maior').keyup(function() {
+    if ($.trim(this.value).length > 13) {
+      $('#btSend22').show();
+      $('#seta22').show();
+    } else {
+      $('#btSend22').hide();
+      $('#seta22').hide();
+    }
+  });
+});
+
 //BUTTON OK INPUTS
 
 //FOCUS BUTTON OK
 $(document).ready(function() {
   $("#seta").click(function() {
     $("#form2 [name='nome_responsavel']").focus();
+  });
+});
+
+$(document).ready(function() {
+  $("#seta4").click(function() {
+    $("#form2 [name='sobrenome_menor']").focus();
+  });
+});
+
+$(document).ready(function() {
+  $("#seta6").click(function() {
+    $("#form2 [name='celular_responsavel']").focus();
+  });
+});
+
+$(document).ready(function() {
+  $("#seta10").click(function() {
+    $("#form2 [name='email_responsavel']").focus();
   });
 });
 //FOCUS BUTTON OK
@@ -756,6 +931,100 @@ $(".sim_acordo_termo_profissional_mobile").click(function() {
 
 //SCRIPT MODAL
 
+//DRT ATOR (COPIADO E COLADO DO FORM.JS)
 
+function exibeMsg3(valor) {
+  switch (valor) {
+    case 'sim':
+      document.getElementById('txtpremium1').innerHTML = 'Você não precisa pagar para se agenciar;';
+      document.getElementById("txtpremium2").setAttribute("style","display:none"); 
+      document.getElementById("txtpremium1").setAttribute("style","display:block"); 
+      document.getElementById('txtpremium1_mobile').innerHTML = 'Você não precisa pagar para se agenciar;';
+      document.getElementById("txtpremium2_mobile").setAttribute("style","display:none"); 
+      document.getElementById("txtpremium1_mobile").setAttribute("style","display:block"); 
+      break;
+    case 'nao':
+      document.getElementById('txtpremium2').innerHTML = 'Para efetivar seu contrato você deverá pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;';
+      document.getElementById("txtpremium1").setAttribute("style","display:none");
+      document.getElementById("txtpremium2").setAttribute("style","display:block");
+      document.getElementById('txtpremium2_mobile').innerHTML = 'Para efetivar seu contrato você deverá pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;';
+      document.getElementById("txtpremium1_mobile").setAttribute("style","display:none");
+      document.getElementById("txtpremium2_mobile").setAttribute("style","display:block");  
+      break;
+    default:
+      document.getElementById('txtpremium3').innerHTML = 'não clicou';
+      break;
+  }
+}
+
+$("#nome_maior").keyup(function() {
+  $(".concat_texto").html($(this).val());
+});
+
+$("#nome_menor").keyup(function() {
+  $(".concat2_texto").html($(this).val());
+});
+
+$("#nome_responsavel").keyup(function() {
+  $(".concat3_texto").html($(this).val());
+});
+
+//Código da div ator
+
+$(document).ready(function() {
+  $(".blue").hide();
+  $("#form [name='ator']").click(function() {
+    if ($(this).attr("value") == "sim") {
+
+      $(".box").not(".blue").hide();
+      $(".blue").show();
+     document.getElementById("premium_desktop1").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop2").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop3").setAttribute("style","display:block");
+     document.getElementById("premium_desktop1_1").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop2_1").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop3_1").setAttribute("style","display:block"); 
+
+     document.getElementById("premium_desktop1_mobile").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop2_mobile").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop3_mobile").setAttribute("style","display:block");
+ 
+
+     document.getElementById("div15_box2").setAttribute("style","opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50)"); 
+      document.getElementById('botao2').setAttribute("disabled","disabled");
+      $(".div_m2").css({ opacity: 0.5 }); 
+      $('.div_m2').removeAttr('data-toggle');
+
+      var delay = 1000;
+      setTimeout(function() {
+        $(".penultimo_p").focus()();
+      }, 3000);
+    }
+    if ($(this).attr("value") == "nao") {
+
+      $(".box").not(".blue").hide();
+      $(".blue").hide();
+     document.getElementById("premium_desktop1").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop2").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop3").setAttribute("style","display:none"); 
+     document.getElementById("premium_desktop1_1").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop2_1").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop3_1").setAttribute("style","display:none"); 
+
+
+     document.getElementById("premium_desktop1_mobile").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop2_mobile").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop3_mobile").setAttribute("style","display:none");
+
+      document.getElementById("div15_box2").removeAttribute("style","opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50)"); 
+      document.getElementById('botao2').removeAttribute("disabled","disabled");
+      $(".div_m2").css({ opacity: 1.0 }); 
+      $('.div_m2').attr('data-toggle','modal');
+
+        
+         maior.slideNext();
+    }
+  });
+});
 
 
