@@ -952,7 +952,7 @@
       <nav>
         <ul class="vs-vertical-nav none">
           <li><a href="#div0" class="vs-prev swiper-control prev2"></a></li>
-          <li><a href="#" class="vs-next swiper-control next2"></a></li>
+          <li><a href="#" class="vs-next swiper-control next2 focus15"></a></li>
         </ul>
       </nav>
     </div>
@@ -978,12 +978,13 @@
 </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev2"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev2 focus16"></a></li>
       <li><a href="#" class="vs-next swiper-control next2"></a></li>
     </ul>
   </nav>
 </div>
   <!-- FIM DIV SOBRENOME DA PESSOA SENDO CADASTRADA -->
+  <!-- INÍCIO DIV SEXO DA PESSOA SENDO CADASTRADA -->
 <div id="19" class="swiper-slide gradient">
   <div class="container">
     <div class="div3">
@@ -1011,11 +1012,12 @@
 </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev2"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev2 focus17"></a></li>
       <li><a href="#" class="vs-next swiper-control next2"></a></li>
     </ul>
   </nav>
 </div>
+  <!-- FIM DIV SEXO DA PESSOA SENDO CADASTRADA -->
 <!-- DIV ANTES DAS FOTOS -->
  <div id="20" class="swiper-slide gradient">
   <nav>
@@ -1113,7 +1115,7 @@
   <nav>
     <ul class="vs-vertical-nav none">
       <li><a href="#" class="vs-prev swiper-control prev2"></a></li>
-      <li><a href="#" class="vs-next swiper-control next2"></a></li>
+      <li><a href="#" class="vs-next swiper-control next2 focus18"></a></li>
     </ul>
   </nav>
 </div>
@@ -1140,7 +1142,7 @@
   <nav>
     <ul class="vs-vertical-nav none">
       <li><a href="#" class="vs-prev swiper-control prev2"></a></li>
-      <li><a href="#" class="vs-next swiper-control next2"></a></li>
+      <li><a href="#" class="vs-next swiper-control next2 focus19"></a></li>
     </ul>
   </nav>
 </div>
@@ -1166,8 +1168,8 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev2"></a></li>
-      <li><a href="#" class="vs-next swiper-control next2"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev2 focus20"></a></li>
+      <li><a href="#" class="vs-next swiper-control next2 focus21"></a></li>
     </ul>
   </nav>
 </div>
@@ -1193,7 +1195,7 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev2"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev2 focus22"></a></li>
       <li><a href="#" class="vs-next swiper-control next2"></a></li>
     </ul>
   </nav>
@@ -1225,7 +1227,7 @@
   </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev2"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev2 focus23"></a></li>
       <li><a href="#" class="vs-next swiper-control next2"></a></li>
     </ul>
   </nav>
@@ -1297,7 +1299,7 @@
   <nav>
     <ul class="vs-vertical-nav none">
       <li><a href="#" class="vs-prev swiper-control prev2"></a></li>
-      <li><a href="#" class="vs-next swiper-control next2"></a></li>
+      <li><a href="#" class="vs-next swiper-control next2 focus24"></a></li>
     </ul>
   </nav>
 </div>
@@ -1363,7 +1365,7 @@
 </div>
   <nav>
     <ul class="vs-vertical-nav none">
-      <li><a href="#" class="vs-prev swiper-control prev2"></a></li>
+      <li><a href="#" class="vs-prev swiper-control prev2 focus25"></a></li>
       <li><a href="#" class="vs-next swiper-control next2"></a></li>
     </ul>
   </nav>
@@ -1397,11 +1399,12 @@
       <li>Aviso de cachê liberado</li>
       <li>Contrato de 2 anos</li>
     </ol>
-    <ul class="text-left list-unstyled">
-      <li>10x</li>
-      <li>R$</li>
-    </ul>
-    <h2 class="text-center">29<span>,90</span></h2>
+  <ul class="text-left list-unstyled premium_desktop" id="premium_desktop1_mobile">
+    <li>10x</li>
+    <li>R$</li>
+  </ul>
+  <h2 class="text-center premium_desktop"  id="premium_desktop2_mobile">29<span>,90</span></h2>
+  <h2 id="premium_desktop3_mobile" >CADASTRO SEM DESEMBOLSO</h2>
     <button type="button" class="botao_escolha_m maior" data-toggle="modal" data-target="#termo_maior_premium_mobile">ESCOLHER</button>
     <div id="menos" data-dismiss="modal"></div>
   </div>
@@ -1554,12 +1557,12 @@
         <li>Aviso de cachê liberado</li>
         <li>Contrato de 2 anos</li>
       </ol>
-      <ul class="text-left list-unstyled">
+      <ul class="text-left list-unstyled premium_desktop" id="premium_desktop1">
         <li>10x</li>
         <li>R$</li>
       </ul>
-
-      <h2 class="text-center">29<span>,90</span></h2>
+      <h2 class="text-center premium_desktop"  id="premium_desktop2">29<span>,90</span></h2>
+      <h2 id="premium_desktop3" >CADASTRO SEM DESEMBOLSO</h2>
       <!--modal -->
        <button type="button" class="botao_modal" data-toggle="modal" data-target="#Modalmaior-premium">ESCOLHER</button>
 <div class="modal" id="Modalmaior-premium" role="dialog" aria-labelledby="exampleModalLabel">
@@ -1573,11 +1576,13 @@
               <li>Aviso de cachê liberado</li>
               <li>Contrato de 2 anos</li>
             </ol>
-              <ul class="text-left list-unstyled">
-                <li>10x</li>
-                <li>R$</li>
-              </ul>
-              <h2 class="text-center">29<span>,90</span></h2>
+            <ul class="text-left list-unstyled premium_desktop" id="premium_desktop1_1">
+              <li>10x</li>
+              <li>R$</li>
+            </ul>
+            <h2 class="text-center premium_desktop"  id="premium_desktop2_1">29<span>,90</span></h2>
+            <h4 id="premium_desktop3_1">CADASTRO SEM</h4>
+            <h2 id="premium_desktop3_2">DESEMBOLSO</h2>
           </div>
 
           <div class="modal_direita">
