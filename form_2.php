@@ -993,13 +993,13 @@
           <h1 class="TabOnEnter" tabindex="19">Qual o seu sexo?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
-          <input name="sexo_maior" value="masculino" type="radio" id="sexo_maior_m" class="radio" onchange="exibeMsg(this.value);" />
+          <input name="sexo_maior" value="masculino" type="radio" id="sexo_maior_m" class="radio" onchange="exibeMsg(this.value);"  />
             <label id="input3" for="sexo_maior_m" class="radio-label2">
               <span>Masculino</span>
             </label>
         </div>
         <div class="div3_box col-lg-offset-3 col-lg-5">
-          <input name="sexo_maior" type="radio" value="feminino" id="sexo_maior_f" class="radio" onchange="exibeMsg(this.value);" />
+          <input name="sexo_maior" type="radio" value="feminino" id="sexo_maior_f"  class="radio" onchange="exibeMsg(this.value);" />
             <label for="sexo_maior_f" class="radio-label">
               <span>Feminino</span>
             </label>
@@ -1604,7 +1604,7 @@
                 </ol>
                 <p class="descricao_contrato">Você concorda com os termos do agenciamento?</p>
               <div class="button" id="premium_maior">
-                <input type="radio" name="modalidade_maior" value="Premium" id="premium" class="sim_acordo" />
+                <input type="radio" name="modalidade_maior" value="Premium" id="premium_maior" class="sim_acordo" />
                 <label for="premium">CONCORDO</label>
               </div>
               <div id="menos_d" data-dismiss="modal"></div>
@@ -1668,7 +1668,7 @@
                           </ol>
                           <p class="descricao_contrato2">Você concorda com os termos do agenciamento?</p>
                           <div class="button2" id="gratuito_maior">
-                            <input type="radio" name="modalidade_maior" value="Gratuito" id="gratuito" class="sim_acordo2" />
+                            <input type="radio" name="modalidade_maior" value="Gratuito" id="gratuito_maior" class="sim_acordo2" />
                             <label for="gratuito">CONCORDO</label>
                           </div>
                           <div id="menos2_d" data-dismiss="modal"></div>
@@ -1742,7 +1742,7 @@
                       </ol>
                       <p class="descricao_contrato3">Você concorda com os termos do agenciamento?</p>
                       <div class="button3" id="profissional_maior">
-                        <input type="radio" name="modalidade_maior" value="Profissional" id="profissional" class="sim_acordo3" />
+                        <input type="radio" name="modalidade_maior" value="Profissional" id="profissional_maior" class="sim_acordo3" />
                           <label for="profissional">CONCORDO</label>
                       </div>
                       <div id="menos3_d" data-dismiss="modal"></div>
