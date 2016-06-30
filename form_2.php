@@ -1430,8 +1430,8 @@
     </ol>
     </div>
     <p class="acordo_termo_premium_mobile">Você concorda com os termos do agenciamento?</p>
-    <input name="modalidade_maior" type="radio" id="premium_m" class="sim_acordo_termo_premium_mobile maior" value="Premium" />
-    <label for="premium_m" class="radio_sim_acordo_termo_premium_mobile">
+    <input name="modalidade_maior" type="radio" id="premium_maior_m" class="sim_acordo_termo_premium_mobile maior" value="Premium" />
+    <label for="premium_maior_m" class="radio_sim_acordo_termo_premium_mobile">
     <span>CONCORDO</span>
     </label> 
     <div id="menos1_1m" data-dismiss="modal"></div>
@@ -1480,8 +1480,8 @@
                 </ol>
                 </div>
       <p class="acordo_termo_gratuito_mobile">Você concorda com os termos do agenciamento?</p>
-    <input name="modalidade_maior" type="radio" id="gratuito_m" class="sim_acordo_termo_gratuito_mobile maior" value="Gratuito" />
-    <label for="gratuito_m" class="radio_sim_acordo_termo_gratuito_mobile">
+    <input name="modalidade_maior" type="radio" id="gratuito_maior_m" class="sim_acordo_termo_gratuito_mobile maior" value="Gratuito" />
+    <label for="gratuito_maior_m" class="radio_sim_acordo_termo_gratuito_mobile">
     <span>CONCORDO</span>
     </label> 
     <div id="menos2_2m" data-dismiss="modal"></div>
@@ -1536,8 +1536,8 @@
     </ol>
     </div>
     <p class="acordo_termo_profissional_mobile">Você concorda com os termos do agenciamento?</p>
-    <input name="modalidade_maior" type="radio" id="profissional_m" class="sim_acordo_termo_profissional_mobile maior" value="Profissional" />
-    <label for="profissional_m" class="radio_sim_acordo_termo_profissional_mobile">
+    <input name="modalidade_maior" type="radio" id="profissional_maior_m" class="sim_acordo_termo_profissional_mobile maior" value="Profissional" />
+    <label for="profissional_maior_m" class="radio_sim_acordo_termo_profissional_mobile">
     <span>CONCORDO</span>
     </label> 
     <div id="menos3_3m" data-dismiss="modal"></div>
@@ -1565,7 +1565,7 @@
       <h2 id="premium_desktop3" >CADASTRO SEM DESEMBOLSO</h2>
       <!--modal -->
        <button type="button" class="botao_modal" data-toggle="modal" data-target="#Modalmaior-premium">ESCOLHER</button>
-<div class="modal" id="Modalmaior-premium" role="dialog" aria-labelledby="exampleModalLabel">
+<div class="modal" id="Modalmaior-premium" role="dialog" aria-labelledby="exampleModalPremiumLabel">
     <div class="modal-content modal-content-maior-premium">
           <div class="modal_esquerda">
             <h3>Premium</h3>
@@ -1604,8 +1604,8 @@
                 </ol>
                 <p class="descricao_contrato">Você concorda com os termos do agenciamento?</p>
               <div class="button" id="premium_maior">
-                <input type="radio" name="modalidade_maior" value="Premium" id="premium_maior" class="sim_acordo" />
-                <label for="premium">CONCORDO</label>
+                <input type="radio" name="modalidade_maior" value="Premium" id="premium_maior_input" class="sim_acordo" />
+                <label for="premium_maior_input">CONCORDO</label>
               </div>
               <div id="menos_d" data-dismiss="modal"></div>
             </div>
@@ -1667,9 +1667,9 @@
                             <li>Nosso contrato valerá por 12 meses;</li>
                           </ol>
                           <p class="descricao_contrato2">Você concorda com os termos do agenciamento?</p>
-                          <div class="button2" id="gratuito_maior">
-                            <input type="radio" name="modalidade_maior" value="Gratuito" id="gratuito_maior" class="sim_acordo2" />
-                            <label for="gratuito">CONCORDO</label>
+                          <div class="button2" id="gratuito_maior_button">
+                            <input type="radio" name="modalidade_maior" value="Gratuito" id="gratuito_maior_input" class="sim_acordo2" />
+                            <label for="gratuito_maior_input">CONCORDO</label>
                           </div>
                           <div id="menos2_d" data-dismiss="modal"></div>
                         </div>
@@ -1741,9 +1741,9 @@
                         <li>Este contrato valerá por 36 meses a partir da data do pagamento;</li>
                       </ol>
                       <p class="descricao_contrato3">Você concorda com os termos do agenciamento?</p>
-                      <div class="button3" id="profissional_maior">
-                        <input type="radio" name="modalidade_maior" value="Profissional" id="profissional_maior" class="sim_acordo3" />
-                          <label for="profissional">CONCORDO</label>
+                      <div class="button3" id="profissional_maior_button">
+                        <input type="radio" name="modalidade_maior" value="Profissional" id="profissional_maior_input" class="sim_acordo3" />
+                          <label for="profissional_maior_input">CONCORDO</label>
                       </div>
                       <div id="menos3_d" data-dismiss="modal"></div>
                         </div>
