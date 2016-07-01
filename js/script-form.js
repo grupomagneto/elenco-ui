@@ -478,7 +478,7 @@ $(document).ready(function() {
       var delay = 1000;
       setTimeout(function() {
          $("#cpf_responsavel").focus();
-         menor.slideNext();
+         // menor.slideNext();
       }, 200);
     }
     if ($(this).attr("value") == "nao") {
@@ -496,7 +496,7 @@ $(document).ready(function() {
       var delay = 1000;
       setTimeout(function() {
          $("#nome_menor").focus();
-         menor.slideNext();
+         // menor.slideNext();
       }, 200);
     }
     if ($(this).attr("value") == "masculino") {
@@ -504,7 +504,7 @@ $(document).ready(function() {
          var delay = 1000;
       setTimeout(function() {
          $("#nome_menor").focus();
-         menor.slideNext();
+         // menor.slideNext();
       }, 200);
     }
   });

@@ -11,13 +11,22 @@
   if ($nome_responsavel != '' || $nome_responsavel != NULL) {
     $cpf = $_POST['cpf_responsavel'];
     $cpf = preg_replace('/\D+/', '', $cpf);
-    $sdata = $_POST['data_menor'];
     $data_menor = $_POST['data_menor'];
-    $data = explode("-", $sdata);
-    $ano = $data[0];
-    $mes = $data[1];
-    $dia = $data[2];
+    if (strpos($data_menor, '-') !== false) {
+      $data = explode("-", $data_menor);
+      $ano = $data[0];
+      $mes = $data[1];
+      $dia = $data[2];
+      $data_menor = $ano."-".$mes."-".$dia;
+    } elseif (strpos($data_menor, '/') !== false) {
+      $data = explode("/", $data_menor);
+      $ano = $data[2];
+      $mes = $data[1];
+      $dia = $data[0];
+      $data_menor = $ano."-".$mes."-".$dia;
+    }
     $nome_responsavel = $_POST['nome_responsavel'];
+    $nome_responsavel = ucwords($nome_responsavel);
     $sexo = $_POST['sexo_menor'];
       if ($sexo == 'masculino') {
         $sexo = 'M';
@@ -25,7 +34,9 @@
         $sexo = 'F';
       }
     $nome = $_POST['nome_menor'];
+    $nome = ucwords($nome);
     $sobrenome = $_POST['sobrenome_menor'];
+    $sobrenome = ucwords($sobrenome);
     $celular = $_POST['celular_responsavel'];
     $celular = preg_replace('/\D+/', '', $celular);
     $email = $_POST['email_responsavel'];
@@ -53,14 +64,24 @@ echo "FB:".$face."<BR/>";
 echo "TT:".$tt."<BR/>";
   }
   elseif ($ator != '' || $ator != NULL) {
-    $sdata = $_POST['data_maior'];
     $data_maior = $_POST['data_maior'];
-    $data = explode("-", $sdata);
-    $ano = $data[0];
-    $mes = $data[1];
-    $dia = $data[2];
+    if (strpos($data_maior, '-') !== false) {
+      $data = explode("-", $data_maior);
+      $ano = $data[0];
+      $mes = $data[1];
+      $dia = $data[2];
+      $data_maior = $ano."-".$mes."-".$dia;
+    } elseif (strpos($data_maior, '/') !== false) {
+      $data = explode("/", $data_maior);
+      $ano = $data[2];
+      $mes = $data[1];
+      $dia = $data[0];
+      $data_maior = $ano."-".$mes."-".$dia;
+    }
     $nome = $_POST['nome_maior'];
+    $nome = ucwords($nome);
     $sobrenome = $_POST['sobrenome_maior'];
+    $sobrenome = ucwords($sobrenome);
     $sexo = $_POST['sexo_maior'];
       if ($sexo == 'masculino') {
         $sexo = 'M';

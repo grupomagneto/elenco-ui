@@ -89,7 +89,7 @@
             <div class="input_box col-lg-offset-3 col-lg-5">
               <input type="text" name="cpf_responsavel" id="cpf_responsavel" data-mask="000.000.000-00" min="11" max= "11" class="TabOnEnter" tabindex="2" placeholder="000.000.000-00" required />
                 <input type="button" class="sendBtn" id="btSend" name="btSend" style="display: none;" />
-                  <img id="seta" class="vs-next swiper-control next focus2" src="images/ok_neg.svg" style="display: none;">
+                  <img id="seta" class="vs-next swiper-control next" src="images/ok_neg.svg" style="display: none;">
             </div>
           </div>
         </div>
@@ -116,7 +116,7 @@
             <div class="input_box col-lg-offset-3 col-lg-5">
               <input type="text" name="nome_responsavel" id="nome_responsavel" tabindex="3" autocomplete="off" required placeholder=" " />
                 <input type="button" class="sendBtn2" id="btSend2" name="btSend2" style="display: none;" />
-                  <img id="seta2" class="vs-next swiper-control next focus3" src="images/ok_neg.svg" style="display: none;">
+                  <img id="seta2" class="vs-next swiper-control next" src="images/ok_neg.svg" style="display: none;">
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@
             <div class="input_box col-lg-offset-3 col-lg-5">
               <input name="nome_menor" id="nome_menor" type="text" class="TabOnEnter" tabindex="5" autocomplete="off" placeholder=" " required />
                 <input type="button" class="sendBtn" id="btSend4" name="btSend4" style="display: none;" />
-                  <img id="seta4" onclick="gravar()" class="swiper-control next focus5" src="images/ok_neg.svg" style="display: none;">
+                  <img id="seta4" onclick="gravar()" class="swiper-control next" src="images/ok_neg.svg" style="display: none;">
             </div>
           </div>
         </div>
@@ -724,7 +724,7 @@
                       </ol>
                       <p class="descricao_contrato2">Você concorda com os termos do agenciamento?</p>
                       <div class="button2" id="gratuito_menor">
-                        <input type="radio" name="modalidade_menor" value="gratuito" id="gratuito" class="sim_acordo2" />
+                        <input type="radio" name="modalidade_menor" value="Gratuito" id="gratuito" class="sim_acordo2" />
                           <label for="gratuito">CONCORDO</label>
                       </div>
                       <div id="menos2_d" data-dismiss="modal"></div>
@@ -791,7 +791,7 @@
                       </ol>
                       <p class="descricao_contrato">Você concorda com os termos do agenciamento?</p>
                       <div class="button"  id="premium_menor">
-                        <input type="radio" name="modalidade_menor" value="premium" id="premium" class="sim_acordo" />
+                        <input type="radio" name="modalidade_menor" value="Premium" id="premium" class="sim_acordo" />
                           <label for="premium">CONCORDO</label>
                       </div>
                       <div id="menos_d" data-dismiss="modal"></div>
