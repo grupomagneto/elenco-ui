@@ -990,7 +990,7 @@
     <div class="div3">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
-          <h1 class="TabOnEnter" tabindex="19">Qual o seu sexo?<sup>*</sup></h1>
+          <h1 class="TabOnEnter" tabindex="19" id="titulo-sexo-maior">Qual o seu sexo?<sup>*</sup></h1>
         </div>
         <div class="input_box col-lg-offset-3 col-lg-5">
           <input name="sexo_maior" value="masculino" type="radio" id="sexo_maior_m" class="radio" onchange="exibeMsg(this.value);"  />
@@ -999,7 +999,7 @@
             </label>
         </div>
         <div class="div3_box col-lg-offset-3 col-lg-5">
-          <input name="sexo_maior" type="radio" value="feminino" id="sexo_maior_f"  class="radio" onchange="exibeMsg(this.value);" />
+          <input name="sexo_maior" type="radio" value="feminino" id="sexo_maior_f"  class="radio" onchange="exibeMsg(this.value);" onclick="getFocus()" />
             <label for="sexo_maior_f" class="radio-label">
               <span>Feminino</span>
             </label>
@@ -1025,7 +1025,7 @@
     <div class="div7">
       <div class="row">
         <div class="div7_t col-lg-offset-3 col-lg-5">
-          <img src="images/camera.svg" alt="camera" id="camera_maior">
+          <img src="images/camera.svg" alt="camera"  id="camera_maior">
         </div>
         <div class="div7_box col-lg-offset-3 col-lg-5">
           <h1>Legal! Agora precisamos de duas fotos suas feitas hoje.</h1>
@@ -1424,7 +1424,7 @@
     <div class="termo_dois_premium_desktop">
     <ol start="5">
       <li>Você optou pelo Cadastro Premium e por isso sua remuneração será de 80% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li>
-      <li>Para efetivar seu cadastro você deverá pagar R$ 299,00 em até 10x sem juros;</li>
+      <li><span id="txtpremium1_mobile" class="txtpremium1_mobile"></span> <span id="txtpremium2_mobile" class="txtpremium2_mobile"></span></li>
       <li>Você poderá estar inscrit<span id="txt65"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li>
       <li>Este contrato valerá por 24 meses a partir da data do pagamento;</li>
     </ol>
@@ -1598,7 +1598,7 @@
               <div class="termo_dois">
                 <ol start="5">
                   <li>Você optou pelo Cadastro Premium e por isso sua remuneração será de 80% do cachê líquido (cachê líquido é o cachê bruto recebido pela Magneto Elenco descontados 20% de impostos);</li><BR />
-                  <li>Para efetivar seu cadastro você deverá pagar R$ 299,00 em até 10x sem juros;</li><BR />
+                  <li><span id="txtpremium1"></span> <span id="txtpremium2" class="test"></span></li><BR />
                   <li>Você poderá estar inscrit<span id="txt62"></span> em outra(s) agência(s) enquanto nosso contrato estiver valendo;</li><BR />
                   <li>Este contrato valerá por 24 meses a partir da data do pagamento;</li>
                 </ol>
