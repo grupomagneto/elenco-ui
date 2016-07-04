@@ -1010,7 +1010,97 @@ $(function() {
         $('#ig_responsavel').focus();
   });
 });
+//FOCUS SETAS MAIOR
+$(function() {
+  $(".swiper-control.next2.focus15").click(function() {
+        $('#sobrenome_maior').focus();
+  });
+});
 
+
+$(function() {
+  $(".swiper-control.prev2.focus17").click(function() {
+
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='sobrenome_maior']").focus();
+});
+
+  });
+});
+
+$(function() {
+  $(".swiper-control.next2.focus18").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='data_maior']").focus();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.next2.focus19").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='celular_maior']").focus();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.prev2.focus20").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='data_maior']").focus();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.next2.focus21").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='email_maior']").focus();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.prev2.focus22").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='celular_maior']").focus();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.prev2.focus23").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='email_maior']").focus();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.next2.focus24").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='cpf_maior']").focus();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.prev2.focus25").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='cpf_maior']").focus();
+});
+  });
+});
+
+//FOCUS SETAS MAIOR
+//FOCUS MODAL
 $("#premium_menor").click(function() {
   $('#myModal').modal('hide');
   menor.slideNext();
@@ -1646,6 +1736,96 @@ $(function() {
         $('#ig_responsavel').blur();
   });
 });
+
+
+//FOCUS SETAS MAIOR
+$(function() {
+  $(".swiper-control.next2.focus15").click(function() {
+        $('#sobrenome_maior').blur();
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.prev2.focus17").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='sobrenome_maior']").blur();
+});
+  });
+});
+
+$(function() {
+  $(".swiper-control.next2.focus18").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='data_maior']").blur();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.next2.focus19").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='celular_maior']").blur();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.prev2.focus20").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='data_maior']").blur();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.next2.focus21").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='email_maior']").blur();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.prev2.focus22").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='celular_maior']").blur();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.prev2.focus23").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='email_maior']").blur();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.next2.focus24").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='cpf_maior']").blur();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.prev2.focus25").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='cpf_maior']").blur();
+});
+  });
+});
+
+//FOCUS SETAS MAIOR
 
 $("#premium_menor").click(function() {
   $('#myModal').modal('hide');
