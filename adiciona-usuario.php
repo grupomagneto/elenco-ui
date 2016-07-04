@@ -1,5 +1,6 @@
 <?php header("Content-type: text/html; charset=utf-8");
 include("conecta.php");
+include_once("analyticstracking.php");
 
   $dir = 'fotos/'; //Diretório para uploads
   date_default_timezone_set("Brazil/East"); //Definindo timezone padrão

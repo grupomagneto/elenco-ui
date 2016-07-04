@@ -1,4 +1,5 @@
 <?php header("Content-type: text/html; charset=utf-8");
+include_once("analyticstracking.php");
 $sexo = $_GET['sexo'];
 if ( $sexo == "F" ) {
    $oa = 'a';
