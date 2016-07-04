@@ -1,43 +1,18 @@
-<?php
-
-
-$con = mysqli_connect('mysql08.vinigoulart.com.br','vinigoulart18','HjkL2k7gD8', 'vinigoulart18');
-            if (mysqli_connect_errno())
-            {
-                echo "Erro ao se conectar com banco de dados: " . mysqli_connect_error();
-            }
-
-              $sql3 = "UPDATE fotos_mobile SET arquivo = id_foto WHERE id_foto = id_foto";
-
-            // UPDATE fotos_mobile INNER JOIN usuario ON fotos_mobile.id_foto = usuario.id SET fotos_mobile.arquivo = usuario.id
-
-              $a = 0;
-
-            if (mysqli_query($con,$sql3))
-            {
-            }
-
-
-mysqli_close($con);
-
-
+<?php header("Content-type: text/html; charset=utf-8");
 $sexo = $_GET['sexo'];
-
-if ( $sexo == "feminino" ) {
+if ( $sexo == "F" ) {
    $oa = 'a';
    $hm = 'mulheres';
 } else {
    $oa = 'o';
    $hm = 'homens';
 }
-
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
+<html lang="pt-br">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Cadastro Magneto Elenco</title>
  	
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -53,12 +28,12 @@ if ( $sexo == "feminino" ) {
         <div  class="container">
 
             <div class="row">
-                <div class=" divsucesso_t col-lg-offset-3 col-lg-5">
+                <div class="divsucesso_t col-lg-offset-3 col-lg-5">
                             <h1>Pronto!</h1>
                 </div>
             </div>
             <div class="row">
-                <div class=" divsucesso_box col-lg-offset-3 col-lg-5">
+                <div class="divsucesso_box col-lg-offset-3 col-lg-5">
                    
                  <p>
                  Você já está cadastrad<?php echo $oa; ?> e pront<?php echo $oa; ?> para trabalhar. 
@@ -69,7 +44,7 @@ if ( $sexo == "feminino" ) {
 
 
             <div class="row">
-                <div class=" divsucesso_logo col-lg-offset-3 col-lg-5">
+                <div class="divsucesso_logo col-lg-offset-3 col-lg-5">
                   <img src="images/logo.svg" alt="LOGO">
                 </div>
             </div>

@@ -219,7 +219,7 @@ if(isAndroid) {
 }
 //LANDSCAPE ANDROID
 
-//INICIO MUDANÇA DE ACORDO COM O SEXO
+//INICIO MUDAN? DE ACORDO COM O SEXO
 function exibeMsg2(valor) {
   switch (valor) {
     case 'feminino':
@@ -383,7 +383,7 @@ $(document).ready(function(){
 var mascara = function() { 
 
 
-if (window.matchMedia('(min-width: 1199px)').matches)
+if (window.matchMedia('(min-width: 1024px)').matches)
 {
   
 var ua = navigator.userAgent.toLowerCase(); 
@@ -418,7 +418,7 @@ $(document).ready(function(){
 var mascara = function() { 
 
 
-if (window.matchMedia('(min-width: 1199px)').matches)
+if (window.matchMedia('(min-width: 1024px)').matches)
 {
   
 var ua = navigator.userAgent.toLowerCase(); 
@@ -446,7 +446,7 @@ if (ua.indexOf('safari') != -1) {
 
 //MASK APENAS PARA SAFARI
 
-//FIM MUDANÇA DE ACORDO COM O SEXO
+//FIM MUDAN? DE ACORDO COM O SEXO
 $('#form')[0].addEventListener('focus', function(e) {
   
   var focusIndex = $(e.target).parents('.swiper-slide').index();
@@ -496,6 +496,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 13) {
       $('#btSend').show();
       $('#seta').show();
+      $('input#cpf_responsavel').css('padding-right', '55px');
     } else {
       $('#btSend').hide();
       $('#seta').hide();
@@ -508,6 +509,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 2) {
       $('#btSend2').show();
       $('#seta2').show();
+      $('input#nome_responsavel').css('padding-right', '55px');
     } else {
       $('#btSend2').hide();
       $('#seta2').hide();
@@ -520,6 +522,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 2) {
       $('#btSend4').show();
       $('#seta4').show();
+      $('input#nome_menor').css('padding-right', '55px');
     } else {
       $('#btSend4').hide();
       $('#seta4').hide();
@@ -532,6 +535,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 2) {
       $('#btSend5').show();
       $('#seta5').show();
+      $('input#sobrenome_menor').css('padding-right', '55px');
     } else {
       $('#btSend5').hide();
       $('#seta5').hide();
@@ -544,6 +548,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 2) {
       $('#btSend6').show();
       $('#seta6').show();
+      $('input#data_menor').css('padding-right', '55px');
     } else {
       $('#btSend6').hide();
       $('#seta6').hide();
@@ -556,6 +561,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 13) {
       $('#btSend10').show();
       $('#seta10').show();
+      $('input#celular_responsavel').css('padding-right', '55px');
     } else {
       $('#btSend10').hide();
       $('#seta10').hide();
@@ -568,6 +574,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 7) {
       $('#btSend11').show();
       $('#seta11').show();
+      $('input#email_responsavel').css('padding-right', '55px');
     } else {
       $('#btSend11').hide();
       $('#seta11').hide();
@@ -580,6 +587,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 2) {
       $('#btSend17').show();
       $('#seta17').show();
+      $('input#nome_maior').css('padding-right', '55px');
     } else {
       $('#btSend17').hide();
       $('#seta17').hide();
@@ -592,6 +600,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 2) {
       $('#btSend18').show();
       $('#seta18').show();
+      $('input#sobrenome_maior').css('padding-right', '55px');
     } else {
       $('#btSend18').hide();
       $('#seta18').hide();
@@ -604,6 +613,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 2) {
       $('#btSend19').show();
       $('#seta19').show();
+      $('input#data_maior').css('padding-right', '55px');
     } else {
       $('#btSend19').hide();
       $('#seta19').hide();
@@ -616,6 +626,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 13) {
       $('#btSend20').show();
       $('#seta20').show();
+      $('input#celular_maior').css('padding-right', '55px');
     } else {
       $('#btSend20').hide();
       $('#seta20').hide();
@@ -628,6 +639,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 7) {
       $('#btSend21').show();
       $('#seta21').show();
+      $('input#email_maior').css('padding-right', '55px');
     } else {
       $('#btSend21').hide();
       $('#seta21').hide();
@@ -640,6 +652,7 @@ $(window).load(function() {
     if ($.trim(this.value).length > 13) {
       $('#btSend22').show();
       $('#seta22').show();
+      $('input#cpf_maior').css('padding-right', '55px');
     } else {
       $('#btSend22').hide();
       $('#seta22').hide();
@@ -787,23 +800,23 @@ $(".botao_escolha_m3_m1.maior").click(function() {
 function exibeMsg3(valor) {
   switch (valor) {
     case 'sim':
-      document.getElementById('txtpremium1').innerHTML = 'Você não precisa pagar para se agenciar;';
+      document.getElementById('txtpremium1').innerHTML = 'Voc?n? precisa pagar para se agenciar;';
       document.getElementById("txtpremium2").setAttribute("style","display:none"); 
       document.getElementById("txtpremium1").setAttribute("style","display:block"); 
-      document.getElementById('txtpremium1_mobile').innerHTML = 'Você não precisa pagar para se agenciar;';
+      document.getElementById('txtpremium1_mobile').innerHTML = 'Voc?n? precisa pagar para se agenciar;';
       document.getElementById("txtpremium2_mobile").setAttribute("style","display:none"); 
       document.getElementById("txtpremium1_mobile").setAttribute("style","display:block"); 
       break;
     case 'nao':
-      document.getElementById('txtpremium2').innerHTML = 'Para efetivar seu contrato você deverá pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;';
+      document.getElementById('txtpremium2').innerHTML = 'Para efetivar seu contrato voc?dever?pagar R$ 299 em at?10x ou comprar um de nossos ensaios fotogr?icos;';
       document.getElementById("txtpremium1").setAttribute("style","display:none");
       document.getElementById("txtpremium2").setAttribute("style","display:block");
-      document.getElementById('txtpremium2_mobile').innerHTML = 'Para efetivar seu contrato você deverá pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;';
+      document.getElementById('txtpremium2_mobile').innerHTML = 'Para efetivar seu contrato voc?dever?pagar R$ 299 em at?10x ou comprar um de nossos ensaios fotogr?icos;';
       document.getElementById("txtpremium1_mobile").setAttribute("style","display:none");
       document.getElementById("txtpremium2_mobile").setAttribute("style","display:block");  
       break;
     default:
-      document.getElementById('txtpremium3').innerHTML = 'não clicou';
+      document.getElementById('txtpremium3').innerHTML = 'n? clicou';
       break;
   }
 }
@@ -820,7 +833,7 @@ $("#nome_responsavel").keyup(function() {
   $(".concat3_texto").html($(this).val());
 });
 
-//Código da div ator
+//C?igo da div ator
 
 $(document).ready(function() {
   $(".blue").hide();
@@ -828,12 +841,14 @@ $(document).ready(function() {
     if ($(this).attr("value") == "sim") {
 
       $(".box").not(".blue").hide();
+      $(".descricao").hide();
       $(".blue").show();
       
     }
     if ($(this).attr("value") == "nao") {
 
       $(".box").not(".blue").hide();
+      $(".descricao").show();
       $(".blue").hide();
     }
   });
@@ -842,25 +857,25 @@ $(document).ready(function() {
 //TEXTO ATOR
 function simAtor() {
   $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {});
-      document.getElementById("modal-opaco-gratuito").setAttribute("style","opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50)"); 
-      document.getElementById('bota-modal-opaco-gratuito').setAttribute("disabled","disabled"); document.getElementById("modal-opaco-gratuito").setAttribute("style","opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50)"); 
+      document.getElementById("modal-opcao-gratuito").setAttribute("style","opacity:0.3; -moz-opacity:0.3; filter:alpha(opacity=30)"); 
+      document.getElementById('bota-modal-opcao-gratuito').setAttribute("disabled","disabled"); document.getElementById("modal-opcao-gratuito").setAttribute("style","opacity:0.3; -moz-opacity:0.3; filter:alpha(opacity=50)"); 
      
-      document.getElementById('txtpremium1').innerHTML = 'Você não precisa pagar para se agenciar;';
+      document.getElementById('txtpremium1').innerHTML = 'Voc?n? precisa pagar para se agenciar;';
       document.getElementById("txtpremium2").setAttribute("style","display:none"); 
       document.getElementById("txtpremium1").setAttribute("style","display:block"); 
 
-      document.getElementById('txtpremium1_mobile').innerHTML = 'Você não precisa pagar para se agenciar;';
+      document.getElementById('txtpremium1_mobile').innerHTML = 'Voc?n? precisa pagar para se agenciar;';
       document.getElementById("txtpremium2_mobile").setAttribute("style","display:none"); 
       document.getElementById("txtpremium1_mobile").setAttribute("style","display:block"); 
 
-      $(".div_m2").css({ opacity: 0.5 }); 
+      $(".div_m2").css({ opacity: 0.3 }); 
       $('.div_m2').removeAttr('data-toggle');
      document.getElementById("premium_desktop1").setAttribute("style","display:none"); 
      document.getElementById("premium_desktop2").setAttribute("style","display:none"); 
-     document.getElementById("premium_desktop3").setAttribute("style","display:block");
+     document.getElementById("premium_desktop3").setAttribute("style","display:block;margin-top:33px;width:170px;margin-left:75px;color:#fff;font-family:Avenir-Book;line-height:24px;font-size:20px");
 
-     document.getElementById("premium_desktop3_1").setAttribute("style","display:block"); 
-     document.getElementById("premium_desktop3_2").setAttribute("style","display:block"); 
+     document.getElementById("premium_desktop3_1").setAttribute("style","display:block;margin-top:80px;width:170px;margin-left:110px;color:#fff;font-family:Avenir-Book;line-height:24px;font-size:20px"); 
+     // document.getElementById("premium_desktop3_2").setAttribute("style","display:block");
      document.getElementById("premium_desktop2_1").setAttribute("style","display:none");
      document.getElementById("premium_desktop1_1").setAttribute("style","display:none");
 
@@ -871,15 +886,18 @@ function simAtor() {
 }
 function naoAtor() {
   $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {});
+     document.getElementById("modal-opcao-gratuito").setAttribute("style","opacity:1; -moz-opacity:1; filter:alpha(opacity=100)"); 
+     document.getElementById('bota-modal-opcao-gratuito').removeAttribute("disabled"); document.getElementById("modal-opcao-gratuito").setAttribute("style","opacity:1; -moz-opacity:1; filter:alpha(opacity=10)"); 
+      
      document.getElementById("premium_desktop1").setAttribute("style","display:block"); 
      document.getElementById("premium_desktop2").setAttribute("style","display:block"); 
      document.getElementById("premium_desktop3").setAttribute("style","display:none");
 
-     document.getElementById('txtpremium2').innerHTML = 'Para efetivar seu contrato você deverá pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;';
+     document.getElementById('txtpremium2').innerHTML = 'Para efetivar seu contrato voc?dever?pagar R$ 299 em at?10x ou comprar um de nossos ensaios fotogr?icos;';
      document.getElementById("txtpremium1").setAttribute("style","display:none");
      document.getElementById("txtpremium2").setAttribute("style","display:block");
 
-     document.getElementById('txtpremium2_mobile').innerHTML = 'Para efetivar seu contrato você deverá pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;';
+     document.getElementById('txtpremium2_mobile').innerHTML = 'Para efetivar seu contrato voc?dever?pagar R$ 299 em at?10x ou comprar um de nossos ensaios fotogr?icos;';
      document.getElementById("txtpremium1_mobile").setAttribute("style","display:none");
      document.getElementById("txtpremium2_mobile").setAttribute("style","display:block");  
 
@@ -1270,7 +1288,7 @@ function inputFocus(){
 //FOCUS MENOR PARA MAIOR
 
 
-//FOCUS DIV RESPONSÁVEL FORM MENOR
+//FOCUS DIV RESPONS?VEL FORM MENOR
 $(document).ready(function() {
   $("#form2 [name='responsavel']").click(function() {
     if ($(this).attr("value") == "sim") {   
@@ -1281,12 +1299,12 @@ $(document).ready(function() {
       }, 200);
     }
     if ($(this).attr("value") == "nao") {
-      //LINK CASO NÃO FOR RESPONSÁVEL
+      //LINK CASO N? FOR RESPONS?VEL
         location="sucesso.php";
     }
   });
 });
-//FOCUS DIV RESPONSÁVEL FORM MENOR
+//FOCUS DIV RESPONS?VEL FORM MENOR
 
 //FOCUS DIV SEXO MENOR FORM MENOR
 $(document).ready(function() {
@@ -1315,7 +1333,7 @@ $(document).ready(function() {
 
 
 
-//FOCUS DIV RESPONSÁVEL FORM MENOR
+//FOCUS DIV RESPONS?VEL FORM MENOR
 $(document).ready(function() {
   $("#form2 [name='responsavel']").click(function() {
     if ($(this).attr("value") == "sim") {   
@@ -1326,12 +1344,12 @@ $(document).ready(function() {
       }, 200);
     }
     if ($(this).attr("value") == "nao") {
-      //LINK CASO NÃO FOR RESPONSÁVEL
+      //LINK CASO N? FOR RESPONS?VEL
         location="sucesso.php";
     }
   });
 });
-//FOCUS DIV RESPONSÁVEL FORM MENOR
+//FOCUS DIV RESPONS?VEL FORM MENOR
 
 //FOCUS DIV SEXO MENOR FORM MENOR
 $(document).ready(function() {

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8">
-    <title>Magneto Elenco</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Cadastro Magneto Elenco</title>
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" href="css/form2.css">
+    <link rel="stylesheet" href="css/cadastro.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
   </head>
 <body >
-<form name="form2" action="adiciona-usuario.php" id="form2" method="post" enctype="multipart/form-data" onsubmit="return valida_form2(this)">
+<form name="form2" action="adiciona-usuario.php" accept-charset="utf-8" id="form2" method="post" enctype="multipart/form-data" onsubmit="return valida_form2(this)">
 <div class="swiper-container menor"> <!-- Swiper Container -->
   <div class="swiper-wrapper"> <!-- Swiper wrapper -->
     <!-- DIV QUEM VOCÊ ESTÁ CADASTRANDO  -->
@@ -23,7 +23,7 @@
               </div>
             <div class="row">
               <div class="primeiro col-lg-offset-3 col-lg-5">
-                <a href="#form_maior" class="btn teste" onClick="inputFocus()">Eu mesmo(a), sou maior de idade</a> 
+                <a href="#form_maior" class="btn" onClick="inputFocus()">Eu mesmo(a), sou maior de idade</a> 
               </div>
             </div>
             <div class="row">
@@ -36,11 +36,6 @@
         <div class="progress0">
           <progress id="progressbar0" value="0" max="80"></progress>
         </div>
-<!--           <nav>
-            <ul class="vs-vertical-nav1 none">
-              <li><a href="#" class="vs-next1 swiper-control next"></a></li>
-            </ul>
-          </nav> -->
       </div>
     </div>
     <!-- FIM DIV QUEM VOCÊ ESTÁ CADASTRANDO -->
@@ -53,7 +48,7 @@
               <h1 class="TabOnEnter" tabindex="1">Você é legalmente responsável por essa criança/adolescente?<sup>*</sup></h1>
             </div>
             <div class="input_box col-lg-offset-3 col-lg-5">
-              <input name="responsavel" type="radio" value="nao" id="responsavel_nao" class="radio_0"  />
+              <input name="responsavel" type="radio" value="nao" id="responsavel_nao" class="radio_0" />
                 <label id="responsavel_nao_label" for="responsavel_nao" class="radio-label4">
                   <span>Não</span>
                 </label>
@@ -254,7 +249,7 @@
             <div class="div8_box col-lg-offset-3 col-lg-5">
               <div class="wrapper">
                 <div class="file-upload TabOnEnter" tabindex="8">
-                  <input type="file" id="foto" name="foto" />
+                  <input type="file" id="foto" name="foto" required />
                     <img src="images/upload.svg" alt="">
                 </div>
               </div>
@@ -291,7 +286,7 @@
             <div class=" div9_box col-lg-offset-3 col-lg-5">
               <div class="wrapper2">
                 <div class="file-upload2 TabOnEnter" tabindex="9">
-                  <input type="file" id="foto2" name="fotos" />
+                  <input type="file" id="foto2" name="foto2" required />
                   <img src="images/upload.svg" alt="">
                 </div>
               </div>
@@ -556,7 +551,7 @@
                       </ol>
                     </div>
                     <p class="acordo_termo_gratuito_mobile">Você concorda com os termos do agenciamento?</p>
-                      <input name="modalidade_menor" type="radio" id="gratuito_m" class="sim_acordo_termo_gratuito_mobile" />
+                      <input name="modalidade_menor" type="radio" id="gratuito_m" value="Gratuito" class="sim_acordo_termo_gratuito_mobile" />
                         <label for="gratuito_m" class="radio_sim_acordo_termo_gratuito_mobile">
                           <span>CONCORDO</span>
                         </label> 
@@ -609,7 +604,7 @@
                       </ol>
                     </div>
                     <p class="acordo_termo_premium_mobile">Você concorda com os termos do agenciamento?</p>
-                    <input name="modalidade_menor" type="radio" id="premium_m" class="sim_acordo_termo_premium_mobile" />
+                    <input name="modalidade_menor" type="radio" id="premium_m" value="Premium" class="sim_acordo_termo_premium_mobile" />
                       <label for="premium_m" class="radio_sim_acordo_termo_premium_mobile">
                         <span>CONCORDO</span>
                       </label> 
@@ -664,7 +659,7 @@
                       </ol>
                     </div>
                     <p class="acordo_termo_profissional_mobile">Você concorda com os termos do agenciamento?</p>
-                    <input name="modalidade_menor" type="radio" id="profissional_m" class="sim_acordo_termo_profissional_mobile" />
+                    <input name="modalidade_menor" type="radio" id="profissional_m" value="Profissional" class="sim_acordo_termo_profissional_mobile" />
                       <label for="profissional_m" class="radio_sim_acordo_termo_profissional_mobile">
                         <span>CONCORDO</span>
                       </label> 
@@ -924,7 +919,7 @@
     <!-- FIM DIV REDES SOCIAIS -->
 </form>
 <div id="form_maior"></div>
-<form name="form" action="adiciona-usuario.php" id="form" method="post" enctype="multipart/form-data">
+<form name="form" action="adiciona-usuario.php" accept-charset="utf-8" id="form" method="post" enctype="multipart/form-data">
   <!-- Swiper Container -->
 <div class="swiper-container maior">
   <!-- Swiper Wrapper -->
@@ -966,7 +961,7 @@
            <h1>E o sobrenome?<sup>*</sup></h1>
           </div>
           <div class="input_box col-lg-offset-3 col-lg-5">
-           <input name="sobrenome_maior" id="sobrenome_maior" type="text" class="TabOnEnter" tabindex="18" autocomplete="off"  required="required" />
+           <input name="sobrenome_maior" id="sobrenome_maior" type="text" class="TabOnEnter" tabindex="18" autocomplete="off" placeholder=" " required="required" />
            <input type="button" class="sendBtn" id="btSend18" name="btSend18" style="display: none;">
            <img id="seta18" class="swiper-control next2" src="images/ok_neg.svg" style="display: none;">
           </div>
@@ -1334,7 +1329,7 @@
 <!-- DIV DRT -->
 <div id="29" class="swiper-slide gradient"> 
   <div class="container">
-    <div class="div29" id="drt">
+    <div class="div19" id="drt">
       <div class="row">
         <div class="pergunta col-lg-offset-3 col-lg-5">
           <h1 class="TabOnEnter" tabindex="29">Você é <span id="txt"></span> com registro profissional na DRT?<sup>*</sup></h1>
@@ -1355,8 +1350,8 @@
     <p class="descricao">Não sabe o que é? Conheça mais <b><a href="http://goo.gl/25Uv6h" target="_blank">clicando aqui.</a></b> </p> 
     <div class="blue box">
       <h1>Ótimo!</h1>
-      <p class="p1">Atores, atrizes e modelos profissionais recebem tratamento especial na Magneto Elenco.</p> 
-      <p class="p2">Para vocês, oferecemos nosso Cadastro Premium sem custo algum. Aproveite!</p>
+      <p class="p1">Para atores e modelos profissionais nosso Cadastro Premium é gratuito, aproveite!</p> 
+      <!-- <p class="p2">Para vocês, oferecemos nosso Cadastro Premium sem custo algum. Aproveite!</p> -->
     </div>
   </div>
 </div>  
@@ -1404,7 +1399,7 @@
     <li>R$</li>
   </ul>
   <h2 class="text-center premium_desktop"  id="premium_desktop2_mobile">29<span>,90</span></h2>
-  <h2 id="premium_desktop3_mobile" >CADASTRO SEM DESEMBOLSO</h2>
+  <h2 id="premium_desktop3_mobile" style="display: none;">CADASTRO SEM DESEMBOLSO</h2>
     <button type="button" class="botao_escolha_m maior" data-toggle="modal" data-target="#termo_maior_premium_mobile">ESCOLHER</button>
     <div id="menos" data-dismiss="modal"></div>
   </div>
@@ -1562,7 +1557,7 @@
         <li>R$</li>
       </ul>
       <h2 class="text-center premium_desktop"  id="premium_desktop2">29<span>,90</span></h2>
-      <h2 id="premium_desktop3" >CADASTRO SEM DESEMBOLSO</h2>
+      <h2 id="premium_desktop3" style="display: none;">CADASTRO SEM DESEMBOLSO</h2>
       <!--modal -->
        <button type="button" class="botao_modal" data-toggle="modal" data-target="#Modalmaior-premium">ESCOLHER</button>
 <div class="modal" id="Modalmaior-premium" role="dialog" aria-labelledby="exampleModalPremiumLabel">
@@ -1581,8 +1576,8 @@
               <li>R$</li>
             </ul>
             <h2 class="text-center premium_desktop"  id="premium_desktop2_1">29<span>,90</span></h2>
-            <h4 id="premium_desktop3_1">CADASTRO SEM</h4>
-            <h2 id="premium_desktop3_2">DESEMBOLSO</h2>
+            <h4 id="premium_desktop3_1" style="display:none;">CADASTRO SEM DESEMBOLSO</h4>
+            <!-- <h2 id="premium_desktop3_2" class="maior-modalidade-ator__preco2" style="display:none;">DESEMBOLSO</h2> -->
           </div>
 
           <div class="modal_direita">
@@ -1620,7 +1615,7 @@
 </div>
 
 
-<div class="div15_box2" id="modal-opaco-gratuito">
+<div class="div15_box2" id="modal-opcao-gratuito">
   <div class="versao_d">
     <div class="thumbnail">
       <div class="caption">
@@ -1633,7 +1628,7 @@
         </ol>
        <h2>CADASTRO SEM DESEMBOLSO</h2>
         <!--modal -->
-        <button type="button" id="bota-modal-opaco-gratuito" class="botao_modal2" data-toggle="modal" data-target="#Modalmaior-gratuito">ESCOLHER</button>
+        <button type="button" id="bota-modal-opcao-gratuito" class="botao_modal2" data-toggle="modal" data-target="#Modalmaior-gratuito">ESCOLHER</button>
             
             <div class="modal" id="Modalmaior-gratuito" role="dialog" aria-labelledby="exampleModalLabel">
               <div class="modal-content modal-content-maior-gratuito">

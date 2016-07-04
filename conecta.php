@@ -1,4 +1,4 @@
-<?php
+<?php header('Content-Type: text/html; charset=utf-8');
 
 // DB Localhost
 $user = 'root';
@@ -6,6 +6,7 @@ $password = 'root';
 $db = 'testecadastro';
 $host = 'localhost';
 $port = 8889;
+
 
 $link = mysqli_init();
 $success = mysqli_real_connect(
@@ -31,4 +32,5 @@ $success = mysqli_real_connect(
 //    $password,
 //    $db
 // );
+mysqli_set_charset($link,"utf8");
 ?>
