@@ -460,7 +460,7 @@ $('#form')[0].addEventListener('focus', function(e) {
 }, true);
 
 
-$('form')[0].addEventListener('focus', function(e) {
+$('#form2')[0].addEventListener('focus', function(e) {
   
   var focusIndex = $(e.target).parents('.swiper-slide').index();
   
@@ -860,11 +860,11 @@ function simAtor() {
       document.getElementById("modal-opcao-gratuito").setAttribute("style","opacity:0.3; -moz-opacity:0.3; filter:alpha(opacity=30)"); 
       document.getElementById('bota-modal-opcao-gratuito').setAttribute("disabled","disabled"); document.getElementById("modal-opcao-gratuito").setAttribute("style","opacity:0.3; -moz-opacity:0.3; filter:alpha(opacity=50)"); 
      
-      document.getElementById('txtpremium1').innerHTML = 'Voc?n? precisa pagar para se agenciar;';
+      document.getElementById('txtpremium1').innerHTML = 'Você não precisa pagar para se agenciar;';
       document.getElementById("txtpremium2").setAttribute("style","display:none"); 
       document.getElementById("txtpremium1").setAttribute("style","display:block"); 
 
-      document.getElementById('txtpremium1_mobile').innerHTML = 'Voc?n? precisa pagar para se agenciar;';
+      document.getElementById('txtpremium1_mobile').innerHTML = 'Você não precisa pagar para se agenciar;';
       document.getElementById("txtpremium2_mobile").setAttribute("style","display:none"); 
       document.getElementById("txtpremium1_mobile").setAttribute("style","display:block"); 
 
@@ -893,11 +893,11 @@ function naoAtor() {
      document.getElementById("premium_desktop2").setAttribute("style","display:block"); 
      document.getElementById("premium_desktop3").setAttribute("style","display:none");
 
-     document.getElementById('txtpremium2').innerHTML = 'Para efetivar seu contrato voc?dever?pagar R$ 299 em at?10x ou comprar um de nossos ensaios fotogr?icos;';
+     document.getElementById('txtpremium2').innerHTML = 'Para efetivar seu contrato você dever pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;';
      document.getElementById("txtpremium1").setAttribute("style","display:none");
      document.getElementById("txtpremium2").setAttribute("style","display:block");
 
-     document.getElementById('txtpremium2_mobile').innerHTML = 'Para efetivar seu contrato voc?dever?pagar R$ 299 em at?10x ou comprar um de nossos ensaios fotogr?icos;';
+     document.getElementById('txtpremium2_mobile').innerHTML = 'Para efetivar seu contrato você dever pagar R$ 299 em até 10x ou comprar um de nossos ensaios fotográficos;';
      document.getElementById("txtpremium1_mobile").setAttribute("style","display:none");
      document.getElementById("txtpremium2_mobile").setAttribute("style","display:block");  
 
@@ -1013,20 +1013,31 @@ $(function() {
 //FOCUS SETAS MAIOR
 $(function() {
   $(".swiper-control.next2.focus15").click(function() {
-        $('#sobrenome_maior').focus();
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='sobrenome_maior']").focus();
+});
   });
 });
 
 
 $(function() {
-  $(".swiper-control.prev2.focus17").click(function() {
-
+  $("a.vs-prev.swiper-control.prev2.focus16").click(function() {
          $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
-        $("#form [name='sobrenome_maior']").focus();
+        $("#nome_maior").focus();
 });
-
   });
 });
+
+
+
+$(function() {
+  $("a.vs-prev.swiper-control.prev2.focus17").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#sobrenome_maior").focus();
+});
+  });
+});
+
 
 $(function() {
   $(".swiper-control.next2.focus18").click(function() {
@@ -1095,6 +1106,15 @@ $(function() {
   $(".swiper-control.prev2.focus25").click(function() {
          $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
         $("#form [name='cpf_maior']").focus();
+});
+  });
+});
+
+
+$(function() {
+  $(".swiper-control.next2.focus26").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='ig_maior']").focus();
 });
   });
 });
@@ -1745,12 +1765,11 @@ $(function() {
   });
 });
 
-
 $(function() {
   $(".swiper-control.prev2.focus17").click(function() {
-         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+       
         $("#form [name='sobrenome_maior']").blur();
-});
+
   });
 });
 
@@ -1825,6 +1844,14 @@ $(function() {
   });
 });
 
+
+$(function() {
+  $(".swiper-control.next2.focus26").click(function() {
+         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+        $("#form [name='ig_maior']").blur();
+});
+  });
+});
 //FOCUS SETAS MAIOR
 
 $("#premium_menor").click(function() {
