@@ -1,6 +1,6 @@
-<?php header("Content-type: text/html; charset=utf-8");
+<?php 
+header("Content-type: text/html; charset=utf-8");
 include("conecta.php");
-include_once("analyticstracking.php");
 
   $dir = 'fotos/'; //Diretório para uploads
   date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
@@ -80,22 +80,6 @@ include_once("analyticstracking.php");
     $sql2 = "INSERT INTO fotos_mobile (arquivo, data_foto, id_elenco_foto) VALUES ('$new_name', '$hoje', '$id')";
      mysqli_query($link, $sql2);
     }
-
-// echo "Menor:"."<BR/>";
-// echo "CPF:".$cpf."<BR/>";
-// echo "Nome Responsável:".$nome_responsavel."<BR/>";
-// echo "Sexo:".$sexo."<BR/>";
-// echo "Nome:".$nome."<BR/>";
-// echo "Sobrenome:".$sobrenome."<BR/>";
-// echo "Data Nascimento:".$data_menor."<BR/>";
-// echo "Celular:".$celular."<BR/>";
-// echo "E-mail:".$email."<BR/>";
-// echo "Cor Pele:".$cor_pele."<BR/>";
-// echo "Bairro:".$bairro."<BR/>";
-// echo "Modalidade:".$cadastro."<BR/>";
-// echo "IG:".$ig."<BR/>";
-// echo "FB:".$face."<BR/>";
-// echo "TT:".$tt."<BR/>";
   }
   elseif ($ator != '' || $ator != NULL) {
     $data_maior = $_POST['data_maior'];
@@ -172,22 +156,6 @@ include_once("analyticstracking.php");
     $sql2 = "INSERT INTO fotos_mobile (arquivo, data_foto, id_elenco_foto) VALUES ('$new_name', '$hoje', '$id')";
      mysqli_query($link, $sql2);
     }
-
-// echo "Maior"."<BR/>";
-// echo "Nome: ".$nome."<BR/>";
-// echo "Sobrenome: ".$sobrenome."<BR/>";
-// echo "Sexo: ".$sexo."<BR/>";
-// echo "Data Nascimento: ".$data_maior."<BR/>";
-// echo "Celular: ".$celular."<BR/>";
-// echo "E-mail: ".$email."<BR/>";
-// echo "Cor da Pele: ".$cor_pele."<BR/>";
-// echo "Bairro: ".$bairro."<BR/>";
-// echo "CPF: ".$cpf."<BR/>";
-// echo "Ator?: ".$ator."<BR/>";
-// echo "Modalidade: ".$cadastro."<BR/>";
-// echo "IG: ".$ig."<BR/>";
-// echo "FB: ".$face."<BR/>";
-// echo "TT: ".$tt."<BR/>";
   }
 
 header ("Location: sucesso.php?sexo=$sexo");
