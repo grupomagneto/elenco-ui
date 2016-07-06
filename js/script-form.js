@@ -911,6 +911,19 @@ function naoAtor() {
      document.getElementById("premium_desktop2_mobile").setAttribute("style","display:block");
 }
 //TEXTO ATOR
+//HREF SCROLL
+
+$(function() {
+  $('a.menor-maior[href^="#"]').click(function(e) {
+    e.preventDefault();
+    var target = $(this).attr('href');
+    var stop = $(target).offset().top;
+    var delay = 200;
+    $('html, body').animate({scrollTop: stop + 'px'}, delay);
+  });
+});
+
+//HREF SCROLL
 
 //SCRIPTS FOCUS
 
@@ -1013,21 +1026,20 @@ $(function() {
 //FOCUS SETAS MAIOR
 $(function() {
   $(".swiper-control.next2.focus15").click(function() {
-         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
-        $("#form [name='sobrenome_maior']").focus();
+    $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+      $("#sobrenome_maior").focus();
 });
   });
 });
 
 
 $(function() {
-  $("a.vs-prev.swiper-control.prev2.focus16").click(function() {
-         $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
-        $("#nome_maior").focus();
+  $("a.swiper-control.prev2.focus16").click(function() {
+    $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+      $("#nome_maior").focus();
 });
   });
 });
-
 
 
 $(function() {
@@ -1129,9 +1141,9 @@ $("#premium_menor").click(function() {
 
 $("#premium_maior").click(function() {
   $('#Modalmaior-premium').modal('hide');
-  $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+  maior.slideNext();
     $('#ig_maior').focus();
-});
+
 });
 
 $(".sim_acordo_termo_premium_mobile").click(function() {
@@ -1142,9 +1154,9 @@ $(".sim_acordo_termo_premium_mobile").click(function() {
 
 $(".sim_acordo_termo_premium_mobile.maior").click(function() {
   $('#termo_maior_premium_mobile').modal('hide');
-  $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+   maior.slideNext();
     $('#ig_maior').focus();
-});
+
 });
 
 
@@ -1155,11 +1167,11 @@ $("#gratuito_menor").click(function() {
   $("#form2 [name='ig_menor']").focus();
 });
 
-$("#gratuito_maior").click(function() {
+$("#gratuito_maior_button").click(function() {
   $('#Modalmaior-gratuito').modal('hide');
-  $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+ maior.slideNext();
     $('#ig_maior').focus();
-});
+
 });
 
 
@@ -1171,9 +1183,9 @@ $(".sim_acordo_termo_gratuito_mobile").click(function() {
 
 $(".sim_acordo_termo_gratuito_mobile.maior").click(function() {
   $('#termo_maior_gratuito_mobile').modal('hide');
-   $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+ maior.slideNext();
     $('#ig_maior').focus();
-});
+
 });
 
 // ESCONDER MODAL PROFISSIONAL
@@ -1183,11 +1195,11 @@ $("#profissional_menor").click(function() {
   $("#form2 [name='ig_menor']").focus();
 });
 
-$("#profissional_maior").click(function() {
+$("#profissional_maior_button").click(function() {
   $('#Modalmaior-profissional').modal('hide');;
-   $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+    maior.slideNext();
     $('#ig_maior').focus();
-});
+
 });
 
 $(".sim_acordo_termo_profissional_mobile").click(function() {
@@ -1198,9 +1210,9 @@ $(".sim_acordo_termo_profissional_mobile").click(function() {
 
 $(".sim_acordo_termo_profissional_mobile.maior").click(function() {
   $('#termo_maior_profissional_mobile').modal('hide');
-   $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+    maior.slideNext();
     $('#ig_maior').focus();
-});
+
 });
 
 
@@ -1390,11 +1402,11 @@ if(keynum === ENTER) {
 //TAB ENTER
 
 //FOCUS MENOR PARA MAIOR
-function inputFocus(){
-    $('html, body').animate({ scrollTop: $("#17").offset().top }, 200);
+$(document).ready(function() {
+  $("a.btn.menor-maior").click(function() {
     $("#form [name='nome_maior']").focus();
-}
-
+  });
+});
 //FOCUS MENOR PARA MAIOR
 
 
@@ -1660,11 +1672,11 @@ if(keynum === ENTER) {
 //TAB ENTER
 
 //FOCUS MENOR PARA MAIOR
-function inputFocus(){
-    $('html, body').animate({ scrollTop: $("#17").offset().top }, 200);
+$(document).ready(function() {
+  $("a.btn.menor-maior").click(function() {
     $("#form [name='nome_maior']").blur();
-}
-
+  });
+});
 //FOCUS MENOR PARA MAIOR
 
 $(function() {
@@ -1853,7 +1865,7 @@ $(function() {
   });
 });
 //FOCUS SETAS MAIOR
-
+//FOCUS MODAL
 $("#premium_menor").click(function() {
   $('#myModal').modal('hide');
   menor.slideNext();
@@ -1862,9 +1874,9 @@ $("#premium_menor").click(function() {
 
 $("#premium_maior").click(function() {
   $('#Modalmaior-premium').modal('hide');
-  $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+  maior.slideNext();
     $('#ig_maior').blur();
-});
+
 });
 
 $(".sim_acordo_termo_premium_mobile").click(function() {
@@ -1875,9 +1887,9 @@ $(".sim_acordo_termo_premium_mobile").click(function() {
 
 $(".sim_acordo_termo_premium_mobile.maior").click(function() {
   $('#termo_maior_premium_mobile').modal('hide');
-  $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+   maior.slideNext();
     $('#ig_maior').blur();
-});
+
 });
 
 
@@ -1888,11 +1900,11 @@ $("#gratuito_menor").click(function() {
   $("#form2 [name='ig_menor']").blur();
 });
 
-$("#gratuito_maior").click(function() {
+$("#gratuito_maior_button").click(function() {
   $('#Modalmaior-gratuito').modal('hide');
-  $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+ maior.slideNext();
     $('#ig_maior').blur();
-});
+
 });
 
 
@@ -1904,9 +1916,9 @@ $(".sim_acordo_termo_gratuito_mobile").click(function() {
 
 $(".sim_acordo_termo_gratuito_mobile.maior").click(function() {
   $('#termo_maior_gratuito_mobile').modal('hide');
-   $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+ maior.slideNext();
     $('#ig_maior').blur();
-});
+
 });
 
 // ESCONDER MODAL PROFISSIONAL
@@ -1916,11 +1928,11 @@ $("#profissional_menor").click(function() {
   $("#form2 [name='ig_menor']").blur();
 });
 
-$("#profissional_maior").click(function() {
+$("#profissional_maior_button").click(function() {
   $('#Modalmaior-profissional').modal('hide');;
-   $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+    maior.slideNext();
     $('#ig_maior').blur();
-});
+
 });
 
 $(".sim_acordo_termo_profissional_mobile").click(function() {
@@ -1931,10 +1943,11 @@ $(".sim_acordo_termo_profissional_mobile").click(function() {
 
 $(".sim_acordo_termo_profissional_mobile.maior").click(function() {
   $('#termo_maior_profissional_mobile').modal('hide');
-   $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+    maior.slideNext();
     $('#ig_maior').blur();
+
 });
-});
+
 
  
  }
@@ -2127,11 +2140,11 @@ if(keynum === ENTER) {
 //TAB ENTER
 
 //FOCUS MENOR PARA MAIOR
-function inputFocus(){
-    $('html, body').animate({ scrollTop: $("#17").offset().top }, 200);
-    $("#form [name='nome_maior']").blur();
-}
-
+$(document).ready(function() {
+  $("a.btn.menor-maior").click(function() {
+    $("#form [name='nome_maior']").focus();
+  });
+});
 //FOCUS MENOR PARA MAIOR
 
 $(function() {
@@ -2224,6 +2237,7 @@ $(function() {
   });
 });
 
+//FOCUS MODAL
 $("#premium_menor").click(function() {
   $('#myModal').modal('hide');
   menor.slideNext();
@@ -2232,9 +2246,9 @@ $("#premium_menor").click(function() {
 
 $("#premium_maior").click(function() {
   $('#Modalmaior-premium').modal('hide');
-  $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+  maior.slideNext();
     $('#ig_maior').blur();
-});
+
 });
 
 $(".sim_acordo_termo_premium_mobile").click(function() {
@@ -2245,9 +2259,9 @@ $(".sim_acordo_termo_premium_mobile").click(function() {
 
 $(".sim_acordo_termo_premium_mobile.maior").click(function() {
   $('#termo_maior_premium_mobile').modal('hide');
-  $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+   maior.slideNext();
     $('#ig_maior').blur();
-});
+
 });
 
 
@@ -2258,11 +2272,11 @@ $("#gratuito_menor").click(function() {
   $("#form2 [name='ig_menor']").blur();
 });
 
-$("#gratuito_maior").click(function() {
+$("#gratuito_maior_button").click(function() {
   $('#Modalmaior-gratuito').modal('hide');
-  $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+ maior.slideNext();
     $('#ig_maior').blur();
-});
+
 });
 
 
@@ -2274,9 +2288,9 @@ $(".sim_acordo_termo_gratuito_mobile").click(function() {
 
 $(".sim_acordo_termo_gratuito_mobile.maior").click(function() {
   $('#termo_maior_gratuito_mobile').modal('hide');
-   $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+ maior.slideNext();
     $('#ig_maior').blur();
-});
+
 });
 
 // ESCONDER MODAL PROFISSIONAL
@@ -2286,11 +2300,11 @@ $("#profissional_menor").click(function() {
   $("#form2 [name='ig_menor']").blur();
 });
 
-$("#profissional_maior").click(function() {
+$("#profissional_maior_button").click(function() {
   $('#Modalmaior-profissional').modal('hide');;
-   $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+    maior.slideNext();
     $('#ig_maior').blur();
-});
+
 });
 
 $(".sim_acordo_termo_profissional_mobile").click(function() {
@@ -2301,12 +2315,13 @@ $(".sim_acordo_termo_profissional_mobile").click(function() {
 
 $(".sim_acordo_termo_profissional_mobile.maior").click(function() {
   $('#termo_maior_profissional_mobile').modal('hide');
-   $('.swiper-container.maior').animate({scrollTop: $('.swiper-container.maior').offset().top}, 200, function() {
+    maior.slideNext();
     $('#ig_maior').blur();
-});
+
 });
 
 
- }
+
+}
 
 //FOCUS ARROW SWIPER-CONTROL NEXT PREV MOBILE
