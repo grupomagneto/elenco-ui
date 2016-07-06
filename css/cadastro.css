@@ -626,26 +626,26 @@ PROGRESS
 /*********************
 POSIÇÃO DAS DIVS
 **********************/
-.div0{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div1{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div2{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div3{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div4{ position:absolute; top:53%; left:0%; width:100%; z-index:0; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div5{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div6{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div0{ position:absolute; top:60%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div1{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div2{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div3{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div4{ position:absolute; top:55%; left:0%; width:100%; z-index:0; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div5{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div6{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div7{ position:absolute; top:25%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div8{ position:absolute; top:8%; left:0%; width:100%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div9{ position:absolute; top:8%; left:0%; width:100%; z-index:9999; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div10{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div11{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div12{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div13{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div14{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div10{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div11{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div12{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div13{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div14{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div15{ position:absolute; top:25%; left:10%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div16{ position:absolute; top:25%; left:10%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div17{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div18{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
-.div19{ position:absolute; top:50%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div17{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div18{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div19{ position:absolute; top:55%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 /*Primeira Pergunta*/
 .wrapper_segunda{ top:41%; left:50%; width:100%; margin-left: -30.5%;}
 .row .primeiro{ margin-bottom: 73px; }
@@ -706,12 +706,12 @@ img#seta22{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 /* Para começar, vamos precisar de duas fotos */
 .div7_box h1{ font-size:24px; line-height:36px; margin-bottom:16px; width:280px; margin-left:-140px; margin-top:20px; }
 .div7_box img{ width:40px; height:40px; margin-left:-25px; margin-top:180px; opacity:0.8; }
-.div7_box button{ width:140px; margin-left:-70px; margin-top:160px; }
+.div7_box button{ width:140px; margin-left:-70px; margin-top:130px; }
 .div7_t img{ width:80px; height:68px; }
 /* A primeira, sorrindo */
 .div8_t h1{ font-size:20px; width:280px; margin-left:-140px; margin-top:10px; }
 .div8_t ol{ font-size:16px; line-height:24px; width:280px; padding-left:30px; margin-left:-140px; margin-top:200px; }
-.div8_t p{ font-size:12px; width:220px; margin-left:-110px; margin-top:315px; }
+.div8_t p{ display: none; }
 .div8_box img{ width:62px; height:53px; }
 .div8_box h4{ font-size:14px; width:280px; margin-left:-140px; margin-top:165px; }
 .file-upload{ height:100px; width:100px; border-radius:66px; margin-top:60px; margin-left:-50px; }
@@ -719,7 +719,7 @@ img#seta22{ margin-left:90px; margin-top:-50px; width:40px; height:40px; }
 /* Agora sem sorrir */
 .div9_t h1{ font-size:20px; width:280px; margin-left:-140px; margin-top:10px; }
 .div9_t ol{ font-size:16px; line-height:24px; width:280px; padding-left:30px; margin-left:-140px; margin-top:200px; }
-.div9_t p{ font-size:12px; width:220px; margin-left:-110px; margin-top:340px; }
+.div8_t p{ display: none; }
 .div9_box img{ width:62px; height:53px; }
 .div9_box h4{ font-size:14px; width:280px; margin-left:-140px; margin-top:165px; }
 .file-upload2{ height:100px; width:100px; border-radius:66px; margin-top:60px; margin-left:-50px; }
@@ -1242,6 +1242,7 @@ POSIÇÃO DAS DIVS
 .div16{ position:absolute; top:37%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div17{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div18{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div19{ position:absolute; top:46%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 /*Primeira Pergunta*/
 .wrapper_segunda{ top:50%; left:50%; width:100%; margin-left: -30.5%;}
 .row .primeiro{ margin-bottom: 73px; }
@@ -1575,6 +1576,7 @@ POSIÇÃO DAS DIVS
 .div16{ position:absolute; top:30%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div17{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div18{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div19{ position:absolute; top:44%; left:0%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 /*Primeira Pergunta*/
 .wrapper_segunda{ top:41%; left:50%; width:100%; margin-left: -30.5%;}
 .row .primeiro{ margin-bottom: 93px; }
@@ -1876,6 +1878,7 @@ POSIÇÃO DAS DIVS
 .div16{ position:absolute; top:28%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div17{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 .div18{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
+.div19{ position:absolute; top:44%; left:4%; width:100%; text-align:center; -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%); }
 /*Primeira Pergunta*/
 .row .primeiro{ margin-bottom: 66px; }
 .row .primeiro a{ font-size: 25px; width:500px; height:80px; padding-bottom: 10px; padding-top: 20px; left:50%; margin-left:-250px; margin-top:-30px; }
