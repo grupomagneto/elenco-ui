@@ -1,0 +1,16 @@
+current directory: /Users/developer/Documents/development/elenco-ui/agenda/agendamento/vendor/bundle/ruby/2.0.0/gems/fast_blank-1.0.0/ext/fast_blank
+/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby -r ./siteconf20160711-3183-19pdh8n.rb extconf.rb
+creating Makefile
+
+current directory: /Users/developer/Documents/development/elenco-ui/agenda/agendamento/vendor/bundle/ruby/2.0.0/gems/fast_blank-1.0.0/ext/fast_blank
+make "DESTDIR=" clean
+
+current directory: /Users/developer/Documents/development/elenco-ui/agenda/agendamento/vendor/bundle/ruby/2.0.0/gems/fast_blank-1.0.0/ext/fast_blank
+make "DESTDIR="
+compiling fast_blank.c
+linking shared-object fast_blank.bundle
+
+current directory: /Users/developer/Documents/development/elenco-ui/agenda/agendamento/vendor/bundle/ruby/2.0.0/gems/fast_blank-1.0.0/ext/fast_blank
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 fast_blank.bundle ./.gem.20160711-3183-148j8k3
+installing default fast_blank libraries
