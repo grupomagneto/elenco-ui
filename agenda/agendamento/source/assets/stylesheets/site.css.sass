@@ -1,27 +1,78 @@
 // VARIÁVEIS
-$breakpoint-small: 768px
 
 // GERAL
 body 
   background: #ECC561
   text-align: center
   font-size: 1em
+  height: 100%
+  min-height: 100%
 
 h1 
   color: rgba(0,0,0,0.5)
   font-size: 1.8em
   font-weight: 400
-  margin-top: 20px
-h4
-  font-family: Avenir-Book
-  font-size: 24px
-  color: #FFFFFF
 
 .btn
-  background:rgba(215,215,215,0.1)
+  background: rgba(215,215,215,0.1)
   font-size: 1.8em
   margin-top: 50px
+
 // MODAL
+.wrapper
+  height: 100%
+  min-height: 100%
+  width: 1100px
+  margin-left: auto
+  margin-right: auto
+  display: -webkit-flex
+  display: flex
+  -webkit-align-items: center
+  align-items: center
+  -webkit-justify-content: center
+  justify-content: center
+
+.modal-dialog
+  width: 1100px
+
 .modal-content
+  width: 1100px
+  height: 590px
+
+.modal-content__premium
   background: #BD10E0
+
+.modal-content__gratuito
+  background: #F75486
+
+.modal-content__profissional
+  background: #4AA4E2
+
+.modal-esquerda
+  float: left
+  width: 35%
+  -webkit-flex-flow: column
+  flex-flow: column
+
+.modal-direita
+  float: right
+  width: 65%
+  -webkit-flex-flow: column-reverse
+  flex-flow: column-reverse
+
+.modal-esquerda h4
+  font-family: Avenir-Book
+  font-size: 24px
+  color: #ffffff
+  margin-top: 30px
+  margin-left: 50px
+  width: 160px
+  border-top: 1px solid #fff
+  border-bottom: 1px solid #fff
+  padding: 10px
+
+.modal-direita h4
+  font-family: Avenir-Book
+  font-size: 24px
+  color: #ffffff
 

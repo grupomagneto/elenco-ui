@@ -1,12 +1,49 @@
 h1 Magneto Agendamento
 
-/ BUTTON MODAL
-button.btn.btn-default.btn-lg data-toggle="modal" data-target="#agenda" Agenda
+/ BUTTON MODAL Premium
+button.btn.btn-default.btn-lg data-toggle="modal" data-target="#agenda-premium" Agenda Premium
 
 / MODAL
-.modal.fade#agenda role="dialog" aria-labelledby="agendaLabel"
-	.modal-dialog role="document"
-		.modal-content
-			.modal-body 
-				button.close data-dismiss="modal" aria-label="Close" x
-				h4 Agende suas fotos
+.wrapper
+	.modal.fade#agenda-premium role="dialog" aria-labelledby="agendaLabel"
+		.modal-dialog role="document"
+			.modal-content.modal-content__premium
+				.modal-body 
+					button.close data-dismiss="modal" aria-label="Close"
+					  img src="assets/images/menos.svg"/
+					.modal-esquerda
+						h4 Premium
+					.modal-direita
+						h4 Agende suas fotos
+
+/ BUTTON MODAL Gratuito
+button.btn.btn-default.btn-lg data-toggle="modal" data-target="#agenda-gratuito" Agenda Gratuito
+
+/ MODAL
+.wrapper
+	.modal.fade#agenda-gratuito role="dialog" aria-labelledby="agendaLabel"
+		.modal-dialog role="document"
+			.modal-content.modal-content__gratuito
+				.modal-body 
+					button.close data-dismiss="modal" aria-label="Close"
+					  img src="assets/images/menos.svg"/
+					.modal-esquerda
+						h4 Gratuito
+					.modal-direita
+						h4 Agende suas fotos
+
+/ BUTTON MODAL Profissional
+button.btn.btn-default.btn-lg data-toggle="modal" data-target="#agenda-profissional" Agenda Profissional
+
+/ MODAL
+.wrapper
+	.modal.fade#agenda-profissional role="dialog" aria-labelledby="agendaLabel"
+		.modal-dialog role="document"
+			.modal-content.modal-content__profissional
+				.modal-body 
+					button.close data-dismiss="modal" aria-label="Close"
+					  img src="assets/images/menos.svg"/
+					.modal-esquerda
+						h4 Profissional
+					.modal-direita
+						h4 Agende suas fotos
