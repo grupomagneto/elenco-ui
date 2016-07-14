@@ -1,22 +1,43 @@
 // VARIÁVEIS
-
+$font-family: Avenir-Book 
+$color-primary: #ffffff
+$color-premium: #BD10E0
+$color-gratuito: #F75486
+$color-profissional: #4AA4E2
+$font-size-aviso: 32px
+$font-size-agenda: 24.86px
 // GERAL
 body 
-  background: #ECC561
+  background: #003366
   text-align: center
   font-size: 1em
   height: 100%
   min-height: 100%
 
 h1 
-  color: rgba(0,0,0,0.5)
-  font-size: 1.8em
+  font-size: 1.9em
   font-weight: 400
+  color: $color-primary
+
+@font-face
+  font-family: Avenir-Book 
+  font-style: normal 
+  font-weight: 600 
+  src: local("../fonts/Avenir-Light.woff"), url ("../fonts/Avenir-Light.woff") format("woff")
 
 .btn
   background: rgba(215,215,215,0.1)
   font-size: 1.8em
   margin-top: 50px
+  color: $color-primary
+
+.close
+  color: $color-primary
+  opacity: 1
+
+.close:hover
+  color: $color-primary
+  opacity: 1
 
 // MODAL
 .wrapper
@@ -39,40 +60,39 @@ h1
   width: 1100px
   height: 590px
 
-.modal-content__premium
-  background: #BD10E0
+.container-inside-modal
+  width: 500px
+  height: 408px
+  margin-top: 90px
+  margin-left: auto
+  margin-right: auto
+  margin-right: bottom
+  -webkit-justify-content: center
+  justify-content: center
 
-.modal-content__gratuito
-  background: #F75486
+.modal-desktop__premium
+  background: $color-premium
 
-.modal-content__profissional
-  background: #4AA4E2
+.modal-desktop__gratuito
+  background: $color-gratuito
+  
+.modal-desktop__profissional
+  background: $color-profissional
 
-.modal-esquerda
-  float: left
-  width: 35%
-  -webkit-flex-flow: column
-  flex-flow: column
+.modal-content-aviso h1
+  font-family: $font-family
+  font-size: $font-size-aviso
+  color: $color-primary
 
-.modal-direita
-  float: right
-  width: 65%
-  -webkit-flex-flow: column-reverse
-  flex-flow: column-reverse
-
-.modal-esquerda h4
-  font-family: Avenir-Book
+.modal-content-aviso p
+  font-family: $font-family
+  color: $color-primary
   font-size: 24px
-  color: #ffffff
-  margin-top: 30px
-  margin-left: 50px
-  width: 160px
-  border-top: 1px solid #fff
-  border-bottom: 1px solid #fff
-  padding: 10px
+  margin-bottom: 50px
 
-.modal-direita h4
-  font-family: Avenir-Book
-  font-size: 24px
-  color: #ffffff
+.modal-content-agenda h1
+  font-family: $font-family
+  font-size: $font-size-agenda
+
+
 

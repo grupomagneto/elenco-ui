@@ -16,6 +16,7 @@ set :css_dir,     'assets/stylesheets'
 set :js_dir,      'assets/javascripts'
 set :images_dir,  'assets/images'
 set :layouts_dir, 'assets/layouts'
+set :fonts_dir, 'assets/fonts'
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy '/this-page-has-no-template.html', '/template-file.html', locals: {
 #  which_fake_page: 'Rendering a fake page with a local variable' }
