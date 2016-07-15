@@ -1,11 +1,12 @@
 // VARIÁVEIS
 $font-family: Avenir-Book 
-$color-primary: #ffffff
+$color-primary: #FFFFFF
 $color-premium: #BD10E0
 $color-gratuito: #F75486
 $color-profissional: #4AA4E2
 $font-size-aviso: 32px
-$font-size-agenda: 24.86px
+$font-size-agenda_title: 24.86px
+$font-size-agenda_days: 18.46px
 // GERAL
 body 
   background: #003366
@@ -14,16 +15,19 @@ body
   height: 100%
   min-height: 100%
 
-h1 
-  font-size: 1.9em
-  font-weight: 400
-  color: $color-primary
-
 @font-face
   font-family: Avenir-Book 
   font-style: normal 
   font-weight: 600 
   src: local("../fonts/Avenir-Light.woff"), url ("../fonts/Avenir-Light.woff") format("woff")
+
+h1 
+  font-size: 1.9em
+  font-weight: 400
+  color: $color-primary
+
+hr.agenda
+  width: 600px
 
 .btn
   background: rgba(215,215,215,0.1)
@@ -70,6 +74,16 @@ h1
   -webkit-justify-content: center
   justify-content: center
 
+.container-inside-modal__agenda
+  width: 800px
+  height: 408px
+  margin-top: 25px
+  margin-left: auto
+  margin-right: auto
+  margin-right: bottom
+  -webkit-justify-content: center
+  justify-content: center
+
 .modal-desktop__premium
   background: $color-premium
 
@@ -89,10 +103,87 @@ h1
   color: $color-primary
   font-size: 24px
   margin-bottom: 50px
-
 .modal-content-agenda h1
   font-family: $font-family
-  font-size: $font-size-agenda
+  font-size: $font-size-agenda_title
+
+.days
+  text-align: center
+  text-transform: capitalize
+  color: $color-primary
+  font-family: $font-family
+  font-size: $font-size-agenda_days
+  height: 15px
+  max-width: 600px
+  margin: 0 auto
+  margin-top: 60px
+
+.days th
+  font-weight: 100
+  padding-right: 35px
+  padding-left: 35px
+
+.days td
+  height: 5px
+
+.agenda-day
+  font-size: 24px
+  color: $color-primary
+  font-family: $font-family
+
+.morning
+  text-align: center
+  text-transform: capitalize
+  color: $color-primary
+  font-family: $font-family
+  height: 15px
+  max-width: 600px
+  margin: 0 auto
+  margin-top: 60px
+  margin-left: -60px
+
+.morning td
+  height: 5px
+  font-weight: 100
+  padding-right: -5px
+  padding-left: 30px
+
+.morning td button
+  width: 90px
+  height: 48px
+  background: rgba(215,215,215,0.30)
+  border: 2px solid #ECECEC
+  border-radius: 8px
+  color: $color-primary
+  font-family: $font-family
+  font-size: 12px
+
+.afternoon
+  text-align: center
+  text-transform: capitalize
+  color: $color-primary
+  font-family: $font-family
+  height: 15px
+  max-width: 600px
+  margin: 0 auto
+  margin-top: 60px
+  margin-left: -50px
+
+.afternoon td
+  height: 5px
+  font-weight: 100
+  padding-right: -5px
+  padding-left: 30px
+
+.afternoon td button
+  width: 90px
+  height: 48px
+  background: rgba(215,215,215,0.30)
+  border: 2px solid #ECECEC
+  border-radius: 8px
+  color: $color-primary
+  font-family: $font-family
+  font-size: 12px
 
 
 
