@@ -5,7 +5,7 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-premium" A
 
 / MODAL
 .wrapper
-  .modal.fade#aviso-premium role="dialog" aria-labelledby="agendaLabel"
+  .modal#aviso-premium role="dialog" aria-labelledby="agendaLabel"
     .modal-dialog role="document"
 	  .modal-content.modal-desktop__premium.modal-content-aviso.modal-content-aviso__premium
 		.modal-body 
@@ -16,15 +16,15 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-premium" A
 				hr /
 				p
 				 | Ao terminar este formulário, você já estará participando de nossas seleções para trabalhos. Mas para aumentar suas chances, que tal fazer fotos profissionais em nossos estúdios?
-				.button-modal-agenda data-toggle="modal" data-target="#agenda-premium"
+				.button-modal-agenda__premium data-toggle="modal" data-target="#agenda-premium"
 				  img src="assets/images/ok.svg"/
-	.modal.fade#agenda-premium role="dialog" aria-labelledby="agendaLabel"
+	.modal#agenda-premium role="dialog" aria-labelledby="agendaLabel"
 	    .modal-dialog role="document"
 		  .modal-content.modal-desktop__premium.modal-content-agenda.modal-content-agenda__premium
 			.modal-body 
 				button.close data-dismiss="modal" aria-label="Close"
 				  img src="assets/images/menos.svg"/
-			   	.container-inside-modal__agenda
+ 				.container-inside-modal__agenda
 					h1 Agende suas fotos:
 
 				    table.days
@@ -81,31 +81,151 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-gratuito" 
 
 / MODAL
 .wrapper
-	.modal.fade#aviso-gratuito role="dialog" aria-labelledby="agendaLabel"
+	.modal#aviso-gratuito role="dialog" aria-labelledby="agendaLabel"
 		.modal-dialog role="document"
 			.modal-content.modal-desktop__gratuito.modal-content-aviso.modal-content-aviso__gratuito
+			  .modal-body 
+				button.close data-dismiss="modal" aria-label="Close"
+				  img src="assets/images/menos.svg"/
+				.container-inside-modal
+					h1 Ótimo! 
+					hr /
+					p
+					 | Ao terminar este formulário, você já estará participando de nossas seleções para trabalhos. Mas para aumentar suas chances, que tal fazer fotos profissionais em nossos estúdios?
+					.button-modal-agenda__gratuito data-toggle="modal" data-target="#agenda-gratuito"
+					  img src="assets/images/ok.svg"/
+		.modal#agenda-gratuito role="dialog" aria-labelledby="agendaLabel"
+		    .modal-dialog role="document"
+			  .modal-content.modal-desktop__gratuito.modal-content-agenda.modal-content-agenda__gratuito
 				.modal-body 
 					button.close data-dismiss="modal" aria-label="Close"
 					  img src="assets/images/menos.svg"/
-					.container-inside-modal
-						h1 Ótimo! 
-						hr /
-						p
-						 | Ao terminar este formulário, você já estará participando de nossas seleções para trabalhos. Mas para aumentar suas chances, que tal fazer fotos profissionais em nossos estúdios?
+					.container-inside-modal__agenda
+						h1 Agende suas fotos:
+
+					    table.days
+					       tr
+							th Seg
+							th Ter
+							th Qua
+							th Qui
+							th Sex
+							th Sáb
+					       tr
+							td 01/07
+							td 02/07
+							td 03/07
+							td 04/07
+							td 05/07
+							td 06/07
+						hr.agenda /		
+
+						table.morning
+					       tr
+							td.agenda-day Manhã
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+
+						table.afternoon
+					       tr
+							td.agenda-day Tarde
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							
 
 / BUTTON MODAL Profissional
 button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-profissional" Agenda Profissional
 
 / MODAL
 .wrapper
-	.modal.fade#aviso-profissional role="dialog" aria-labelledby="agendaLabel"
+	.modal#aviso-profissional role="dialog" aria-labelledby="agendaLabel"
 		.modal-dialog role="document"
 			.modal-content.modal-desktop__profissional.modal-content-aviso.modal-content-aviso__profissional
+			  .modal-body 
+				button.close data-dismiss="modal" aria-label="Close"
+				  img src="assets/images/menos.svg"/
+				.container-inside-modal
+					h1 Ótimo! 
+					hr /
+					p
+					 | Ao terminar este formulário, você já estará participando de nossas seleções para trabalhos. Mas para aumentar suas chances, que tal fazer fotos profissionais em nossos estúdios?
+					.button-modal-agenda__profissional data-toggle="modal" data-target="#agenda-profissional"
+					  img src="assets/images/ok.svg"/
+		.modal#agenda-profissional role="dialog" aria-labelledby="agendaLabel"
+		    .modal-dialog role="document"
+			  .modal-content.modal-desktop__profissional.modal-content-agenda.modal-content-agenda__profissional
 				.modal-body 
 					button.close data-dismiss="modal" aria-label="Close"
 					  img src="assets/images/menos.svg"/
-					.container-inside-modal
-						h1 Ótimo! 
-						hr /
-						p
-						 | Ao terminar este formulário, você já estará participando de nossas seleções para trabalhos. Mas para aumentar suas chances, que tal fazer fotos profissionais em nossos estúdios?
+	 				.container-inside-modal__agenda
+						h1 Agende suas fotos:
+
+					    table.days
+					       tr
+							th Seg
+							th Ter
+							th Qua
+							th Qui
+							th Sex
+							th Sáb
+					       tr
+							td 01/07
+							td 02/07
+							td 03/07
+							td 04/07
+							td 05/07
+							td 06/07
+						hr.agenda /		
+
+						table.morning
+					       tr
+							td.agenda-day Manhã
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+
+						table.afternoon
+					       tr
+							td.agenda-day Tarde
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+							td 
+							  button 0 horários disponíveis
+						
