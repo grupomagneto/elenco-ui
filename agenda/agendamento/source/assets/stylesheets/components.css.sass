@@ -1,12 +1,24 @@
-// VARIÁVEIS
-$font-family: Avenir-Book 
-$color-primary: #FFFFFF
+@import _settings
+@import _tools
+
+// Fonts
 $color-premium: #BD10E0
 $color-gratuito: #F75486
 $color-profissional: #4AA4E2
-$font-size-aviso: 32px
-$font-size-agenda_title: 24.86px
-$font-size-agenda_days: 18.46px
+
+.font-family
+  font-family: $font-family
+.color-font
+  color: $color-font-primary
+.x-large
+  font-size: $font-size-desktop-xlarge
+.large
+  font-size: $font-size-desktop-large
+.medium
+  font-size: $font-size-desktop-medium
+.small
+  font-size: $font-size-desktop-small
+
 // GERAL
 body 
   background: #003366
@@ -15,17 +27,6 @@ body
   height: 100%
   min-height: 100%
 
-@font-face
-  font-family: Avenir-Book 
-  font-style: normal 
-  font-weight: 600 
-  src: local("../fonts/Avenir-Light.woff"), url ("../fonts/Avenir-Light.woff") format("woff")
-
-h1 
-  font-size: 1.9em
-  font-weight: 400
-  color: $color-primary
-
 hr.agenda
   width: 600px
 
@@ -33,14 +34,14 @@ hr.agenda
   background: rgba(215,215,215,0.1)
   font-size: 1.8em
   margin-top: 50px
-  color: $color-primary
+  color: #FFFFFF
 
 .close
-  color: $color-primary
+  color: #FFFFFF
   opacity: 1
 
 .close:hover
-  color: $color-primary
+  color: #FFFFFF
   opacity: 1
 
 // MODAL
@@ -66,7 +67,7 @@ hr.agenda
 
 .container-inside-modal
   width: 500px
-  height: 408px
+  height: 100%
   margin-top: 90px
   margin-left: auto
   margin-right: auto
@@ -75,14 +76,28 @@ hr.agenda
   justify-content: center
 
 .container-inside-modal__agenda
-  width: 800px
-  height: 408px
+  width: 100%
+  height: 100%
   margin-top: 25px
+  overflow: hidden
+  position: relative
   margin-left: auto
   margin-right: auto
   margin-right: bottom
   -webkit-justify-content: center
   justify-content: center
+
+.content-inside-modal__agenda
+  width: 200%
+
+.item-slide
+  float: left
+  width: 50%
+  display: inline
+
+.active
+  display: block
+  left: 0
 
 .modal-desktop__premium
   background: $color-premium
@@ -93,28 +108,14 @@ hr.agenda
 .modal-desktop__profissional
   background: $color-profissional
 
-.modal-content-aviso h1
-  font-family: $font-family
-  font-size: $font-size-aviso
-  color: $color-primary
-
 .modal-content-aviso p
-  font-family: $font-family
-  color: $color-primary
-  font-size: 24px
   margin-bottom: 50px
-.modal-content-agenda h1
-  font-family: $font-family
-  font-size: $font-size-agenda_title
 
 .days
   text-align: center
   text-transform: capitalize
-  color: $color-primary
-  font-family: $font-family
-  font-size: $font-size-agenda_days
   height: 15px
-  max-width: 600px
+  max-width: 100%
   margin: 0 auto
   margin-top: 60px
 
@@ -126,63 +127,26 @@ hr.agenda
 .days td
   height: 5px
 
-.agenda-day
-  font-size: 24px
-  color: $color-primary
-  font-family: $font-family
-
-.morning
+.am-pm
   text-align: center
   text-transform: capitalize
-  color: $color-primary
-  font-family: $font-family
   height: 15px
-  max-width: 600px
+  max-width: 100%
   margin: 0 auto
   margin-top: 60px
-  margin-left: -60px
 
-.morning td
+.am-pm td
   height: 5px
   font-weight: 100
   padding-right: -5px
   padding-left: 30px
 
-.morning td button
+.am-pm td button
   width: 90px
   height: 48px
   background: rgba(215,215,215,0.30)
   border: 2px solid #ECECEC
   border-radius: 8px
-  color: $color-primary
-  font-family: $font-family
-  font-size: 12px
-
-.afternoon
-  text-align: center
-  text-transform: capitalize
-  color: $color-primary
-  font-family: $font-family
-  height: 15px
-  max-width: 600px
-  margin: 0 auto
-  margin-top: 60px
-  margin-left: -50px
-
-.afternoon td
-  height: 5px
-  font-weight: 100
-  padding-right: -5px
-  padding-left: 30px
-
-.afternoon td button
-  width: 90px
-  height: 48px
-  background: rgba(215,215,215,0.30)
-  border: 2px solid #ECECEC
-  border-radius: 8px
-  color: $color-primary
-  font-family: $font-family
   font-size: 12px
 
 
