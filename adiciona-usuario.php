@@ -66,7 +66,13 @@ include("conecta.php");
     $id = $row['id_elenco'];
 
     if(isset($_FILES['foto'])) { //verifica se recebeu um arquivo
-    $ext = strtolower(substr($_FILES['foto']['name'],-4)); //Pegando extensão do arquivo
+    $pathinfo = pathinfo($_FILES['foto']);
+    $extension = $pathinfo['extension'];
+    if ($extension == 'jpeg') {
+      $ext = '.jpg';
+    } else {
+      $ext = strtolower(substr($_FILES['foto']['name'],-4)); //Pegando extensão do arquivo
+    }
     $new_name = $id."_".$hoje."_"."01".$ext; //Definindo um novo nome para o arquivo
      move_uploaded_file($_FILES['foto']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
     $sql2 = "INSERT INTO fotos_mobile (arquivo, data_foto, id_elenco_foto) VALUES ('$new_name', '$hoje', '$id')";
@@ -74,7 +80,13 @@ include("conecta.php");
     }
 
     if(isset($_FILES['foto2'])) { //verifica se recebeu um arquivo
-    $ext = strtolower(substr($_FILES['foto2']['name'],-4)); //Pegando extensão do arquivo
+    $pathinfo = pathinfo($_FILES['foto2']);
+    $extension = $pathinfo['extension'];
+    if ($extension == 'jpeg') {
+      $ext = '.jpg';
+    } else {
+      $ext = strtolower(substr($_FILES['foto2']['name'],-4)); //Pegando extensão do arquivo
+    }
     $new_name = $id."_".$hoje."_"."02".$ext; //Definindo um novo nome para o arquivo
      move_uploaded_file($_FILES['foto2']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
     $sql2 = "INSERT INTO fotos_mobile (arquivo, data_foto, id_elenco_foto) VALUES ('$new_name', '$hoje', '$id')";
@@ -142,7 +154,13 @@ include("conecta.php");
     $id = $row['id_elenco'];
 
     if(isset($_FILES['foto_maior1'])) { //verifica se recebeu um arquivo
-    $ext = strtolower(substr($_FILES['foto_maior1']['name'],-4)); //Pegando extensão do arquivo
+    $pathinfo = pathinfo($_FILES['foto_maior1']);
+    $extension = $pathinfo['extension'];
+    if ($extension == 'jpeg') {
+      $ext = '.jpg';
+    } else {
+      $ext = strtolower(substr($_FILES['foto_maior1']['name'],-4)); //Pegando extensão do arquivo
+    }
     $new_name = $id."_".$hoje."_"."01".$ext; //Definindo um novo nome para o arquivo
      move_uploaded_file($_FILES['foto_maior1']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
     $sql2 = "INSERT INTO fotos_mobile (arquivo, data_foto, id_elenco_foto) VALUES ('$new_name', '$hoje', '$id')";
@@ -150,7 +168,13 @@ include("conecta.php");
     }
 
     if(isset($_FILES['foto_maior2'])) { //verifica se recebeu um arquivo
-    $ext = strtolower(substr($_FILES['foto_maior2']['name'],-4)); //Pegando extensão do arquivo
+    $pathinfo = pathinfo($_FILES['foto_maior2']);
+    $extension = $pathinfo['extension'];
+    if ($extension == 'jpeg') {
+      $ext = '.jpg';
+    } else {
+      $ext = strtolower(substr($_FILES['foto_maior2']['name'],-4)); //Pegando extensão do arquivo
+    }
     $new_name = $id."_".$hoje."_"."02".$ext; //Definindo um novo nome para o arquivo
      move_uploaded_file($_FILES['foto_maior2']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
     $sql2 = "INSERT INTO fotos_mobile (arquivo, data_foto, id_elenco_foto) VALUES ('$new_name', '$hoje', '$id')";
