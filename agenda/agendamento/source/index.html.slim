@@ -25,56 +25,114 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-premium" A
 				button.close data-dismiss="modal" aria-label="Close"
 				  img src="assets/images/menos.svg"/
  				.container-inside-modal__agenda
-					h1.color-font.font-family.large Agende suas fotos:
+ 				  .content-inside-modal__agenda
+ 				    .item-slide.active.item-weeks
+						h1.color-font.font-family.large Agende suas fotos:
 
-				    table.days.color-font.font-family.medium
-				       tr
-						th Seg
-						th Ter
-						th Qua
-						th Qui
-						th Sex
-						th Sáb
-				       tr
-						td 01/07
-						td 02/07
-						td 03/07
-						td 04/07
-						td 05/07
-						td 06/07
-					hr.agenda /		
+					    table.days.color-font.font-family.medium
+					       tr
+							th Seg
+							th Ter
+							th Qua
+							th Qui
+							th Sex
+							th Sáb
+					       tr
+							td 01/07
+							td 02/07
+							td 03/07
+							td 04/07
+							td 05/07
+							td 06/07
+						hr.agenda /		
 
-					table.am-pm.color-font.font-family
-				       tr
-						td.color-font.font-family.large Manhã
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
+						table.am-pm.color-font.font-family
+					       tr
+							td.color-font.font-family.large Manhã
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 
-					table.am-pm.color-font.font-family
-				       tr
-						td.agenda-day__afternoon.color-font.font-family.large Tarde
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
+						table.am-pm.color-font.font-family
+					       tr
+							td.agenda-day__afternoon.color-font.font-family.large Tarde
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+						
+						div.arrows-week.cursor 
+							img src="assets/images/left.svg" 
+							 span.date.font-family.color-font.medium 01 à 06 de julho de 2016  
+							img src="assets/images/right.svg"
+
+						
+
+ 				    .item-slide.active.item-hours
+						h1.color-font.font-family.large Escolha um horário:
+
+						div.date-hours
+							img src="assets/images/calendar.svg" 
+							 span.date.font-family.color-font.small Sexta-feira, 10 de julho de 2016
+
+
+						div.row.col-md-04.col-md-offset-4.hours.cursor
+						  	  .hours-box.color-font.font-family.small 14:00
+
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 14:30
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 15:00
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 15:30
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 16:00
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 16:30
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 17:00
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 17:30
+				
+							  
+						
+						div.arrow-hours.for_weeks.cursor
+							img src="assets/images/left.svg" 
 						
 / BUTTON MODAL Gratuito
 button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-gratuito" Agenda Gratuito
@@ -100,57 +158,115 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-gratuito" 
 			.modal-body 
 				button.close data-dismiss="modal" aria-label="Close"
 				  img src="assets/images/menos.svg"/
-				.container-inside-modal__agenda
-					h1.color-font.font-family.large Agende suas fotos:
+ 				.container-inside-modal__agenda
+ 				  .content-inside-modal__agenda
+ 				    .item-slide.active.item-weeks
+						h1.color-font.font-family.large Agende suas fotos:
 
-				    table.days.color-font.font-family.medium
-				       tr
-						th Seg
-						th Ter
-						th Qua
-						th Qui
-						th Sex
-						th Sáb
-				       tr
-						td 01/07
-						td 02/07
-						td 03/07
-						td 04/07
-						td 05/07
-						td 06/07
-					hr.agenda /		
+					    table.days.color-font.font-family.medium
+					       tr
+							th Seg
+							th Ter
+							th Qua
+							th Qui
+							th Sex
+							th Sáb
+					       tr
+							td 01/07
+							td 02/07
+							td 03/07
+							td 04/07
+							td 05/07
+							td 06/07
+						hr.agenda /		
 
-					table.am-pm.color-font.font-family
-				       tr
-						td.color-font.font-family.large Manhã
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
+						table.am-pm.color-font.font-family
+					       tr
+							td.color-font.font-family.large Manhã
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 
-					table.am-pm.color-font.font-family
-				       tr
-						td.agenda-day__afternoon.color-font.font-family.large Tarde
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
-						td 
-						  button.color-font.small 0 horários disponíveis
+						table.am-pm.color-font.font-family
+					       tr
+							td.agenda-day__afternoon.color-font.font-family.large Tarde
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+							td 
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
+						
+						div.arrows-week.cursor 
+							img src="assets/images/left.svg" 
+							 span.date.font-family.color-font.medium 01 à 06 de julho de 2016  
+							img src="assets/images/right.svg"
+
+						
+
+ 				    .item-slide.active.item-hours
+						h1.color-font.font-family.large Escolha um horário:
+
+						div.date-hours
+							img src="assets/images/calendar.svg" 
+							 span.date.font-family.color-font.small Sexta-feira, 10 de julho de 2016
+
+
+						div.row.col-md-04.col-md-offset-4.hours.cursor
+						  	  .hours-box.color-font.font-family.small 14:00
+
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 14:30
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 15:00
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 15:30
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 16:00
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 16:30
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 17:00
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 17:30
+				
+							  
+						
+						div.arrow-hours.for_weeks.cursor
+							img src="assets/images/left.svg" 
 							
 
 / BUTTON MODAL Profissional
@@ -179,7 +295,7 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-profission
 				  img src="assets/images/menos.svg"/
  				.container-inside-modal__agenda
  				  .content-inside-modal__agenda
- 				    .item-slide.active#item-one
+ 				    .item-slide.active.item-weeks
 						h1.color-font.font-family.large Agende suas fotos:
 
 					    table.days.color-font.font-family.medium
@@ -203,89 +319,92 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-profission
 					       tr
 							td.color-font.font-family.large Manhã
 							td 
-							  button.color-font.small 0 horários disponíveis
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 							td 
-							  button.color-font.small 0 horários disponíveis
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 							td 
-							  button.color-font.small 0 horários disponíveis
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 							td 
-							  button.color-font.small 0 horários disponíveis
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 							td 
-							  button.color-font.small 0 horários disponíveis
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 							td 
-							  button.color-font.small 0 horários disponíveis
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 
 						table.am-pm.color-font.font-family
 					       tr
 							td.agenda-day__afternoon.color-font.font-family.large Tarde
 							td 
-							  button.color-font.small 0 horários disponíveis
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 							td 
-							  button.color-font.small 0 horários disponíveis
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 							td 
-							  button.color-font.small 0 horários disponíveis
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 							td 
-							  button.color-font.small 0 horários disponíveis
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 							td 
-							  button.color-font.small 0 horários disponíveis
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 							td 
-							  button.color-font.small 0 horários disponíveis
+							  a.for_hours href="#" 
+							  	button.color-font.small 0 horários disponíveis
 						
-						div.arrows-week
+						div.arrows-week.cursor 
 							img src="assets/images/left.svg" 
-						/ a#for_a href="#" Ir para Artistas
+							 span.date.font-family.color-font.medium 01 à 06 de julho de 2016  
+							img src="assets/images/right.svg"
 
- 				    .item-slide.active#item-two
-						h1 Agende suas fotos:
+						
 
-					    table.days
-					       tr
-							th Seg
-							th Ter
-							th Qua
-							th Qui
-							th Sex
-							th Sáb
-					       tr
-							td 01/07
-							td 02/07
-							td 03/07
-							td 04/07
-							td 05/07
-							td 06/07
-						hr.agenda /		
+ 				    .item-slide.active.item-hours
+						h1.color-font.font-family.large Escolha um horário:
 
-						table.am-pm.color-font.font-family
-					       tr
-							td.color-font.font-family.large Manhã
-							td 
-							  button.color-font.small 0 horários disponíveis
-							td 
-							  button.color-font.small 0 horários disponíveis
-							td 
-							  button.color-font.small 0 horários disponíveis
-							td 
-							  button.color-font.small 0 horários disponíveis
-							td 
-							  button.color-font.small 0 horários disponíveis
-							td 
-							  button.color-font.small 0 horários disponíveis
+						div.date-hours
+							img src="assets/images/calendar.svg" 
+							 span.date.font-family.color-font.small Sexta-feira, 10 de julho de 2016
 
-						table.am-pm.color-font.font-family
-					       tr
-							td.agenda-day__afternoon.color-font.font-family.large Tarde
-							td 
-							  button.color-font.small 0 horários disponíveis
-							td 
-							  button.color-font.small 0 horários disponíveis
-							td 
-							  button.color-font.small 0 horários disponíveis
-							td 
-							  button.color-font.small 0 horários disponíveis
-							td 
-							  button.color-font.small 0 horários disponíveis
-							td 
-							  button.color-font.small 0 horários disponíveis
+
+						div.row.col-md-04.col-md-offset-4.hours.cursor
+						  	  .hours-box.color-font.font-family.small 14:00
+
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 14:30
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 15:00
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 15:30
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 16:00
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 16:30
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 17:00
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+						  	  .hours-box.color-font.font-family.small 17:30
+				
 							  
-						a#for_b href="#" Ir para Artistas
+						
+						div.arrow-hours.for_weeks.cursor
+							img src="assets/images/left.svg" 
 							
+
+
+
+
+

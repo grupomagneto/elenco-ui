@@ -12,21 +12,21 @@ $(".button-modal-agenda__profissional").click(function() {
 
 $(document).ready(function () {
 
-    $("#for_a").click(function () {
-        $("#item-one").animate({
+    $(".for_hours").click(function () {
+        $(".item-weeks").animate({
             marginLeft: "-1600px"
         }, 1000)
 
-        $("#item-two").animate({
+        $(".item-hours").animate({
             marginLeft: "0px"
         }, 1000)
     })
 
-    $("#for_b").click(function () {
-        $("#item-two").animate({
+    $(".for_weeks").click(function () {
+        $(".item-hours").animate({
             marginLeft: "1600px"
         }, 1000)
-        $("#item-one").animate({
+        $(".item-weeks").animate({
             marginLeft: "0px"
         }, 1000)
     })
