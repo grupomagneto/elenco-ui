@@ -1,17 +1,17 @@
 h1.color-font.font-family.x-large Magneto Agendamento
 
 / BUTTON MODAL Premium
-button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-premium" Agenda Premium
+button.btn.btn-default.btn-lg.btn-desktop data-toggle="modal" data-target="#aviso-premium" Agenda Premium
 
 / MODAL
-.wrapper
+.wrapper-desktop
     .modal#aviso-premium role="dialog" aria-labelledby="agendaLabel"
-     	.modal-dialog role="document"
-		  .modal-content.modal-desktop__premium.modal-content-aviso.modal-content-aviso__premium
+     	.modal-dialog.modal-dialog-desktop role="document"
+		  .modal-content.modal-content-desktop.modal-desktop__premium.modal-content-aviso.modal-content-aviso__premium
 			.modal-body 
 				button.close data-dismiss="modal" aria-label="Close"
 				  img src="assets/images/menos.svg"/
-				.container-inside-modal
+				.container-inside-modal_desktop
 					h1.x-large.color-font.font-family Ótimo! 
 					hr /
 					p.large.color-font.font-family
@@ -19,8 +19,8 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-premium" A
 					.button-modal-agenda__premium data-toggle="modal" data-target="#agenda-premium"
 					  img src="assets/images/ok.svg"/
 	.modal#agenda-premium role="dialog" aria-labelledby="agendaLabel"
-	    .modal-dialog role="document"
-		  .modal-content.modal-desktop__premium.modal-content-agenda.modal-content-agenda__premium
+	    .modal-dialog.modal-dialog-desktop role="document"
+		  .modal-content.modal-content-desktop.modal-desktop__premium.modal-content-agenda.modal-content-agenda__premium
 			.modal-body 
 				button.close data-dismiss="modal" aria-label="Close"
 				  img src="assets/images/menos.svg"/
@@ -135,17 +135,17 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-premium" A
 							img src="assets/images/left.svg" 
 						
 / BUTTON MODAL Gratuito
-button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-gratuito" Agenda Gratuito
+button.btn.btn-default.btn-lg.btn-desktop data-toggle="modal" data-target="#aviso-gratuito" Agenda Gratuito
 
 / MODAL
-.wrapper
+.wrapper-desktop
 	.modal#aviso-gratuito role="dialog" aria-labelledby="agendaLabel"
-		.modal-dialog role="document"
-			.modal-content.modal-desktop__gratuito.modal-content-aviso.modal-content-aviso__gratuito
+		.modal-dialog.modal-dialog-desktop role="document"
+			.modal-content.modal-content-desktop.modal-desktop__gratuito.modal-content-aviso.modal-content-aviso__gratuito
 			  .modal-body 
 				button.close data-dismiss="modal" aria-label="Close"
 				  img src="assets/images/menos.svg"/
-				.container-inside-modal
+				.container-inside-modal_desktop
 					h1.x-large.color-font Ótimo! 
 					hr /
 					p.large.color-font
@@ -153,8 +153,8 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-gratuito" 
 					.button-modal-agenda__gratuito data-toggle="modal" data-target="#agenda-gratuito"
 					  img src="assets/images/ok.svg"/
 	.modal#agenda-gratuito role="dialog" aria-labelledby="agendaLabel"
-	    .modal-dialog role="document"
-		  .modal-content.modal-desktop__gratuito.modal-content-agenda.modal-content-agenda__gratuito
+	    .modal-dialog.modal-dialog-desktop role="document"
+		  .modal-content.modal-content-desktop.modal-desktop__gratuito.modal-content-agenda.modal-content-agenda__gratuito
 			.modal-body 
 				button.close data-dismiss="modal" aria-label="Close"
 				  img src="assets/images/menos.svg"/
@@ -270,17 +270,17 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-gratuito" 
 							
 
 / BUTTON MODAL Profissional
-button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-profissional" Agenda Profissional
+button.btn.btn-default.btn-lg.btn-desktop data-toggle="modal" data-target="#aviso-profissional" Agenda Profissional
 
 / MODAL
-.wrapper
+.wrapper-desktop
 	.modal#aviso-profissional role="dialog" aria-labelledby="agendaLabel"
-		.modal-dialog role="document"
-			.modal-content.modal-desktop__profissional.modal-content-aviso.modal-content-aviso__profissional
+		.modal-dialog.modal-dialog-desktop role="document"
+			.modal-content.modal-content-desktop.modal-desktop__profissional.modal-content-aviso.modal-content-aviso__profissional
 			  .modal-body 
 				button.close data-dismiss="modal" aria-label="Close"
 				  img src="assets/images/menos.svg"/
-				.container-inside-modal
+				.container-inside-modal_desktop
 					h1.x-large.color-font Ótimo! 
 					hr /
 					p.large.color-font
@@ -288,8 +288,8 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-profission
 					.button-modal-agenda__profissional data-toggle="modal" data-target="#agenda-profissional"
 					  img src="assets/images/ok.svg"/
 	.modal#agenda-profissional role="dialog" aria-labelledby="agendaLabel"
-	    .modal-dialog role="document"
-		  .modal-content.modal-desktop__profissional.modal-content-agenda.modal-content-agenda__profissional
+	    .modal-dialog.modal-dialog-desktop role="document"
+		  .modal-content.modal-content-desktop.modal-desktop__profissional.modal-content-agenda.modal-content-agenda__profissional
 			.modal-body 
 				button.close data-dismiss="modal" aria-label="Close"
 				  img src="assets/images/menos.svg"/
@@ -403,6 +403,87 @@ button.btn.btn-default.btn-lg data-toggle="modal" data-target="#aviso-profission
 						div.arrow-hours.for_weeks.cursor
 							img src="assets/images/left.svg" 
 							
+
+//MOBILE
+	
+/ BUTTON MODAL MOBILE Premium
+button.btn.btn-default.btn-lg.btn-mobile data-toggle="modal" data-target="#aviso-premium_mobile" Agenda Premium Mobile
+
+.wrapper-mobile
+    .modal#aviso-premium_mobile role="dialog" aria-labelledby="agendaLabel"
+     	.modal-dialog.modal-lg role="document"
+		  .modal-content.modal-content-mobile.modal-desktop__premium.modal-content-aviso.modal-content-aviso__premium
+			.modal-body 
+				button.close data-dismiss="modal" aria-label="Close"
+				  img src="assets/images/menos.svg"/
+				.container-inside-modal_mobile     
+					h1.large.color-font.font-family Ótimo! 
+					hr.aviso-mobile /
+					p.medium.color-font.font-family
+					 | Ao terminar este formulário, você já estará participando de nossas seleções para trabalhos. Mas para aumentar suas chances, que tal fazer fotos profissionais em nossos estúdios?
+					.button-modal-agenda__premium-mobile data-toggle="modal" data-target="#agenda-premium_mobile"
+					  img.ok-aviso-mobile src="assets/images/ok.svg"/
+	.modal#agenda-premium_mobile role="dialog" aria-labelledby="agendaLabel"
+	    .modal-dialog.modal-lg role="document"
+		  .modal-content.modal-content-mobile.modal-desktop__premium.modal-content-agenda.modal-content-agenda__premium
+			.modal-body 
+				button.close data-dismiss="modal" aria-label="Close"
+				  img src="assets/images/menos.svg"/
+ 				.container-inside-modal__agenda-mobile 
+ 				  .content-inside-modal__agenda-mobile
+ 				    .item-slide-mobile.active.item-weeks-mobile
+						h1.color-font.font-family.large Agende suas fotos:
+
+						div.row.col-md-04.col-md-offset-4.hours-mobile.cursor
+							a.for_shift href="#" 
+						  	  .hours-box-mobile.color-font.font-family.small Terça-feira, 10 de julho de 2016
+
+						div.row.col-md-04.col-md-offset-4.cursor
+							a.for_shift href="#" 
+						  	  .hours-box-mobile.color-font.font-family.small Quarta-feira, 11 de julho de 2016
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+							a.for_shift href="#" 
+						  	  .hours-box-mobile.color-font.font-family.small Quinta-feira, 12 de julho de 2016
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+							a.for_shift href="#" 
+						  	  .hours-box-mobile.color-font.font-family.small Sexta-feira, 13 de julho de 2016
+						  	  
+						div.row.col-md-04.col-md-offset-4.cursor
+							a.for_shift href="#" 
+						  	  .hours-box-mobile.color-font.font-family.small Sábado, 14 de julho de 2016
+
+						div.arrows-week-mobile.cursor 
+							img src="assets/images/left.svg" 
+							 span.date.font-family.color-font.medium 10 à 14/07/2016  
+							img src="assets/images/right.svg"
+
+
+ 				    .item-slide-mobile.active.item-shift-mobile
+						h1.color-font.font-family.large Qual o melhor turno?
+
+						div.date-shift-mobile
+							img src="assets/images/calendar.svg" 
+							 span.date.font-family.color-font.small Sexta-feira, 10 de julho de 2016
+
+						div.row.col-md-04.col-md-offset-4.shift-mobile.cursor
+							a.for_shift href="#" 
+								.shift-box-mobile
+									.color-font.font-family.large Manhã
+							  		.color-font.font-family.small 3 horários disponíveis
+							  		
+
+						div.row.col-md-04.col-md-offset-4.cursor
+							a.for_shift href="#" 
+								.shift-box-mobile
+									.color-font.font-family.large Tarde
+							  		.color-font.font-family.small 5 horários disponíveis
+						
+
+						
+						div.arrow-shift-mobile.for_weeks-mobile.cursor.font-family.color-font.medium
+							img src="assets/images/left.svg" Voltar para dia
 
 
 

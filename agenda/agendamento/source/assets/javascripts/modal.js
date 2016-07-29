@@ -2,7 +2,11 @@ $(".button-modal-agenda__premium").click(function() {
   $('#aviso-premium').modal('hide');
 });
 
-$(".button-modal-agenda__premium").click(function() {
+$(".button-modal-agenda__premium-mobile").click(function() {
+  $('#aviso-premium_mobile').modal('hide');
+});
+
+$(".button-modal-agenda__gratuito").click(function() {
   $('#aviso-gratuito').modal('hide');
 });
 
@@ -31,3 +35,26 @@ $(document).ready(function () {
         }, 1000)
     })
 })
+
+$(document).ready(function () {
+
+    $(".for_shift").click(function () {
+        $(".item-weeks-mobile").animate({
+            marginLeft: "-1600px"
+        }, 1000)
+
+        $(".item-shift-mobile").animate({
+            marginLeft: "0px"
+        }, 1000)
+    })
+
+    $(".for_weeks-mobile").click(function () {
+        $(".item-shift-mobile").animate({
+            marginLeft: "1600px"
+        }, 1000)
+        $(".item-weeks-mobile").animate({
+            marginLeft: "0px"
+        }, 1000)
+    })
+})
+
