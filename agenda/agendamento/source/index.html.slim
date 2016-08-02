@@ -427,40 +427,44 @@ button.btn.btn-default.btn-lg.btn-mobile data-toggle="modal" data-target="#aviso
 	    .modal-dialog.modal-lg role="document"
 		  .modal-content.modal-content-mobile.modal-desktop__premium.modal-content-agenda.modal-content-agenda__premium
 			.modal-body 
-				button.close data-dismiss="modal" aria-label="Close"
-				  img src="assets/images/menos.svg"/
- 				.container-inside-modal__agenda-mobile 
- 				  .content-inside-modal__agenda-mobile
- 				    .item-slide-mobile.active.item-weeks-mobile
-						h1.color-font.font-family.large Agende suas fotos:
+				#carousel-example-generic.carousel.slide data-ride="carousel"
+				  .carousel-inner role="listbox"
+				    .item.active
+				      	button.close data-dismiss="modal" aria-label="Close"
+				  		  img src="assets/images/menos.svg"/
+
+				  		h1.color-font.font-family.large Agende suas fotos:
+
 
 						div.row.hours-mobile.cursor
-							a.for_shift href="#" 
+							a.for_shift href="#carousel-example-generic" role="button" data-slide="next"
 						  	  .weeks-box-mobile.color-font.font-family.small Terça-feira, 10 de julho de 2016
 
 						div.row.cursor
-							a.for_shift href="#" 
+							a.for_shift href="#carousel-example-generic" role="button" data-slide="next" 
 						  	  .weeks-box-mobile.color-font.font-family.small Quarta-feira, 11 de julho de 2016
 						  	  
 						div.row.cursor
-							a.for_shift href="#" 
+							a.for_shift href="#carousel-example-generic" role="button" data-slide="next" 
 						  	  .weeks-box-mobile.color-font.font-family.small Quinta-feira, 12 de julho de 2016
 						  	  
 						div.row.cursor
-							a.for_shift href="#" 
-						  	  .weeks-box-mobile.color-font.font-family.small Sexta-feira, 13 de julho de 2016
+							a.for_shift href="#carousel-example-generic" role="button" data-slide="next" 
+						  	  .weeks-box-mobile.color-font.font-family.small Quinta-feira, 12 de julho de 2016
 						  	  
 						div.row.cursor
-							a.for_shift href="#" 
+							a.for_shift href="#carousel-example-generic" role="button" data-slide="next" 
 						  	  .weeks-box-mobile.color-font.font-family.small Sábado, 14 de julho de 2016
 
-						div.arrows-week-mobile.cursor 
+						div.arrows-week-mobile.cursor data-target="#carousel-example-generic" data-slide="prev" 
 							img src="assets/images/left.svg" 
 							 span.date.font-family.color-font.medium 10 à 14/07/2016  
 							img src="assets/images/right.svg"
 
+				   	.item
+				      	button.close data-dismiss="modal" aria-label="Close"
+				  		  img src="assets/images/menos.svg"/
 
- 				    .item-slide-mobile.item-shift-mobile
 						h1.color-font.font-family.large Qual o melhor turno?
 
 						div.date-shift-mobile
@@ -468,27 +472,26 @@ button.btn.btn-default.btn-lg.btn-mobile data-toggle="modal" data-target="#aviso
 							 span.date.font-family.color-font.small Sexta-feira, 10 de julho de 2016
 
 						div.row.col-md-04.col-md-offset-4.shift-mobile.cursor
-							a.for_hours-mobile href="#" 
+							a.for_hours-mobile href="#carousel-example-generic" role="button" data-slide="next" 
 								.shift-box-mobile
 									.color-font.font-family.large Manhã
 							  		.color-font.font-family.small 3 horários disponíveis
 							  		
 
 						div.row.col-md-04.col-md-offset-4.cursor
-							a.for_hours-mobile href="#" 
+							a.for_hours-mobile href="#carousel-example-generic" role="button" data-slide="next" 
 								.shift-box-mobile
 									.color-font.font-family.large Tarde
 							  		.color-font.font-family.small 5 horários disponíveis
 						
+						div.arrow-shift-mobile.cursor.font-family.color-font.medium data-target="#carousel-example-generic" data-slide="prev"
+							img src="assets/images/left.svg" 
+							span Voltar para dia
 
-						
-						div.arrow-shift-mobile.for_weeks-mobile.cursor.font-family.color-font.medium
-							img src="assets/images/left.svg" Voltar para dia
+				   	.item
+				      	button.close data-dismiss="modal" aria-label="Close"
+				  		  img src="assets/images/menos.svg"/
 
-
-
-
- 				    .item-slide-mobile.item-hours-mobile
 						h1.color-font.font-family.large Escolha um horário:
 
 						div.date-hours-mobile
@@ -498,47 +501,65 @@ button.btn.btn-default.btn-lg.btn-mobile data-toggle="modal" data-target="#aviso
 						
 						.row
 						    .col-xs-3
-						    	.hours-box-mobile.color-font.font-family.small 14:00
+								a.for_shift href="#carousel-example-generic" role="button" data-slide="next"
+							    	.hours-box-mobile.color-font.font-family.small 14:00
 						    .col-xs-3
-								.hours-box-mobile.color-font.font-family.small 14:30
+								a.for_shift href="#carousel-example-generic" role="button" data-slide="next"
+									.hours-box-mobile.color-font.font-family.small 14:30
 						.row
 						    .col-xs-3
-						    	.hours-box-mobile.color-font.font-family.small 15:00
+								a.for_shift href="#carousel-example-generic" role="button" data-slide="next"
+							    	.hours-box-mobile.color-font.font-family.small 15:00
 						    .col-xs-3
-						    	.hours-box-mobile.color-font.font-family.small 15:30
+								a.for_shift href="#carousel-example-generic" role="button" data-slide="next"
+							    	.hours-box-mobile.color-font.font-family.small 15:30
 						
 						.row
 						    .col-xs-3
-						    	.hours-box-mobile.color-font.font-family.small 16:00
+								a.for_shift href="#carousel-example-generic" role="button" data-slide="next"
+							    	.hours-box-mobile.color-font.font-family.small 16:00
 						    .col-xs-3
-						    	.hours-box-mobile.color-font.font-family.small 16:30
+								a.for_shift href="#carousel-example-generic" role="button" data-slide="next"
+							    	.hours-box-mobile.color-font.font-family.small 16:30
 						
 						.row
 						    .col-xs-3
-						    	.hours-box-mobile.color-font.font-family.small 17:00
+								a.for_shift href="#carousel-example-generic" role="button" data-slide="next"
+							    	.hours-box-mobile.color-font.font-family.small 17:00
 						    .col-xs-3
-						    	.hours-box-mobile.color-font.font-family.small 17:30
+								a.for_shift href="#carousel-example-generic" role="button" data-slide="next"
+							    	.hours-box-mobile.color-font.font-family.small 17:30
 						
 
 						
-						div.arrow-shift-mobile.for_shift.cursor.font-family.color-font.medium
+						div.arrow-shift-mobile.for_shift.cursor.font-family.color-font.medium data-target="#carousel-example-generic" data-slide="prev"
 							img src="assets/images/left.svg" Voltar para turno
 
+				   	.item
+				      	button.close data-dismiss="modal" aria-label="Close"
+				  		  img src="assets/images/menos.svg"/
 
-
-
-
- 				    .item-slide-mobile.item-review-mobile
 						h1.color-font.font-family.large Revise e confirme:
 
 						div.date-review-mobile
 							img src="assets/images/calendar.svg" 
-							 span.date.font-family.color-font.small Sexta-feira, 10 de julho de 2016
+
+						p.color-font.font-family.large Quarta-feira 
+						p.color-font.font-family.large 11 de julho de 2016
+						p.color-font.font-family.large 15:30
+
+
 
 						
+						button.button-review-mobile.color-font.font-family.medium type="submit" name="agendar" value="foo" Agendar
 						
 
-						
-						div.arrow-shift-mobile.for_review-mobile.cursor.font-family.color-font.medium
+						div.arrow-shift-mobile.for_review-mobile.cursor.font-family.color-font.medium data-target="#carousel-example-generic" data-slide="prev"
 							img src="assets/images/left.svg" Voltar para horário
 
+
+
+
+
+
+ 
