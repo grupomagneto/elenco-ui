@@ -1,6 +1,7 @@
 <?php 
 header("Content-type: text/html; charset=utf-8");
 include("conecta.php");
+session_start();
 
   $dir = 'fotos/'; //Diretório para uploads
   date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
@@ -92,6 +93,21 @@ include("conecta.php");
     $sql2 = "INSERT INTO fotos_mobile (arquivo, data_foto, id_elenco_foto) VALUES ('$new_name', '$hoje', '$id')";
      mysqli_query($link, $sql2);
     }
+    $_SESSION['sexo'] = $sexo;
+    $_SESSION['nome'] = $nome;
+    $_SESSION['sobrenome'] = $sobrenome;
+    $_SESSION['cpf'] = $cpf;
+    $_SESSION['nome_responsavel'] = $nome_responsavel;
+    $_SESSION['data_menor'] = $data_menor;
+    $_SESSION['celular'] = $celular;
+    $_SESSION['email'] = $email;
+    $_SESSION['cadastro'] = $cadastro;
+    $_SESSION['cor_pele'] = $cor_pele;
+    $_SESSION['bairro'] = $bairro;
+    $_SESSION['ig'] = $ig;
+    $_SESSION['face'] = $face;
+    $_SESSION['tt'] = $tt;
+    header ("Location: sucesso.php");
   }
   elseif ($ator != '' || $ator != NULL) {
     $data_maior = $_POST['data_maior'];
@@ -180,8 +196,20 @@ include("conecta.php");
     $sql2 = "INSERT INTO fotos_mobile (arquivo, data_foto, id_elenco_foto) VALUES ('$new_name', '$hoje', '$id')";
      mysqli_query($link, $sql2);
     }
+    $_SESSION['sexo'] = $sexo;
+    $_SESSION['nome'] = $nome;
+    $_SESSION['sobrenome'] = $sobrenome;
+    $_SESSION['cpf'] = $cpf;
+    $_SESSION['data_maior'] = $data_maior;
+    $_SESSION['celular'] = $celular;
+    $_SESSION['email'] = $email;
+    $_SESSION['cadastro'] = $cadastro;
+    $_SESSION['cor_pele'] = $cor_pele;
+    $_SESSION['bairro'] = $bairro;
+    $_SESSION['ig'] = $ig;
+    $_SESSION['face'] = $face;
+    $_SESSION['tt'] = $tt;
+    header ("Location: sucesso.php");
   }
-
-header ("Location: sucesso.php?sexo=$sexo");
 mysqli_close($link);
 ?>

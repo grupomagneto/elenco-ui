@@ -1,100 +1,92 @@
 *{
-	margin: 0;
-	padding: 0;
+margin: 0;
+padding: 0;
 }
 
-@font-face {
-font-family: Avenir-Book;
-font-style: normal;
-font-weight: normal;
-src: local('../fonts/AvenirLTStd-Light.woff'), url('../fonts/AvenirLTStd-Light.woff') format('woff');
-}
+@font-face { font-family: Avenir-Book; font-style: normal; font-weight:600; src: local('../fonts/Avenir-Light.woff'), url('../fonts/Avenir-Light.woff') format('woff'); }
 
- html, body {
-        position: relative;
-  height: 100%;
-  min-height: 100%;
-        width: 100%;
+
+html, body {
+position: relative;
+height: 100%;
+min-height: 100%;
+width: 100%;
 }
 body {
-        margin: 0;
-        padding: 0;
+margin: 0;
+padding: 0;
 }
 
 .gradient4 {
-  display: block;
-  width: 100%;
-  padding: 0px;
-  margin: 0px;
+display: block;
+width: 100%;
+padding: 0px;
+margin: 0px;
 
 }
 .gradient4:after {
-    content: '';
-    display:block;
-    width: 100%;
-    height: 100%;
-    background: url('../images/img-DSC_2882-contraste.png') center center;
-    background-size: cover;
-    opacity: 0.4;
+content: '';
+display:block;
+width: 100%;
+height: 100%;
+background: url('../images/img-DSC_2882-contraste.png') center center;
+background-size: cover;
+opacity: 0.4;
 }
 .sucesso{ 
- 
-      position: absolute;
-      z-index: 9999;
-      margin-left: 25%;
-      margin-top: 10%;
+
+position: absolute;
+z-index: 9999;
+margin-left: 25%;
+margin-top: 10%;
 
 }
 
 .divsucesso_t{
-  margin-bottom: 80px;
+margin-bottom: 80px;
 }
 .divsucesso_box{
-  margin-bottom: 80px;
+margin-bottom: 80px;
 }
 
 
 
 .divsucesso_t h1{
-  width:60px;
-  position: relative;
-  left: 50%;
-  margin-left:-30px;
-  text-align: center;
-  font-family: Avenir-Book;
+width:60px;
+position: relative;
+left: 50%;
+margin-left:-30px;
+text-align: center;
+font-family: Avenir-Book;
 font-size: 32px;
 color: #FFFFFF;
-line-height: 44px;
-font-weight: 600;
 }
 
 .divsucesso_box p{
-  width:400px;
-  position: relative;
-  left: 50%;
-  margin-left:-200px;
-  text-align: center;
-  position: relative;
-  font-family: Avenir-Book;
+width:400px;
+position: relative;
+left: 50%;
+margin-left:-200px;
+text-align: center;
+position: relative;
+font-family: Avenir-Book;
 font-size: 25px;
 color: #FFFFFF;
-line-height: 25px;
-font-weight: 600;
 }
 
 
 .divsucesso_box p a{
-  font-family: Avenir-Book;
+font-family: Avenir-Book;
 font-size: 25px;
 color: #FFFFFF;
 }
 
 
 .divsucesso_logo img{
-  width:200px;
-  position: relative;
-  left: 50%;
-  margin-left:-100px;
+width:200px;
+position: relative;
+left: 50%;
+margin-left:-100px;
 
 }
 
@@ -102,11 +94,11 @@ color: #FFFFFF;
 
 @media only screen and (max-width: 1950px){
 .sucesso{ 
- 
-      position: absolute;
-      z-index: 9999;
-      margin-left: 15%;
-      margin-top: 15%;
+
+position: absolute;
+z-index: 9999;
+margin-left: 15%;
+margin-top: 5%;
 
 }
 
@@ -116,11 +108,11 @@ color: #FFFFFF;
 
 @media only screen and (max-width: 1480px){
 .sucesso{ 
- 
-      position: absolute;
-      z-index: 9999;
-      margin-left: 5%;
-      margin-top: 12%;
+
+position: absolute;
+z-index: 9999;
+margin-left: 5%;
+margin-top: 12%;
 
 }
 
@@ -130,11 +122,11 @@ color: #FFFFFF;
 
 @media only screen and (max-width: 1450px){
 .sucesso{ 
- 
-      position: absolute;
-      z-index: 9999;
-      margin-left: 8%;
-      margin-top: 12%;
+
+position: absolute;
+z-index: 9999;
+margin-left: 8%;
+margin-top: 12%;
 
 }
 
@@ -142,11 +134,11 @@ color: #FFFFFF;
 
 @media only screen and (max-width:740px){
 .sucesso{ 
- 
-      position: absolute;
-      z-index: 9999;
-      margin-left: 35%;
-      margin-top: 12%;
+
+position: absolute;
+z-index: 9999;
+margin-left: 35%;
+margin-top: 12%;
 
 }
 
@@ -155,64 +147,60 @@ color: #FFFFFF;
 
 @media only screen and (max-width:490px){
 .sucesso{ 
- 
-      position: absolute;
-      z-index: 9999;
-      margin-left: 35%;
-      margin-top: 12%;
+
+position: absolute;
+z-index: 9999;
+margin-left: 35%;
+margin-top: 12%;
 
 }
 
 
 .divsucesso_t h1{
-  width:60px;
-  position: relative;
-  left: 50%;
-  margin-left:-60px;
-  text-align: center;
-  font-family: Avenir-Book;
+width:60px;
+position: relative;
+left: 50%;
+margin-left:-60px;
+text-align: center;
+font-family: Avenir-Book;
 font-size: 28px;
 color: #FFFFFF;
-line-height: 44px;
-font-weight: 600;
 }
 
 .divsucesso_box p{
-  width:250px;
-  position: relative;
-  left: 50%;
-  margin-left:-150px;
-  text-align: center;
-  position: relative;
-  font-family: Avenir-Book;
+width:250px;
+position: relative;
+left: 50%;
+margin-left:-150px;
+text-align: center;
+position: relative;
+font-family: Avenir-Book;
 font-size: 18px;
 color: #FFFFFF;
-line-height: 25px;
-font-weight: 600;
 }
 
 
 .divsucesso_box p a{
-  font-family: Avenir-Book;
+font-family: Avenir-Book;
 font-size: 18px;
 color: #FFFFFF;
 }
 
 
 .divsucesso_logo img{
-  width:200px;
-  position: relative;
-  left: 50%;
-  margin-left:-100px;
+width:200px;
+position: relative;
+left: 50%;
+margin-left:-100px;
 
 }
 
 
 .divsucesso_logo img{
-  width:100px;
-  position: relative;
-  left: 50%;
-  margin-left:-100px;
+width:100px;
+position: relative;
+left: 50%;
+margin-left:-100px;
 
 }
 
