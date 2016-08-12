@@ -1,4 +1,5 @@
 require 'slim'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -12,11 +13,10 @@ page '/*.txt', layout: false
 
 # With alternative layout
 # page '/path/to/file.html', layout: :otherlayout
-set :css_dir,     'source/assets/stylesheets'
-set :js_dir,      'source/assets/javascripts/'
-set :images_dir,  'source/assets/images'
-set :layouts_dir, 'source/assets/layouts'
-set :fonts_dir, 'source/assets/fonts'
+css_dir = 'source/stylesheets/'
+js_dir = 'source/javascripts/'
+images_dir = 'source/images/'
+fonts_dir = 'source/fonts/'
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy '/this-page-has-no-template.html', '/template-file.html', locals: {
 #  which_fake_page: 'Rendering a fake page with a local variable' }
@@ -36,9 +36,6 @@ set :fonts_dir, 'source/assets/fonts'
 #     'Helping'
 #   end
 # end
-activate :i18n, mount_at_root: :'en-US'
-
-set :encoding, "ISO-8859-1"
 
 # Build-specific configuration
 configure :build do

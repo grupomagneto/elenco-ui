@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    meta charset="utf-8"
+    meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"
+
+    title = current_page.data.title || "Magneto Elenco - jogo"
+
+
+    == stylesheet_link_tag :site
+    link rel="stylesheet" href="..//stylesheets/swiper.min.css"/
+
+  body class="#{page_classes}"
+
+    == yield
+
+  script src="../javascripts/jquery-1.12.1.min.js"
+  script src="../javascripts/swiper.jquery.min.js"
+  script src="../javascripts/swiper.min.js"
+  script src="../javascripts/all.js"
