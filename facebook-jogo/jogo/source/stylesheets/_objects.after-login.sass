@@ -1,0 +1,41 @@
+.box
+  position: absolute
+  top: 50%
+  left: 50%
+  text-align: center
+  flex-flow: row wrap
+  -webkit-flex-flow: row wrap
+  -o-transform: translate(-50%, -50%)
+  -moz-transform: translate(-50%, -50%)
+  -webkit-transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%)
+  display: -webkit-flex
+  display: -moz-flex
+  display: -o-flex
+  display: flex
+  overflow: auto
+  margin: auto
+  -webkit-align-items: center
+  -moz-align-items: center
+  -o-align-items: center
+  align-items: center
+  -webkit-justify-content: center
+  -moz-justify-content: center
+  -o-justify-content: center
+  justify-content: center  
+
+.row
+  display: table
+  height: auto
+  padding: 10px
+
+.row:before,
+.row:after
+  display: table
+  content: " "
+
+.row:after
+  clear: both
+
+.content-slide_after-login
+  width: 250px
