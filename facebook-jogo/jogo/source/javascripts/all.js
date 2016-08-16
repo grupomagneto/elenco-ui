@@ -12,8 +12,8 @@ var mySwiper = new Swiper ('.swiper-container-v', {
   // Optional parameters
   direction: 'vertical',
   loop: false,
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
+  nextButton: '.swiper-button-next',
+  prevButton: '.swiper-button-prev',
   paginationClickable: true,
   keyboardControl: true,
   speed: 200
