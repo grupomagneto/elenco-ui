@@ -36,5 +36,5 @@ try {
 } catch(FacebookRequestException $ex) {
   // Quando Facebook retorna um erro
 } catch(\Exception $ex) {
-  // Quando a validação falhar o
+  // Quando a validação falhar o login
 }

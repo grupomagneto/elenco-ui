@@ -21,7 +21,7 @@
 
 	<?php if (!isset($_SESSION['facebook'])): ?>
 		<h2>Facebook login</h2>
-		<a href="<?php echo $helper->getLoginUrl($config['scopes']); ?>" class="btn btn-primary">Iniciar com Facebook!</a>
+		<a href="<?php echo $helper->getLoginUrl($config['scopes']); ?>" class="btn btn-primary">Entrar com Facebook</a>
 	<?php else: ?>
 		<p>
 			 <img src='<?php echo $img;?>' /> <br />

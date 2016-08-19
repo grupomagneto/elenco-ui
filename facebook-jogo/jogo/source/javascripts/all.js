@@ -234,5 +234,98 @@ function updateGradient(container) {
 }
 setInterval(function(){updateGradient('.gradient-slide_fourth')},10);
 
+var bar = new ProgressBar.Line(line, {
+  strokeWidth: 1,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#FFFFFF',
+  trailColor: 'rgba(215,215,215,0.30)',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%', borderRadius:'10px'}
+});
+
+bar.animate(0.7);
+
+var bar = new ProgressBar.Line('.line__rating-one', {
+  strokeWidth: 1,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#FFFFFF',
+  trailColor: 'rgba(215,215,215,0.30)',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%', borderRadius:'10px'},
+  text: {
+    value: '0',
+    style: {
+      color: '#fff',
+      position: 'absolute',
+      right: '-50px',
+      top: '0',
+      padding: 0,
+      margin: 0,
+      transform: null
+    }
+  },
+  step: function(state, path, attachment) {
+    bar.setText(Math.round(bar.value() * 100) + ' %');
+  }
+});
+
+bar.animate(0.5);
+
+var bar = new ProgressBar.Line('.line__rating-two', {
+  strokeWidth: 1,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#FFFFFF',
+  trailColor: 'rgba(215,215,215,0.30)',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%', borderRadius:'10px'},
+  text: {
+    value: '0',
+    style: {
+      color: '#fff',
+      position: 'absolute',
+      right: '-50px',
+      top: '0',
+      padding: 0,
+      margin: 0,
+      transform: null
+    }
+  },
+  step: function(state, path, attachment) {
+    bar.setText(Math.round(bar.value() * 100) + ' %');
+  }
+});
+
+bar.animate(0.7);
+
+var bar = new ProgressBar.Line('.line__rating-third', {
+  strokeWidth: 1,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#FFFFFF',
+  trailColor: 'rgba(215,215,215,0.30)',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%', borderRadius:'10px'},
+  text: {
+    value: '0',
+    style: {
+      color: '#fff',
+      position: 'absolute',
+      right: '-50px',
+      top: '0',
+      padding: 0,
+      margin: 0,
+      transform: null
+    }
+  },
+  step: function(state, path, attachment) {
+    bar.setText(Math.round(bar.value() * 100) + ' %');
+  }
+});
+
+bar.animate(0.2);
+
 
 
