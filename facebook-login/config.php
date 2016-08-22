@@ -20,7 +20,7 @@ try {
 	$session = $helper->getSessionFromRedirect();
 	if ($session):
 		$_SESSION['facebook'] = $session->getToken();
-		header('Location: index.php');
+		header('Location: home.php');
 	endif;
 	if (isset($_SESSION['facebook'])):
 		$session = new FacebookSession($_SESSION['facebook']);
