@@ -4,6 +4,7 @@ session_start();
 require 'face_login.php';
 require 'facebook-php/autoload.php';
 
+
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
 use Facebook\FacebookRequest;
@@ -30,7 +31,11 @@ try {
 		$facebook_user = $user;
 		$id = $user->getId();
 		$img = 'https://graph.facebook.com/'.$id.'/picture?width=300';
+		$email = $user->getEmail();
+		$firstname = $user->getFirstName();	
+		$lastname = $user->getLastName();	
  		$birthday = $user->getProperty('birthday');
+ 		$gender = $user->getGender();
 
 	endif;
 } catch(FacebookRequestException $ex) {

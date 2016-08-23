@@ -1,5 +1,14 @@
 <?php
 	require_once 'config.php';
+
+  $_SESSION['id'] = $id;
+  $_SESSION['firstname'] = $firstname;
+  $_SESSION['lastname'] = $lastname;
+  $_SESSION['email'] = $email;
+  $_SESSION['birthday'] = $birthday;
+  $_SESSION['gender'] = $gender;
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +20,7 @@
 
 </head>
 <body>
-<form action="#">
+<form action="register.php" method="post" id="form">
 
 
 <div class="swiper-container">
@@ -30,7 +39,7 @@
           </p>
         </div>
         <div class="row">
-          <button class="button button-medium font-family color-font medium">Completar meu perfil</button>
+          <input class="button button-medium font-family color-font medium" value="Completar meu perfil" type="submit"></input>
         </div>
       </div>
     </div>
@@ -41,34 +50,34 @@
       </h1>
       <div class="box-outline_column">
         <div class="column font-family color-font small">
-          <input class="radio-inline__input" id="agricultura" name="Agricultura" type="radio" value="agricultura" /><label class="radio-inline__label cursor" for="agricultura">Agricultura</label>
+          <input class="radio-inline__input" id="agricultura" name="occupation" type="radio" value="agricultura" /><label class="radio-inline__label cursor" for="agricultura">Agricultura</label>
         </div>
         <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="atvdomestica" name="atvdomestica" type="radio" value="atvdomestica" /><label class="radio-inline__label cursor" for="atvdomestica">Atividade Doméstica</label>
+          <input class="radio-inline__input" id="atvdomestica" name="occupation" type="radio" value="atvdomestica" /><label class="radio-inline__label cursor" for="atvdomestica">Atividade Doméstica</label>
         </div>
         <div class="column font-family color-font small">
-          <input class="radio-inline__input" id="comercio" name="comercio" type="radio" value="comercio" /><label class="radio-inline__label cursor" for="comercio">Comercio</label>
+          <input class="radio-inline__input" id="comercio" name="occupation" type="radio" value="comercio" /><label class="radio-inline__label cursor" for="comercio">Comercio</label>
         </div>
         <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="ensino" name="ensino" type="radio" value="ensino" /><label class="radio-inline__label cursor" for="ensino">Ensino</label>
+          <input class="radio-inline__input" id="ensino" name="occupation" type="radio" value="ensino" /><label class="radio-inline__label cursor" for="ensino">Ensino</label>
         </div>
         <div class="column font-family color-font small">
-          <input class="radio-inline__input" id="estudante" name="estudante" type="radio" value="estudante" /><label class="radio-inline__label cursor" for="estudante">Estudante</label>
+          <input class="radio-inline__input" id="estudante" name="occupation" type="radio" value="estudante" /><label class="radio-inline__label cursor" for="estudante">Estudante</label>
         </div>
         <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="funcpublico" name="funcpublico" type="radio" value="funcpublico" /><label class="radio-inline__label cursor" for="funcpublico">Funcionalismo Público</label>
+          <input class="radio-inline__input" id="funcpublico" name="occupation" type="radio" value="funcpublico" /><label class="radio-inline__label cursor" for="funcpublico">Funcionalismo Público</label>
         </div>
         <div class="column font-family color-font small">
-          <input class="radio-inline__input" id="inativo" name="inativo" type="radio" value="inativo" /><label class="radio-inline__label cursor" for="inativo">Inativo(a)</label>
+          <input class="radio-inline__input" id="inativo" name="occupation" type="radio" value="inativo" /><label class="radio-inline__label cursor" for="inativo">Inativo(a)</label>
         </div>
         <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="indouconstrucao" name="indouconstrucao" type="radio" value="indouconstrucao" /><label class="radio-inline__label cursor" for="indouconstrucao">Industria ou Construção</label>
+          <input class="radio-inline__input" id="indouconstrucao" name="occupation" type="radio" value="indouconstrucao" /><label class="radio-inline__label cursor" for="indouconstrucao">Industria ou Construção</label>
         </div>
         <div class="column font-family color-font small">
-          <input class="radio-inline__input" id="saude" name="saude" type="radio" value="saude" /><label class="radio-inline__label cursor" for="saude">Saúde</label>
+          <input class="radio-inline__input" id="saude" name="occupation" type="radio" value="saude" /><label class="radio-inline__label cursor" for="saude">Saúde</label>
         </div>
         <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="servicos" name="servicos" type="radio" value="servicos" /><label class="radio-inline__label cursor" for="servicos">Serviços</label>
+          <input class="radio-inline__input" id="servicos" name="occupation" type="radio" value="servicos" /><label class="radio-inline__label cursor" for="servicos">Serviços</label>
         </div>
       </div>
     </div>
@@ -79,19 +88,19 @@
       </h1>
       <div class="box-outline_column">
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="880" name="880" type="radio" value="880" /><label class="radio-inline__label-full cursor" for="880">Até R$ 880</label>
+          <input class="radio-inline__input-full" id="880" name="income" type="radio" value="880" /><label class="radio-inline__label-full cursor" for="880">Até R$ 880</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="880-1760" name="880-1760" type="radio" value="880-1760" /><label class="radio-inline__label-full cursor" for="880-1760">De R$ 880 a R$ 1760</label>
+          <input class="radio-inline__input-full" id="880-1760" name="income" type="radio" value="880-1760" /><label class="radio-inline__label-full cursor" for="880-1760">De R$ 880 a R$ 1760</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="1760-4400" name="1760-4400" type="radio" value="1760-4400" /><label class="radio-inline__label-full cursor" for="1760-4400">De R$ 1760 a R$ 4400</label>
+          <input class="radio-inline__input-full" id="1760-4400" name="income" type="radio" value="1760-4400" /><label class="radio-inline__label-full cursor" for="1760-4400">De R$ 1760 a R$ 4400</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="4400-8800" name="4400-8800" type="radio" value="4400-8800" /><label class="radio-inline__label-full cursor" for="4400-8800">De R$  4400 a R$ 8800</label>
+          <input class="radio-inline__input-full" id="4400-8800" name="income" type="radio" value="4400-8800" /><label class="radio-inline__label-full cursor" for="4400-8800">De R$  4400 a R$ 8800</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="8800" name="8800" type="radio" value="8800" /><label class="radio-inline__label-full cursor" for="8800">Mais de R$ 8800</label>
+          <input class="radio-inline__input-full" id="8800" name="income" type="radio" value="8800" /><label class="radio-inline__label-full cursor" for="8800">Mais de R$ 8800</label>
         </div>
       </div>
     </div>
@@ -102,19 +111,19 @@
       </h1>
       <div class="box-outline_column">
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="amarela" name="amarela" type="radio" value="amarela" /><label class="radio-inline__label-full cursor" for="amarela">Amarela</label>
+          <input class="radio-inline__input-full" id="amarela" name="skincolor" type="radio" value="amarela" /><label class="radio-inline__label-full cursor" for="amarela">Amarela</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="branca" name="branca" type="radio" value="branca" /><label class="radio-inline__label-full cursor" for="branca">Branca</label>
+          <input class="radio-inline__input-full" id="branca" name="skincolor" type="radio" value="branca" /><label class="radio-inline__label-full cursor" for="branca">Branca</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="indigena" name="indigena" type="radio" value="indigena" /><label class="radio-inline__label-full cursor" for="indigena">Indígena</label>
+          <input class="radio-inline__input-full" id="indigena" name="skincolor" type="radio" value="indigena" /><label class="radio-inline__label-full cursor" for="indigena">Indígena</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="negra" name="negra" type="radio" value="negra" /><label class="radio-inline__label-full cursor" for="negra">Negra</label>
+          <input class="radio-inline__input-full" id="negra" name="skincolor" type="radio" value="negra" /><label class="radio-inline__label-full cursor" for="negra">Negra</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="parda" name="parda" type="radio" value="parda" /><label class="radio-inline__label-full cursor" for="parda">Parda</label>
+          <input class="radio-inline__input-full" id="parda" name="skincolor" type="radio" value="parda" /><label class="radio-inline__label-full cursor" for="parda">Parda</label>
         </div>
       </div>
     </div>
@@ -125,16 +134,16 @@
       </h1>
       <div class="box-outline_column">
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="fundamental" name="ensinofundamental" type="radio" value="fundamental" /><label class="radio-inline__label-full cursor" for="fundamental">Ensino Fundamental</label>
+          <input class="radio-inline__input-full" id="fundamental" name="schooling" type="radio" value="fundamental" /><label class="radio-inline__label-full cursor" for="fundamental">Ensino Fundamental</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="medio" name="ensinomedio" type="radio" value="medio" /><label class="radio-inline__label-full cursor" for="medio">Ensino Médio</label>
+          <input class="radio-inline__input-full" id="medio" name="schooling" type="radio" value="medio" /><label class="radio-inline__label-full cursor" for="medio">Ensino Médio</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="superior" name="ensinosuperior" type="radio" value="superior" /><label class="radio-inline__label-full cursor" for="superior">Ensino Superior</label>
+          <input class="radio-inline__input-full" id="superior" name="schooling" type="radio" value="superior" /><label class="radio-inline__label-full cursor" for="superior">Ensino Superior</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="posgraduacao" name="posgraduacao" type="radio" value="posgraduacao" /><label class="radio-inline__label-full cursor" for="posgraduacao">Pós-Graduação</label>
+          <input class="radio-inline__input-full" id="posgraduacao" name="schooling" type="radio" value="posgraduacao" /><label class="radio-inline__label-full cursor" for="posgraduacao">Pós-Graduação</label>
         </div>
       </div>
     </div>
@@ -145,16 +154,16 @@
       </h1>
       <div class="box-outline_column">
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="solteiro" name="solteiro" type="radio" value="solteiro" /><label class="radio-inline__label-full cursor" for="solteiro">Solteiro(a)</label>
+          <input class="radio-inline__input-full" id="solteiro" name="maritalstatus" type="radio" value="solteiro" /><label class="radio-inline__label-full cursor" for="solteiro">Solteiro(a)</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="namorando" name="namorando" type="radio" value="namorando" /><label class="radio-inline__label-full cursor" for="namorando">Namorando(a)</label>
+          <input class="radio-inline__input-full" id="namorando" name="maritalstatus" type="radio" value="namorando" /><label class="radio-inline__label-full cursor" for="namorando">Namorando(a)</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="casado" name="casado" type="radio" value="casado" /><label class="radio-inline__label-full cursor" for="casado">Casado(a)</label>
+          <input class="radio-inline__input-full" id="casado" name="maritalstatus" type="radio" value="casado" /><label class="radio-inline__label-full cursor" for="casado">Casado(a)</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="divorciado" name="divorciado" type="radio" value="divorciado" /><label class="radio-inline__label-full cursor" for="divorciado">Divorciado(a)</label>
+          <input class="radio-inline__input-full" id="divorciado" name="maritalstatus" type="radio" value="divorciado" /><label class="radio-inline__label-full cursor" for="divorciado">Divorciado(a)</label>
         </div>
       </div>
     </div>
@@ -257,9 +266,8 @@
           <div class="line__rating-third"></div>
         </div>
 
-        <a href="logout.php">
 
-        	<button class="button-login button button-medium">
+        	<button class="button-login button button-medium" type="submit">
             <div class="button-login_image">
               <img src="images/fb.svg" />
             </div>
@@ -269,8 +277,6 @@
               </p>
             </div>
           </button>
-
-        </a>
 
       </div>
     </div>
