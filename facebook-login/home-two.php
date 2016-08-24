@@ -1,13 +1,7 @@
 <?php
-	require_once 'config.php';
+  require_once 'config.php';
 
-  $_SESSION['id'] = $id;
-  $_SESSION['firstname'] = $firstname;
-  $_SESSION['lastname'] = $lastname;
-  $_SESSION['email'] = $email;
-  $_SESSION['gender'] = $gender;
-
-
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +20,7 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
 
-<div class="swiper-slide gradient">
+<!-- <div class="swiper-slide gradient">
       <div class="box">
         <div class="row">
           <p class="content-slide_after-login font-family color-font medium">
@@ -42,9 +36,9 @@
           <input class="button button-medium font-family color-font medium" value="Completar meu perfil" type="submit"></input>
         </div>
       </div>
-    </div>
+    </div> -->
 
-<!--     <div class="swiper-slide gradient">
+   <div class="swiper-slide gradient">
       <h1 class="pergunta font-family color-font medium">
         Qual sua área de ocupação?
       </h1>
@@ -81,7 +75,7 @@
         </div>
       </div>
     </div>
-
+<!--  
     <div class="swiper-slide gradient">
       <h1 class="pergunta font-family color-font medium">
         Qual sua renda familiar?
