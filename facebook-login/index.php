@@ -26,15 +26,24 @@
     <div class="swiper-slide gradient-slide_first">
       <div class="image-slide">
         <div class="image-game"></div>
-      </div>
-    </div>
-
-    <div class="swiper-slide gradient-slide_second">
-      <p class="content-slide font-family color-font medium">
-        Ajude seus amigos a participarem de propagandas
+      </div> 
+      <p class="content-slide bottom-image font-family color-font medium">
+       Ajude seus amigos a participarem de propagandas
       </p>
     </div>
 
+    <div class="footer-index">
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="swiper-slide gradient-slide_second">
+      <p class="content-slide font-family color-font medium">
+        Participe da votação para escolha do melhor perfil para campanha
+      </p>
+    </div>
+
+    <div class="footer-index">
+      <div class="swiper-pagination"></div>
+    </div>
     <div class="swiper-slide gradient-slide_third">
       <p class="content-slide font-family color-font medium">
         Os perfis mais votados são apresentados aos anunciantes

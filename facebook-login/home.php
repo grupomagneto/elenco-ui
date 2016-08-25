@@ -27,6 +27,7 @@
   <div class="swiper-wrapper">
 
 <div class="swiper-slide gradient">
+
       <div class="box">
         <div class="row">
           <p class="content-slide_after-login font-family color-font medium">
@@ -39,7 +40,10 @@
           </p>
         </div>
         <div class="row">
-          <input class="button button-medium font-family color-font medium" value="Completar meu perfil" type="submit"></input>
+          <input class="button button-medium font-family color-font medium" value="Completar meu perfil" name="face" type="submit"></input>
+        </div>
+        <div class="row">
+          <a href="logout.php">logout</a>
         </div>
       </div>
     </div>
@@ -283,26 +287,9 @@
 
 
  </div>
-</div>
+ </div>
 
 </form>
-<!-- 
-		<h1>HOME</h1>
-	
-	
-		<p>
-			 <img src='<?php echo $img;?>' /> <br />
-			Id: <?php echo $facebook_user->getId(); ?> <br />
-			Primeiro nome: <?php echo $facebook_user->getFirstName(); ?> <br />
-			Último nome: <?php echo $facebook_user->getLastName(); ?> <br />
-			Email: <?php echo $facebook_user->getEmail(); ?> <br />
-			Gênero: <?php echo $facebook_user->getGender(); ?> <br />
-			Data de aniversário: <?php echo $birthday ?> <br />
-
-		</p>
-		<a href="logout.php" class="btn btn-danger">Encerrar sessão</a> -->
-
-
  
 
 	<script src="javascripts/jquery-1.12.1.min.js"></script>
