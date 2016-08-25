@@ -1,8 +1,7 @@
-<?php 
-
+<?php
 session_start();
-  require_once("db.php");
-  require_once("functions.php");
+require_once("db.php");
+require_once("functions.php");
 
 $id = $_SESSION['id'];
 $firstname = $_SESSION['firstname'];
@@ -12,28 +11,16 @@ $gender = $_SESSION['gender'];
 
 $occupation = $_POST["occupation"];
 
-
-?>
-
-<?php
 	if(insert($link2, $id, $firstname, $lastname, $email, $gender)) {
 
-?>
-<?php
 	} else {
 		$msg = mysqli_error($link2);
 ?>
 	<p> <?php echo $firstname; ?>, <?php echo $lastname; ?> não foi adicionado: <?= $msg ?> </p>
 <?php
 	}
-
 header('Location: home-two.php');
 
-?>
-
-
-
-<?php
 	if(insert_occupation($link2, $occupation)) {
 ?>
 <p> 
