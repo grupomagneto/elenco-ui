@@ -32,9 +32,8 @@ try {
 		$id = $user->getId();
 		$img = 'https://graph.facebook.com/'.$id.'/picture?width=300';
 		$email = $user->getEmail();
-		$firstname = $user->getFirstName();	
-		$lastname = $user->getLastName();	
- 		$birthday = $user->getProperty('birthday');
+		$firstname = $user->getFirstName();
+		$lastname = $user->getLastName();
  		$gender = $user->getGender();
 
 	endif;
