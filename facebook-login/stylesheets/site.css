@@ -81,12 +81,6 @@ a:hover {
 /* ==========================================================================
    Typography
    ========================================================================== */
-/*
- * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
- * Safari 5, and Chrome.
- */
-h1 {
-  font-size: 2em; }
 
 /*
  * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
@@ -100,12 +94,6 @@ abbr[title] {
 b,
 strong {
   font-weight: bold; }
-
-/*
- * Addresses styling not present in Safari 5 and Chrome.
- */
-dfn {
-  font-style: italic; }
 
 /*
  * Corrects font family set oddly in Safari 5 and Chrome.
@@ -676,6 +664,13 @@ form{ height:100%; }
   -o-justify-content: center;
   justify-content: center; }
 
+.box_or {
+  -o-transform: translate(-40%, -430%);
+  -moz-transform: translate(-40%, -430%);
+  -webkit-transform: translate(-40%, -430%);
+  transform: translate(-40%, -430%);
+}
+
 .box-outline__counter-compare {
   position: absolute;
   top: 75%;
@@ -722,7 +717,8 @@ form{ height:100%; }
   max-width: 100%;
   height: 100%;
   margin: auto;
-  margin-top: 50%;
+  left: 50%;
+  top: 50%;
   -webkit-align-items: center;
   -moz-align-items: center;
   -o-align-items: center;
@@ -730,7 +726,11 @@ form{ height:100%; }
   -webkit-justify-content: center;
   -moz-justify-content: center;
   -o-justify-content: center;
-  justify-content: center; }
+  justify-content: center;
+  -o-transform: translate( -1%, 30%);
+  -moz-transform: translate( -1%, 30%);
+  -webkit-transform: translate( -1%, 30%);
+  transform: translate( -1%, 30%); }
 
 .box-compare {
   width: 150px;
@@ -740,7 +740,7 @@ form{ height:100%; }
   margin-top: 5px;
   width: 45%;
   float: left;
-  margin-left: 5px; }
+  margin-left: 10px; }
 
 .column-compare_two {
   margin-top: 5px;
@@ -807,12 +807,14 @@ form{ height:100%; }
   clip: rect(1px1px1px1px);
   position: absolute !important;
   z-index: 9999;
-  width: 100px;
-  padding: 10px; }
+  width: 100px; }
 
 .radio-inline__label {
   display: inline-block;
-  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
   background: rgba(215, 215, 215, 0.3);
   border: 1px solid #FFFFFF;
   border-radius: 8px;
@@ -827,14 +829,14 @@ form{ height:100%; }
 
 .radio-inline__input-full {
   clip: rect(1px, 1px, 1px, 1px);
-  clip: rect(1px1px1px1px);
+  clip: rect(1px 1px 1px 1px);
   position: absolute !important;
   z-index: 9999;
   width: 250px; }
 
 .radio-inline__label-full {
   display: inline-block;
-  padding: 10px;
+  padding-top: 15px;
   background: rgba(215, 215, 215, 0.3);
   border: 1px solid #FFFFFF;
   border-radius: 8px;
