@@ -17,7 +17,6 @@ session_start();
 <form action="register.php" method="post" id="form">
 
 
-<div class="swiper-container">
   <div class="swiper-wrapper">
 
 <!-- <div class="swiper-slide gradient">
@@ -36,7 +35,7 @@ session_start();
           <input class="button button-medium font-family color-font medium" value="Completar meu perfil" type="submit"></input>
         </div>
       </div>
-    </div> -->
+    </div>
 
    <div class="swiper-slide gradient">
       <h1 class="pergunta font-family color-font medium">
@@ -47,58 +46,58 @@ session_start();
           <input class="radio-inline__input" id="agricultura" name="occupation" type="submit" value="agricultura"  /><label class="radio-inline__label cursor" for="agricultura">Agricultura</label>
         </div>
         <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="atvdomestica" name="occupation" type="radio" value="atvdomestica" /><label class="radio-inline__label cursor" for="atvdomestica">Atividade Doméstica</label>
+          <input class="radio-inline__input" id="atvdomestica" name="occupation" type="submit" value="atvdomestica" /><label class="radio-inline__label cursor" for="atvdomestica">Atividade Doméstica</label>
         </div>
         <div class="column font-family color-font small">
-          <input class="radio-inline__input" id="comercio" name="occupation" type="radio" value="comercio" /><label class="radio-inline__label cursor" for="comercio">Comercio</label>
+          <input class="radio-inline__input" id="comercio" name="occupation" type="submit" value="comercio" /><label class="radio-inline__label cursor" for="comercio">Comercio</label>
         </div>
         <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="ensino" name="occupation" type="radio" value="ensino" /><label class="radio-inline__label cursor" for="ensino">Ensino</label>
+          <input class="radio-inline__input" id="ensino" name="occupation" type="submit" value="ensino" /><label class="radio-inline__label cursor" for="ensino">Ensino</label>
         </div>
         <div class="column font-family color-font small">
-          <input class="radio-inline__input" id="estudante" name="occupation" type="radio" value="estudante" /><label class="radio-inline__label cursor" for="estudante">Estudante</label>
+          <input class="radio-inline__input" id="estudante" name="occupation" type="submit" value="estudante" /><label class="radio-inline__label cursor" for="estudante">Estudante</label>
         </div>
         <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="funcpublico" name="occupation" type="radio" value="funcpublico" /><label class="radio-inline__label cursor" for="funcpublico">Funcionalismo Público</label>
+          <input class="radio-inline__input" id="funcpublico" name="occupation" type="submit" value="funcpublico" /><label class="radio-inline__label cursor" for="funcpublico">Funcionalismo Público</label>
         </div>
         <div class="column font-family color-font small">
-          <input class="radio-inline__input" id="inativo" name="occupation" type="radio" value="inativo" /><label class="radio-inline__label cursor" for="inativo">Inativo(a)</label>
+          <input class="radio-inline__input" id="inativo" name="occupation" type="submit" value="inativo" /><label class="radio-inline__label cursor" for="inativo">Inativo(a)</label>
         </div>
         <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="indouconstrucao" name="occupation" type="radio" value="indouconstrucao" /><label class="radio-inline__label cursor" for="indouconstrucao">Industria ou Construção</label>
+          <input class="radio-inline__input" id="indouconstrucao" name="occupation" type="submit" value="indouconstrucao" /><label class="radio-inline__label cursor" for="indouconstrucao">Industria ou Construção</label>
         </div>
         <div class="column font-family color-font small">
-          <input class="radio-inline__input" id="saude" name="occupation" type="radio" value="saude" /><label class="radio-inline__label cursor" for="saude">Saúde</label>
+          <input class="radio-inline__input" id="saude" name="occupation" type="submit" value="saude" /><label class="radio-inline__label cursor" for="saude">Saúde</label>
         </div>
         <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="servicos" name="occupation" type="radio" value="servicos" /><label class="radio-inline__label cursor" for="servicos">Serviços</label>
+          <input class="radio-inline__input" id="servicos" name="occupation" type="submit" value="servicos" /><label class="radio-inline__label cursor" for="servicos">Serviços</label>
         </div>
       </div>
-    </div>
-<!--  
+    </div> 
+
     <div class="swiper-slide gradient">
       <h1 class="pergunta font-family color-font medium">
         Qual sua renda familiar?
       </h1>
       <div class="box-outline_column">
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="880" name="income" type="radio" value="880" /><label class="radio-inline__label-full cursor" for="880">Até R$ 880</label>
+          <input class="radio-inline__input-full" id="880" name="income" type="submit" value="880" /><label class="radio-inline__label-full cursor" for="880">Até R$ 880</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="880-1760" name="income" type="radio" value="880-1760" /><label class="radio-inline__label-full cursor" for="880-1760">De R$ 880 a R$ 1760</label>
+          <input class="radio-inline__input-full" id="880-1760" name="income" type="submit" value="880-1760" /><label class="radio-inline__label-full cursor" for="880-1760">De R$ 880 a R$ 1760</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="1760-4400" name="income" type="radio" value="1760-4400" /><label class="radio-inline__label-full cursor" for="1760-4400">De R$ 1760 a R$ 4400</label>
+          <input class="radio-inline__input-full" id="1760-4400" name="income" type="submit" value="1760-4400" /><label class="radio-inline__label-full cursor" for="1760-4400">De R$ 1760 a R$ 4400</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="4400-8800" name="income" type="radio" value="4400-8800" /><label class="radio-inline__label-full cursor" for="4400-8800">De R$  4400 a R$ 8800</label>
+          <input class="radio-inline__input-full" id="4400-8800" name="income" type="submit" value="4400-8800" /><label class="radio-inline__label-full cursor" for="4400-8800">De R$  4400 a R$ 8800</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="8800" name="income" type="radio" value="8800" /><label class="radio-inline__label-full cursor" for="8800">Mais de R$ 8800</label>
+          <input class="radio-inline__input-full" id="8800" name="income" type="submit" value="8800" /><label class="radio-inline__label-full cursor" for="8800">Mais de R$ 8800</label>
         </div>
       </div>
     </div>
-
+  
     <div class="swiper-slide gradient">
       <h1 class="pergunta font-family color-font medium">
         Qual a cor da sua pele?
@@ -128,16 +127,16 @@ session_start();
       </h1>
       <div class="box-outline_column">
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="fundamental" name="schooling" type="radio" value="fundamental" /><label class="radio-inline__label-full cursor" for="fundamental">Ensino Fundamental</label>
+          <input class="radio-inline__input-full" id="fundamental" name="scholarity" type="submit" value="fundamental" /><label class="radio-inline__label-full cursor" for="fundamental">Ensino Fundamental</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="medio" name="schooling" type="radio" value="medio" /><label class="radio-inline__label-full cursor" for="medio">Ensino Médio</label>
+          <input class="radio-inline__input-full" id="medio" name="scholarity" type="submit" value="medio" /><label class="radio-inline__label-full cursor" for="medio">Ensino Médio</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="superior" name="schooling" type="radio" value="superior" /><label class="radio-inline__label-full cursor" for="superior">Ensino Superior</label>
+          <input class="radio-inline__input-full" id="superior" name="scholarity" type="submit" value="superior" /><label class="radio-inline__label-full cursor" for="superior">Ensino Superior</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="posgraduacao" name="schooling" type="radio" value="posgraduacao" /><label class="radio-inline__label-full cursor" for="posgraduacao">Pós-Graduação</label>
+          <input class="radio-inline__input-full" id="posgraduacao" name="scholarity" type="submit" value="posgraduacao" /><label class="radio-inline__label-full cursor" for="posgraduacao">Pós-Graduação</label>
         </div>
       </div>
     </div>
@@ -148,16 +147,16 @@ session_start();
       </h1>
       <div class="box-outline_column">
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="solteiro" name="maritalstatus" type="radio" value="solteiro" /><label class="radio-inline__label-full cursor" for="solteiro">Solteiro(a)</label>
+          <input class="radio-inline__input-full" id="solteiro" name="relationship_status" type="submit" value="solteiro" /><label class="radio-inline__label-full cursor" for="solteiro">Solteiro(a)</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="namorando" name="maritalstatus" type="radio" value="namorando" /><label class="radio-inline__label-full cursor" for="namorando">Namorando(a)</label>
+          <input class="radio-inline__input-full" id="namorando" name="relationship_status" type="submit" value="namorando" /><label class="radio-inline__label-full cursor" for="namorando">Namorando(a)</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="casado" name="maritalstatus" type="radio" value="casado" /><label class="radio-inline__label-full cursor" for="casado">Casado(a)</label>
+          <input class="radio-inline__input-full" id="casado" name="relationship_status" type="submit" value="casado" /><label class="radio-inline__label-full cursor" for="casado">Casado(a)</label>
         </div>
         <div class="column-full font-family color-font small">
-          <input class="radio-inline__input-full" id="divorciado" name="maritalstatus" type="radio" value="divorciado" /><label class="radio-inline__label-full cursor" for="divorciado">Divorciado(a)</label>
+          <input class="radio-inline__input-full" id="divorciado" name="relationship_status" type="submit" value="divorciado" /><label class="radio-inline__label-full cursor" for="divorciado">Divorciado(a)</label>
         </div>
       </div>
     </div>
@@ -201,7 +200,7 @@ session_start();
           </p>
         </div>
       </div>
-    </div>
+    </div>-->
 
     <div class="swiper-slide gradient">
       <div class="pergunta font-family color-font medium">
@@ -211,7 +210,7 @@ session_start();
         <div class="column-compare">
           <div class="box-compare box-compare_style"></div>
         </div>
-        <div class="box">
+        <div class="box box_or">
           <img class="or" src="images/or.svg" />
         </div>
         <div class="column-compare_two">
@@ -225,7 +224,7 @@ session_start();
         <div id="line" value="10"></div>
       </div>
     </div>
-
+<!--
     <div class="swiper-slide gradient">
       <div class="pergunta font-family color-font medium">
         Estes são os perfis que você escolheu para a fase final:
@@ -277,25 +276,8 @@ session_start();
 
 
  </div>
-</div>
 
 </form>
-<!-- 
-		<h1>HOME</h1>
-	
-	
-		<p>
-			 <img src='<?php echo $img;?>' /> <br />
-			Id: <?php echo $facebook_user->getId(); ?> <br />
-			Primeiro nome: <?php echo $facebook_user->getFirstName(); ?> <br />
-			Último nome: <?php echo $facebook_user->getLastName(); ?> <br />
-			Email: <?php echo $facebook_user->getEmail(); ?> <br />
-			Gênero: <?php echo $facebook_user->getGender(); ?> <br />
-			Data de aniversário: <?php echo $birthday ?> <br />
-
-		</p>
-		<a href="logout.php" class="btn btn-danger">Encerrar sessão</a> -->
-
 
  
 
