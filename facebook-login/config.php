@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+require 'db.php';
 require 'face_login.php';
 require 'facebook-php/autoload.php';
 
@@ -18,10 +19,12 @@ FacebookSession::setDefaultApplication($config['app_id'], $config['app_secret'])
 $helper = new FacebookRedirectLoginHelper('http://localhost:8888/elenco-ui/facebook-login/index.php');
 
 try {
+
 	$session = $helper->getSessionFromRedirect();
 	if ($session):
 		$_SESSION['facebook'] = $session->getToken();
-		header('Location: home.php');
+		header('Location: redirect.php');
+
 	endif;
 	if (isset($_SESSION['facebook'])):
 		$session = new FacebookSession($_SESSION['facebook']);

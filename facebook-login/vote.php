@@ -186,6 +186,8 @@ echo "
     <div class='swiper-slide gradient'>
       <div class='pergunta font-family color-font medium'>
         $question
+
+          <a href='logout.php'>logout</a>
       </div>
       <div class='box-outline_compare'>
         <div class='column-compare'>
