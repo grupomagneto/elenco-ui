@@ -186,9 +186,10 @@ echo "
     <div class='swiper-slide gradient'>
       <div class='pergunta font-family color-font medium'>
         $question
+      </div>
 
           <a href='logout.php'>logout</a>
-      </div>
+          
       <div class='box-outline_compare'>
         <div class='column-compare'>
           <div class='box-compare box-compare_style'>
@@ -241,13 +242,9 @@ echo "
       </div>
 
       <div class='box-outline__counter-compare'>
-        <div id='line' value='10'>              <div class='row'>
-          <a href='logout.php'>logout</a>
-        </div>
           <div class='progress'>
           <progress id='progressbar' value='$current_progress' max='$total_progress'></progress>
           </div>
-        </div>
       </div>
     </div>
  </div>

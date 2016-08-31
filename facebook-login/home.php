@@ -28,6 +28,9 @@
 
 <div class="swiper-slide gradient">
 
+        <div class="row">
+          <a href="logout.php">logout</a>
+        </div>
       <div class="box">
         <div class="row">
           <p class="content-slide_after-login font-family color-font medium">
@@ -42,11 +45,8 @@
         <div class="row">
           <input class="button button-medium font-family color-font medium" value="Completar meu perfil" name="face" type="submit"></input>
         </div>
-        <div class="row">
-          <a href="logout.php">logout</a>
-        </div>
       </div>
-    </div>
+</div>
 
 <!--     <div class="swiper-slide gradient">
       <h1 class="pergunta font-family color-font medium">

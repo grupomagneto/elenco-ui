@@ -36,6 +36,9 @@
       <div class="swiper-pagination"></div>
     </div>
     <div class="swiper-slide gradient-slide_second">
+      <div class="image-slide">
+        <div class="image-game"></div>
+      </div> 
       <p class="content-slide font-family color-font medium">
         Participe da votação para escolha do melhor perfil para campanha
       </p>
@@ -45,6 +48,9 @@
       <div class="swiper-pagination"></div>
     </div>
     <div class="swiper-slide gradient-slide_third">
+      <div class="image-slide">
+        <div class="image-game"></div>
+      </div> 
       <p class="content-slide font-family color-font medium">
         Os perfis mais votados são apresentados aos anunciantes
       </p>
@@ -64,6 +70,7 @@
           </p>
         </div>
       </button></a>
+     <a href="#" class="content-slide privacy font-family color-font">Política de Privacidade</a>
     </div>
 
  </div>

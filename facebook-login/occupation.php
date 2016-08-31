@@ -25,7 +25,7 @@ session_start();
       <h1 class="pergunta font-family color-font medium">
         Qual sua área de ocupação?
       </h1>
-      <div class="box-outline_column">
+      <div class="box-outline_column occupation">
         <div class="column font-family color-font small">
           <input class="radio-inline__input" id="agricultura" name="occupation" type="submit" value="agricultura"  /><label class="radio-inline__label cursor" for="agricultura">Agricultura</label>
         </div>
