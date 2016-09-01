@@ -8,12 +8,6 @@ var mySwiper = new Swiper ('.swiper-container', {
 	speed: 200
 })
 
-$('.swiper-container').each(function(){
-    new Swiper($(this), {
-        pagination: $(this).find('.swiper-pagination'),
-        paginationClickable: $(this).find('.swiper-pagination')
-    });
-});
 
 var colors = new Array(
 [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
