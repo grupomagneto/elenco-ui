@@ -71,7 +71,7 @@
           </p>
         </div>
       </button></a>
-     <a href="#" class="content-slide privacy font-family color-font">Política de Privacidade</a>
+     <a href="http://www.magnetoelenco.com.br/privacidade.html" class="content-slide privacy font-family color-font">Política de Privacidade</a>
     </div>
 
  </div>

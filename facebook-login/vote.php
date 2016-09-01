@@ -1,6 +1,5 @@
 <?php
 require_once 'config.php';
-session_start();
 $id = $_SESSION['id'];
 include('conecta.php');
 date_default_timezone_set('America/Sao_Paulo');

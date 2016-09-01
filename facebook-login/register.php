@@ -16,8 +16,6 @@ $scholarity = $_POST["scholarity"];
 $relationship_status = $_POST["relationship_status"];
 
 
-
-
 ?>
 
 
