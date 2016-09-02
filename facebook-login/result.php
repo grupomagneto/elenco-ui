@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv='Content-type' content='text/html; charset=UTF-8' />
 <title>Resultado Parcial Meu Modelo Favorito</title>
+<link rel="stylesheet" href="stylesheets/site.css">
 </head><body>
 <?php
 include('conecta.php');
@@ -32,19 +33,78 @@ $percent1 = $total_wins1 / $total * 100;
 $percent2 = $total_wins2 / $total * 100;
 
 echo "
-<div><center><img src='http://www.magnetoelenco.com.br/fotos/$winner_photo1' class='foto' width=100px height=100px>
-<p>$winner_name1</p></center>
 
-<div class='progress'>
-<progress id='progressbar98' value='$percent1' max='100'></progress></div>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8'>
+	<title>Home</title>
+	<link rel='stylesheet' href='stylesheets/site.css'>
+	<link rel='stylesheet' href='stylesheets/swiper.min.css'>
+</head>
 
 
-<center><img src='http://www.magnetoelenco.com.br/fotos/$winner_photo2' class='foto' width=100px height=100px>
-<p>$winner_name2</p></center>
+<body>
 
-<div class='progress'>
-<progress id='progressbar99' value='$percent2' max='100'></progress></div></div>
+
+  <div class='swiper-wrapper'>
+    <div class='swiper-slide gradient'>
+ 	<h1 class='pergunta font-family color-font medium '>
+        Obrigado por votar! <br /> Veja como está a classificação:
+      </h1>
+	<div class='row result-one'>
+
+	<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo1' class='foto' width=100px height=100px>
+		<p>$winner_name1</p>
+
+		<div class='progress progress-result'>
+			<progress id='progressbar98' value='$percent1' max='100'></progress>
+		</div>
+	</div>
+
+
+	<div class='row result-two'>
+		<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo2' class='foto' width=100px height=100px>
+		<p>$winner_name2</p>
+
+		<div class='progress  progress-result'>
+			<progress id='progressbar99' value='$percent2' max='100'></progress>
+		</div>
+
+	</div>
+
+  
+     <button class='button-login button button-medium button-result'>
+        <div class='button-login_image'>
+          <img src='images/fb.svg' />
+        </div>
+        <div class='button-login_content'>
+          <p class='font-family color-font medium'>
+           Convidar seus amigos
+          </p>
+        </div>
+      </button>
+     
+    </div>
+
+    </div>
+ </div>
+
+
+
+</body>
+
+
+<script src='javascripts/jquery-1.12.1.min.js'></script>
+<script src='javascripts/swiper.jquery.min.js'></script>
+<script src='javascripts/swiper.min.js'></script>
+<script src='javascripts/progressbar.min.js'></script>
+<script src='javascripts/all.js'></script>;
+
+
 ";
+
+
 mysqli_close($link2);
 ?>
 </div>
