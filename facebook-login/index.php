@@ -7,7 +7,6 @@
 	<meta charset="UTF-8">
 	<title>Meu Modelo Favorito por Magneto Elenco</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="stylesheets/site.css">
 	<link rel="stylesheet" href="stylesheets/swiper.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 

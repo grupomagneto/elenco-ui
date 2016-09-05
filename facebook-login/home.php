@@ -17,6 +17,7 @@
 	<title>Home</title>
 	<link rel="stylesheet" href="stylesheets/site.css">
 	<link rel="stylesheet" href="stylesheets/swiper.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
 
 </head>
 <body>
