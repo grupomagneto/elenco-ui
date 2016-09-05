@@ -22,19 +22,19 @@
         Qual a cor da sua pele?
       </h1>
       <div class="box-outline_column">
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="amarela" name="skincolor" type="submit" value="amarela" /><label class="radio-inline__label-full cursor" for="amarela">Amarela</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="branca" name="skincolor" type="submit" value="branca" /><label class="radio-inline__label-full cursor" for="branca">Branca</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="indigena" name="skincolor" type="submit" value="indigena" /><label class="radio-inline__label-full cursor" for="indigena">Indígena</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="negra" name="skincolor" type="submit" value="negra" /><label class="radio-inline__label-full cursor" for="negra">Negra</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="parda" name="skincolor" type="submit" value="parda" /><label class="radio-inline__label-full cursor" for="parda">Parda</label>
         </div>
       </div>

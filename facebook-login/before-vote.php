@@ -31,7 +31,7 @@
         </div>
         <div class="row">
           <p class="content-slide_after-login font-family color-font medium">
-            Leia a pergunta e vote até o final par ajudar na escolha do seu amigo
+            Leia a pergunta e vote até o final para ajudar na escolha do seu(ua) amigo(a).
           </p>
         </div>
         <div class="row">

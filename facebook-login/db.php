@@ -46,6 +46,4 @@ $success2 = mysqli_real_connect(
   $password2,
   $db2
 );
-
-
 ?>

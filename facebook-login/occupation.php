@@ -24,37 +24,68 @@
         Qual sua área de ocupação?
       </h1>
       <div class="box-outline_column occupation">
-        <div class="column font-family color-font small">
+      <div class="table">
+        <div class="table_row">
+        <div class="table_cell">
+          <div class="column font-family color-font medium">
           <input class="radio-inline__input" id="agricultura" name="occupation" type="submit" value="agricultura"  /><label class="radio-inline__label cursor" for="agricultura">Agricultura</label>
         </div>
-        <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="atvdomestica" name="occupation" type="submit" value="atvdomestica" /><label class="radio-inline__label cursor" for="atvdomestica">Atividade Doméstica</label>
         </div>
-        <div class="column font-family color-font small">
-          <input class="radio-inline__input" id="comercio" name="occupation" type="submit" value="comercio" /><label class="radio-inline__label cursor" for="comercio">Comercio</label>
+        <div class="table_cell">
+        <div class="column-two font-family color-font medium">
+          <input class="radio-inline__input" id="atvdomestica" name="occupation" type="submit" value="atvdomestica" /><label class="radio-inline__label cursor double_line" for="atvdomestica">Atividade Doméstica</label>
         </div>
-        <div class="column-two font-family color-font small">
+        </div>
+        </div>
+        <div class="table_row">
+        <div class="table_cell">
+        <div class="column font-family color-font medium">
+          <input class="radio-inline__input" id="comercio" name="occupation" type="submit" value="comercio" /><label class="radio-inline__label cursor" for="comercio">Comércio</label>
+        </div>
+        </div>
+        <div class="table_cell">
+        <div class="column-two font-family color-font medium">
           <input class="radio-inline__input" id="ensino" name="occupation" type="submit" value="ensino" /><label class="radio-inline__label cursor" for="ensino">Ensino</label>
         </div>
-        <div class="column font-family color-font small">
+        </div>
+        </div>
+        <div class="table_row">
+        <div class="table_cell">
+        <div class="column font-family color-font medium">
           <input class="radio-inline__input" id="estudante" name="occupation" type="submit" value="estudante" /><label class="radio-inline__label cursor" for="estudante">Estudante</label>
         </div>
-        <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="funcpublico" name="occupation" type="submit" value="funcpublico" /><label class="radio-inline__label cursor" for="funcpublico">Funcionalismo Público</label>
         </div>
-        <div class="column font-family color-font small">
+        <div class="table_cell">
+        <div class="column-two font-family color-font medium">
+          <input class="radio-inline__input" id="funcpublico" name="occupation" type="submit" value="funcpublico" /><label class="radio-inline__label cursor double_line" for="funcpublico">Funcionalismo Público</label>
+        </div>
+        </div>
+        </div>
+        <div class="table_row">
+        <div class="table_cell">
+        <div class="column font-family color-font medium">
           <input class="radio-inline__input" id="inativo" name="occupation" type="submit" value="inativo" /><label class="radio-inline__label cursor" for="inativo">Inativo(a)</label>
         </div>
-        <div class="column-two font-family color-font small">
-          <input class="radio-inline__input" id="indouconstrucao" name="occupation" type="submit" value="indouconstrucao" /><label class="radio-inline__label cursor" for="indouconstrucao">Industria ou Construção</label>
         </div>
-        <div class="column font-family color-font small">
+        <div class="table_cell">
+        <div class="column-two font-family color-font medium">
+          <input class="radio-inline__input" id="indouconstrucao" name="occupation" type="submit" value="indouconstrucao" /><label class="radio-inline__label cursor double_line" for="indouconstrucao">Indústria ou Construção</label>
+        </div>
+        </div>
+        </div>
+        <div class="table_row">
+        <div class="table_cell">
+        <div class="column font-family color-font medium">
           <input class="radio-inline__input" id="saude" name="occupation" type="submit" value="saude" /><label class="radio-inline__label cursor" for="saude">Saúde</label>
         </div>
-        <div class="column-two font-family color-font small">
+        </div>
+        <div class="table_cell">
+        <div class="column-two font-family color-font medium">
           <input class="radio-inline__input" id="servicos" name="occupation" type="submit" value="servicos" /><label class="radio-inline__label cursor" for="servicos">Serviços</label>
         </div>
+        </div>
       </div>
+    </div>
     </div>
 
 

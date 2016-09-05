@@ -31,6 +31,11 @@ $total = $row_total['total'];
 
 $percent1 = $total_wins1 / $total * 100;
 $percent2 = $total_wins2 / $total * 100;
+$percent3 = $total_wins3 / $total * 100;
+
+$percent1 = number_format((float)$percent1, 1, '.', '');
+$percent2 = number_format((float)$percent2, 1, '.', '');
+$percent3 = number_format((float)$percent3, 1, '.', '');
 
 echo "
 
@@ -49,26 +54,45 @@ echo "
 
   <div class='swiper-wrapper'>
     <div class='swiper-slide gradient'>
+    <h1 class='font-family color-font large voto_registrado'>Voto registrado!</h1>
  	<h1 class='pergunta font-family color-font medium '>
-        Obrigado por votar! <br /> Veja como está a classificação:
+        Confira o resultado parcial e convide seus amigos para votar também:
       </h1>
 	<div class='row result-one'>
 
-	<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo1' class='foto' width=100px height=100px>
-		<p>$winner_name1</p>
+	<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo1' class='foto' width=120px height=120px>
+
 
 		<div class='progress progress-result'>
 			<progress id='progressbar98' value='$percent1' max='100'></progress>
+		</div>
+				<div class='percent'>
+			<p>$percent1%</p>
 		</div>
 	</div>
 
 
 	<div class='row result-two'>
-		<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo2' class='foto' width=100px height=100px>
-		<p>$winner_name2</p>
+		<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo2' class='foto' width=120px height=120px>
+
 
 		<div class='progress  progress-result'>
 			<progress id='progressbar99' value='$percent2' max='100'></progress>
+		</div>
+				<div class='percent'>
+			<p>$percent2%</p>
+		</div>
+
+	</div>
+
+		<div class='row result-three'>
+		<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo3' class='foto' width=120px height=120px>
+
+		<div class='progress  progress-result'>
+			<progress id='progressbar97' value='$percent3' max='100'></progress>
+		</div>
+		<div class='percent'>
+			<p>$percent3%</p>
 		</div>
 
 	</div>

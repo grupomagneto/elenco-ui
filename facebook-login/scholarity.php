@@ -22,16 +22,16 @@
         Qual seu nível de escolaridade?
       </h1>
       <div class="box-outline_column">
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="fundamental" name="scholarity" type="submit" value="fundamental" /><label class="radio-inline__label-full cursor" for="fundamental">Ensino Fundamental</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="medio" name="scholarity" type="submit" value="medio" /><label class="radio-inline__label-full cursor" for="medio">Ensino Médio</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="superior" name="scholarity" type="submit" value="superior" /><label class="radio-inline__label-full cursor" for="superior">Ensino Superior</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="posgraduacao" name="scholarity" type="submit" value="posgraduacao" /><label class="radio-inline__label-full cursor" for="posgraduacao">Pós-Graduação</label>
         </div>
       </div>

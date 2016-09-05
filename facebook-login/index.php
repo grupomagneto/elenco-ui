@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Facebook login</title>
+	<title>Meu Modelo Favorito por Magneto Elenco</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="stylesheets/site.css">
@@ -41,7 +41,7 @@
         <div class="image-game"></div>
       </div> 
       <p class="content-slide font-family color-font medium">
-        Participe da votação para escolha do melhor perfil para campanha
+        Vote nos melhores perfis para campanhas em sua cidade
       </p>
     </div>
 
@@ -71,7 +71,7 @@
           </p>
         </div>
       </button></a>
-     <a href="http://www.magnetoelenco.com.br/privacidade.html" class="content-slide privacy font-family color-font">Política de Privacidade</a>
+     <a href="privacidade.html" target="_blank" class="content-slide privacy font-family color-font">Política de Privacidade</a>
     </div>
 
  </div>

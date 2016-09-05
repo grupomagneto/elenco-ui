@@ -23,16 +23,16 @@
         Qual o seu estado civil?
       </h1>
       <div class="box-outline_column">
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="solteiro" name="relationship_status" type="submit" value="solteiro" /><label class="radio-inline__label-full cursor" for="solteiro">Solteiro(a)</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="namorando" name="relationship_status" type="submit" value="namorando" /><label class="radio-inline__label-full cursor" for="namorando">Namorando(a)</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="casado" name="relationship_status" type="submit" value="casado" /><label class="radio-inline__label-full cursor" for="casado">Casado(a)</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="divorciado" name="relationship_status" type="submit" value="divorciado" /><label class="radio-inline__label-full cursor" for="divorciado">Divorciado(a)</label>
         </div>
       </div>

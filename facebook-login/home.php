@@ -34,7 +34,7 @@
       <div class="box">
         <div class="row">
           <p class="content-slide_after-login font-family color-font medium">
-            Conhecer o perfil de quem vota é essencial na escolha do(a) modelo para uma propaganda.
+            Precisamos definir o perfil das pessoas que votam em cada modelo, mas não usaremos suas informações pessoais.
           </p>
         </div>
         <div class="row">
@@ -43,7 +43,7 @@
           </p>
         </div>
         <div class="row">
-          <input class="button button-medium font-family color-font medium" value="Completar meu perfil" name="face" type="submit"></input>
+          <input class="button button-medium font-family color-font medium" value="Especificar meu perfil" name="face" type="submit"></input>
         </div>
       </div>
 </div>

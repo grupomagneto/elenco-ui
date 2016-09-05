@@ -22,19 +22,19 @@
         Qual sua renda familiar?
       </h1>
       <div class="box-outline_column">
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="880" name="income" type="submit" value="880" /><label class="radio-inline__label-full cursor" for="880">Até R$ 880</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="880-1760" name="income" type="submit" value="880-1760" /><label class="radio-inline__label-full cursor" for="880-1760">De R$ 880 a R$ 1760</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="1760-4400" name="income" type="submit" value="1760-4400" /><label class="radio-inline__label-full cursor" for="1760-4400">De R$ 1760 a R$ 4400</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="4400-8800" name="income" type="submit" value="4400-8800" /><label class="radio-inline__label-full cursor" for="4400-8800">De R$  4400 a R$ 8800</label>
         </div>
-        <div class="column-full font-family color-font small">
+        <div class="column-full font-family color-font medium">
           <input class="radio-inline__input-full" id="8800" name="income" type="submit" value="8800" /><label class="radio-inline__label-full cursor" for="8800">Mais de R$ 8800</label>
         </div>
       </div>
