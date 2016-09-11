@@ -16,7 +16,8 @@ use Facebook\GraphLocation;
 use Facebook\FacebookRequestException;
 
 FacebookSession::setDefaultApplication($config['app_id'], $config['app_secret']);
-$helper = new FacebookRedirectLoginHelper('http://localhost/elenco-ui/facebook-login/');
+// $helper = new FacebookRedirectLoginHelper('http://localhost:8888/elenco-ui/facebook-login/');
+$helper = new FacebookRedirectLoginHelper('http://www.meumodelofavorito.com.br/');
 
 try {
 
@@ -44,3 +45,4 @@ try {
 } catch(\Exception $ex) {
   // Quando a validação falhar o login
 }
+?>

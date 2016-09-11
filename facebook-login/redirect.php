@@ -25,3 +25,4 @@ header('Location: vote.php');
 	//user não existe
 header('Location: home.php');
 }
+?>
