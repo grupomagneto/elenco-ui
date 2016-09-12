@@ -15,6 +15,7 @@ $skincolor = $_POST["skincolor"];
 $scholarity = $_POST["scholarity"];
 $relationship_status = $_POST["relationship_status"];
 
+$user_agent = mysqli_real_escape_string($link2, $_POST['user_agent']);
 
 ?>
 
@@ -27,7 +28,7 @@ $script = '<script language="javascript">location.href="occupation.php";</script
 if(isset($_POST['face'])){
 
 
-	if(insert($link2, $id, $firstname, $lastname, $email, $gender)) {
+	if(insert($link2, $id, $firstname, $lastname, $email, $gender, $user_agent)) {
 
 		echo $script;
 

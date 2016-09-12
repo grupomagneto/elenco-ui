@@ -16,8 +16,7 @@ use Facebook\GraphLocation;
 use Facebook\FacebookRequestException;
 
 FacebookSession::setDefaultApplication($config['app_id'], $config['app_secret']);
-// $helper = new FacebookRedirectLoginHelper('http://localhost:8888/elenco-ui/facebook-login/');
-$helper = new FacebookRedirectLoginHelper('http://www.meumodelofavorito.com.br/');
+$helper = new FacebookRedirectLoginHelper('http://localhost:8888/elenco-ui/facebook-login/');
 
 try {
 
@@ -29,11 +28,12 @@ try {
 	endif;
 	if (isset($_SESSION['facebook'])):
 		$session = new FacebookSession($_SESSION['facebook']);
-		$request = new FacebookRequest($session, 'GET', '/me?fields=id,first_name,last_name,email,gender');
+		$request = new FacebookRequest($session, 'GET', '/me?fields=id,first_name,last_name,email,gender,birthday');
 		$response = $request->execute();
 		$user = $response->getGraphObject(GraphUser::className());
 		$facebook_user = $user;
 		$id = $user->getId();
+		$img = 'https://graph.facebook.com/'.$id.'/picture?width=300';
 		$email = $user->getEmail();
 		$firstname = $user->getFirstName();
 		$lastname = $user->getLastName();
@@ -45,4 +45,3 @@ try {
 } catch(\Exception $ex) {
   // Quando a validação falhar o login
 }
-?>

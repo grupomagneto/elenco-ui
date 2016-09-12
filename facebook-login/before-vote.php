@@ -19,7 +19,7 @@
   <div class="swiper-wrapper">
 
     <div class="swiper-slide gradient">
-      <div class="box">
+      <div class="box  box-outline__content-after-login">
         <div class="row">
           <h1 class="content-slide_after-login font-family color-font medium style-font">
             Pronto!

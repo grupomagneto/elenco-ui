@@ -7,6 +7,16 @@
   $_SESSION['email'] = $email;
   $_SESSION['gender'] = $gender;
 
+   $mobile = FALSE;
+   $user_agents = array("iPhone","iPad","Android","webOS","BlackBerry","iPod","Symbian","Computador");
+
+
+   foreach($user_agents as $user_agent){
+     if (strpos($_SERVER['HTTP_USER_AGENT'], $user_agent) !== FALSE) {
+        $mobile = TRUE;
+  break;
+     }
+   }
 
 
 ?>
@@ -29,10 +39,14 @@
 
 <div class="swiper-slide gradient">
 
+<form action="register.php" method="post">
         <div class="row">
           <a href="logout.php">logout</a>
+
+          <input type="hidden" name="user_agent" value=" <?php echo $user_agent; ?>">
+
         </div>
-      <div class="box">
+      <div class="box box-outline__content-after-login">
         <div class="row">
           <p class="content-slide_after-login font-family color-font medium">
             Precisamos definir o perfil das pessoas que votam em cada modelo, mas não usaremos suas informações pessoais.
@@ -47,6 +61,7 @@
           <input class="button button-medium font-family color-font medium" value="Especificar meu perfil" name="face" type="submit"></input>
         </div>
       </div>
+      </form>
 </div>
 
 <!--     <div class="swiper-slide gradient">

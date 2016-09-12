@@ -47,11 +47,18 @@ echo "
 	<link rel='stylesheet' href='stylesheets/site.css'>
 	<link rel='stylesheet' href='stylesheets/swiper.min.css'>
   	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'> 
+	
+	<meta property='og:url' content='http://localhost:8888/elenco-ui/facebook-login/index.php'>
+	<meta property='og:type' content='website'> 
+	<meta property='og:image' content='/images/fb.svg'>
+	<meta property='og:title' content='Utilizando as meta tags.'>
+	<meta property='og:site_name' content='Magneto Elenco'>
+	<meta property='og:description' content='Testando a descrição'>
+	<meta property='fb:app_id' content='1790627874511587'>
+
 </head>
 
-
 <body>
-
 
   <div class='swiper-wrapper'>
     <div class='swiper-slide gradient'>
@@ -98,8 +105,16 @@ echo "
 
 	</div>
 
-  
-     <button class='button-login button button-medium button-result'>
+
+  <a href='https://www.facebook.com/dialog/feed?app_id=1790627874511587&ref=site&display=page&
+name=Meu modelo favorito
+&caption=Jogo
+&description=descrição jogo
+&picture=http://lorempixel.com/300/300/
+&link=http://www.meumodelofavorito.com.br/
+&redirect_uri=http://localhost:8888/elenco-ui/facebook-login/vote.php'>  
+
+ 	<button class='button-login button button-medium button-result'>
         <div class='button-login_image'>
           <img src='images/fb.svg' />
         </div>
@@ -108,8 +123,9 @@ echo "
            Convidar seus amigos
           </p>
         </div>
-      </button>
-     
+    </button>
+  </a>
+   
     </div>
 
     </div>
