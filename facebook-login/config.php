@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require 'db.php';
 require 'face_login.php';
 require 'facebook-php/autoload.php';
@@ -39,6 +43,7 @@ try {
  		$gender = $user->getGender();
 
 	endif;
+	
 } catch(FacebookRequestException $ex) {
   // Quando Facebook retorna um erro
 } catch(\Exception $ex) {
