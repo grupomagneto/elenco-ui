@@ -1,7 +1,3 @@
-<?php
-  require_once 'config.php';
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,8 +11,6 @@
 
 </head>
 <body> 
-
-	<?php if (!isset($_SESSION['facebook'])): ?>
 
 <div class="swiper-container">
   <div class="swiper-wrapper">
@@ -61,7 +55,9 @@
       <div class="image-slide">
         <div class="image-game"></div>
       </div>
-     <a href="<?php echo $helper->getLoginUrl($config['scopes']); ?>"> <button class="button-login button button-medium">
+
+
+     <a href="config.php"> <button class="button-login button button-medium">
         <div class="button-login_image">
           <img src="images/fb.svg" />
         </div>
@@ -76,9 +72,7 @@
 
  </div>
 </div>
-	<?php else: ?>
 
-	<?php endif; ?>
 
 
 	<script src="javascripts/jquery-1.12.1.min.js"></script>

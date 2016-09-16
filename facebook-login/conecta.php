@@ -1,22 +1,22 @@
 <?php
 
 // DB Localhost
-$user = 'root';
-$password = 'root';
-$db = 'testecadastro';
-$host = 'localhost';
-$port = 8889;
+// $user = 'root';
+// $password = 'root';
+// $db = 'testecadastro';
+// $host = 'localhost';
+// $port = 8889;
 
-$link = mysqli_init();
-$success = mysqli_real_connect(
-   $link,
-   $host,
-   $user,
-   $password,
-   $db,
-   $port
-);
-mysqli_set_charset($link,"utf8");
+// $link = mysqli_init();
+// $success = mysqli_real_connect(
+//    $link,
+//    $host,
+//    $user,
+//    $password,
+//    $db,
+//    $port
+// );
+// mysqli_set_charset($link,"utf8");
 
 // DB Online
 // $user = 'vinigoulart1';

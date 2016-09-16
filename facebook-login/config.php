@@ -6,8 +6,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require 'db.php';
-require 'face_login.php';
-require 'facebook-php/autoload.php';
+require 'autoload.php';
+require 'Facebook/FacebookSession.php';
+require 'Facebook/FacebookRedirectLoginHelper.php';
+require 'Facebook/FacebookRequest.php';
+require 'Facebook/FacebookResponse.php';
+require 'Facebook/GraphObject.php';
+require 'Facebook/GraphUser.php';
+require 'Facebook/FacebookSDKException.php';
 
 
 use Facebook\FacebookSession;
@@ -16,36 +22,57 @@ use Facebook\FacebookRequest;
 use Facebook\FacebookResponse;
 use Facebook\GraphUser;
 use Facebook\GraphObject;
-use Facebook\GraphLocation;
-use Facebook\FacebookRequestException;
+use Facebook\FacebookSDKException;
 
-FacebookSession::setDefaultApplication($config['app_id'], $config['app_secret']);
-$helper = new FacebookRedirectLoginHelper('http://www.meumodelofavorito.com.br/');
+FacebookSession::setDefaultApplication('908603925934775', '404a883e0f0f6dde4f134feeebec8e22');
 
-try {
+$helper = new FacebookRedirectLoginHelper('http://localhost:8888/elenco-ui/facebook-login/');
+  try {
+      $session = $helper->getSessionFromRedirect();
+   }catch( FacebookRequestException $ex ) {
+    
+   }catch( FacebookApiException $ex ) {
+      
+   }
+   
+   if ( isset( $session ) ) {
+     
+      $request = new FacebookRequest( $session, 'GET', '/me?fields=id,first_name,last_name,email,gender', '{access-token}');
+      $response = $request->execute();
+      
+      	
+      	$user = $response->getGraphObject(GraphUser::className());
+      	$id = $user->getId();
+   		$email = $user->getEmail();
+   		$firstname = $user->getFirstName();
+   		$lastname = $user->getLastName();
+    		$gender = $user->getGender();
 
-	$session = $helper->getSessionFromRedirect();
-	if ($session):
-		$_SESSION['facebook'] = $session->getToken();
-		header('Location: redirect.php');
 
-	endif;
-	if (isset($_SESSION['facebook'])):
-		$session = new FacebookSession($_SESSION['facebook']);
-		$request = new FacebookRequest($session, 'GET', '/me?fields=id,first_name,last_name,email,gender');
-		$response = $request->execute();
-		$user = $response->getGraphObject(GraphUser::className());
-		$facebook_user = $user;
-		$id = $user->getId();
-		$email = $user->getEmail();
-		$firstname = $user->getFirstName();
-		$lastname = $user->getLastName();
- 		$gender = $user->getGender();
+   }else { 
 
-	endif;
-	
-} catch(FacebookRequestException $ex) {
-  // Quando Facebook retorna um erro
-} catch(\Exception $ex) {
-  // Quando a validação falhar o login
-}
+
+   
+  $loginUrl = $helper->getLoginUrl(array(
+    'scope'         => 'email'
+    ));
+
+    header("Location: ".$loginUrl);
+
+   }
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
