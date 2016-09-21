@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!session_id()) {
+	session_start();
+}
 require_once("db.php");
 require_once("functions.php");
 

@@ -15,7 +15,7 @@ $fb = new Facebook\Facebook([
   'default_graph_version' => 'v2.7',
   ]);
 
-session_start();
-// require 'vendor/facebook/php-sdk-v4/src/Facebook/GraphNodes/GraphObject.php';
-// use Facebook\GraphObject;
+if(!session_id()) {
+	session_start();
+}
 ?>
