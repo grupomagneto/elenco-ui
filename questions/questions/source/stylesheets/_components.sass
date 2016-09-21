@@ -1,0 +1,168 @@
+.font-family
+  font-family: $font-family
+  font-weight: 100
+
+.color-font
+  color: $color-font-primary
+
+// .x-large
+//   font-size: $font-size-xlarge
+
+// .large
+//   font-size: $font-size-large
+
+// .medium
+//   font-size: $font-size-medium
+
+// .small
+//   font-size: $font-size-small
+
+
+.container
+  display: flex
+  display: -webkit-flex
+  display: -ms-flex
+  display: -o-flex
+  flex-direction: column
+  -webkit-flex-direction: column
+  -ms-flex-direction: column
+  -moz-flex-direction: column
+  -o-flex-direction: column
+  justify-content: center
+  -webkit-justify-content: center
+  -moz-justify-content: center
+  -o-justify-content: center
+  -ms-justify-content: center
+  align-items: center
+  -webkit-align-items: center
+  -moz-align-items: center
+
+.box
+  width: 300px
+  text-align: center
+
+.cursor
+  cursor: pointer
+
+.gradient 
+  position: fixed 
+  top: 0 
+  left: 0 
+  bottom: 0 
+  display: block
+  width: 100%
+  padding: 0px
+  margin: 0px 
+
+// PERGUNTA
+
+.pergunta 
+  text-align: center
+  font-weight: 100
+  width: 300px
+  position: absolute
+  left: 50%
+  margin-top: 50px
+  -o-transform: translate(-50%, -10%)
+  -moz-transform: translate(-50%, -10%)
+  -webkit-transform: translate(-50%, -10%)
+  transform: translate(-50%, -10%)
+  display: -webkit-flex
+  display: flex
+  -webkit-align-items: center
+  -moz-align-items: center
+  -o-align-items: center
+  align-items: center
+  -webkit-justify-content: center
+  -moz-justify-content: center
+  -o-justify-content: center
+  justify-content: center
+
+  @media only screen and (max-width: $break-small) and (orientation: portrait)
+    width: 180px
+    font-size: $font-size-medium
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait)
+    width: 180px
+    text-align: center
+    font-size: $font-size-medium
+
+// BOX 4
+
+.box-outline_column
+  width: 370px
+  height: 100%
+  overflow: none
+  margin: auto
+  margin-top: 40%
+  display: -webkit-flex
+  display: flex
+  -webkit-align-items: center
+  -moz-align-items: center
+  -o-align-items: center
+  align-items: center
+  -webkit-justify-content: center
+  -moz-justify-content: center
+  -o-justify-content: center
+  justify-content: center
+
+  @media only screen and (max-width: $break-small) and (orientation: portrait)
+    position: absolute
+    left: 50%
+    -o-transform: translate(-50%, -25%)
+    -moz-transform: translate(-50%, -25%)
+    -webkit-transform: translate(-50%, -25%)
+    transform: translate(-50%, -25%)
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait)
+    position: absolute
+    left: 50%
+    -o-transform: translate(-50%, -35%)
+    -moz-transform: translate(-50%, -35%)
+    -webkit-transform: translate(-50%, -35%)
+    transform: translate(-50%, -35%)
+
+.column-full
+  margin-top: 0px
+  width: 100%
+
+.radio-inline__input-full
+  clip: rect(1px, 1px, 1px, 1px)
+  clip: rect(1px 1px 1px 1px)
+  position: absolute !important
+  z-index: 9999
+  width: 100%
+
+.radio-inline__label-full
+  display: inline-block
+  padding-top: 14px
+  background: rgba(215, 215, 215, 0.3)
+  border: 1px solid #FFFFFF
+  border-radius: 8px
+  opacity: 0.89
+  width: 100%
+  height: 40px
+  text-align: center
+
+  @media only screen and (max-width: $break-small) and (orientation: portrait)
+    width: 290px
+    margin-top: 12px
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait)
+    width: 300px
+    margin-top: 12px
+
+.radio-inline__input-full:checked + .radio-inline__label-full
+  background: rgba(215, 215, 215, 0.6)
+  color: #FFFFFF
+			
+
+	
+
+
+
+
+
+
+
+
