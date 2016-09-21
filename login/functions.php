@@ -1,8 +1,8 @@
 <?php 
 require_once("db.php");
 
-function insert($link2, $id, $firstname, $lastname, $email, $gender, $birthday){
-	$query = "INSERT INTO tb_voters (facebook_ID, name, lastname, email, sex, birthdate) VALUES ('{$id}','{$firstname}','{$lastname}','{$email}','{$gender}','{$birthday}')";
+function insert($link2, $id, $firstname, $lastname, $email, $gender, $birthday, $device, $os, $browser, $resolution, $viewport, $model, $user_agent, $ip, $access_city, $access_uf, $access_country, $access_loc){
+	$query = "INSERT INTO tb_voters (facebook_ID, firstname, lastname, email, sex, birthday, device, os, browser, resolution, viewport, model, user_agent, ip, access_city, access_uf, access_country, access_loc) VALUES ('{$id}','{$firstname}','{$lastname}','{$email}','{$gender}','{$birthday}','{$device}','{$os}','{$browser}','{$resolution}','{$viewport}','{$model}','{$user_agent}','{$ip}','{$access_city}','{$access_uf}','{$access_country}','{$access_loc}')";
 
 	return mysqli_query($link2, $query);
 }

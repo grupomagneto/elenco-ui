@@ -1,4 +1,4 @@
-<?php
+<?php header('Content-Type: text/html; charset=utf-8');
 // DB Online
 $user2 = 'vinigoulart12';
 $password2 = 'm@g3l3nc01122';
@@ -13,4 +13,5 @@ $success2 = mysqli_real_connect(
   $password2,
   $db2
 );
+mysqli_set_charset($link,"utf8");
 ?>

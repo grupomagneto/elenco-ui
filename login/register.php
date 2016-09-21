@@ -3,17 +3,30 @@ session_start();
 require_once("db.php");
 require_once("functions.php");
 
-	$id = $_SESSION['id'];
-	$firstname = $_SESSION['firstname'];
-	$lastname = $_SESSION['lastname'];
-	$email = $_SESSION['email'];
-	$gender = $_SESSION['gender'];
-	$link = $_SESSION['link'];
-	$birthday = $_SESSION['birthday'];
+	$id 				= $_SESSION['id'];
+	$firstname 			= $_SESSION['firstname'];
+	$lastname 			= $_SESSION['lastname'];
+	$email 				= $_SESSION['email'];
+	$gender 			= $_SESSION['gender'];
+	$link 				= $_SESSION['link'];
+	$birthday 			= $_SESSION['birthday'];
+
+	$device 			= $_SESSION['device'];
+	$os 				= $_SESSION['os'];
+	$browser 			= $_SESSION['browser'];
+	$resolution 		= $_SESSION['resolution'];
+	$viewport 			= $_SESSION['viewport'];
+	$model 				= $_SESSION['model'];
+	$user_agent 		= $_SESSION['user_agent'];
+	$ip 				= $_SESSION['ip'];
+	$access_city 		= $_SESSION['access_city'];
+	$access_uf 			= $_SESSION['access_uf'];
+	$access_country 	= $_SESSION['access_country'];
+	$access_loc 		= $_SESSION['access_loc'];
 
 $script = '<script language="javascript">location.href="occupation.php";</script>';
 if(isset($_POST['face'])){
-	if(insert($link2, $id, $firstname, $lastname, $email, $gender, $birthday)) { // INSERIR DADOS USER_AGENT
+	if(insert($link2, $id, $firstname, $lastname, $email, $gender, $birthday, $device, $os, $browser, $resolution, $viewport, $model, $user_agent, $ip, $access_city, $access_uf, $access_country, $access_loc)) { // INSERIR DADOS USER_AGENT
 		echo $script;
 	} else {
 		$msg = mysqli_error($link2);

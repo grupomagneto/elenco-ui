@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <style type="text/css">@-ms-viewport{width:device-width}</style>
-<script type='text/javascript' src='//api.handsetdetection.com/apiv4/js/57394.js'></script>
+<!-- <script type='text/javascript' src='//api.handsetdetection.com/apiv4/js/57394.js'></script> -->
 <script type="text/javascript" src="viewportSize.js"></script>
 <script type="text/javascript">
     var vwidth = viewportSize.getWidth();
@@ -10,7 +11,7 @@
 </script>
 </head>
 <body>
-<?php
+<?php header('Content-Type: text/html; charset=utf-8');
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip = $_SERVER['HTTP_CLIENT_IP'];
 } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -22,13 +23,15 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 if(isset($_SESSION['screen_width']) AND isset($_SESSION['screen_height'])){
     $width = $_SESSION['screen_width'];
     $height = $_SESSION['screen_height'];
-    if (isset($_SESSION['viewport_width']) AND isset($_SESSION['viewport_height'])) {
-	    $v_width = $_SESSION['viewport_width'];
-	    $v_height = $_SESSION['viewport_height'];
-	    $viewport = $v_width . 'x' . $v_height;
-	} else {
-	    $viewport = "Undetected";
-	}
+ //    if (isset($_SESSION['viewport_width']) AND isset($_SESSION['viewport_height'])) {
+	//     $v_width = $_SESSION['viewport_width'];
+	//     $v_height = $_SESSION['viewport_height'];
+	//     $viewport = $v_width . 'x' . $v_height;
+	// } else {
+	//     $viewport = "Undetected";
+	// }
+
+    $viewport = "Undetected";
     $resolution = $width . 'x' . $height;
     
     $model = "Unknown";
@@ -54,7 +57,7 @@ if(isset($_SESSION['screen_width']) AND isset($_SESSION['screen_height'])){
     $_SESSION['viewport_height'] = $_REQUEST['viewportheight'];
     header('Location: ' . $_SERVER['PHP_SELF']);
 } else {
-    echo '<script type="text/javascript">window.location = "' . $_SERVER['PHP_SELF'] . '?width="+screen.width+"&height="+screen.height+"&viewportwidth="+output.innerHTML=vwidth+"&viewportheight="+output.innerHTML=vheight;</script>';
+    echo '<script type="text/javascript">window.location = "' . $_SERVER['PHP_SELF'] . '?width="+screen.width+"&height="+screen.height;</script>';
 }
 
 $user_agent     =   $_SERVER['HTTP_USER_AGENT'];
@@ -167,19 +170,33 @@ function getBrowser() {
 
 }
 
-$user_os        =   getOS();
-$user_browser   =   getBrowser();
-$device   		=   getDevice();
+// $user_os        =   getOS();
+// $user_browser   =   getBrowser();
+// $device   		=   getDevice();
 
-$cep = "71503506";
+// $cep = "71503506";
+// $cep_details = json_decode(file_get_contents("https://viacep.com.br/ws/{$cep}/json/"));
+// $district = $cep_details->bairro;
+// $uf = $cep_details->uf;
+
 $ip_details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
-$access_city = $ip_details->city;
-$access_region = $ip_details->region;
-$access_country = $ip_details->country;
-$access_loc = $ip_details->loc;
-$cep_details = json_decode(file_get_contents("https://viacep.com.br/ws/{$cep}/json/"));
-$district = $cep_details->bairro;
-$uf = $cep_details->uf;
+$_SESSION['device']          = getDevice();
+$_SESSION['os']              = getOS();
+$_SESSION['browser']         = getBrowser();
+$_SESSION['resolution']      = $resolution;
+$_SESSION['viewport']        = $viewport;
+$_SESSION['model']           = $model;
+$_SESSION['user_agent']      = $user_agent;
+$_SESSION['ip']              = $ip;
+$_SESSION['access_city']     = utf8_decode($ip_details->city);
+$_SESSION['access_uf']       = $ip_details->region;
+$_SESSION['access_country']  = $ip_details->country;
+$_SESSION['access_loc']      = $ip_details->loc;
+
+// $iso88591 = $ip_details->city;
+// $utf8_1 = utf8_encode($iso88591);
+// $utf8_2 = iconv('ISO-8859-1', 'UTF-8', $iso88591);
+// $utf8_2 = mb_convert_encoding($iso88591, 'UTF-8', 'ISO-8859-1');
 
 // $device_details =   "<strong>Device: </strong>".$device."<br /><strong>Browser: </strong>".$user_browser."<br /><strong>OS: </strong>".$user_os."<br /><strong>Resolution: </strong>".$resolution."<br /><strong>Viewport: </strong>".$viewport."<br /><strong>Model: </strong>".$model."<br /><strong>User_agent: </strong>".$user_agent."<br /><strong>IP: </strong>".$ip."<br /><strong>Cidade do Acesso: </strong>".$access_city."<br /><strong>UF: </strong>".$uf."<br /><strong>Bairro: </strong>".$district."<br /><strong>Loc: </strong>".$access_loc."<br />";
 
