@@ -2,7 +2,7 @@
 require_once("db.php");
 
 function insert($link2, $id, $firstname, $lastname, $email, $gender, $birthday){
-	$query = "INSERT INTO tb_voters (facebook_ID, name, lastname, email, sex, birthdate) VALUES ({$id},'{$firstname}','{$lastname}','{$email}','{$gender}','{$birthday}')";
+	$query = "INSERT INTO tb_voters (facebook_ID, name, lastname, email, sex, birthdate) VALUES ('{$id}','{$firstname}','{$lastname}','{$email}','{$gender}','{$birthday}')";
 
 	return mysqli_query($link2, $query);
 }
