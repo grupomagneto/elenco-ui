@@ -16,4 +16,6 @@ $fb = new Facebook\Facebook([
   ]);
 
 session_start();
+// require 'vendor/facebook/php-sdk-v4/src/Facebook/GraphNodes/GraphObject.php';
+// use Facebook\GraphObject;
 ?>

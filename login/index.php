@@ -1,7 +1,7 @@
 <?php
 require 'bootstrap.php';
 $helper = $fb->getRedirectLoginHelper();
-$permissions = ['email,user_friends']; //permissões do usuario
+$permissions = ['email,user_friends,user_birthday']; //permissões do usuario
 $loginUrl = $helper->getLoginUrl('http://www.meumodelofavorito.com.br/login-callback.php', $permissions);
 ?>
 <!DOCTYPE html>
