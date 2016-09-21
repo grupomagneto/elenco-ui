@@ -9,10 +9,11 @@ require_once("functions.php");
 	$email = $_SESSION['email'];
 	$gender = $_SESSION['gender'];
 	$link = $_SESSION['link'];
+	$birthday = $_SESSION['birthday'];
 
 $script = '<script language="javascript">location.href="occupation.php";</script>';
 if(isset($_POST['face'])){
-	if(insert($link2, $id, $firstname, $lastname, $email, $gender)) { // INSERIR DADOS USER_AGENT
+	if(insert($link2, $id, $firstname, $lastname, $email, $gender, $birthday)) { // INSERIR DADOS USER_AGENT
 		echo $script;
 	} else {
 		$msg = mysqli_error($link2);

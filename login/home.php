@@ -22,6 +22,15 @@ try {
     if (!empty($_SESSION['facebook_access_token'])) {
 
         $user = $fb->User()->get($_SESSION['facebook_access_token']);
+        // $object = $fb->Object()->get($_SESSION['facebook_access_token']);
+        echo '<pre>';
+        // var_dump($user = $fb->User()->get($_SESSION['facebook_access_token']));
+        // var_dump($object = $fb->Object()->get($_SESSION['facebook_access_token']));
+        // var_dump($user->getName());
+        // var_dump($user->getBirthday());
+        echo $user->getProperty('birthday');
+        // echo $user->getBirthday();
+
 
         $_SESSION['id'] = $user->getId();
         $_SESSION['firstname'] = $user->getFirstName();
@@ -29,10 +38,12 @@ try {
         $_SESSION['gender'] = $user->getGender();
         $_SESSION['email'] = $user->getEmail();
         $_SESSION['link'] = $user->getLink();
+        // $_SESSION['birthday'] = $user->getBirthday();
+        // $_SESSION['birthday'] = $user->getProperty('birthday');
 
-        require_once 'colect_data.php';
+        // require_once 'colect_data.php';
 
-        include 'warning.php';
+        // include 'warning.php';
 
     } else {
         if (!empty($_GET['code']) and !empty($_GET['state'])) {
