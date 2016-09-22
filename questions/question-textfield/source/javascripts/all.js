@@ -43,15 +43,85 @@ function updateGradient(container) {
 }
 setInterval(function(){updateGradient('.gradient')},10);
 
-function mascara(t, mask){
- var i = t.value.length;
- var saida = mask.substring(1,0);
- var texto = mask.substring(i)
- if (texto.substring(0,1) != saida){
- t.value += texto.substring(0,1);
- }
- }
+function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout("execmascara()",1)
+}
+function execmascara(){
+    v_obj.value=v_fun(v_obj.value)
+}
+function mcep(v){
+    v=v.replace(/\D/g,"")                    //Remove tudo o que não é dígito
+    v=v.replace(/^(\d{5})(\d)/,"$1-$2")         //Esse é tão fácil que não merece explicações
+    return v
+}
+
+
+//  var yourInput = jQuery('#cep');
+//     yourInput.keyup(function() {
+//         yourInput.val((yourInput.val().replace(/[^\d]/g,'')))
+// })   
+
+
+var inputsCEP = $('#logradouro, #bairro, #localidade, #uf, #ibge');
+var inputsRUA = $('#cep, #bairro, #ibge');
+var validacep = /^[0-9]{8}$/;
+
+function limpa_formulário_cep(valor) {
+  if (valor !== undefined) {
+    document.getElementById('txt2').innerHTML = 'CEP não encontrado.';
+  }
+
+  inputsCEP.val('');
+}
+
+function get(url) {
+
+  $.get(url, function(data) {
+
+    if (!("erro" in data)) {
+
+      if (Object.prototype.toString.call(data) === '[object Array]') {
+        var data = data[0];
+      }
+
+      $.each(data, function(nome, info) {
+        $('#' + nome).val(nome === 'cep' ? info.replace(/\D/g, '') : info).attr('info', nome === 'cep' ? info.replace(/\D/g, '') : info);
+      });
 
 
 
+    } else {
+      limpa_formulário_cep(" ");
+    }
+
+  });
+}
+
+// Digitando RUA/CIDADE/UF
+$('#logradouro, #localidade, #uf').on('blur', function(e) {
+
+  if ($('#logradouro').val() !== '' && $('#logradouro').val() !== $('#logradouro').attr('info') && $('#localidade').val() !== '' && $('#localidade').val() !== $('#localidade').attr('info') && $('#uf').val() !== '' && $('#uf').val() !== $('#uf').attr('info')) {
+
+    inputsRUA.val('...');
+    get('https://viacep.com.br/ws/' + $('#uf').val() + '/' + $('#localidade').val() + '/' + $('#logradouro').val() + '/json/');
+  }
+
+});
+
+// Digitando CEP
+$('#cep').on('blur', function(e) {
+
+  var cep = $('#cep').val().replace(/\D/g, '');
+
+  if (cep !== "" && validacep.test(cep)) {
+
+    inputsCEP.val('...');
+    get('https://viacep.com.br/ws/' + cep + '/json/');
+
+  } else {
+    limpa_formulário_cep(cep == "" ? undefined : "Formato de CEP inválido.");
+  }
+});
 

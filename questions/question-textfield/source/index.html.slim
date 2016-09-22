@@ -10,5 +10,21 @@ title: Design questions
 		.box-outline_textfield
 			.column-full.font-family.color-font
 
-				input type="text" name="cep" id="cep" onkeypress="mascara(this, '#####-###')" maxlength="9" onblur="pesquisacep(this.value);"/
-				img.ok src="images/ok_neg.svg" alt=""/
+
+				form action="#" method="get" 
+
+					input#cep type="text" name="cep" onkeyup="mascara(this, mcep);" size="10" maxlength="9" onblur="pesquisacep(this.value);"/
+					img.ok src="images/ok_neg.svg" alt=""/
+					
+					input#logradouro name="rua" size="60" type="hidden" /
+					
+					input#bairro name="bairro" size="40" type="hidden" /
+					
+					input#localidade name="cidade" size="40" type="hidden" /
+				
+					input#uf name="uf" size="2" type="hidden" /
+					
+					input#ibge name="ibge" size="8" type="hidden" /
+
+					#txt2
+					
