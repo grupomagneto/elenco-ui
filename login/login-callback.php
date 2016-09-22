@@ -3,6 +3,9 @@
 require 'bootstrap.php';
 
 $helper = $fb->getRedirectLoginHelper();
+
+$_SESSION['FBRLH_state']=$_GET['state'];
+
 try {
     $accessToken = $helper->getAccessToken();
 } catch (Facebook\Exceptions\FacebookResponseException $e) {

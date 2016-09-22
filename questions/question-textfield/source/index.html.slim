@@ -1,0 +1,14 @@
+---
+title: Design questions
+---
+
+.gradient.container
+	.box
+		h1.pergunta.font-family.color-font Qual o CEP da sua residência?
+
+	.box
+		.box-outline_textfield
+			.column-full.font-family.color-font
+
+				input type="text" name="cep" id="cep" onkeypress="mascara(this, '#####-###')" maxlength="9" onblur="pesquisacep(this.value);"/
+				img.ok src="images/ok_neg.svg" alt=""/
