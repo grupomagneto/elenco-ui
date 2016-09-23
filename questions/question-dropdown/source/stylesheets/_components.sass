@@ -115,7 +115,7 @@
 
 // BOX 4
 
-.box-outline_textfield
+.box-outline_dropdown
   width: 370px
   height: 100%
   overflow: none
@@ -135,46 +135,46 @@
     position: absolute
     left: 50%
     top: 50%
-    -o-transform: translate(-50%, -50%)
-    -moz-transform: translate(-50%, -50%)
-    -webkit-transform: translate(-50%, -50%)
-    transform: translate(-50%, -50%)
+    -o-transform: translate(-50%, -65%)
+    -moz-transform: translate(-50%, -65%)
+    -webkit-transform: translate(-50%, -65%)
+    transform: translate(-50%, -65%)
 
   @media only screen and (max-width: $break-small) and (orientation: landscape)
     position: absolute
     left: 50%
     top: 50%
-    -o-transform: translate(-50%, -30%)
-    -moz-transform: translate(-50%, -30%)
-    -webkit-transform: translate(-50%, -30%)
-    transform: translate(-50%, -30%)
+    -o-transform: translate(-50%,  -65%)
+    -moz-transform: translate(-50%,  -65%)
+    -webkit-transform: translate(-50%,  -65%)
+    transform: translate(-50%,  -65%)
 
   @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait)
     position: absolute
     left: 50%
     top: 50%
-    -o-transform: translate(-50%, -50%)
-    -moz-transform: translate(-50%, -50%)
-    -webkit-transform: translate(-50%, -50%)
-    transform: translate(-50%, -50%)
+    -o-transform: translate(-50%, -65%)
+    -moz-transform: translate(-50%, -65%)
+    -webkit-transform: translate(-50%, -65%)
+    transform: translate(-50%, -65%)
 
   @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: landscape)
     position: absolute
     left: 50%
     top: 50%
-    -o-transform: translate(-50%, -30%)
-    -moz-transform: translate(-50%, -30%)
-    -webkit-transform: translate(-50%, -30%)
-    transform: translate(-50%, -30%)
+    -o-transform: translate(-50%, -65%)
+    -moz-transform: translate(-50%, -65%)
+    -webkit-transform: translate(-50%, -65%)
+    transform: translate(-50%, -65%)
 
   @media only screen and (min-width:768px) and (max-width:991px)
     position: absolute
     left: 50%
     top: 50%
-    -o-transform: translate(-50%, -50%)
-    -moz-transform: translate(-50%, -50%)
-    -webkit-transform: translate(-50%, -50%)
-    transform: translate(-50%, -50%)
+    -o-transform: translate(-50%, -65%)
+    -moz-transform: translate(-50%, -65%)
+    -webkit-transform: translate(-50%, -65%)
+    transform: translate(-50%, -65%)
 
   @media only screen and (min-width: 992px) and (max-width: 1199px)
     position: absolute
@@ -191,68 +191,130 @@
     position: absolute
     left: 50%
     top: 50%
-    -o-transform: translate(-50%, -50%)
-    -moz-transform: translate(-50%, -50%)
-    -webkit-transform: translate(-50%, -50%)
-    transform: translate(-50%, -50%)
+    -o-transform: translate(-50%, -65%)
+    -moz-transform: translate(-50%, -65%)
+    -webkit-transform: translate(-50%, -65%)
+    transform: translate(-50%, -65%)
 
 .column-full
   margin-top: 0px
   width: 100%
 
-.box-outline_textfield input
-  width: 350px
-  height: 60px
-  padding-left: 10px
-  color: $color-font-primary
-  font-family: $font-family
-  background: rgba(215, 215, 215, 0.3)
-  border: 1px solid #FFFFFF
-  border-radius: 8px
-  opacity: 0.89
-  margin-bottom: 30px
+.select-hidden5 
+  display: none 
+  visibility: hidden 
+  padding-right: 10px 
 
-
-  @media only screen and (max-width: $break-small) and (orientation: portrait)
-    width: 250px
-
-  @media only screen and (max-width: $break-small) and (orientation: landscape)
-    width: 250px
-
-  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait)
-    width: 250px
-
-  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: landscape)
-    width: 250px
+.select5 
+  cursor: pointer 
+  display: inline-block 
+  position: absolute 
+  font-size: 20px 
+  color: $color-font-primary 
+  width: 250px 
+  height: 60px 
+  margin-left: -125px 
 
   @media only screen and (min-width:768px) and (max-width:991px)
-    width: 350px
-
-  @media only screen and (min-width: 992px) and (max-width: 1199px)
-    width: 350px
+    width: 450px 
+    margin-left: -215px 
 
   @media only screen and (min-width:1200px)
-    width: 450px
+    width: 450px 
+    margin-left: -215px 
 
-.ok
-  width: 40px
-  height: 40px
-  position: absolute
-  margin-left: -50px
-  margin-top: 12px
+.select-styled5 
+  font-family: $font-family 
+  font-size: 20px 
+  position: absolute 
+  top: 0 
+  right: 0 
+  bottom: 0 
+  left: 0 
+  background-color: rgba(215,215,215,0.30) 
+  padding: 15px 10px 
+  border-radius: 6px 
+  border: 2px solid $color-font-primary  
+  -moz-transition: all 0.2s ease-in 
+  -o-transition: all 0.2s ease-in 
+  -webkit-transition: all 0.2s ease-in 
+  transition: all 0.2s ease-in 
+  text-align: left 
 
-  @media only screen and (max-width: $break-small) and (orientation: portrait)
-  position: absolute
-  margin-left: -50px
-  margin-top: 12px
-			
+  @media only screen and (min-width:768px) and (max-width:991px)
+    font-size: 24px 
+    padding: 10px 10px 
 
-	
+  @media only screen and (min-width:1200px)
+    font-size: 24px 
+    padding: 10px 10px 
 
+.select-styled5:after 
+  content: "" 
+  width: 0 
+  height: 0 
+  border: 7px solid transparent 
+  border-color: $color-font-primary transparent transparent transparent 
+  top: 25px 
+  position: absolute 
+  right: 10px 
 
+.select-styled5:hover 
+  background-color: rgba(215,215,215,0.30) 
 
+.select-styled5:active, .select-styled5.active 
+  background-color: rgba(215,215,215,0.30) 
 
+.select-styled5:active:after, .select-styled5.active:after 
+  top: 15px 
+  border-color: transparent transparent $color-font-primary transparent 
 
+.select-options5 
+  font-family: $font-family
+  font-size: 16px 
+  line-height: 12px 
+  display: none 
+  position: absolute 
+  top: 100% 
+  right: 0 
+  left: 0 
+  z-index: 9999 
+  margin: 0 
+  padding: 0 
+  list-style: none 
+  overflow: auto 
+  height: 162px 
+  border-radius: 6px 
+  border: 2px solid $color-font-primary 
+  background-color: rgba(215,215,215,0.30) 
+  margin-top: 8px 
 
+.select-options5 li 
+  margin: 0 
+  padding: 12px 0 
+  text-indent: 15px 
+  -moz-transition: all 0.15s ease-in 
+  -o-transition: all 0.15s ease-in 
+  -webkit-transition: all 0.15s ease-in 
+  transition: all 0.15s ease-in 
+  text-align: left 
 
+.select-options5 li:hover 
+  color: $color-font-primary 
+  background: rgba(215,215,215,0.30) 
+
+.select-options5 li[rel="hide"] 
+  display: none 
+
+.select-options5::-webkit-scrollbar 
+  width: 8px
+
+.select-options5::-webkit-scrollbar-track 
+  -webkit-box-shadow: inset 0 0 6px rgba(215,215,215,0.30) 
+  color: $color-font-primary  
+  border-radius: 10px
+
+.select-options5::-webkit-scrollbar-thumb 
+  border-radius: 10px 
+  -webkit-box-shadow: inset 0 0 20px $color-font-primary  
 
