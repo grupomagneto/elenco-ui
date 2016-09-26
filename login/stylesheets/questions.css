@@ -81,18 +81,6 @@ a:hover {
 /* ==========================================================================
    Typography
    ========================================================================== */
-/*
- * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
- * Safari 5, and Chrome.
- */
-h1 {
-  font-size: 2em; }
-
-/*
- * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
- */
-abbr[title] {
-  border-bottom: 1px dotted; }
 
 /*
  * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
@@ -101,28 +89,6 @@ b,
 strong {
   font-weight: bold; }
 
-/*
- * Addresses styling not present in Safari 5 and Chrome.
- */
-dfn {
-  font-style: italic; }
-
-/*
- * Addresses styling not present in IE 8/9.
- */
-mark {
-  background: #ff0;
-  color: #000; }
-
-/*
- * Corrects font family set oddly in Safari 5 and Chrome.
- */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  font-size: 1em; }
 
 /*
  * Improves readability of pre-formatted text in all browsers.
@@ -187,13 +153,6 @@ figure {
 /* ==========================================================================
    Forms
    ========================================================================== */
-/*
- * Define consistent border, margin, and padding.
- */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
 
 /*
  * 1. Corrects color not being inherited in IE 8/9.
@@ -312,11 +271,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+
+/*ESTILOS GERAIS*/
+
 @font-face {
   font-family: Avenir-Book;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 100;
   src: local("../fonts/Avenir-Light.woff"), url "../fonts/Avenir-Light.woff" format("woff"); }
+
 html, body {
   height: 100%;
   padding: 0px;
@@ -368,6 +331,14 @@ body {
   padding: 0px;
   margin: 0px; }
 
+
+.column-full {
+  margin-top: 0px;
+  width: 100%; }
+
+
+/*FIM ESTILOS GERAIS*/
+
 .pergunta {
   text-align: center;
   font-weight: 100;
@@ -389,14 +360,17 @@ body {
   -moz-justify-content: center;
   -o-justify-content: center;
   justify-content: center; }
+
   @media only screen and (max-width: 340px) and (orientation: portrait) {
     .pergunta {
       width: 180px;
       font-size: 18px; } }
+
   @media only screen and (max-width: 340px) and (orientation: landscape) {
     .pergunta {
       width: 180px;
       font-size: 18px; } }
+
   @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: landscape) {
     .pergunta {
       width: 180px;
@@ -406,6 +380,7 @@ body {
       -moz-transform: translate(-50%, 25%);
       -webkit-transform: translate(-50%, 25%);
       transform: translate(-50%, 25%); } }
+
   @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
     .pergunta {
       width: 180px;
@@ -415,6 +390,7 @@ body {
       -moz-transform: translate(-50%, 25%);
       -webkit-transform: translate(-50%, 25%);
       transform: translate(-50%, 25%); } }
+
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .pergunta {
       width: 250px;
@@ -423,6 +399,111 @@ body {
       -moz-transform: translate(-50%, 35%);
       -webkit-transform: translate(-50%, 35%);
       transform: translate(-50%, 35%); } }
+
+
+/*PERGUNTA BOX*/
+
+.pergunta__box {
+  text-align: center;
+  font-weight: 100;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  margin-top: 50px;
+  -o-transform: translate(-50%, -10%);
+  -moz-transform: translate(-50%, -10%);
+  -webkit-transform: translate(-50%, -10%);
+  transform: translate(-50%, -10%);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center; }
+
+  @media only screen and (max-width: 340px) and (orientation: portrait) {
+    .pergunta__box {
+      width: 180px;
+      font-size: 18px; } }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
+    .pergunta__box {
+      width: 180px;
+      text-align: center;
+      font-size: 18px; } }
+
+/*FIM PERGUNTA BOX*/
+
+/*PERGUNTA TEXTFIELD*/
+
+
+.pergunta__textfield {
+  text-align: center;
+  font-weight: 100;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  margin-top: 50px;
+  -o-transform: translate(-50%, -10%);
+  -moz-transform: translate(-50%, -10%);
+  -webkit-transform: translate(-50%, -10%);
+  transform: translate(-50%, -10%);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center; }
+
+  @media only screen and (max-width: 340px) and (orientation: portrait) {
+    .pergunta__textfield {
+      width: 180px;
+      font-size: 18px; } }
+
+  @media only screen and (max-width: 340px) and (orientation: landscape) {
+    .pergunta__textfield {
+      width: 180px;
+      font-size: 18px; } }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: landscape) {
+    .pergunta__textfield {
+      width: 180px;
+      text-align: center;
+      font-size: 18px;
+      -o-transform: translate(-50%, 25%);
+      -moz-transform: translate(-50%, 25%);
+      -webkit-transform: translate(-50%, 25%);
+      transform: translate(-50%, 25%); } }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
+    .pergunta__textfield {
+      width: 180px;
+      text-align: center;
+      font-size: 18px;
+      -o-transform: translate(-50%, 25%);
+      -moz-transform: translate(-50%, 25%);
+      -webkit-transform: translate(-50%, 25%);
+      transform: translate(-50%, 25%); } }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .pergunta__textfield {
+      width: 250px;
+      font-size: 24px;
+      -o-transform: translate(-50%, 35%);
+      -moz-transform: translate(-50%, 35%);
+      -webkit-transform: translate(-50%, 35%);
+      transform: translate(-50%, 35%); } }
+
+/*FIM PERGUNTA TEXTFIELD*/
+
 
 .box-outline_dropdown {
   width: 370px;
@@ -439,6 +520,7 @@ body {
   -moz-justify-content: center;
   -o-justify-content: center;
   justify-content: center; }
+
   @media only screen and (max-width: 340px) and (orientation: portrait) {
     .box-outline_dropdown {
       position: absolute;
@@ -448,6 +530,7 @@ body {
       -moz-transform: translate(-50%, -65%);
       -webkit-transform: translate(-50%, -65%);
       transform: translate(-50%, -65%); } }
+
   @media only screen and (max-width: 340px) and (orientation: landscape) {
     .box-outline_dropdown {
       position: absolute;
@@ -457,6 +540,7 @@ body {
       -moz-transform: translate(-50%, -65%);
       -webkit-transform: translate(-50%, -65%);
       transform: translate(-50%, -65%); } }
+
   @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
     .box-outline_dropdown {
       position: absolute;
@@ -466,6 +550,7 @@ body {
       -moz-transform: translate(-50%, -65%);
       -webkit-transform: translate(-50%, -65%);
       transform: translate(-50%, -65%); } }
+
   @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: landscape) {
     .box-outline_dropdown {
       position: absolute;
@@ -475,6 +560,7 @@ body {
       -moz-transform: translate(-50%, -65%);
       -webkit-transform: translate(-50%, -65%);
       transform: translate(-50%, -65%); } }
+
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .box-outline_dropdown {
       position: absolute;
@@ -484,6 +570,7 @@ body {
       -moz-transform: translate(-50%, -65%);
       -webkit-transform: translate(-50%, -65%);
       transform: translate(-50%, -65%); } }
+
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .box-outline_dropdown {
       position: absolute;
@@ -493,6 +580,7 @@ body {
       -moz-transform: translate(-50%, -60%);
       -webkit-transform: translate(-50%, -60%);
       transform: translate(-50%, -60%); } }
+
   @media only screen and (min-width: 1200px) {
     .box-outline_dropdown {
       width: 480px;
@@ -504,9 +592,184 @@ body {
       -webkit-transform: translate(-50%, -65%);
       transform: translate(-50%, -65%); } }
 
-.column-full {
-  margin-top: 0px;
+/* OUTLINE box */
+
+
+.box-outline_box {
+  width: 370px;
+  height: 100%;
+  overflow: none;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center; }
+
+  @media only screen and (max-width: 340px) and (orientation: portrait) {
+    .box-outline_box {
+      position: absolute;
+      top: 0;
+      left: -25px;
+      bottom: 0;
+      right: 0; } }
+
+/*FIM OUTLINE box */
+
+/*BOX TEXTFIELD*/
+
+.box-outline_textfield {
+  width: 370px;
+  height: 100%;
+  overflow: none;
+  margin: auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center; }
+
+  @media only screen and (max-width: 340px) and (orientation: portrait) {
+    .box-outline_textfield {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -o-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); } }
+
+  @media only screen and (max-width: 340px) and (orientation: landscape) {
+    .box-outline_textfield {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -o-transform: translate(-50%, -30%);
+      -moz-transform: translate(-50%, -30%);
+      -webkit-transform: translate(-50%, -30%);
+      transform: translate(-50%, -30%); } }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
+    .box-outline_textfield {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -o-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); } }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: landscape) {
+    .box-outline_textfield {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -o-transform: translate(-50%, -30%);
+      -moz-transform: translate(-50%, -30%);
+      -webkit-transform: translate(-50%, -30%);
+      transform: translate(-50%, -30%); } }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .box-outline_textfield {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -o-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); } }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .box-outline_textfield {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -o-transform: translate(-50%, -60%);
+      -moz-transform: translate(-50%, -60%);
+      -webkit-transform: translate(-50%, -60%);
+      transform: translate(-50%, -60%); } }
+
+  @media only screen and (min-width: 1200px) {
+    .box-outline_textfield {
+      width: 480px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -o-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); } }
+
+/*FIM TEXTFIELD*/
+
+/*ESTILO BOX*/
+
+
+.radio-inline__input-full {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip: rect(1px 1px 1px 1px);
+  position: absolute !important;
+  z-index: 9999;
   width: 100%; }
+
+.radio-inline__label-full {
+  display: inline-block;
+  padding-top: 14px;
+  background: rgba(215, 215, 215, 0.3);
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  opacity: 0.89;
+  width: 100%;
+  height: 40px;
+  text-align: center; }
+
+  @media only screen and (max-width: 340px) and (orientation: portrait) {
+    .radio-inline__label-full {
+      width: 250px;
+      margin-top: 12px; } }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
+    .radio-inline__label-full {
+      width: 300px;
+      margin-top: 12px; } }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .radio-inline__label-full {
+      width: 350px;
+      margin-top: 12px; } }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .radio-inline__label-full {
+      width: 350px;
+      margin-top: 12px; } }
+
+  @media only screen and (min-width: 1200px) {
+    .radio-inline__label-full {
+      width: 350px;
+      margin-top: 12px; } }
+
+.radio-inline__input-full:checked + .radio-inline__label-full {
+  background: rgba(215, 215, 215, 0.6);
+  color: #FFFFFF; }
+
+/*ESTILO BOX*/
+
+/*ESTILO DROPDOWN*/
 
 .select-hidden5 {
   display: none;
@@ -522,10 +785,12 @@ body {
   width: 250px;
   height: 60px;
   margin-left: -125px; }
+
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .select5 {
       width: 450px;
       margin-left: -215px; } }
+
   @media only screen and (min-width: 1200px) {
     .select5 {
       width: 450px;
@@ -548,10 +813,12 @@ body {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   text-align: left; }
+
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .select-styled5 {
       font-size: 24px;
       padding: 10px 10px; } }
+      
   @media only screen and (min-width: 1200px) {
     .select-styled5 {
       font-size: 24px;
@@ -625,3 +892,59 @@ body {
 .select-options5::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 20px #FFFFFF; }
+
+/*ESTILO DROPDOWN*/
+
+/*ESTILO TEXTFIELD*/
+
+.box-outline_textfield input {
+  width: 350px;
+  height: 60px;
+  padding-left: 10px;
+  color: #FFFFFF;
+  font-family: Avenir-Book;
+  background: rgba(215, 215, 215, 0.3);
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  opacity: 0.89;
+  margin-bottom: 30px; }
+
+  @media only screen and (max-width: 340px) and (orientation: portrait) {
+    .box-outline_textfield input {
+      width: 250px; } }
+
+  @media only screen and (max-width: 340px) and (orientation: landscape) {
+    .box-outline_textfield input {
+      width: 250px; } }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
+    .box-outline_textfield input {
+      width: 250px; } }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: landscape) {
+    .box-outline_textfield input {
+      width: 250px; } }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .box-outline_textfield input {
+      width: 350px; } }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .box-outline_textfield input {
+      width: 350px; } }
+
+  @media only screen and (min-width: 1200px) {
+    .box-outline_textfield input {
+      width: 450px; } }
+
+.ok {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  margin-left: -50px;
+  margin-top: 12px;
+  position: absolute;
+  margin-left: -50px;
+  margin-top: 12px; }
+
+/*FIM ESTILO TEXTFIELD*/
