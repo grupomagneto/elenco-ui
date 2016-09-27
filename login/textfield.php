@@ -1,4 +1,4 @@
-<form action="#" method="get">
+<form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post' id='form'>
 	<div class="gradient container">
 		<div class="box">
 			<h1 class="pergunta font-family color-font"><?php echo $pergunta; ?></h1>
@@ -8,8 +8,8 @@
 
 				<div class="column-full font-family color-font">
 
-						<input id='<?php echo $id; ?>' name='<?php echo $name; ?>' <?php $extra; ?> type="tel">
-						<img alt="" class="ok" src="images/ok_neg.svg">
+						<input id='<?php echo $input_id; ?>' name='<?php echo $name; ?>' <?php $extra; ?> type="tel">
+						<button type="submit"><img alt="" class="ok" src="images/ok_neg.svg"></button>
 
 						<!-- MENSAGEM DE ERRO -->
 						<div id="txt2"></div>

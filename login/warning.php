@@ -14,7 +14,6 @@
 <div class="swiper-slide gradient">
         <div class="row">
           <a href="logout.php">logout</a>
-          <!-- <input type="hidden" name="user_agent" value=" <?php echo $user_agent; ?>"> -->
         </div>
       <div class="box box-outline__content-after-login">
         <div class="row">

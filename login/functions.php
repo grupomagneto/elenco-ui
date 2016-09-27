@@ -7,33 +7,36 @@ function insert($link2, $id, $firstname, $lastname, $email, $gender, $birthday, 
 	return mysqli_query($link2, $query);
 }
 
-function insert_occupation($link2, $id, $occupation){
-	$query = "UPDATE tb_voters SET occupation='{$occupation}' WHERE facebook_ID='{$id}'";
-
-	return mysqli_query($link2, $query);
+function update($link2, $id, $value, $name){
+  $query = "UPDATE tb_voters SET $name='{$value}' WHERE facebook_ID='{$id}'";
+  return mysqli_query($link2, $query);
 }
 
+function insereDados($nome_tabela, $array_colunas, $array_valores, $debug = false){
+	if(sizeof($array_colunas) != sizeof($array_valores)){
+		//Quantidade de colunas diferente da quantidade de valores
+		return -1;
+	}
+	else{
+		//Monta a string sql
+		$sql = "INSERT INTO $nome_tabela (";
+		for($i = 0; $i < sizeof($array_colunas); $i++){
+			$sql .= $array_colunas[$i];
+			if($i < (sizeof($array_colunas) - 1)) $sql .= ", ";
+		}
+		$sql .= ") VALUES (";
+		for($i = 0; $i < sizeof($array_valores); $i++){
+			$sql .= $array_valores[$i];
+			if($i < (sizeof($array_valores) - 1)) $sql .= ", ";
+		}		
+		$sql .= ");";
+		
+		if($debug) die($sql);
 
-function insert_income($link2, $id, $income){
-	$query = "UPDATE tb_voters SET income='{$income}' WHERE facebook_ID='{$id}'";
-
-	return mysqli_query($link2, $query);
+		//Executa a string
+		mysqli_query($sql) or die("ERRO - insereDados - " . mysqli_error());
+		return mysqli_insert_id();
+	}
 }
 
-function insert_skincolor($link2, $id, $skincolor){
-	$query = "UPDATE tb_voters SET skin_color='{$skincolor}' WHERE facebook_ID='{$id}'";
-
-	return mysqli_query($link2, $query);
-}
-
-function insert_scholarity($link2, $id, $scholarity){
-	$query = "UPDATE tb_voters SET scholarity='{$scholarity}' WHERE facebook_ID='{$id}'";
-
-	return mysqli_query($link2, $query);
-}
-
-function insert_relationship_status($link2, $id, $relationship_status){
-	$query = "UPDATE tb_voters SET relationship_status='{$relationship_status}' WHERE facebook_ID='{$id}'";
-
-	return mysqli_query($link2, $query);
-}
+?>

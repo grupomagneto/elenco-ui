@@ -13,5 +13,5 @@ $success2 = mysqli_real_connect(
   $password2,
   $db2
 );
-mysqli_set_charset($link,"utf8");
+mysqli_set_charset($link2,"utf8");
 ?>

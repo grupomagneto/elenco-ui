@@ -25,30 +25,42 @@ try {
 	<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
 	<meta charset='utf-8'>
 	<meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport'>
-	<title>Design questions</title>
+	<title>Meu Modelo Favorito por Magneto Elenco</title>
 	<link href='stylesheets/questions.css' rel='stylesheet'>
 </head>
-<body>
+<body>";
 
-
-<?php 
-
+$id         = $_SESSION['id'];
 $pergunta 	= 'Qual seu principal meio de transporte?';
-$id1 		= 'bike';
-$id2 		= 'carro';
-$id3 		= 'onibus';
-$id4 		= 'uber';
-$opcao1 	= 'Bicicleta / A pé';
-$opcao2 	= 'Carro';
-$opcao3 	= 'Ônibus / Metrô';
-$opcao4 	= 'Táxi / Uber';
-$name 		= 'transportation';
-$extra 		= ' ';
+$id1 		    = 'bike';
+$id2        = 'carro';
+$id3        = 'onibus';
+$id4        = 'uber';
+$opcao1 	  = 'Bicicleta / A pé';
+$opcao2     = 'Carro';
+$opcao3     = 'Ônibus / Metrô';
+$opcao4     = 'Táxi / Uber';
+$name       = 'transportation';
+$extra 		  = ' ';
+$next       = 'escolaridade.php';
 
-include 'box.php'; 
+include 'box.php';
 
-?>
+include 'functions.php';
 
+if(isset($_POST[$name])){
+  $value = $_POST[$name];
+  if(update($link2, $id, $value, $name)) {
+    mysqli_close($link2);
+    header('location: '.$next.'');
+  } else {
+    $msg = mysqli_error($link2);
+    echo $msg;
+    mysqli_close($link2);
+  }
+}
+
+echo "
 
 	<script src='javascripts/jquery-1.12.1.min.js'></script>
 	<script src='javascripts/questions.js'></script>

@@ -1,4 +1,4 @@
-<form action='register.php' method='post' id='form'>
+<form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post' id='form'>
 	
 <div class='gradient container' >
 	<div class='box'>
