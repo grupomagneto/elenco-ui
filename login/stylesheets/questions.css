@@ -938,13 +938,20 @@ body {
       width: 450px; } }
 
 .ok {
+  background: none;
+  border: none;
   width: 40px;
   height: 40px;
   position: absolute;
   margin-left: -50px;
-  margin-top: 12px;
+  margin-top: 12px;}
+
+.ok img {
+  background: transparent;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  margin-left: -50px;
-  margin-top: 12px; }
+  margin-left: -20px;
+  margin-top: -20px;}
 
 /*FIM ESTILO TEXTFIELD*/

@@ -144,7 +144,7 @@ if(isAndroid) {
 $('#dropdown').each(function(){
     var $this = $(this), numberOfOptions = $(this).children('option').length;
   
-    $this.addClass('select-hidden5'); 
+    $this.addClass('select-hidden5 '); 
     $this.wrap('<div class="select5"></div>');
     $this.after('<div class="select-styled5"></div>');
 
@@ -176,8 +176,9 @@ $('#dropdown').each(function(){
         e.stopPropagation();
         $styledSelect.text($(this).text()).removeClass('active');
         $this.val($(this).attr('rel')); 
-        
-            menor.slideNext();
+
+       document.getElementById("form").submit();
+
         $list.hide();
         //console.log($this.val());
     });
@@ -188,3 +189,4 @@ $('#dropdown').each(function(){
     });
 
 });
+
