@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">@-ms-viewport{width:device-width}</style>
-<!-- <script type='text/javascript' src='//api.handsetdetection.com/apiv4/js/57394.js'></script> -->
 <script type="text/javascript" src="viewportSize.js"></script>
 <script type="text/javascript">
     var vwidth = viewportSize.getWidth();
@@ -170,15 +169,6 @@ function getBrowser() {
 
 }
 
-// $user_os        =   getOS();
-// $user_browser   =   getBrowser();
-// $device   		=   getDevice();
-
-// $cep = "71503506";
-// $cep_details = json_decode(file_get_contents("https://viacep.com.br/ws/{$cep}/json/"));
-// $district = $cep_details->bairro;
-// $uf = $cep_details->uf;
-
 $ip_details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
 $_SESSION['device']          = getDevice();
 $_SESSION['os']              = getOS();
@@ -188,20 +178,11 @@ $_SESSION['viewport']        = $viewport;
 $_SESSION['model']           = $model;
 $_SESSION['user_agent']      = $user_agent;
 $_SESSION['ip']              = $ip;
-// $_SESSION['access_city']     = utf8_decode($ip_details->city);
 $_SESSION['access_city']     = $ip_details->city;
 $_SESSION['access_uf']       = $ip_details->region;
 $_SESSION['access_country']  = $ip_details->country;
 $_SESSION['access_loc']      = $ip_details->loc;
 
-// $iso88591 = $ip_details->city;
-// $utf8_1 = utf8_encode($iso88591);
-// $utf8_2 = iconv('ISO-8859-1', 'UTF-8', $iso88591);
-// $utf8_2 = mb_convert_encoding($iso88591, 'UTF-8', 'ISO-8859-1');
-
-// $device_details =   "<strong>Device: </strong>".$device."<br /><strong>Browser: </strong>".$user_browser."<br /><strong>OS: </strong>".$user_os."<br /><strong>Resolution: </strong>".$resolution."<br /><strong>Viewport: </strong>".$viewport."<br /><strong>Model: </strong>".$model."<br /><strong>User_agent: </strong>".$user_agent."<br /><strong>IP: </strong>".$ip."<br /><strong>Cidade do Acesso: </strong>".$access_city."<br /><strong>UF: </strong>".$uf."<br /><strong>Bairro: </strong>".$district."<br /><strong>Loc: </strong>".$access_loc."<br />";
-
-// print_r($device_details);
 ?>
 </body>
 </html>

@@ -175,9 +175,10 @@ $('#dropdown').each(function(){
     $listItems.click(function(e) {
         e.stopPropagation();
         $styledSelect.text($(this).text()).removeClass('active');
-        $this.val($(this).attr('rel')); 
-        
-            menor.slideNext();
+        $this.val($(this).attr('rel'));
+
+        document.getElementById("form").submit();
+
         $list.hide();
         //console.log($this.val());
     });

@@ -29,7 +29,13 @@ require_once("functions.php");
 $script = '<script language="javascript">location.href="transporte.php";</script>';
 
 if(isset($_POST['face'])){
-	if(insert($link2, $id, $firstname, $lastname, $email, $gender, $birthday, $device, $os, $browser, $resolution, $viewport, $model, $user_agent, $ip, $access_city, $access_uf, $access_country, $access_loc)) { // INSERIR DADOS USER_AGENT
+	if(insert($link2, $id, $firstname, $lastname, $email, $gender, $birthday, $device, $os, $browser, $resolution, $viewport, $model, $user_agent, $ip, $access_city, $access_uf, $access_country, $access_loc)) { 
+			$query_email = "SELECT mail FROM (SELECT email mail FROM tb_voters) T1 INNER JOIN (SELECT email mail FROM tb_elenco) T2 USING (mail)";
+			if (!empty(mysqli_query($link2, $query_email))) {
+			$id_query = "UPDATE tb_voters SET voter_elenco_ID = (SELECT tb_elenco.id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email LIMIT 1) WHERE EXISTS (SELECT id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email)";
+			mysqli_query($link2, $id_query);
+			mysqli_close($link2);
+			}
 		echo $script;
 	} else {
 		$msg = mysqli_error($link2);
