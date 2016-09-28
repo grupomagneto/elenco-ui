@@ -9,8 +9,11 @@
 				<div class="column-full font-family color-font">
 
 						<input id='<?php echo $input_id; ?>' name='<?php echo $name; ?>' <?php $extra; ?> type="tel">
-						<button type="submit"><img alt="" class="ok" src="images/ok_neg.svg"></button>
-
+						
+						<button class="ok" type="submit">
+							<img alt="" src="images/ok_neg.svg" />
+						</button>
+						
 						<!-- MENSAGEM DE ERRO -->
 						<div id="txt2"></div>
 				</div>
