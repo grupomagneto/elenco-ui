@@ -35,14 +35,13 @@ $pergunta 	= "Qual o CEP da sua residência?";
 $input_id	= "cep";
 $name 		= "cep";
 $extra 		= '<script language="javascript"> onblur="pesquisacep(this.value);" onkeyup="mascara(this, mcep);"  maxlength="9"  size="10" </script>';
-$next       = 'before-vote.php';
 
 include "textfield.php";
 include 'db.php';
+include 'missing_info.php';
 
 function update($link2, $id, $value, $name, $city, $uf, $district){
   $query = "UPDATE tb_voters SET $name='{$value}', city='{$city}', district='{$district}', uf='{$uf}' WHERE facebook_ID='{$id}'";
-  echo $query;
   return mysqli_query($link2, $query);
 }
 
@@ -53,8 +52,28 @@ if(isset($_POST[$name])){
 	$district = $cep_details->bairro;
 	$uf = $cep_details->uf;
   if(update($link2, $id, $value, $name, $city, $uf, $district)) {
-    mysqli_close($link2);
-    header('location: '.$next.'');
+    if ($_SESSION['answers'] > 0) {
+
+      $start  = 1;
+      while ($start < $max) {
+        if (${'question'.$start} == NULL || ${'question'.$start} == '') {
+          mysqli_close($link2);
+          $next = $start + 1;
+          $next = ${'page'.$next};
+          $_SESSION['answers'] = $_SESSION['answers'] - 1;
+          header('location: ' . $next . '.php');
+          exit();
+        } else {
+          $start++;
+        }
+      }
+
+    }
+    else {
+        unset($_SESSION['answers']);
+        header('location: before-vote.php');
+        exit();
+    }
   } else {
     $msg = mysqli_error($link2);
     echo $msg;

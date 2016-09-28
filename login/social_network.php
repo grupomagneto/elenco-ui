@@ -31,21 +31,24 @@ try {
 <body>";
 
 $id         = $_SESSION['id'];
-$pergunta 	= "Qual sua rede social predileta?";
+$pergunta 	= "Qual rede social você mais usa?";
 $select_id  = "dropdown";
-$numero     = 5;
-$opcao1     = "Facebook";
-$opcao2     = "Instagram";
-$opcao3     = "Snapchat";
+$numero     = 8;
+$opcao1     = "Não uso redes sociais";
+$opcao2     = "Outros";
+$opcao3     = "Whatsapp";
 $opcao4     = "Twitter";
-$opcao5     = "Whatsapp";
+$opcao5     = "Snapchat";
+$opcao6     = "LinkedIn";
+$opcao7     = "Instagram";
+$opcao8     = "Facebook";
 $name 		  = "social_network";
 $extra 		  = ' ';
-$next       = 'cep.php';
+// $next       = 'music.php';
 
 include "dropdown.php"; 
-
 include 'functions.php';
+include 'missing_info.php';
 
 if(isset($_POST[$name])){
   $value = $_POST[$name];

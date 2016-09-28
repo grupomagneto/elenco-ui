@@ -31,25 +31,18 @@ try {
 <body>";
 
 $id         = $_SESSION['id'];
-$pergunta 	= 'Qual seu principal meio de transporte?';
-$id1 		    = 'bike';
-$id2        = 'carro';
-$id3        = 'onibus';
-$id4        = 'uber';
-$opcao1 	  = 'Bicicleta / A pé';
-$opcao2     = 'Carro';
-$opcao3     = 'Ônibus / Metrô';
-$opcao4     = 'Táxi / Uber';
-$name       = 'transportation';
+$pergunta 	= "Quantos filhos você tem?";
+$input_id	  = "filhos";
+$name 		  = "children";
 $extra 		  = ' ';
-$next       = 'escolaridade.php';
+// $next       = 'before-vote.php';
 
-include 'box.php';
-
+include "textfield.php";
 include 'functions.php';
+include 'missing_info.php';
 
 if(isset($_POST[$name])){
-  $value = $_POST[$name];
+	$value = preg_replace('/\D+/', '', $_POST[$name]);
   if(update($link2, $id, $value, $name)) {
     mysqli_close($link2);
     header('location: '.$next.'');

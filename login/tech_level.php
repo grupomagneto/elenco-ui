@@ -42,11 +42,11 @@ $opcao3     = 'Muito ruim';
 $opcao4     = 'Odeio tecnologia';
 $name       = 'tech_level';
 $extra 		  = ' ';
-$next       = 'before-vote.php';
+// $next       = 'before-vote.php';
 
 include 'box.php';
-
 include 'functions.php';
+include 'missing_info.php';
 
 if(isset($_POST[$name])){
   $value = $_POST[$name];

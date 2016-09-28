@@ -42,11 +42,11 @@ $opcao3     = 'De vez em quando';
 $opcao4     = 'Nunca';
 $name       = 'physical_activity';
 $extra 		  = ' ';
-$next       = 'tech_level.php';
+// $next       = 'tech_level.php';
 
 include 'box.php';
-
 include 'functions.php';
+include 'missing_info.php';
 
 if(isset($_POST[$name])){
   $value = $_POST[$name];
