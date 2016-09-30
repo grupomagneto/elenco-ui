@@ -31,28 +31,47 @@ try {
 <body>";
 
 $id         = $_SESSION['id'];
-$pergunta 	= 'Qual seu principal meio de transporte?';
-$id1 		    = 'bike';
-$id2        = 'carro';
-$id3        = 'onibus';
-$id4        = 'uber';
-$opcao1 	  = 'Bicicleta / A pé';
-$opcao2     = 'Carro';
-$opcao3     = 'Ônibus / Metrô';
-$opcao4     = 'Táxi / Uber';
-$name       = 'transportation';
+$pergunta 	= 'Você tem algum animal de estimação?';
+$id1 		    = 'cachorro';
+$id2        = 'gato';
+$id3        = 'outros';
+$id4        = 'nao';
+$opcao1 	  = 'Cachorro';
+$opcao2     = 'Gatos';
+$opcao3     = 'Outros';
+$opcao4     = 'Não tenho';
+$name       = 'pet';
 $extra 		  = ' ';
-$next       = 'escolaridade.php';
 
 include 'box.php';
-
 include 'functions.php';
+include 'missing_info.php';
 
 if(isset($_POST[$name])){
   $value = $_POST[$name];
   if(update($link2, $id, $value, $name)) {
-    mysqli_close($link2);
-    header('location: '.$next.'');
+    if ($_SESSION['answers'] > 0) {
+
+      $start  = 1;
+      while ($start < $max) {
+        if (${'question'.$start} == NULL || ${'question'.$start} == '') {
+          mysqli_close($link2);
+          $next = $start + 1;
+          $next = ${'page'.$next};
+          $_SESSION['answers'] = $_SESSION['answers'] - 1;
+          header('location: ' . $next . '.php');
+          exit();
+        } else {
+          $start++;
+        }
+      }
+
+    }
+    elseif ($_SESSION['answers'] == 0) {
+        unset($_SESSION['answers']);
+        header('location: before-vote.php');
+        exit();
+    }
   } else {
     $msg = mysqli_error($link2);
     echo $msg;

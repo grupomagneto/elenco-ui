@@ -31,25 +31,18 @@ try {
 <body>";
 
 $id         = $_SESSION['id'];
-$pergunta 	= "Qual seu nível de escolaridade?";
-$id1 		= "fundamental";
-$id2 		= "medio";
-$id3 		= "superior";
-$id4 		= "posgraduacao";
-$opcao1 	= "Ensino Fundamental";
-$opcao2 	= "Ensino Médio";
-$opcao3 	= "Ensino Superior";
-$opcao4 	= "Pós-graduação";
-$name 		= "scholarity";
-$extra 		= ' ';
-$next       = 'cep.php';
+$pergunta 	= "Quantos filhos você tem?";
+$input_id	  = "filhos";
+$name 		  = "children";
+$extra 		  = ' ';
+// $next       = 'before-vote.php';
 
-include 'box.php';
-
+include "textfield.php";
 include 'functions.php';
+include 'missing_info.php';
 
 if(isset($_POST[$name])){
-  $value = $_POST[$name];
+	$value = preg_replace('/\D+/', '', $_POST[$name]);
   if(update($link2, $id, $value, $name)) {
     mysqli_close($link2);
     header('location: '.$next.'');

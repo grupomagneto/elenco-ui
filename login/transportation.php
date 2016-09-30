@@ -31,17 +31,17 @@ try {
 <body>";
 
 $id         = $_SESSION['id'];
-$pergunta 	= "Qual seu nível de escolaridade?";
-$id1 		= "fundamental";
-$id2 		= "medio";
-$id3 		= "superior";
-$id4 		= "posgraduacao";
-$opcao1 	= "Ensino Fundamental";
-$opcao2 	= "Ensino Médio";
-$opcao3 	= "Ensino Superior";
-$opcao4 	= "Pós-graduação";
-$name 		= "scholarity";
-$extra 		= ' ';
+$pergunta 	= 'Qual seu principal meio de transporte?';
+$id1 		    = 'bike';
+$id2        = 'carro';
+$id3        = 'onibus';
+$id4        = 'uber';
+$opcao1 	  = 'Bicicleta / A pé';
+$opcao2     = 'Carro';
+$opcao3     = 'Ônibus / Metrô';
+$opcao4     = 'Táxi / Uber';
+$name       = 'transportation';
+$extra 		  = ' ';
 
 include 'box.php';
 include 'functions.php';

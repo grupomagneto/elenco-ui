@@ -144,7 +144,7 @@ if(isAndroid) {
 $('#dropdown').each(function(){
     var $this = $(this), numberOfOptions = $(this).children('option').length;
   
-    $this.addClass('select-hidden5 '); 
+    $this.addClass('select-hidden5'); 
     $this.wrap('<div class="select5"></div>');
     $this.after('<div class="select-styled5"></div>');
 
@@ -175,9 +175,9 @@ $('#dropdown').each(function(){
     $listItems.click(function(e) {
         e.stopPropagation();
         $styledSelect.text($(this).text()).removeClass('active');
-        $this.val($(this).attr('rel')); 
+        $this.val($(this).attr('rel'));
 
-       document.getElementById("form").submit();
+        document.getElementById("form").submit();
 
         $list.hide();
         //console.log($this.val());
@@ -188,35 +188,4 @@ $('#dropdown').each(function(){
         $list.hide();
     });
 
-});
-
-
-$(window).load(function() {
-  $("#cep").keyup(function() {
-    if ($.trim(this.value).length > 7) {
-     
-    $('#btn').css('display' ,'block');
-    $('#btn_img').css('display' ,'block');
-
-    } else {
-
-    $('#btn').css('display' ,'none');
-    $('#btn_img').css('display' ,'none');
-    }
-  });
-});
-
-$(window).load(function() {
-  $("#filho").keyup(function() {
-    if ($.trim(this.value).length > 1) {
-     
-    $('#btn').css('display' ,'block');
-    $('#btn_img').css('display' ,'block');
-
-    } else {
-
-    $('#btn').css('display' ,'none');
-    $('#btn_img').css('display' ,'none');
-    }
-  });
 });
