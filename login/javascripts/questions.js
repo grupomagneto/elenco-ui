@@ -190,3 +190,33 @@ $('#dropdown').each(function(){
 
 });
 
+
+$(window).load(function() {
+  $("#cep").keyup(function() {
+    if ($.trim(this.value).length > 7) {
+     
+    $('#btn').css('display' ,'block');
+    $('#btn_img').css('display' ,'block');
+
+    } else {
+
+    $('#btn').css('display' ,'none');
+    $('#btn_img').css('display' ,'none');
+    }
+  });
+});
+
+$(window).load(function() {
+  $("#filho").keyup(function() {
+    if ($.trim(this.value).length > 1) {
+     
+    $('#btn').css('display' ,'block');
+    $('#btn_img').css('display' ,'block');
+
+    } else {
+
+    $('#btn').css('display' ,'none');
+    $('#btn_img').css('display' ,'none');
+    }
+  });
+});

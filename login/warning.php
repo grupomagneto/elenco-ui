@@ -1,4 +1,94 @@
 <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'> 
+  <link rel="stylesheet" href="stylesheets/questions.css">
+</head>
+<body>
+
+  
+<form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post' id='form'>
+
+  <div class="gradient container">
+            <div class="row">
+              <a href="logout.php">logout</a>
+            </div>
+
+
+    <div class="box">
+      <h1 class="pergunta__selection font-family color-font">
+        Qual dos seus amigos você quer ajudar hoje?
+      </h1>
+    </div>
+  
+      <div class="box-outline_selection longhand">
+
+        <div class="selection-item">
+          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
+          <p class="font-family color-font">Ana</p>
+        </div>
+
+        <div class="selection-item">
+          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
+          <p class="font-family color-font">Ana</p>
+        </div>
+
+        <div class="selection-item">
+          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
+          <p class="font-family color-font">Ana</p>
+        </div>
+
+        <div class="selection-item">
+          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
+          <p class="font-family color-font">Ana</p>
+        </div>
+
+        <div class="selection-item">
+          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
+          <p class="font-family color-font">Ana</p>
+        </div>
+
+        <div class="selection-item">
+          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
+          <p class="font-family color-font">Ana</p>
+        </div>
+
+        <div class="selection-item">
+          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
+          <p class="font-family color-font">Ana</p>
+        </div>
+
+        <div class="selection-item">
+          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
+          <p class="font-family color-font">Ana</p>
+        </div>
+
+        <div class="selection-item">
+          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
+          <p class="font-family color-font">Ana</p>
+        </div>
+
+      </div>
+  
+  </div>
+</form>
+
+
+
+<script src="javascripts/jquery-1.12.1.min.js"></script>
+
+<script src="javascripts/questions.js"></script>
+  
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -42,4 +132,4 @@
 	<script src="javascripts/all.js"></script>
 
 </body>
-</html>
+</html> -->

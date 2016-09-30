@@ -10,8 +10,8 @@
 
 						<input id='<?php echo $input_id; ?>' name='<?php echo $name; ?>' <?php $extra; ?> type="tel">
 						
-						<button class="ok" type="submit">
-							<img alt="" src="images/ok_neg.svg" />
+						<button id="btn" class="ok" type="submit">
+							<img id="btn_img" alt="" src="images/ok_neg.svg" />
 						</button>
 						
 						<!-- MENSAGEM DE ERRO -->
@@ -22,4 +22,3 @@
 		</div>
 	</div>
 </form>
-

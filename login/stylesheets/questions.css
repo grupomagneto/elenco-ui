@@ -505,6 +505,7 @@ body {
 /*FIM PERGUNTA TEXTFIELD*/
 
 
+
 .box-outline_dropdown {
   width: 370px;
   height: 100%;
@@ -716,6 +717,8 @@ body {
       transform: translate(-50%, -50%); } }
 
 /*FIM TEXTFIELD*/
+
+
 
 /*ESTILO BOX*/
 
@@ -942,10 +945,36 @@ body {
   border: none;
   width: 40px;
   height: 40px;
+  display: none;
   position: absolute;
-  margin-left: -50px;
-  margin-top: 12px;}
+  margin-left: 435px;
+  margin-top: -82px;}
 
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .ok {
+      margin-left: 330px;
+      margin-top: -82px;} }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .ok {
+      margin-left: 330px;
+      margin-top: -82px;} }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait){
+    .ok {
+      margin-left: 280px;
+      margin-top: -82px;} }
+      
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait){
+    .ok {
+      margin-left: 280px;
+      margin-top: -82px;} }
+
+  @media only screen and (max-width: 340px) and (orientation: portrait) {
+    .ok {
+      margin-left: 280px;
+      margin-top: -82px;} }
+      
 .ok img {
   background: transparent;
   width: 40px;
@@ -955,3 +984,329 @@ body {
   margin-top: -20px;}
 
 /*FIM ESTILO TEXTFIELD*/
+
+
+
+
+/*BOX SELECTION*/
+
+.box-outline_selection {  
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 350px;
+  max-height: 420px;
+  text-align: center;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  overflow: auto;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -o-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  justify-content: flex-start;
+  }
+
+  @media only screen and (max-width: 340px) {
+
+  .box-outline_selection {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    right: 2%;
+    bottom: 5%; }
+
+  }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
+  
+  .box-outline_selection {
+    max-width: 760px;
+    max-height: 520px;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    right: 2%;
+    bottom: 5%; }
+
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  .box-outline_selection {
+    max-width: 550px;
+    max-height: 500px;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    right: 0;
+    bottom: 5%; }
+
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+  .box-outline_selection {
+    max-width: 600px;
+    max-height: 500px;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    right: 0;
+    bottom: 5%; }
+
+  }
+
+  @media only screen and (min-width: 1200px) {
+
+  .box-outline_selection {
+    max-width: 650px;
+    max-height: 500px;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    right: 0;
+    bottom: 5%; }
+
+  }
+
+/*FIM SELECTION*/
+
+
+/* ESTILO BOX Seleção */
+.longhand { 
+  -webkit-flex-flow: wrap row;
+  flex-flow: wrap row;
+  
+}
+
+/*PERGUNTA BOX SELEÇÃO*/
+
+.pergunta__selection {
+  text-align: center;
+  font-weight: 100;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  margin-top: 30px;
+  -o-transform: translate(-50%, -10%);
+  -moz-transform: translate(-50%, -10%);
+  -webkit-transform: translate(-50%, -10%);
+  transform: translate(-50%, -10%);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center; }
+
+  @media only screen and (max-width: 340px) and (orientation: portrait) {
+    .pergunta__selection {
+      width: 210px;
+      font-size: 18px; } }
+
+  @media only screen and (max-width: 340px) and (orientation: landscape) {
+    .pergunta__selection {
+      width: 210px;
+      font-size: 18px; } }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: landscape) {
+    .pergunta__selection {
+      width: 210px;
+      text-align: center;
+      font-size: 18px;
+      -o-transform: translate(-50%, 25%);
+      -moz-transform: translate(-50%, 25%);
+      -webkit-transform: translate(-50%, 25%);
+      transform: translate(-50%, 25%); } }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
+    .pergunta__selection {
+      width: 210px;
+      text-align: center;
+      font-size: 18px;
+      -o-transform: translate(-50%, 25%);
+      -moz-transform: translate(-50%, 25%);
+      -webkit-transform: translate(-50%, 25%);
+      transform: translate(-50%, 25%); } }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .pergunta__selection {
+      width: 250px;
+      font-size: 24px;
+      -o-transform: translate(-50%, 35%);
+      -moz-transform: translate(-50%, 35%);
+      -webkit-transform: translate(-50%, 35%);
+      transform: translate(-50%, 35%); } }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .pergunta__selection {
+      width: 450px;
+      font-size: 36px;
+      -o-transform: translate(-50%, 5%);
+      -moz-transform: translate(-50%, 5%);
+      -webkit-transform: translate(-50%, 5%);
+      transform: translate(-50%, 5%); } }
+
+  @media only screen and (min-width: 1200px) {
+    .pergunta__selection {
+      width: 450px;
+      font-size: 36px;
+      -o-transform: translate(-50%, 5%);
+      -moz-transform: translate(-50%, 5%);
+      -webkit-transform: translate(-50%, 5%);
+      transform: translate(-50%, 5%); } }
+
+/*FIM PERGUNTA BOX SELEÇÃO*/
+
+.selection-item {
+  padding: 2px;
+  width: 77px;
+  height: 100px;
+  margin: 6px;
+}
+
+  @media only screen and (max-width: 340px) {
+    .selection-item{  
+      padding: 2px;
+    }
+
+  }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
+    .selection-item{  
+      padding: 5px; 
+    }
+
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .selection-item{  
+      padding: 20px; 
+    }
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .selection-item{  
+      padding: 20px; 
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .selection-item{  
+      padding: 50px; 
+    }
+  }
+
+.selection-item img {
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+  border-radius: 8px;
+}
+
+  @media only screen and (max-width: 340px) {
+    .selection-item img{  
+      width: 80px;
+      height: 80px;
+    }
+
+  }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
+    .selection-item img{  
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .selection-item img{  
+      width: 100px;
+      height: 100px;
+    }  
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .selection-item img{  
+      width: 100px;
+      height: 100px;
+    }  
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .selection-item img{  
+      width: 150px;
+      height: 150px;
+    }  
+  }
+
+.selection-item p {
+  margin-top: 1px;
+}
+
+  @media only screen and (max-width: 340px) {
+    .selection-item p{
+      font-size: 14px;
+    }
+
+  }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
+    .selection-item p{
+      font-size: 14px;
+    }
+
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .selection-item p{
+      font-size: 18px;
+      margin-left: 20px;
+    }
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .selection-item p{
+      font-size: 20px;
+      margin-left: 20px;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .selection-item p{
+      font-size: 20px;
+      margin-left: 60px;
+    }
+  }
+
+.box-outline_selection::-webkit-scrollbar {
+    width: 8px;
+    position: absolute;
+    background: rgba(215, 215, 215, 0.3);
+}
+
+.box-outline_selection::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: rgba(215, 215, 215, 0.3);
+}
+
+.box-outline_selection::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #FFFFFF;
+}
+
