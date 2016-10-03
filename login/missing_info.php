@@ -15,8 +15,8 @@ $question8 	= $row['music'];
 $question9 	= $row['children'];
 $question10 = $row['diet'];
 $question11	= $row['traveling'];
-$question12	= $row['destinations'];
-$question13	= $row['grastronomy'];
+$question12	= $row['travel_motive'];
+$question13	= $row['gastronomy'];
 $question14 = $row['occupation'];
 $question15 = $row['relationship_status'];
 
@@ -31,8 +31,8 @@ $page8 	= "music";
 $page9 	= "children";
 $page10 = "diet";
 $page11	= "traveling";
-$page12	= "destinations";
-$page13	= "grastronomy";
+$page12	= "travel_motive";
+$page13	= "gastronomy";
 $page14 = "occupation";
 $page15 = "relationship_status";
 

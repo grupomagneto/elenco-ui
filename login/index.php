@@ -1,5 +1,36 @@
 <?php
 require 'bootstrap.php';
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip = $_SERVER['HTTP_CLIENT_IP'];
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} else {
+    $ip = $_SERVER['REMOTE_ADDR'];
+}
+$ip_details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+$ip_check = $ip_details->org;
+  if (isset($_GET['from_share_ID'])) {
+    if ($ip_check == "AS32934 Facebook, Inc.") {
+      header('location:home.php');
+    } else {
+      include 'db.php';
+        $hoje = date('Y-m-d H:i:s', time());
+        $from_share_ID = $_GET['from_share_ID'];
+        $sql_share = "SELECT game_ID, candidate_ID, media FROM tb_shares WHERE share_ID='$from_share_ID'";
+        $result = mysqli_query($link2, $sql_share);
+        $row = mysqli_fetch_array($result);
+        $media = $row['media'];
+        $game_ID = $row['game_ID'];
+        $candidate_ID = $row['candidate_ID'];
+        $sql_in = "INSERT INTO tb_shares (type, from_share_ID, game_ID, candidate_ID, media, timestamp, ip) VALUES ('in','$from_share_ID','$game_ID','$candidate_ID','$media','$hoje','$ip')";
+        mysqli_query($link2, $sql_in);
+        $_SESSION['share_ID'] = mysqli_insert_id($link2);
+        $_SESSION['game_ID'] = $game_ID;
+        $_SESSION['candidate_ID'] = $candidate_ID;
+        $_SESSION['from_share_ID'] = $from_share_ID;
+        mysqli_close($link2);
+      }
+    }
 $helper = $fb->getRedirectLoginHelper();
 $permissions = ['email,user_friends,user_birthday']; //permissões do usuario
 $loginUrl = $helper->getLoginUrl('http://www.meumodelofavorito.com.br/login-callback.php', $permissions);

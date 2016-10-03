@@ -81,8 +81,8 @@ if(isset($_POST[$name])){
 
 echo "
 
-	<script src='javascripts/jquery-1.12.1.min.js'></script>
-	<script src='javascripts/questions.js'></script>
+  <script src='javascripts/jquery-1.12.1.min.js'></script>
+  <script src='javascripts/questions.js'></script>
 
 </body>
 </html>";

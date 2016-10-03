@@ -45,9 +45,8 @@ function insereDados($link2, $nome_tabela, $array_colunas, $array_valores, $debu
 		if($debug) die($sql);
 
 		//Executa a string
-		mysqli_query($link2, $sql);
-		// or die("ERRO - insereDados - " . mysqli_error() . $sql);
-		// return mysqli_insert_id();
+		mysqli_query($link2, $sql) or die("ERRO - insereDados - " . mysqli_error() . $sql);
+		return mysqli_insert_id();
 	}
 }
 
@@ -83,11 +82,11 @@ function atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $co
 	
 		//Executa a string
 		if(mysqli_query($link2, $sql)){
-			// return true;
+			return true;
 		}
 		else{
 			echo("ERRO - atualizaDados - " . mysqli_error() . $sql);
-			// return false;
+			return false;
 		}
 	}
 }

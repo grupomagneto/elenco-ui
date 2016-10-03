@@ -45,8 +45,8 @@ $question8 	= $row['music'];
 $question9 	= $row['children'];
 $question10 = $row['diet'];
 $question11	= $row['traveling'];
-$question12	= $row['destinations'];
-$question13	= $row['grastronomy'];
+$question12	= $row['travel_motive'];
+$question13	= $row['gastronomy'];
 $question14 = $row['occupation'];
 $question15 = $row['relationship_status'];
 
@@ -61,8 +61,8 @@ $page8 	= "music";
 $page9 	= "children";
 $page10 = "diet";
 $page11	= "traveling";
-$page12	= "destinations";
-$page13	= "grastronomy";
+$page12	= "travel_motive";
+$page13	= "gastronomy";
 $page14 = "occupation";
 $page15 = "relationship_status";
 
@@ -83,19 +83,36 @@ if(isset($_POST['face'])){
 		$array_valores = array("'$firstname'","'$lastname'","'$email'","'$sex'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
 		$condicao = "facebook_ID='$id'";
 		atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
+		// Atualiza ID do agenciado pelo email do facebook
+		$id_query = "UPDATE tb_voters SET voter_elenco_ID = (SELECT tb_elenco.id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email LIMIT 1) WHERE EXISTS (SELECT id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email AND email != '' AND email != ' ' AND email IS NOT NULL)";
+		mysqli_query($link2, $id_query);
+		// Indica o player_facebook_ID se o usuário veio de um compartilhamento
+		if (isset($_SESSION['share_ID'])) {
+			$share_ID = $_SESSION['share_ID'];
+			$nome_tabela = "tb_shares";
+			$array_colunas = array("player_facebook_ID");
+			$array_valores = array("'$pre_id'");
+			$condicao = "share_ID='$share_ID'";
+			atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
+		}
 		mysqli_close($link2);
 
 
 		// Começo da Function
 
 	      $first  = 1;
-	      while ($first < $max) {
-	        if (${'question'.$first} == NULL || ${'question'.$first} == '') {
-	          mysqli_close($link2);
-	          header('location: ' . ${'page'.$first} . '.php');
-	          exit();
+	      while ($first <= $max) {
+	        if ($first == $max) {
+	              header('location: before-vote.php');
+	              exit();
 	        } else {
-	          $first++;
+	          if (${'question'.$first} == NULL || ${'question'.$first} == '') {
+	            mysqli_close($link2);
+	            header('location: ' . ${"page".$first} . '.php');
+	            exit();          
+	          } else {
+	            $first++;
+	          }
 	        }
 	      }
 
@@ -107,6 +124,18 @@ if(isset($_POST['face'])){
 		$array_colunas = array("facebook_ID","firstname","lastname","email","sex","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
 		$array_valores = array("'$id'","'$firstname'","'$lastname'","'$email'","'$sex'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
 		insereDados($link2, $nome_tabela, $array_colunas, $array_valores);
+		// Atualiza ID do agenciado pelo email do facebook
+		$id_query = "UPDATE tb_voters SET voter_elenco_ID = (SELECT tb_elenco.id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email LIMIT 1) WHERE EXISTS (SELECT id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email AND email != '' AND email != ' ' AND email IS NOT NULL)";
+		mysqli_query($link2, $id_query);
+		// Indica o player_facebook_ID se o usuário veio de um compartilhamento
+		if (isset($_SESSION['share_ID'])) {
+			$share_ID = $_SESSION['share_ID'];
+			$nome_tabela = "tb_shares";
+			$array_colunas = array("player_facebook_ID");
+			$array_valores = array("'$pre_id'");
+			$condicao = "share_ID='$share_ID'";
+			atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
+		}
 		mysqli_close($link2);
 
 		// Começo da Function
@@ -119,22 +148,16 @@ if(isset($_POST['face'])){
 	          exit();
 	        } else {
 	          $first++;
+	          if ($first > $max) {
+		          header('location: before-vote.php');
+		          exit();
+	          }
 	        }
 	      }
 
 	    // Fim da Function
 
 	}
-	// elseif (insert($link2, $id, $firstname, $lastname, $email, $sex, $birthday, $device, $os, $browser, $resolution, $viewport, $model, $user_agent, $ip, $access_city, $access_uf, $access_country, $access_loc)) { 
-	// 		$query_email = "SELECT mail FROM (SELECT email mail FROM tb_voters) T1 INNER JOIN (SELECT email mail FROM tb_elenco) T2 USING (mail)";
-	// 		if (!empty(mysqli_query($link2, $query_email))) {
-	// 		$id_query = "UPDATE tb_voters SET voter_elenco_ID = (SELECT tb_elenco.id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email LIMIT 1) WHERE EXISTS (SELECT id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email)";
-	// 		mysqli_query($link2, $id_query);
-	// 		mysqli_close($link2);
-	// 		}
-	// 		header('location: transportation.php');
-	// 		exit();
-	// }
 	else {
 		$msg = mysqli_error($link2);
 		echo $msg;

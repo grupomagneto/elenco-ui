@@ -43,53 +43,59 @@ $percent1 = number_format((float)$percent1, 1, '.', '');
 $percent2 = number_format((float)$percent2, 1, '.', '');
 $percent3 = number_format((float)$percent3, 1, '.', '');
 
+$friend_id = 19206;
+
+$sql_photo = "SELECT id, nome_artistico, arquivo FROM (SELECT id_elenco AS id, nome_artistico FROM tb_elenco) T1 INNER JOIN (SELECT cd_elenco AS id, arquivo FROM tb_foto WHERE cd_elenco = '$friend_id' ORDER BY dh_cadastro ASC LIMIT 0, 1) T2 USING (id)";
+$result01 = mysqli_query($link2, $sql_photo);
+$row = mysqli_fetch_array($result01);
+$photo = $row['arquivo'];
+$name = $row['nome_artistico'];
+mysqli_close($link2);
+
 echo "
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv='Content-type' content='text/html; charset=UTF-8' />
-		<title>Resultado Parcial Meu Modelo Favorito</title>
-		<link rel='stylesheet' href='stylesheets/site.css'>
-		<link rel='stylesheet' href='stylesheets/swiper.min.css'>
-		<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'> 
-
+<head>
+<meta http-equiv='Content-type' content='text/html; charset=UTF-8' />
+<title>Resultado Parcial Meu Modelo Favorito</title>
+<link rel='stylesheet' href='stylesheets/site.css'>
+<meta property='og:image' content='www.magnetoelenco.com.br/fotos/$photo'>
+<meta property='og:image:type' content='image/jpeg'>
+<meta property='og:image:width' content='300'>
+<meta property='og:image:height' content='300'>
+</head><body>
+	<link rel='stylesheet' href='stylesheets/site.css'>
+	<link rel='stylesheet' href='stylesheets/swiper.min.css'>
+  	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'> 
 	</head>
 <body>
-
-<div class='swiper-wrapper'>
-
+  <div class='swiper-wrapper'>
     <div class='swiper-slide gradient'>
-
-    	<h1 class='font-family color-font voto_registrado'>
-    		Voto registrado!
-    	</h1>
-
- 		<h1 class='pergunta pergunta__after-vote font-family color-font'>
-        	Acompanhe a classificação:
-      	</h1>
-
+    <h1 class='font-family color-font large voto_registrado'>Voto registrado!</h1>
+ 	<h1 class='pergunta font-family color-font medium '>
+        Confira o resultado parcial e convide seus amigos para votar também:
+      </h1>
 	<div class='row result-one'>
-		<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo1' class='foto' width=120px height=120px>
+	<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo1' class='foto' width=120px height=120px>
 		<div class='progress progress-result'>
 			<progress id='progressbar98' value='$percent1' max='100'></progress>
 		</div>
-		<div class='percent'>
+				<div class='percent'>
 			<p>$percent1%</p>
 		</div>
 	</div>
-
 	<div class='row result-two'>
 		<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo2' class='foto' width=120px height=120px>
-		<div class='progress progress-result'>
+		<div class='progress  progress-result'>
 			<progress id='progressbar99' value='$percent2' max='100'></progress>
 		</div>
-		<div class='percent'>
+				<div class='percent'>
 			<p>$percent2%</p>
 		</div>
 	</div>
-
-	<div class='row result-three'>
+		<div class='row result-three'>
 		<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo3' class='foto' width=120px height=120px>
+
 		<div class='progress  progress-result'>
 			<progress id='progressbar97' value='$percent3' max='100'></progress>
 		</div>
@@ -97,52 +103,31 @@ echo "
 			<p>$percent3%</p>
 		</div>
 	</div>
+  <a href='create_share_image.php' target='_blank'>  
 
-
-	<div class='box-outline__button-after-vote'>
-		
-      <input class='button button-medium font-family color-font medium' value='Quero me Candidatar' name='face' type='submit' />
-   
-	<a href='https://www.facebook.com/dialog/feed?app_id=1267791739920152&ref=site&display=page&
-	name=Meu modelo favorito
-	&caption=Jogo
-	&description=descrição jogo
-	&picture=http://lorempixel.com/300/300/
-	&link=http://www.meumodelofavorito.com.br/
-	&redirect_uri=http://www.meumodelofavorito.com.br/' target='_blank'>  
-
-	 	<button class='button-login button button-medium'>
-	        <div class='button-login_image'>
-	          <img src='images/fb.svg' />
-	        </div>
-	        <div class='button-login_content'>
-	          <p class='font-family color-font medium'>
-	           Convidar mais amigos
-	          </p>
-	        </div>
-	    </button>
-
-	</a>
-
-	</div>
-
+ 	<button class='button-login button button-medium button-result'>
+        <div class='button-login_image'>
+          <img src='images/fb.svg' />
+        </div>
+        <div class='button-login_content'>
+          <p class='font-family color-font medium'>
+           Convidar seus amigos
+          </p>
+        </div>
+    </button>
+  </a>
    
     </div>
 
-</div>
-
-
+    </div>
+ </div>
 <script src='javascripts/jquery-1.12.1.min.js'></script>
 <script src='javascripts/swiper.jquery.min.js'></script>
 <script src='javascripts/swiper.min.js'></script>
 <script src='javascripts/progressbar.min.js'></script>
 <script src='javascripts/all.js'></script>
-
 </body>
-
-</html>
-
-";
+</html>";
 mysqli_close($link2);
 } else {
         if (!empty($_GET['code']) and !empty($_GET['state'])) {
