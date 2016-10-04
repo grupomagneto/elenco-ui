@@ -13,7 +13,7 @@ class Facebook
         $this->fb = new Fb([
             'app_id' => $app_id,
             'app_secret' => $app_secret,
-            'default_graph_version' => 'v2.2',
+            'default_graph_version' => 'v2.7',
         ]);
     }
 
