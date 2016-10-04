@@ -10,7 +10,6 @@ if(!session_id()) {
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
 //se usuario está logado
     //exibo os dados desse usuário
 //senão
@@ -50,7 +49,7 @@ try {
     } else {
         if (!empty($_GET['code']) and !empty($_GET['state'])) {
             $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
-            header('location: /home.php');
+            // header('location: /home.php');
         } else {
             $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/index.php');
             header('location: '.$url.'');
