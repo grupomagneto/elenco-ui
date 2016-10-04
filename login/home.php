@@ -27,6 +27,7 @@ try {
         // echo '<pre>';
         // var_dump($user = $fb->User()->get($_SESSION['facebook_access_token']));
 
+
         $_SESSION['id'] = $user->getId();
         $_SESSION['firstname'] = $user->getFirstName();
         $_SESSION['lastname'] = $user->getLastName();
@@ -34,10 +35,17 @@ try {
         $_SESSION['email'] = $user->getEmail();
         $_SESSION['link'] = $user->getLink();
         $_SESSION['birthday'] = $user->getProperty('birthday')->format('Y-m-d');
+        $_SESSION['friends'] = $user->getProperty('friends');
 
         require_once 'colect_data.php';
 
         include 'warning.php';
+        // $friends = $user->getProperty('friends');
+
+        // foreach ($friends as $f) {
+        //     echo $f['id'] . "<br />";
+        // }
+
 
     } else {
         if (!empty($_GET['code']) and !empty($_GET['state'])) {
