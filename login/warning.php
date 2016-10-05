@@ -16,10 +16,8 @@ if(!session_id()) {
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
     if (!empty($_SESSION['facebook_access_token'])) {
-        $user = $fb->User()->get($_SESSION['facebook_access_token']);
-        $friends = $user->getProperty('friends');
+        $user = $fb->User()->get($_SESSION['facebook_access_token']); 
         echo "
-
 <!DOCTYPE html>
 <html lang='pt-br'>
 <head>
@@ -29,16 +27,8 @@ try {
   <link rel='stylesheet' href='stylesheets/questions.css'>
 </head>
 <body>
-";
-?>
-
-<!-- <form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post' id='form'> -->
 <form action='register.php' method='post' id='form'>
-
-<?php 
-
-
-echo "  <div class='gradient container'>
+  <div class='gradient container'>
             <div class='row'>
               <a href='logout.php'>logout</a>
             </div>
@@ -51,8 +41,10 @@ echo "  <div class='gradient container'>
     </div>
 ";
 ?>
+
 <?php
     include 'db.php';
+    $friends = $user->getProperty('friends');
     $friendlist = array();
     foreach ($friends as $f) {
       array_push($friendlist, $f['id']);
@@ -97,4 +89,5 @@ echo " </div>
 } catch (Exception $e) {
     echo 'Deu zica: '.$e->getMessage();
 }
+
 ?>
