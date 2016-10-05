@@ -26,6 +26,7 @@ if(!session_id()) {
 	$access_uf 			= $_SESSION['access_uf'];
 	$access_country 	= $_SESSION['access_country'];
 	$access_loc 		= $_SESSION['access_loc'];
+	$total_friends		= $_SESSION['total_count'];
 
 require_once("db.php");
 require_once("functions.php");
@@ -80,8 +81,8 @@ if(isset($_POST['friend_ID'])){
 	$pre_id = $row['facebook_ID'];
 	if ($pre_id == $id) {
 		$nome_tabela = "tb_voters";
-		$array_colunas = array("firstname","lastname","email","sex","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
-		$array_valores = array("'$firstname'","'$lastname'","'$email'","'$sex'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
+		$array_colunas = array("firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
+		$array_valores = array("'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
 		$condicao = "facebook_ID='$id'";
 		atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
 		// Atualiza ID do agenciado pelo email do facebook
@@ -122,8 +123,8 @@ if(isset($_POST['friend_ID'])){
 	}
 	elseif ($pre_id == NULL || $pre_id == '') {
 		$nome_tabela = "tb_voters";
-		$array_colunas = array("facebook_ID","firstname","lastname","email","sex","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
-		$array_valores = array("'$id'","'$firstname'","'$lastname'","'$email'","'$sex'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
+		$array_colunas = array("facebook_ID","firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
+		$array_valores = array("'$id'","'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
 		insereDados($link2, $nome_tabela, $array_colunas, $array_valores);
 		// Atualiza ID do agenciado pelo email do facebook
 		$id_query = "UPDATE tb_voters SET voter_elenco_ID = (SELECT tb_elenco.id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email LIMIT 1) WHERE EXISTS (SELECT id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email AND email != '' AND email != ' ' AND email IS NOT NULL)";

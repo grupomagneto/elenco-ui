@@ -26,7 +26,6 @@ try {
         // echo '<pre>';
         // var_dump($user = $fb->User()->get($_SESSION['facebook_access_token']));
 
-
         $_SESSION['id'] = $user->getId();
         $_SESSION['firstname'] = $user->getFirstName();
         $_SESSION['lastname'] = $user->getLastName();
@@ -35,16 +34,11 @@ try {
         $_SESSION['link'] = $user->getLink();
         $_SESSION['birthday'] = $user->getProperty('birthday')->format('Y-m-d');
         $_SESSION['friends'] = $user->getProperty('friends');
+        $_SESSION['total_count'] = $user->getProperty('friends')->getTotalCount();
 
         require_once 'colect_data.php';
 
-        include 'warning.php';
-        // $friends = $user->getProperty('friends');
-
-        // foreach ($friends as $f) {
-        //     echo $f['id'] . "<br />";
-        // }
-
+        require_once 'warning.php';
 
     } else {
         if (!empty($_GET['code']) and !empty($_GET['state'])) {
@@ -58,7 +52,6 @@ try {
 } catch (Exception $e) {
     echo 'Deu zica: '.$e->getMessage();
 }
-
 /**
  * Caso não goste de métodos mágicos:
  *
