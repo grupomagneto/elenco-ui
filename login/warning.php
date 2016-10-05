@@ -24,7 +24,7 @@ try {
 <html lang='pt-br'>
 <head>
   <meta charset='UTF-8'>
-  <title>Document</title>
+  <title>Meu Modelo Favorito por Magneto Elenco</title>
   <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'> 
   <link rel='stylesheet' href='stylesheets/questions.css'>
 </head>
@@ -32,7 +32,8 @@ try {
 ";
 ?>
 
-<form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post' id='form'>
+<!-- <form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post' id='form'> -->
+<form action='register.php' method='post' id='form'>
 
 <?php 
 
@@ -51,38 +52,33 @@ echo "  <div class='gradient container'>
 ";
 ?>
 <?php
-
+    include 'db.php';
+    $friendlist = array();
     foreach ($friends as $f) {
-        echo '<div class="">';
+      array_push($friendlist, $f['id']);
+      $facebook_ID = $f['id'];
+      $sql_id = "SELECT id, firstname, arquivo photo FROM (SELECT firstname, voter_elenco_ID id FROM tb_voters WHERE facebook_ID='$facebook_ID') T1 INNER JOIN (SELECT arquivo, cd_elenco id FROM tb_foto ORDER BY dh_cadastro ASC) T2 USING (id) LIMIT 0, 1";
+      $result = mysqli_query($link2, $sql_id);
+      $row = mysqli_fetch_array($result);
+      $friend_ID = $row['id'];
+      $photo = $row['photo'];
+      $name = $row['firstname'];
+        if ($row['firstname'] != '' && $row['firstname'] != NULL) {
+          echo '<div class="">';
             echo '<div class="selection-item">';
-            echo '<img src="http://graph.facebook.com/'. $f['id'] . '/picture" alt=" ">';
-            echo '<p>'. $f['id'] . '</p>';
+            echo '<button name="friend_ID" value="$friend_ID"><img src="http://www.magnetoelenco.com.br/fotos/'.$photo.'" alt=" "></button>';
+            echo '<p>'. $name . '</p>';
             echo '</div>';
         echo '</div>';
+        }
     }
+    $_SESSION['friendlist'] = $friendlist;
 
-    // <!--       <div class='box-outline_selection longhand'>
-
-//         <div class='selection-item'>
-//           <img src='login/images/elenco_019589_20160913140545.jpg' alt='>
-//           <p class='font-family color-font'>Ana</p>
-//         </div>
-//  -->
-
-echo 
-" 
-  
-
-
-      </div>
-  
-  </div>
+echo " </div>
+    </div>
 </form>
 
-
-
 <script src='javascripts/jquery-1.12.1.min.js'></script>
-
 <script src='javascripts/questions.js'></script>
   
 </body>

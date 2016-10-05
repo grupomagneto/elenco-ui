@@ -191,7 +191,7 @@ try {
         <html>
         <head>
         	<meta charset='UTF-8'>
-        	<title>Home</title>
+        	<title>Meu Modelo Favorito por Magneto Elenco</title>
         	<link rel='stylesheet' href='stylesheets/site.css'>
         	<link rel='stylesheet' href='stylesheets/swiper.min.css'>
           <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'> 

@@ -72,7 +72,8 @@ if (!isset($_SESSION['answers'])) {
 	$_SESSION['answers'] = 2;
 }
 
-if(isset($_POST['face'])){
+if(isset($_POST['friend_ID'])){
+	$_SESSION['friend_ID'] = $_POST['friend_ID'];
 	$query_info = "SELECT facebook_ID FROM tb_voters WHERE facebook_ID = '$id'";
 	$result = mysqli_query($link2, $query_info);
 	$row = mysqli_fetch_array($result);
