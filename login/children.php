@@ -33,6 +33,7 @@ try {
 $id         = $_SESSION['id'];
 $pergunta 	= "Quantos filhos você tem?";
 $input_id	  = "filhos";
+$text_id    = "txt_filhos";
 $name 		  = "children";
 $extra 		  = ' ';
 

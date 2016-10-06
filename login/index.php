@@ -97,6 +97,7 @@ $loginUrl = $helper->getLoginUrl('http://www.meumodelofavorito.com.br/login-call
       <div class="image-slide">
         <div class="image-game"> <img src="images/image-1.svg" alt=""></div>
       </div>
+      
      <?php echo '<a href="' . $loginUrl . '">'; ?><button class="button-login button button-medium">
         <div class="button-login_image">
           <img src="images/fb.svg" />

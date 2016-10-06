@@ -23,21 +23,22 @@ echo "
     $friends = $_SESSION['friends'];
     include 'db.php';
     include 'functions.php';
+    echo '<div class="box-outline_selection longhand">';
     foreach ($friends as $f) {
         $array = selectFriends($link2, $f['id']);
         $friendID   = $array[0];
         $name       = $array[1];
         $photo      = $array[2];
         if ($name != '' && $name != NULL) {
-          echo '<div>';
             echo '<div class="selection-item">';
-            echo '<button type="submit"><input type="hidden" name="friendID" value='.$friendID.'" /><img src="http://www.magnetoelenco.com.br/fotos/'.$photo.'" alt=" "></button>';
-            echo '<p>'.$name.'</p>';
+            echo '<button class="pointer" type="submit"><input type="hidden" name="friendID" value='.$friendID.'" /><img src="http://www.magnetoelenco.com.br/fotos/'.$photo.'" alt=" "></button>';
+            echo '<div class="selection-item__text">';
+            echo '<p class="font-family color-font">'.$name.'</p>';
             echo '</div>';
-          echo '</div>';
+            echo '</div>';
         }
       }
-
+    echo '</div>';
 echo "
 </div>
 </form>
