@@ -91,4 +91,22 @@ function atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $co
 	}
 }
 
+function selectFriends($link2, $facebook_ID, $debug = false) {
+		$sql_id = "SELECT id, firstname, arquivo photo FROM (SELECT firstname, voter_elenco_ID id FROM tb_voters WHERE facebook_ID='$facebook_ID') T1 INNER JOIN (SELECT arquivo, cd_elenco id FROM tb_foto ORDER BY dh_cadastro ASC) T2 USING (id) LIMIT 0, 1";
+
+		if($debug) die($sql_id);
+	
+		//Executa a string
+		if(mysqli_query($link2, $sql_id)){
+			$result = mysqli_query($link2, $sql_id);
+			$row = mysqli_fetch_array($result);
+			$array = array($row['id'],$row['firstname'],$row['photo']);
+			return $array;
+		}
+		else{
+			echo("ERRO - atualizaDados - " . mysqli_error() . $sql_id);
+			return false;
+		}
+}
+
 ?>

@@ -1,11 +1,15 @@
 <?php
+  require __DIR__.'/vendor/autoload.php';
+  require __DIR__.'/ids.php';
 if(!session_id()) {
-	session_start();
+  session_start();
 }
-
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
+try {
+    $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
+    if (!empty($_SESSION['facebook_access_token'])) { 
 
 	$id 				= $_SESSION['id'];
 	$firstname 			= $_SESSION['firstname'];
@@ -73,8 +77,8 @@ if (!isset($_SESSION['answers'])) {
 	$_SESSION['answers'] = 2;
 }
 
-if(isset($_POST['friend_ID'])){
-	$_SESSION['friend_ID'] = $_POST['friend_ID'];
+if(isset($_POST['friendID'])){
+	$_SESSION['friend_ID'] = $_POST['friendID'];
 	$query_info = "SELECT facebook_ID FROM tb_voters WHERE facebook_ID = '$id'";
 	$result = mysqli_query($link2, $query_info);
 	$row = mysqli_fetch_array($result);
@@ -97,7 +101,7 @@ if(isset($_POST['friend_ID'])){
 			$condicao = "share_ID='$share_ID'";
 			atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
 		}
-		mysqli_close($link2);
+		
 
 
 		// Começo da Function
@@ -109,7 +113,7 @@ if(isset($_POST['friend_ID'])){
 	              exit();
 	        } else {
 	          if (${'question'.$first} == NULL || ${'question'.$first} == '') {
-	            mysqli_close($link2);
+	            
 	            header('location: ' . ${"page".$first} . '.php');
 	            exit();          
 	          } else {
@@ -138,14 +142,14 @@ if(isset($_POST['friend_ID'])){
 			$condicao = "share_ID='$share_ID'";
 			atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
 		}
-		mysqli_close($link2);
+		
 
 		// Começo da Function
 
 	      $first  = 1;
 	      while ($first < $max) {
 	        if (${'question'.$first} == NULL || ${'question'.$first} == '') {
-	          mysqli_close($link2);
+	          
 	          header('location: ' . ${'page'.$first} . '.php');
 	          exit();
 	        } else {
@@ -164,5 +168,18 @@ if(isset($_POST['friend_ID'])){
 		$msg = mysqli_error($link2);
 		echo $msg;
 	}
+}
+mysqli_close($link2);
+} else {
+        if (!empty($_GET['code']) and !empty($_GET['state'])) {
+            $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
+            // header('location: /home.php');
+        } else {
+            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/index.php');
+            header('location: '.$url.'');
+        }
+    }
+} catch (Exception $e) {
+    echo 'Deu zica: '.$e->getMessage();
 }
 ?>

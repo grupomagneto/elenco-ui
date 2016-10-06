@@ -16,7 +16,6 @@ if(!session_id()) {
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
     if (!empty($_SESSION['facebook_access_token'])) {
-        $user = $fb->User()->get($_SESSION['facebook_access_token']);
         echo "
 
 <!DOCTYPE html>
