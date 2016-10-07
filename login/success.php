@@ -41,7 +41,7 @@ echo "
 	<title>Obrigado</title>
 </head>
 <body>
-Obrigado!
+<script language='JavaScript'>window.location=$post_link;</script> 
 </body>
 </html>";
 ?>

@@ -46,7 +46,8 @@ function insereDados($link2, $nome_tabela, $array_colunas, $array_valores, $debu
 
 		//Executa a string
 		mysqli_query($link2, $sql) or die("ERRO - insereDados - " . mysqli_error() . $sql);
-		return mysqli_insert_id();
+		$last_id = mysqli_insert_id($link2);
+		return $last_id;
 	}
 }
 
@@ -104,7 +105,7 @@ function selectFriends($link2, $facebook_ID, $debug = false) {
 			return $array;
 		}
 		else{
-			echo("ERRO - atualizaDados - " . mysqli_error() . $sql_id);
+			echo("ERRO - selectFriends - " . mysqli_error() . $sql_id);
 			return false;
 		}
 }

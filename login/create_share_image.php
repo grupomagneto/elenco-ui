@@ -46,7 +46,7 @@ imagedestroy($src);
 
 $fb_link = "https://www.facebook.com/dialog/feed?app_id=1267791739920152&ref=site&display=page&
 name=$name precisa da sua ajuda para trabalhar
-&caption=Clique e Vote aqui
+&caption=Marque seus amigos nos comentários
 &description=Ajude a escolher quem participa das propagandas que você vê. Ajude votando e convidando seus amigos para votar também.
 &picture=http://www.meumodelofavorito.com.br/$image_name
 &link=http://www.meumodelofavorito.com.br/index.php?from_share_ID=$id_share
