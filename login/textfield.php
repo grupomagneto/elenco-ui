@@ -15,7 +15,7 @@
 						</button>
 						
 						<!-- MENSAGEM DE ERRO -->
-						<div id="txt2"></div>
+						<div id='<?php echo $text_id; ?>'></div>
 				</div>
 
 			</div>

@@ -32,9 +32,10 @@ try {
 
 $id         = $_SESSION['id'];
 $pergunta 	= "Qual o CEP da sua residência?";
-$input_id	= "cep";
-$name 		= "cep";
-$extra 		= '<script language="javascript"> onblur="pesquisacep(this.value);" onkeyup="mascara(this, mcep);"  maxlength="9"  size="10" </script>';
+$input_id	  = "cep";
+$text_id    = "txt_cep";
+$name 		  = "cep";
+$extra 		  = '<script language="javascript"> onblur="pesquisacep(this.value);" onkeyup="mascara(this, mcep);"  maxlength="9"  size="10" </script>';
 
 include "textfield.php";
 include 'db.php';

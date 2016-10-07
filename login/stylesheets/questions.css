@@ -288,6 +288,10 @@ html, body {
 body {
   text-align: center; }
 
+input:focus {
+  outline: none;
+}
+
 .font-family {
   font-family: Avenir-Book;
   font-weight: 100; }
@@ -312,7 +316,29 @@ body {
   -ms-justify-content: center;
   align-items: center;
   -webkit-align-items: center;
-  -moz-align-items: center; }
+  -moz-align-items: center;}
+
+
+.container__warning {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  overflow-x:hidden;
+  overflow-y: auto; }
 
 .box {
   width: 300px;
@@ -986,8 +1012,6 @@ body {
 /*FIM ESTILO TEXTFIELD*/
 
 
-
-
 /*BOX SELECTION*/
 
 .box-outline_selection {  
@@ -998,9 +1022,11 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  max-width: 350px;
-  max-height: 420px;
+  max-width: 100%;
   text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -ms-box-orient: horizontal;
   display: -webkit-box;
   display: -moz-box;
@@ -1008,7 +1034,6 @@ body {
   display: -moz-flex;
   display: -webkit-flex;
   display: flex;
-  overflow: auto;
   -webkit-align-items: flex-start;
   -moz-align-items: flex-start;
   -o-align-items: flex-start;
@@ -1023,23 +1048,21 @@ body {
 
   .box-outline_selection {
     position: absolute;
+    max-width: 350px;
+    max-height: 320px;
     top: 20%;
-    left: 5%;
-    right: 2%;
-    bottom: 5%; }
+    margin: 0 auto;}
 
   }
 
   @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
   
   .box-outline_selection {
-    max-width: 760px;
-    max-height: 520px;
+    max-width: 341px;
+    max-height: 500px;
     position: absolute;
     top: 20%;
-    left: 10%;
-    right: 2%;
-    bottom: 5%; }
+    margin: 0 auto; }
 
   }
 
@@ -1050,9 +1073,7 @@ body {
     max-height: 500px;
     position: absolute;
     top: 20%;
-    left: 20%;
-    right: 0;
-    bottom: 5%; }
+    margin: 0 auto; }
 
   }
 
@@ -1063,9 +1084,7 @@ body {
     max-height: 500px;
     position: absolute;
     top: 20%;
-    left: 25%;
-    right: 0;
-    bottom: 5%; }
+    margin: 0 auto;}
 
   }
 
@@ -1073,12 +1092,10 @@ body {
 
   .box-outline_selection {
     max-width: 650px;
-    max-height: 500px;
+    max-height: 450px;
     position: absolute;
-    top: 20%;
-    left: 25%;
-    right: 0;
-    bottom: 5%; }
+    top: 25%;
+    margin: 0 auto;}
 
   }
 
@@ -1184,27 +1201,27 @@ body {
 
   @media only screen and (max-width: 340px) {
     .selection-item{  
-      padding: 2px;
+      padding: 7px;
     }
 
   }
 
   @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
     .selection-item{  
-      padding: 5px; 
+      padding: 8px; 
     }
 
   }
 
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .selection-item{  
-      padding: 20px; 
+      padding: 40px; 
     }
   }
 
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .selection-item{  
-      padding: 20px; 
+      padding: 50px; 
     }
   }
 
@@ -1236,15 +1253,15 @@ body {
 
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .selection-item img{  
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
     }  
   }
 
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .selection-item img{  
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
     }  
   }
 
@@ -1255,57 +1272,98 @@ body {
     }  
   }
 
-.selection-item p {
+.selection-item__text {
+  text-align: center;
+  font-weight: 100;
+  width: auto;
+  height: auto;
+  left: 50%;
   margin-top: 1px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
 }
 
   @media only screen and (max-width: 340px) {
-    .selection-item p{
+    .selection-item__text p{
       font-size: 14px;
+      -o-transform: translate(10%, -50%);
+      -moz-transform: translate(10%, -50%);
+      -webkit-transform: translate(10%, -50%);
+      transform: translate(10%, -50%);
     }
 
   }
 
   @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
-    .selection-item p{
+    .selection-item__text p{
       font-size: 14px;
+      -o-transform: translate(10%, -50%);
+      -moz-transform: translate(10%, -50%);
+      -webkit-transform: translate(10%, -50%);
+      transform: translate(10%, -50%);
     }
 
   }
 
   @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .selection-item p{
-      font-size: 18px;
-      margin-left: 20px;
+    .selection-item__text p{
+      font-size: 20px;
+      position: relative;
+      width: 100px;
+      left: 50%;
+      margin-left: 0px;
+      margin-top: -1px;
     }
   }
 
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .selection-item p{
+    .selection-item__text p{
       font-size: 20px;
-      margin-left: 20px;
+      position: relative;
+      width: 100px;
+      left: 50%;
+      margin-left: 0px;
+      margin-top: -1px;
     }
   }
 
   @media only screen and (min-width: 1200px) {
-    .selection-item p{
+    .selection-item__text p{
       font-size: 20px;
-      margin-left: 60px;
+      position: relative;
+      width: 100px;
+      left: 50%;
+      margin-left: 0px;
+      margin-top: -1px;
     }
   }
 
-.box-outline_selection::-webkit-scrollbar {
+.selection-item button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.container__warning::-webkit-scrollbar {
     width: 8px;
     position: absolute;
     background: rgba(215, 215, 215, 0.3);
 }
 
-.box-outline_selection::-webkit-scrollbar-track {
+.container__warning::-webkit-scrollbar-track {
     border-radius: 8px;
     background-color: rgba(215, 215, 215, 0.3);
 }
 
-.box-outline_selection::-webkit-scrollbar-thumb {
+.container__warning::-webkit-scrollbar-thumb {
     border-radius: 8px;
     background: #FFFFFF;
 }

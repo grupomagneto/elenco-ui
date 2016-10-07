@@ -70,7 +70,7 @@ var validacep = /^[0-9]{8}$/;
 
 function limpa_formulário_cep(valor) {
   if (valor !== undefined) {
-    document.getElementById('txt2').innerHTML = 'CEP não encontrado.';
+    document.getElementById('txt_cep').innerHTML = 'CEP não encontrado.';
   }
 
   inputsCEP.val('');
@@ -92,11 +92,11 @@ function get(url) {
 
 
     
-    $('#txt2').css('display' ,'none');
+    $('#txt_cep').css('display' ,'none');
 
     } else {
       limpa_formulário_cep(" ");
-      $('#txt2').css('display' ,'block');
+      $('#txt_cep').css('display' ,'block');
     }
 
   });
@@ -188,4 +188,44 @@ $('#dropdown').each(function(){
         $list.hide();
     });
 
+});
+
+
+$(window).load(function() {
+  $("#cep").keyup(function() {
+    if ($.trim(this.value).length > 7) {
+     
+    $('#btn').css('display' ,'block');
+    $('#btn_img').css('display' ,'block');
+
+    $('#txt_filhos').css('display' ,'none');
+
+    } else {
+
+    $('#btn').css('display' ,'none');
+    $('#btn_img').css('display' ,'none');
+    }
+  });
+});
+
+document.getElementById('txt_filhos').innerHTML = '(digite 0 caso não tenha filhos)';
+
+$(window).load(function() {
+  $("#filhos").keyup(function() {
+    if ($.trim(this.value).length > 1) {
+     
+    $('#btn').css('display' ,'block');
+    $('#btn_img').css('display' ,'block');
+
+
+    $('#txt_filhos').css('display' ,'block');
+
+    } else {
+
+    $('#txt_filhos').css('display' ,'block');
+
+    $('#btn').css('display' ,'none');
+    $('#btn_img').css('display' ,'none');
+    }
+  });
 });
