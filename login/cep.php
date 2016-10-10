@@ -52,6 +52,8 @@ if(isset($_POST[$name])){
 	$city = $cep_details->localidade;
 	$district = $cep_details->bairro;
 	$uf = $cep_details->uf;
+  $coordinates = json_decode(file_get_contents("http://maps.googleapis.com/maps/api/geocode/json?address=$value+br"));
+  
   if(update($link2, $id, $value, $name, $city, $uf, $district)) {
     if ($_SESSION['answers'] > 0) {
 

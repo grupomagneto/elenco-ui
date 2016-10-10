@@ -10,15 +10,14 @@ if(!session_id()) {
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
     if (!empty($_SESSION['facebook_access_token'])) {
-        $user = $fb->User()->get($_SESSION['facebook_access_token']);
-        $id = $_SESSION['id'];
 
+        $id = $_SESSION['id'];
         include('db.php');
         date_default_timezone_set('America/Sao_Paulo');
 
         $per_page=2;
         $vote_time_start = microtime(true);
-        if (isset($_GET['game_ID'])) { $game_ID = $_GET['game_ID']; }
+        if (isset($_SESSION['game_ID'])) { $game_ID = $_SESSION['game_ID']; }
 
         else { $game_ID = 8412; }
 

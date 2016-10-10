@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='pt-BR' lang='pt-BR'>
+   <head>
+		<meta http-equiv='Content-type' content='text/html; charset=UTF-8' />
+		<title>Criação de jogo Meu Modelo Favorito</title>
+   </head>
+   <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,900,900italic,400,400italic' />
+	<style type='text/css'>
+		h1 {
+			font-family: 'Roboto', sans-serif;
+			font-weight: 400;
+			font-size: 13px;
+		}
+        body {
+			font-family: 'Roboto', sans-serif;
+			font-size: 17px;
+	  		font-weight: 300;
+        }
+        input {
+        	font-size: 14px;
+        	width: 300px;
+        }
+		#body {
+		    margin: auto;
+		    width: 90%;
+		}
+		#text {
+		    margin: auto;
+		    width: 300px;
+		    text-align: left;
+		}
+	</style>
+<body bgcolor='#ffffff' style='margin-top: 100px;'>
+	<div id='body'>
+	<center><form name='form_game' action='action_game.php' method='post'>
+  <span style='color: gray;'>
+    <div id='text'><label for='casting'>Link do Casting: </label></div><input type='text' id='casting' name='casting' size='50' /><br /><br />
+    <div id='text'><label for='role'>Nome do jogo: </label></div><input type='text' id='game_name' name='game_name' size='50' maxlength='30'/><br /><br />
+    <div id='text'><label for='question'>Qual a pergunta: </label></div><textarea name='question' id='question' style='width:300px; height:60px; font-size: 14px;' maxlength='90'></textarea><br /><br />
+    <div id='text'><label for='role'>Qual o personagem: </label></div><input type='text' id='role' name='role' size='50' /><br /><br />
+    <div id='text'><label for='client'>Cliente: </label></div><input type='text' id='client' name='client' size='50' /><br /><br />
+    <div id='text'><label for='campaign'>Campanha: </label></div><input type='text' id='campaign' name='campaign' size='50' /><br /><br />
+    <button type='submit' size='23'><h1>CRIAR JOGO</h1></button></center></span></div>
+  </span>
+  </form>
+</body>
+</html>

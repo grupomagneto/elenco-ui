@@ -126,10 +126,40 @@ if(isset($_POST['friend_ID'])){
 
 	}
 	elseif ($pre_id == NULL || $pre_id == '') {
+		// INSERE DADOS NA TABELA TB_VOTERS
 		$nome_tabela = "tb_voters";
 		$array_colunas = array("facebook_ID","firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
 		$array_valores = array("'$id'","'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
 		insereDados($link2, $nome_tabela, $array_colunas, $array_valores);
+		// UPDATE OS DADOS NA TABELA TB_GAMES SE FOR UM CANDIDATO ACESSANDO
+		// VERIFICA SE EXISTE MAIS DE UM E-MAIL CADASTRADO
+		$sql_email = "SELECT ID, email, COUNT(email) AS total FROM tb_games WHERE email='$email'";
+		$result = mysqli_query($link2, $sql_email);
+		$row = mysqli_fetch_array($result);
+		$total = $row['total'];
+		if ($total > 1) {
+			$facebook_name = $firstname." ".$lastname;
+			$sql_email2 = "SELECT ID FROM tb_games WHERE email='$email' AND stagename='$facebook_name'";
+			$result2 = mysqli_query($link2, $sql_email2);
+			$row2 = mysqli_fetch_array($result2);
+			if ($row2['ID']) {
+				$tb_games_ID = $row2['ID'];
+				$nome_tabela = "tb_games";
+				$array_colunas = array("candidate_facebook_ID","firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
+				$array_valores = array("'$id'","'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
+				$condicao = "ID='$tb_games_ID'";
+				atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
+			} else {
+				echo "Erro. Mais de um usuário cadastrado com o mesmo e-mail. Por favor entre em contato pelo telefone: (61) 99311-0767.";
+			}
+		} elseif ($total == 1) {
+			$tb_games_ID = $row['ID'];
+			$nome_tabela = "tb_games";
+			$array_colunas = array("candidate_facebook_ID","firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
+			$array_valores = array("'$id'","'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
+			$condicao = "ID='$tb_games_ID'";
+			atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
+		}
 		// Atualiza ID do agenciado pelo email do facebook
 		$id_query = "UPDATE tb_voters SET voter_elenco_ID = (SELECT tb_elenco.id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email LIMIT 1) WHERE EXISTS (SELECT id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email AND email != '' AND email != ' ' AND email IS NOT NULL)";
 		mysqli_query($link2, $id_query);

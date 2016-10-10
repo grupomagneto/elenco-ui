@@ -21,13 +21,14 @@ if (isset($_GET['from_share_ID'])) {
 	$hoje = date('Y-m-d H:i:s', time());
 	$from_share_ID = $_GET['from_share_ID'];
 	$_SESSION['from_share_ID'] = $from_share_ID;
-	$sql_share = "SELECT game_ID, candidate_ID, media FROM tb_shares WHERE share_ID='$from_share_ID'";
+	$sql_share = "SELECT game_ID, candidate_ID, media, email_subject FROM tb_shares WHERE share_ID='$from_share_ID'";
 	$result = mysqli_query($link2, $sql_share);
 	$row = mysqli_fetch_array($result);
 	$media = $row['media'];
+	$email_subject = $row['email_subject'];
 	$nome_tabela = "tb_shares";
-	$array_colunas = array("type","from_share_ID","media","timestamp","ip");
-	$array_valores = array("'in'","'$from_share_ID'","'$media'","'$hoje'","'$ip'");
+	$array_colunas = array("type","from_share_ID","media","email_subject","timestamp","ip");
+	$array_valores = array("'in'","'$from_share_ID'","'$media'","'$email_subject'","'$hoje'","'$ip'");
 	// SHARE WITH SPECIFIED GAME AND FRIEND
 	if ($row['candidate_ID'] != NULL && $row['game_ID'] != NULL) {
 		$candidate_ID = $row['candidate_ID'];

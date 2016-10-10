@@ -17,7 +17,12 @@ try {
       header('location: home.php');
     } else {
         if (!empty($_GET['code']) and !empty($_GET['state'])) {
+            if(!session_id()) {
+              session_start();
+            }
             $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
+            header('location: home.php');
+        } else {
 
             require 'bootstrap.php';
             $helper = $fb->getRedirectLoginHelper();
@@ -109,9 +114,6 @@ try {
 </body>
 </html>";
 
-        } else {
-            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/index.php');
-            header('location: '.$url.'');
         }
     }
 } catch (Exception $e) {
