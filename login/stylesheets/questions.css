@@ -299,6 +299,14 @@ input:focus {
 .color-font {
   color: #FFFFFF; }
 
+.bold {
+  font-weight: bold;
+}
+
+.font-weight__100 {
+  font-weight: 100;
+}
+
 .container {
   display: flex;
   display: -webkit-flex;
@@ -318,6 +326,27 @@ input:focus {
   -webkit-align-items: center;
   -moz-align-items: center;}
 
+
+.container__overflow {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  overflow-x:hidden;
+  overflow-y: auto; }
 
 .container__warning {
   display: flex;
@@ -362,6 +391,9 @@ input:focus {
   margin-top: 0px;
   width: 100%; }
 
+.radio-inline__label:hover, .radio-inline__label-full:hover, .radio-inline__label:active,.radio-inline__label-full:active, .radio-inline__input:hover, .radio-inline__input-full:active {
+  background: rgba(215,215,215,0.60);
+}
 
 /*FIM ESTILOS GERAIS*/
 
@@ -1109,6 +1141,11 @@ input:focus {
   
 }
 
+.longhand__campaign {
+  -webkit-flex-flow: wrap row;
+  flex-flow: wrap row;
+}
+
 /*PERGUNTA BOX SELEÇÃO*/
 
 .pergunta__selection {
@@ -1368,3 +1405,180 @@ input:focus {
     background: #FFFFFF;
 }
 
+.selection-item__campaign button {
+  width: 280px;
+  height: 70px;
+  background: rgba(215,215,215,0.30);
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+}
+
+.selection-item__campaign button:hover {
+  background: rgba(215,215,215,0.60); }
+
+.selection-item__campaign button:active {
+  background: rgba(215,215,215,0.60); }
+
+
+.selection-item__campaign button img {
+  float: left;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-top: 2px;
+  overflow: auto;
+  border-radius: 10px;
+
+}
+
+.selection-item__campaign button h1 {
+  float: left;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: -45px;
+  margin-left: 70px;
+}
+
+.selection-item__campaign button p {
+  float: left;
+  font-size: 14px;
+  margin-top: -20px;
+  margin-left: 70px;
+}
+
+.selection-item__campaign button span {
+  float: right;
+  font-size: 14px;
+  margin-left: 9px;
+}
+
+
+
+/*BOX campaign*/
+
+.box-outline_campaign {  
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 290px;
+  max-width: 230px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-orient: vertical;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  }
+
+.selection-item__campaign {
+  padding: 2px;
+  max-width: 290px;
+  height: 10px;
+  margin: 5px;
+  }
+
+
+  @media only screen and (max-width: 340px) {
+
+    .box-outline_campaign {
+      position: absolute;
+      max-width: 290px;
+      max-height: 300px;
+      top: 15%;
+      margin: 0 auto;
+    }
+  }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) and (orientation: portrait) {
+    
+    .box-outline_campaign {
+      position: absolute;
+      max-width: 290px;
+      max-height: 320px;
+      top: 20%;
+      margin: 0 auto;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+    .box-outline_campaign {
+      position: absolute;
+      max-width: 290px;
+      max-height: 320px;
+      top: 20%;
+      margin: 0 auto;
+    }
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    
+    .box-outline_campaign {
+      position: absolute;
+      max-width: 290px;
+      max-height: 320px;
+      top: 20%;
+      margin: 0 auto;
+    }
+
+  }
+
+  @media only screen and (min-width: 1200px) {
+    
+    .box-outline_campaign {
+      position: absolute;
+      max-width: 290px;
+      max-height: 320px;
+      top: 20%;
+      margin: 0 auto;
+    }
+
+  }
+
+.stage {
+ -webkit-perspective: 1000;                   /* Sets up your viewpoint for seeing the animation */
+}
+
+.flashcard {
+  height: 60px;  
+  width: 60px;              
+  -webkit-transform-style: preserve-3d;                                 /* Provides 3D perspective. */
+  transition: all 0.1s;                                /* Slows down any transitions (e.g. rotation) */
+  -webkit-transition: all 0.1s;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);                      /* Rotates flashcard div when applied */
+}
+
+.front {
+  position: absolute;                    
+  -webkit-backface-visibility: hidden;           /*  Hides back side of text (it's upside down) */
+  height: 60px;                                   /* Stretches side to inhabit full size of flashcard */
+  width: 60px;
+  text-align: center;                                                  
+}
+
+.front img {
+  height: 60px;
+  width: 60px;
+}
