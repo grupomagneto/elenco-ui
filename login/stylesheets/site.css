@@ -365,10 +365,9 @@ input:focus {
 .button:active {
   background: rgba(215,215,215,0.60); }
 
-.radio-inline__label:hover,.radio-inline__label-full:hover, .radio-inline__label:active.,.radio-inline__label-full:active, .radio-inline__input:hover, .radio-inline__input-full:active{
+.radio-inline__label:hover, .radio-inline__label-full:hover, .radio-inline__label:active,.radio-inline__label-full:active, .radio-inline__input:hover, .radio-inline__input-full:active{
   background: rgba(215,215,215,0.60);
 }
-
 
 .button-medium {
   width: 250px;
