@@ -9,6 +9,37 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 } else {
     $ip = $_SERVER['REMOTE_ADDR'];
 }
+// DETECTA A RESOLUÇÃO DA TELA
+if(isset($_SESSION['screen_width']) AND isset($_SESSION['screen_height'])){
+    $width = $_SESSION['screen_width'];
+    $height = $_SESSION['screen_height'];
+
+    $viewport = "Undetected";
+    $resolution = $width . 'x' . $height;
+    
+    $model = "Unknown";
+    if ($width == 320 && $height == 480) {
+        $model = "iPhone 4";
+    }
+    else if ($width == 375 && $height == 667) {
+        $model = "iPhone 6+";
+    }
+    else if ($width == 414 && $height == 736) {
+        $model = "iPhone 6+ Plus";
+    }
+    else if ($width == 320 && $height == 568) {
+        $model = "iPhone 5";
+    }
+    else if ($height > 736) {
+        $model = "Not mobile";
+    }
+} elseif(isset($_REQUEST['width']) AND isset($_REQUEST['height'])) {
+    $_SESSION['screen_width'] = $_REQUEST['width'];
+    $_SESSION['screen_height'] = $_REQUEST['height'];
+    header('Location: ' . $_SERVER['PHP_SELF']);
+} else {
+    echo '<script type="text/javascript">window.location = "' . $_SERVER['PHP_SELF'] . '?width="+screen.width+"&height="+screen.height;</script>';
+}
 $ip_details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
 $ip_check = $ip_details->org;
 if (isset($_GET['from_share_ID'])) {

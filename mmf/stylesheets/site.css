@@ -365,7 +365,7 @@ input:focus {
 .button:active {
   background: rgba(215,215,215,0.60); }
 
-.radio-inline__label:hover,.radio-inline__label-full:hover, .radio-inline__label:active.,.radio-inline__label-full:active, .radio-inline__input:hover, .radio-inline__input-full:active{
+.radio-inline__label:hover, .radio-inline__label-full:hover, .radio-inline__label:active,.radio-inline__label-full:active, .radio-inline__input:hover, .radio-inline__input-full:active{
   background: rgba(215,215,215,0.60);
 }
 
@@ -1100,11 +1100,10 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate(-75%, -15%);
-  -moz-transform: translate(-75%, -15%);
-  -webkit-transform: translate(-75%, -15%);
-  transform: translate(-75%, -15%);
-
+  -o-transform: translate(-25%, -15%);
+  -moz-transform: translate(-25%, -15%);
+  -webkit-transform: translate(-25%, -15%);
+  transform: translate(-25%, -15%);
 }
 
 .result-two{
@@ -1114,10 +1113,10 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate(-25%, -15%);
-  -moz-transform: translate(-25%, -15%);
-  -webkit-transform: translate(-25%, -15%);
-  transform: translate(-25%, -15%);
+  -o-transform: translate(-75%, -15%);
+  -moz-transform: translate(-75%, -15%);
+  -webkit-transform: translate(-75%, -15%);
+  transform: translate(-75%, -15%);
 } 
 
 .result-three{
@@ -1758,10 +1757,10 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate(-75%, -15%);
-  -moz-transform: translate(-75%, -15%);
-  -webkit-transform: translate(-75%, -15%);
-  transform: translate(-75%, -15%);
+  -o-transform: translate(-25%, -15%);
+  -moz-transform: translate(-25%, -15%);
+  -webkit-transform: translate(-25%, -15%);
+  transform: translate(-25%, -15%);
 }
 
 .result-two{
@@ -1771,10 +1770,10 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate(-25%, -15%);
-  -moz-transform: translate(-25%, -15%);
-  -webkit-transform: translate(-25%, -15%);
-  transform: translate(-25%, -15%);
+  -o-transform: translate(-75%, -15%);
+  -moz-transform: translate(-75%, -15%);
+  -webkit-transform: translate(-75%, -15%);
+  transform: translate(-75%, -15%);
 } 
 
 .result-three{
@@ -2413,10 +2412,10 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate(-75%, -15%);
-  -moz-transform: translate(-75%, -15%);
-  -webkit-transform: translate(-75%, -15%);
-  transform: translate(-75%, -15%);
+  -o-transform: translate(-25%, -15%);
+  -moz-transform: translate(-25%, -15%);
+  -webkit-transform: translate(-25%, -15%);
+  transform: translate(-25%, -15%);
 }
 
 .result-two{
@@ -2426,10 +2425,10 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate(-25%, -15%);
-  -moz-transform: translate(-25%, -15%);
-  -webkit-transform: translate(-25%, -15%);
-  transform: translate(-25%, -15%);
+  -o-transform: translate(-75%, -15%);
+  -moz-transform: translate(-75%, -15%);
+  -webkit-transform: translate(-75%, -15%);
+  transform: translate(-75%, -15%);
 } 
 
 .result-three{
@@ -3117,10 +3116,10 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate(-75%, 10%);
-  -moz-transform: translate(-75%, 10%);
-  -webkit-transform: translate(-75%, 10%);
-  transform: translate(-75%, 10%);
+  -o-transform: translate(-25%, 10%);
+  -moz-transform: translate(-25%, 10%);
+  -webkit-transform: translate(-25%, 10%);
+  transform: translate(-25%, 10%);
 }
 
 .result-two{
@@ -3130,10 +3129,10 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate(-25%, 10%);
-  -moz-transform: translate(-25%, 10%);
-  -webkit-transform: translate(-25%, 10%);
-  transform: translate(-25%, 10%);
+  -o-transform: translate(-75%, 10%);
+  -moz-transform: translate(-75%, 10%);
+  -webkit-transform: translate(-75%, 10%);
+  transform: translate(-75%, 10%);
 } 
 
 .result-three{

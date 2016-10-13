@@ -23,7 +23,39 @@ try {
         $_SESSION['friends'] = $user->getProperty('friends');
         $_SESSION['total_count'] = $user->getProperty('friends')->getTotalCount();
 
-        require_once 'colect_data.php';
+        require_once('colect_data.php');
+
+        // DETECTA A RESOLUÇÃO DA TELA
+        // if(isset($_SESSION['screen_width']) AND isset($_SESSION['screen_height'])){
+        //     $width = $_SESSION['screen_width'];
+        //     $height = $_SESSION['screen_height'];
+
+        //     $viewport = "Undetected";
+        //     $resolution = $width . 'x' . $height;
+            
+        //     $model = "Unknown";
+        //     if ($width == 320 && $height == 480) {
+        //         $model = "iPhone 4";
+        //     }
+        //     else if ($width == 375 && $height == 667) {
+        //         $model = "iPhone 6+";
+        //     }
+        //     else if ($width == 414 && $height == 736) {
+        //         $model = "iPhone 6+ Plus";
+        //     }
+        //     else if ($width == 320 && $height == 568) {
+        //         $model = "iPhone 5";
+        //     }
+        //     else if ($height > 736) {
+        //         $model = "Not mobile";
+        //     }
+        // } elseif(isset($_REQUEST['width']) AND isset($_REQUEST['height'])) {
+        //     $_SESSION['screen_width'] = $_REQUEST['width'];
+        //     $_SESSION['screen_height'] = $_REQUEST['height'];
+        //     header('Location: ' . $_SERVER['PHP_SELF']);
+        // } else {
+        //     echo '<script type="text/javascript">window.location = "' . $_SERVER['PHP_SELF'] . '?width="+screen.width+"&height="+screen.height;</script>';
+        // }
 
         $id                 = $_SESSION['id'];
         $firstname          = $_SESSION['firstname'];
@@ -46,7 +78,10 @@ try {
         $access_loc         = $_SESSION['access_loc'];
         $total_friends      = $_SESSION['total_count'];
 
-        require_once("functions.php");
+        require_once('functions.php');
+
+        date_default_timezone_set('America/Sao_Paulo');
+        $hoje = date('Y-m-d H:i:s', time());
 
             // VERIFICA SE O USUARIO JÁ VOTOU ANTES PARA DEFINIR SE ATUALIZA OU INSERE
             $query_info = "SELECT facebook_ID FROM tb_voters WHERE facebook_ID = '$id'";
@@ -56,13 +91,18 @@ try {
             // SE O USUÁRIO JÁ VOTOU ANTES
             if ($pre_id == $id) {
                 $nome_tabela = "tb_voters";
-                $array_colunas = array("firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
-                $array_valores = array("'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
+                $array_colunas = array("firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc","insert_date");
+                $array_valores = array("'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'","'$hoje'");
                 $condicao = "facebook_ID='$id'";
                 atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
                 // Atualiza ID do agenciado pelo email do facebook
                 $id_query = "UPDATE tb_voters SET voter_elenco_ID = (SELECT tb_elenco.id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email LIMIT 1) WHERE EXISTS (SELECT id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email AND email != '' AND email != ' ' AND email IS NOT NULL)";
                 mysqli_query($link2, $id_query);
+                $sql_elenco_ID = "SELECT voter_elenco_ID FROM tb_voters WHERE facebook_ID = '$id'";
+                $result_ID = mysqli_query($link2, $sql_elenco_ID);
+                if ($row_ID = mysqli_fetch_array($result_ID)) {
+                    $_SESSION['voter_elenco_ID'] = $row_ID['voter_elenco_ID'];
+                }
                 // Indica o player_facebook_ID se o usuário veio de um compartilhamento
                 if (isset($_SESSION['share_ID'])) {
                     $share_ID = $_SESSION['share_ID'];
@@ -114,6 +154,11 @@ try {
                 // ATUALIZA O ID_ELENCO DO CANDIDATO EM TB_VOTERS SE O E-MAIL CADASTRADO FOR O MESMO DO FACEBOOK
                 $id_query = "UPDATE tb_voters SET voter_elenco_ID = (SELECT tb_elenco.id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email LIMIT 1) WHERE EXISTS (SELECT id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email AND email != '' AND email != ' ' AND email IS NOT NULL)";
                 mysqli_query($link2, $id_query);
+                $sql_elenco_ID = "SELECT voter_elenco_ID FROM tb_voters WHERE facebook_ID = '$id'";
+                $result_ID = mysqli_query($link2, $sql_elenco_ID);
+                if ($row_ID = mysqli_fetch_array($result_ID)) {
+                    $_SESSION['voter_elenco_ID'] = $row_ID['voter_elenco_ID'];
+                }
                 // ATUALIZA O PLAYER_FACEBOOK_ID SE O USUÁRIO VEIO DE UM COMPARTILHAMENTO
                 if (isset($_SESSION['share_ID'])) {
                     $share_ID = $_SESSION['share_ID'];

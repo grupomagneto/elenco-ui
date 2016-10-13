@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">@-ms-viewport{width:device-width}</style>
-<script type="text/javascript" src="viewportSize.js"></script>
+<script type="text/javascript" src="javascripts/viewportSize.js"></script>
 <script type="text/javascript">
     var vwidth = viewportSize.getWidth();
     var vheight = viewportSize.getHeight();
 </script>
 </head>
 <body>
-<?php header('Content-Type: text/html; charset=utf-8');
+<?php
+if(!session_id()) {
+    session_start();
+}
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip = $_SERVER['HTTP_CLIENT_IP'];
 } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -22,38 +25,29 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 if(isset($_SESSION['screen_width']) AND isset($_SESSION['screen_height'])){
     $width = $_SESSION['screen_width'];
     $height = $_SESSION['screen_height'];
- //    if (isset($_SESSION['viewport_width']) AND isset($_SESSION['viewport_height'])) {
-	//     $v_width = $_SESSION['viewport_width'];
-	//     $v_height = $_SESSION['viewport_height'];
-	//     $viewport = $v_width . 'x' . $v_height;
-	// } else {
-	//     $viewport = "Undetected";
-	// }
 
     $viewport = "Undetected";
     $resolution = $width . 'x' . $height;
     
     $model = "Unknown";
-	if ($width == 320 && $height == 480) {
-		$model = "iPhone 4";
-	}
-	else if ($width == 375 && $height == 667) {
-		$model = "iPhone 6+";
-	}
-	else if ($width == 414 && $height == 736) {
-		$model = "iPhone 6+ Plus";
-	}
-	else if ($width == 320 && $height == 568) {
-		$model = "iPhone 5";
-	}
-	else if ($height > 736) {
-		$model = "Not mobile";
-	}
-} else if(isset($_REQUEST['width']) AND isset($_REQUEST['height'])) {
+    if ($width == 320 && $height == 480) {
+        $model = "iPhone 4";
+    }
+    else if ($width == 375 && $height == 667) {
+        $model = "iPhone 6+";
+    }
+    else if ($width == 414 && $height == 736) {
+        $model = "iPhone 6+ Plus";
+    }
+    else if ($width == 320 && $height == 568) {
+        $model = "iPhone 5";
+    }
+    else if ($height > 736) {
+        $model = "Not mobile";
+    }
+} elseif(isset($_REQUEST['width']) AND isset($_REQUEST['height'])) {
     $_SESSION['screen_width'] = $_REQUEST['width'];
     $_SESSION['screen_height'] = $_REQUEST['height'];
-    $_SESSION['viewport_width'] = $_REQUEST['viewportwidth'];
-    $_SESSION['viewport_height'] = $_REQUEST['viewportheight'];
     header('Location: ' . $_SERVER['PHP_SELF']);
 } else {
     echo '<script type="text/javascript">window.location = "' . $_SERVER['PHP_SELF'] . '?width="+screen.width+"&height="+screen.height;</script>';
@@ -68,13 +62,8 @@ function getDevice() {
     $device    =   "Unknown Device";
 
     $device_array       =   array(
-                            '/windows nt 6.2/i'     =>  'Desktop',
-                            '/windows nt 6.1/i'     =>  'Desktop',
-                            '/windows nt 6.0/i'     =>  'Desktop',
-                            '/windows nt 5.2/i'     =>  'Desktop',
-                            '/windows nt 5.1/i'     =>  'Desktop',
                             '/windows xp/i'         =>  'Desktop',
-                            '/windows nt 5.0/i'     =>  'Desktop',
+                            '/windows nt/i'         =>  'Desktop',
                             '/windows me/i'         =>  'Desktop',
                             '/win98/i'              =>  'Desktop',
                             '/win95/i'              =>  'Desktop',
@@ -109,6 +98,7 @@ function getOS() {
     $os_platform    =   "Unknown OS Platform";
 
     $os_array       =   array(
+                            '/windows nt 6.3/i'     =>  'Windows 8',
                             '/windows nt 6.2/i'     =>  'Windows 8',
                             '/windows nt 6.1/i'     =>  'Windows 7',
                             '/windows nt 6.0/i'     =>  'Windows Vista',
