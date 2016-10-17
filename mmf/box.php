@@ -8,19 +8,19 @@
 		<div class='box-outline_box'>
 			<div class='column-full font-family color-font'>
 
-				<input class='radio-inline__input-full' id='<?php echo $id1; ?>' name='<?php echo $name; ?>' type='submit' value='<?php echo $opcao1; ?>'>
+				<input class='radio-inline__input-full' id='<?php echo $id1; ?>' name='<?php echo $name; ?>' type='submit' value='<?php echo $opcao1; ?>' onclick='showLoading()'>
 				<label class='radio-inline__label-full cursor' for='<?php echo $id1; ?>'> 
 					<?php echo $opcao1; ?>
 				</label>
-				<input class='radio-inline__input-full' id='<?php echo $id2; ?>' name='<?php echo $name; ?>' type='submit' value='<?php echo $opcao2; ?>'>
+				<input class='radio-inline__input-full' id='<?php echo $id2; ?>' name='<?php echo $name; ?>' type='submit' value='<?php echo $opcao2; ?>' onclick='showLoading()'>
 				<label class='radio-inline__label-full cursor' for='<?php echo $id2; ?>'> 
 					<?php echo $opcao2; ?>
 				</label>
-				<input class='radio-inline__input-full' id='<?php echo $id3; ?>' name='<?php echo $name; ?>' type='submit' value='<?php echo $opcao3; ?>'>
+				<input class='radio-inline__input-full' id='<?php echo $id3; ?>' name='<?php echo $name; ?>' type='submit' value='<?php echo $opcao3; ?>' onclick='showLoading()'>
 				<label class='radio-inline__label-full cursor' for='<?php echo $id3; ?>'>
 					<?php echo $opcao3; ?>
 				</label>
-				<input class='radio-inline__input-full' id='<?php echo $id4; ?>' name='<?php echo $name; ?>' type='submit' value='<?php echo $opcao4; ?>'>
+				<input class='radio-inline__input-full' id='<?php echo $id4; ?>' name='<?php echo $name; ?>' type='submit' value='<?php echo $opcao4; ?>' onclick='showLoading()'>
 				<label class='radio-inline__label-full cursor' for='<?php echo $id4; ?>'>
 				<?php echo $opcao4; ?>
 				</label>

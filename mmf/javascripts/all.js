@@ -319,5 +319,8 @@ var bar = new ProgressBar.Line('.line__rating-third', {
 
 bar.animate(0.2);
 
+function showLoading() {
+   document.getElementById('loading').style.display = 'block';
+}
 
 

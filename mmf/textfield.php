@@ -10,7 +10,7 @@
 
 						<input id='<?php echo $input_id; ?>' name='<?php echo $name; ?>' <?php $extra; ?> type="tel">
 						
-						<button id="btn" class="ok" type="submit">
+						<button id="btn" class="ok" type="submit" onclick="showLoading()">
 							<img id="btn_img" alt="" src="images/ok_neg.svg" />
 						</button>
 						

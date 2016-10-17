@@ -33,13 +33,16 @@ $row_total = mysqli_fetch_array($result_total);
 $total = $row_total['total'];
 
 $percent1 = $total_wins1 / $total * 100;
-$percent2 = $total_wins2 / $total * 100;
-$percent3 = $total_wins3 / $total * 100;
-
 $percent1 = number_format((float)$percent1, 1, '.', '');
-$percent2 = number_format((float)$percent2, 1, '.', '');
-$percent3 = number_format((float)$percent3, 1, '.', '');
 
+if (isset($total_wins2)) {
+	$percent2 = $total_wins2 / $total * 100;
+	$percent2 = number_format((float)$percent2, 1, '.', '');
+}
+if (isset($total_wins3)) {
+	$percent3 = $total_wins3 / $total * 100;
+	$percent3 = number_format((float)$percent3, 1, '.', '');
+}
 mysqli_close($link2);
 
 echo "
@@ -69,8 +72,10 @@ echo "
 				<div class='percent'>
 			<p>$percent1%</p>
 		</div>
-	</div>
-	<div class='row result-two'>
+	</div>";
+	if (isset($winner_photo2)) {
+		echo "
+		<div class='row result-two'>
 		<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo2' class='foto' width=120px height=120px>
 		<div class='progress  progress-result'>
 			<progress id='progressbar99' value='$percent2' max='100'></progress>
@@ -78,7 +83,10 @@ echo "
 				<div class='percent'>
 			<p>$percent2%</p>
 		</div>
-	</div>
+		</div>";
+	}
+	if (isset($winner_photo3)) {
+		echo "
 		<div class='row result-three'>
 		<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo3' class='foto' width=120px height=120px>
 
@@ -87,7 +95,9 @@ echo "
 		</div>
 		<div class='percent'>
 			<p>$percent3%</p>
-		</div>
+		</div>";
+	}
+	echo "
 	</div>
   <a href='create_share_image.php' target='_blank'>  
 
