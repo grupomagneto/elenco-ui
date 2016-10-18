@@ -1,18 +1,20 @@
 <?php
-  require __DIR__.'/vendor/autoload.php';
-  require __DIR__.'/ids.php';
+require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/ids.php';
 if(!session_id()) {
-  session_start();
+    session_start();
 }
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
     if (!empty($_SESSION['facebook_access_token'])) {
+        include('functions.php');
+        $page = basename(__FILE__);
+        include 'register_page.php';
 
         $id = $_SESSION['id'];
-        include('functions.php');
         date_default_timezone_set('America/Sao_Paulo');
         $vote_time_start = microtime(true);
 
@@ -481,7 +483,7 @@ try {
             $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
             // header('location: /home.php');
         } else {
-            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/mmf/index.php');
+            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/index.php');
             header('location: '.$url.'');
         }
     }

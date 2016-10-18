@@ -26,7 +26,7 @@ if(!empty($_GET['from_share_ID'])){
 }
 header( 'Content-Type: image/gif' );
 //Full URI to the image
-$graphic_http = 'http://www.meumodelofavorito.com.br/blank.gif';
+$graphic_http = 'http://www.meumodelofavorito.com.br/images/blank.gif';
 
 //Get the filesize of the image for headers
 $filesize = filesize( 'blank.gif' );

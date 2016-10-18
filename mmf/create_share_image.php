@@ -2,7 +2,7 @@
 if(!session_id()) {
 	session_start();
 }
-include('functions.php');
+require_once('functions.php');
 $ip = $_SESSION['ip'];
 $player_facebook_ID = $_SESSION['id'];
 if (isset($_SESSION['friend_ID'])) { $friend_ID = $_SESSION['friend_ID']; }
@@ -45,9 +45,9 @@ $fb_link = "https://www.facebook.com/dialog/feed?app_id=1267791739920152&ref=sit
 name=$name precisa da sua ajuda para trabalhar
 &caption=Marque seus amigos nos comentários
 &description=Ajude a escolher quem participa das propagandas que você vê. Ajude votando e convidando seus amigos para votar também.
-&picture=http://www.meumodelofavorito.com.br/mmf/$image_name
-&link=http://www.meumodelofavorito.com.br/mmf/index.php?from_share_ID=$id_share
-&redirect_uri=http://www.meumodelofavorito.com.br/mmf/success.php?from_share_ID=$id_share";
+&picture=http://www.meumodelofavorito.com.br/$image_name
+&link=http://www.meumodelofavorito.com.br/index.php?from_share_ID=$id_share
+&redirect_uri=http://www.meumodelofavorito.com.br/success.php?from_share_ID=$id_share";
 
 echo"<!DOCTYPE html><html><head><meta http-equiv='refresh' content='0;url=$fb_link'></head><body></body></html>";
 ?>

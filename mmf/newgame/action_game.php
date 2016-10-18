@@ -1,11 +1,14 @@
-<?php header('Content-Type: text/html; charset=utf-8');
+<?php
+  header('Content-Type: text/html; charset=utf-8');
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
   date_default_timezone_set('America/Sao_Paulo');
 $path = $_SERVER['DOCUMENT_ROOT'];
-include $path.'/db.php';
-include $path.'/functions.php';
+// include $path.'/db.php';
+// include $path.'/functions.php';
+include_once 'db.php';
+include_once 'functions.php';
 
 	// Assuntos do email
 	$subject1 = "[IMPORTANTE] Você está participando de um casting e PODE MUDAR O RESULTADO FINAL";
@@ -13,8 +16,9 @@ include $path.'/functions.php';
 	$subject3 = "[CASTING] Convide seus amigos para votarem em você";
 	$subject4 = "Descubra seu Potencial de Magnetismo nas propagandas";
 	$random_subject = array($subject1, $subject2, $subject3, $subject4);
-	$subject = $random_subject[array_rand($random_subject)];
 
+	define('GUSER', 'inteligencia@magnetoelenco.com.br');	// <-- Insira aqui o seu GMail
+	define('GPWD', 'rom54808285');		// <-- Insira aqui a senha do seu GMail
 
 	$game_ID = $_POST['casting'];
 	$game_ID = str_replace("http://www.magnetoelenco.com.br/v2/meu_casting.php?id_casting=", "", "$game_ID");
@@ -28,12 +32,13 @@ include $path.'/functions.php';
 	$count = mysqli_num_rows($result);
 	while ($row = mysqli_fetch_array($result)) {
 		$candidate_elenco_ID = $row['cd_elenco'];
-		$sql_select = "SELECT nome_artistico, email, cep, nome_responsavel, dt_nascimento, cd_pele FROM tb_elenco WHERE id_elenco = '$candidate_elenco_ID'";
+		$sql_select = "SELECT nome_artistico, email, cep, nome_responsavel, dt_nascimento, cd_pele, sexo FROM tb_elenco WHERE id_elenco = '$candidate_elenco_ID'";
 		$result2 = mysqli_query($link2, $sql_select);
 		$row2 = mysqli_fetch_array($result2);
 		$stagename = $row2['nome_artistico'];
 		$names = explode(" ", $stagename);
 		$firstname = $names[0];
+		$lastname = $names[1];
 		$email 		= strtolower($row2['email']);
 		$email 		= filter_var($email, FILTER_SANITIZE_EMAIL);
 		if ($row2['cd_pele'] == 1) { $skin_color = "Amarela"; }
@@ -41,14 +46,12 @@ include $path.'/functions.php';
 		if ($row2['cd_pele'] == 3) { $skin_color = "Parda"; }
 		if ($row2['cd_pele'] == 4) { $skin_color = "Negra"; }
 		if ($row2['cd_pele'] == 5) { $skin_color = "Indígena"; }
-		$cep 		= preg_replace('/\D+/', '', $row2['cep']);
-		$cep_details = json_decode(file_get_contents("https://viacep.com.br/ws/{$cep}/json/"));
-		$city = $cep_details->localidade;
-		$district = $cep_details->bairro;
-		$uf = $cep_details->uf;
+		$sex = $row2['sexo'];
+		$cep = preg_replace('/\D+/', '', $row2['cep']);
+		$birthday = $row2['dt_nascimento'];
 		$nome_tabela = "tb_games";
-		$array_colunas = array('game_ID','game_name','candidate_elenco_ID','stagename','email','cep','uf','city','district','skin_color','question','role','client','campaign');
-		$array_valores = array("'$game_ID'","'$game_name'","'$candidate_elenco_ID'","'$stagename'","'$email'","'$cep'","'$uf'","'$city'","'$district'","'$skin_color'","'$question'","'$role'","'$client'","'$campaign'");
+		$array_colunas = array('game_ID','game_name','candidate_elenco_ID','stagename','email','cep','skin_color','firstname','lastname','question','role','client','campaign','birthday','sex');
+		$array_valores = array("'$game_ID'","'$game_name'","'$candidate_elenco_ID'","'$stagename'","'$email'","'$cep'","'$skin_color'","'$firstname'","'$lastname'","'$question'","'$role'","'$client'","'$campaign'","'$birthday'","'$sex'");
 		$age = date_diff(date_create($row2['dt_nascimento']), date_create(date('Y-m-d', time())))->y;
 		$guardian_name = " ";
 		if ($age < 18) {
@@ -57,8 +60,18 @@ include $path.'/functions.php';
 			array_push($array_valores,"'$guardian'");
 			$guardian_name = "(ou responsável legal $guardian)";
 		}
+		$cep_details = getCepFile($cep);
+		// $cep_details = json_decode(file_get_contents("https://viacep.com.br/ws/{$cep}/json/"), true);
+		$city = $cep_details->localidade;
+		$district = $cep_details->bairro;
+		$uf = $cep_details->uf;
+		if (!empty($city) && !empty($uf) && !empty($district)) {
+			array_push($array_colunas,'uf','city','district');
+			array_push($array_valores,"'$uf'","'$city'","'$district'");
+		}
 		insereDados($link2, $nome_tabela, $array_colunas, $array_valores);
 		// CREATE SHARE
+		$subject = $random_subject[array_rand($random_subject)];
 		$hoje = date('Y-m-d H:i:s', time());
 		$nome_tabela = "tb_shares";
 		$array_colunas = array('type','game_ID','candidate_ID','media','email_subject','timestamp');
@@ -90,51 +103,16 @@ include $path.'/functions.php';
 		<p>Time Magneto Elenco</p>
 		<p>LINK PARA VOTAR:<BR />
 		$link</p>
-		<img src='http://www.meumodelofavorito.com.br/email_opened.php?from_share_ID=$share_ID' width='1' height='1' border='0' alt='' />
+		<img src='http://www.meumodelofavorito.com.br/newgame/email_opened.php?from_share_ID=$share_ID' width='1' height='1' border='0' alt='' />
 		</body>
 		</html>";
 
-		require_once $path."/phpmailer/class.phpmailer.php";
-
-		define('GUSER', 'inteligencia@magnetoelenco.com.br');	// <-- Insira aqui o seu GMail
-		define('GPWD', 'rom54808285');		// <-- Insira aqui a senha do seu GMail
-
-		function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
-			global $error;
-			$mail = new PHPMailer();
-			$mail->IsSMTP();		// Ativar SMTP
-			$mail->SMTPDebug = 1;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
-			$mail->SMTPAuth = true;		// Autenticação ativada
-			$mail->SMTPSecure = 'tls';	// SSL REQUERIDO pelo GMail
-			$mail->Host = 'smtp.gmail.com';	// SMTP utilizado
-			$mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
-			$mail->Username = GUSER;
-			$mail->Password = GPWD;
-			$mail->SetFrom($de, $de_nome);
-			$mail->Subject = $assunto;
-			$mail->Body = $corpo;
-			$mail->AddAddress($para);
-			// $mail->AddAttachment('/var/tmp/file.tar.gz');         // Add attachments
-			// $mail->AddAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-			$mail->IsHTML(true);
-			$mail->CharSet = "UTF-8";                                  // Set email format to HTML
-			// $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-			if(!$mail->Send()) {
-				$error = 'Mail error: '.$mail->ErrorInfo;
-				$nome_tabela = "tb_shares";
-				$array_colunas = array('error_message');
-				$array_valores = array("'$error'");
-				$condicao = "share_ID='$share_ID'";
-				atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
-				return false;
-			} else {
-				$error = 'Mensagem enviada!';
-				return true;
-			}
-		}
+		// require_once $path."/phpmailer/class.phpmailer.php";
+		require_once "phpmailer/class.phpmailer.php";
 		smtpmailer($email, 'inteligencia@magnetoelenco.com.br', 'Magneto Elenco', $subject, $msg);
-		if (!empty($error)) echo $error;
 	}
+	if (!empty($error)){ echo $error; }
+	echo "<BR />";
 	echo $count." perfis inseridos com sucesso.";
 	mysqli_close($link2);
 ?>

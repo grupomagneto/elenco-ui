@@ -1,7 +1,7 @@
 <?php
 require __DIR__.'/vendor/autoload.php';
 require __DIR__.'/ids.php';
-include 'functions.php';
+require_once 'functions.php';
 if(!session_id()) {
     session_start();
 }
@@ -11,6 +11,8 @@ error_reporting(E_ALL);
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
    if (!empty($_SESSION['facebook_access_token'])) {
+      $page = basename(__FILE__);
+      require_once 'register_page.php';
       if (!empty($_SESSION['friend_ID']) || !empty($_SESSION['candidate_ID'])) {
         if (!empty($_SESSION['friend_ID'])) {
           $friend_ID = $_SESSION['friend_ID'];
@@ -147,7 +149,7 @@ var imagens = (function loop(){
         if (!empty($_GET['code']) and !empty($_GET['state'])) {
             $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
         } else {
-            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/mmf/index.php');
+            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/index.php');
             header('location: '.$url.'');
         }
     }

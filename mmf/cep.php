@@ -1,22 +1,16 @@
 <?php
-  require __DIR__.'/vendor/autoload.php';
-  require __DIR__.'/ids.php';
+require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/ids.php';
 if(!session_id()) {
-  session_start();
+    session_start();
 }
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
-//se usuario está logado
-    //exibo os dados desse usuário
-//senão
-    //se eu ja tenho $_GET['code'] e $_GET['state']
-        //então eu armazeno o access token
-    //se não eu crio o link de login
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
     if (!empty($_SESSION['facebook_access_token'])) {
-        $user = $fb->User()->get($_SESSION['facebook_access_token']);
+
         echo "
 
 <!DOCTYPE html>
@@ -58,11 +52,13 @@ $text_id    = "txt_cep";
 $name 		  = "cep";
 $extra 		  = '<script language="javascript"> onblur="pesquisacep(this.value);" onkeyup="mascara(this, mcep);"  maxlength="9"  size="10" </script>';
 
-include "textfield.php";
-include 'db.php';
-include 'missing_info.php';
+require_once "textfield.php";
+require_once 'functions.php';
+$page = basename(__FILE__);
+require_once 'register_page.php';
+require_once 'missing_info.php';
 
-function update($link2, $id, $value, $name, $city, $uf, $district){
+function updateCEP($link2, $id, $value, $name, $city, $uf, $district){
   $query = "UPDATE tb_voters SET $name='{$value}', city='{$city}', district='{$district}', uf='{$uf}' WHERE facebook_ID='{$id}'";
   return mysqli_query($link2, $query);
 }
@@ -75,7 +71,7 @@ if(isset($_POST[$name])){
 	$uf = $cep_details->uf;
   $coordinates = json_decode(file_get_contents("http://maps.googleapis.com/maps/api/geocode/json?address=$value+br"));
   
-  if(update($link2, $id, $value, $name, $city, $uf, $district)) {
+  if(updateCEP($link2, $id, $value, $name, $city, $uf, $district)) {
     if ($_SESSION['answers'] > 0) {
 
       $start  = 1;

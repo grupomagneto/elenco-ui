@@ -1,22 +1,30 @@
- <?php
-  require __DIR__.'/vendor/autoload.php';
-  require __DIR__.'/ids.php';
+<?php
+require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/ids.php';
+require_once 'functions.php';
 if(!session_id()) {
-  session_start();
+    session_start();
 }
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
     if (!empty($_SESSION['facebook_access_token'])) {
-      include 'db.php';
-      $game_ID = $_SESSION['game_ID'];
+      
+      // require_once 'db.php';
+      if (!empty($_SESSION['game_ID'])) {
+        $game_ID = $_SESSION['game_ID'];
+      } else {
+        header('location:choose_game.php');
+      }
+      
       $sql = "SELECT question FROM tb_games WHERE game_ID='$game_ID' LIMIT 1";
       $result = mysqli_query($link2, $sql);
       $row = mysqli_fetch_array($result);
       $question  = $row['question'];
-      mysqli_close($link2);
+      $page = basename(__FILE__);
+      require_once 'register_page.php';
 echo "
 <!DOCTYPE html>
 <html>
@@ -24,8 +32,8 @@ echo "
   <meta charset='UTF-8'>
   <title>Meu Modelo Favorito por Magneto Elenco</title>
   <link rel='stylesheet' href='stylesheets/animate.css'>
-	<link rel='stylesheet' href='stylesheets/site.css'>
-	<link rel='stylesheet' href='stylesheets/swiper.min.css'>
+  <link rel='stylesheet' href='stylesheets/site.css'>
+  <link rel='stylesheet' href='stylesheets/swiper.min.css'>
   <link rel='stylesheet' href='stylesheets/loading.css'>
   <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'> 
 </head>
@@ -55,7 +63,7 @@ echo "
       <div class='box  box-outline__content-after-login'>
         <div class='row'>
           <h1 class='content-slide_after-login font-family color-font medium style-font'>
-            Ao votar, responda à seguinte pergunta:
+            Tudo Pronto!<BR /> Vote tendo em mente a seguinte pergunta:
           </h1>
         </div>
         <div class='row'>
@@ -66,7 +74,7 @@ echo "
         <div class='row'>
           <a href='vote.php'>
             <button class='button button-medium font-family color-font medium' onclick='showLoading()'>
-              Começar a votação
+              Começar a votar
             </button>
           </a>
         </div>
@@ -74,11 +82,11 @@ echo "
     </div>
  </div>
 
-	<script src='javascripts/jquery-1.12.1.min.js'></script>
-	<script src='javascripts/swiper.jquery.min.js'></script>
-	<script src='javascripts/swiper.min.js'></script>
-	<script src='javascripts/progressbar.min.js'></script>
-	<script src='javascripts/all.js'></script>
+  <script src='javascripts/jquery-1.12.1.min.js'></script>
+  <script src='javascripts/swiper.jquery.min.js'></script>
+  <script src='javascripts/swiper.min.js'></script>
+  <script src='javascripts/progressbar.min.js'></script>
+  <script src='javascripts/all.js'></script>
   <script>
 function showLoading() {
    document.getElementById('loading').style.display = 'block';
@@ -100,4 +108,5 @@ function showLoading() {
 } catch (Exception $e) {
     echo 'Deu zica: '.$e->getMessage();
 }
+mysqli_close($link2);
 ?>

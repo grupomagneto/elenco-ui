@@ -11,6 +11,12 @@ error_reporting(E_ALL);
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
     if (!empty($_SESSION['facebook_access_token'])) {
+        $page = basename(__FILE__);
+        require_once 'register_page.php';
+        if (!empty($_SESSION['candidate_ID']) && !empty($_SESSION['game_ID'])) {
+			$game_ID = $_SESSION['game_ID'];
+			$friend_ID = $_SESSION['candidate_ID'];
+        }
     	if (isset($_POST['friend_ID'])) {
 			$_SESSION['friend_ID'] = $_POST['friend_ID'];
 			$friend_ID = $_POST['friend_ID'];
@@ -24,11 +30,17 @@ try {
 		        $row = mysqli_fetch_array($result);
 	        	$_SESSION['game_ID'] = $row['game_ID'];
 	        }
+	   //      if ($total > 1) {
+	   //      	header('location:choose_game.php');
+				// exit();
+	   //      }
 		}
 		if (isset($_POST['game_ID'])) {
 			$_SESSION['game_ID'] = $_POST['game_ID'];
+			header('location:before_vote.php');
+			exit();
 		}
-	    if (!isset($_SESSION['first_question'])) {
+	    if (empty($_SESSION['first_question'])) {
 	    $id = $_SESSION['id'];
 		$query_info = "SELECT * FROM tb_voters WHERE facebook_ID = '$id'";
         $result = mysqli_query($link2, $query_info);
@@ -69,7 +81,7 @@ try {
         $max     = 15;
 
         // DEFINE O NÚMERO DE PERGUNTAS A SEREM RESPONDIDAS POR ACESSO
-        if (!isset($_SESSION['answers'])) {
+        if (empty($_SESSION['answers'])) {
             $_SESSION['answers'] = 2;
         }
 
@@ -78,7 +90,7 @@ try {
 		while ($first <= $max) {
 			if ($first == $max) {
 				// SE O GAME ESTA DEFINIDO AVANÇA
-				if (isset($_SESSION['game_ID'])) {
+				if (!empty($_SESSION['game_ID'])) {
 					header('location: before_vote.php');
 				    exit();
 				}
@@ -196,7 +208,7 @@ mysqli_close($link2);
         if (!empty($_GET['code']) and !empty($_GET['state'])) {
             $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
         } else {
-            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/mmf/index.php');
+            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/index.php');
             header('location: '.$url.'');
         }
     }

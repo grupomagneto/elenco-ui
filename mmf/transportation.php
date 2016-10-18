@@ -1,15 +1,15 @@
 <?php
-  require __DIR__.'/vendor/autoload.php';
-  require __DIR__.'/ids.php';
+require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/ids.php';
 if(!session_id()) {
-  session_start();
+    session_start();
 }
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
-    if (!empty($_SESSION['facebook_access_token'])) { 
+    if (!empty($_SESSION['facebook_access_token'])) {
         echo "
 
 <!DOCTYPE html>
@@ -59,6 +59,8 @@ $extra 		  = ' ';
 
 include 'box.php';
 include 'functions.php';
+$page = basename(__FILE__);
+include 'register_page.php';
 include 'missing_info.php';
 
 if(isset($_POST[$name])){

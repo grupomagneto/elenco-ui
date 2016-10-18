@@ -1,17 +1,20 @@
 <?php
-  require __DIR__.'/vendor/autoload.php';
-  require __DIR__.'/ids.php';
+require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/ids.php';
+// include 'functions.php';
 if(!session_id()) {
-	session_start();
+    session_start();
 }
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
     if (!empty($_SESSION['facebook_access_token'])) {
+        $page = basename(__FILE__);
+        include 'register_page.php';
         
-include('db.php');
+// include('db.php');
 if (isset($_SESSION['game_ID'])) { $game_ID = $_SESSION['game_ID']; }
 $sql_winners = "SELECT winner_candidate_ID, COUNT(*) AS times FROM tb_votes WHERE game_ID = '$game_ID' AND level = '1' GROUP BY winner_candidate_ID ORDER BY times DESC";
 $result_winners = mysqli_query($link2, $sql_winners);
@@ -130,7 +133,7 @@ mysqli_close($link2);
             $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
             // header('location: /home.php');
         } else {
-            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/mmf/index.php');
+            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/index.php');
             header('location: '.$url.'');
         }
     }

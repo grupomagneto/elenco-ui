@@ -1,12 +1,21 @@
 <?php
-include 'detect_share.php';
-
-require __DIR__.'/vendor/autoload.php';
-require __DIR__.'/ids.php';
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+require_once 'detect_share.php';
+if (empty($_SESSION['from_page']) && empty($_SESSION['page_from_time_in']) && empty($_SESSION['page']) && empty($_SESSION['index'])) {
+    $_SESSION['from_page']          = basename(__FILE__);
+    $_SESSION['page_from_time_in']  = microtime(true);
+    $_SESSION['page']               = basename(__FILE__);
+    $_SESSION['index'] = "yes";
+    $page = $_SESSION['page'];
+    $nome_tabela = "tb_access";
+    $array_colunas = array("page");
+    $array_valores = array("'$page'");
+    $_SESSION['access_ID'] = insereDados($link2, $nome_tabela, $array_colunas, $array_valores);
+}
+require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/ids.php';
 
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
@@ -22,7 +31,7 @@ try {
             require 'bootstrap.php';
             $helper = $fb->getRedirectLoginHelper();
             $permissions = ['email,user_friends,user_birthday']; //permissões do usuario
-            $loginUrl = $helper->getLoginUrl('http://www.meumodelofavorito.com.br/mmf/login-callback.php', $permissions);
+            $loginUrl = $helper->getLoginUrl('http://www.meumodelofavorito.com.br/login-callback.php', $permissions);
 
             echo "
 <!DOCTYPE html>
@@ -119,7 +128,7 @@ try {
           </p>
         </div>
       </button></a>
-     <a href='privacidade.html' target='_blank' class='content-slide privacy font-family color-font'>Política de Privacidade</a>
+     <a href='privacidade.php' target='_blank' class='content-slide privacy font-family color-font'>Política de Privacidade</a>
     </div>
  </div>
 </div>
@@ -142,3 +151,4 @@ function showLoading() {
 } catch (Exception $e) {
     echo 'Deu zica: '.$e->getMessage();
 }
+?>

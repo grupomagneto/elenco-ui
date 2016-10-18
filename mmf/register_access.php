@@ -1,6 +1,7 @@
 <?php
 require __DIR__.'/vendor/autoload.php';
 require __DIR__.'/ids.php';
+require_once 'functions.php';
 if(!session_id()) {
     session_start();
 }
@@ -9,7 +10,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
-
     if (!empty($_SESSION['facebook_access_token'])) {
 
         $user = $fb->User()->get($_SESSION['facebook_access_token']);
@@ -24,38 +24,6 @@ try {
         $_SESSION['total_count'] = $user->getProperty('friends')->getTotalCount();
 
         require_once('colect_data.php');
-
-        // DETECTA A RESOLUÇÃO DA TELA
-        // if(isset($_SESSION['screen_width']) AND isset($_SESSION['screen_height'])){
-        //     $width = $_SESSION['screen_width'];
-        //     $height = $_SESSION['screen_height'];
-
-        //     $viewport = "Undetected";
-        //     $resolution = $width . 'x' . $height;
-            
-        //     $model = "Unknown";
-        //     if ($width == 320 && $height == 480) {
-        //         $model = "iPhone 4";
-        //     }
-        //     else if ($width == 375 && $height == 667) {
-        //         $model = "iPhone 6+";
-        //     }
-        //     else if ($width == 414 && $height == 736) {
-        //         $model = "iPhone 6+ Plus";
-        //     }
-        //     else if ($width == 320 && $height == 568) {
-        //         $model = "iPhone 5";
-        //     }
-        //     else if ($height > 736) {
-        //         $model = "Not mobile";
-        //     }
-        // } elseif(isset($_REQUEST['width']) AND isset($_REQUEST['height'])) {
-        //     $_SESSION['screen_width'] = $_REQUEST['width'];
-        //     $_SESSION['screen_height'] = $_REQUEST['height'];
-        //     header('Location: ' . $_SERVER['PHP_SELF']);
-        // } else {
-        //     echo '<script type="text/javascript">window.location = "' . $_SERVER['PHP_SELF'] . '?width="+screen.width+"&height="+screen.height;</script>';
-        // }
 
         $id                 = $_SESSION['id'];
         $firstname          = $_SESSION['firstname'];
@@ -78,9 +46,9 @@ try {
         $access_loc         = $_SESSION['access_loc'];
         $total_friends      = $_SESSION['total_count'];
 
-        require_once('functions.php');
+        $page = basename(__FILE__);
+        require_once 'register_page.php';
 
-        date_default_timezone_set('America/Sao_Paulo');
         $hoje = date('Y-m-d H:i:s', time());
 
             // VERIFICA SE O USUARIO JÁ VOTOU ANTES PARA DEFINIR SE ATUALIZA OU INSERE
@@ -181,7 +149,7 @@ try {
             $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
             header('location: game.php');
         } else {
-            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/mmf/index.php');
+            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/index.php');
             header('location: '.$url.'');
         }
     }

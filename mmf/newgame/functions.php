@@ -1,12 +1,6 @@
 <?php 
 require_once("db.php");
 
-function insert($link2, $id, $firstname, $lastname, $email, $gender, $birthday, $device, $os, $browser, $resolution, $viewport, $model, $user_agent, $ip, $access_city, $access_uf, $access_country, $access_loc){
-	$query = "INSERT INTO tb_voters (facebook_ID, firstname, lastname, email, sex, birthday, device, os, browser, resolution, viewport, model, user_agent, ip, access_city, access_uf, access_country, access_loc) VALUES ('{$id}','{$firstname}','{$lastname}','{$email}','{$gender}','{$birthday}','{$device}','{$os}','{$browser}','{$resolution}','{$viewport}','{$model}','{$user_agent}','{$ip}','{$access_city}','{$access_uf}','{$access_country}','{$access_loc}')";
-
-	return mysqli_query($link2, $query);
-}
-
 function update($link2, $id, $value, $name){
   $query = "UPDATE tb_voters SET $name='{$value}' WHERE facebook_ID='{$id}'";
   return mysqli_query($link2, $query);
@@ -109,5 +103,61 @@ function selectFriends($link2, $facebook_ID, $debug = false) {
 			return false;
 		}
 }
+function getCepCul($cep) {
+            $url = "http://viacep.com.br/ws/{$cep}/json/";
+            // CURL
+            $ch = curl_init();
+            // Disable SSL verification
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            // Will return the response, if false it print the response
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // Set the url
+            curl_setopt($ch, CURLOPT_URL, $url);
+            // Execute
+            $result = curl_exec($ch);
+            // Closing
+            curl_close($ch);
+            
+            return json_decode($result);
+        }
 
+function getCepFile($cep) {
+            $url    = "http://viacep.com.br/ws/{$cep}/json/";
+            $result = file_get_contents($url);
+            return json_decode($result);
+        }
+
+function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
+		global $error;
+		$mail = new PHPMailer();
+		// $mail->IsSMTP();		// Ativar SMTP
+		$mail->SMTPDebug = 1;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
+		$mail->SMTPAuth = true;		// Autenticação ativada
+		$mail->SMTPSecure = 'tls';	// SSL REQUERIDO pelo GMail
+		$mail->Host = 'smtp.gmail.com';	// SMTP utilizado
+		$mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
+		$mail->Username = GUSER;
+		$mail->Password = GPWD;
+		$mail->SetFrom($de, $de_nome);
+		$mail->Subject = $assunto;
+		$mail->Body = $corpo;
+		$mail->AddAddress($para);
+		// $mail->AddAttachment('/var/tmp/file.tar.gz');         // Add attachments
+		// $mail->AddAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+		$mail->IsHTML(true);
+		$mail->CharSet = "UTF-8";                                  // Set email format to HTML
+		// $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+		if(!$mail->Send()) {
+			$error = 'Mail error: '.$mail->ErrorInfo;
+			$nome_tabela = "tb_shares";
+			$array_colunas = array('error_message');
+			$array_valores = array("'$error'");
+			$condicao = "share_ID='$share_ID'";
+			atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
+			return false;
+		} else {
+			$error = 'E-mail(s) enviado(s)!';
+			return true;
+		}
+	}
 ?>

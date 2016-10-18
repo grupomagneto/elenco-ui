@@ -1,6 +1,6 @@
 <?php
-include 'bootstrap.php';
-include 'functions.php';
+include_once 'bootstrap.php';
+include_once 'functions.php';
 // AVOID FACEBOOK RETURN DATA
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip = $_SERVER['HTTP_CLIENT_IP'];
@@ -8,6 +8,9 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
 } else {
     $ip = $_SERVER['REMOTE_ADDR'];
+}
+if (!empty($_SESSION['ip'])) {
+    $_SESSION['ip'] = $ip;
 }
 // DETECTA A RESOLUÇÃO DA TELA
 if(isset($_SESSION['screen_width']) AND isset($_SESSION['screen_height'])){
