@@ -13,11 +13,13 @@ try {
     if (!empty($_SESSION['facebook_access_token'])) {
         $page = basename(__FILE__);
         require_once 'register_page.php';
+        // IF GAME'S AND FRIEND'S ID ARE SET FROM SHARE
         if (!empty($_SESSION['candidate_ID']) && !empty($_SESSION['game_ID'])) {
 			$game_ID = $_SESSION['game_ID'];
 			$friend_ID = $_SESSION['candidate_ID'];
         }
-    	if (isset($_POST['friend_ID'])) {
+        // IF FRIEND WAS SET FROM CHOICE
+    	if (!empty($_POST['friend_ID'])) {
 			$_SESSION['friend_ID'] = $_POST['friend_ID'];
 			$friend_ID = $_POST['friend_ID'];
 			$sql_game = "SELECT COUNT(game_ID) AS total FROM tb_games WHERE candidate_elenco_ID='$friend_ID'";
@@ -35,97 +37,159 @@ try {
 				// exit();
 	   //      }
 		}
-		if (isset($_POST['game_ID'])) {
+		// IF GAME WAS SET FROM CHOICE
+		if (!empty($_POST['game_ID'])) {
 			$_SESSION['game_ID'] = $_POST['game_ID'];
-			header('location:before_vote.php');
-			exit();
+			// header('location:before_vote.php');
+			// exit();
 		}
+		// ASKS TO FUFILL PROFILE
 	    if (empty($_SESSION['first_question'])) {
-	    $id = $_SESSION['id'];
-		$query_info = "SELECT * FROM tb_voters WHERE facebook_ID = '$id'";
-        $result = mysqli_query($link2, $query_info);
-        $row = mysqli_fetch_array($result);
+		    $id = $_SESSION['id'];
+			$query_info = "SELECT * FROM tb_voters WHERE facebook_ID = '$id'";
+	        $result = mysqli_query($link2, $query_info);
+	        $row = mysqli_fetch_array($result);
 
-        $question1  = $row['transportation'];
-        $question2  = $row['scholarity'];
-        $question3  = $row['cep'];
-        $question4  = $row['pet'];
-        $question5  = $row['physical_activity'];
-        $question6  = $row['tech_level'];
-        $question7  = $row['social_network'];
-        $question8  = $row['music'];
-        $question9  = $row['children'];
-        $question10 = $row['diet'];
-        $question11 = $row['traveling'];
-        $question12 = $row['travel_motive'];
-        $question13 = $row['gastronomy'];
-        $question14 = $row['occupation'];
-        $question15 = $row['relationship_status'];
+	        $question1  = $row['transportation'];
+	        $question2  = $row['scholarity'];
+	        $question3  = $row['cep'];
+	        $question4  = $row['pet'];
+	        $question5  = $row['physical_activity'];
+	        $question6  = $row['tech_level'];
+	        $question7  = $row['social_network'];
+	        $question8  = $row['music'];
+	        $question9  = $row['children'];
+	        $question10 = $row['diet'];
+	        $question11 = $row['traveling'];
+	        $question12 = $row['travel_motive'];
+	        $question13 = $row['gastronomy'];
+	        $question14 = $row['occupation'];
+	        $question15 = $row['relationship_status'];
 
-        $page1  = "transportation";
-        $page2  = "scholarity";
-        $page3  = "cep";
-        $page4  = "pet";
-        $page5  = "physical_activity";
-        $page6  = "tech_level";
-        $page7  = "social_network";
-        $page8  = "music";
-        $page9  = "children";
-        $page10 = "diet";
-        $page11 = "traveling";
-        $page12 = "travel_motive";
-        $page13 = "gastronomy";
-        $page14 = "occupation";
-        $page15 = "relationship_status";
+	        $page1  = "transportation";
+	        $page2  = "scholarity";
+	        $page3  = "cep";
+	        $page4  = "pet";
+	        $page5  = "physical_activity";
+	        $page6  = "tech_level";
+	        $page7  = "social_network";
+	        $page8  = "music";
+	        $page9  = "children";
+	        $page10 = "diet";
+	        $page11 = "traveling";
+	        $page12 = "travel_motive";
+	        $page13 = "gastronomy";
+	        $page14 = "occupation";
+	        $page15 = "relationship_status";
 
-        $max     = 15;
+	        $max     = 15;
 
-        // DEFINE O NÚMERO DE PERGUNTAS A SEREM RESPONDIDAS POR ACESSO
-        if (empty($_SESSION['answers'])) {
-            $_SESSION['answers'] = 2;
-        }
+	        // DEFINE O NÚMERO DE PERGUNTAS A SEREM RESPONDIDAS POR ACESSO
+	        if (empty($_SESSION['answers'])) {
+	            $_SESSION['answers'] = 2;
+	        }
 
-		// DETECTA SE O USUÁRIO JÁ COMPLETOU O CADASTRO E CASO NÃO, DIRECIONA PARA A PÁGINA INCOMPLETA
-		$first  = 1;
-		while ($first <= $max) {
-			if ($first == $max) {
-				// SE O GAME ESTA DEFINIDO AVANÇA
-				if (!empty($_SESSION['game_ID'])) {
-					header('location: before_vote.php');
-				    exit();
+			// DETECTA SE O USUÁRIO JÁ COMPLETOU O CADASTRO E CASO NÃO, DIRECIONA PARA A PÁGINA INCOMPLETA
+			$first  = 1;
+			while ($first <= $max) {
+				if ($first == $max) {
+					// SE O GAME ESTA DEFINIDO AVANÇA
+					if (!empty($_SESSION['game_ID'])) {
+						header('location: before_vote.php');
+					    exit();
+					}
+					// SE O GAME NÃO ESTÁ DEFINIDO VAI PARA CHOOSE_GAME.PHP
+					else {
+						header('location: choose_game.php');
+		                exit();
+					}  
 				}
-				// SE O GAME NÃO ESTÁ DEFINIDO VAI PARA CHOOSE_GAME.PHP
 				else {
-					header('location: choose_game.php');
-	                exit();
+					// DEFINE A PRÓXIMA PÁGINA E VAI PARA BEFORE_QUESTIONS.PHP
+					if (${'question'.$first} == NULL || ${'question'.$first} == '') {
+						$first_question = ${"page".$first}.".php";
+						$_SESSION['first_question'] = ${"page".$first}.".php";
+						goto a;     
+					}
+					else {
+					    $first++;
+					}
 				}
-			    
-			} else {
-				// DEFINE A PRÓXIMA PÁGINA E VAI PARA BEFORE_QUESTIONS.PHP
-				if (${'question'.$first} == NULL || ${'question'.$first} == '') {
-					$first_question = ${"page".$first}.".php";
-					$_SESSION['first_question'] = ${"page".$first}.".php";
-					goto a;     
-				} else {
-			    $first++;
-			  }
 			}
-		}
-		// Fim da Function
 	    }
 	    a:
 	    $first_question = $_SESSION['first_question'];
-		$sql_photo = "SELECT id, firstname, arquivo photo, sex FROM (SELECT firstname, candidate_elenco_ID id, sex FROM tb_games WHERE candidate_elenco_ID='$friend_ID') T1 INNER JOIN (SELECT arquivo, cd_elenco id FROM tb_foto ORDER BY dh_cadastro ASC) T2 USING (id) LIMIT 0, 1";
-		$result = mysqli_query($link2, $sql_photo);
-        $row = mysqli_fetch_array($result);
-        $firstname  = $row['firstname'];
-        $photo  = $row['photo'];
-        $sex  = $row['sex'];
-        if ($sex == 'f') {
-        	$article = 'a';
-        } elseif ($sex == 'm') {
-        	$article = 'o';
+	    $ballon = "";
+	    $photo = "";
+        // IF USER IS A CLIENT
+        if (!empty($_SESSION['voter_elenco_ID'])) {
+        	$voter_elenco_ID = $_SESSION['voter_elenco_ID'];
+			// IF USER IS VOTING FOR HIMSELF
+			if ($friend_ID == $voter_elenco_ID) {
+				$sql_photo = "SELECT arquivo photo FROM tb_foto WHERE cd_elenco='$voter_elenco_ID' ORDER BY dh_cadastro ASC LIMIT 0, 1";
+				$result = mysqli_query($link2, $sql_photo);
+		        $row = mysqli_fetch_array($result);
+		        $photo  = $row['photo'];
+		        $photo = "<div class='box-before__question'><img src='http://www.magnetoelenco.com.br/fotos/$photo' alt='' /></div>";
+				// IF USER IS VOTING FOR HIMSELF AFTER DECLARING HE'S A CLIENT
+				if (!empty($_SESSION['client_prompt']) && $_SESSION['client_prompt'] == 'sim') {
+					$text = "Cadastro localizado! ";
+				}
+				// IF USER IS VOTING FOR HIMSELF AUTOMATICALLY DETECTED
+				else {
+					$firstname = $_SESSION['firstname'];
+					$text = "Oi $firstname! ";
+				}
+				$text .= "Antes de votar, responda a estas 3 perguntas sobre você:";
+			}
+			// IF USER IS VOTING FOR A FRIEND
+			if ($friend_ID != $voter_elenco_ID) {
+				$sql_photo = "SELECT id, firstname, arquivo photo, sex FROM (SELECT firstname, candidate_elenco_ID id, sex FROM tb_games WHERE candidate_elenco_ID='$friend_ID') T1 INNER JOIN (SELECT arquivo, cd_elenco id FROM tb_foto ORDER BY dh_cadastro ASC) T2 USING (id) LIMIT 0, 1";
+				$result = mysqli_query($link2, $sql_photo);
+		        $row = mysqli_fetch_array($result);
+		        $photo  = $row['photo'];
+		        $photo = "<div class='box-before__question'><img src='http://www.magnetoelenco.com.br/fotos/$photo' alt='' /></div>";
+		        $firstname  = $row['firstname'];
+		        $sex  = $row['sex'];
+				if ($sex == 'f' || $sex == 'F') {
+					$article = 'a';
+				}
+				elseif ($sex == 'm' || $sex == 'M') {
+					$article = 'o';
+				}
+	    		$text = "Antes de ajudar ".$article." ".$firstname.", responda a 3 perguntas sobre você:";
+	    		$ballon = "<div class='box-before__question-valeu'><img src='images/valeu.svg' alt='' class='animated zoomIn' /></div>";
+			}
+			// IF USER IS VOTING FOR NO FRIEND
+			if (empty($_SESSION['friend_ID']) && empty($_SESSION['candidate_ID']) && empty($friend_ID)) {
+				$text = "Antes de votar, responda a estas 3 perguntas sobre você:";
+			}
         }
+        // IF USER ISN'T A CLIENT
+        if (empty($_SESSION['voter_elenco_ID'])) {
+			// IF USER IS VOTING FOR A FRIEND
+			if (isset($friend_ID)) {
+				$sql_photo = "SELECT id, firstname, arquivo photo, sex FROM (SELECT firstname, candidate_elenco_ID id, sex FROM tb_games WHERE candidate_elenco_ID='$friend_ID') T1 INNER JOIN (SELECT arquivo, cd_elenco id FROM tb_foto ORDER BY dh_cadastro ASC) T2 USING (id) LIMIT 0, 1";
+				$result = mysqli_query($link2, $sql_photo);
+		        $row = mysqli_fetch_array($result);
+		        $photo  = $row['photo'];
+		        $photo = "<div class='box-before__question'><img src='http://www.magnetoelenco.com.br/fotos/$photo' alt='' /></div>";
+		        $firstname  = $row['firstname'];
+		        $sex  = $row['sex'];
+				if ($sex == 'f' || $sex == 'F') {
+					$article = 'a';
+				}
+				elseif ($sex == 'm' || $sex == 'M') {
+					$article = 'o';
+				}
+	    		$text = "Antes de ajudar ".$article." ".$firstname.", responda a 3 perguntas sobre você:";
+	    		$ballon = "<div class='box-before__question-valeu'><img src='images/valeu.svg' alt='' class='animated zoomIn' /></div>";
+			}
+			// IF USER IS VOTING FOR NO FRIEND
+			if (empty($_SESSION['friend_ID']) && empty($_SESSION['candidate_ID']) && empty($friend_ID)) {
+				$text = "Antes de votar, responda a estas 3 perguntas sobre você:";
+			}
+        }       
 echo "
 <!DOCTYPE html>
 <html lang='pt-br'>
@@ -167,17 +231,13 @@ echo "
 			      <div class='box box-outline__content-after-login'>
 
 			        <div class='row'>
-			        	<div class='box-before__question'>	
-				        	<img src='http://www.magnetoelenco.com.br/fotos/$photo' alt='' />
-			        	</div>
-			        	<div class='box-before__question-valeu'>	
-				        	<img src='images/valeu.svg' alt='' class='animated zoomIn' />
-			        	</div>
+			        	$photo
+			        	$ballon
 			        </div>
 
 			        <div class='row'>
 			          <p class='content-slide_after-login before_questions font-family color-font'>
-			            Antes de ajudar $article $firstname, responda a 3 perguntas sobre você:
+			            $text
 			          </p>
 			        </div>
 

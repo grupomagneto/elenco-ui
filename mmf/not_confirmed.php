@@ -13,22 +13,17 @@ try {
     if (!empty($_SESSION['facebook_access_token'])) {
       $page = basename(__FILE__);
       require_once 'register_page.php';
-      $user_firstname = $_SESSION['firstname'];
-      if (!empty($_SESSION['client_prompt'])) {
-        $text = "Qual";
-      }
-      else {
-        $text = "Olá $user_firstname, qual";
-      }
 echo "
 <!DOCTYPE html>
 <html lang='pt-br'>
 <head>
-  <meta charset='UTF-8'>
-  <title>Meu Modelo Favorito por Magneto Elenco</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'> 
-  <link rel='stylesheet' href='stylesheets/questions.css'>
-  <link rel='stylesheet' href='stylesheets/loading.css'>
+	<meta charset='UTF-8'>
+	<title>Meu Modelo Favorito por Magneto Elenco</title>
+  	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+  	<link rel='stylesheet' href='stylesheets/animate.css'>
+	<link rel='stylesheet' href='stylesheets/site.css'>
+	<link rel='stylesheet' href='stylesheets/swiper.min.css'>
+	<link rel='stylesheet' href='stylesheets/loading.css'>
 </head>
 <body>
 <div id='loading' style='display: none' class='overlay'>
@@ -51,39 +46,39 @@ echo "
   </svg>
   </div>
 </div>
-<form action='before_questions.php' method='post'>
-  <div class='gradient container'>
-    <div class='box'>
-      <h1 class='pergunta__selection font-family color-font'>
-        $text dos seus amigos você gostaria de ajudar hoje?
-      </h1>
-    </div>";
-    $friends = $_SESSION['array_friends'];
-    echo '<div class="box-outline_selection longhand">';
-    foreach ($friends as $array) {
-        $friend_ID    = $array[0];
-        $name         = $array[1];
-        $photo        = $array[2];
-            echo '<div class="selection-item">';
-            echo '<button class="pointer" type="submit" name="friend_ID" value="'.$friend_ID.'" onclick="showLoading()"><img src="http://www.magnetoelenco.com.br/fotos/'.$photo.'" alt=" "></button>';
-            echo '<div class="selection-item__text">';
-            echo '<p class="font-family color-font">'.$name.'</p>';
-            echo '</div>';
-            echo '</div>';
-      }
-    echo '</div>';
-echo "
-</div>
-</form>
+	<div class='swiper-container'>
+		<div class='swiper-wrapper'>
+			<div class='swiper-slide gradient'>
 
-<script src='javascripts/jquery-1.12.1.min.js'></script>
-<script src='javascripts/questions.js'></script>
+			      <div class='box box-outline__content-after-login'>
+
+			        <div class='row'>
+			          <p class='content-slide_after-login before_questions font-family color-font'>
+			            Ops!<BR />Cadastro não localizado. Por favor entre em <a href='mailto:vini@grupomagneto.com.br'>contato</a>.
+			          </p>
+			        </div>
+			        <div class='row'>
+						<a href='logout.php'>
+							<button class='button button-medium font-family color-font medium' onclick='showLoading()'>
+							Recomeçar
+							</button>
+						</a>
+			        </div>
+
+			      </div>
+			</div>
+		</div>
+	</div>
+	<script src='javascripts/jquery-1.12.1.min.js'></script>
+	<script src='javascripts/swiper.jquery.min.js'></script>
+	<script src='javascripts/swiper.min.js'></script>
+	<script src='javascripts/progressbar.min.js'></script>
+	<script src='javascripts/all.js'></script>	
 <script>
 function showLoading() {
    document.getElementById('loading').style.display = 'block';
 }
 </script>
-  
 </body>
 </html>";
 // Fim do cabecalho FB

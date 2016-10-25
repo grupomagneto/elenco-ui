@@ -65,7 +65,8 @@ function updateCEP($link2, $id, $value, $name, $city, $uf, $district){
 
 if(isset($_POST[$name])){
 	$value = preg_replace('/\D+/', '', $_POST[$name]);
-	$cep_details = json_decode(file_get_contents("https://viacep.com.br/ws/{$value}/json/"));
+  $cep_details = getCepFile($value);
+	// $cep_details = json_decode(file_get_contents("https://viacep.com.br/ws/{$value}/json/"));
 	$city = $cep_details->localidade;
 	$district = $cep_details->bairro;
 	$uf = $cep_details->uf;

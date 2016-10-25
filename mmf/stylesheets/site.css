@@ -331,6 +331,7 @@ form{ height:100%; }
 input:focus {
   outline: none;
 }
+
 .font-family {
   font-family: Avenir-Book; }
 
@@ -477,7 +478,26 @@ span.swiper-pagination-bullet-active {
 .jump p a{
   text-decoration: none;
 }
+.container-outline__button{
+    position: absolute;
+    z-index: 9999;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    bottom: 20%;
+    top: 80%;
+    left: 50%;
+    -o-transform: translate(-65%, -100%);
+    -moz-transform: translate(-65%, -100%);
+    -webkit-transform: translate(-65%, -100%);
+    transform: translate(-65%, -100%);
 
+}
+
+.container-outline__button a button{
+  margin: 5px 10px 0 10px
+  
+}
 
 /**********************
 Large devices Desktops (≥1200px)
@@ -595,6 +615,7 @@ form{ height:100%; }
     height: 30px;
     float: right;
     margin-top: 5px; }
+
 
 
 .box {

@@ -51,108 +51,81 @@ try {
 
         $hoje = date('Y-m-d H:i:s', time());
 
-            // VERIFICA SE O USUARIO JÁ VOTOU ANTES PARA DEFINIR SE ATUALIZA OU INSERE
-            $query_info = "SELECT facebook_ID FROM tb_voters WHERE facebook_ID = '$id'";
-            $result = mysqli_query($link2, $query_info);
-            $row = mysqli_fetch_array($result);
-            $pre_id = $row['facebook_ID'];
-            // SE O USUÁRIO JÁ VOTOU ANTES
-            if ($pre_id == $id) {
-                $nome_tabela = "tb_voters";
-                $array_colunas = array("firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc","insert_date");
-                $array_valores = array("'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'","'$hoje'");
-                $condicao = "facebook_ID='$id'";
-                atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
-                // Atualiza ID do agenciado pelo email do facebook
-                $id_query = "UPDATE tb_voters SET voter_elenco_ID = (SELECT tb_elenco.id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email LIMIT 1) WHERE EXISTS (SELECT id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email AND email != '' AND email != ' ' AND email IS NOT NULL)";
-                mysqli_query($link2, $id_query);
-                $sql_elenco_ID = "SELECT voter_elenco_ID FROM tb_voters WHERE facebook_ID = '$id'";
-                $result_ID = mysqli_query($link2, $sql_elenco_ID);
-                if ($row_ID = mysqli_fetch_array($result_ID)) {
-                    $_SESSION['voter_elenco_ID'] = $row_ID['voter_elenco_ID'];
-                }
-                // Indica o player_facebook_ID se o usuário veio de um compartilhamento
-                if (isset($_SESSION['share_ID'])) {
-                    $share_ID = $_SESSION['share_ID'];
-                    $nome_tabela = "tb_shares";
-                    $array_colunas = array("player_facebook_ID");
-                    $array_valores = array("'$pre_id'");
-                    $condicao = "share_ID='$share_ID'";
-                    atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
-                }
-            }
-            // SE O USUÁRIO AINDA NÃO VOTOU
-            elseif ($pre_id == NULL || $pre_id == '') {
-                // INSERE DADOS NA TABELA TB_VOTERS
-                $nome_tabela = "tb_voters";
-                $array_colunas = array("facebook_ID","firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
-                $array_valores = array("'$id'","'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
-                insereDados($link2, $nome_tabela, $array_colunas, $array_valores);
-                // VERIFICA SE JÁ EXISTE E SE ENCONTROU MAIS DE UM E-MAIL IGUAL AO RECEBIDO PELO FACEBOOK EM TB_GAMES
-                $sql_email = "SELECT ID, email, COUNT(email) AS total FROM tb_games WHERE email='$email'";
-                $result = mysqli_query($link2, $sql_email);
-                $row = mysqli_fetch_array($result);
-                $total = $row['total'];
-                if ($total > 1) {
-                    $facebook_name = $firstname." ".$lastname;
-                    $sql_email2 = "SELECT ID FROM tb_games WHERE email='$email' AND stagename='$facebook_name'";
-                    $result2 = mysqli_query($link2, $sql_email2);
-                    $row2 = mysqli_fetch_array($result2);
-                    // UPDATE OS DADOS DO CANDIDATO NA TABELA TB_GAMES
-                    if ($row2['ID']) {
-                        $tb_games_ID = $row2['ID'];
-                        $nome_tabela = "tb_games";
-                        $array_colunas = array("candidate_facebook_ID","firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
-                        $array_valores = array("'$id'","'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
-                        $condicao = "ID='$tb_games_ID'";
-                        atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
-                    } else {
-                        echo "Erro. Mais de um usuário cadastrado com o mesmo e-mail. Por favor entre em contato pelo telefone: (61) 99311-0767.";
-                    }
-                }
-                // UPDATE OS DADOS DO CANDIDATO NA TABELA TB_GAMES
-                elseif ($total == 1) {
-                    $tb_games_ID = $row['ID'];
-                    $nome_tabela = "tb_games";
-                    $array_colunas = array("candidate_facebook_ID","firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
-                    $array_valores = array("'$id'","'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
-                    $condicao = "ID='$tb_games_ID'";
-                    atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
-                }
-                // ATUALIZA O ID_ELENCO DO CANDIDATO EM TB_VOTERS SE O E-MAIL CADASTRADO FOR O MESMO DO FACEBOOK
-                $id_query = "UPDATE tb_voters SET voter_elenco_ID = (SELECT tb_elenco.id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email LIMIT 1) WHERE EXISTS (SELECT id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email AND email != '' AND email != ' ' AND email IS NOT NULL)";
-                mysqli_query($link2, $id_query);
-                $sql_elenco_ID = "SELECT voter_elenco_ID FROM tb_voters WHERE facebook_ID = '$id'";
-                $result_ID = mysqli_query($link2, $sql_elenco_ID);
-                if ($row_ID = mysqli_fetch_array($result_ID)) {
-                    $_SESSION['voter_elenco_ID'] = $row_ID['voter_elenco_ID'];
-                }
-                // ATUALIZA O PLAYER_FACEBOOK_ID SE O USUÁRIO VEIO DE UM COMPARTILHAMENTO
-                if (isset($_SESSION['share_ID'])) {
-                    $share_ID = $_SESSION['share_ID'];
-                    $nome_tabela = "tb_shares";
-                    $array_colunas = array("player_facebook_ID");
-                    $array_valores = array("'$pre_id'");
-                    $condicao = "share_ID='$share_ID'";
-                    atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
-                }
-            }
-            else {
-                $msg = mysqli_error($link2);
-                echo $msg;
-            }
-        mysqli_close($link2);
-        // ACESSO REGISTRADO, SEGUE PARA PRÓXIMA ETAPA
-        header('location: game.php');
-    } else {
-        if (!empty($_GET['code']) and !empty($_GET['state'])) {
-            $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
-            header('location: game.php');
-        } else {
-            $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/index.php');
-            header('location: '.$url.'');
+// *******************************
+// ** ATUALIZA COMPARTILHAMENTO **
+// *******************************
+// UPDATES FACEBOOK_ID INTO TB_SHARES
+if (!empty($_SESSION['share_ID'])) {
+    $share_ID = $_SESSION['share_ID'];
+    $nome_tabela = "tb_shares";
+    $array_colunas = array("player_facebook_ID");
+    $array_valores = array("'$id'");
+    $condicao = "share_ID='$share_ID'";
+    atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
+}
+// ***************
+// ** TB_VOTERS **
+// ***************
+$sql = "SELECT facebook_ID, voter_elenco_ID FROM tb_voters WHERE facebook_ID='$id'";
+$result = mysqli_query($link2, $sql);
+$row = mysqli_fetch_array($result);
+// IF USER HAS VOTED BEFORE
+if (!empty($row['facebook_ID']) && $row['facebook_ID'] != NULL && $row['facebook_ID'] != '' && $row['facebook_ID'] != ' ') {
+    //UPDATES DATA IN TB_VOTERS
+    $nome_tabela = "tb_voters";
+    $array_colunas = array("firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc","insert_date");
+    $array_valores = array("'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'","'$hoje'");
+    $condicao = "facebook_ID='$id'";
+    atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
+    // IF USER IS ALREADY A CLIENT
+    if ($row['voter_elenco_ID']) {
+        // SETS VOTER AS A PRE-EXISTING AGENCY CLIENT
+        $_SESSION['voter_elenco_ID'] = $row['voter_elenco_ID'];
+    }
+    // CHECKS IF EMAIL ALSO EXISTS IN TB_GAMES AND UPDATES IT IF POSITIVE
+    include 'update_tb_games.php';
+}
+// IF USER HAS NEVER VOTED BEFORE
+else {
+    // INSERTS DATA IN TB_VOTERS
+    $nome_tabela = "tb_voters";
+    $array_colunas = array("facebook_ID","firstname","lastname","email","sex","total_friends","birthday","device","os","browser","resolution","viewport","model","user_agent","ip","access_city","access_uf","access_country","access_loc");
+    $array_valores = array("'$id'","'$firstname'","'$lastname'","'$email'","'$sex'","'$total_friends'","'$birthday'","'$device'","'$os'","'$browser'","'$resolution'","'$viewport'","'$model'","'$user_agent'","'$ip'","'$access_city'","'$access_uf'","'$access_country'","'$access_loc'");
+    insereDados($link2, $nome_tabela, $array_colunas, $array_valores);
+    // CHECKS IF USER IS ALREADY A CLIENT
+    $id_query = "UPDATE tb_voters SET voter_elenco_ID = (SELECT tb_elenco.id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email LIMIT 1) WHERE EXISTS (SELECT id_elenco FROM tb_elenco WHERE tb_elenco.email = tb_voters.email AND email != '' AND email != ' ' AND email IS NOT NULL)";
+    mysqli_query($link2, $id_query);
+    $sql_elenco_ID = "SELECT voter_elenco_ID FROM tb_voters WHERE facebook_ID = '$id'";
+    $result_ID = mysqli_query($link2, $sql_elenco_ID);
+    if ($row_ID = mysqli_fetch_array($result_ID)) {
+        // SETS VOTER AS A PRE-EXISTING AGENCY CLIENT
+        $_SESSION['voter_elenco_ID'] = $row_ID['voter_elenco_ID'];
+    }
+    // IF EMAIL NOT FOUND ON TB_ELENCO, ASKS IF THE USER IS ALREADY A CLIENT
+    if (empty($_SESSION['voter_elenco_ID'])) {
+        require_once 'detect_existing_client.php';
+        // UPDATES VOTER_ELENCO_ID ON TB_VOTERS
+        if (!empty($_SESSION['voter_elenco_ID'])) {
+            $voter_elenco_ID = $_SESSION['voter_elenco_ID'];
+            $array_colunas = array("voter_elenco_ID");
+            $array_valores = array("'$voter_elenco_ID'");
+            $condicao = "facebook_ID='$id'";
+            atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
         }
     }
+}
+mysqli_close($link2);
+// ACESSO REGISTRADO, SEGUE PARA PRÓXIMA ETAPA
+header('location: game.php');
+} else {
+    if (!empty($_GET['code']) and !empty($_GET['state'])) {
+        $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
+        header('location: game.php');
+    } else {
+        $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/index.php');
+        header('location: '.$url.'');
+    }
+}
 } catch (Exception $e) {
     echo 'Deu zica: '.$e->getMessage();
 }

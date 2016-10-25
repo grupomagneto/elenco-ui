@@ -1,7 +1,7 @@
 <?php
 require __DIR__.'/vendor/autoload.php';
 require __DIR__.'/ids.php';
-// include 'functions.php';
+require_once 'functions.php';
 if(!session_id()) {
     session_start();
 }

@@ -13,6 +13,20 @@ try {
    if (!empty($_SESSION['facebook_access_token'])) {
       $page = basename(__FILE__);
       require_once 'register_page.php';
+      if (empty($_SESSION['friend_ID']) && empty($_SESSION['candidate_ID'])) {
+        $sql = "SELECT game_name, insert_date, game_ID, total FROM (SELECT game_name, insert_date, game_ID FROM tb_games GROUP BY game_ID) AS tab_1, (SELECT game_ID AS id, COUNT(candidate_elenco_ID) AS total FROM tb_games GROUP BY game_ID) AS tab_2 WHERE tab_1.game_ID = tab_2.id";
+        $result = mysqli_query($link2, $sql);
+        $games = array();
+        while($row = mysqli_fetch_array($result)){
+          $game = array();
+          array_push($game, $row['game_ID']);
+          array_push($game, $row['game_name']);
+          array_push($game, $row['insert_date']);
+          array_push($game, $row['total']);
+          array_push($games, $game);
+        }
+        $games_n = count($games);
+      }
       if (!empty($_SESSION['friend_ID']) || !empty($_SESSION['candidate_ID'])) {
         if (!empty($_SESSION['friend_ID'])) {
           $friend_ID = $_SESSION['friend_ID'];
@@ -67,6 +81,7 @@ echo "
         array_push($photoAreas, ${'photo_array_'.$game_ID});
         shuffle($photoAreas);
         foreach ($photoAreas as $value) {
+          // $v = rand(1,8);
           $first_photo = $value[0];
         }
         $n = $games_n;
@@ -75,8 +90,9 @@ echo "
           <button class='font-family color-font bold' name='game_ID' value='$game_ID' type='submit'>
             <div class='stage'>
               <div class='flashcard'>
-                <div class='front'>
-                  <img id='img_front".$n."' src='$first_photo'/>
+                <div class='front'>";
+                  // <img id='img_front".$n."' src='$first_photo'/>
+                  echo "<img src='$first_photo'/>
                 </div> 
               </div>  
             </div>                

@@ -102,19 +102,38 @@ echo "
 	}
 	echo "
 	</div>
-  <a href='create_share_image.php' target='_blank'>  
 
- 	<button class='button-login button button-medium button-result'>
-        <div class='button-login_image'>
-          <img src='images/fb.svg' />
-        </div>
-        <div class='button-login_content'>
-          <p class='font-family color-font medium'>
-           Convidar seus amigos
-          </p>
-        </div>
-    </button>
-  </a>
+
+	<div class='container-outline__button'>";
+	$second_button = "<a href='register_candidate.php' target='_blank'>
+	  <button class='button button-medium font-family color-font medium' onclick='showLoading()'>
+	  Quero me candidatar
+	  </button>
+	  </a>";
+	// IF USER IS A CLIENT
+	if (!empty($_SESSION['voter_elenco_ID'])) {
+		// IF USER IS VOTING FOR HIMSELF
+		if (!empty($_SESSION['friend_ID']) && $_SESSION['friend_ID'] == $_SESSION['voter_elenco_ID']) {
+			$second_button = "";
+		}
+	}
+echo "
+	$second_button
+	  <a href='create_share_image.php' target='_blank'>  
+	  <button class=' button button-medium'>
+	        <div class='button-login_image'>
+	          <img src='images/fb.svg' />
+	        </div>
+	        <div class='button-login_content'>
+	          <p class='font-family color-font medium'>
+	           Convidar seus amigos
+	          </p>
+	        </div>
+	    </button>
+	  </a>
+
+	</div>
+
    
     </div>
 
@@ -128,6 +147,7 @@ echo "
 </body>
 </html>";
 mysqli_close($link2);
+session_destroy();
 } else {
         if (!empty($_GET['code']) and !empty($_GET['state'])) {
             $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();

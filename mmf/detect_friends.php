@@ -45,4 +45,15 @@ elseif (!empty($_SESSION['candidate_ID']) && $_SESSION['candidate_ID'] != NULL) 
     $friends2 = "From share";
   }
 }
+// SE O USUÁRIO É CANDIDATO NO JOGO
+if (!empty($_SESSION['voter_elenco_ID']) && $_SESSION['voter_elenco_ID'] != NULL) {
+	if (!empty($_SESSION['voter_elenco_ID']) && $candidate_elenco_ID_1 == $_SESSION['voter_elenco_ID']) {
+		$friends1 = "Self voter";
+	}
+		if (isset($candidate_elenco_ID_2)) {
+			if (!empty($_SESSION['voter_elenco_ID']) && $candidate_elenco_ID_2 == $_SESSION['voter_elenco_ID']) {
+			$friends2 = "Self voter";
+		}
+	}
+}
 ?>

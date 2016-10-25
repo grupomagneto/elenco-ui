@@ -18,6 +18,19 @@ try {
 if (isset($_SESSION['game_ID'])) {
     $game_ID = $_SESSION['game_ID'];
     $id = $_SESSION['id'];
+    if (!empty($_SESSION['id'])) {
+        $friends = $_SESSION['friends'];
+        $array_friends = array();
+        foreach ($friends as $f) {
+            $array = selectFriends($link2, $f['id']);
+            // RECONSTROI O ARRAY LIMPO
+            if ($array[0] > 1) {
+                $friend_ID = $array[0];
+                array_push($array_friends, $array);
+            }
+        }
+    $_SESSION['array_friends'] = $array_friends;
+    }
     // DETECTA SE O USUÁRIO JÁ DEU ALGUM VOTO NO GAME
     $sql_id = "SELECT voter_facebook_ID FROM tb_votes WHERE game_ID = '$game_ID' AND voter_facebook_ID = '$id' LIMIT 1";
     $result_id = mysqli_query($link2, $sql_id);
