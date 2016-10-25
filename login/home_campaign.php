@@ -18,17 +18,6 @@
       </h1>
     </div>
 
-<!--   <div class="stage">
-    <div class="flashcard">
-      <div class="front">
-        <p>Primeira</p>
-      </div>
-      <div class="back">
-        <p>Segunda</p>
-      </div>
-    </div>  
-  </div> -->
-
     <div class='box-outline_campaign longhand longhand__campaign'>
 
         <div class="selection-item__campaign">

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="38px" height="32px" viewBox="0 0 38 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Relatório</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Relatório" transform="translate(-814.000000, -27.000000)" fill="#875DA2">
+            <g id="Nav-Header">
+                <text id="RELATÓRIO-PREMIUM" font-family="Avenir-Book, Avenir" font-size="14" font-weight="normal">
+                    <tspan x="898.222685" y="45">RELATÓRIO PREMIUM</tspan>
+                </text>
+                <g id="Notificações" transform="translate(817.000000, 22.000000)">
+                    <path d="M3.92119985,27.9602156 C5.04915873,29.0035821 8.71921487,31.3604466 3.42452936,34.9190785 C5.63902026,35.7220741 8.94598477,35.0035695 11.5999106,32.8267987 C12.546841,32.0501189 14.67464,32.3482167 15.8621338,32.3482167 C24.6225484,32.3482167 31.7242677,26.5992059 31.7242677,19.5074417 C31.7242677,12.4156775 24.6225484,6.66666667 15.8621338,6.66666667 C7.10171922,6.66666667 0,12.4156775 0,19.5074417 C0,22.7444656 1.47960822,25.7017334 3.92119985,27.9602156 Z" id="Oval-19"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

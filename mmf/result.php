@@ -104,6 +104,7 @@ echo "
 	</div>
 
 
+<<<<<<< Updated upstream
 	<div class='container-outline__button'>";
 	$second_button = "<a href='register_candidate.php' target='_blank'>
 	  <button class='button button-medium font-family color-font medium' onclick='showLoading()'>
@@ -119,6 +120,15 @@ echo "
 	}
 echo "
 	$second_button
+=======
+	<div class='container-outline__button'>
+	    <a href='http://cadastro.magnetoelenco.com.br' target='_blank'>
+	  <button class='button button-medium font-family color-font medium' onclick='showLoading()'>
+	  Quero me candidatar
+	  </button>
+	  </a>
+
+>>>>>>> Stashed changes
 	  <a href='create_share_image.php' target='_blank'>  
 	  <button class=' button button-medium'>
 	        <div class='button-login_image'>

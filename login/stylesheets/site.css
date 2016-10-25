@@ -22,7 +22,7 @@ summary {
  * Corrects `inline-block` display not defined in IE 8/9.
  */
 audio,
-canvas,s
+canvas,
 video {
   display: inline-block; }
 
