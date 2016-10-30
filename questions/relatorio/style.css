@@ -1,0 +1,830 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+  font-family: Avenir-Book;
+  src: url('fonts/Avenir-Light.eot');
+  src: url('fonts/Avenir-Light.woff') format('woff'),
+       url('fonts/Avenir-Light.ttf') format('truetype'),
+       url('fonts/Avenir-Light.svg#Avenir-Light') format('svg'),
+       url('fonts/Avenir-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+.font-family{
+  font-family: Avenir-Book;
+  font-weight: 100;
+}
+
+.color-font{
+  color: #FFFFFF;
+}
+.color-font__secondary{
+  color: #8F9EA6;
+}
+
+.color-font__purple{
+  color: #A63FF6;
+}
+.color-font__purple-secondary{
+  color: #875DA2;
+}
+
+.cursor{
+	cursor: pointer;
+}
+
+
+.button{
+  background: rgba(215, 215, 215, 0.3);
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  opacity: 0.89;
+
+}
+
+.button:hover{
+  background: rgba(215,215,215,0.60);
+
+}
+
+.button:active{
+  background: rgba(215,215,215,0.60);
+
+}
+
+.button-medium{
+  width: 250px;
+  height: 50px;
+
+}
+
+.button-small{
+  width: 120px;
+  height: 50px;
+
+}
+/* Isto é necessário para não haver rolagens horizontais quando movermos os elementos */
+html, body {overflow-x: hidden;}
+
+
+body::-webkit-scrollbar{
+  width: 0;
+  background-color: transparent;
+}
+/* Fundo da barra de rolagem */
+body::-webkit-scrollbar-track-piece{
+  background-color: transparent;
+}
+/* Cor do indicador de rolagem */
+body::-webkit-scrollbar-thumb:vertical{
+  background-color: transparent;
+}
+
+
+.gradient {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  bottom: 0; 
+  display: block;
+  width: 100%;
+  padding: 0px;
+  margin: 0px; 
+}
+
+.header-menu {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background: #fff;
+	height: 80px;
+	z-index: 10;
+	overflow: hidden;
+	float: right;
+}
+
+.logo, .notifications{
+	padding-top: 20px;
+}
+.notifications {
+	float: right;
+}
+
+.notification__num{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  margin-top: -5px;
+  margin-left: 25px;
+  font-size: 14px;
+	text-align: center;
+	padding: 2px;
+}
+.link-menu{
+	 margin-top: -20px;
+}
+
+.line{
+  position: absolute;
+  width: 2px;
+  height: 30px; 
+  background: #875DA2;
+  margin-left: 10px;
+}
+
+.notifications h1 {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 20px;
+	line-height: 10px;
+}
+.notifications h1 a { 
+  text-decoration: none; 
+ padding-left: 20px;}
+
+.notifications h1 a :before{
+  height: 20px;
+  width: 2px;
+  background: #875DA2;
+
+}
+
+.header-menu input {
+	float: right;
+	padding: 10px;
+	width: 200px;
+	border: none;
+}
+
+
+.profile {
+	width: 100%;
+	margin-top: 90px;
+	text-align: center;
+  position: relative;
+
+}
+
+
+.profile_photo{
+  position: relative;
+	width: 320px;
+  float: left;
+  margin-top: 20px;
+}
+
+.profile_photo img{
+  width: 80px;
+  height: 80px;
+  border-radius: 7px;
+  margin-right: 10px;
+  float: left;
+}
+
+
+.profile_photo h1{
+  height: 20px;
+  padding-top: 20px;
+  font-size: 24px;
+  text-align: left;
+
+}
+
+.profile_photo p{
+  height: 10px;
+  padding-top: 25px;
+  font-size: 14px;
+  text-align: left;
+
+}
+
+.profile-info {
+  position: relative;
+  float: right; 
+  padding: 10px 0 10px 10px;
+  width: 400px;
+}
+
+.profile-info:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.profile-info__menu{
+  margin-left: -85px;
+}
+
+.profile-info__menu ul{
+  width: 400px;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  display: inline-block;
+}
+.profile-info__menu ul li{
+  display: inline-block;
+}
+
+.profile-info__menu ul li a{
+  padding: 1px 8px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+.box-profile {
+  float: left;
+	width: 72px;
+  height: 95px;
+  margin: 10px 10px 10px 0;
+  background-color: rgba(255,255,255,0.30);
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+}
+
+.box-profile:hover{
+
+  background-color: rgba(255,255,255,0.60);
+}
+
+.box-profile img{
+  width: 50px;
+  height: 50px;
+  margin-top: 1px;
+
+}
+
+.box-profile h1{
+  margin-top: -5px;
+  font-size: 20px;
+
+}
+
+.box-profile p{
+  margin-top: -2px;
+  font-size: 14px;
+
+}
+
+/*STYLE TABS*/
+
+.tabs{
+  margin-top: -35px;
+  margin-left: 50px;
+}
+
+.tab {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Avenir-Book;
+  font-size: 14px;
+  width: 477px;
+  margin-left: 20px;
+  margin-top: 5px;
+
+}
+
+/* Float the list items side by side */
+.tab li {
+  float: left;
+  background: rgba(255,255,255,0.30);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+}
+
+/* Style the links inside the list items */
+.tab li a {
+
+  display: inline-block;
+  text-align: center;
+  padding: 8px 23px;
+  border: 1px solid #FFFFFF;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+
+/* Change background color of links on hover */
+.tab li a:hover {
+  background-color: rgba(255,255,255,0.60)
+
+}
+
+
+/* Create an active/current tablink class */
+.tab li a:focus, .active {
+  background: rgba(255,255,255,0.60);
+
+}
+
+.tabcontent{
+  width: 750px; 
+  height: 300px;
+  display: none;
+  padding: 6px 12px;
+  margin-top: -2px;
+  border: 1px solid #FFFFFF;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.25);
+  border-radius: 5px;
+}
+
+.tabcontent__left{
+  float: left;
+  padding: 10px;
+}
+.tabcontent__right{
+  float: right;
+  padding: 10px;
+  margin-right: -150px;
+}
+
+.footer__button{
+  position: relative;
+  left: 12%;
+  top: 20px;
+
+}
+.container__after-tabs{
+  width: 700px;
+}
+.container__after-tabs button{
+  margin-left: 20px;
+}
+
+.button-image{
+
+  width: 30px;
+  height: 30px;
+  margin-top: -10px;
+  margin-left: 5px;
+  float: left;
+
+}
+.progressbar{
+
+  width: 320px;
+} 
+
+.progressbar h3{
+  margin-top: 2px;
+  font-size: 14px;
+  float: right;
+}
+
+.progressbar progress {
+  margin-top: 10px;
+  float: left;
+  color: #FFFFFF;
+  background: transparent;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  height: 5px;
+  width: 140px;
+}
+
+.progressbar progress::-webkit-progress-bar {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.progressbar progress::-webkit-progress-value{
+  background-color: #FFFFFF;
+  border-radius: 10px ;
+}
+
+.progressbar progress::-moz-progress-bar{
+  background: transparent;
+  border-radius: 10px;
+}
+
+  @media only screen and (max-width: 340px){
+
+      .gradient {
+        position: absolute;
+        top: 0; 
+        left: 0; 
+        bottom: 0; 
+        display: block;
+        width: 100%;
+        height: 1200px;
+        padding: 0px;
+        margin: 0px; 
+      }
+
+      .progressbar{
+        width: 300px;
+        margin-left: 10px;
+      } 
+
+
+      .profile {
+        width: 100%;
+        height: 600px;
+        text-align: center;
+        position: relative;
+      }
+
+      .btn {
+        padding: 10px;
+        font-size: 24px;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .btn-scrollTop {
+        position: absolute;
+        display: block;
+        top: 380px;
+        right: auto;
+        left: 42%;
+        width: 35px;
+        height: 35px;
+      }
+
+      a.scroll-to-top {
+        color: #FFFFFF;
+        text-decoration: none;
+        line-height: 15px;
+        display: block;
+      }
+
+      a.scroll-to-top:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+      }
+
+      .profile-info {
+        position: relative;
+        float: right; 
+        padding: 20px 0 2px 10px;
+        width: 320px;
+      }
+
+      .box-profile {
+        margin: 5px 0 2px 5px;
+      }
+
+      .profile {
+        margin-top: 80px;
+
+      }
+      .profile-info__menu{
+        margin-left: -45px;
+      }
+
+      .profile-info__menu ul li a{
+        padding: 1px 5px;
+      }
+
+      .tabs{
+        margin-top: -180px;
+        margin-left: 0%;
+      }
+
+      .tabcontent{
+        width: 300px; 
+        height: 240px;
+        display: none;
+        padding: 6px 12px;
+        margin-top: -2px;
+        border: 1px solid #FFFFFF;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.25);
+        border-radius: 5px;
+      }
+      .tab {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: Avenir-Book;
+        font-size: 12px;
+        width: 277px;
+        margin-left: 10px;
+        margin-top: 5px;
+
+      }
+      .tab li a {
+
+        display: inline-block;
+        text-align: center;
+        padding: 8px 5px;
+        border: 1px solid #FFFFFF;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        text-decoration: none; 
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        font-size: 12px;
+      }
+
+      .tabcontent__left{
+        float: left;
+        padding: 10px;
+      }
+      .tabcontent__right{
+        float: right;
+        padding: 10px;
+        margin-top: 80px ;
+        margin-right: -20px ;
+      }
+
+      .container__after-tabs{
+        width: 200px;
+      }
+      .container__after-tabs button{
+        margin: 2px;
+      }
+
+
+      .footer__button{
+          position: relative;
+          left: 5%;
+          top: 70px;
+          margin: 0 auto;
+      }
+      .title-tabs {
+        text-align: center;
+        display: block;
+        width: 200px;
+        margin-left: 45px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .title-tabs h1 {
+        font-size: 20px;
+      }
+
+
+  }
+
+  @media only screen and (min-width: 341px) and (max-width: 767px){
+
+      .gradient {
+        position: absolute;
+        top: 0; 
+        left: 0; 
+        bottom: 0; 
+        display: block;
+        width: 100%;
+        height: 1200px;
+        padding: 0px;
+        margin: 0px; 
+      }
+
+      .progressbar{
+        width: 300px;
+        margin-left: 10px;
+      } 
+
+
+      .profile {
+        width: 100%;
+        height: 600px;
+        margin-top: -10px;
+        text-align: center;
+        position: relative;
+      }
+
+      .btn {
+        padding: 10px;
+        font-size: 24px;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .btn-scrollTop {
+        position: absolute;
+        display: block;
+        top: 450px;
+        right: auto;
+        left: 42%;
+        width: 35px;
+        height: 35px;
+      }
+
+      a.scroll-to-top {
+        color: #FFFFFF;
+        text-decoration: none;
+        line-height: 15px;
+        display: block;
+      }
+
+      a.scroll-to-top:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+      }
+
+      .profile-info {
+        position: relative;
+        float: right; 
+        padding: 50px 0 2px 10px;
+        width: 320px;
+      }
+
+      .box-profile {
+        margin: 5px 0 2px 5px;
+      }
+
+      .profile {
+        margin-top: 120px;
+
+      }
+      .profile-info__menu{
+        margin-left: -45px;
+      }
+
+      .profile-info__menu ul li a{
+        padding: 1px 5px;
+      }
+
+      .tabs{
+        margin-top: -180px;
+        margin-left: 0%;
+      }
+
+      .tabcontent{
+        width: 300px; 
+        height: 240px;
+        display: none;
+        padding: 6px 12px;
+        margin-top: -2px;
+        border: 1px solid #FFFFFF;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.25);
+        border-radius: 5px;
+      }
+      .tab {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: Avenir-Book;
+        font-size: 12px;
+        width: 277px;
+        margin-left: 10px;
+        margin-top: 5px;
+
+      }
+      .tab li a {
+
+        display: inline-block;
+        text-align: center;
+        padding: 8px 5px;
+        border: 1px solid #FFFFFF;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        text-decoration: none; 
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        font-size: 12px;
+      }
+
+      .tabcontent__left{
+        float: left;
+        padding: 10px;
+      }
+      .tabcontent__right{
+        float: right;
+        padding: 10px;
+        margin-top: 80px ;
+        margin-right: -20px ;
+      }
+
+      .container__after-tabs{
+        width: 200px;
+      }
+      .container__after-tabs button{
+        margin: 2px;
+      }
+
+
+      .footer__button{
+          position: relative;
+          left: 5%;
+          top: 70px;
+          margin: 0 auto;
+      }
+      .title-tabs {
+        text-align: center;
+        display: block;
+        width: 200px;
+        margin-left: 45px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .title-tabs h1 {
+        font-size: 20px;
+      }
+
+  }
+
+
+
+  @media only screen and (min-width:768px) and (max-width:991px){
+    .gradient {
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      bottom: 0; 
+      display: block;
+      width: 100%;
+      height: 1000px;
+      padding: 0px;
+      margin: 0px; 
+    }
+
+
+    .profile-info {
+        position: relative;
+        float: right; 
+        padding: 10px 0 10px 10px;
+        margin-right: -50px;
+        width: 400px;
+      }
+
+    .tabcontent__right{
+      float: right;
+      padding: 10px;
+      margin-right: -100px;
+    }
+
+
+    .tabs{
+      margin-top: 20px;
+      margin-left: 18%;
+    }
+
+    .tabcontent{
+      width: 550px; 
+      height: 200px;
+      display: none;
+      padding: 6px 12px;
+      margin-top: -2px;
+      border: 1px solid #FFFFFF;
+      background: #FFFFFF;
+      box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.25);
+      border-radius: 5px;
+    }
+
+    .footer__button{
+        position: relative;
+        left: 12%;
+        top: 70px;
+
+    }
+
+    .profile {
+      margin-top: 50px;
+
+    }
+      .title-tabs {
+        text-align: center;
+        display: block;
+        margin-right: 290px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .title-tabs h1 {
+        font-size: 24px;
+      }
+
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px){
+
+      .profile {
+        margin-top: 50px;
+
+      }
+      .title-tabs{
+        display: none;
+      }
+
+  }
+
+  @media only screen and (min-width:1200px){
+
+      .profile {
+        margin-top: 50px;
+
+      }
+
+      .title-tabs{
+        display: none;
+      }
+  }

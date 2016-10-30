@@ -1,92 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'> 
-  <link rel="stylesheet" href="login/stylesheets/questions.css">
-</head>
+<meta http-equiv='Content-type' content='text/html; charset=UTF-8' />
+<title>Resultado Parcial Meu Modelo Favorito</title>
+<link rel='stylesheet' href='stylesheets/site.css'>
+</head><body>
+  <link rel='stylesheet' href='mmf/stylesheets/site.css'>
+  <link rel='stylesheet' href='mmf/stylesheets/swiper.min.css'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'> 
+  </head>
 <body>
-
-  
-<form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post' id='form'>
-
-  <div class="gradient container__warning">
-            <div class="row">
-              <a href="logout.php">logout</a>
-            </div>
-
-    <div class="box">
-      <h1 class="pergunta__selection font-family color-font">
-        Qual dos seus amigos você quer ajudar hoje?
+  <div class='swiper-wrapper'>
+    <div class='swiper-slide gradient'>
+    <h1 class='font-family color-font large voto_registrado'>Voto registrado!</h1>
+  <h1 class='pergunta font-family color-font medium '>
+        Confira o resultado parcial e convide seus amigos para votar também:
       </h1>
+  <div class='row result-one'>
+  <img src='http://www.magnetoelenco.com.br/fotos/$winner_photo1' class='foto' width=120px height=120px>
+    <div class='progress progress-result'>
+      <progress id='progressbar98' value='$percent1' max='100'></progress>
     </div>
-  
-      <div class="box-outline_selection longhand">
-
-        <div class="selection-item">
-          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
-          <div class="selection-item__text">
-            <p class="font-family color-font">Anelise</p>
-          </div>
-        </div>
-
-        <div class="selection-item">
-          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
-          <div class="selection-item__text">
-          <p class="font-family color-font">Fernando</p>
-          </div>
-        </div>
-
-        <div class="selection-item">
-          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
-          <div class="selection-item__text">
-            <p class="font-family color-font">Vini</p>
-          </div>
-        </div>
-
-        <div class="selection-item">
-          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
-          <div class="selection-item__text">
-            <p class="font-family color-font">Karina</p>
-          </div>
-        </div>
-
-        <div class="selection-item">
-          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
-          <div class="selection-item__text">
-            <p class="font-family color-font">Carolina</p>
-          </div>
-        </div>
-        <div class="selection-item">
-          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
-          <div class="selection-item__text">
-            <p class="font-family color-font">Carolina</p>
-          </div>
-        </div>
-        <div class="selection-item">
-          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
-          <div class="selection-item__text">
-            <p class="font-family color-font">Carolina</p>
-          </div>
-        </div>
-        <div class="selection-item">
-          <img src="login/images/elenco_019589_20160913140545.jpg" alt="">
-          <div class="selection-item__text">
-            <p class="font-family color-font">Carolina</p>
-          </div>
-        </div>
-
-      </div>
-  
+        <div class='percent'>
+      <p>0%</p>
+    </div>
   </div>
-</form>
 
+<div class='row result-two'>
+    <img src='http://www.magnetoelenco.com.br/fotos/$winner_photo2' class='foto' width=120px height=120px>
+    <div class='progress  progress-result'>
+      <progress id='progressbar99' value='$percent2' max='100'></progress>
+    </div>
+        <div class='percent'>
+      <p>0%</p>
+    </div>
+    </div>
+<div class='row result-three'>
+    <img src='http://www.magnetoelenco.com.br/fotos/$winner_photo3' class='foto' width=120px height=120px>
 
+    <div class='progress  progress-result'>
+      <progress id='progressbar97' value='$percent3' max='100'></progress>
+    </div>
+    <div class='percent'>
+      <p>0%</p>
+    </div>
+</div>
 
-<script src="login/javascripts/jquery-1.12.1.min.js"></script>
+<div class='container-outline__button'>
+    <a href='http://cadastro.magnetoelenco.com.br' target='_blank'>
+  <button class='button button-medium font-family color-font medium' onclick='showLoading()'>
+  Quero me candidatar
+  </button>
+  </a>
 
-<script src="login/javascripts/questions.js"></script>
-  
+  <a href='create_share_image.php' target='_blank'>  
+  <button class=' button button-medium'>
+        <div class='button-login_image'>
+          <img src='mmf/images/fb.svg' />
+        </div>
+        <div class='button-login_content'>
+          <p class='font-family color-font medium'>
+           Convidar seus amigos
+          </p>
+        </div>
+    </button>
+  </a>
+
+</div>
+
+   
+    </div>
+
+    </div>
+ </div>
+<script src='mmf/javascripts/jquery-1.12.1.min.js'></script>
+<script src='mmf/javascripts/swiper.jquery.min.js'></script>
+<script src='mmf/javascripts/swiper.min.js'></script>
+<script src='mmf/javascripts/progressbar.min.js'></script>
+<script src='mmf/javascripts/all.js'></script>
 </body>
 </html>

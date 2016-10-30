@@ -14,7 +14,6 @@ try {
         $page = basename(__FILE__);
         include 'register_page.php';
         echo "
-
 <!DOCTYPE html>
 <html lang='pt-br'>
 <head>
@@ -50,20 +49,20 @@ try {
 $id         = $_SESSION['id'];
 $pergunta 	= "Qual a área da sua principal ocupação?";
 $select_id	= "dropdown";
-$name 		= "occupation";
-$opcao1 	= "Serviços / Autônomo(a)";
-$opcao2 	= "Saúde";
-$opcao3 	= "Indústria / Construção";
-$opcao4 	= "Inativo(a)";
-$opcao5 	= "Funcionalismo Público";
-$opcao6 	= "Estudante";
-$opcao7 	= "Educação / Ensino";
-$opcao8 	= "Cultura / Artes";
-$opcao9 	= "Comércio / Vendas";
-$opcao10 	= "Atividade Doméstica";
-$opcao11 	= "Agricultura";
-$numero 	= 11;
-$extra 		= ' ';
+$name 		  = "occupation";
+$opcao1 	  = "Serviços / Autônomo(a)";
+$opcao2 	  = "Saúde";
+$opcao3 	  = "Indústria / Construção";
+$opcao4 	  = "Inativo(a)";
+$opcao5 	  = "Funcionalismo Público";
+$opcao6 	  = "Estudante";
+$opcao7 	  = "Educação / Ensino";
+$opcao8 	  = "Cultura / Artes";
+$opcao9 	  = "Comércio / Vendas";
+$opcao10 	  = "Atividade Doméstica";
+$opcao11 	  = "Agricultura";
+$numero 	  = 11;
+$extra 		  = ' ';
 
 include "dropdown.php";
 include 'missing_info.php';
@@ -101,11 +100,8 @@ if(isset($_POST[$name])){
 }
 
 echo "
-
   <script src='javascripts/jquery-1.12.1.min.js'></script>
   <script src='javascripts/questions.js'></script>
-
-
 </body>
 </html>";
 } else {

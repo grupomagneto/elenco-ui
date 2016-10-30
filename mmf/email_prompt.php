@@ -10,12 +10,10 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
-    if (!empty($_SESSION['facebook_access_token'])) {
-		
+    if (!empty($_SESSION['facebook_access_token'])) {	
 		$page = basename(__FILE__);
 		include 'register_page.php';
 		$firstname = $_SESSION['firstname'];
-
 echo "
 <!DOCTYPE html>
 <html lang='pt-br'>
@@ -24,8 +22,8 @@ echo "
 	<meta charset='utf-8'>
 	<meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport'>
 	<title>Meu Modelo Favorito por Magneto Elenco</title>
-	<link href='stylesheets/questions.css' rel='stylesheet'>
-  <link rel='stylesheet' href='stylesheets/loading.css'>
+		<link href='stylesheets/questions.css' rel='stylesheet'>
+		 <link rel='stylesheet' href='stylesheets/loading.css'>
 </head>
 <body>
 <div id='loading' style='display: none' class='overlay'>
@@ -54,17 +52,19 @@ echo "
 echo "
 	<div class='gradient container'>
 		<div class='box'>
-			<h1 class='pergunta font-family color-font'>Qual o seu e-mail cadastrado?</h1>
+			<h1 class='pergunta font-family color-font'>
+				Qual o seu e-mail cadastrado?
+			</h1>
 		</div>
 		<div class='box'>
 			<div class='box-outline_textfield'>
 
 				<div class='column-full font-family color-font'>
 
-						<input id='email' name='email_prompt' type='email' />
-						
+						<input id='email_prompt' name='email_prompt' type='email' />
+																		
 						<button id='btn' class='ok' type='submit' onclick='showLoading()'>
-							<img id='btn_img' alt='' src='images/ok_neg.svg' />
+							<img id='btn_img' alt=' src='images/ok_neg.svg' />
 						</button>
 				</div>
 
@@ -74,12 +74,12 @@ echo "
 </form>
 
 
-</form>
 	<script src='javascripts/jquery-1.12.1.min.js'></script>
 	<script src='javascripts/questions.js'></script>
 
 </body>
 </html>";
+
 	if (!empty($_POST['email_prompt'])) {
 		$_SESSION['email_prompt'] = $_POST['email_prompt'];
 		header('location: detect_existing_client.php');
@@ -97,4 +97,6 @@ echo "
 } catch (Exception $e) {
     echo 'Deu zica: '.$e->getMessage();
 }
+
+
 ?>

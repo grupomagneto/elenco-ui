@@ -312,9 +312,14 @@ table {
 
 @font-face {
   font-family: Avenir-Book;
+  src: url('../fonts/Avenir-Light.eot');
+  src: url('../fonts/Avenir-Light.woff') format('woff'),
+       url('../fonts/Avenir-Light.ttf') format('truetype'),
+       url('../fonts/Avenir-Light.svg#Avenir-Light') format('svg'),
+       url('../fonts/Avenir-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: 100;
   font-style: normal;
-  font-weight: 600;
-  src: local("../fonts/Avenir-Light.woff"), url "../fonts/Avenir-Light.woff" format("woff"); }
+}
 
 html, body {
   position: relative;

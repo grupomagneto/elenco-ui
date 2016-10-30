@@ -1,5 +1,4 @@
-//= require_tree .
-
+//= require_tree
 var colors = new Array(
 [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
 );
@@ -41,7 +40,7 @@ function updateGradient(container) {
 
   }
 }
-setInterval(function(){updateGradient('.gradient')},10);
+setInterval(function(){updateGradient(".gradient")},10);
 
 function mascara(o,f){
     v_obj=o
@@ -124,7 +123,7 @@ $('#cep').on('blur', function(e) {
     get('https://viacep.com.br/ws/' + cep + '/json/');
 
   } else {
-    limpa_formulário_cep(cep == "" ? undefined : "Formato de CEP inválido.");
+    limpa_formulario_cep(cep == "" ? undefined : "Formato de CEP inválido.");
   }
 });
 
@@ -176,9 +175,8 @@ $('#dropdown').each(function(){
         e.stopPropagation();
         $styledSelect.text($(this).text()).removeClass('active');
         $this.val($(this).attr('rel'));
-
-        document.getElementById("form").submit();
-
+          document.getElementById("form").submit();
+          document.getElementById('loading').style.display = 'block';
         $list.hide();
         //console.log($this.val());
     });
@@ -212,11 +210,10 @@ document.getElementById('txt_filhos').innerHTML = '(digite 0 caso não tenha fil
 
 $(window).load(function() {
   $("#filhos").keyup(function() {
-    if ($.trim(this.value).length > 1) {
+    if ($.trim(this.value).length > 0) {
      
     $('#btn').css('display' ,'block');
     $('#btn_img').css('display' ,'block');
-
 
     $('#txt_filhos').css('display' ,'block');
 
@@ -226,6 +223,40 @@ $(window).load(function() {
 
     $('#btn').css('display' ,'none');
     $('#btn_img').css('display' ,'none');
+    }
+  });
+});
+
+$(window).load(function() {
+  $("#email_prompt").keyup(function() {
+    if ($.trim(this.value).length > 0) {
+     
+      $('#btn').css('display' ,'block');
+      $('#btn_img').css('display' ,'block');
+
+
+    } else {
+
+      $('#btn').css('display' ,'none');
+      $('#btn_img').css('display' ,'none');
+
+    }
+  });
+});
+
+$(window).load(function() {
+  $("#confirmation_prompt").keyup(function() {
+    if ($.trim(this.value).length > 4) {
+     
+    $('#btn').css('display' ,'block');
+    $('#btn_img').css('display' ,'block');
+
+
+    } else {
+
+    $('#btn').css('display' ,'none');
+    $('#btn_img').css('display' ,'none');
+
     }
   });
 });
