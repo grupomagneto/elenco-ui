@@ -8,14 +8,14 @@
 
 				<div class="column-full font-family color-font">
 
-						<input id='<?php echo $input_id; ?>' name='<?php echo $name; ?>' <?php $extra; ?> type="tel">
-						
-						<button id="btn" class="ok" type="submit" onclick="showLoading()">
-							<img id="btn_img" alt="" src="images/ok_neg.svg" />
-						</button>
-						
-						<!-- MENSAGEM DE ERRO -->
-						<div id='<?php echo $text_id; ?>'></div>
+					<input id='<?php echo $input_id; ?>' name='<?php echo $name; ?>' <?php $extra; ?> type="tel">
+					
+					<button id="btn" class="ok" type="submit" onclick="showLoading()">
+						<img id="btn_img" alt="" src="images/ok_neg.svg" />
+					</button>
+					
+					<!-- MENSAGEM DE ERRO -->
+					<div id='<?php echo $text_id; ?>'></div>
 				</div>
 
 			</div>

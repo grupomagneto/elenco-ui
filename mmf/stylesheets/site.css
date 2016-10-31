@@ -665,6 +665,7 @@ form{ height:100%; }
   text-align: center; }
 
 .content-slide_after-login_question p {
+  font-size: 24px;
   padding: 30px 20px; 
   font-weight: bold; }
 
@@ -1103,35 +1104,22 @@ img.foto{
 }
 
 
+.result-two img{
+  height: 127px;
+  width: 127px;
+}
+
 .result-one img{
   height: 150px;
   width: 150px;
 }
 
-.result-two img{
-  height: 150px;
-  width: 150px;
-}
-
 .result-three img{
-  height: 150px;
-  width: 150px;
+  height: 89px;
+  width: 89px;
 }
 
 .result-one{
-  color: #FFFFFF;
-  font-family: Avenir-Book;
-  font-size: 18px;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  -o-transform: translate(-25%, -15%);
-  -moz-transform: translate(-25%, -15%);
-  -webkit-transform: translate(-25%, -15%);
-  transform: translate(-25%, -15%);
-}
-
-.result-two{
   color: #FFFFFF;
   font-family: Avenir-Book;
   font-size: 18px;
@@ -1144,6 +1132,19 @@ img.foto{
   transform: translate(-75%, -15%);
 } 
 
+.result-two{
+  color: #FFFFFF;
+  font-family: Avenir-Book;
+  font-size: 18px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -o-transform: translate(-22%, -5%);
+  -moz-transform: translate(-22%, -5%);
+  -webkit-transform: translate(-22%, -5%);
+  transform: translate(-22%, -5%);
+}
+
 .result-three{
   color: #FFFFFF;
   font-family: Avenir-Book;
@@ -1151,15 +1152,19 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate( 25%, -15%);
-  -moz-transform: translate( 25%, -15%);
-  -webkit-transform: translate( 25%, -15%);
-  transform: translate( 25%, -15%);
+  -o-transform: translate( 25%, 20%);
+  -moz-transform: translate( 25%, 20%);
+  -webkit-transform: translate( 25%, 20%);
+  transform: translate( 25%, 20%);
 } 
 
 .progress-result{
   margin-top: 10px;
   margin-left: 40px;
+}
+
+.progress-result-three{
+  margin-left: 20px;
 }
 
 .box-outline__button-after-vote{
@@ -1185,7 +1190,11 @@ img.foto{
 
 .percent {
   margin-top: 2px;
-  margin-left: 18%;
+  margin-left: 15%;
+}
+
+.percent-three {
+  margin-left: 10%;
 }
 
 #progressbar98,
@@ -1364,6 +1373,7 @@ form{ height:100%; }
   text-align: center; }
 
 .content-slide_after-login_question p {
+  font-size: 24px;
   padding: 30px 20px; 
   font-weight: bold; }
 
@@ -1766,29 +1776,17 @@ img.foto{
 }
 
 .result-two img{
-  height: 150px;
-  width: 150px;
+  height: 127px;
+  width: 127px;
 }
 
 .result-three img{
-  height: 150px;
-  width: 150px;
+  height: 89px;
+  width: 89px;
 }
+
 
 .result-one{
-  color: #FFFFFF;
-  font-family: Avenir-Book;
-  font-size: 18px;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  -o-transform: translate(-25%, -15%);
-  -moz-transform: translate(-25%, -15%);
-  -webkit-transform: translate(-25%, -15%);
-  transform: translate(-25%, -15%);
-}
-
-.result-two{
   color: #FFFFFF;
   font-family: Avenir-Book;
   font-size: 18px;
@@ -1801,6 +1799,20 @@ img.foto{
   transform: translate(-75%, -15%);
 } 
 
+.result-two{
+  color: #FFFFFF;
+  font-family: Avenir-Book;
+  font-size: 18px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -o-transform: translate(-22%, -5%);
+  -moz-transform: translate(-22%, -5%);
+  -webkit-transform: translate(-22%, -5%);
+  transform: translate(-22%, -5%);
+}
+
+
 .result-three{
   color: #FFFFFF;
   font-family: Avenir-Book;
@@ -1808,15 +1820,19 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate( 25%, -15%);
-  -moz-transform: translate( 25%, -15%);
-  -webkit-transform: translate( 25%, -15%);
-  transform: translate( 25%, -15%);
+  -o-transform: translate( 25%, 20%);
+  -moz-transform: translate( 25%, 20%);
+  -webkit-transform: translate( 25%, 20%);
+  transform: translate( 25%, 20%);
 } 
 
 .progress-result{
   margin-top: 10px;
   margin-left: 40px;
+}
+
+.progress-result-three{
+  margin-left: 20px;
 }
 
 .box-outline__button-after-vote{
@@ -1830,6 +1846,7 @@ img.foto{
   max-width: 250px;
   max-height: 400px;
 }
+
 .box-outline__button-after-vote input{
   margin-bottom: 25px;
   height: 50px;
@@ -1842,7 +1859,11 @@ img.foto{
 
 .percent {
   margin-top: 2px;
-  margin-left: 18%;
+  margin-left: 15%;
+}
+
+.percent-three {
+  margin-left: 10%;
 }
 
 #progressbar98,
@@ -2020,6 +2041,7 @@ form{ height:100%; }
   text-align: center; }
 
 .content-slide_after-login_question p {
+  font-size: 24px;
   padding: 30px 20px; 
   font-weight: bold; }
 
@@ -2415,35 +2437,23 @@ img.foto{
  border-radius: 10px;
 }
 
+
+.result-two img{
+  height: 127px;
+  width: 127px;
+}
+
 .result-one img{
   height: 150px;
   width: 150px;
 }
 
-.result-two img{
-  height: 150px;
-  width: 150px;
-}
-
 .result-three img{
-  height: 150px;
-  width: 150px;
+  height: 89px;
+  width: 89px;
 }
 
 .result-one{
-  color: #FFFFFF;
-  font-family: Avenir-Book;
-  font-size: 18px;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  -o-transform: translate(-25%, -15%);
-  -moz-transform: translate(-25%, -15%);
-  -webkit-transform: translate(-25%, -15%);
-  transform: translate(-25%, -15%);
-}
-
-.result-two{
   color: #FFFFFF;
   font-family: Avenir-Book;
   font-size: 18px;
@@ -2456,6 +2466,20 @@ img.foto{
   transform: translate(-75%, -15%);
 } 
 
+.result-two{
+  color: #FFFFFF;
+  font-family: Avenir-Book;
+  font-size: 18px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -o-transform: translate(-22%, -5%);
+  -moz-transform: translate(-22%, -5%);
+  -webkit-transform: translate(-22%, -5%);
+  transform: translate(-22%, -5%);
+}
+
+
 .result-three{
   color: #FFFFFF;
   font-family: Avenir-Book;
@@ -2463,16 +2487,21 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate( 25%, -15%);
-  -moz-transform: translate( 25%, -15%);
-  -webkit-transform: translate( 25%, -15%);
-  transform: translate( 25%, -15%);
+  -o-transform: translate( 25%, 20%);
+  -moz-transform: translate( 25%, 20%);
+  -webkit-transform: translate( 25%, 20%);
+  transform: translate( 25%, 20%);
 } 
 
 .progress-result{
   margin-top: 10px;
   margin-left: 40px;
 }
+
+.progress-result-three{
+  margin-left: 20px;
+}
+
 
 .box-outline__button-after-vote{
   position: absolute;
@@ -2497,7 +2526,11 @@ img.foto{
 
 .percent {
   margin-top: 2px;
-  margin-left: 18%;
+  margin-left: 15%;
+}
+
+.percent-three {
+  margin-left: 10%;
 }
 
 #progressbar98,
@@ -2714,6 +2747,7 @@ form{ height:100%; }
   text-align: center; }
 
 .content-slide_after-login_question p {
+  font-size: 24px;
   padding: 30px 20px; 
   font-weight: bold; }
 
@@ -3119,19 +3153,20 @@ img.foto{
   -moz-transition: all 1s ease;
   transition: all 1s ease; }
 
+
 .result-one img{
   height: 150px;
   width: 150px;
 }
 
 .result-two img{
-  height: 150px;
-  width: 150px;
+  height: 127px;
+  width: 127px;
 }
 
 .result-three img{
-  height: 150px;
-  width: 150px;
+  height: 89px;
+  width: 89px;
 }
 
 .result-one{
@@ -3141,11 +3176,11 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate(-25%, 10%);
-  -moz-transform: translate(-25%, 10%);
-  -webkit-transform: translate(-25%, 10%);
-  transform: translate(-25%, 10%);
-}
+  -o-transform: translate(-75%, -15%);
+  -moz-transform: translate(-75%, -15%);
+  -webkit-transform: translate(-75%, -15%);
+  transform: translate(-75%, -15%);
+} 
 
 .result-two{
   color: #FFFFFF;
@@ -3154,11 +3189,12 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate(-75%, 10%);
-  -moz-transform: translate(-75%, 10%);
-  -webkit-transform: translate(-75%, 10%);
-  transform: translate(-75%, 10%);
-} 
+  -o-transform: translate(-22%, -5%);
+  -moz-transform: translate(-22%, -5%);
+  -webkit-transform: translate(-22%, -5%);
+  transform: translate(-22%, -5%);
+}
+
 
 .result-three{
   color: #FFFFFF;
@@ -3167,15 +3203,19 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate( 25%, 10%);
-  -moz-transform: translate( 25%, 10%);
-  -webkit-transform: translate( 25%, 10%);
-  transform: translate( 25%, 10%);
+  -o-transform: translate( 25%, 20%);
+  -moz-transform: translate( 25%, 20%);
+  -webkit-transform: translate( 25%, 20%);
+  transform: translate( 25%, 20%);
 } 
 
 .progress-result{
   margin-top: 10px;
   margin-left: 40px;
+}
+
+.progress-result-three{
+  margin-left: 20px;
 }
 
 .box-outline__button-after-vote{
@@ -3201,8 +3241,13 @@ img.foto{
 
 .percent {
   margin-top: 2px;
-  margin-left: 18%;
+  margin-left: 15%;
 }
+
+.percent-three {
+  margin-left: 10%;
+}
+
 
 #progressbar98,
 #progressbar99,
@@ -3610,7 +3655,8 @@ img.foto{
   text-align: center; }
 
 .content-slide_after-login_question p {
-  padding: 30px 20px; 
+  font-size: 20px;
+  padding: 40px 20px; 
   font-weight: bold; }
 
 .box-before__question-valeu img{
@@ -3810,29 +3856,16 @@ img.foto{
 }
 
 .result-two img{
-  height: 80px;
-  width: 80px;
+  height: 68px;
+  width: 68px;
 }
 
 .result-three img{
-  height: 80px;
-  width: 80px;
+  height: 51px;
+  width: 51px;
 }
 
 .result-one{
-  color: #FFFFFF;
-  font-family: Avenir-Book;
-  font-size: 18px;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  -o-transform: translate(-15%, 10%);
-  -moz-transform: translate(-15%, 10%);
-  -webkit-transform: translate(-15%, 10%);
-  transform: translate(-15%, 10%);
-}
-
-.result-two{
   color: #FFFFFF;
   font-family: Avenir-Book;
   font-size: 18px;
@@ -3845,6 +3878,19 @@ img.foto{
   transform: translate(-45%, 10%);
 } 
 
+.result-two{
+  color: #FFFFFF;
+  font-family: Avenir-Book;
+  font-size: 18px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -o-transform: translate(-14%, 18%);
+  -moz-transform: translate(-14%, 18%);
+  -webkit-transform: translate(-14%, 18%);
+  transform: translate(-14%, 18%);
+}
+
 .result-three{
   color: #FFFFFF;
   font-family: Avenir-Book;
@@ -3852,15 +3898,25 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate( 15%, 10%);
-  -moz-transform: translate( 15%, 10%);
-  -webkit-transform: translate( 15%, 10%);
-  transform: translate( 15%, 10%);
+  -o-transform: translate( 15%, 35%);
+  -moz-transform: translate( 15%, 35%);
+  -webkit-transform: translate( 15%, 35%);
+  transform: translate( 15%, 35%);
 } 
 
 .progress-result{
   margin-top: 10px;
   margin-left: 10px;
+}
+
+.progress-result-two{
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.progress-result-three{
+  margin-top: 10px;
+  margin-left: -5px;
 }
 
 .box-outline__button-after-vote{
@@ -3886,8 +3942,19 @@ img.foto{
 
 .percent {
   margin-top: 2px;
-  margin-left: 10%;
+  margin-left: 7%;
 }
+
+.percent-two{
+  margin-top: 2px;
+  margin-left: 4%;
+}
+
+.percent-three{
+  margin-top: 2px;
+  margin-left: 5px;
+}
+
 
 #progressbar98,
 #progressbar99,
@@ -4290,7 +4357,8 @@ img.foto{
   text-align: center; }
 
 .content-slide_after-login_question p {
-  padding: 30px 20px; 
+  font-size: 20px;
+  padding: 40px 20px; 
   font-weight: bold; }
 
 .box-before__question-valeu img{
@@ -4490,13 +4558,13 @@ img.foto{
 }
 
 .result-two img{
-  height: 80px;
-  width: 80px;
+  height: 68px;
+  width: 68px;
 }
 
 .result-three img{
-  height: 80px;
-  width: 80px;
+  height: 51px;
+  width: 51px;
 }
 
 .result-one{
@@ -4506,11 +4574,11 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate(-15%, -10%);
-  -moz-transform: translate(-15%, -10%);
-  -webkit-transform: translate(-15%, -10%);
-  transform: translate(-15%, -10%);
-}
+  -o-transform: translate(-42%, 5%);
+  -moz-transform: translate(-42%, 5%);
+  -webkit-transform: translate(-42%, 5%);
+  transform: translate(-42%, 5%);
+} 
 
 .result-two{
   color: #FFFFFF;
@@ -4519,11 +4587,11 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate(-45%, -10%);
-  -moz-transform: translate(-45%, -10%);
-  -webkit-transform: translate(-45%, -10%);
-  transform: translate(-45%, -10%);
-} 
+  -o-transform: translate(-12%, 12%);
+  -moz-transform: translate(-12%, 12%);
+  -webkit-transform: translate(-12%, 12%);
+  transform: translate(-12%, 12%);
+}
 
 .result-three{
   color: #FFFFFF;
@@ -4532,16 +4600,27 @@ img.foto{
   position: absolute;
   top: 30%;
   left: 50%;
-  -o-transform: translate( 15%, -10%);
-  -moz-transform: translate( 15%, -10%);
-  -webkit-transform: translate( 15%, -10%);
-  transform: translate( 15%, -10%);
+  -o-transform: translate( 18%, 28%);
+  -moz-transform: translate( 18%, 28%);
+  -webkit-transform: translate( 18%, 28%);
+  transform: translate( 18%, 28%);
 } 
 
 .progress-result{
   margin-top: 10px;
   margin-left: 10px;
 }
+
+.progress-result-two{
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.progress-result-three{
+  margin-top: 10px;
+  margin-left: -5px;
+}
+
 
 .box-outline__button-after-vote{
   position: absolute;
@@ -4566,7 +4645,17 @@ img.foto{
 
 .percent {
   margin-top: 2px;
-  margin-left: 10%;
+  margin-left: 7%;
+}
+
+.percent-two{
+  margin-top: 2px;
+  margin-left: 4%;
+}
+
+.percent-three{
+  margin-top: 2px;
+  margin-left: 5px;
 }
 
 #progressbar98,

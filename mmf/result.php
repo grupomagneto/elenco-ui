@@ -72,7 +72,7 @@ echo "
 		<div class='progress progress-result'>
 			<progress id='progressbar98' value='$percent1' max='100'></progress>
 		</div>
-				<div class='percent'>
+		<div class='percent'>
 			<p>$percent1%</p>
 		</div>
 	</div>";
@@ -80,10 +80,10 @@ echo "
 		echo "
 		<div class='row result-two'>
 		<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo2' class='foto' width=120px height=120px>
-		<div class='progress  progress-result'>
+		<div class='progress  progress-result progress-result-two'>
 			<progress id='progressbar99' value='$percent2' max='100'></progress>
 		</div>
-				<div class='percent'>
+				<div class='percent percent-two'>
 			<p>$percent2%</p>
 		</div>
 		</div>";
@@ -93,10 +93,10 @@ echo "
 		<div class='row result-three'>
 		<img src='http://www.magnetoelenco.com.br/fotos/$winner_photo3' class='foto' width=120px height=120px>
 
-		<div class='progress  progress-result'>
+		<div class='progress  progress-result progress-result-three'>
 			<progress id='progressbar97' value='$percent3' max='100'></progress>
 		</div>
-		<div class='percent'>
+		<div class='percent percent-three'>
 			<p>$percent3%</p>
 		</div>";
 	}
@@ -117,7 +117,7 @@ echo "
 		}
 	}
 echo "
-	$second_button
+	
 
 	<div class='container-outline__button'>
 	    <a href='http://cadastro.magnetoelenco.com.br' target='_blank'>
