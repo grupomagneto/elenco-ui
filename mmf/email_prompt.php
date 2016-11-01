@@ -64,7 +64,7 @@ echo "
 					<input id='email_prompt' name='email_prompt' type='email' />
 																	
 					<button id='btn' class='ok' type='submit' onclick='showLoading()'>
-						<img id='btn_img' alt=' src='images/ok_neg.svg' />
+						<img id='btn_img' alt='' src='images/ok_neg.svg' />
 					</button>
 				</div>
 

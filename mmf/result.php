@@ -118,28 +118,27 @@ echo "
 	}
 echo "
 	
+  <div class='container-outline__button'>
+      <a href='http://cadastro.magnetoelenco.com.br' target='_blank'>
+    <button class='button button-medium font-family color-font medium' onclick='showLoading()'>
+    Quero me candidatar
+    </button>
+    </a>
+    
+    <a href='create_share_image.php' target='_blank'>  
+    <button class=' button button-medium'>
+          <div class='button-login_image'>
+            <img src='images/fb.svg' />
+          </div>
+          <div class='button-login_content'>
+            <p class='font-family color-font medium'>
+             Convidar seus amigos
+            </p>
+          </div>
+      </button>
+    </a>
 
-	<div class='container-outline__button'>
-	    <a href='http://cadastro.magnetoelenco.com.br' target='_blank'>
-	  <button class='button button-medium font-family color-font medium' onclick='showLoading()'>
-	  Quero me candidatar
-	  </button>
-	  </a>
-	  
-	  <a href='create_share_image.php' target='_blank'>  
-	  <button class=' button button-medium'>
-	        <div class='button-login_image'>
-	          <img src='images/fb.svg' />
-	        </div>
-	        <div class='button-login_content'>
-	          <p class='font-family color-font medium'>
-	           Convidar seus amigos
-	          </p>
-	        </div>
-	    </button>
-	  </a>
-
-	</div>
+  </div>
 
    
     </div>

@@ -97,7 +97,7 @@ try {
       </p>
 
       <div class='jump font-family color-font medium'>
-        <p>Pular introdução</p>
+        <p><a href='#4'>Pular introdução</a></p>
       </div>
     </div>
     <div class='footer-index'>
@@ -112,7 +112,7 @@ try {
       </p>
 
       <div class='jump font-family color-font medium'>
-        <p>Pular introdução</p>
+        <p><a href='#4'>Pular introdução</a></p>
       </div>
     </div>
     <div id='4' class='swiper-slide gradient-slide_fourth'>
