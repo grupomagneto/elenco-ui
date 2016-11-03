@@ -23,7 +23,7 @@
   color: #FFFFFF;
 }
 .color-font__secondary{
-  color: #8F9EA6;
+  color: #C9C9C9;
 }
 
 .color-font__purple{
@@ -31,6 +31,21 @@
 }
 .color-font__purple-secondary{
   color: #875DA2;
+}
+.font-size-xsmall{
+    font-size: 10px;
+}
+.font-size-small{
+    font-size: 14px;
+}
+.font-size-medium{
+    font-size: 20px;
+}
+.font-size-large{
+    font-size: 24px;
+}
+.font-size-xlarge{
+    font-size: 32px;
 }
 
 .cursor{
@@ -174,15 +189,16 @@ body::-webkit-scrollbar-thumb:vertical{
 
 
 .profile_photo{
-  position: relative;
-	width: 320px;
-  float: left;
-  margin-top: 20px;
+    position: relative;
+    width: 400px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .profile_photo img{
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 7px;
   margin-right: 10px;
   float: left;
@@ -191,8 +207,9 @@ body::-webkit-scrollbar-thumb:vertical{
 
 .profile_photo h1{
   height: 20px;
-  padding-top: 20px;
-  font-size: 24px;
+  padding-top: 25px;
+  margin-left: 100px;
+/*  font-size: 24px;*/
   text-align: left;
 
 }
@@ -200,7 +217,8 @@ body::-webkit-scrollbar-thumb:vertical{
 .profile_photo p{
   height: 10px;
   padding-top: 25px;
-  font-size: 14px;
+  margin-left: 100px;
+/*  font-size: 12px;*/
   text-align: left;
 
 }
@@ -208,8 +226,8 @@ body::-webkit-scrollbar-thumb:vertical{
 .profile-info {
   position: relative;
   float: right; 
-  padding: 10px 0 10px 10px;
-  width: 400px;
+  padding: 0px 0 30px 10px;
+  width: 340px;
 }
 
 .profile-info:after {
@@ -218,11 +236,11 @@ body::-webkit-scrollbar-thumb:vertical{
   display: table;
 }
 .profile-info__menu{
-  margin-left: -85px;
+  margin-left: -7px;
 }
 
 .profile-info__menu ul{
-  width: 400px;
+  width: 340px;
   padding: 0px;
   margin: 0px;
   list-style: none;
@@ -233,7 +251,7 @@ body::-webkit-scrollbar-thumb:vertical{
 }
 
 .profile-info__menu ul li a{
-  padding: 1px 8px;
+  padding: 0px 9px;
   display: inline-block;
   text-decoration: none;
   font-size: 10px;
@@ -241,7 +259,7 @@ body::-webkit-scrollbar-thumb:vertical{
 
 .box-profile {
   float: left;
-	width: 72px;
+  width: 72px;
   height: 95px;
   margin: 10px 10px 10px 0;
   background-color: rgba(255,255,255,0.30);
@@ -251,7 +269,7 @@ body::-webkit-scrollbar-thumb:vertical{
 
 .box-profile:hover{
 
-  background-color: rgba(255,255,255,0.60);
+/*  background-color: rgba(255,255,255,0.60);*/
 }
 
 .box-profile img{
@@ -277,7 +295,7 @@ body::-webkit-scrollbar-thumb:vertical{
 
 .tabs{
   margin-top: -35px;
-  margin-left: 50px;
+  margin-left: 0px;
 }
 
 .tab {
@@ -290,7 +308,6 @@ body::-webkit-scrollbar-thumb:vertical{
   width: 477px;
   margin-left: 20px;
   margin-top: 5px;
-
 }
 
 /* Float the list items side by side */
@@ -331,8 +348,8 @@ body::-webkit-scrollbar-thumb:vertical{
 }
 
 .tabcontent{
-  width: 750px; 
-  height: 300px;
+  width: 100%; 
+  height: 280px;
   display: none;
   padding: 6px 12px;
   margin-top: -2px;
@@ -347,9 +364,10 @@ body::-webkit-scrollbar-thumb:vertical{
   padding: 10px;
 }
 .tabcontent__right{
-  float: right;
-  padding: 10px;
-  margin-right: -150px;
+    float: right;
+    text-align: right;
+    padding: 10px;
+    margin-right: 10px;
 }
 
 .footer__button{
@@ -366,11 +384,10 @@ body::-webkit-scrollbar-thumb:vertical{
 }
 
 .button-image{
-
   width: 30px;
   height: 30px;
   margin-top: -10px;
-  margin-left: 5px;
+  margin-left: 15px;
   float: left;
 
 }
@@ -386,14 +403,14 @@ body::-webkit-scrollbar-thumb:vertical{
 }
 
 .progressbar progress {
-  margin-top: 10px;
+  margin-top: 7px;
   float: left;
   color: #FFFFFF;
   background: transparent;
   border: 1px solid #FFFFFF;
   border-radius: 10px;
   height: 5px;
-  width: 140px;
+  width: 150px;
 }
 
 .progressbar progress::-webkit-progress-bar {
@@ -827,4 +844,4 @@ body::-webkit-scrollbar-thumb:vertical{
       .title-tabs{
         display: none;
       }
-  }
+}
