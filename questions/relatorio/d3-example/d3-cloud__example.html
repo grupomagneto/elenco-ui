@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>words</title>
+</head>
+
+<style>
+  
+
+@font-face {
+  font-family: Avenir-Heavy;
+  src: url('../fonts/Avenir-Light.eot');
+  src: url('../fonts/Avenir-Light.woff') format('woff'),
+       url('../fonts/Avenir-Light.ttf') format('truetype'),
+       url('../fonts/Avenir-Light.svg#Avenir-Light') format('svg'),
+       url('../fonts/Avenir-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+</style>
+
+<body>
+  
+
+<div class="words"></div>
+
+<script src="d3.min.js"></script>
+<script src="d3.layout.cloud.js"></script>
+
+<script>
+
+
+var cloud = d3.layout.cloud;
+
+var fill = d3.scale.category20()
+    .range(["#b074ff", "#a500c8"]);
+
+var layout = cloud()
+    .size([300, 200])
+    .words([
+      "Hello", "world", "normally", "you", "want", "more", "words",
+      "than", "this"].map(function(d) {
+      return {text: d, size: 10 + Math.random() * 40, test: "haha"};
+    }))
+    .padding(1)
+    .rotate(function() { return ~~(Math.random() * 2) * 90; })
+    .font("Impact")
+    .fontSize(function(d) { return d.size; })
+    .on("end", draw);
+
+layout.start();
+
+function draw(words) {
+  d3.select(".words").append("svg")
+      .attr("width", 300)
+      .attr("height", 200)
+    .append("g")
+      .attr("transform", "translate(150, 100)")
+    .selectAll("text")
+      .data(words)
+    .enter().append("text")
+      .style("font-size", function(d) { 
+        return d.size + "px"; 
+      })
+      .style("font-family", "Avenir-Heavy")
+      .style("fill", function(d, i) { 
+        return fill(i); })
+      .attr("text-anchor", "middle")
+      .attr("transform", function(d) {
+        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+      })
+      .text(function(d) { return d.text; });
+}
+
+
+</script>
+
+
+</body>
+</html>

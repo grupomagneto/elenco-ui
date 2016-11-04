@@ -1,88 +1,166 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv='Content-type' content='text/html; charset=UTF-8' />
-<title>Resultado Parcial Meu Modelo Favorito</title>
-  <link rel='stylesheet' href='mmf/stylesheets/site.css'>
-  <link rel='stylesheet' href='mmf/stylesheets/swiper.min.css'>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'> 
-  </head>
-<body>
-  <div class='swiper-wrapper'>
-    <div class='swiper-slide gradient'>
-    <h1 class='font-family color-font large voto_registrado'>Voto registrado!</h1>
-  <h1 class='pergunta font-family color-font medium '>
-        Confira o resultado parcial e convide seus amigos para votar também:
-      </h1>
-  <div class='row result-one'>
-  <img src='http://www.magnetoelenco.com.br/fotos/$winner_photo1' class='foto' width=120px height=120px>
-    <div class='progress progress-result'>
-      <progress id='progressbar98' value='$percent1' max='100'></progress>
-    </div>
-    <div class='percent'>
-      <p>31%</p>
-    </div>
-  </div>
+<?php
+// 
 
-    <div class='row result-two'>
-    <img src='http://www.magnetoelenco.com.br/fotos/$winner_photo2' class='foto' width=120px height=120px>
-    <div class='progress  progress-result progress-result-two'>
-      <progress id='progressbar99' value='$percent2' max='100'></progress>
-    </div>
-        <div class='percent percent-two'>
-      <p>22%</p>
-    </div>
-    </div>
+$imagens = array(); 
+$imagens[1] = "mmf/images/elenco_019589_20160913140545.jpg"; 
+$imagens[2] = "https://dummyimage.com/60x60/ba58ba/fff";
+$imagens[3] = "https://dummyimage.com/60x60/2339b8/fff";
+$imagens[4] = "mmf/images/elenco_019589_20160913140545.jpg";
+$imagens[5] = "mmf/images/elenco_019589_20160913140545.jpg";
+$imagens[6] = "mmf/images/elenco_019589_20160913140545.jpg";
 
-    <div class='row result-three'>
-    <img src='http://www.magnetoelenco.com.br/fotos/$winner_photo3' class='foto' width=120px height=120px>
+// $contaArray = count($imagens);
 
-    <div class='progress  progress-result progress-result-three'>
-      <progress id='progressbar97' value='$percent3' max='100'></progress>
-    </div>
-    <div class='percent percent-three'>
-      <p>13%</p>
-    </div>
-  </div>
+// $aleatorio = rand(1, $contaArray);
 
-<!--   <div class='container-outline__button'>
-    <a href='register_candidate.php' target='_blank'>
-    <button class='button button-medium font-family color-font medium' onclick='showLoading()'>
-    Quero me candidatar
-    </button>
-    </a>" -->
+// echo  "<script>" ;
+// echo  'var numImgCont ='  .  json_encode ($imagens)  .  ';' ;
+// echo  'numImgCont[0] ='  .  json_encode ($imagens[1])  .  ';' ;
+// echo  'numImgCont[1] ='  .  json_encode ($imagens[2])  .  ';' ;
+// echo  'numImgCont[2] ='  .  json_encode ($imagens[3])  .  ';' ;
 
-  <div class='container-outline__button'>
-      <a href='http://cadastro.magnetoelenco.com.br' target='_blank'>
-    <button class='button button-medium font-family color-font medium' onclick='showLoading()'>
-    Quero me candidatar
-    </button>
-    </a>
+// echo  "var imagens = (function loop(){
+//         var container = document.getElementById('img_front');
+
+//     if (numImgCont.length) {
+//         setTimeout(function(){ 
+//            $('.flashcard').toggleClass('flipped');
+           
+//             container.src = numImgCont.shift();
+//             loop();
+//         }, 2000);
+//     }
     
-    <a href='create_share_image.php' target='_blank'>  
-    <button class=' button button-medium'>
-          <div class='button-login_image'>
-            <img src='mmf/images/fb.svg' />
-          </div>
-          <div class='button-login_content'>
-            <p class='font-family color-font medium'>
-             Convidar seus amigos
-            </p>
-          </div>
-      </button>
-    </a>
+//     return loop;
+// })();" ;
 
-  </div>
+// echo  "</ script>" ;
 
-   
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Meu Modelo Favorito por Magneto Elenco</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'> 
+  <link rel='stylesheet' href='mmf/stylesheets/questions.css'>
+
+<style>
+
+  div.trigger {  -webkit-animation: squiggle 2s infinite;  }
+
+@-webkit-keyframes squiggle {
+
+    50% { 
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);    } 
+
+}
+
+
+</style>
+
+</head>
+<body>
+<form action='register.php' method='post'>
+  <div class='gradient container__overflow '>
+    <div class='row'>
+      <a href='logout.php'>logout</a>
     </div>
-
+    <div class='box'>
+      <h1 class='pergunta__selection font-family color-font'>
+        Escolha uma campanha para votar:
+      </h1>
     </div>
- </div>
+  
+<!--     <div class='box-outline_campaign longhand longhand__campaign'>
+      <div class="trigger">
+        <img width="60" height="60" src="<?php echo $imagem[$aleatorio]; ?>"/>
+      </div>
+</div> -->
+
+    <div class='box-outline_campaign longhand longhand__campaign'>
+
+        <div class="selection-item__campaign">
+          <button class="font-family color-font bold">
+            <div class="stage">
+              <div class="flashcard">
+                <div class="front">
+                  <img id='img_front' src="mmf/images/elenco_019589_20160913140545.jpg" height="60" width="60" alt="" />
+                </div>
+              </div>  
+            </div>                
+            <h1 class="bold">Ô Lá em Casa...</h1>
+            <p class="font-weight__100">02/10/2016 <span>Participantes: 08</span> </p>
+          </button>
+        </div>
+
+<!--         <div class="selection-item__campaign">
+          <button class="font-family color-font bold">
+            <div class="stage">
+              <div class="flashcard">
+                <div class="front">
+                  <img src="mmf/images/elenco_019589_20160913140545.jpg" alt="" />
+                </div> 
+              </div>  
+            </div>   
+            <h1 class="bold">Ô Lá em Casa...</h1>
+            <p class="font-weight__100">02/10/2016 <span>Participantes: 08</span> </p>
+          </button>
+        </div> -->
+
+       <!--  <div class="selection-item__campaign">
+          <button class="font-family color-font bold">
+            <div class="stage">
+              <div class="flashcard">
+                <div class="front">
+                  <img src="mmf/images/elenco_019589_20160913140545.jpg" alt="" />
+                </div>   
+              </div>  
+            </div>   
+            <h1 class="bold">Ô Lá em Casa...</h1>
+            <p class="font-weight__100">02/10/2016 <span>Participantes: 08</span> </p>
+          </button>
+        </div>
+
+      </div> 
+
+
+
+</div>
+</form>
+ -->
+
+// <script>
+// var numImgCont = <?php echo json_encode($imagens) ?> ;
+// numImgCont[0] = <?php echo json_encode($imagens[1] = "mmf/images/elenco_019589_20160913140545.jpg") ?> ;
+// numImgCont[1] =  <?php echo json_encode($imagens[2] = "https://dummyimage.com/60x60/ba58ba/fff") ?> ;
+// numImgCont[2] = <?php echo json_encode($imagens[3] = "https://dummyimage.com/60x60/2339b8/fff") ?> ;
+
+// var imagens = (function loop(){
+//         var container = document.getElementById("img_front");
+
+//     if (numImgCont.length) {
+//         setTimeout(function(){ 
+//            $(".flashcard").toggleClass("flipped");
+           
+//             container.src = numImgCont.shift();
+//             loop();
+//         }, 2000);
+//     }
+    
+//     return loop;
+// })(); 
+
+// </script>
+
+
 <script src='mmf/javascripts/jquery-1.12.1.min.js'></script>
-<script src='mmf/javascripts/swiper.jquery.min.js'></script>
-<script src='mmf/javascripts/swiper.min.js'></script>
-<script src='mmf/javascripts/progressbar.min.js'></script>
-<script src='mmf/javascripts/all.js'></script>
+<script src='mmf/javascripts/questions.js'></script>
+
 </body>
 </html>
