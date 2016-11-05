@@ -380,41 +380,100 @@ echo "<div class='tabcontent__right grid-6'>
 		</form>
 		<div id='chart_div' style='position:relative; top:50px;'></div>
 	</div>
+
 	<div class='tabcontent' id='perfil' style='display: block;'>
 		<div class='tabcontent__left grid-6'>
-			<h3 class='font-family color-font__purple'>
-				Análise diária de perfis eleitores
+			<h3 class='font-family color-font__purple-secondary font-size-medium'>
+				Gênero e idade
 			</h3>
-			<p class='font-family color-font__secondary'>
+			<p class='font-family color-font__secondary font-size-small'>
 				Até hoje, 21 de outubro de 2016
 			</p>
+			<div class='answers_graph'>
+
+			</div>
 		</div>
 		<div class='tabcontent__right grid-6'>
-			<h3 class='font-family color-font__purple'>
-				Setembro de 2016
+			<h3 class='font-family color-font__purple-secondary font-size-medium'>
+				Respostas mais frequentes
 			</h3>
-			<p class='font-family color-font__secondary'>
-				Total este mês : 282
+			<p class='font-family color-font__secondary font-size-small'>
+				dos seus eleitores
 			</p>
+
+			<div class='recents__answers'>
+				<div class='box-recents__answers'>
+					<p class='font-family color-font font-size-xsmall'> Bairro </p>
+					<h3 class='font-family color-font font-size-small font-bold'> Setor Habitacional Samambaia (Vicente Pires)</h3>
+				</div>
+				<div class='box-recents__answers'>
+					<p class='font-family color-font font-size-xsmall'> Meio de Transporte </p>
+					<h3 class='font-family color-font font-size-small font-bold'> Ônibus / Metrô</h3>
+				</div>
+				<div class='box-recents__answers'>
+					<p class='font-family color-font font-size-xsmall'> Escolaridade </p>
+					<h3 class='font-family color-font font-size-small font-bold'> Superior</h3>
+				</div>
+			</div>
+
 		</div>
 	</div>
 	
 	<div class='tabcontent' id='votosamigos' style='display: block;'>
 		<div class='tabcontent__left grid-6'>
-			<h3 class='font-family color-font__purple font-size-large'>
-				Análise diária de votos amigos
+			<h3 class='font-family color-font__purple-secondary font-size-medium'>
+				Votos que recebi
 			</h3>
 			<p class='font-family color-font__secondary font-size-small'>
 				Até hoje, 21 de outubro de 2016
 			</p>
 		</div>
 		<div class='tabcontent__right grid-6'>
-			<h3 class='font-family color-font__purple font-size-medium'>
-				Setembro de 2016
+			<h3 class='font-family color-font__purple-secondary font-size-medium'>
+				Amigos que já votaram
 			</h3>
 			<p class='font-family color-font__secondary font-size-small'>
-				Total este mês : 282
+				Convide seus amigos que ainda não votaram
 			</p>
+			<div class='votes_friends'>
+				<div class='box-votes_friends'>
+					<img src='https://dummyimage.com/60x60' alt=''>
+				</div>
+				<div class='box-votes_friends'>
+					<img src='https://dummyimage.com/60x60' alt=''>
+				</div>
+				<div class='box-votes_friends'>
+					<img src='https://dummyimage.com/60x60' alt=''>
+				</div>
+				<div class='box-votes_friends'>
+					<img src='https://dummyimage.com/60x60' alt=''>
+				</div>			
+				<div class='box-votes_friends'>
+					<img src='https://dummyimage.com/60x60' alt=''>
+				</div>
+				<div class='box-votes_friends'>
+					<img src='https://dummyimage.com/60x60' alt=''>
+				</div>
+				<div class='box-votes_friends'>
+					<img src='https://dummyimage.com/60x60' alt=''>
+				</div>
+				<div class='box-votes_friends'>
+					<img src='https://dummyimage.com/60x60' alt=''>
+				</div>
+				<div class='box-votes_friends'>
+					<img src='https://dummyimage.com/60x60' alt=''>
+				</div>
+				<div class='box-votes_friends'>
+					<img src='https://dummyimage.com/60x60' alt=''>
+				</div>
+				<div class='box-votes_friends'>
+					<img src='https://dummyimage.com/60x60' alt=''>
+				</div>
+				<div class='box-votes_friends'>
+					<img src='https://dummyimage.com/60x60' alt=''>
+				</div>
+	
+			</div>
 		</div>
 	</div>
 

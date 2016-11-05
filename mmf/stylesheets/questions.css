@@ -1410,6 +1410,8 @@ input:focus {
     background: #FFFFFF;
 }
 
+/* CHOOSE GAME */
+
 .selection-item__campaign button {
   width: 280px;
   height: 70px;
@@ -1498,7 +1500,7 @@ input:focus {
   max-width: 290px;
   height: 10px;
   margin: 5px;
-  }
+}
 
 
   @media only screen and (max-width: 340px) {
@@ -1557,25 +1559,24 @@ input:focus {
     }
 
   }
-
 .stage {
  -webkit-perspective: 1000;                   /* Sets up your viewpoint for seeing the animation */
 }
 
 .flashcard {
   height: 60px;  
-  width: 60px;              
+  width: 60px;                                              /* Centers the flashcard on the page */    
   -webkit-transform-style: preserve-3d;                                 /* Provides 3D perspective. */
-  transition: all 0.1s;                                /* Slows down any transitions (e.g. rotation) */
-  -webkit-transition: all 0.1s;
+  transition: all 0.3s;                                /* Slows down any transitions (e.g. rotation) */
+  -webkit-transition: all 0.3s;
 }
 
-.flipped {
+.flipped, .back {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);                      /* Rotates flashcard div when applied */
 }
 
-.front {
+.front, .back {
   position: absolute;                    
   -webkit-backface-visibility: hidden;           /*  Hides back side of text (it's upside down) */
   height: 60px;                                   /* Stretches side to inhabit full size of flashcard */
@@ -1583,7 +1584,7 @@ input:focus {
   text-align: center;                                                  
 }
 
-.front img {
-  height: 60px;
+.front img, .back img {
   width: 60px;
+  height: 60px;
 }
