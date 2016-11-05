@@ -1,12 +1,16 @@
 <?php
 $candidate_ID = 16759;
 $facebook_ID = 10209477525328372;
-$month=10;
-$year = 2016;
-$d = 1;
-$dmax = 31;
+$sex = "m";
+if (isset($_GET['month'])) { $month = $_GET['month']; }
+else { $month=10; }
+if (isset($_GET['year'])) { $year = $_GET['year']; }
+else { $year = 2016; }
+$from_day = 1;
+$days_in_month = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 // $candidate_ID = 19626;
 // $facebook_ID = 1047656205332957;
+// $sex = "f";
 require_once "db.php";
 // MONTHS INTO NAMES
 if ($month == 1) { $month_name = "janeiro"; }
@@ -67,18 +71,31 @@ $result = mysqli_query($link2, $sql_completed);
 $row = mysqli_fetch_array($result);
 $completed = round($row['completed']);
 $percentage = round($completed/15*100);
+// RANKING
+$sql_rank = "SELECT x.id, x.votes, @curRank := @curRank + 1 AS rank FROM (SELECT winner_candidate_ID AS id, COUNT(winner_candidate_ID) AS votes FROM tb_votes GROUP BY winner_candidate_ID ORDER BY COUNT(winner_candidate_ID) DESC) x, (SELECT @curRank := 0) r";
+$result = mysqli_query($link2, $sql_rank);
+while($row =  mysqli_fetch_assoc($result)) {
+	if ($row['id'] == $candidate_ID) {
+		$rank = $row['rank'];
+	}
+}
+$sql_total_rank = "SELECT COUNT(candidate_elenco_ID) AS total FROM tb_games";
+$result = mysqli_query($link2, $sql_total_rank);
+$row =  mysqli_fetch_assoc($result);
+$total_rank = $row['total'];
 // VOTES PER DAY FROM MONTH
 $sql_vote_per_day = "SELECT vote_date, COUNT(winner_candidate_ID) AS votes_per_day FROM tb_votes WHERE winner_candidate_ID = '$candidate_ID' AND MONTH(vote_date)='$month' GROUP BY vote_date";
 $result = mysqli_query($link2, $sql_vote_per_day);
 $vote_days = array();
-while(($row =  mysqli_fetch_assoc($result))) {
+while($row =  mysqli_fetch_assoc($result)) {
 	$vote_days[$row['vote_date']] = array('votes' => $row['votes_per_day']);
 	$new_vote_day = array(
     'votes' => $row['votes_per_day'],
     );
 }
+$d = $from_day;
 $month_days = array();
-while ($d <= $dmax) {
+while ($d <= $days_in_month) {
 	if ($d < 10) {
 		$d = "0".$d;
 	}
@@ -252,7 +269,7 @@ function drawBackgroundColor() {
 	<div class='grid-6 profile_photo'>
 				<img src='$photo' alt='$name' />
 				<h1 class='font-family color-font font-size-large'>$name</h1>
-				<p class='font-family color-font font-size-small'>324° perfil mais votado entre 6509</p>
+				<p class='font-family color-font font-size-small'>".$rank."º perfil mais votado no geral</p>
 
 	</div>
 
@@ -339,17 +356,28 @@ function drawBackgroundColor() {
 				Análise diária de votos recebidos
 			</h3>
 			<p class='font-family color-font__secondary font-size-small'>
-				Até hoje, 21 de $month_name de $year
+				De $from_day a $days_in_month de $month_name de $year
 			</p>
-		</div>
-		<div class='tabcontent__right grid-6'>
+		</div>";
+?>
+<form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='get' id='form01'>
+<?php
+echo "<div class='tabcontent__right grid-6'>
 			<h3 class='font-family color-font__purple-secondary font-size-medium'>
+				<button type='submit' name='month' value='";$month--;echo"$month'>
+				 <
+				</button>
+
 				$month_name de $year
+
+				<button type='submit' name='month' value='";$month++;echo"$month'>
+				</button>
 			</h3>
 			<p class='font-family color-font__secondary font-size-small'>
-				Total este mês : $month_votes
+				Votos recebidos em $month_name: $month_votes
 			</p>
 		</div>
+		</form>
 		<div id='chart_div' style='position:relative; top:50px;'></div>
 	</div>
 	<div class='tabcontent' id='perfil' style='display: block;'>
@@ -412,7 +440,7 @@ function drawBackgroundColor() {
 			    <img  src='images/fb.svg' alt='' />
 			</div>
 			<div>
-			    <p class='font-family color-font'>Convidar seus amigos</p>
+			    <p class='font-family color-font'>Convidar meus amigos</p>
 			</div>
 			</button> 
 
