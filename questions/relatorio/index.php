@@ -240,7 +240,7 @@ function drawBackgroundColor() {
 			<img src='images/notification.svg' alt='' class='notification cursor'>
 		<span class='line'></span>
 	
-	  <h1 class='link-menu font-family color-font__purple-secondary'><a class='cursor font-family color-font__purple-secondary' href='http://tableless.com.br'>Relatório Premium</a></h1>
+	  <h1 class='link-menu font-family color-font__purple-secondary'><a class='cursor font-family color-font__purple-secondary' href='#'>Relatório Premium</a></h1>
 	</div> 
 
 	
@@ -351,7 +351,7 @@ function drawBackgroundColor() {
 
 
 	<div class='tabcontent' id='votosdiarios' style='display: block;'>
-		<div class='tabcontent__left grid-6'>
+		<div class='tabcontent-title__left grid-6'>
 			<h3 class='font-family color-font__purple-secondary font-size-medium'>
 				Análise diária de votos recebidos
 			</h3>
@@ -362,7 +362,7 @@ function drawBackgroundColor() {
 ?>
 <form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='get' id='form01'>
 <?php
-echo "<div class='tabcontent__right grid-6'>
+echo "<div class='tabcontent-title__right grid-6'>
 			<h3 class='font-family color-font__purple-secondary font-size-medium'>
 				<button type='submit' name='month' value='";$month--;echo"$month'>
 				 <
@@ -378,22 +378,26 @@ echo "<div class='tabcontent__right grid-6'>
 			</p>
 		</div>
 		</form>
-		<div id='chart_div' style='position:relative; top:50px;'></div>
+		<div id='chart_div' style='position:relative; top:50px; width; 100%'></div>
 	</div>
 
 	<div class='tabcontent' id='perfil' style='display: block;'>
-		<div class='tabcontent__left grid-6'>
+		<div class='tabcontent-title__left grid-6'>
 			<h3 class='font-family color-font__purple-secondary font-size-medium'>
 				Gênero e idade
 			</h3>
 			<p class='font-family color-font__secondary font-size-small'>
 				Até hoje, 21 de outubro de 2016
 			</p>
+
+		</div>
+		<div class='tabcontent__left'>
 			<div class='answers_graph'>
 
 			</div>
 		</div>
-		<div class='tabcontent__right grid-6'>
+
+		<div class='tabcontent__right tabcontent__faq grid-6'>
 			<h3 class='font-family color-font__purple-secondary font-size-medium'>
 				Respostas mais frequentes
 			</h3>

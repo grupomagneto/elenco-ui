@@ -128,6 +128,7 @@ body::-webkit-scrollbar-thumb:vertical{
 }
 .notifications {
 	float: right;
+  margin-right: 30px;
 }
 
 .notification__num{
@@ -360,26 +361,40 @@ body::-webkit-scrollbar-thumb:vertical{
   border-radius: 5px;
 }
 
+.tabcontent-title__left{
+  float: left;
+  padding: 10px;
+}
+
+.tabcontent-title__right{
+  float: right;
+  text-align: right;
+  padding: 10px;
+  margin-right: 10px;
+}
+
 .tabcontent__left{
   float: left;
   padding: 10px;
 }
+
 .tabcontent__right{
-    float: right;
-    text-align: right;
-    padding: 10px;
-    margin-right: 10px;
+  float: right;
+  text-align: right;
+  padding: 10px;
+  margin-right: 10px;
 }
 
 .footer__button{
-  position: relative;
-  left: 12%;
-  top: 20px;
-
+  position: absolute;
+  bottom: 5%;
+  left: calc(50% - 300px);
 }
+
 .container__after-tabs{
   width: 700px;
 }
+
 .container__after-tabs button{
   margin-left: 20px;
 }
@@ -390,10 +405,9 @@ body::-webkit-scrollbar-thumb:vertical{
   margin-top: -10px;
   margin-left: 15px;
   float: left;
-
 }
-.progressbar{
 
+.progressbar{
   width: 320px;
 } 
 
@@ -429,6 +443,69 @@ body::-webkit-scrollbar-thumb:vertical{
   border-radius: 10px;
 }
 
+.progressbar progress::-moz-progress-value{
+  background-color: #FFFFFF;
+  border-radius: 10px ;
+}
+
+.recents__answers {
+  width: 180px;
+  height: 200px;
+  background: #875DA2;
+  border-radius: 5px;
+  border: 1px solid #FFFFFF;
+  box-shadow: 0px 0px 0px 5px #875DA2;
+  margin-left: 140px;
+  margin-top: 10px;
+}
+
+.box-recents__answers{
+  margin: 0 auto;
+  text-align: left;
+  padding: 12px 25px;
+}
+
+.votes_friends {
+  position: absolute;
+  padding-left: 30px;
+  height: 204px;
+  width: 335px;
+  max-height: 204px;
+  max-width: 335px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.votes_friends::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 5px;
+}
+ 
+.votes_friends::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background: #C2ADCF;
+    border-radius: 6.66px;
+}
+ 
+.votes_friends::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.60);
+    border-radius: 6.66px;
+}
+
+.box-votes_friends {
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin: 10px 10px 10px 0;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+  border-radius: 5px;
+}
+
+.box-votes_friends img {
+  border-radius: 5px;
+}
+
+
   @media only screen and (max-width: 340px){
 
       .gradient {
@@ -447,7 +524,6 @@ body::-webkit-scrollbar-thumb:vertical{
         width: 300px;
         margin-left: 10px;
       } 
-
 
       .profile {
         width: 100%;
@@ -500,6 +576,7 @@ body::-webkit-scrollbar-thumb:vertical{
         margin-top: 80px;
 
       }
+
       .profile-info__menu{
         margin-left: -45px;
       }
@@ -524,6 +601,7 @@ body::-webkit-scrollbar-thumb:vertical{
         box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.25);
         border-radius: 5px;
       }
+
       .tab {
         list-style-type: none;
         margin: 0;
@@ -536,6 +614,7 @@ body::-webkit-scrollbar-thumb:vertical{
         margin-top: 5px;
 
       }
+
       .tab li a {
 
         display: inline-block;
@@ -554,7 +633,20 @@ body::-webkit-scrollbar-thumb:vertical{
         float: left;
         padding: 10px;
       }
+/*
+      .tabcontent-title__left{
+        float: left;
+        padding: 10px;
+      }*/
+
       .tabcontent__right{
+        float: right;
+        padding: 10px;
+        margin-top: 80px ;
+        margin-right: -20px ;
+      }
+
+      .tabcontent-title__right{
         float: right;
         padding: 10px;
         margin-top: 80px ;
@@ -564,10 +656,10 @@ body::-webkit-scrollbar-thumb:vertical{
       .container__after-tabs{
         width: 200px;
       }
+
       .container__after-tabs button{
         margin: 2px;
       }
-
 
       .footer__button{
           position: relative;
@@ -575,6 +667,7 @@ body::-webkit-scrollbar-thumb:vertical{
           top: 70px;
           margin: 0 auto;
       }
+
       .title-tabs {
         text-align: center;
         display: block;
@@ -583,6 +676,7 @@ body::-webkit-scrollbar-thumb:vertical{
         margin-top: 50px;
         margin-bottom: 50px;
       }
+
       .title-tabs h1 {
         font-size: 20px;
       }
@@ -592,166 +686,175 @@ body::-webkit-scrollbar-thumb:vertical{
 
   @media only screen and (min-width: 341px) and (max-width: 767px){
 
-      .gradient {
-        position: absolute;
-        top: 0; 
-        left: 0; 
-        bottom: 0; 
-        display: block;
-        width: 100%;
-        height: 1200px;
-        padding: 0px;
-        margin: 0px; 
-      }
+    .gradient {
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      bottom: 0; 
+      display: block;
+      width: 100%;
+      height: 1200px;
+      padding: 0px;
+      margin: 0px; 
+    }
 
-      .progressbar{
-        width: 300px;
-        margin-left: 10px;
-      } 
+    .progressbar{
+      width: 300px;
+      margin-left: 10px;
+    } 
+
+    .profile {
+      width: 100%;
+      height: 600px;
+      margin-top: -10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .btn {
+      padding: 10px;
+      font-size: 24px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .btn-scrollTop {
+      position: absolute;
+      display: block;
+      top: 450px;
+      right: auto;
+      left: 42%;
+      width: 35px;
+      height: 35px;
+    }
+
+    a.scroll-to-top {
+      color: #FFFFFF;
+      text-decoration: none;
+      line-height: 15px;
+      display: block;
+    }
+
+    a.scroll-to-top:visited {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+
+    .profile-info {
+      position: relative;
+      float: right; 
+      padding: 50px 0 2px 10px;
+      width: 320px;
+    }
+
+    .box-profile {
+      margin: 5px 0 2px 5px;
+    }
+
+    .profile {
+      margin-top: 120px;
+
+    }
+    .profile-info__menu{
+      margin-left: -45px;
+    }
+
+    .profile-info__menu ul li a{
+      padding: 1px 5px;
+    }
+
+    .tabs{
+      margin-top: -180px;
+      margin-left: 0%;
+    }
+
+    .tabcontent{
+      width: 300px; 
+      height: 240px;
+      display: none;
+      padding: 6px 12px;
+      margin-top: -2px;
+      border: 1px solid #FFFFFF;
+      background: #FFFFFF;
+      box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.25);
+      border-radius: 5px;
+    }
 
 
-      .profile {
-        width: 100%;
-        height: 600px;
-        margin-top: -10px;
-        text-align: center;
+    .tab {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Avenir-Book;
+      font-size: 12px;
+      width: 277px;
+      margin-left: 10px;
+      margin-top: 5px;
+
+    }
+    .tab li a {
+      display: inline-block;
+      text-align: center;
+      padding: 8px 5px;
+      border: 1px solid #FFFFFF;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      text-decoration: none; 
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+      font-size: 12px;
+    }
+
+    .tabcontent__left{
+      float: left;
+      padding: 10px;
+    }
+/*
+    .tabcontent-title__left{
+      float: left;
+      padding: 10px;
+    }*/
+
+    .tabcontent__right{
+      float: right;
+      padding: 10px;
+      margin-top: 80px ;
+      margin-right: -20px ;
+    }
+/*
+    .tabcontent-title__right{
+      float: right;
+      padding: 10px;
+      margin-top: 80px ;
+      margin-right: -20px ;
+    }*/
+
+    .container__after-tabs{
+      width: 200px;
+    }
+    .container__after-tabs button{
+      margin: 2px;
+    }
+    .footer__button{
         position: relative;
-      }
-
-      .btn {
-        padding: 10px;
-        font-size: 24px;
-        border-radius: 5px;
-        text-align: center;
-      }
-
-      .btn-scrollTop {
-        position: absolute;
-        display: block;
-        top: 450px;
-        right: auto;
-        left: 42%;
-        width: 35px;
-        height: 35px;
-      }
-
-      a.scroll-to-top {
-        color: #FFFFFF;
-        text-decoration: none;
-        line-height: 15px;
-        display: block;
-      }
-
-      a.scroll-to-top:visited {
-        color: #FFFFFF;
-        text-decoration: none;
-      }
-
-      .profile-info {
-        position: relative;
-        float: right; 
-        padding: 50px 0 2px 10px;
-        width: 320px;
-      }
-
-      .box-profile {
-        margin: 5px 0 2px 5px;
-      }
-
-      .profile {
-        margin-top: 120px;
-
-      }
-      .profile-info__menu{
-        margin-left: -45px;
-      }
-
-      .profile-info__menu ul li a{
-        padding: 1px 5px;
-      }
-
-      .tabs{
-        margin-top: -180px;
-        margin-left: 0%;
-      }
-
-      .tabcontent{
-        width: 300px; 
-        height: 240px;
-        display: none;
-        padding: 6px 12px;
-        margin-top: -2px;
-        border: 1px solid #FFFFFF;
-        background: #FFFFFF;
-        box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.25);
-        border-radius: 5px;
-      }
-      .tab {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: Avenir-Book;
-        font-size: 12px;
-        width: 277px;
-        margin-left: 10px;
-        margin-top: 5px;
-
-      }
-      .tab li a {
-
-        display: inline-block;
-        text-align: center;
-        padding: 8px 5px;
-        border: 1px solid #FFFFFF;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        text-decoration: none; 
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-        font-size: 12px;
-      }
-
-      .tabcontent__left{
-        float: left;
-        padding: 10px;
-      }
-      .tabcontent__right{
-        float: right;
-        padding: 10px;
-        margin-top: 80px ;
-        margin-right: -20px ;
-      }
-
-      .container__after-tabs{
-        width: 200px;
-      }
-      .container__after-tabs button{
-        margin: 2px;
-      }
-
-
-      .footer__button{
-          position: relative;
-          left: 5%;
-          top: 70px;
-          margin: 0 auto;
-      }
-      .title-tabs {
-        text-align: center;
-        display: block;
-        width: 200px;
-        margin-left: 45px;
-        margin-top: 50px;
-        margin-bottom: 50px;
-      }
-      .title-tabs h1 {
-        font-size: 20px;
-      }
+        left: 5%;
+        top: 70px;
+        margin: 0 auto;
+    }
+    .title-tabs {
+      text-align: center;
+      display: block;
+      width: 200px;
+      margin-left: 45px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    .title-tabs h1 {
+      font-size: 20px;
+    }
 
   }
-
-
 
   @media only screen and (min-width:768px) and (max-width:991px){
     .gradient {
@@ -766,30 +869,56 @@ body::-webkit-scrollbar-thumb:vertical{
       margin: 0px; 
     }
 
+    .votes_friends {
+      width: 325px;
+    }
 
     .profile-info {
-        position: relative;
-        float: right; 
-        padding: 10px 0 10px 10px;
-        margin-right: -50px;
-        width: 400px;
-      }
+      position: relative;
+      float: right; 
+      padding: 10px 0 10px 10px;
+      margin-right: -50px;
+      width: 400px;
+    }
 
+    .profile_photo{
+      width: 300px;
+    }
+
+    .tabcontent__left{
+      float: left;
+      padding: 10px;
+    }
+
+/*    .tabcontent-title__left{
+      float: left;
+      padding: 10px;
+    }
+*/
     .tabcontent__right{
       float: right;
       padding: 10px;
-      margin-right: -100px;
+      margin-right: 10px;
     }
 
+    .tabcontent__faq{
+      margin-top: -15px;
+    }
+
+    .tabcontent-title__right{
+      float: right;
+      padding: 10px;
+      margin-right: 10px;
+    }
 
     .tabs{
       margin-top: 20px;
-      margin-left: 18%;
+      margin-left: 12%;
     }
 
     .tabcontent{
-      width: 550px; 
-      height: 200px;
+      width: 750px; 
+      height: 300px;
       display: none;
       padding: 6px 12px;
       margin-top: -2px;
@@ -799,114 +928,59 @@ body::-webkit-scrollbar-thumb:vertical{
       border-radius: 5px;
     }
 
-    .footer__button{
-        position: relative;
-        left: 12%;
-        top: 70px;
+    .profile-info__menu{
+      margin-left: -75px;
+    }
 
+    .profile-info__menu ul li a{
+      padding: 1px 11px;
+    }
+
+    .footer__button{
+      position: absolute;
+      bottom: 5%;
+      left: calc(50% - 280px);
     }
 
     .profile {
       margin-top: 50px;
-
     }
-      .title-tabs {
-        text-align: center;
-        display: block;
-        margin-right: 290px;
-        margin-top: 50px;
-        margin-bottom: 50px;
-      }
-      .title-tabs h1 {
-        font-size: 24px;
-      }
+
+    .title-tabs {
+      text-align: center;
+      display: block;
+      margin-right: 290px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .title-tabs h1 {
+      font-size: 24px;
+    }
 
   }
 
   @media only screen and (min-width: 992px) and (max-width: 1199px){
 
-      .profile {
-        margin-top: 50px;
+    .profile {
+      margin-top: 50px;
+    }
 
-      }
-      .title-tabs{
-        display: none;
-      }
+    .title-tabs{
+      display: none;
+    }
 
   }
 
   @media only screen and (min-width:1200px){
 
-      .profile {
-        margin-top: 50px;
+    .profile {
+      margin-top: 50px;
+    }
 
-      }
+    .title-tabs{
+      display: none;
+    }
 
-      .title-tabs{
-        display: none;
-      }
-}
+  }
 
-.recents__answers {
-  width: 180px;
-  height: 200px;
-  background: #875DA2;
-  border-radius: 5px;
-  border: 1px solid #FFFFFF;
-  box-shadow: 0px 0px 0px 5px #875DA2;
-  margin-left: 140px;
-  margin-top: 10px;
-}
-
-.box-recents__answers{
-  margin: 0 auto;
-  text-align: left;
-  padding: 12px 25px;
-}
-
-
-.answers_graph {
-  margin-top: 10px;
-  width: 401px;
-  height: 179px;
-}
-
-.votes_friends {
-  position: absolute;
-  padding-left: 30px;
-  height: 204px;
-  width: 335px;
-  max-height: 204px;
-  max-width: 335px;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.votes_friends::-webkit-scrollbar {
-    width: 8px;
-    border-radius: 5px;
-}
- 
-.votes_friends::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background: #C2ADCF;
-    border-radius: 6.66px;
-}
- 
-.votes_friends::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.60);
-    border-radius: 6.66px;
-}
-
-.box-votes_friends {
-  float: left;
-  width: 60px;
-  height: 60px;
-  margin: 10px 10px 10px 0;
-  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
-  border-radius: 5px;
-}
-
-.box-votes_friends img {
-  border-radius: 5px;
-}
