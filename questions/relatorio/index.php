@@ -378,7 +378,7 @@ echo "<div class='tabcontent-title__right grid-6'>
 			</p>
 		</div>
 		</form>
-		<div id='chart_div' style='position:relative; top:50px; width; 100%'></div>
+		<div id='chart_div' style='position:relative; top:70px; width; 100%'></div>
 	</div>
 
 	<div class='tabcontent' id='perfil' style='display: block;'>
@@ -424,6 +424,7 @@ echo "<div class='tabcontent-title__right grid-6'>
 	</div>
 	
 	<div class='tabcontent' id='votosamigos' style='display: block;'>
+
 		<div class='tabcontent__left grid-6'>
 			<h3 class='font-family color-font__purple-secondary font-size-medium'>
 				Votos que recebi
@@ -431,7 +432,13 @@ echo "<div class='tabcontent-title__right grid-6'>
 			<p class='font-family color-font__secondary font-size-small'>
 				Até hoje, 21 de outubro de 2016
 			</p>
+
+
+			<div class='answers_graph'>
+
+			</div>
 		</div>
+
 		<div class='tabcontent__right grid-6'>
 			<h3 class='font-family color-font__purple-secondary font-size-medium'>
 				Amigos que já votaram
