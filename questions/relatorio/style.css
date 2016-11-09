@@ -83,6 +83,7 @@
   height: 50px;
 
 }
+
 /* Isto é necessário para não haver rolagens horizontais quando movermos os elementos */
 html, body {overflow-x: hidden;}
 
@@ -439,13 +440,8 @@ body::-webkit-scrollbar-thumb:vertical {
 }
 
 .progressbar progress::-moz-progress-bar {
-  background: transparent;
+  background: #FFFFFF;
   border-radius: 10px;
-}
-
-.progressbar progress::-moz-progress-value {
-  background-color: #FFFFFF;
-  border-radius: 10px ;
 }
 
 .recents__answers {
@@ -472,11 +468,10 @@ body::-webkit-scrollbar-thumb:vertical {
   width: 335px;
   max-height: 204px;
   max-width: 335px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
-.votes_friends::-webkit-scrollbar {
+/*.votes_friends::-webkit-scrollbar {
     width: 8px;
     border-radius: 5px;
 }
@@ -490,7 +485,7 @@ body::-webkit-scrollbar-thumb:vertical {
 .votes_friends::-webkit-scrollbar-thumb {
     background: rgba(255,255,255,0.60);
     border-radius: 6.66px;
-}
+}*/
 
 .box-votes_friends {
   float: left;
@@ -503,6 +498,11 @@ body::-webkit-scrollbar-thumb:vertical {
 
 .box-votes_friends img {
   border-radius: 5px;
+}
+
+.button-arrow {
+  border: 0;
+  background: none;
 }
 
 
@@ -1057,4 +1057,74 @@ body::-webkit-scrollbar-thumb:vertical {
     }
 
   }
+
+/*
+.ssb_down {
+  background-color: transparent;
+  bottom: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
+.ssb_sb {
+  background: rgba(255,255,255,0.60);
+  border-radius: 6.66px;
+  position: absolute;
+  right: 0;
+}
+
+.ssb_sb_down {
+  background-color: transparent;
+}
+
+.ssb_sb_over {
+  background: rgba(255,255,255,0.60);
+  border-radius: 6.66px;
+  width: 10px;
+}
+
+.ssb_st {
+  -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background: #C2ADCF;
+  border-radius: 6.66px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ssb_up {
+  display: none;
+}
+*/
+
+.scroll-content {
+  position: absolute;
+}
+
+.scroll-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 100%;
+  margin: 0 0;
+  -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background: #C2ADCF;
+  border-radius: 6.66px;
+  z-index: 9999;
+}  
+
+.scroll-bar-mid {
+  position: absolute;
+  width: 7px;
+  height: 100px;
+  margin: 0 0;
+  background: rgba(255,255,255,0.60);
+  border-radius: 6.66px;
+}
+
 

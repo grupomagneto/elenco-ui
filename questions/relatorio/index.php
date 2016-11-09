@@ -363,14 +363,15 @@ function drawBackgroundColor() {
 <form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='get' id='form01'>
 <?php
 echo "<div class='tabcontent-title__right grid-6'>
-			<h3 class='font-family color-font__purple-secondary font-size-medium'>
-				<button type='submit' name='month' value='";$month--;echo"$month'>
-				 <
+			<h3 class='initial font-family color-font__purple-secondary font-size-medium'>
+				<button class='button-arrow cursor' type='submit' name='month' value='";$month--;echo"$month'>
+			    	<img  src='images/arrow-left.svg' alt='' />
 				</button>
 
 				$month_name de $year
 
-				<button type='submit' name='month' value='";$month++;echo"$month'>
+				<button class='button-arrow cursor' type='submit' name='month' value='";$month++;echo"$month'>
+			    	<img  src='images/arrow-right.svg' alt='' />
 				</button>
 			</h3>
 			<p class='font-family color-font__secondary font-size-small'>
@@ -446,7 +447,7 @@ echo "<div class='tabcontent-title__right grid-6'>
 			<p class='font-family color-font__secondary font-size-small'>
 				Convide seus amigos que ainda não votaram
 			</p>
-			<div class='votes_friends'>
+			<div id='scrollbar_votes' class='votes_friends'>
 				<div class='box-votes_friends'>
 					<img src='https://dummyimage.com/60x60' alt=''>
 				</div>
@@ -523,6 +524,7 @@ echo "<div class='tabcontent-title__right grid-6'>
 
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='scrollbar.js'></script>
 
 <script>
 
