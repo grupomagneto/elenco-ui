@@ -22,6 +22,9 @@ try {
         $_SESSION['birthday'] = $user->getProperty('birthday')->format('Y-m-d');
         $_SESSION['friends'] = $user->getProperty('friends');
         $_SESSION['total_count'] = $user->getProperty('friends')->getTotalCount();
+        // echo "<pre>";
+        // print_r($_SESSION['friends']);
+        // exit();
 
         require_once('colect_data.php');
 

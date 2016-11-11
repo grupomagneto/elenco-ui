@@ -144,9 +144,10 @@ echo "
 	</style>
 	<script type='text/javascript'>
 	google.charts.load('current', {packages: ['corechart', 'line']});
-google.charts.setOnLoadCallback(drawBackgroundColor);
+google.charts.setOnLoadCallback(grafico01);
+google.charts.setOnLoadCallback(grafico02);
 
-function drawBackgroundColor() {
+function grafico01() {
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'Day');
       data.addColumn('number', 'Votos');
@@ -216,6 +217,28 @@ function drawBackgroundColor() {
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
       chart.draw(data, options);
     }
+    function grafico02() {
+        var data = google.visualization.arrayToDataTable([
+          ['Relação', 'Porcentagem'],
+          ['Amigos', 98],
+          ['Não amigos', 2]
+        ]);
+
+        var options = {
+			pieHole: 0.0,
+			tooltip: {isHtml: true},
+			chartArea:{left:20,top:10,right:0,bottom:10,width:'100%',height:'100%'},
+	        pieStartAngle: 315,
+	        
+			slices: {
+				0: { color: '#875DA2' },
+				1: { color: 'C2ADCF', }
+					},
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
     </script>
 </head>
 <body>
@@ -427,6 +450,7 @@ echo "<div class='tabcontent__right grid-6'>
 			<p class='font-family color-font__secondary font-size-small'>
 				Até hoje, 21 de outubro de 2016
 			</p>
+			<div id='donutchart'></div>
 		</div>
 		<div class='tabcontent__right grid-6'>
 			<h3 class='font-family color-font__purple-secondary font-size-medium'>
@@ -438,9 +462,11 @@ echo "<div class='tabcontent__right grid-6'>
 			<div class='votes_friends'>
 				<div class='box-votes_friends'>
 					<img src='https://dummyimage.com/60x60' alt=''>
+					<p class='font-family color-font__purple-secondary font-size-xsmall'>Fulano</p>
 				</div>
 				<div class='box-votes_friends'>
 					<img src='https://dummyimage.com/60x60' alt=''>
+					<p class='font-family color-font__purple-secondary font-size-xsmall'>Ciclano</p>
 				</div>
 				<div class='box-votes_friends'>
 					<img src='https://dummyimage.com/60x60' alt=''>
