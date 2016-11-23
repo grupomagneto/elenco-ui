@@ -1,0 +1,206 @@
+// GERAL
+.gradient 
+  position: fixed 
+  top: 0 
+  left: 0 
+  bottom: 0 
+  display: block
+  width: 100%
+  padding: 0px
+  margin: 0px 
+
+.button
+  background: $background
+  border: $border
+  border-radius: $border-radius
+  opacity: 0.89
+  &:hover, &:active
+    background: $background-hover
+
+.button-medium
+  width: 250px
+  height: 50px
+
+.button-small
+  width: 120px
+  height: 50px
+
+.container-outline__content
+  height: 100vh
+  display: flex
+  flex-direction: column
+
+.middle
+  flex: 1
+  display: flex
+  margin: 10px 0
+
+
+// MENU 
+.topbar
+  background: transparent
+  color: $color-primary
+  height: 50px
+  width: 100%
+  user-select: none
+
+.menu-button
+  display: inline-block
+  height: 100%
+  width: 30px
+  text-align: left
+  line-height: 5
+  position: absolute
+  left: 0%
+
+.fullscreen-menu
+  position: fixed
+  top: 55px
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: -1
+  user-select: none
+  a
+    color: $color-primary
+  .mask
+    background-color: #441160
+    opacity: 0
+    height: 100%
+    width: 100%
+    position: absolute
+    text-align: center
+    color: $color-primary
+  &.show
+    z-index: 2
+    .mask
+      opacity: 1
+  ul
+    width: 100%
+    list-style: none
+    li
+      font-size: 1.250em
+      margin-top: 30px
+      opacity: 0.5
+      transform: translateY(100%)
+      color: $color-primary
+
+.logo
+  line-height: 5
+
+.arrow-up::after
+  content: '\25b2'
+  position: absolute
+  top: -5%
+  left: 0.5%
+  color: #441160
+  @media only screen and (max-width: 767px)
+    left: 2%
+
+// TABS
+.tab_container
+  border-top: none
+  clear: both
+  float: left
+  width: 300px
+
+.tab_content
+  padding: 5px
+  display: none
+  height: 310px
+  max-height: 310px
+
+.tab__content
+  &:after
+    content: ""
+    clear: both
+    display: table
+  padding: 10px 0 10px 15px
+
+.tab__box
+  float: left
+  width: 95px
+  height: 95px
+  margin: 0 1px 1px 0
+  background-color: #CCCCCC
+  -webkit-transition: all 1.0s ease
+  -moz-transition: all 1.0s ease
+  transition: all 1.0s ease
+  transition: all 1.0s ease
+  img
+    width: 95px
+    height: 95px  
+
+.tab_drawer_heading
+  display: none
+
+.tab__box-nine
+  max-height: 310px
+  overflow-y: auto
+  overflow-x: hidden
+
+.tab__box-four
+  width: 142px
+  height: 142px
+  img
+    width: 142px
+    height: 142px
+
+.tab__box-one
+  width: 280px
+  height: 280px
+  img
+    width: 280px
+    height: 280px
+
+// Descart and Fav
+// .icons
+//   .descart
+//     float: left
+//     img
+//       width: 30px
+//       height: 30px
+//       padding: 5px
+//   .fav
+//     float: right
+//     img
+//       width: 30px
+//       height: 30px
+
+// FOOTER
+.footer
+  width: 100%
+  height: 45px
+
+.search
+  margin: 0
+  padding: 0
+  float: left
+  list-style: none
+  p, img
+    float: left
+  p
+    padding: 5px
+
+ul.tabs
+  margin: 0
+  padding: 0
+  float: right
+  list-style: none
+  li
+    float: right
+    margin: 0
+    cursor: pointer
+    padding: 0px 5px
+    height: 31px
+    line-height: 31px
+    overflow: hidden
+    position: relative
+
+.tab_last
+
+ul.tabs li
+  &:hover
+
+  &.active
+    display: block
