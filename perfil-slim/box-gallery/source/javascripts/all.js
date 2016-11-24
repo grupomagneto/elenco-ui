@@ -1,4 +1,4 @@
-// Menu
+// Menu top trigger
 function showMenuItems () {
 
   if (theMenu.hasClass('show')) {
@@ -9,7 +9,6 @@ function showMenuItems () {
 }
 
 $(document).ready(function() {
-  
 
   body = $("body");
   topBar = $(".topbar");
@@ -25,9 +24,68 @@ $(document).ready(function() {
 
   });
   
-})
-// Gradient
+});
 
+// Menu bottom search
+function showMenuSearch () {
+
+  if (theMenuSearch.hasClass('showSearch')) {
+    theMenuSearch.removeClass('showSearch');
+  } else {
+    theMenuSearch.addClass('showSearch');
+  }
+}
+
+$(document).ready(function() {
+
+  body = $("body");
+  bottombar = $(".bottombar");
+  menuSearch = $(".menu-search");
+  theMenuSearch = $(".fullscreen-menu-search");
+
+  menuSearch.on('click', function(event) {
+    event.preventDefault();
+    /* Act on the event */
+    
+    showMenuSearch()
+
+
+  });
+  
+});
+
+$(document).ready(function() {
+  $('.middle').jScrollPane(); 
+});
+
+$(document).ready(function() {
+
+  $(".single-image").click(function(){
+    document.getElementById("menu-link").style.display = "none";
+    document.getElementById("perfil-name").style.display = "block";
+  });
+
+});
+
+$(document).ready(function() {
+
+  $(".box-multiple").click(function(){
+    document.getElementById("menu-link").style.display = "block";
+    document.getElementById("perfil-name").style.display = "none";
+  });
+
+});
+
+$(document).ready(function() {
+
+  $(".box-4").click(function(){
+    document.getElementById("menu-link").style.display = "block";
+    document.getElementById("perfil-name").style.display = "none";
+  });
+
+});
+
+// Gradient
 var colors = new Array(
 [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
 );
