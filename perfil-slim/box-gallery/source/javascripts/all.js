@@ -55,8 +55,9 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  $('.middle').jScrollPane(); 
+  $('.tab_content').jScrollPane(); 
 });
+
 
 $(document).ready(function() {
 
@@ -145,8 +146,8 @@ setInterval(function(){updateGradient('.gradient')},10);
       $("ul.tabs li").removeClass("active");
       $(this).addClass("active");
 
-    $(".tab_drawer_heading").removeClass("d_active");
-    $(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
+      $(".tab_drawer_heading").removeClass("d_active");
+      $(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
     
     });
   /* if in drawer mode */
@@ -162,8 +163,6 @@ setInterval(function(){updateGradient('.gradient')},10);
     $("ul.tabs li").removeClass("active");
     $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
     });
-  
-  
   /* Extra class "tab_last" 
      to add border to right side
      of last tab */
