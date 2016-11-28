@@ -33,6 +33,9 @@ page '/*.txt', layout: false
 #     'Helping'
 #   end
 # end
+activate :i18n, mount_at_root: :'en-US'
+
+set :encoding, "ISO-8859-1"
 
 # Build-specific configuration
 configure :build do

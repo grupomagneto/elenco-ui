@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="46px" height="47px" viewBox="0 0 46 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <polygon id="path-2" points="0 0.0569117647 15.6944118 0.0569117647 15.6944118 16.125 0 16.125"></polygon>
+    </defs>
+    <g id="Perfil---Mobile-(iPhone-4)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Perfil---Scroll-Busca" transform="translate(-28.000000, -336.000000)">
+            <g id="Group" transform="translate(20.000000, 72.000000)">
+                <g id="X" filter="url(#filter-1)" transform="translate(8.000000, 264.000000)">
+                    <g transform="translate(14.750000, 15.053571)">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M9.15751324,8.09076618 L15.4232338,1.67586176 C15.7845574,1.30593529 15.7845574,0.705516176 15.4232338,0.334641176 C15.0609838,-0.0352852941 14.4745279,-0.0352852941 14.1132044,0.334641176 L7.84748382,6.74954559 L1.58176324,0.334641176 C1.21951324,-0.0362338235 0.633057353,-0.0362338235 0.271733824,0.334641176 C-0.0905161765,0.704567647 -0.0905161765,1.30498676 0.271733824,1.67586176 L6.53745441,8.09076618 L0.271733824,14.5056706 C-0.0905161765,14.8765456 -0.0905161765,15.4769647 0.271733824,15.8468912 C0.452395588,16.0328029 0.689572059,16.1248103 0.926748529,16.1248103 C1.163925,16.1248103 1.400175,16.0328029 1.58176324,15.8468912 L7.84748382,9.43198676 L14.1132044,15.8468912 C14.2938662,16.0318544 14.5310426,16.1248103 14.7682191,16.1248103 C15.0053956,16.1248103 15.2416456,16.0318544 15.4232338,15.8468912 C15.7845574,15.4760162 15.7845574,14.8755971 15.4232338,14.5056706 L9.15751324,8.09076618 Z" id="Fill-1" fill="#FFFFFF" mask="url(#mask-3)"></path>
+                    </g>
+                    <ellipse id="Oval-9" stroke="#FFFFFF" stroke-width="2.1168" cx="23" cy="23.5" rx="21" ry="21.5"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

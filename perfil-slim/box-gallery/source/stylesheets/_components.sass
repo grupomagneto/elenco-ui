@@ -111,7 +111,7 @@
   top: -5%
   left: 0.5%
   color: #441160
-  @media only screen and (max-width: 767px)
+  @media only screen and (max-width: 867px)
     left: 2%
 
 // MENU Trigger
@@ -207,10 +207,9 @@ ul.tabs
     overflow: hidden
     position: relative
 
-.tab_last
+// .tab_last
 
 ul.tabs li
-  &:hover
   &.active
     display: block
 
@@ -221,25 +220,32 @@ ul.tabs li
   float: left
   width: 300px
 
-#tab1, #tab2
-  height: 85vh
-  max-height: 85vh
+.tab_content
   overflow-y: auto
   overflow-x: hidden
-  @media only screen and (max-width: 380px)
-    height: 78vh
-    max-height: 78vh
-
-.tab_content
   padding: 5px 5px
   display: none
 
-.tab__content
+.tab_content
   &:after
     content: ""
     clear: both
     display: table
-  padding: 10px 0 10px 15px
+  padding: 10px 0 10px 5px
+
+#tab1
+  height: 85vh
+  max-height: 85vh
+  @media only screen and (max-width: 380px)
+    height: 78vh
+    max-height: 78vh
+    
+#tab2
+  height: 85vh
+  max-height: 85vh
+  @media only screen and (max-width: 380px)
+    height: 78vh
+    max-height: 78vh
 
 .tab__box
   float: left
@@ -268,10 +274,6 @@ ul.tabs li
 .tab__box-one
   width: 100%
   height: 280px
-  img
-    width: 100%
-    height: 280px
-
 
 //Scrollbar
 .jspContainer
@@ -284,30 +286,77 @@ ul.tabs li
 .jspVerticalBar
   position: absolute
   top: 0
-  right: 4px
-  width: 7px
+  right: 2px
+  width: 8px
   height: 100%
   background: rgba(255,255,255,0.60)
+  border-radius: 8px
 
 .jspDrag 
   position: relative
-  width: 7px
+  width: 8px
   right: 0
   background: rgba(255,255,255,0.60)
-  border-radius: 100px
+  border-radius: 8px
   top: 0
   left: 0
   cursor: pointer
 
 .jspTrack 
-  width: 5px
+  width: 8px
   -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
   background: rgba(255,255,255,0.30)
-  border-radius: 100px
-
+  border-radius: 8px
 
 // FOOTER
 .footer
   width: 100%
   height: 45px
+
+// SECTIONS
+section
+  width: 100%
+  display: table
+  margin: 0
+  max-width: none
+  height: 100vh
+
+.intro
+  height: 90vh
+  margin-top: -40px
+
+//Content
+.content
+  display: table-cell
+  vertical-align: middle
+
+.parent
+  position: relative
+  z-index: 1
+
+.parent > img
+  width: 100%
+  height: 100%
+  background-size: content
+  background-position: center
+  z-index: 2
+  margin-left: -8px
+
+.parent > img:nth-child(1) 
+  float: left
+  position: absolute
+  width: 40px
+  height: 40px
+  bottom: 0
+  margin: 15px 5px
+
+.parent > img:nth-child(2) 
+  float: right
+  position: absolute
+  width: 45px
+  height: 45px
+  bottom: 0
+  margin-left: 230px
+  margin-bottom: 12px
+
