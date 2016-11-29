@@ -1,3 +1,39 @@
+$(document).ready(function() {
+// TABS
+ // tabbed content
+    $(".tab_content").hide();
+    $(".tab_content:first").show();
+  /* if in tab mode */
+    $("ul.tabs li").click(function() {
+      $(".tab_content").hide();
+      var activeTab = $(this).attr("rel"); 
+      $("#"+activeTab).fadeIn();    
+    
+      $("ul.tabs li").removeClass("active");
+      $(this).addClass("active");
+
+      $(".tab_drawer_heading").removeClass("d_active");
+      $(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
+    });
+  /* if in drawer mode */
+  $(".tab_drawer_heading").click(function() {
+      $(".tab_content").hide();
+      var d_activeTab = $(this).attr("rel"); 
+      $("#"+d_activeTab).fadeIn();
+    
+    $(".tab_drawer_heading").removeClass("d_active");
+      $(this).addClass("d_active");
+    
+    $("ul.tabs li").removeClass("active");
+    $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
+    });
+  /* Extra class "tab_last" 
+     to add border to right side
+     of last tab */
+  $('ul.tabs li').last().addClass("tab_last");
+
+});
+
 // Menu top trigger
 function showMenuItems () {
 
@@ -64,6 +100,7 @@ $(document).ready(function() {
   $(".single-image").click(function(){
     document.getElementById("menu-link").style.display = "none";
     document.getElementById("perfil-name").style.display = "block";
+    document.getElementById("single-perfil").style.display = "block";
   });
 
 });
@@ -73,6 +110,7 @@ $(document).ready(function() {
   $(".box-multiple").click(function(){
     document.getElementById("menu-link").style.display = "block";
     document.getElementById("perfil-name").style.display = "none";
+    document.getElementById("single-perfil").style.display = "none";
   });
 
 });
@@ -82,6 +120,7 @@ $(document).ready(function() {
   $(".box-4").click(function(){
     document.getElementById("menu-link").style.display = "block";
     document.getElementById("perfil-name").style.display = "none";
+    document.getElementById("single-perfil").style.display = "none";
   });
 
 });
@@ -130,41 +169,3 @@ function updateGradient(container) {
 }
 setInterval(function(){updateGradient('.gradient')},10);
 
-
-// TABS
- // tabbed content
-    $(".tab_content").hide();
-    $(".tab_content:first").show();
-
-  /* if in tab mode */
-    $("ul.tabs li").click(function() {
-    
-      $(".tab_content").hide();
-      var activeTab = $(this).attr("rel"); 
-      $("#"+activeTab).fadeIn();    
-    
-      $("ul.tabs li").removeClass("active");
-      $(this).addClass("active");
-
-      $(".tab_drawer_heading").removeClass("d_active");
-      $(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
-    
-    });
-  /* if in drawer mode */
-  $(".tab_drawer_heading").click(function() {
-      
-      $(".tab_content").hide();
-      var d_activeTab = $(this).attr("rel"); 
-      $("#"+d_activeTab).fadeIn();
-    
-    $(".tab_drawer_heading").removeClass("d_active");
-      $(this).addClass("d_active");
-    
-    $("ul.tabs li").removeClass("active");
-    $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
-    });
-  /* Extra class "tab_last" 
-     to add border to right side
-     of last tab */
-  $('ul.tabs li').last().addClass("tab_last");
-  
