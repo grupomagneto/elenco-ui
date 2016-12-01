@@ -116,6 +116,80 @@
   @media only screen and (max-width: 867px)
     left: 2%
 
+
+
+// MENU Trigger
+.top-fav-bar
+  background: transparent
+  color: $color-primary
+  height: 50px
+  width: 100%
+  user-select: none
+
+.menu-fav
+  display: inline-block
+  height: 100%
+  width: 30px
+  text-align: left
+  line-height: 5
+  position: absolute
+  right: 4%
+
+.menu-fav > img
+  width: 36px
+  height: 30px
+
+.menu-fav > span.fav-number
+  position: absolute
+  z-index: 9999
+  color: #DB1F97
+  top: -10%
+  right: 18%
+  width: 10px
+  height: 10px
+
+.fullscreen-menu-fav
+  position: fixed
+  top: 55px
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: -1
+  user-select: none
+  a
+    color: $color-primary
+  .mask-fav
+    background-color: #441160
+    opacity: 0
+    height: 100%
+    width: 100%
+    position: absolute
+    text-align: center
+    color: $color-primary
+  &.showFav
+    z-index: 2
+    .mask-fav
+      opacity: 1
+  ul
+    width: 100%
+    list-style: none
+    li
+      font-size: 1.250em
+      margin-top: 30px
+      opacity: 0.5
+      transform: translateY(100%)
+      color: $color-primary
+
+.arrow-up-fav::after
+  content: '\25b2'
+  position: absolute
+  top: -5%
+  right: 0.5%
+  color: #441160
+  @media only screen and (max-width: 867px)
+    right: 4.5%
+
+
 // MENU Trigger
 .arrow-down::after
   content: '\25bc'
@@ -294,25 +368,76 @@ ul.tabs li
 .tab-actions > img:nth-child(1) 
   float: left
   position: absolute
-  width: 20px
-  height: 20px
-  top: 0
-  margin: 5px 0
+  width: 15px
+  height: 16px
+  top: 2%
+  left: 2%
 
 .tab-actions > img:nth-child(2) 
   float: right
   position: absolute
-  width: 25px
-  height: 25px
-  top: 0
-  margin-left: 65px
-  margin-bottom: 12px
+  width: 20px
+  height: 16px
+  top: 2%
+  right: 2%
 
+.tab-actions__four > img:nth-child(1) 
+  width: 18px
+  height: 19px
 
 .tab-actions__four > img:nth-child(2) 
-  margin-left: 110px
+  width: 25px
+  height: 20px
 
-  
+.tab-actions > img:nth-child(3) 
+  background: #DB1F97
+  background-size: 95px 95px
+  background-repeat: no-repeat
+  opacity: 0.6
+  position: absolute
+  width: 95px
+  height: 95px
+  left: 0
+  right: 0
+  margin-left: 0
+  margin-top: 0
+
+.tab-actions__four > img:nth-child(3) 
+  width: 142px
+  height: 142px
+
+.tab-actions > img:nth-child(4) 
+  background: #DB1F97
+  background-size: 95px 95px
+  background-repeat: no-repeat
+  opacity: 0.6
+  position: absolute
+  width: 95px
+  height: 95px
+  left: 0
+  right: 0
+  margin-left: 0
+  margin-top: 0
+
+.tab-actions__four > img:nth-child(4) 
+  width: 142px
+  height: 142px
+
+.subtitle
+  background: rgba(143,0,255,0.60)
+  background-size: 25px 95px
+  background-repeat: no-repeat
+  position: absolute
+  width: 95px
+  height: 22px
+  left: 0
+  right: 0
+  bottom: 4%
+  margin-left: 0
+  margin-top: 0
+  padding: 2px
+  letter-spacing: -0.23px
+
 //Scrollbar
 .jspContainer
   overflow: hidden

@@ -90,6 +90,36 @@ $(document).ready(function() {
   
 });
 
+// MENU fav
+function showMenuFav () {
+
+  if (theMenuFav.hasClass('showFav')) {
+    theMenuFav.removeClass('showFav');
+  } else {
+    theMenuFav.addClass('showFav');
+  }
+}
+
+$(document).ready(function() {
+
+  body = $("body");
+  favbar = $(".top-fav-bar");
+  menuFav = $(".menu-fav");
+  theMenuFav = $(".fullscreen-menu-fav");
+
+  menuFav.on('click', function(event) {
+    event.preventDefault();
+    /* Act on the event */
+    
+    showMenuFav()
+
+
+  });
+  
+});
+
+// SCROLLBAR
+
 $(document).ready(function() {
   $('.tab_content').jScrollPane(); 
 });
@@ -121,6 +151,32 @@ $(document).ready(function() {
     document.getElementById("menu-link").style.display = "block";
     document.getElementById("perfil-name").style.display = "none";
     document.getElementById("single-perfil").style.display = "none";
+  });
+
+});
+
+//discard and fav actions
+
+$(document).ready(function(){
+  $(".tab-actions > img:nth-child(3)").hide();
+
+  $(".discard").click(function(e){
+    $('> img:nth-child(3)', $(this).closest(".tab-actions")).fadeToggle('fast');
+  });
+
+});
+
+$(document).ready(function(){
+  $(".tab-actions > img").dblclick(function(){
+    $('> img:nth-child(4)', $(this).closest(".tab-actions")).fadeToggle('fast');
+  });
+});
+
+$(document).ready(function(){
+  $(".tab-actions > img:nth-child(4)").hide();
+
+  $(".fav").click(function(){
+    $('> img:nth-child(4)', $(this).closest(".tab-actions")).fadeToggle('fast');
   });
 
 });
