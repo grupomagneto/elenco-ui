@@ -118,12 +118,8 @@ $(document).ready(function() {
   
 });
 
-// SCROLLBAR
 
-$(document).ready(function() {
-  $('.tab_content').jScrollPane(); 
-});
-
+// Nome
 
 $(document).ready(function() {
 
