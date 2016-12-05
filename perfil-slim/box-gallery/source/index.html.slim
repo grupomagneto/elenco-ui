@@ -333,11 +333,24 @@ title: Perfil Slim
 									  	input.font-family.color-primary placeholder=("Parâmetros da Busca:") type="text" name="search"/
 								  	.gender_age-group
 								  		p.title-menu.font-family.color-primary Sexo:
-										input#male name="male" type="radio" value="male" /
+										input#male name="gender" type="radio" value="male" /
 										label.gender-cc.male for="male" 
-										input#female name="female" type="radio" value="female" /
+										input#female name="gender" type="radio" value="female" /
 										label.gender-cc.female for="female" 
+									.ranger-slide
+								  		p.font-family.color-primary Faixa etária:
+										input.js-range-slider name="ranger" type="text" value="" /
+									.after-ranger-slide__search
+										p.font-family.color-primary
+										  | Cor da pele: 
+										  span.font-family.color-primary.bold Branca
+										p.font-family.color-primary
+										  | Bairro: 
+										  span.font-family.color-primary.bold Lago Norte
 
+										button.button.button__small type="button"  Alterar
+									.title__order-perfil
+										span.glyphicon.glyphicon-sort/
+										p.font-family.color-primary Exibir primeiro perfis:
+									hr.color-primary
 
-								  		/ img.cursor src="images/male-icon.svg" alt="male"/
-								  		/ img.cursor src="images/female-icon.svg" alt="male"/

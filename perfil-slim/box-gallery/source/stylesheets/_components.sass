@@ -146,6 +146,7 @@
     color: $color-primary  
     font: 20px $font-family
 
+// Content menu search
 
 .gender_age-group
   position: absolute
@@ -153,7 +154,7 @@
   width: 80px
   height: 60px
   font-size: 14px
-  margin-left: -5px
+  margin-left: -12px
   p
     margin-left: -20px
     margin-bottom: 5px
@@ -193,6 +194,120 @@
   -webkit-filter: brightness(1.8) grayscale(1) opacity(0.7)
   -moz-filter: brightness(1.8) grayscale(1) opacity(0.7)
   filter: brightness(1.8) grayscale(1) opacity(0.7)
+
+.ranger-slide
+  position: relative
+  height: 100px
+  width: 180px
+  left: 100px
+  top: 75px
+  p
+    font-size: 14px
+    margin-left: -125px
+    margin-bottom: 10px
+
+.irs
+  height: 40px
+
+.irs-bar
+  border: 1px solid $color-primary
+  background: $color-primary
+
+.irs-line
+  border: 1px solid $color-primary
+  background: transparent
+
+.irs-line-left 
+  height: 12px
+  background-position: 0 -30px
+
+.irs-line-mid 
+  height: 12px
+  background-position: 0 0
+
+.irs-line-right 
+  height: 12px
+  background-position: 100% -30px
+
+.irs-min, .irs-max
+  color: $color-primary
+  font-size: 10px 
+  line-height: 1.333
+  text-shadow: none
+  padding: 1px 5px
+  top: 24px
+  background: transparent
+  -moz-border-radius: 4px
+  border-radius: 4px 
+
+.irs-min
+  margin-left: -15px
+
+.irs-max
+  margin-right: -25px
+
+.irs-from, .irs-to, .irs-single 
+  color: $color-primary
+  font-size: 10px 
+  line-height: 1.333
+  text-shadow: none
+  padding: 1px 5px
+  background: transparent
+  -moz-border-radius: 4px
+  border-radius: 4px
+
+.irs-from:after, .irs-to:after, .irs-single:after 
+  position: absolute 
+  display: block 
+  content: ""
+  bottom: -6px 
+  left: 50%
+  width: 0 
+  height: 0
+  margin-left: -3px
+  overflow: hidden
+  border: 3px solid transparent
+  border-top-color: transparent
+
+.irs-slider.from 
+  background: $color-primary
+  width: 2px
+
+.irs-slider.to 
+  background: $color-primary
+  width: 2px
+
+.after-ranger-slide__search
+  position: relative
+  height: 100px
+  width: 100%
+  top: 100px
+  p
+    font-size: 14px
+    margin-bottom: 20px
+  button:active
+    background: rgba(255,255,255,0.60)
+  button:hover
+    background: rgba(255,255,255,0.60)
+
+.after-ranger-slide__search  p:nth-child(1)
+  float: left
+
+.after-ranger-slide__search  p:nth-child(2)
+  float: right 
+
+.title__order-perfil
+  position: relative
+  height: 100px
+  width: 100%
+  top: 120px
+  margin-bottom: 50px
+  span
+    float: left
+  p
+    float: right
+    margin-left: 10px
+    font-size: 20px
 
 
 // MENU Fav
@@ -334,7 +449,7 @@
   p, img
     float: left
     margin-top: -2px
-    margin-left: 1px
+    margin-left: -1px
   p
     margin-top: -25px
     margin-left: 5px

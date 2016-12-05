@@ -1,5 +1,22 @@
+//Ranger Slide
+
 $(document).ready(function() {
+var $range = $(".js-range-slider");
+
+  $range.ionRangeSlider({
+      type: "double",
+      min: 0,
+      max: 65,
+      from: 20,
+      to: 40,
+      hide_min_max: false,
+      hide_from_to: false,
+      max_postfix: "+",
+      grid: false
+    });
+});
 // TABS
+$(document).ready(function() {
  // tabbed content
     $(".tab_content").hide();
     $(".tab_content:first").show();
