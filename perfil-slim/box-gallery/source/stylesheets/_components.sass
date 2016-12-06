@@ -108,7 +108,7 @@
 .arrow-up::after
   content: '\25b2'
   position: absolute
-  top: -5%
+  margin-top: -4%
   left: 0.5%
   color: #441160
   @media only screen and (max-width: 867px)
@@ -146,7 +146,22 @@
     color: $color-primary  
     font: 20px $font-family
 
+.arrow-down::after
+  content: '\25bc'
+  position: absolute
+  bottom: -11%
+  left: 1%
+  color: #441160
+
 // Content menu search
+.content-menu-search
+  margin-top: 5px
+  position: absolute
+  width: 100%
+  display: -webkit-flex
+  -webkit-align-items: center
+  display: flex
+  align-items: center
 
 .gender_age-group
   position: absolute
@@ -298,17 +313,46 @@
 
 .title__order-perfil
   position: relative
-  height: 100px
+  height: 30px
   width: 100%
-  top: 120px
-  margin-bottom: 50px
+  top: 100px
+  margin-bottom: 40px
   span
     float: left
   p
     float: right
     margin-left: 10px
     font-size: 20px
+  hr
+    width: 140%
 
+.button__order-perfil
+  position: relative
+  height: 30px
+  width: 100%
+  margin-top: 130px
+
+.switch-field
+  position: relative
+  overflow: hidden
+
+.switch-field
+  input
+    display: none
+  label
+    float: left
+    display: inline-block
+    font-size: 14px
+    text-align: center
+    text-shadow: none
+    padding: 6px 14px
+    margin-left: 10px
+    &:hover
+      cursor: pointer
+  input:checked + label
+    background: rgba(255,255,255,0.60)
+    -webkit-box-shadow: none
+    box-shadow: none
 
 // MENU Fav
 .top-fav-bar
@@ -382,15 +426,6 @@
 
 
 // MENU Trigger
-.arrow-down::after
-  background: blue
-  content: '\25bc'
-  position: absolute
-  bottom: -2.5%
-  left: 0.5%
-  color: #441160
-  @media only screen and (max-width: 767px)
-    left: 2%
 
 .bottombar
   background: transparent
