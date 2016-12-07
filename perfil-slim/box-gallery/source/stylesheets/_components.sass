@@ -40,11 +40,11 @@
 
 .middle
   height: 100vh
-  -webkit-flex: 1
-  -moz-flex: 1
-  -ms-flex: 1
-  -o-flex: 1
-  flex: 1
+  // -webkit-flex: 1
+  // -moz-flex: 1
+  // -ms-flex: 1
+  // -o-flex: 1
+  // flex: 1
   display: -webkit-flex
   display: -moz-flex
   display: -ms-flex
@@ -152,6 +152,173 @@
   bottom: -11%
   left: 1%
   color: #441160
+
+
+// Content menu trigger
+
+.content-menu-trigger
+  margin-top: 5px
+  position: absolute
+  width: 100%
+  left: 0
+  display: -webkit-flex
+  -webkit-align-items: center
+  -webkit-align-self: center
+  -webkit-justify-content: center
+  align-self: center
+  justify-content: center
+  display: flex
+  align-items: center
+
+.table-menu
+  width: 100%
+  height: 100%
+
+.table-menu tr
+  width: 100%
+  line-height: 30px
+  font-size: 20px
+
+.table-menu tr td 
+  border-bottom: 1px solid $color-primary
+  
+.table-menu tr td a img
+  position: absolute
+  left: -2%
+  padding: 10px 0
+  width: 50px
+  height: 50px
+  text-align: left
+  
+.table-menu tr td a p
+  position: relative
+  left: 15%
+  padding: 10px 0
+  text-align: left
+
+
+// Content menu trigger
+
+.content-menu-fav
+  margin-top: 5px
+  position: absolute
+  width: 100%
+  height: 100%
+  left: 0
+  display: -webkit-flex
+  -webkit-align-items: center
+  -webkit-align-self: center
+  -webkit-justify-content: center
+  align-self: center
+  justify-content: center
+  display: flex
+  align-items: center
+
+.top-menu-fav-left
+  position: relative
+  width: 20%
+  left: -4%
+  height: 10%
+  text-align: center
+  justify-content: flex-start
+  -webkit-justify-content: flex-start
+  align-self: flex-start
+  justify-content: flex-start
+  align-items: flex-start
+  p
+    font-size: 10px
+
+.top-menu-fav-right
+  position: relative
+  width: 80%
+  right: -5%
+  height: 10%
+  text-align: center
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-flow: row wrap
+  justify-content: flex-end
+
+.top-menu-fav-right__picture
+  margin: 0 10px
+  img
+    height: 30px
+  p
+    font-size: 10px
+
+.perfil-fav
+  position: absolute
+  top: 60px
+  left: 0%
+  width: 100%
+  overflow-y: auto
+  overflow-x: hidden
+  display: -webkit-flex
+  -webkit-align-items: center
+  -webkit-align-self: center
+  -webkit-justify-content: center
+  align-self: center
+  justify-content: center
+  display: flex
+  align-items: center
+
+.perfil-fav::-webkit-scrollbar
+  width: 8px
+  background: rgba(255,255,255,0.30)
+  border-radius: 8px
+
+.perfil-fav::-webkit-scrollbar-thumb
+  background: rgba(255,255,255,0.60)
+  border-radius: 8px
+
+.table-menu-fav
+  width: 100%
+  height: 100%
+
+.table-menu-fav tr
+  width: 100%
+  line-height: 30px
+  font-size: 20px
+
+.table-menu-fav tr td 
+  padding: 10px 0px
+
+.table-menu-fav tr:nth-child(odd)
+  background: rgba(255,255,255,0.10)
+
+.perfil-fav__select img
+  position: absolute
+  left: -2%
+  width: 50px
+  height: 50px
+  margin: 0 10px
+  
+.perfil-fav__select p
+  position: relative
+  left: 20%
+  padding: 10px 0
+  text-align: left
+  
+.excluir
+  position: absolute
+  background: #D0011B
+  width: 50px
+  height: 70px
+  right: 0%
+  top: 0%
+
+.excluir img
+  width: 35px
+  height: 35px
+  margin-top: 5px
+
+.excluir p
+  font-size: 10px
+  margin-top: -10px
+
 
 // Content menu search
 .content-menu-search
@@ -418,14 +585,14 @@
 .arrow-up-fav::after
   content: '\25b2'
   position: absolute
-  top: -5%
-  right: 0.5%
+  margin-top: -4%
+  right: 5%
   color: #441160
   @media only screen and (max-width: 867px)
-    right: 4.5%
+    right: 5%
 
 
-// MENU Trigger
+// MENU Search
 
 .bottombar
   background: transparent
@@ -698,6 +865,8 @@ ul.tabs li
 
 // FOOTER
 .footer
+  position: relative
+  bottom: 2px
   width: 100%
   height: 45px
 

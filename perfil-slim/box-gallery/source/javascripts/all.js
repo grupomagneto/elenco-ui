@@ -1,3 +1,11 @@
+$(document).ready(function() {
+  $(".excluir").hide();
+
+    jQuery("tr").click(function(){
+      $(".excluir").show();
+    });
+});
+
 //Ranger Slide
 
 $(document).ready(function() {
