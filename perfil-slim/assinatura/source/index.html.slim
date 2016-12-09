@@ -1,0 +1,39 @@
+---
+title: Perfil Slim
+---
+
+.gradient
+	.container-outline__content
+		.subscription-plan
+			.title-section
+				img src="images/plano-assinatura.svg" alt="plano de assinatura"/
+				p.font-family.font-medium.color-primary plano de assinatura
+			.content_section
+				.content__subscription-plan
+					.after-title__subscription-plan
+						h2.font-family.font-medium.color-primary.bold Profissional
+						.switch__subscription-plan
+						  input#mensal.switch-input checked="" name="plan" type="radio" value="mensal" /
+						  label.switch-label.switch-label-off for="mensal"  mensal
+						  input#anual.switch-input name="plan" type="radio" value="anual" /
+						  label.switch-label.switch-label-on for="anual"  anual
+						  span.switch-selection
+
+					.change-plan__subscription-plan
+						p.font-family.font-small.color-primary Próximo pagamento: 17/12/2016
+
+						button.button.button__medium type="button" Mudar meu Plano
+
+						p.font-family.font-small.color-primary No último ano, quanto receberia se fosse:
+
+						table.tabled-curved
+							tr
+								th.font-family.font-small.color-primary Gratuito
+								th.font-family.font-small.color-primary Premium
+								th.font-family.font-small.color-primary Profissional
+							tr
+								td.font-family.font-small.color-primary R$ 1.671,00
+								td.font-family.font-small.color-primary R$ 2.228,00
+								td.font-family.font-small.color-primary R$ 2.507,00
+
+						.tooltiptext.font-family.color-primary Melhor Plano para mim
