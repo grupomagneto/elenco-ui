@@ -39,7 +39,7 @@
   flex-direction: column
 
 // Plano de Assinatura
-.subscription-plan
+.portfolio-section
   padding: 10px
   width: 100%
 
@@ -60,21 +60,16 @@
   margin-top: 10px
   width: 100%
 
-.content__subscription-plan
+.content__portfolio
 
-.after-title__subscription-plan
+.after-title__portfolio
   width: 100%
-  h2
-    position: relative
-    left: 10px
-    float: left
 
-.switch__subscription-plan
-  float: right
-  right: 10px
+.switch__portfolio
   border: 2px solid $color-primary
   border-radius: 8px
   position: relative
+  left: 28%
   height: 30px
   width: 140px
   background: rgba(255,255,255,0.30)
@@ -135,52 +130,37 @@
   -o-transition: left 0.15s ease-out
   transition: left 0.15s ease-out
 
-.change-plan__subscription-plan
-  position: absolute
+//Slick Slide
+.carousel-portfolio
   width: 100%
-  left: -4px
-  margin-top: 40px
-  text-align: center
-  p
-    padding-top: 20px
-    padding-bottom: 20px
-  table
+  max-width: 100%
+  max-height: 100%
+  top: 30px
+  .item
     position: relative
-    margin-left: 25px
-    margin-top: -15px
-    margin-bottom: 20px
-    tr
-      border: 1px solid $color-primary
-      th 
-        font-weight: 100
-        padding: 5px
-        background: rgba(255,255,255,0.30)
-        border: 1px solid $color-primary
-      td 
-        border-style: none solid solid none
-        font-weight: 100
-        padding: 10px
-        border: 1px solid $color-primary
+    .imageContainer
+      display: block
+      width: 100%
+      position: relative
+      max-height: 100%
+      &:before
+        content: ""
+        position: absolute
+        top: 0px
+        left: 0px
+        color: red
+        width: 100%
+        height: 100%
 
-.tooltiptext
-  visibility: visible
-  width: 94px
-  background-color: rgba(70,25,94,0.60)
-  color: $color-primary
-  text-align: center
-  border-radius: 8px
-  padding: 5px 0
-  position: relative
-  z-index: 1
-  top: 30%
-  left: 56%
-  margin-left: -60px
-  &::after
-    content: ""
+  .slick-dots
     position: absolute
-    bottom: 100%
-    left: 50%
-    margin-left: -5px
-    border-width: 5px
-    border-style: solid
-    border-color: transparent transparent rgba(70,25,94,0.60) transparent
+    bottom: -20px
+    z-index: 9999
+
+.slick-dots li
+  button:before, &.slick-active button:before
+    color: $color-primary
+
+.button-portfolio
+  position: relative
+  top: 50px
