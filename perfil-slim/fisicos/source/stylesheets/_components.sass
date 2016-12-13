@@ -39,7 +39,7 @@
   flex-direction: column
 
 // Plano de Assinatura
-.cache-section
+.physical-section
   padding: 10px
   width: 100%
 
@@ -50,8 +50,6 @@
   img
     padding-right: 10px
     float: left
-    width: 30px
-    height: 30px
   p 
     positiion: relative
     padding: 10px
@@ -62,17 +60,10 @@
   margin-top: 10px
   width: 100%
 
-.content__cache
-
-.after-title__cache
-  width: 100%
-  h2
-    position: relative
-    left: 10px
-    float: left
+.content__physical
 
 // Cache
-.total-cache
+.physical
   position: relative
   width: 100% 
   display: flex
@@ -83,23 +74,19 @@
   -webkit-justify-content: center
   align-items: center
   -webkit-align-items: center
-  .total-cache__box
+  .physical__box
     width: 135px
-    height: 77px
-    border: 1px solid $color-primary
-    border-radius: 8px
+    height: 90px
     margin: 10px
-    span
-      text-align: left
-      font-size: 12px
-  .total-cache__box p:nth-child(1)
-    padding: 5px 0px
+  .physical__box img
+    float: left
     text-align: center
-  .total-cache__box p:nth-child(2)
-    padding: 10px 0px
+  .physical__box p:nth-child(2)
+    margin: 12px 0px
     text-align: center
 
-.areceber-cache
+
+.physical-description
   position: relative
   width: 100% 
   display: flex
@@ -110,23 +97,51 @@
   -webkit-justify-content: center
   align-items: center
   -webkit-align-items: center
-
-  .areceber__box
+  .physical-description__box
     width: 135px
-    height: 77px
-    border: 1px solid $color-primary
-    border-radius: 8px
+    height: 90px
     margin: 10px
-    span
-      text-align: left
-      font-size: 12px
-  .areceber__box p:nth-child(1)
-    padding: 5px 0px
+  .physical-description__box img
+    float: left
     text-align: center
-  .areceber__box p:nth-child(2)
-    padding: 10px 0px
-    text-align: center
+  .physical-description__box_left
+    position: absolute
+    text-align: left
+    float: left
+    text-transform: uppercase
+  .physical-description__box_right
+    position: relativet
+    float: right
+    text-align: left
 
-.button-cache
+
+.physical-description-bottom
   position: relative
-  top: 20px
+  width: 100% 
+  display: flex
+  display: -webkit-flex
+  flex-direction: row
+  -webkit-flex-direction: row
+  justify-content: center
+  -webkit-justify-content: center
+  align-items: center
+  -webkit-align-items: center
+  .physical-description-bottom__box
+    width: 135px
+    height: 90px
+    margin: 10px
+  .physical-description-bottom__box img
+    float: left
+    text-align: center
+  .physical-description-bottom__box_left
+    position: absolute
+    text-align: left
+    float: left
+    text-transform: uppercase
+  .physical-description-bottom__box_right
+    position: relativet
+    float: right
+    text-align: left
+
+.button-physical
+  position: relative
