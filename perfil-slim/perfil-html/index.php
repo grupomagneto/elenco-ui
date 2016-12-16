@@ -298,7 +298,7 @@
           <div class="tab_content" id="tab3">
             <div class="container-outline__single">
 
-              <section class="intro">
+              <section class="intro" id="intro">
                 <div class="content">
                   <div class="parent">
                     <div class="container-outline__center">
@@ -350,48 +350,53 @@
                 ?>  
               </section>
               
-              <section class="second">
+             <section class="second">
                <?php 
                   include "planoassinatura.php";
                 ?>  
               </section>
-              
+            
               <section class="third">
                <?php 
                   include "portfolio.php";
                 ?>  
               </section>
               
-              <section class="intro">
+              <section class="fourth">
                <?php 
-                  include "caches.php";
+                 include "caches.php";
                 ?>  
               </section>
               
-              <section class="intro">
+              <section class="fifth">
                <?php 
-                  include "jobs.php";
+                 include "jobs.php";
+                ?>  
+              </section>
+                
+              <section class="sixth">
+               <?php 
+                 include "fisicos.php";
                 ?>  
               </section>
               
-              <section class="intro">
+              <section class="seventh">
                <?php 
-                  include "fisicos.php";
+                 include "popularidade.php";
                 ?>  
               </section>
               
-              <section class="intro">
+              <section class="eighth">
                <?php 
-                  include "popularidade.php";
+                 include "reputacao.php";
                 ?>  
               </section>
               
-              <section class="intro">
-               <?php 
-                  include "reputacao.php";
-                ?>  
+              <section class="footer__section">
+                <a href="#intro"><img src="images/arrow-to-top.svg" alt=""></a>
+                <hr>
+                <p class="font-family color-primary">Magneto Elenco © 2009-2016</p>
               </section>
-              
               
               
             </div>

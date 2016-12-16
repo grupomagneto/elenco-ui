@@ -12,19 +12,19 @@ $(function() {
 
 
 $(document).ready(function() {
-  $( ".carousel-portfolio > .item > .imageContainer > img" ).hide();
+  $( ".img_portfolio" ).hide();
 
   $("#form__portfolio [name='portfolio']").click(function() {
     if ($(this).attr("value") == "videos") {
 
-      $( ".carousel-portfolio > .item >  .imageContainer > video" ).show();
-      $( ".carousel-portfolio > .item >  .imageContainer > img" ).hide();
+      $( ".vid1" ).show();
+      $( ".img_portfolio" ).hide();
      
     }
     if ($(this).attr("value") == "fotos") {
 
-      $( ".carousel-portfolio > .item >  .imageContainer > video" ).hide();
-      $( ".carousel-portfolio > .item >  .imageContainer > img" ).show();
+      $( ".vid1" ).hide();
+      $( ".img_portfolio" ).show();
       
     }
   });

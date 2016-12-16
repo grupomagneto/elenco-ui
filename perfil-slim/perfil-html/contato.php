@@ -1,19 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Perfil</title>
-  <meta name="viewport" content="width=device-width, user-scalable=no">
-  <link rel="stylesheet" href="stylesheets/ion.rangeSlider.css">
-  <link rel="stylesheet" href="stylesheets/ion.rangeSlider.skinFlat.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick-theme.css">
-  <link rel="stylesheet" href="stylesheets/contato.css">
-</head>
-<body> -->
-
-  <div class="container-outline__content">
+<div class="container-outline__content">
     <div class="contact">
       <div class="title-section">
         <img alt="contato" src="images/contato.svg" />
@@ -75,15 +60,8 @@
               <img alt="" src="images/icon-twitter.svg" />
             </li>
           </ul>
-          <button class="button__contact button button__medium button__hover">editar</button>
+         <button class="button__contact button button__medium cursor">editar</button>
         </div>
       </div>
     </div>
   </div>
-<!-- 
-<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="javascripts/all.js"></script>
-<script src="javascripts/tabs.js"></script>
-
-</body>
-</html> -->
