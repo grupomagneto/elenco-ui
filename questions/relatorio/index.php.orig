@@ -456,8 +456,17 @@ echo "<div class='tabcontent-title__right grid-6'>
 			<p class='font-family color-font__secondary font-size-small'>
 				Até hoje, 21 de outubro de 2016
 			</p>
+<<<<<<< HEAD
 			<div id='donutchart'></div>
+=======
+
+
+			<div class='answers_graph'>
+
+			</div>
+>>>>>>> 9aaab6c1381a0bf4942265b5083565df9c24f3bd
 		</div>
+
 		<div class='tabcontent__right grid-6'>
 			<h3 class='font-family color-font__purple-secondary font-size-medium'>
 				Amigos que já votaram

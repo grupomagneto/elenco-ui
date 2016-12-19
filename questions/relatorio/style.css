@@ -14,47 +14,47 @@
   font-style: normal;
 }
 
-.font-family{
+.font-family {
   font-family: Avenir-Book;
   font-weight: 100;
 }
-.font-bold{
+.font-bold {
   font-weight: bold;
 }
-.color-font{
+.color-font {
   color: #FFFFFF;
 }
-.color-font__secondary{
+.color-font__secondary {
   color: #C9C9C9;
 }
-.color-font__purple{
+.color-font__purple {
   color: #A63FF6;
 }
-.color-font__purple-secondary{
+.color-font__purple-secondary {
   color: #875DA2;
 }
-.font-size-xsmall{
+.font-size-xsmall {
     font-size: 10px;
 }
-.font-size-small{
+.font-size-small {
     font-size: 14px;
 }
-.font-size-medium{
+.font-size-medium {
     font-size: 20px;
 }
-.font-size-large{
+.font-size-large {
     font-size: 24px;
 }
-.font-size-xlarge{
+.font-size-xlarge {
     font-size: 32px;
 }
 
-.cursor{
+.cursor {
 	cursor: pointer;
 }
 
 
-.button{
+.button {
   background: rgba(215, 215, 215, 0.3);
   border: 1px solid #FFFFFF;
   border-radius: 8px;
@@ -62,41 +62,42 @@
 
 }
 
-.button:hover{
+.button:hover {
   background: rgba(215,215,215,0.60);
 
 }
 
-.button:active{
+.button:active {
   background: rgba(215,215,215,0.60);
 
 }
 
-.button-medium{
+.button-medium {
   width: 250px;
   height: 50px;
 
 }
 
-.button-small{
+.button-small {
   width: 120px;
   height: 50px;
 
 }
+
 /* Isto é necessário para não haver rolagens horizontais quando movermos os elementos */
 html, body {overflow-x: hidden;}
 
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   width: 0;
   background-color: transparent;
 }
 /* Fundo da barra de rolagem */
-body::-webkit-scrollbar-track-piece{
+body::-webkit-scrollbar-track-piece {
   background-color: transparent;
 }
 /* Cor do indicador de rolagem */
-body::-webkit-scrollbar-thumb:vertical{
+body::-webkit-scrollbar-thumb:vertical {
   background-color: transparent;
 }
 
@@ -128,9 +129,10 @@ body::-webkit-scrollbar-thumb:vertical{
 }
 .notifications {
 	float: right;
+  margin-right: 30px;
 }
 
-.notification__num{
+.notification__num {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -142,11 +144,11 @@ body::-webkit-scrollbar-thumb:vertical{
 	text-align: center;
 	padding: 2px;
 }
-.link-menu{
+.link-menu {
 	 margin-top: -20px;
 }
 
-.line{
+.line {
   position: absolute;
   width: 2px;
   height: 30px; 
@@ -165,7 +167,7 @@ body::-webkit-scrollbar-thumb:vertical{
   text-decoration: none; 
  padding-left: 20px;}
 
-.notifications h1 a :before{
+.notifications h1 a :before {
   height: 20px;
   width: 2px;
   background: #875DA2;
@@ -189,7 +191,7 @@ body::-webkit-scrollbar-thumb:vertical{
 }
 
 
-.profile_photo{
+.profile_photo {
     position: relative;
     width: 400px;
     float: left;
@@ -197,7 +199,7 @@ body::-webkit-scrollbar-thumb:vertical{
     margin-left: 20px;
 }
 
-.profile_photo img{
+.profile_photo img {
   width: 100px;
   height: 100px;
   border-radius: 7px;
@@ -206,7 +208,7 @@ body::-webkit-scrollbar-thumb:vertical{
 }
 
 
-.profile_photo h1{
+.profile_photo h1 {
   height: 20px;
   padding-top: 25px;
   margin-left: 100px;
@@ -215,7 +217,7 @@ body::-webkit-scrollbar-thumb:vertical{
 
 }
 
-.profile_photo p{
+.profile_photo p {
   height: 10px;
   padding-top: 30px;
   margin-left: 100px;
@@ -236,22 +238,22 @@ body::-webkit-scrollbar-thumb:vertical{
   clear: both;
   display: table;
 }
-.profile-info__menu{
+.profile-info__menu {
   margin-left: -7px;
 }
 
-.profile-info__menu ul{
+.profile-info__menu ul {
   width: 340px;
   padding: 0px;
   margin: 0px;
   list-style: none;
   display: inline-block;
 }
-.profile-info__menu ul li{
+.profile-info__menu ul li {
   display: inline-block;
 }
 
-.profile-info__menu ul li a{
+.profile-info__menu ul li a {
   padding: 0px 9px;
   display: inline-block;
   text-decoration: none;
@@ -268,25 +270,25 @@ body::-webkit-scrollbar-thumb:vertical{
   border-radius: 8px;
 }
 
-.box-profile:hover{
+.box-profile:hover {
 
 /*  background-color: rgba(255,255,255,0.60);*/
 }
 
-.box-profile img{
+.box-profile img {
   width: 50px;
   height: 50px;
   margin-top: 1px;
 
 }
 
-.box-profile h1{
+.box-profile h1 {
   margin-top: -5px;
   font-size: 20px;
 
 }
 
-.box-profile p{
+.box-profile p {
   margin-top: -2px;
   font-size: 14px;
 
@@ -294,7 +296,7 @@ body::-webkit-scrollbar-thumb:vertical{
 
 /*STYLE TABS*/
 
-.tabs{
+.tabs {
   margin-top: -35px;
   margin-left: 0px;
 }
@@ -348,7 +350,7 @@ body::-webkit-scrollbar-thumb:vertical{
 
 }
 
-.tabcontent{
+.tabcontent {
   width: 100%; 
   height: 280px;
   display: none;
@@ -360,44 +362,57 @@ body::-webkit-scrollbar-thumb:vertical{
   border-radius: 5px;
 }
 
-.tabcontent__left{
+.tabcontent-title__left {
   float: left;
   padding: 10px;
 }
-.tabcontent__right{
-    float: right;
-    text-align: right;
-    padding: 10px;
-    margin-right: 10px;
+
+.tabcontent-title__right {
+  float: right;
+  text-align: right;
+  padding: 10px;
+  margin-right: 10px;
 }
 
-.footer__button{
-  position: relative;
-  left: 12%;
-  top: 20px;
-
+.tabcontent__left {
+  float: left;
+  padding: 10px;
 }
-.container__after-tabs{
+
+.tabcontent__right {
+  float: right;
+  text-align: right;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.footer__button {
+  position: absolute;
+  bottom: 5%;
+  left: calc(50% - 300px);
+}
+
+.container__after-tabs {
   width: 700px;
 }
-.container__after-tabs button{
+
+.container__after-tabs button {
   margin-left: 20px;
 }
 
-.button-image{
+.button-image {
   width: 30px;
   height: 30px;
   margin-top: -10px;
   margin-left: 15px;
   float: left;
-
 }
-.progressbar{
 
+.progressbar {
   width: 320px;
 } 
 
-.progressbar h3{
+.progressbar h3 {
   margin-top: 2px;
   font-size: 14px;
   float: right;
@@ -419,15 +434,77 @@ body::-webkit-scrollbar-thumb:vertical{
   border-radius: 10px;
 }
 
-.progressbar progress::-webkit-progress-value{
+.progressbar progress::-webkit-progress-value {
   background-color: #FFFFFF;
   border-radius: 10px ;
 }
 
-.progressbar progress::-moz-progress-bar{
-  background: transparent;
+.progressbar progress::-moz-progress-bar {
+  background: #FFFFFF;
   border-radius: 10px;
 }
+
+.recents__answers {
+  width: 180px;
+  height: 200px;
+  background: #875DA2;
+  border-radius: 5px;
+  border: 1px solid #FFFFFF;
+  box-shadow: 0px 0px 0px 5px #875DA2;
+  margin-left: 140px;
+  margin-top: 10px;
+}
+
+.box-recents__answers {
+  margin: 0 auto;
+  text-align: left;
+  padding: 12px 25px;
+}
+
+.votes_friends {
+  position: absolute;
+  padding-left: 30px;
+  height: 204px;
+  width: 335px;
+  max-height: 204px;
+  max-width: 335px;
+  overflow: hidden;
+}
+
+/*.votes_friends::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 5px;
+}
+ 
+.votes_friends::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background: #C2ADCF;
+    border-radius: 6.66px;
+}
+ 
+.votes_friends::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.60);
+    border-radius: 6.66px;
+}*/
+
+.box-votes_friends {
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin: 10px 10px 10px 0;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+  border-radius: 5px;
+}
+
+.box-votes_friends img {
+  border-radius: 5px;
+}
+
+.button-arrow {
+  border: 0;
+  background: none;
+}
+
 
   @media only screen and (max-width: 340px){
 
@@ -438,16 +515,20 @@ body::-webkit-scrollbar-thumb:vertical{
         bottom: 0; 
         display: block;
         width: 100%;
-        height: 1200px;
+        height: 1400px;
         padding: 0px;
         margin: 0px; 
       }
 
-      .progressbar{
+      .progressbar {
         width: 300px;
         margin-left: 10px;
       } 
 
+      .notifications {
+        float: right;
+        margin-right: 5px;
+      }
 
       .profile {
         width: 100%;
@@ -485,6 +566,10 @@ body::-webkit-scrollbar-thumb:vertical{
         text-decoration: none;
       }
 
+      .profile_photo {
+          margin-left: 0px;
+      }
+
       .profile-info {
         position: relative;
         float: right; 
@@ -500,260 +585,152 @@ body::-webkit-scrollbar-thumb:vertical{
         margin-top: 80px;
 
       }
-      .profile-info__menu{
-        margin-left: -45px;
+
+      .profile-info__menu {
+        margin-left: -15px;
       }
 
-      .profile-info__menu ul li a{
-        padding: 1px 5px;
+      .profile-info__menu ul li a {
+        padding: 1px 10px;
       }
 
-      .tabs{
+      .tabs {
         margin-top: -180px;
         margin-left: 0%;
       }
 
-      .tabcontent{
-        width: 300px; 
-        height: 240px;
-        display: none;
-        padding: 6px 12px;
-        margin-top: -2px;
-        border: 1px solid #FFFFFF;
-        background: #FFFFFF;
-        box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.25);
-        border-radius: 5px;
-      }
-      .tab {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: Avenir-Book;
-        font-size: 12px;
-        width: 277px;
-        margin-left: 10px;
-        margin-top: 5px;
+    .tabcontent {
+      width: 300px; 
+      height: 350px;
+      display: none;
+      padding: 6px 12px;
+      margin-top: -2px;
+      margin-left: 0px;
+      border: 1px solid #FFFFFF;
+      background: #FFFFFF;
+      box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.25);
+      border-radius: 5px;
+    }
 
-      }
-      .tab li a {
+    .tabcontent#perfil {
+      height: 500px;
+    }
 
-        display: inline-block;
-        text-align: center;
-        padding: 8px 5px;
-        border: 1px solid #FFFFFF;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        text-decoration: none; 
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-        font-size: 12px;
-      }
+    .tabcontent#votosamigos {
+      height: 500px;
+    }
 
-      .tabcontent__left{
-        float: left;
-        padding: 10px;
-      }
-      .tabcontent__right{
-        float: right;
-        padding: 10px;
-        margin-top: 80px ;
-        margin-right: -20px ;
-      }
+    .tabcontent-title__right {
+      float: right;
+      padding: 10px;
+      margin-right: 40px;
+      margin-top: 160px;
+    }
 
-      .container__after-tabs{
-        width: 200px;
-      }
-      .container__after-tabs button{
-        margin: 2px;
-      }
+    .tab {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Avenir-Book;
+      font-size: 12px;
+      width: 277px;
+      margin-left: 10px;
+      margin-top: 5px;
 
+    }
 
-      .footer__button{
-          position: relative;
-          left: 5%;
-          top: 70px;
-          margin: 0 auto;
-      }
-      .title-tabs {
-        text-align: center;
-        display: block;
-        width: 200px;
-        margin-left: 45px;
-        margin-top: 50px;
-        margin-bottom: 50px;
-      }
-      .title-tabs h1 {
-        font-size: 20px;
-      }
+    .tab li a {
+      display: inline-block;
+      text-align: center;
+      padding: 8px 5px;
+      border: 1px solid #FFFFFF;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      text-decoration: none; 
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+      font-size: 12px;
+    }
+
+    .tabcontent__left {
+      float: left;
+      padding: 10px;
+    }
+
+    .tabcontent__right {
+      padding: 10px;
+      margin-top: 220px;
+      margin-left: -10px;
+      text-align: left;
+      float: none;
+    }
+
+    .tabcontent__faq {
+      margin-top: 210px;
+      text-align: left;
+      float: none;
+    }
+
+    .recents__answers {
+      margin-left: 45px;
+    }
+
+    .votes_friends {
+      margin-left: -50px;
+    }
+
+    .votes_friends {
+      position: absolute;
+      padding-left: 50px;
+      height: 204px;
+      width: 300px;
+      max-height: 204px;
+      max-width: 300px;
+      margin-left: -20px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .box-votes_friends {
+      float: left;
+      width: 60px;
+      height: 60px;
+      margin: 10px 10px 10px 0;
+      box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+      border-radius: 5px;
+    }
+
+    .container__after-tabs {
+      width: 200px;
+    }
+    .container__after-tabs button {
+      margin: 2px;
+    }
+    .footer__button {
+        position: relative;
+        left: 7%;
+        top: 70px;
+        margin: 0 auto;
+    }
+    .title-tabs {
+      text-align: center;
+      display: block;
+      width: 200px;
+      margin-left: 45px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    .title-tabs h1 {
+      font-size: 20px;
+    }
+
 
 
   }
 
   @media only screen and (min-width: 341px) and (max-width: 767px){
 
-      .gradient {
-        position: absolute;
-        top: 0; 
-        left: 0; 
-        bottom: 0; 
-        display: block;
-        width: 100%;
-        height: 1200px;
-        padding: 0px;
-        margin: 0px; 
-      }
-
-      .progressbar{
-        width: 300px;
-        margin-left: 10px;
-      } 
-
-
-      .profile {
-        width: 100%;
-        height: 600px;
-        margin-top: -10px;
-        text-align: center;
-        position: relative;
-      }
-
-      .btn {
-        padding: 10px;
-        font-size: 24px;
-        border-radius: 5px;
-        text-align: center;
-      }
-
-      .btn-scrollTop {
-        position: absolute;
-        display: block;
-        top: 450px;
-        right: auto;
-        left: 42%;
-        width: 35px;
-        height: 35px;
-      }
-
-      a.scroll-to-top {
-        color: #FFFFFF;
-        text-decoration: none;
-        line-height: 15px;
-        display: block;
-      }
-
-      a.scroll-to-top:visited {
-        color: #FFFFFF;
-        text-decoration: none;
-      }
-
-      .profile-info {
-        position: relative;
-        float: right; 
-        padding: 50px 0 2px 10px;
-        width: 320px;
-      }
-
-      .box-profile {
-        margin: 5px 0 2px 5px;
-      }
-
-      .profile {
-        margin-top: 120px;
-
-      }
-      .profile-info__menu{
-        margin-left: -45px;
-      }
-
-      .profile-info__menu ul li a{
-        padding: 1px 5px;
-      }
-
-      .tabs{
-        margin-top: -180px;
-        margin-left: 0%;
-      }
-
-      .tabcontent{
-        width: 300px; 
-        height: 240px;
-        display: none;
-        padding: 6px 12px;
-        margin-top: -2px;
-        border: 1px solid #FFFFFF;
-        background: #FFFFFF;
-        box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.25);
-        border-radius: 5px;
-      }
-      .tab {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: Avenir-Book;
-        font-size: 12px;
-        width: 277px;
-        margin-left: 10px;
-        margin-top: 5px;
-
-      }
-      .tab li a {
-
-        display: inline-block;
-        text-align: center;
-        padding: 8px 5px;
-        border: 1px solid #FFFFFF;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        text-decoration: none; 
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-        font-size: 12px;
-      }
-
-      .tabcontent__left{
-        float: left;
-        padding: 10px;
-      }
-      .tabcontent__right{
-        float: right;
-        padding: 10px;
-        margin-top: 80px ;
-        margin-right: -20px ;
-      }
-
-      .container__after-tabs{
-        width: 200px;
-      }
-      .container__after-tabs button{
-        margin: 2px;
-      }
-
-
-      .footer__button{
-          position: relative;
-          left: 5%;
-          top: 70px;
-          margin: 0 auto;
-      }
-      .title-tabs {
-        text-align: center;
-        display: block;
-        width: 200px;
-        margin-left: 45px;
-        margin-top: 50px;
-        margin-bottom: 50px;
-      }
-      .title-tabs h1 {
-        font-size: 20px;
-      }
-
-  }
-
-
-
-  @media only screen and (min-width:768px) and (max-width:991px){
     .gradient {
       position: absolute;
       top: 0; 
@@ -761,35 +738,252 @@ body::-webkit-scrollbar-thumb:vertical{
       bottom: 0; 
       display: block;
       width: 100%;
-      height: 1000px;
+      height: 1400px;
       padding: 0px;
       margin: 0px; 
     }
 
+    .progressbar {
+      width: 300px;
+      margin-left: 10px;
+    } 
+
+    .notifications {
+      float: right;
+      margin-right: 10px;
+    }
+
+    .profile {
+      width: 100%;
+      height: 600px;
+      margin-top: -10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .btn {
+      padding: 10px;
+      font-size: 24px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .btn-scrollTop {
+      position: absolute;
+      display: block;
+      top: 450px;
+      right: auto;
+      left: 42%;
+      width: 35px;
+      height: 35px;
+    }
+
+    a.scroll-to-top {
+      color: #FFFFFF;
+      text-decoration: none;
+      line-height: 15px;
+      display: block;
+    }
+
+    a.scroll-to-top:visited {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
 
     .profile-info {
-        position: relative;
-        float: right; 
-        padding: 10px 0 10px 10px;
-        margin-right: -50px;
-        width: 400px;
-      }
+      position: relative;
+      float: right; 
+      padding: 50px 0 2px 10px;
+      width: 320px;
+    }
 
-    .tabcontent__right{
+    .box-profile {
+      margin: 5px 0 2px 5px;
+    }
+
+    .profile {
+      margin-top: 120px;
+
+    }
+    .profile-info__menu {
+      margin-left: -45px;
+    }
+
+    .profile-info__menu ul li a {
+      padding: 1px 5px;
+    }
+
+    .tabs {
+      margin-top: -180px;
+      margin-left: 0%;
+    }
+
+    .tabcontent {
+      width: 340px; 
+      height: 350px;
+      display: none;
+      padding: 6px 12px;
+      margin-top: -2px;
+      margin-left: -20px;
+      border: 1px solid #FFFFFF;
+      background: #FFFFFF;
+      box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.25);
+      border-radius: 5px;
+    }
+
+    .tabcontent#perfil {
+      height: 500px;
+    }
+
+    .tabcontent#votosamigos {
+      height: 500px;
+    }
+
+    .tabcontent-title__right {
       float: right;
       padding: 10px;
-      margin-right: -100px;
+      margin-right: 60px;
+      margin-top: 160px;
     }
 
+    .tab {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Avenir-Book;
+      font-size: 12px;
+      width: 277px;
+      margin-left: 10px;
+      margin-top: 5px;
 
-    .tabs{
+    }
+
+    .tab li a {
+      display: inline-block;
+      text-align: center;
+      padding: 8px 5px;
+      border: 1px solid #FFFFFF;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      text-decoration: none; 
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+      font-size: 12px;
+    }
+
+    .tabcontent__left {
+      float: left;
+      padding: 10px;
+    }
+
+    .tabcontent__right {
+      padding: 10px;
+      margin-top: 220px;
+      margin-right: 50px;
+      text-align: left;
+      float: none;
+    }
+
+    .tabcontent__faq {
+      margin-top: 210px;
+      text-align: left;
+      float: none;
+    }
+
+    .recents__answers {
+      margin-left: 60px;
+    }
+
+    .votes_friends {
+      margin-left: -30px;
+    }
+
+    .container__after-tabs {
+      width: 200px;
+    }
+    .container__after-tabs button {
+      margin: 2px;
+    }
+    .footer__button {
+        position: relative;
+        left: 5%;
+        top: 70px;
+        margin: 0 auto;
+    }
+    .title-tabs {
+      text-align: center;
+      display: block;
+      width: 200px;
+      margin-left: 45px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    .title-tabs h1 {
+      font-size: 20px;
+    }
+
+  }
+
+  @media only screen and (min-width:768px) and (max-width:960px){
+
+    .gradient {
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      bottom: 0; 
+      display: block;
+      width: 100%;
+      height: 1050px;
+      padding: 0px;
+      margin: 0px; 
+    }
+
+    .votes_friends {
+      width: 325px;
+    }
+
+    .profile-info {
+      position: relative;
+      float: right; 
+      padding: 10px 0 10px 10px;
+      margin-right: -50px;
+      width: 400px;
+    }
+
+    .profile_photo {
+      width: 300px;
+    }
+
+    .tabcontent__left {
+      float: left;
+      padding: 10px;
+    }
+
+    .tabcontent__right {
+      float: right;
+      padding: 10px;
+      margin-right: 10px;
+    }
+
+    .tabcontent__faq {
+      margin-top: 0px;
+    }
+
+    .tabcontent-title__right {
+      float: right;
+      padding: 10px;
+      margin-right: 10px;
+    }
+
+    .tabs {
       margin-top: 20px;
-      margin-left: 18%;
+      margin-left: 1%;
     }
 
-    .tabcontent{
-      width: 550px; 
-      height: 200px;
+    .tabcontent {
+      width: 750px; 
+      height: 300px;
       display: none;
       padding: 6px 12px;
       margin-top: -2px;
@@ -799,114 +993,138 @@ body::-webkit-scrollbar-thumb:vertical{
       border-radius: 5px;
     }
 
-    .footer__button{
-        position: relative;
-        left: 12%;
-        top: 70px;
+    .recents__answers {
+      margin-left: 70px;
+    }
 
+    .votes_friends {
+      margin-left: -70px;
+    }
+
+    .profile-info__menu {
+      margin-left: -75px;
+    }
+
+    .profile-info__menu ul li a {
+      padding: 1px 11px;
+    }
+
+    .footer__button {
+      position: absolute;
+      bottom: 5%;
+      left: calc(50% - 280px);
     }
 
     .profile {
       margin-top: 50px;
-
     }
-      .title-tabs {
-        text-align: center;
-        display: block;
-        margin-right: 290px;
-        margin-top: 50px;
-        margin-bottom: 50px;
-      }
-      .title-tabs h1 {
-        font-size: 24px;
-      }
+
+    .title-tabs {
+      text-align: center;
+      display: block;
+      margin-right: 100px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .title-tabs h1 {
+      font-size: 24px;
+    }
 
   }
 
-  @media only screen and (min-width: 992px) and (max-width: 1199px){
+  @media only screen and (min-width: 961px) and (max-width: 1199px){
 
-      .profile {
-        margin-top: 50px;
+    .profile {
+      margin-top: 50px;
+    }
 
-      }
-      .title-tabs{
-        display: none;
-      }
+    .title-tabs {
+      display: none;
+    }
+
 
   }
 
   @media only screen and (min-width:1200px){
 
-      .profile {
-        margin-top: 50px;
+    .profile {
+      margin-top: 50px;
+    }
 
-      }
+    .title-tabs {
+      display: none;
+    }
 
-      .title-tabs{
-        display: none;
-      }
-}
+  }
 
-.recents__answers {
-  width: 180px;
-  height: 200px;
-  background: #875DA2;
-  border-radius: 5px;
-  border: 1px solid #FFFFFF;
-  box-shadow: 0px 0px 0px 5px #875DA2;
-  margin-left: 140px;
-  margin-top: 10px;
-}
-
-.box-recents__answers{
-  margin: 0 auto;
-  text-align: left;
-  padding: 12px 25px;
-}
-
-
-.answers_graph {
-  margin-top: 10px;
-  width: 401px;
-  height: 179px;
-}
-
-.votes_friends {
+/*
+.ssb_down {
+  background-color: transparent;
+  bottom: 0;
+  cursor: pointer;
   position: absolute;
-  padding-left: 30px;
-  height: 204px;
-  width: 335px;
-  max-height: 204px;
-  max-width: 335px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  right: 0;
 }
 
-.votes_friends::-webkit-scrollbar {
-    width: 8px;
-    border-radius: 5px;
-}
- 
-.votes_friends::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background: #C2ADCF;
-    border-radius: 6.66px;
-}
- 
-.votes_friends::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.60);
-    border-radius: 6.66px;
+.ssb_sb {
+  background: rgba(255,255,255,0.60);
+  border-radius: 6.66px;
+  position: absolute;
+  right: 0;
 }
 
-.box-votes_friends {
-  float: left;
-  width: 60px;
-  height: 60px;
-  margin: 10px 10px 10px 0;
-  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
-  border-radius: 5px;
+.ssb_sb_down {
+  background-color: transparent;
 }
 
-.box-votes_friends img {
-  border-radius: 5px;
+.ssb_sb_over {
+  background: rgba(255,255,255,0.60);
+  border-radius: 6.66px;
+  width: 10px;
 }
+
+.ssb_st {
+  -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background: #C2ADCF;
+  border-radius: 6.66px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ssb_up {
+  display: none;
+}
+*/
+
+.scroll-content {
+  position: absolute;
+}
+
+.scroll-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 100%;
+  margin: 0 0;
+  -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background: #C2ADCF;
+  border-radius: 6.66px;
+  z-index: 9999;
+}  
+
+.scroll-bar-mid {
+  position: absolute;
+  width: 7px;
+  height: 100px;
+  margin: 0 0;
+  background: rgba(255,255,255,0.60);
+  border-radius: 6.66px;
+}
+
+
