@@ -12,7 +12,8 @@
 }
 
 .subscription-plan {
-  padding: 180px 10px;
+  position: relative;
+  padding: 40px 10px;
   width: 100%;
   margin-left: -10px; }
 
@@ -116,7 +117,7 @@
     padding-bottom: 20px; }
   .change-plan__subscription-plan table {
     position: relative;
-    margin-left: 10px;
+    margin-left: 20px;
     margin-top: -15px;
     margin-bottom: 20px; }
     .change-plan__subscription-plan table tr {

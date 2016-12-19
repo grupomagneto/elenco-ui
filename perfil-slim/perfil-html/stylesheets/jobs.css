@@ -1,4 +1,3 @@
-
 .container-outline__content {
   display: -webkit-flex;
   display: -moz-flex;
@@ -84,7 +83,7 @@
 
 .values-jobs {
   position: relative;
-  right: -100px;
+  right: -90px;
   text-align: right; }
 
 .cursor {

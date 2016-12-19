@@ -195,6 +195,7 @@ $(document).ready(function() {
     document.getElementById("menu-link").style.display = "none";
     document.getElementById("perfil-name").style.display = "block";
     document.getElementById("single-perfil").style.display = "block";
+    document.getElementById("rect-single").style.opacity = "0.6";
   });
 
 });

@@ -480,10 +480,11 @@ h1, h2, h3, h4, h5, h6, p, a, ul {
     width: 300px;
     margin: 0 0 20px 0;
     float: none; } }
-* {
+
+*, *:before, *:after {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; }
 
 html, body {
   height: 100%;
@@ -588,6 +589,10 @@ a:visited {
       opacity: 0.5;
       transform: translateY(100%);
       color: #FFFFFF; }
+
+#multiple-image{
+  margin-top: -1px;
+}
 
 .logo {
   line-height: 5; }
@@ -809,7 +814,7 @@ a:visited {
 .gender_age-group {
   position: absolute;
   margin-top: 25%;
-  width: 80px;
+  width: 90px;
   height: 60px;
   font-size: 14px;
   margin-left: -12px; }
@@ -1373,6 +1378,19 @@ section {
   position: relative;
   margin-top: 0 auto; }
 
+.second {
+  margin-top: 130px;
+}
+
+.third{
+  margin-top: 130px;
+
+  }
+.fourth{
+  margin-top: 180px;
+
+  }
+
 .content {
   display: table-cell;
   vertical-align: middle;
@@ -1469,13 +1487,15 @@ section {
   text-transform: uppercase; }
 
 .footer__section{
+  width: 100%;
   position: relative;
   bottom: 0;
-  margin: 150px 10px 10px 10px;
+  margin: 150px 10px 5px 10px;
 }
 
 .footer__section hr{
   color: #FFFFFF;
+  width: 100%;
 }
 /*TRUMPS*/
 .cursor {
