@@ -544,9 +544,16 @@ echo "<div class='tabcontent-title__right grid-6'>
 
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='scrollbar.js'></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js'></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jScrollPane/2.0.14/jquery.jscrollpane.min.js'></script>
 
 <script>
+
+$('.votes_friends').jScrollPane(); 
+
+
 
 var zero = 0;
 $('a.scroll-to-top').stop().click(function () {
@@ -572,7 +579,7 @@ $(document).ready(function(){
 		$('html').toggleClass('menu-active');
 	  	e.preventDefault();
 	});
-})
+});
 
 
 var colors = new Array(

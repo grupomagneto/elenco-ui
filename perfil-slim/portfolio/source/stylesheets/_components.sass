@@ -1,0 +1,166 @@
+// GERAL
+.gradient 
+  position: fixed 
+  top: 0 
+  left: 0 
+  bottom: 0 
+  display: block
+  width: 100%
+  padding: 0px
+  margin: 0px 
+
+.button
+  background: $background
+  border: $border
+  border-radius: $border-radius
+  opacity: 0.89
+  &:hover, &:active
+    background: $background-hover
+
+.button-medium
+  width: 250px
+  height: 60px
+
+.button-small
+  width: 120px
+  height: 50px
+
+.container-outline__content
+  height: 100vh
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  -webkit-flex-direction: column
+  -moz-flex-direction: column
+  -ms-flex-direction: column
+  -o-flex-direction: column
+  flex-direction: column
+
+// Plano de Assinatura
+.portfolio-section
+  padding: 10px
+  width: 100%
+
+.title-section
+  positiion: relative
+  left: 0
+  border-bottom: 2px solid $color-primary
+  img
+    padding-right: 10px
+    float: left
+  p 
+    positiion: relative
+    padding: 10px
+    text-transform: uppercase
+    text-align: left
+  
+.content_section
+  margin-top: 10px
+  width: 100%
+
+.content__portfolio
+
+.after-title__portfolio
+  width: 100%
+
+.switch__portfolio
+  border: 2px solid $color-primary
+  border-radius: 8px
+  position: relative
+  left: 28%
+  height: 30px
+  width: 140px
+  background: rgba(255,255,255,0.30)
+  border-radius: 8px
+
+.switch-label
+  position: relative
+  z-index: 2
+  float: left
+  width: 68px
+  line-height: 26px
+  font-size: 14px
+  padding-top: -2px
+  color: $color-primary
+  text-align: center
+  cursor: pointer
+  &:active
+
+.switch-label-off
+  padding-left: 0px
+  text-transform: capitalize
+
+.switch-label-on
+  padding-right: 0px
+  text-transform: capitalize
+
+.switch-input
+  display: none
+  &:checked +
+    .switch-label
+      text-transform: capitalize
+      color: $color-primary
+      text-shadow: 0 1px rgba(255,255,255,0.60)
+      -webkit-transition: 0.15s ease-out
+      -moz-transition: 0.15s ease-out
+      -o-transition: 0.15s ease-out
+      transition: 0.15s ease-out
+    .switch-label-on ~ .switch-selection
+      left: 70px
+
+.switch-selection
+  border: 2px solid $color-primary
+  border-radius: 8px
+  display: block
+  position: absolute
+  z-index: 1
+  top: -1px
+  left: -2px
+  width: 68px
+  height: 28px
+  background: rgba(255,255,255,0.40)
+  background-image: rgba(255,255,255,0.40)
+  background-image: rgba(255,255,255,0.40)
+  background-image: rgba(255,255,255,0.40)
+  background-image: rgba(255,255,255,0.40)
+  -webkit-transition: left 0.15s ease-out
+  -moz-transition: left 0.15s ease-out
+  -o-transition: left 0.15s ease-out
+  transition: left 0.15s ease-out
+
+//Slick Slide
+.carousel-portfolio
+  width: 100%
+  max-width: 100%
+  max-height: 100%
+  top: 30px
+  .item
+    position: relative
+    .imageContainer
+      display: block
+      width: 100%
+      position: relative
+      max-height: 100%
+      &:before
+        content: ""
+        position: absolute
+        top: 0px
+        left: 0px
+        color: red
+        width: 100%
+        height: 100%
+
+  .slick-dots
+    position: absolute
+    bottom: -20px
+    z-index: 9999
+
+.slick-dots li
+  button:before, &.slick-active button:before
+    color: $color-primary
+
+.button-portfolio
+  position: relative
+  top: 50px

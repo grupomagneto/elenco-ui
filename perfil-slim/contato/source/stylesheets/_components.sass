@@ -1,0 +1,110 @@
+// GERAL
+.gradient 
+  position: fixed 
+  top: 0 
+  left: 0 
+  bottom: 0 
+  display: block
+  width: 100%
+  padding: 0px
+  margin: 0px 
+
+.button
+  background: $background
+  border: $border
+  border-radius: $border-radius
+  opacity: 0.89
+  &:hover, &:active
+    background: $background-hover
+
+.button-medium
+  width: 250px
+  height: 50px
+
+.button-small
+  width: 120px
+  height: 50px
+
+.container-outline__content
+  height: 100vh
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  -webkit-flex-direction: column
+  -moz-flex-direction: column
+  -ms-flex-direction: column
+  -o-flex-direction: column
+  flex-direction: column
+
+//Contato
+.contact
+  padding: 10px
+  width: 100%
+
+.title-section
+  positiion: relative
+  left: 0
+  border-bottom: 2px solid $color-primary
+  img
+    padding-right: 10px
+    float: left
+  p 
+    positiion: relative
+    padding: 10px
+    text-transform: uppercase
+    text-align: left
+  
+.content_section
+  margin-top: 10px
+  width: 100%
+
+.content_contact
+  h2
+    position: relative
+    text-transform: capitalize
+    text-align: left
+    padding-left: 10px
+    margin-top: 10px
+
+  .table-left
+    position: absolute
+    left: 5%
+    margin-top: 5%
+    td
+      padding: 5px
+
+  .table-right
+    position: absolute
+    left: 15%
+    margin-top: 5%
+    td
+      text-align: left
+      padding: 10px 20px
+
+  .after__table-left
+    position: absolute
+    left: 15%
+    padding: 10px 0
+
+  h2.second-title__contact
+    position: relative
+    top: 150px
+
+  ul.redes-icon__contact,
+  ul.redes-icon__contact li 
+    position: relative
+    top: 80px
+    left: -20px
+    margin: 0
+    padding: 0
+
+  ul.redes-icon__contact li 
+    padding: 10px
+    display: inline-block
+    vertical-align: top
+
+  .button__contact
+    position: relative
+    top: 160px

@@ -1,0 +1,79 @@
+.container-outline__content {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column; }
+
+.contact {
+  padding: 30px 10px;
+  width: 100%;
+  margin-left: -10px; }
+
+.title-section {
+  position: relative;
+  left: 0;
+  border-bottom: 2px solid #FFFFFF; }
+  .title-section img {
+    padding-right: 10px;
+    float: left; }
+  .title-section p {
+    position: relative;
+    padding: 10px;
+    text-transform: uppercase;
+    text-align: left; }
+
+.content_section {
+  margin-top: 10px;
+  width: 100%; }
+
+.content_contact h2 {
+  position: relative;
+  text-transform: capitalize;
+  text-align: left;
+  padding-left: 10px;
+  margin-top: 10px; }
+.content_contact .table-left {
+  position: absolute;
+  left: 5%;
+  margin-top: 5%; }
+  .content_contact .table-left td {
+    padding: 5px; }
+.content_contact .table-right {
+  position: absolute;
+  left: 15%;
+  margin-top: 5%; }
+  .content_contact .table-right td {
+    text-align: left;
+    padding: 10px 20px; }
+.content_contact .after__table-left {
+  position: absolute;
+  left: 15%;
+  padding: 10px 0; }
+.content_contact h2.second-title__contact {
+  position: relative;
+  top: 150px; }
+.content_contact ul.redes-icon__contact,
+.content_contact ul.redes-icon__contact li {
+  position: relative;
+  top: 80px;
+  left: -20px;
+  margin: 0;
+  padding: 0; }
+  
+.content_contact ul.redes-icon__contact li {
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top; }
+
+.content_contact .button__contact {
+  position: relative;
+  top: 160px; }
+
+
+/*# sourceMappingURL=contato.css.map */

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="19px" viewBox="0 0 24 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Perfil - Scroll Agenciado</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="21.9392011 8.13041087 21.9392011 0.0583836957 0.0418 0.0583836957 0.0418 8.13041087"></polygon>
+        <polygon id="path-3" points="2.091375 2.15678315 2.091375 0.0244570652 0.00875815217 0.0244570652 0.00875815217 2.15678315 2.091375 2.15678315"></polygon>
+    </defs>
+    <g id="Perfil---Mobile-(iPhone-4)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Perfil---Scroll-Agenciado" transform="translate(-29.000000, -3088.000000)">
+            <g id="Group-15-Copy" transform="translate(20.000000, 2866.000000)">
+                <g id="Group-4" transform="translate(10.000000, 216.000000)">
+                    <g id="Page-1" transform="translate(0.000000, 7.000000)">
+                        <g id="Group-3" transform="translate(0.059783, 8.366935)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Clip-2"></g>
+                            <path d="M0.0418,0.0583836957 L0.0418,7.29345435 C0.0418,7.75569348 0.416517391,8.13041087 0.878756522,8.13041087 L21.1022565,8.13041087 C21.5644957,8.13041087 21.939213,7.75569348 21.939213,7.29345435 L21.939213,0.0583836957 L0.0418,0.0583836957 Z" id="Fill-1" fill="#FEFEFE" mask="url(#mask-2)"></path>
+                        </g>
+                        <polygon id="Fill-4" fill="#FEFEFE" points="15.668938 5.06056196 13.1971065 5.06056196 10.3136717 8.0128663 12.7854435 8.0128663"></polygon>
+                        <polygon id="Fill-6" fill="#FEFEFE" points="0.679094565 8.01284837 3.1508663 8.01284837 6.03442065 5.06054402 3.56252935 5.06054402"></polygon>
+                        <polygon id="Fill-8" fill="#FEFEFE" points="10.8517092 5.06056196 8.37981793 5.06056196 5.49638315 8.0128663 7.96815489 8.0128663"></polygon>
+                        <g id="Group-12" transform="translate(19.907609, 5.856065)">
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <g id="Clip-11"></g>
+                            <polygon id="Fill-10" fill="#FEFEFE" mask="url(#mask-4)" points="0.00875815217 2.15678315 2.09140489 2.15678315 2.09140489 0.0244570652"></polygon>
+                        </g>
+                        <polygon id="Fill-13" fill="#FEFEFE" points="20.4544103 5.06056196 18.0144429 5.06056196 15.1309484 8.0128663 17.570856 8.0128663"></polygon>
+                        <polygon id="Fill-15" fill="#FEFEFE" points="1.21713804 5.06056196 0.101594565 5.06056196 0.101594565 6.20264891"></polygon>
+                        <polygon id="Fill-17" fill="#FEFEFE" points="12.2038245 0.755335326 9.74149837 0.970791848 13.170031 3.91717772 15.6324766 3.7017212"></polygon>
+                        <polygon id="Fill-19" fill="#FEFEFE" points="8.3710837 4.33703696 10.8334696 4.12158043 7.40487717 1.17519457 4.94255109 1.39065109"></polygon>
+                        <path d="M21.842138,2.31190109 L21.7066707,0.764069565 C21.666437,0.303623913 21.260513,-0.0370173913 20.8000076,0.00327608696 L19.3076543,0.133781522 L21.842138,2.31190109 Z" id="Fill-21" fill="#FEFEFE"></path>
+                        <polygon id="Fill-23" fill="#FEFEFE" points="16.9710212 0.338255978 14.5404995 0.550902717 17.9689723 3.49734837 20.3996734 3.28464185"></polygon>
+                        <polygon id="Fill-25" fill="#FEFEFE" points="0 3.89941033 0.101570652 5.06056793 1.23558696 4.9613288"></polygon>
+                        <path d="M3.57213043,4.75692011 L6.0345163,4.54146359 L2.60604348,1.59501793 L0.653423913,1.76593641 C0.505820652,1.77878967 0.370831522,1.82960489 0.256407609,1.90738207 L3.57213043,4.75692011 Z" id="Fill-27" fill="#FEFEFE"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
