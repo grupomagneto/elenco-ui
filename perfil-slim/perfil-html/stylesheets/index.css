@@ -1223,14 +1223,8 @@ form {
   text-align: center;
   top: -60%;
   left: 55%; }
-.button-search p, .button-back p {
+.button-search p {
   margin-top: -5px; }
-.button-back {
-	position: absolute;
-  margin-top: -2px }
-.button-next {
-  position: absolute;
-  margin-top: -21px }
 
 .fullscreen-menu-search {
   position: fixed;
@@ -1383,6 +1377,7 @@ form {
 	width: 100%;
 	text-align:  center;
 }
+
 .question h1{
 	margin: 30px auto;
   font-size: 20px;
@@ -1437,3 +1432,26 @@ form {
 .button__medium {
   width: 250px;
   height: 60px; }
+
+
+/* Botão prev */
+.container__button-back {
+  display: inline-block;
+  height: 50%;
+  width: 30px;
+  text-align: left;
+  line-height: 5;
+  position: relative;
+  left: 0%; }
+
+.button-search p, .button-back p {
+  margin-top: -5px; }
+  
+.button-back {
+  position: absolute;
+  left: -20%;
+  margin-top: -7px }
+
+.button-next {
+  position: absolute;
+  margin-top: -2px }

@@ -6,8 +6,8 @@
     <title>Perfil</title>
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="stylesheets/swiper.css">
-  <link rel="stylesheet" href="stylesheets/ion.rangeSlider.css">
-  <link rel="stylesheet" href="stylesheets/ion.rangeSlider.skinFlat.css">
+    <link rel="stylesheet" href="stylesheets/ion.rangeSlider.css">
+    <link rel="stylesheet" href="stylesheets/ion.rangeSlider.skinFlat.css">
     <link rel="stylesheet" href="stylesheets/index.css">
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
 </head>
@@ -30,11 +30,11 @@
             <p id="resultado"></p>
 					</div>
 					<div class="content__index">
-	                  <div class="gender_age-group__index">
-	                    <input id="male" name="gender" type="radio" value="male" />
-	                    <label class="gender-cc male_index" for="male"></label>
-	                    <input id="female" name="gender" type="radio" value="female" /><label class="gender-cc female_index" for="female"></label>
-	                  </div>
+            <div class="gender_age-group__index">
+              <input id="male" name="gender" type="radio" value="male" />
+              <label class="gender-cc male_index" for="male"></label>
+              <input id="female" name="gender" type="radio" value="female" /><label class="gender-cc female_index" for="female"></label>
+            </div>
 						
 					</div>
 				</div>
@@ -42,15 +42,17 @@
 		     	<div class="bottombar">
 			     	<div class="container-outline__content">
 					    <a class="menu-search cursor" id="menu-link">
-			              <div class="search" id="search">
-			                <img src="images/search.svg" />
-			              </div>
-			            </a>
-		              <div class="button-search">
-				     	<div class="container-outline__content">
-			              	<button class="button button-xsmall swiper-control next" type="submit"><p>Avançar</p></button>
-				     	</div>
-		              </div>
+	              <div class="search" id="search">
+	                <img src="images/search.svg" />
+	              </div>
+			        </a>
+              <div class="button-search">
+  				     	<div class="container-outline__content">
+  	              	<button class="button button-xsmall swiper-control next" type="submit">
+                      <p>Avançar</p>
+                    </button>
+  				     	</div>
+              </div>
 			     	</div>
 		     	</div>
     		  <div class="fullscreen-menu-search">
@@ -77,12 +79,18 @@
                       </div>
                       <div class="after-ranger-slide__search">
                         <p class="font-family color-primary">
-                          Cor da pele: <span class="font-family color-primary bold">Branca</span>
+                          Cor da pele: 
+                          <span class="font-family color-primary bold">Branca</span>
                         </p>
                         <p class="font-family color-primary">
-                          Bairro: <span class="font-family color-primary bold">Lago Norte</span>
+                          Bairro: 
+                          <span class="font-family color-primary bold">
+                            Lago Norte
+                          </span>
                         </p>
-                        <button class="button button__small" type="button"> Alterar</button>
+                        <button class="button button__small" type="button"> 
+                          Alterar
+                        </button>
                       </div>
                       <div class="title__order-perfil">
                         <span class="glyphicon glyphicon-sort" />
@@ -94,9 +102,13 @@
                       <div class="button__order-perfil">
                         <div class="switch-field font-family">
                           <input checked="" id="switch_left" name="order" type="radio" value="yes" />
-                          <label class="button button__small" for="switch_left"> Mais avaliados</label>
+                          <label class="button button__small" for="switch_left"> 
+                            Mais avaliados
+                          </label>
                           <input id="switch_right" name="order" type="radio" value="no" />
-                          <label class="button button__small" for="switch_right"> Mais novos</label>
+                          <label class="button button__small" for="switch_right"> 
+                            Mais novos
+                          </label>
                         </div>
                       </div>
                       <div class="arrow-down"></div>
@@ -109,12 +121,12 @@
 		     </div>
 
             </div>
-<!-- 
+ 
         <div class="swiper-slide gradient">
             <div class="container-outline__content">
         				<div class="topbar">
         					<?php 
-        						// include "top-menu.php";
+        						 include "top-menu.php";
         					 ?>
            			</div>
 
@@ -123,34 +135,38 @@
         						<h1 class="font-family color-primary"> Defina a faixa etária?</h1>
         					</div>
         					<div class="content__index">
-        	                  <div class="ranger-slide__index">
-        	                    <input class="js-range-slider font-family color-primary" name="ranger" type="text" value="" />
-        	                  </div>
+	                  <div class="ranger-slide__index">
+	                    <input class="js-range-slider font-family color-primary" name="ranger" type="text" value="" />
+	                  </div>
         					</div>
         				</div>
 
       		     	<div class="bottombar">
       			     	<div class="container-outline__content">
-      					    <a class="menu-search cursor" id="menu-link">
-      			              	<button class="button button-back button-xsmall swiper-control prev" type="button"><p>Voltar</p></button>
-      			            </a>
-      		              <div class="button-search">
-            				     	<div class="container-outline__content">
-            			              	<button class="button  button-next button-xsmall swiper-control next" type="button"><p>Avançar</p></button>
-            				     	</div>
-      		              </div>
+      					    <a class="container__button-back cursor">
+			              	<button class="button button-back button-xsmall swiper-control prev" type="button">
+                        <p>Voltar</p>
+                      </button>
+      			        </a>
+  		              <div class="button-search">
+        				     	<div class="container-outline__content">
+  			              	<button class="button  button-next button-xsmall swiper-control next" type="button">
+                          <p>Avançar</p>
+                        </button>
+        				     	</div>
+  		              </div>
       			     	</div>
       		     	</div>
 
 
   		        </div>
-            </div> -->
+            </div> 
 
- <!--       <div class="swiper-slide gradient">     
+     <div class="swiper-slide gradient">     
           <div class="container-outline__content">
               <div class="topbar">
                 <?php 
-                  // include "top-menu.php";
+                  include "top-menu.php";
                  ?>
               </div>
 
@@ -172,28 +188,32 @@
 
             <div class="bottombar">
               <div class="container-outline__content">
-                <a class="menu-search cursor" id="menu-link">
-                        <button class="button button-back button-xsmall  swiper-control prev" type="button"><p>Voltar</p></button>
-                    </a>
-                    <div class="button-search">
-                <div class="container-outline__content">
-                        <button class="button button-xsmall button-next swiper-control next" type="button"><p>Avançar</p></button>
+                <a class="container__button-back cursor">
+                  <button class="button button-back button-xsmall  swiper-control prev" type="button">
+                    <p>Voltar</p>
+                  </button>
+                </a>
+                <div class="button-search">
+                  <div class="container-outline__content">
+                    <button class="button button-xsmall button-next swiper-control next" type="button">
+                      <p>Avançar</p>
+                    </button>
+                  </div>
                 </div>
-                    </div>
               </div>
             </div>
 
 
            </div>
             	
-        </div> -->
+        </div>
 
 
-<!--        <div class="swiper-slide gradient">     
+       <div class="swiper-slide gradient">     
           <div class="container-outline__content">
               <div class="topbar">
                 <?php 
-                  // include "top-menu.php";
+                  include "top-menu.php";
                  ?>
               </div>
 
@@ -254,39 +274,42 @@
 
             <div class="bottombar">
               <div class="container-outline__content">
-                <a class="menu-search cursor" id="menu-link">
-                        <button class="button button-back button-xsmall  swiper-control prev" type="button"><p>Voltar</p></button>
-                    </a>
-                    <div class="button-search">
-                <div class="container-outline__content">
-                  <button class="button button-next button-xsmall" type="submit">
-                    <p>Buscar</p>
+                <a class="container__button-back cursor">
+                  <button class="button button-back button-xsmall  swiper-control prev" type="button">
+                    <p>Voltar</p>
                   </button>
+                </a>
+                <div class="button-search">
+                  <div class="container-outline__content">
+                    <button class="button button-next button-xsmall" type="submit">
+                      <p>Buscar</p>
+                    </button>
+                  </div>
                 </div>
-                    </div>
               </div>
             </div>
 
 
            </div>
               
-        </div> -->
-
         </div>
+
+      </div>
     </div>
 </form>
 
-
     <!-- Swiper JS -->
     <script src="javascripts/jquery-1.12.1.min.js"></script>
+    <script src="javascripts/swiper.jquery.min.js"></script>
+    <script src="javascripts/swiper.min.js"></script>
+    <script src="javascripts/index.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="http://alico.me/lib/slimscroll.js"></script>
-    <script src="javascripts/swiper.min.js"></script>
-   <script src="javascripts/ion.rangeSlider.min.js"></script>
+    <script src="javascripts/ion.rangeSlider.min.js"></script>
 
-    <!-- Initialize Swiper -->
-    <script src="javascripts/index.js"> </script>
-
+    <!-- Initialize Swiper
+    -->
+    
 <script>
   $(function(){
 
