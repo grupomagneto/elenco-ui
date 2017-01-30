@@ -66,8 +66,8 @@ error_reporting(E_ALL);
 
   <div class='container'>
 <?php
-
-  $result=mysqli_query($link, "SELECT * FROM bank_accounts WHERE id_elenco_financeiro=".$_SESSION['user']);
+  $id = $_SESSION['user'];
+  $result=mysqli_query($link, "SELECT * FROM bank_accounts WHERE id_elenco_financeiro='$id' AND active='1'");
   $row=mysqli_fetch_array($result);
   if (!empty($row['active']) || $row['active'] == '1') {
         $full_name = $row['full_name'];
