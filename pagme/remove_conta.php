@@ -16,18 +16,13 @@
     $sexo = 'o';
   }
 
-$id = $_SESSION['user'];
-$name = $userRow['nome'];
-$cpf = $userRow['cpf'];
-$bank_number = $_POST['banco'];
-$bank_agency = $_POST['agencia'];
-$bank_account = $_POST['conta'];
-$timestamp = date('Y-m-d h:i:s', time());
-
-require_once 'bank_names.php';
-// echo $cpf;
-
-$insert = mysqli_query($link, "INSERT INTO bank_accounts (id_elenco_financeiro, bank_number, bank_name, bank_agency, bank_account, cpf, full_name, active, timestamp) VALUES ('$id','$bank_number','$bank_name','$bank_agency','$bank_account','$cpf','$name','1','$timestamp')");
+$user_ID = $_SESSION['user'];
+$result=mysqli_query($link, "SELECT * FROM bank_accounts WHERE id_elenco_financeiro='$user_ID' AND active='1'");
+$row=mysqli_fetch_array($result);
+if (!empty($row['active']) || $row['active'] == '1') {
+  $id = $row['id'];
+  mysqli_query($link, "UPDATE bank_accounts SET active='0' WHERE id='$id'");
+}
 header("Location: dbancarios.php");
 exit;
 ?>

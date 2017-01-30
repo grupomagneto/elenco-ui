@@ -3,24 +3,24 @@
 	if( isset($_SESSION['user'])!="" ){
 		header("Location: home.php");
 	}
-	
+
 	$error = false;
 
 	if ( isset($_POST['btn-signup']) ) {
-		
+
 		// clean user inputs to prevent sql injections
 		// $name = trim($_POST['name']);
 		// $name = strip_tags($name);
 		// $name = htmlspecialchars($name);
-		
+
 		$email = trim($_POST['email']);
 		$email = strip_tags($email);
 		$email = htmlspecialchars($email);
-		
+
 		$pass = trim($_POST['pass']);
 		$pass = strip_tags($pass);
 		$pass = htmlspecialchars($pass);
-		
+
 		// // basic name validation
 		// if (empty($name)) {
 		// 	$error = true;
@@ -32,7 +32,7 @@
 		// 	$error = true;
 		// 	$nameError = "Name must contain alphabets and space.";
 		// }
-		
+
 		//basic email validation
 		if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
 			$error = true;
@@ -55,16 +55,16 @@
 			$error = true;
 			$passError = "Sua senha deve ter no mínimo 6 caracteres.";
 		}
-		
+
 		// password encrypt using SHA256();
 		$password = hash('sha256', $pass);
-		
+
 		// if there's no error, continue to signup
 		if( !$error ) {
-			
+
 			$query = "UPDATE tb_elenco SET senha='$password' WHERE email='$email'";
 			$res = mysqli_query($link, $query);
-				
+
 			if ($res) {
 				$errTyp = "success";
 				$errMSG = "Senha criada com sucesso, você já pode fazer login.";
@@ -73,12 +73,12 @@
 				unset($pass);
 			} else {
 				$errTyp = "danger";
-				$errMSG = "Ocorreu um erro, entre em contato por whatsapp: 61 99311-0767.";	
-			}	
-				
+				$errMSG = "Ocorreu um erro, entre em contato por whatsapp: 61 99311-0767.";
+			}
+
 		}
-		
-		
+
+
 	}
 ?>
 <!DOCTYPE html>
@@ -90,25 +90,29 @@
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
-
+<div class="gradient">
 <div class="container">
 
 	<div id="login-form">
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-    
+
     	<div class="col-md-12">
-        
+
+        <div class="form-group">
+          <center><a href="http://www.magnetoelenco.com.br"><img src="images/logo_branca.svg" /></a></center>
+        </div>
+
         	<div class="form-group">
             	<h2 class="">1º acesso ao PAGME</h2>
             </div>
-        
+
         	<div class="form-group">
             	<hr />
             </div>
-            
+
             <?php
 			if ( isset($errMSG) ) {
-				
+
 				?>
 				<div class="form-group">
             	<div class="alert alert-<?php echo ($errTyp=="success") ? "success" : $errTyp; ?>">
@@ -118,7 +122,7 @@
                 <?php
 			}
 			?>
-            
+
   <!--           <div class="form-group">
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -126,15 +130,15 @@
                 </div>
                 <span class="text-danger"><?php echo $nameError; ?></span>
             </div> -->
-            
+
             <div class="form-group">
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            	<input type="email" name="email" class="form-control" placeholder="Seu e-mail cadastrado na Magneto Elenco" maxlength="40" />
+            	<input type="email" name="email" class="form-control" placeholder="Digite seu e-mail cadastrado na Magneto Elenco" maxlength="40" />
                 </div>
                 <!-- <span class="text-danger"><?php echo $emailError; ?></span> -->
             </div>
-            
+
             <div class="form-group">
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
@@ -150,30 +154,32 @@
                 </div>
                 <!-- <span class="text-danger"><?php echo $passError; ?></span> -->
             </div>
-            
+
             <div class="form-group">
             	<hr />
             </div>
-            
+
             <div class="form-group">
             	<button type="submit" class="btn btn-block btn-primary" name="btn-signup">Criar senha</button>
             </div>
-            
+
             <div class="form-group">
             	<hr />
             </div>
-            
+
             <div class="form-group">
             	<a href="index.php">Voltar ao login</a>
             </div>
-        
+
         </div>
-   
+
     </form>
-    </div>	
+    </div>
 
 </div>
-
+</div>
+<script src='//code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='assets/js/gradient.js'></script>
 </body>
 </html>
 <?php

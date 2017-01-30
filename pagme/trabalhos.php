@@ -1,6 +1,6 @@
 <?php
 	require_once 'dbconnect.php';
-	
+
 	// if session is not set this will redirect to login page
 	if( !isset($_SESSION['user']) ) {
 		header("Location: index.php");
@@ -22,42 +22,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Bem-vind<?php echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
-<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,900,900italic,400,400italic' />
-<!-- <link rel='stylesheet' type='text/css' href='DataTables/datatables.min.css'/>
-<link rel='stylesheet' type='text/css' href='DataTables/style.css'/> -->
-<style type='text/css'>
-  h1 { font-family: 'Roboto', sans-serif; font-weight: 400; }
-  p { font-family: 'Roboto', sans-serif; font-weight: 300; }
-  .set-width {
-    width: 85px;
-  }
-  #premium {
-    color: red;
-  }
-  #gratuito {
-    color: orange;
-  }
-  #ator {
-    color: green;
-  }
-    input[type='number'] {
-    width:50px;
-  }
-  </style>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
-<!-- <script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script> -->
-<!-- <script type='text/javascript' src='DataTables/datatables.min.js'></script>
-<script type='text/javascript'>
-$(document).ready(function(){
-    $('#resultado').DataTable( {
-    "aaSorting": [[6,'desc'], [0,'asc']]
-    } );
-} );
-</script> -->
+<link rel="stylesheet" href="assets/css/jobs.css" type="text/css"  />
 </head>
 <body>
-
 	<nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -76,7 +45,7 @@ $(document).ready(function(){
             <li><a href="dbancarios.php">Meus dados bancários</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            
+
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 			  <span class="glyphicon glyphicon-user"></span>&nbsp;<?php echo $userRow['nome_artistico']; ?>&nbsp;<span class="caret"></span></a>
@@ -87,18 +56,13 @@ $(document).ready(function(){
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </nav> 
+    </nav>
 
 	<div id="wrapper">
-
+<div class="gradient">
 	<div class="container">
-    
-    	<div class="page-header">
-    	<h3>Meus trabalhos</h3>
-    	</div>
-        
-        <div class="row">
-        <div class="col-lg-12">
+       <div class="row">
+        <div class="col-lg-6">
         <?php
   // $result = mysqli_query($link, "SELECT id_elenco, nome_artistico, tipo_cadastro_vigente, data_contrato_vigente, data_1o_contrato, tl_celular, email, dt_insercao FROM tb_elenco WHERE data_contrato_vigente IS NULL OR TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) > '2' ORDER BY dt_insercao DESC LIMIT 0, 100");
         $id = '10377';
@@ -109,7 +73,7 @@ $(document).ready(function(){
      die('Erro: ' . mysqli_error($link));
   }
 ?>
-        <table id='resultado' class='compact nowrap stripe hover row-border order-column' cellspacing='0' width='100%'>
+<!--         <table id='resultado' class='compact nowrap stripe hover row-border order-column' cellspacing='0' width='100%'>
     <thead>
       <tr>
         <th>Data do trabalho</th>
@@ -118,7 +82,26 @@ $(document).ready(function(){
         <th>Status</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody> -->
+
+  <div class="container-outline__content">
+    <div class="jobs-section">
+      <div class="title-section">
+        <img alt="jobs" src="images/jobs.svg" />
+        <p class="font-family font-medium color-primary">
+          meus trabalhos
+        </p>
+      </div>
+      <div class="content_section">
+        <div class="content__jobs">
+          <div class="after-title__jobs">
+            <h2 class="font-family font-medium color-primary">
+              Total: 16 trabalho(s)
+            </h2>
+          </div>
+
+
+
 <?php
   while ($row = mysqli_fetch_array($result)) {
     $cliente = $row['cliente_job'];
@@ -151,27 +134,56 @@ $(document).ready(function(){
     // document.getElementById('checar".$id."').submit();
     // });
     // </script>";
-echo "      <tr>";
-echo "          <td>".$data_job."</td>";
-echo "          <td>".$cliente."</td>";
-echo "          <td>".$cache."</td>";
-echo "          <td>".$liberado."</td>";
-echo "      </tr>";
+echo "
+<div class='my-jobs__box'>
+<table class='table-menu-jobs'>
+<tr>
+  <td>
+    <div class='title-jobs font-family color-primary'>
+      <p class='bold'>
+        $cliente
+      </p>
+      <p>
+        Data do trabalho
+      </p>
+    </div>
+    <div class='values-jobs font-family color-primary'>
+    <BR />
+      <p class='bold'>
+        $cache
+      </p>
+      <p>
+        $data_job
+      </p>
+    </div>
+  </td>
+</tr>
+</table>
+</div>";
+
+// echo "      <tr>";
+// echo "          <td>".$data_job."</td>";
+// echo "          <td>".$cliente."</td>";
+// echo "          <td>".$cache."</td>";
+// echo "          <td>".$liberado."</td>";
+// echo "      </tr>";
 }
 ?>
-    </tbody>
-  </table>
-</div></center>
+
         </div>
-        </div>
-    
+      </div>
     </div>
-    
-    </div>
-    
-    <script src="assets/jquery-1.11.3-jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+<script src='//code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src='assets/js/gradient.js'></script>
+
 </body>
 </html>
 <?php

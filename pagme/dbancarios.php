@@ -1,9 +1,9 @@
 <?php
-	require_once 'dbconnect.php';
-  ini_set('display_errors', 1);
+require_once 'dbconnect.php';
+ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-	
+
 	// if session is not set this will redirect to login page
 	if( !isset($_SESSION['user']) ) {
 		header("Location: index.php");
@@ -48,7 +48,7 @@ error_reporting(E_ALL);
             <li class='active'><a href='dbancarios.php'>Meus dados bancários</a></li>
           </ul>
           <ul class='nav navbar-nav navbar-right'>
-            
+
             <li class='dropdown'>
               <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>
         <span class='glyphicon glyphicon-user'></span>&nbsp;<?php echo $userRow['nome_artistico']; ?>&nbsp;<span class='caret'></span></a>
@@ -60,10 +60,10 @@ error_reporting(E_ALL);
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </nav> 
+    </nav>
 
-  <div id='wrapper'>
-
+<div id='wrapper'>
+<div class="gradient ">
   <div class='container'>
 <?php
   $id = $_SESSION['user'];
@@ -79,18 +79,18 @@ error_reporting(E_ALL);
         $bank_account = $row['bank_account'];
     echo "
       <div id='login-form'>
-    <form method='post' action='apaga_conta.php' autocomplete='off'>
-    
+    <form method='post' action='remove_conta.php' autocomplete='off'>
+
       <div class='col-md-12'>
-        
+
           <div class='form-group'>
               <h3>Conta bancária cadastrada:</h3>
             </div>
-        
+
           <div class='form-group'>
               <hr />
             </div>
-                       
+
         <div class='form-group'>
           <p><h5>Nome:</h5></p>
           <div class='input-group'>
@@ -136,30 +136,31 @@ error_reporting(E_ALL);
         </div>
 
 </div></form></div></div></div>
-    
+
     <script src='assets/jquery-1.11.3-jquery.min.js'></script>
     <script src='assets/js/bootstrap.min.js'></script>
-    
+    <script src='assets/js/gradient.js'></script>
+
 </body>
 </html>";
   } else {
 ?>
   <div id='login-form'>
     <form method='post' action='insere_conta.php' autocomplete='off'>
-    
+
       <div class='col-md-12'>
-        
+
           <div class='form-group'>
               <h3>Cadastrar conta bancária:</h3>
             </div>
-        
+
           <div class='form-group'>
               <hr />
             </div>
-            
+
             <?php
       if ( isset($errMSG) ) {
-        
+
         ?>
         <div class='form-group'>
               <div class='alert alert-danger'>
@@ -169,7 +170,7 @@ error_reporting(E_ALL);
                 <?php
       }
       ?>
-            
+
         <div class='form-group'>
           <p><h5>Nome:</h5></p>
           <div class='input-group'>
@@ -356,10 +357,11 @@ error_reporting(E_ALL);
         </div>
 
 </div></form></div></div></div>
-    
-    <script src='assets/jquery-1.11.3-jquery.min.js'></script>
+
+    <script src='//code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src='assets/js/bootstrap.min.js'></script>
-    
+    <script src='assets/js/gradient.js'></script>
+
 </body>
 </html>
 <?php
