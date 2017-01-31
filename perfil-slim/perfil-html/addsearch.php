@@ -1,20 +1,30 @@
 <?php 
 
-$gender = $_POST["gender"];
-$ranger = $_POST["ranger"];
-$raca = $_POST["raca"];
-$bairro = $_POST["bairro"];
+$imagefavorita = $_POST["imagefavorita"];
 
-$mysqli = new mysqli('localhost:8888', 'root', 'root', 'testeperfil');
+echo $imagefavorita;
 
-$sql = "INSERT INTO `perfiltable` ('gender', 'ranger', 'raca', 'bairro') VALUES ('{$gender}', '{$ranger}', '{$raca}', '{$bairro}')";
+// $mysqli = new mysqli('localhost:8888', 'root', '', 'testeperfil');
 
-if($mysqli->query($sql) === false){
-      echo mysqli_connect_error();
-    }
-    else{
-    echo "salvo";
-    }
+//  $sql = "INSERT INTO `perfiltable` ('imagefavorita') VALUES ('{$imagefavorita}')";
+
+// if($mysqli->query($sql) === false) {
+//     	echo mysqli_connect_error();
+//     	echo "<script language='javascript'>
+
+// 			alert('Erro!!!');
+
+// 			</script>
+// 			";
+//     }
+//     else {
+//     	echo "<script language='javascript'>
+
+// 			alert('Inseriu!!!');
+
+// 			</script>
+// 			";
+//     }
 
 ?>
 

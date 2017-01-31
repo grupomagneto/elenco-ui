@@ -3,13 +3,11 @@ var swiper = new Swiper('.swiper-container', {
     keyboardControl: true,
     nextButton: '.swiper-control.next',
     prevButton: '.swiper-control.prev'
-});  
-
+});
 
 //Ranger Slide
-
 $(document).ready(function() {
-var $range = $(".js-range-slider");
+  var $range = $(".js-range-slider");
 
   $range.ionRangeSlider({
       type: "double",
@@ -22,7 +20,9 @@ var $range = $(".js-range-slider");
       max_postfix: "+",
       grid: false
     });
+
 });
+
 // Gradient
 var colors = new Array(
 [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
@@ -65,7 +65,7 @@ function updateGradient(container) {
 
   }
 }
-setInterval(function(){updateGradient('.gradient')},10);
+setInterval(function(){updateGradient('.gradient')}, 10);
 
 // Menu top trigger
 function showMenuItems () {
@@ -89,7 +89,6 @@ $(document).ready(function() {
     /* Act on the event */
     
     showMenuItems()
-
 
   });
   
@@ -118,11 +117,9 @@ $(document).ready(function() {
     
     showMenuFav()
 
-
   });
   
 });
-
 
 // Menu bottom search
 function showMenuSearch () {
@@ -147,11 +144,9 @@ $(document).ready(function() {
     
     showMenuSearch()
 
-
   });
   
 });
-
 
 //Select option
 
@@ -191,7 +186,8 @@ $('#raca').each(function(){
         $styledSelect.text($(this).text()).removeClass('active');
         $this.val($(this).attr('rel')); 
         
-            menor.slideNext();
+          // jump next slide
+          swiper.slideNext();
         $list.hide();
         //console.log($this.val());
     });
@@ -239,7 +235,8 @@ $('#bairro').each(function(){
         $styledSelect.text($(this).text()).removeClass('active');
         $this.val($(this).attr('rel')); 
         
-            menor.slideNext();
+          // jump next slide
+          swiper.slideNext();
         $list.hide();
         //console.log($this.val());
     });
@@ -249,4 +246,20 @@ $('#bairro').each(function(){
         $list.hide();
     });
 
+});
+
+// jump next slide
+$(document).ready(function() {
+  $("#perfil_index [name='gender']").click(function() {
+    if ($(this).attr("value") == "Male") {
+    
+         swiper.slideNext();
+     
+    }
+    if ($(this).attr("value") == "Female") {
+     
+         swiper.slideNext();
+      
+    }
+  });
 });
