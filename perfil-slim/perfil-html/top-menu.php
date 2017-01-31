@@ -1,9 +1,18 @@
 
-			      <div class="container-outline__center">
-			        <a class="menu-button cursor"><img src="images/menu.svg" /></a><a class="logo cursor"><img src="images/logo.svg" /></a><a class="menu-fav cursor"><img src="images/menu-fav.svg" /><span class="fav-number font-family">1</span></a>
-			      </div>
-			    </div>
-			    <div class="fullscreen-menu">
+<!--       <div class="container-outline__center">
+        <a class="menu-button cursor">
+          <img src="images/menu.svg" />
+        </a>
+        <a class="logo cursor">
+          <img src="images/logo.svg" />
+        </a>
+        <a class="menu-fav cursor">
+          <img src="images/menu-fav.svg" />
+          <span class="fav-number font-family">1</span>
+        </a>
+      </div> -->
+
+    <div class="fullscreen-menu">
       <div class="mask">
         <div class="container-outline__center">
           <span class="arrow-up">
@@ -71,6 +80,7 @@
         </div>
       </div>
     </div>
+
     <div class="fullscreen-menu-fav">
       <div class="mask-fav">
         <div class="container-outline__center">
@@ -154,4 +164,4 @@
           </span>
         </div>
       </div>
-
+    </div>

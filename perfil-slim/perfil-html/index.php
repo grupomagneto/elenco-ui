@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -14,30 +14,41 @@
 <body>
   <form id="perfil_index" action="addsearch.php" method="POST" >
     <!-- Swiper -->
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide gradient">
-		     <div class="container-outline__content">
-				<div class="topbar">
-					<?php 
-						include "top-menu.php";
-					 ?>
-       			</div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide gradient">
+		    <div class="container-outline__content">
+    				<div class="topbar">
+              <div class="container-outline__center">
+                <a class="menu-button cursor">
+                  <img src="images/menu.svg" />
+                </a>
+                <a class="logo cursor">
+                  <img src="images/logo.svg" />
+                </a>
+                <a class="menu-fav cursor">
+                  <img src="images/menu-fav.svg" />
+                  <span class="fav-number font-family">1</span>
+                </a>
+              </div>
+           	</div>
 
-				<div class="middle">
-					<div class="question">
-						<h1 class="font-family color-primary"> Quem você está buscando?</h1>
-            <p id="resultado"></p>
-					</div>
-					<div class="content__index">
-            <div class="gender_age-group__index">
-              <input id="male" name="gender" type="radio" value="male" />
-              <label class="gender-cc male_index" for="male"></label>
-              <input id="female" name="gender" type="radio" value="female" /><label class="gender-cc female_index" for="female"></label>
-            </div>
-						
-					</div>
-				</div>
+            <?php 
+              include "top-menu.php";
+            ?>
+
+    				<div class="middle">
+    					<div class="question">
+    						<h1 class="font-family color-primary"> Quem você está buscando?</h1>
+    					</div>
+    					<div class="content__index">
+                <div class="gender_age-group__index">
+                  <input id="male" name="gender" type="radio" value="Male" />
+                  <label class="gender-cc male_index" for="male"></label>
+                  <input id="female" name="gender" type="radio" value="Female" /><label class="gender-cc female_index" for="female"></label>
+                </div>
+    					</div>
+    				</div>
 
 		     	<div class="bottombar">
 			     	<div class="container-outline__content">
@@ -46,15 +57,16 @@
 	                <img src="images/search.svg" />
 	              </div>
 			        </a>
-              <div class="button-search">
+              <div class="button-next button-next__first-slide">
   				     	<div class="container-outline__content">
-  	              	<button class="button button-xsmall swiper-control next" type="submit">
+  	              	<button class="button button-xsmall swiper-control next">
                       <p>Avançar</p>
                     </button>
   				     	</div>
               </div>
 			     	</div>
 		     	</div>
+
     		  <div class="fullscreen-menu-search">
               <div class="mask-search">
                 <form action="">
@@ -67,9 +79,9 @@
                         <p class="title-menu font-family color-primary">
                           Sexo:
                         </p>
-                        <input id="male" name="gender" type="radio" value="male" />
+                        <input id="male" name="gender" type="radio" value="Male" />
                         <label class="gender-cc male" for="male"></label>
-                        <input id="female" name="gender" type="radio" value="female" /><label class="gender-cc female" for="female"></label>
+                        <input id="female" name="gender" type="radio" value="Female" /><label class="gender-cc female" for="female"></label>
                       </div>
                       <div class="ranger-slide">
                         <p class="font-family color-primary">
@@ -117,58 +129,84 @@
                 </form>
               </div>
           </div>
+		    </div>
 
-		     </div>
-
-            </div>
+      </div>
  
-        <div class="swiper-slide gradient">
-            <div class="container-outline__content">
-        				<div class="topbar">
-        					<?php 
-        						 include "top-menu.php";
-        					 ?>
-           			</div>
+      <div class="swiper-slide gradient">
+          <div class="container-outline__content">
 
-        				<div class="middle">
-        					<div class="question">
-        						<h1 class="font-family color-primary"> Defina a faixa etária?</h1>
-        					</div>
-        					<div class="content__index">
-	                  <div class="ranger-slide__index">
-	                    <input class="js-range-slider font-family color-primary" name="ranger" type="text" value="" />
-	                  </div>
-        					</div>
-        				</div>
+            <div class="topbar">
+              <div class="container-outline__center">
+                <a class="menu-button cursor">
+                  <img src="images/menu.svg" />
+                </a>
+                <a class="logo cursor">
+                  <img src="images/logo.svg" />
+                </a>
+                <a class="menu-fav cursor">
+                  <img src="images/menu-fav.svg" />
+                  <span class="fav-number font-family">1</span>
+                </a>
+              </div>
+            </div>
 
-      		     	<div class="bottombar">
-      			     	<div class="container-outline__content">
-      					    <a class="container__button-back cursor">
-			              	<button class="button button-back button-xsmall swiper-control prev" type="button">
-                        <p>Voltar</p>
+            <?php 
+              include "top-menu.php";
+            ?>
+
+    				<div class="middle">
+    					<div class="question">
+    						<h1 class="font-family color-primary"> Defina a faixa etária?</h1>
+    					</div>
+    					<div class="content__index">
+                <div class="ranger-slide__index">
+                  <input class="js-range-slider font-family color-primary" name="ranger" type="text" value="" />
+                </div>
+    					</div>
+    				</div>
+
+  		     	<div class="bottombar">
+  			     	<div class="container-outline__content">
+  					    <a class="container__button-back cursor">
+	              	<button class="button button-back button-xsmall swiper-control prev" type="button">
+                    <p>Voltar</p>
+                  </button>
+  			        </a>
+                <div class="button-next">
+                  <div class="container-outline__content">
+                      <button class="button button-xsmall swiper-control next">
+                        <p>Avançar</p>
                       </button>
-      			        </a>
-  		              <div class="button-search">
-        				     	<div class="container-outline__content">
-  			              	<button class="button  button-next button-xsmall swiper-control next" type="button">
-                          <p>Avançar</p>
-                        </button>
-        				     	</div>
-  		              </div>
-      			     	</div>
-      		     	</div>
+                  </div>
+                </div>
+  			     	</div>
+  		     	</div>
 
-
-  		        </div>
-            </div> 
+  		    </div>
+      </div> 
 
      <div class="swiper-slide gradient">     
           <div class="container-outline__content">
-              <div class="topbar">
-                <?php 
-                  include "top-menu.php";
-                 ?>
+              
+            <div class="topbar">
+              <div class="container-outline__center">
+                <a class="menu-button cursor">
+                  <img src="images/menu.svg" />
+                </a>
+                <a class="logo cursor">
+                  <img src="images/logo.svg" />
+                </a>
+                <a class="menu-fav cursor">
+                  <img src="images/menu-fav.svg" />
+                  <span class="fav-number font-family">1</span>
+                </a>
               </div>
+            </div>
+
+            <?php 
+              include "top-menu.php";
+            ?>
 
             <div class="middle">
               <div class="question">
@@ -193,11 +231,11 @@
                     <p>Voltar</p>
                   </button>
                 </a>
-                <div class="button-search">
+                <div class="button-next">
                   <div class="container-outline__content">
-                    <button class="button button-xsmall button-next swiper-control next" type="button">
-                      <p>Avançar</p>
-                    </button>
+                      <button class="button button-xsmall swiper-control next">
+                        <p>Avançar</p>
+                      </button>
                   </div>
                 </div>
               </div>
@@ -211,18 +249,32 @@
 
        <div class="swiper-slide gradient">     
           <div class="container-outline__content">
-              <div class="topbar">
-                <?php 
-                  include "top-menu.php";
-                 ?>
+
+            <div class="topbar">
+              <div class="container-outline__center">
+                <a class="menu-button cursor">
+                  <img src="images/menu.svg" />
+                </a>
+                <a class="logo cursor">
+                  <img src="images/logo.svg" />
+                </a>
+                <a class="menu-fav cursor">
+                  <img src="images/menu-fav.svg" />
+                  <span class="fav-number font-family">1</span>
+                </a>
               </div>
+            </div>
+
+            <?php 
+             include "top-menu.php";
+            ?>
 
             <div class="middle">
               <div class="question">
-                <h1 class="font-family color-primary"> Qual a cor da pele?</h1>
+                <h1 class="font-family color-primary"> Qual o Bairro?</h1>
               </div>
               <div class="content__index">
-                  <select id="bairro" name="bairro">
+                  <select name="bairro" id="bairro">
                     <option disabled value="1">Selecione...</option>
                     <option value="Águas Claras">Águas Claras</option>
                     <option value="Asa Norte">Asa Norte</option>
@@ -267,7 +319,7 @@
                     <option value="Vila Estrutural">Vila Estrutural</option>
                     <option value="Vila Planalto">Vila Planalto</option>
                     <option value="Zona Rural">Zona Rural</option>
-                    <option value="outros">Outros</option>
+                    <option value="Outros">Outros</option>
                   </select>
               </div>
             </div>
@@ -279,11 +331,11 @@
                     <p>Voltar</p>
                   </button>
                 </a>
-                <div class="button-search">
+                <div class="button-next">
                   <div class="container-outline__content">
-                    <button class="button button-next button-xsmall" type="submit">
-                      <p>Buscar</p>
-                    </button>
+                      <button class="button button-xsmall" type="submit">
+                        <p>Buscar</p>
+                      </button>
                   </div>
                 </div>
               </div>
@@ -303,47 +355,9 @@
     <script src="javascripts/swiper.jquery.min.js"></script>
     <script src="javascripts/swiper.min.js"></script>
     <script src="javascripts/index.js"></script>
+    <script src="javascripts/ion.rangeSlider.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="http://alico.me/lib/slimscroll.js"></script>
-    <script src="javascripts/ion.rangeSlider.min.js"></script>
 
-    <!-- Initialize Swiper
-    -->
-    
-<script>
-  $(function(){
-
-    $('#perfil_index').submit(function(event){
-      event.preventDefault();
-
-        var perfilDados = new PerfilData($(this)[0]);
-
-      $.ajax({
-        url: 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/addsearch.php',
-        type: 'POST',
-        data:perfilDados,
-        cache:false,
-        contentType:false,
-        processData:false,
-        success:function(data){
-          if(data == "salvo"){
-            //código em caso de sucesso
-            alert("cadastrado");
-          }
-          else{
-            alert(data);
-            //ou talvez
-            alert("erro ao salvar");
-          }
-        },
-        dataType: 'html'
-
-      });
-
-    });
-
-  });
-
-</script>
 </body>
 </html>
