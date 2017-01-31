@@ -23,8 +23,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Bem-vind<?php echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
+<link rel="stylesheet" href="assets/css/jobs.css" type="text/css" />
 <link rel="stylesheet" href="style.css" type="text/css" />
-<link rel="stylesheet" href="assets/css/jobs.css" type="text/css"  />
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -62,27 +62,17 @@
 <div class="gradient">
 	<div class="container">
        <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-center">
         <?php
   // $result = mysqli_query($link, "SELECT id_elenco, nome_artistico, tipo_cadastro_vigente, data_contrato_vigente, data_1o_contrato, tl_celular, email, dt_insercao FROM tb_elenco WHERE data_contrato_vigente IS NULL OR TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) > '2' ORDER BY dt_insercao DESC LIMIT 0, 100");
         $id = '10377';
         // $id = $_SESSION['user'];
-        $result = mysqli_query($link, "SELECT cliente_job, data_job, cache_liquido, status_pagamento, liberado FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' ORDER BY data_job DESC LIMIT 0, 100");
+        $result = mysqli_query($link, "SELECT cliente_job, data_job, cache_liquido, status_pagamento, data_pagamento, liberado FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' ORDER BY data_job DESC LIMIT 0, 100");
 
     if (!$result) {
      die('Erro: ' . mysqli_error($link));
   }
 ?>
-<!--         <table id='resultado' class='compact nowrap stripe hover row-border order-column' cellspacing='0' width='100%'>
-    <thead>
-      <tr>
-        <th>Data do trabalho</th>
-        <th>Cliente</th>
-        <th>Cachê Líquido</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody> -->
 
   <div class="container-outline__content">
     <div class="jobs-section">
@@ -105,9 +95,20 @@
 <?php
   while ($row = mysqli_fetch_array($result)) {
     $cliente = $row['cliente_job'];
+    $cliente = mb_convert_case($cliente,  MB_CASE_UPPER, "UTF-8");
     $cache = 'R$ '.$row['cache_liquido'];
     $data_job = date('d/m/y',strtotime($row['data_job']));
-    $liberado = $row['liberado'];
+    $data_pagamento = date('d/m/y',strtotime($row['data_pagamento']));
+    if ($row['status_pagamento'] == '0' && $row['liberado'] == '1') {
+      $botao = "<button class='btn btn-sacar btn-block btn-primary'>RETIRAR DINHEIRO</button>";
+    }
+    if ($row['status_pagamento'] == '1') {
+      $botao = "<p class='btn btn-block btn-pago'>PAGO EM $data_pagamento</p>";
+    }
+    if ($row['status_pagamento'] == '0' && $row['liberado'] == '0' || $row['liberado'] == NULL) {
+      $botao = "<p class='btn btn-block btn-indisp'>INDISPONÍVEL</p>";
+    }
+
 
     // if ($tipo_cadastro_vigente != NULL && $tipo_cadastro_vigente == 'Ator') {
     //   $tipo_cadastro_vigente = "<div id='ator'><strong>Ator</strong></div>";
@@ -140,25 +141,19 @@ echo "
 <tr>
   <td>
     <div class='title-jobs font-family color-primary'>
-      <p class='bold'>
-        $cliente
-      </p>
-      <p>
-        Data do trabalho
-      </p>
+      <p>$cliente</p>
+      <p>Data do trabalho</p>
     </div>
     <div class='values-jobs font-family color-primary'>
-    <BR />
-      <p class='bold'>
-        $cache
-      </p>
-      <p>
-        $data_job
-      </p>
+      <p class='bold'>$cache</p>
+      <p>$data_job</p>
     </div>
   </td>
 </tr>
 </table>
+</div>
+<div>
+$botao
 </div>";
 
 // echo "      <tr>";

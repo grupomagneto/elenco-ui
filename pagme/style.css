@@ -21,7 +21,7 @@
   position: fixed;
   padding:0px;
   margin:0px;
-  overflow: hidden; }
+  overflow: auto; }
 
   @font-face {
   font-family: Avenir-Book;
@@ -111,4 +111,34 @@ right: 0%;
 
 .faixa {
   width: 90%;
+}
+
+.col-center {
+  float: none;
+  margin: 0 auto;
+}
+
+.btn-sacar{
+/*  color: #FFF;
+  background: purple;
+  float: none;
+  margin: 0 auto;*/
+  font-family: Avenir-Black;
+  margin-top: 20px;
+  background: rgba(0,87,33,1);
+  border: 0px;
+}
+
+.btn-indisp {
+  font-family: Avenir-Book;
+  margin-top: 20px;
+  /*border: 1px solid #FFFFFF;*/
+  background: #DB9E0B;
+  /*opacity: 0.5;*/
+}
+
+.btn-pago {
+  font-family: Avenir-Book;
+  margin-top: 20px;
+  border: 1px solid #FFFFFF;
 }
