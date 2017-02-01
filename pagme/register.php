@@ -6,79 +6,39 @@
 
 	$error = false;
 
-	if ( isset($_POST['btn-signup']) ) {
-
-		// clean user inputs to prevent sql injections
-		// $name = trim($_POST['name']);
-		// $name = strip_tags($name);
-		// $name = htmlspecialchars($name);
+	if ( isset($_POST['btn-confirm_email']) ) {
 
 		$email = trim($_POST['email']);
 		$email = strip_tags($email);
 		$email = htmlspecialchars($email);
 
-		$pass = trim($_POST['pass']);
-		$pass = strip_tags($pass);
-		$pass = htmlspecialchars($pass);
-
-		// // basic name validation
-		// if (empty($name)) {
-		// 	$error = true;
-		// 	$nameError = "Please enter your full name.";
-		// } else if (strlen($name) < 3) {
-		// 	$error = true;
-		// 	$nameError = "Name must have atleat 3 characters.";
-		// } else if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
-		// 	$error = true;
-		// 	$nameError = "Name must contain alphabets and space.";
-		// }
-
 		//basic email validation
 		if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
 			$error = true;
-			$emailError = "Por favor digite um email válido.";
+			$emailError = "Por favor digite um e-mail válido.";
+      $errTyp = "danger";
+      $errMSG = "Por favor digite um e-mail válido.";
 		} else {
-			// check email exist or not
-			$query = "SELECT email FROM tb_elenco WHERE email='$email'";
-			$result = mysqli_query($link, $query);
-			$count = mysqli_num_rows($result);
-			if($count == 0){
-				$error = true;
-				$emailError = "E-mail não encontrado. Entre em contato por whatsapp: 61 99311-0767.";
-			}
-		}
-		// password validation
-		if (empty($pass)){
-			$error = true;
-			$passError = "Por favor introduza uma senha.";
-		} else if(strlen($pass) < 6) {
-			$error = true;
-			$passError = "Sua senha deve ter no mínimo 6 caracteres.";
-		}
-
-		// password encrypt using SHA256();
-		$password = hash('sha256', $pass);
-
+      // check email exist or not
+      $result = mysqli_query($link, "SELECT * FROM tb_elenco WHERE email='$email' LIMIT 1");
+      $row = mysqli_fetch_array($result);
+      $count = mysqli_num_rows($result);
+      if ($count == 0){
+          $error = true;
+          $emailError = "E-mail não encontrado! <BR />Por favor entre em contato por whatsapp: 61 99311-0767";
+          $errTyp = "danger";
+          $errMSG = "E-mail não encontrado! <BR />Por favor entre em contato por whatsapp: 61 99311-0767";
+      }
+    }
 		// if there's no error, continue to signup
 		if( !$error ) {
-
-			$query = "UPDATE tb_elenco SET senha='$password' WHERE email='$email'";
-			$res = mysqli_query($link, $query);
-
-			if ($res) {
-				$errTyp = "success";
-				$errMSG = "Senha criada com sucesso, você já pode fazer login.";
-				unset($name);
-				unset($email);
-				unset($pass);
-			} else {
-				$errTyp = "danger";
-				$errMSG = "Ocorreu um erro, entre em contato por whatsapp: 61 99311-0767.";
-			}
-
+			$_SESSION['nome'] = $row['nome'];
+      $_SESSION['cpf'] = $row['cpf'];
+      $_SESSION['nome_artistico'] = $row['nome_artistico'];
+      $_SESSION['email'] = $row['email'];
+      header("Location: confirm_email.php");
+      exit;
 		}
-
-
 	}
 ?>
 <!DOCTYPE html>
@@ -111,48 +71,24 @@
             </div>
 
             <?php
-			if ( isset($errMSG) ) {
+			if ( isset($emailError) ) {
 
 				?>
 				<div class="form-group">
             	<div class="alert alert-<?php echo ($errTyp=="success") ? "success" : $errTyp; ?>">
-				<span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
+				<span class="glyphicon glyphicon-info-sign"></span> <?php if (!empty($emailError)) { echo $emailError; } ?>
                 </div>
             	</div>
                 <?php
 			}
 			?>
-
-  <!--           <div class="form-group">
-            	<div class="input-group">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-            	<input type="text" name="name" class="form-control" placeholder="Enter Name" maxlength="50" value="<?php echo $name ?>" />
-                </div>
-                <span class="text-danger"><?php echo $nameError; ?></span>
-            </div> -->
-
             <div class="form-group">
+             <p><h5>Digite seu e-mail cadastrado na Magneto Elenco:</h5></p>
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            	<input type="email" name="email" class="form-control" placeholder="Digite seu e-mail cadastrado na Magneto Elenco" maxlength="40" />
+            	<input type="email" name="email" class="form-control" placeholder="Seu e-mail" maxlength="40" />
                 </div>
-                <!-- <span class="text-danger"><?php echo $emailError; ?></span> -->
-            </div>
-
-            <div class="form-group">
-            	<div class="input-group">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-            	<input type="password" name="pass" class="form-control" placeholder="Crie uma senha com 6 caracteres" maxlength="15" />
-                </div>
-                <!-- <span class="text-danger"><?php echo $passError; ?></span> -->
-            </div>
-
-            <div class="form-group">
-            	<div class="input-group">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-            	<input type="password" name="pass2" class="form-control" placeholder="Confirme sua senha" maxlength="15" />
-                </div>
-                <!-- <span class="text-danger"><?php echo $passError; ?></span> -->
+                <!-- <span class="text-danger"><?php if (!empty($emailError)) { echo $emailError; } ?></span> -->
             </div>
 
             <div class="form-group">
@@ -160,7 +96,7 @@
             </div>
 
             <div class="form-group">
-            	<button type="submit" class="btn btn-block btn-primary" name="btn-signup">Criar senha</button>
+            	<button type="submit" class="btn btn-block btn-primary" name="btn-confirm_email">Receber Código de Verificação</button>
             </div>
 
             <div class="form-group">
@@ -168,7 +104,7 @@
             </div>
 
             <div class="form-group">
-            	<a href="index.php">Voltar ao login</a>
+            	<a href="mailto:vini@grupomagneto.com.br">Não consegui, preciso de ajuda</a>
             </div>
 
         </div>
