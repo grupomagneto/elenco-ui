@@ -1,0 +1,105 @@
+/*.container-outline__content {
+display: -webkit-flex;
+display: -moz-flex;
+display: -ms-flex;
+display: -o-flex;
+display: flex;
+-webkit-flex-direction: column;
+-moz-flex-direction: column;
+-ms-flex-direction: column;
+-o-flex-direction: column;
+flex-direction: column; }
+
+.cache-section {
+position: relative;
+padding: 50px 10px 10px 10px;
+width: 100%;
+margin-left: -15px; }
+
+.title-section {
+position: relative;
+left: 0;
+border-bottom: 2px solid #FFFFFF; }
+.title-section img {
+padding-right: 10px;
+float: left; }
+.title-section p {
+position: relative;
+padding: 10px;
+text-transform: uppercase;
+text-align: left; }
+
+.content_section {
+margin-top: 10px;
+width: 100%; }*/
+
+.after-title__cache {
+width: 100%; }
+.after-title__cache h2 {
+position: relative;
+left: 10px;
+float: left; }
+
+.total-cache {
+position: relative;
+width: 100%;
+display: flex;
+display: -webkit-flex;
+flex-direction: row;
+-webkit-flex-direction: row;
+justify-content: left;
+-webkit-justify-content: left;
+align-items: left;
+-webkit-align-items: left; }
+
+.total-cache .total-cache__box {
+width: 135px;
+height: 65px;
+border: 1px solid #FFFFFF;
+border-radius: 10px;
+margin: 10px;
+float: left; }
+.total-cache .total-cache__box span {
+text-align: left;
+font-size: 12px; }
+.total-cache .total-cache__box p:nth-child(1) {
+padding: 5px 0px;
+text-align: center; }
+.total-cache .total-cache__box p:nth-child(2) {
+padding: 10px 0px;
+margin-top: -15px;
+text-align: center; }
+
+.areceber-cache {
+position: relative;
+width: 100%;
+display: flex;
+display: -webkit-flex;
+flex-direction: row;
+-webkit-flex-direction: row;
+justify-content: left;
+-webkit-justify-content: left;
+align-items: left;
+-webkit-align-items: left; }
+.areceber-cache .areceber__box {
+width: 135px;
+height: 65px;
+border: 1px solid #FFFFFF;
+border-radius: 10px;
+margin: 10px; }
+.areceber-cache .areceber__box span {
+text-align: left;
+font-size: 12px; }
+.areceber-cache .areceber__box p:nth-child(1) {
+padding: 5px 0px;
+text-align: center; }
+.areceber-cache .areceber__box p:nth-child(2) {
+padding: 10px 0px;
+margin-top: -15px;
+text-align: center; }
+
+.button-cache {
+position: relative;
+top: 20px; }
+
+/*# sourceMappingURL=caches.css.map */

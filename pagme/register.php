@@ -36,6 +36,8 @@
       $_SESSION['cpf'] = $row['cpf'];
       $_SESSION['nome_artistico'] = $row['nome_artistico'];
       $_SESSION['email'] = $row['email'];
+      $_SESSION['errTyp'] = "success";
+      $_SESSION['errMSG'] = "Código de confirmação enviado para $email";
       header("Location: confirm_email.php");
       exit;
 		}

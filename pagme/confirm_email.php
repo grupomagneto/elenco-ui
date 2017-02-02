@@ -1,31 +1,28 @@
 <?php
-	require_once 'dbconnect.php';
-  include "functions.php";
-	if( isset($_SESSION['user'])!="" ){
-		header("Location: home.php");
-	}
+require_once 'dbconnect.php';
+include "functions.php";
+if( isset($_SESSION['user'])!="" ){
+	header("Location: home.php");
+}
+$erro = false;
 
-	$erro = false;
-
-// unset($confirmation_code);
-// unset($_SESSION['confirmation_code']);
-
-if (!isset($_SESSION['confirmation_code'])) {
+if (empty($_SESSION['confirmation_code'])) {
   $confirmation_code = rand(1000,9999);
   $_SESSION['confirmation_code'] = $confirmation_code;
+} else {
+    $confirmation_code = $_SESSION['confirmation_code'];
 }
-echo $confirmation_code;
+if (!empty($_SESSION['errMSG'])) {
+    $errTyp = $_SESSION['errTyp'];
+    $errMSG = $_SESSION['errMSG'];
+}
+// echo $_SESSION['confirmation_code'];
 $nome = $_SESSION['nome'];
 $cpf = $_SESSION['cpf'];
 $nome_artistico = $_SESSION['nome_artistico'];
 $email = $_SESSION['email'];
-// echo $nome;
-// exit;
 
 if (empty($_SESSION['email_sent'])) {
-
-    $confirmation_code = rand(1000,9999);
-    $_SESSION['confirmation_code'] = $confirmation_code;
 
     define('GUSER', 'inteligencia@magnetoelenco.com.br'); // <-- Insira aqui o seu GMail
     define('GPWD', 'rom54808285');    // <-- Insira aqui a senha do seu GMail
@@ -45,9 +42,9 @@ if (empty($_SESSION['email_sent'])) {
     <body>
     <p>Oi $nome_artistico,</p>
     <BR />
-    <p>Seu código de confirmação de e-mail é: <strong>$confirmation_code</strong></p>
+    <p>Seu código de confirmação de e-mail para acesso ao PAGME é: <strong>$confirmation_code</strong></p>
     <BR />
-    <p>Obrigado e bons votos!</p>
+    <p>Abração,</p>
     <p>Time Magneto Elenco</p>
     </body>
     </html>";
@@ -57,21 +54,21 @@ if (empty($_SESSION['email_sent'])) {
     $_SESSION['email_sent'] = "yes";
 }
 
-	if ( isset($_POST['btn-signup']) ) {
+if ( isset($_POST['btn-signup']) ) {
 
 		// password validation
 		if (empty($_POST['codver']) || $_POST['codver'] != $confirmation_code){
       $teste = $_POST['codver'];
       $erro = true;
       $errTyp = "danger";
-      $errMSG = "Código de Verificação inválido. $confirmation_code $teste";
+      $errMSG = "Código de confirmação inválido. $confirmation_code $teste";
     } elseif (empty($_POST['pass'])){
 			$erro = true;
-      $errTyp = "danger";
+            $errTyp = "danger";
 			$errMSG = "Por favor introduza uma senha.";
 		} elseif (strlen($_POST['pass']) < 6) {
 			$erro = true;
-      $errTyp = "danger";
+            $errTyp = "danger";
 			$errMSG = "Sua senha deve ter no mínimo 6 caracteres.";
 		} elseif ($_POST['pass'] != $_POST['pass2']) {
       $erro = true;
@@ -89,17 +86,22 @@ if (empty($_SESSION['email_sent'])) {
 
 			if ($res) {
 				$errTyp = "success";
-				$errMSG = "Senha criada com sucesso, você já pode fazer <a href='index.php'>login</a>.";
-				unset($nome);
+				$errMSG = "Senha criada com sucesso, você já pode fazer login:";
+                $_SESSION['errTyp'] = $errTyp;
+                $_SESSION['errMSG'] = $errMSG;
 				unset($email);
 				unset($password);
+                header("Location: index.php");
+                exit;
 			} else {
 				$errTyp = "danger";
 				$errMSG = "Ocorreu um erro, entre em contato por whatsapp: 61 99311-0767.";
 			}
 
 		}
-	}
+        unset($confirmation_code);
+        unset($_SESSION['confirmation_code']);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -114,7 +116,7 @@ if (empty($_SESSION['email_sent'])) {
 <div class="container">
 
 	<div id="login-form">
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+    <form id="confirm" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
 
     	<div class="col-md-12">
 
@@ -143,7 +145,7 @@ if (empty($_SESSION['email_sent'])) {
 			}
 			?>
             <div class="form-group">
-              <p><h5>Abra seu e-mail e insira abaixo o Código de Verificação recebido:</h5></p>
+              <p><h5>Abra seu e-mail e insira abaixo o Código de confirmação recebido:</h5></p>
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
             	<input type="number" name="codver" class="form-control" placeholder="Digite o código aqui" maxlength="40" />

@@ -7,7 +7,11 @@
 		exit;
 	}
 
-	$error = false;
+	$erro = false;
+  if (!empty($_SESSION['errMSG'])) {
+    $errTyp = $_SESSION['errTyp'];
+    $errMSG = $_SESSION['errMSG'];
+  }
 
 	if( isset($_POST['btn-login']) ) {
 
@@ -22,20 +26,23 @@
 		// prevent sql injections / clear user invalid inputs
 
 		if(empty($email)){
-			$error = true;
-			$emailError = "Por favor digite seu email cadastrado.";
+			$erro = true;
+      $errTyp = "danger";
+			$errMSG = "Por favor digite seu email cadastrado.";
 		} else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
-			$error = true;
-			$emailError = "Por favor digite um email válido.";
+			$erro = true;
+      $errTyp = "danger";
+			$errMSG = "Por favor digite um email válido.";
 		}
 
 		if(empty($pass)){
-			$error = true;
-			$passError = "Por favor digite sua senha.";
+			$erro = true;
+      $errTyp = "danger";
+			$errMSG = "Por favor digite sua senha.";
 		}
 
 		// if there's no error, continue to login
-		if (!$error) {
+		if (!$erro) {
 
 			$password = hash('sha256', $pass); // password hashing using SHA256
 
@@ -47,6 +54,7 @@
 				$_SESSION['user'] = $row['id_elenco'];
 				header("Location: home.php");
 			} else {
+        $errTyp = "danger";
 				$errMSG = "Dados não conferem, tente novamente...";
 			}
 
@@ -89,8 +97,8 @@
 
 				?>
 				<div class="form-group">
-            	<div class="alert alert-danger">
-				<span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
+            	<div class="alert alert-<?php echo ($errTyp=="success") ? "success" : $errTyp; ?>">
+        <span class="glyphicon glyphicon-info-sign"></span> <?php if (!empty($errMSG)) { echo $errMSG; } ?>
                 </div>
             	</div>
                 <?php
@@ -103,7 +111,7 @@
                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
             	<input type="email" name="email" class="form-control" placeholder="Seu email" maxlength="40" autocomplete="off" required />
                 </div>
-               <span class="text-danger"><?php if (!empty($emailError)) { echo $emailError; } ?></span>
+               <!-- <span class="text-danger"><?php if (!empty($emailError)) { echo $emailError; } ?></span> -->
             </div>
 
             <div class="form-group">
@@ -111,7 +119,7 @@
                 <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
             	<input type="password" name="pass" class="form-control" placeholder="Sua senha" maxlength="15" autocomplete="off" required />
                 </div>
-                <span class="text-danger"><?php if (!empty($passError)) { echo $passError; } ?></span>
+                <!-- <span class="text-danger"><?php if (!empty($passError)) { echo $passError; } ?></span> -->
             </div>
 
             <div class="form-group">

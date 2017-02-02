@@ -1,6 +1,7 @@
 <?php
 	require_once 'dbconnect.php';
-
+  require_once 'functions.php';
+  setlocale(LC_MONETARY, 'pt_BR');
 	// if session is not set this will redirect to login page
 	if( !isset($_SESSION['user']) ) {
 		header("Location: index.php");
@@ -15,7 +16,6 @@
   elseif ($userRow['sexo'] == 'M') {
     $sexo = 'o';
   }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,6 +24,7 @@
 <title>Bem-vind<?php echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="assets/css/jobs.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/caches.css" type="text/css" />
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
@@ -45,7 +46,6 @@
             <li><a href="dbancarios.php">Meus dados bancários</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 			  <span class="glyphicon glyphicon-user"></span>&nbsp;<?php echo $userRow['nome_artistico']; ?>&nbsp;<span class="caret"></span></a>
@@ -57,7 +57,6 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
 	<div id="wrapper">
 <div class="gradient">
 	<div class="container">
@@ -67,46 +66,141 @@
   // $result = mysqli_query($link, "SELECT id_elenco, nome_artistico, tipo_cadastro_vigente, data_contrato_vigente, data_1o_contrato, tl_celular, email, dt_insercao FROM tb_elenco WHERE data_contrato_vigente IS NULL OR TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) > '2' ORDER BY dt_insercao DESC LIMIT 0, 100");
         $id = '10377';
         // $id = $_SESSION['user'];
-        $result = mysqli_query($link, "SELECT cliente_job, data_job, cache_liquido, status_pagamento, data_pagamento, liberado FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' ORDER BY data_job DESC LIMIT 0, 100");
-
+        $result = mysqli_query($link, "SELECT tipo_entrada, cliente_job, data_job, cache_liquido, status_pagamento, data_pagamento, liberado FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' ORDER BY data_job DESC LIMIT 0, 100");
     if (!$result) {
      die('Erro: ' . mysqli_error($link));
   }
-?>
+  $primeiro_contrato = mysqli_query($link, "SELECT tipo_cadastro_vigente, data_1o_contrato as primeiro_contrato FROM tb_elenco WHERE id_elenco='$id'");
+  $row = mysqli_fetch_array($primeiro_contrato);
+  $primeiro_contrato = date('d/m/y',strtotime($row['primeiro_contrato']));
+  $tipo_cadastro = $row['tipo_cadastro_vigente'];
 
+  $doze_meses = mysqli_query($link, "SELECT SUM(cache_liquido) as doze_meses FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND data_job >= CURDATE() - INTERVAL 12 MONTH");
+  $row = mysqli_fetch_array($doze_meses);
+  $doze_meses = $row['doze_meses'];
+  $doze_meses = number_format($doze_meses,2,",",".");
+  $doze_meses_pieces = explode(",", $doze_meses);
+  $doze_meses = $doze_meses_pieces[0];
+  $doze_meses_cents = $doze_meses_pieces[1];
+
+  $total_gerado = mysqli_query($link, "SELECT SUM(cache_liquido) as liquido FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache'");
+  $row = mysqli_fetch_array($total_gerado);
+  $total_gerado = $row['liquido'];
+  $total_gerado = number_format($total_gerado,2,",",".");
+  $total_gerado_pieces = explode(",", $total_gerado);
+  $total_gerado = $total_gerado_pieces[0];
+  $total_gerado_cents = $total_gerado_pieces[1];
+
+  $n_jobs = mysqli_query($link, "SELECT COUNT(cache_liquido) as qtd FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache'");
+  $row = mysqli_fetch_array($n_jobs);
+  $n_jobs = $row['qtd'];
+
+  $indisponivel = mysqli_query($link, "SELECT SUM(cache_liquido) as indisponivel FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento='0' AND (liberado IS NULL OR liberado='0')");
+  $row = mysqli_fetch_array($indisponivel);
+  $indisponivel = $row['indisponivel'];
+  $indisponivel = number_format($indisponivel,2,",",".");
+  $indisponivel_pieces = explode(",", $indisponivel);
+  $indisponivel = $indisponivel_pieces[0];
+  $indisponivel_cents = $indisponivel_pieces[1];
+
+  $recebivel = mysqli_query($link, "SELECT SUM(cache_liquido) as receber FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento='0' AND liberado='1'");
+  $row = mysqli_fetch_array($recebivel);
+  $recebivel = $row['receber'];
+  $recebivel = number_format($recebivel,2,",",".");
+  $recebivel_pieces = explode(",", $recebivel);
+  $recebivel = $recebivel_pieces[0];
+  $recebivel_cents = $recebivel_pieces[1];
+?>
   <div class="container-outline__content">
     <div class="jobs-section">
       <div class="title-section">
-        <img alt="jobs" src="images/jobs.svg" />
+        <img src="images/jobs.svg" />
         <p class="font-family font-medium color-primary">
           meus trabalhos
+          <!-- <?php if(!empty($tipo_cadastro)){echo "<span class='btn btn-cadastro color-primary'>Cadastro ".$tipo_cadastro."</span><BR />";}?> -->
         </p>
       </div>
       <div class="content_section">
         <div class="content__jobs">
           <div class="after-title__jobs">
-            <h2 class="font-family font-medium color-primary">
-              Total: 16 trabalho(s)
-            </h2>
+          <h2 class="font-family font-medium color-primary">
+            Total em cachês
+          </h2>
+          <div class="total-cache">
+            <div class="total-cache__box">
+              <p class="font-family font-small color-primary">
+                último ano
+              </p>
+              <p class="font-family font-medium color-primary">
+                <span>R$</span> <?php if(!empty($doze_meses)){echo $doze_meses;}else{echo "0";}?>,<sup><?php if(!empty($doze_meses_cents)){echo $doze_meses_cents;}else{echo "00";}?></sup>
+              </p>
+            </div>
+            <div class="total-cache__box">
+              <p class="font-family font-small color-primary">
+                desde <?php if(!empty($primeiro_contrato)){echo $primeiro_contrato;}else{echo "0";}?>
+              </p>
+              <p class="font-family font-medium color-primary">
+                <span>R$</span> <?php if(!empty($total_gerado)){echo $total_gerado;}else{echo "0";}?>,<sup><?php if(!empty($total_gerado_cents)){echo $total_gerado_cents;}else{echo "00";}?></sup>
+              </p>
+            </div>
           </div>
+          <h2 class="font-family font-medium color-primary">
+            A receber
+          </h2>
+          <div class="areceber-cache">
+            <div class="areceber__box">
+              <p class="font-family font-small color-primary">
+                liberado
+              </p>
+              <p class="font-family font-medium color-primary">
+                <span>R$</span> <?php if(!empty($recebivel)){echo $recebivel;}else{echo "0";}?>,<sup><?php if(!empty($recebivel_cents)){echo $recebivel_cents;}else{echo "00";}?></sup>
+              </p>
+            </div>
+            <div class="areceber__box">
+              <p class="font-family font-small color-primary">
+                não disponível
+              </p>
+              <p class="font-family font-medium color-disable">
+                <span>R$</span> <?php if(!empty($indisponivel)){echo $indisponivel;}else{echo "0";}?>,<sup><?php if(!empty($indisponivel_cents)){echo $indisponivel_cents;}else{echo "00";}?></sup>
+              </p>
+            </div>
+          </div>
+          <h2 class="font-family font-medium color-primary">
+            Trabalhos já realizados: <?php if(!empty($n_jobs)){echo $n_jobs;}else{echo "0";}?>
+          </h2>
+<!--           <div class="button-cache">
+            <button class="button button__medium" type="button">Retirar dinheiro</button>
+          </div> -->
+<!--         </div>
+      </div>
+    </div>
+  </div>
+</div> -->
 
 
-
+<!--             <h2 class="font-family font-medium color-primary">
+              <?php if(!empty($n_jobs)){echo "Total: ".$n_jobs."trabalho(s)";}else{echo "0";}?>
+              <?php if(!empty($total_gerado)){echo "Valor gerado: R$ ".$total_gerado;}?>
+              <?php if(!empty($indisponivel)){echo "Total Indisponível: R$ ".$indisponivel;}?>
+              <?php if(!empty($recebivel)){echo "Liberado: R$ ".$recebivel;}?>
+            </h2> -->
+          </div>
 <?php
   while ($row = mysqli_fetch_array($result)) {
     $cliente = $row['cliente_job'];
     $cliente = mb_convert_case($cliente,  MB_CASE_UPPER, "UTF-8");
-    $cache = 'R$ '.$row['cache_liquido'];
+    $cache = number_format($row['cache_liquido'],2,",",".");
+    $cache = 'R$ '.$cache;
     $data_job = date('d/m/y',strtotime($row['data_job']));
     $data_pagamento = date('d/m/y',strtotime($row['data_pagamento']));
     if ($row['status_pagamento'] == '0' && $row['liberado'] == '1') {
-      $botao = "<button class='btn btn-sacar btn-block btn-primary'>RETIRAR DINHEIRO</button>";
+      $botao = "<button class='btn btn-sacar btn-block btn-primary'>Retirar dinheiro</button>";
     }
     if ($row['status_pagamento'] == '1') {
-      $botao = "<p class='btn btn-block btn-pago'>PAGO EM $data_pagamento</p>";
+      $botao = "<p class='btn btn-block btn-pago'>Pago em $data_pagamento</p>";
     }
     if ($row['status_pagamento'] == '0' && $row['liberado'] == '0' || $row['liberado'] == NULL) {
-      $botao = "<p class='btn btn-block btn-indisp'>INDISPONÍVEL</p>";
+      $botao = "<p class='btn btn-block btn-indisp'>Ainda não disponível</p>";
     }
 
 

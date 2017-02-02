@@ -9,6 +9,7 @@
 	// select loggedin users detail
 	$res=mysqli_query($link, "SELECT * FROM tb_elenco WHERE id_elenco=".$_SESSION['user']);
 	$userRow=mysqli_fetch_array($res);
+  $_SESSION['cpf'] = $userRow['cpf'];
   if ($userRow['sexo'] == 'F') {
     $sexo = 'a';
   }

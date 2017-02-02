@@ -34,7 +34,7 @@
         <input type="text" name="cpf" id="cpf" placeholder="CPF" />
       </p>
       <p>
-        <input type="hidden" name="nome" id="nome" placeholder="Nome" />
+        <input type="text" name="nome" id="nome" placeholder="Nome" />
       </p>
 
 <button type="submit">enviar</button>
@@ -65,7 +65,7 @@ $('#cpf').keyup(function(){
         // define a variável "nome" com
         // o nome da pessoa física associada ao CPF
         var nome = $(data).find("body nome").text();
-        
+
         // muda o campo "nome" para o nome do dono do CPF
         $("#nome").val(nome);
       }

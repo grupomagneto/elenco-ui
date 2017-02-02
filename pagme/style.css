@@ -23,7 +23,7 @@
   margin:0px;
   overflow: auto; }
 
-  @font-face {
+/*  @font-face {
   font-family: Avenir-Book;
   src: url('../fonts/Avenir-Light.eot');
   src: url('../fonts/Avenir-Light.woff') format('woff'),
@@ -32,7 +32,7 @@
        url('../fonts/Avenir-Light.eot?#iefix') format('embedded-opentype');
   font-weight: 100;
   font-style: normal;
-}
+}*/
 
 h1,
 h2,
@@ -46,19 +46,19 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: Avenir-Book;
+  /*font-family: Avenir-Book;*/
   color: #FFFFFF;
 }
 
 p {
-  font-family: Avenir-Book;
+  /*font-family: Avenir-Book;*/
   color: #FFFFFF;
 }
 .btn-primary {
 background: rgba(255, 255, 255, 0.3);
 border: 1px solid #FFFFFF;
 border-radius: 8px;
-font-family: Avenir-Book;
+/*font-family: Avenir-Book;*/
 }
 
 .btn-primary:focus,
@@ -89,7 +89,7 @@ fieldset[disabled] .btn-primary.focus {
 }
 
 a {
-  font-family: Avenir-Black;
+  /*font-family: Avenir-Black;*/
   color: #FFFFFF;
 }
 
@@ -119,26 +119,48 @@ right: 0%;
 }
 
 .btn-sacar{
+  margin-top: 20px;
 /*  color: #FFF;
   background: purple;
   float: none;
   margin: 0 auto;*/
-  font-family: Avenir-Black;
+/*  font-family: Avenir-Black;
   margin-top: 20px;
   background: rgba(0,87,33,1);
-  border: 0px;
+  border: 0px;*/
 }
 
 .btn-indisp {
-  font-family: Avenir-Book;
   margin-top: 20px;
-  /*border: 1px solid #FFFFFF;*/
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  opacity: 0.5;
+/*  font-family: Avenir-Book;
+  margin-top: 20px;
+  border: 1px solid #FFFFFF;
   background: #DB9E0B;
-  /*opacity: 0.5;*/
+  opacity: 0.6;*/
+}
+.btn-indisp:active,
+.btn-indisp:hover {
+  color: #FFFFFF;
+  cursor: default;
 }
 
 .btn-pago {
-  font-family: Avenir-Book;
+  /*font-family: Avenir-Book;*/
   margin-top: 20px;
+  /*border: 1px solid #FFFFFF;*/
+  /*border-radius: 10px;*/
+}
+
+.btn-cadastro {
   border: 1px solid #FFFFFF;
+  border-radius: 10px;
+}
+
+.btn-cadastro:active,
+.btn-cadastro:hover {
+  color: #FFFFFF;
+  cursor: default;
 }

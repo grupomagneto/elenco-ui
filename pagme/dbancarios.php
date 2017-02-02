@@ -1,5 +1,10 @@
 <?php
 require_once 'dbconnect.php';
+require_once 'functions.php';
+
+$cpf = $_SESSION['cpf'];
+$cpf = mask($cpf,'###.###.###-##');
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -71,7 +76,6 @@ error_reporting(E_ALL);
   $row=mysqli_fetch_array($result);
   if (!empty($row['active']) || $row['active'] == '1') {
         $full_name = $row['full_name'];
-        $cpf = $row['cpf'];
         $bank_number = $row['bank_number'];
         $bank_name = $row['bank_name'];
         $bank = $bank_number." - ".$bank_name;
@@ -82,7 +86,6 @@ error_reporting(E_ALL);
     <form method='post' action='remove_conta.php' autocomplete='off'>
 
       <div class='col-md-12'>
-
           <div class='form-group'>
               <h3>Conta bancária cadastrada:</h3>
             </div>
@@ -103,7 +106,7 @@ error_reporting(E_ALL);
           <p><h5>CPF:</h5></p>
           <div class='input-group'>
             <span class='input-group-addon'><span class='glyphicon glyphicon-user'></span></span>
-            <input type='number' name='cpf' class='form-control' value='$cpf' disabled />
+            <input type='text' name='cpf' class='form-control' value='$cpf' disabled />
             </div>
         </div>
 
@@ -184,7 +187,7 @@ error_reporting(E_ALL);
           <p><h5>CPF:</h5></p>
           <div class='input-group'>
             <span class='input-group-addon'><span class='glyphicon glyphicon-user'></span></span>
-            <input type='number' name='cpf' class='form-control' value='<?php echo $userRow['cpf']; ?>' disabled />
+            <input type='text' name='cpf' class='form-control' value='<?php echo $cpf; ?>' disabled />
             </div>
         <!-- <span class='text-danger'><?php echo $emailError; ?></span> -->
         </div>
