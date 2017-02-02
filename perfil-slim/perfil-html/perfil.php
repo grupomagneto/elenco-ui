@@ -175,11 +175,22 @@
               <div class="container-outline__multiples">
 
                 <form method="post" action="" id="formfavorita">
+                  
+                 
+                  <button class="botaofavorita" type="submit"> 
+                    Enviar
+                  </button>
 
+                    <input type="text"  value="imagefavorita" name="imagefavorita">
+                  <div>Resultado: <span id="resultado"></span></div>
+
+
+                </form>
+                
                   <div class="tab__box">
                     <div class="tab-actions">
                       <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                      <img alt="fav" id="botaofavorita" class="fav cursor" src="images/fav-icon.svg" />
+                      <img alt="fav" class="fav cursor botaofavorita" src="images/fav-icon.svg" />
                       <img alt="discard" class="cursor" src="images/discard.svg" />
                       <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
                       <p class="subtitle font-family color-primary font-small cursor">
@@ -192,15 +203,13 @@
                   <div class="tab__box">
                     <div class="tab-actions">
                       <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                      <img alt="fav" class="fav cursor" src="images/fav-icon.svg" />
+                      <img alt="fav" class="fav cursor botaofavorita" src="images/fav-icon.svg" />
                       <img alt="fav" class="cursor" src="images/discard.svg" />
                       <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
                       <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
                     </div>
                   </div>
 
-
-                </form>
               </div>
 
             </div>
@@ -208,69 +217,6 @@
           <h3 class="tab_drawer_heading" rel="tab2"></h3>
           <div class="tab_content" id="tab2">
             <div class="container-outline__four">
-              <div class="tab__box tab__box-four">
-                <div class="tab-actions tab-actions__four">
-                  <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                  <img alt="fav" class="fav cursor" src="images/fav-icon.svg" />
-                  <img alt="fav" class="discard-action cursor" src="images/discard.svg" />
-                  <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-                  <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-                </div>
-              </div>
-              <div class="tab__box tab__box-four">
-                <div class="tab-actions tab-actions__four">
-                  <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                  <img alt="fav" class="fav cursor" src="images/fav-icon.svg" />
-                  <img alt="fav" class="discard-action cursor" src="images/discard.svg" />
-                  <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-                  <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-                </div>
-              </div>
-              <div class="tab__box tab__box-four">
-                <div class="tab-actions tab-actions__four">
-                  <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                  <img alt="fav" class="fav cursor" src="images/fav-icon.svg" />
-                  <img alt="fav" class="discard-action cursor" src="images/discard.svg" />
-                  <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-                  <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-                </div>
-              </div>
-              <div class="tab__box tab__box-four">
-                <div class="tab-actions tab-actions__four">
-                  <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                  <img alt="fav" class="fav cursor" src="images/fav-icon.svg" />
-                  <img alt="fav" class="discard-action cursor" src="images/discard.svg" />
-                  <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-                  <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-                </div>
-              </div>
-              <div class="tab__box tab__box-four">
-                <div class="tab-actions tab-actions__four">
-                  <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                  <img alt="fav" class="fav cursor" src="images/fav-icon.svg" />
-                  <img alt="fav" class="discard-action cursor" src="images/discard.svg" />
-                  <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-                  <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-                </div>
-              </div>
-              <div class="tab__box tab__box-four">
-                <div class="tab-actions tab-actions__four">
-                  <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                  <img alt="fav" class="fav cursor" src="images/fav-icon.svg" />
-                  <img alt="fav" class="discard-action cursor" src="images/discard.svg" />
-                  <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-                  <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-                </div>
-              </div>
-              <div class="tab__box tab__box-four">
-                <div class="tab-actions tab-actions__four">
-                  <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                  <img alt="fav" class="fav cursor" src="images/fav-icon.svg" />
-                  <img alt="fav" class="discard-action cursor" src="images/discard.svg" />
-                  <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-                  <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-                </div>
-              </div>
               <div class="tab__box tab__box-four">
                 <div class="tab-actions tab-actions__four">
                   <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
