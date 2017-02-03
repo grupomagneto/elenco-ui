@@ -52,6 +52,7 @@
 
 			if( $count == 1 && $row['senha']==$password ) {
 				$_SESSION['user'] = $row['id_elenco'];
+                $_SESSION['email'] = $email;
 				header("Location: home.php");
 			} else {
         $errTyp = "danger";
