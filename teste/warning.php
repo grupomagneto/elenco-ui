@@ -41,7 +41,7 @@ $(document).ready(function () {
      $().bipbop("SELECT FROM 'BIPBOPJS'.'CPFCNPJ'", null, {
       // passando o CPF digitado
       data: {
-        "documento": cpf 
+        "documento": cpf,
       },
 
       success: function(data) {

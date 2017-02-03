@@ -144,8 +144,8 @@
                       <td>
                         <div class="perfil-fav__select font-family color-primary cursor" href="">
                           <img alt="" class="cursor" src="images/elenco_019589_20160913140545.jpg" />
-                          <p class="cursor">
-                            Daniela, 22
+                          <p class="cursor favoritado">
+                            
                           </p>
                         </div>
                         <div class="excluir">
@@ -175,16 +175,11 @@
               <div class="container-outline__multiples">
 
                 <form method="post" action="" id="formfavorita">
+
+                  <input type="checkbox" id="botaofavorita" class="botaofavorita imagefavorita" value="valor da imagem" name="imagefavorita">
+                  <input type="checkbox" class="botaofavorita imagefavorita" value="valor da imagem 2" name="imagefavorita">
                   
-                 
-                  <button class="botaofavorita" type="submit"> 
-                    Enviar
-                  </button>
-
-                    <input type="text"  value="imagefavorita" name="imagefavorita">
-                  <div>Resultado: <span id="resultado"></span></div>
-
-
+                  
                 </form>
                 
                   <div class="tab__box">
