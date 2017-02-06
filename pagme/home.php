@@ -6,17 +6,34 @@
 		header("Location: index.php");
 		exit;
 	}
+  if (isset($_GET['new_id'])) {
+    $_SESSION['user'] = $_GET['new_id'];
+  }
 	// select loggedin users detail
 	$res=mysqli_query($link, "SELECT * FROM tb_elenco WHERE id_elenco=".$_SESSION['user']);
 	$userRow=mysqli_fetch_array($res);
-  $_SESSION['cpf'] = $userRow['cpf'];
+  $cpf = $userRow['cpf'];
+  $_SESSION['cpf'] = $cpf;
+  $email = $userRow['email'];
   if ($userRow['sexo'] == 'F') {
     $sexo = 'a';
   }
   elseif ($userRow['sexo'] == 'M') {
     $sexo = 'o';
   }
-
+  // cria o menu de nome artístico se existirem mais de um agenciado no mesmo cpf e email
+  $result = mysqli_query($link, "SELECT nome_artistico, id_elenco FROM tb_elenco WHERE email='$email' AND cpf='$cpf' ORDER BY dt_nascimento ASC");
+  $count = mysqli_num_rows($result);
+  $n = 1;
+  if ($n <= $count) {
+    while ($row = mysqli_fetch_array($result)) {
+      $id_temp = $row['id_elenco'];
+      if ($id_temp != $_SESSION['user']) {
+        ${'nome_artistico_dependente'.$n} = $row['nome_artistico'];
+        $n++;
+      }
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,6 +69,21 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 			  <span class="glyphicon glyphicon-user"></span>&nbsp;<?php echo $userRow['nome_artistico']; ?>&nbsp;<span class="caret"></span></a>
               <ul class="dropdown-menu">
+              <?php
+              $result = mysqli_query($link, "SELECT nome_artistico, id_elenco FROM tb_elenco WHERE email='$email' AND cpf='$cpf'");
+                $n = 1;
+                if ($n <= $count) {
+                  while ($row = mysqli_fetch_array($result)) {
+                    $id_temp = $row['id_elenco'];
+                    if ($id_temp != $_SESSION['user']) {
+                        echo "<li><a href='home.php?new_id=$id_temp'><span class='glyphicon glyphicon-user'></span>&nbsp;";
+                        echo ${'nome_artistico_dependente'.$n};
+                        echo "&nbsp;</a></li>";
+                      $n++;
+                    }
+                  }
+                }
+              ?>
                 <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sair</a></li>
               </ul>
             </li>
@@ -76,6 +108,8 @@
          <p>Cada pedido de transferência levará até 72 horas para ser concluído e terá um custo de R$ 10,00 por transferência, descontado do saldo a ser transferido. É possível transferir mais de um cachê na mesma transferência e pagar a taxa apenas uma vez.</p>
 
          <p>As transferências apenas poderão ser feitas para contas bancárias vinculadas ao CPF do agenciado ou, no caso de menores de idade, para contas vinculadas ao CPF do responsável.</p>
+
+         <p>Os pagamentos em cheque continuarão a ser feitos na nova sede da agência até o dia 31/03/2017, quando serão completamente substituídos pelo PAGME.</p>
 
          <p>Como estamos em fase de testes, pedimos desculpas antecipadas por qualquer erro e colocamos um número para suporte via whatsapp: 61 99311-0767.</p>
 

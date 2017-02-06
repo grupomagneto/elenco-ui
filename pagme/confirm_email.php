@@ -81,7 +81,7 @@ if ( isset($_POST['btn-signup']) ) {
 		// if there's no error, continue to signup
 		if( !$erro ) {
 
-			$query = "UPDATE tb_elenco SET senha='$password' WHERE email='$email'";
+			$query = "UPDATE tb_elenco SET senha='$password' WHERE email='$email' ORDER BY dt_nascimento ASC LIMIT 1";
 			$res = mysqli_query($link, $query);
 
 			if ($res) {

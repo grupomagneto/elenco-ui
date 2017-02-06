@@ -20,7 +20,7 @@
       $errMSG = "Por favor digite um e-mail válido.";
 		} else {
       // check email exist or not
-      $result = mysqli_query($link, "SELECT * FROM tb_elenco WHERE email='$email' LIMIT 1");
+      $result = mysqli_query($link, "SELECT * FROM tb_elenco WHERE email='$email' ORDER BY dt_nascimento ASC LIMIT 1");
       $row = mysqli_fetch_array($result);
       $count = mysqli_num_rows($result);
       if ($count == 0){

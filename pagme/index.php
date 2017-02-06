@@ -26,19 +26,19 @@
 		// prevent sql injections / clear user invalid inputs
 
 		if(empty($email)){
-			$erro = true;
-      $errTyp = "danger";
-			$errMSG = "Por favor digite seu email cadastrado.";
+            $erro = true;
+            $errTyp = "danger";
+            $errMSG = "Por favor digite seu email cadastrado.";
 		} else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
-			$erro = true;
-      $errTyp = "danger";
-			$errMSG = "Por favor digite um email válido.";
+            $erro = true;
+            $errTyp = "danger";
+            $errMSG = "Por favor digite um email válido.";
 		}
 
 		if(empty($pass)){
-			$erro = true;
-      $errTyp = "danger";
-			$errMSG = "Por favor digite sua senha.";
+            $erro = true;
+            $errTyp = "danger";
+            $errMSG = "Por favor digite sua senha.";
 		}
 
 		// if there's no error, continue to login
@@ -46,7 +46,7 @@
 
 			$password = hash('sha256', $pass); // password hashing using SHA256
 
-			$res=mysqli_query($link, "SELECT id_elenco, nome_artistico, senha FROM tb_elenco WHERE email='$email'");
+			$res=mysqli_query($link, "SELECT id_elenco, senha FROM tb_elenco WHERE email='$email' ORDER BY dt_nascimento ASC LIMIT 1");
 			$row=mysqli_fetch_array($res);
 			$count = mysqli_num_rows($res); // if uname/pass correct it returns must be 1 row
 
@@ -55,8 +55,8 @@
                 $_SESSION['email'] = $email;
 				header("Location: home.php");
 			} else {
-        $errTyp = "danger";
-				$errMSG = "Dados não conferem, tente novamente...";
+                $errTyp = "danger";
+                $errMSG = "Dados não conferem, tente novamente...";
 			}
 
 		}
