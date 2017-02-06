@@ -1,48 +1,57 @@
-$(document).ready(function () {
+// $(document).ready(function () {
 
-	$(".botaofavorita").click(function () {
-		var dados = {
-			imagefavorita: $("#imagefavorita").val()
-		};
+// 	$(".botaofavorita").click(function () {
 
-		$.ajax({
-			url: 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/addsearch.php',
-			type: 'POST',
-			dataType: 'html',
-			data: dados,
+// 		var dados = {
+// 			$("#formfavorita").serialize();
+// 			// 'imagefavorita': $(".imagefavorita").val()
+// 		};
 
-		success: function (result) {
-
-		alert("Sucesso ajax!!!");
-			$("#resultado").html(result);
-		},
-
-		error: function (result) {
-			console.log(result);
-			alert('Erro: passar para php!!');
-		}
-
-   	});
-  });
-});
-
-// jQuery(document).ready(function(){
-// 	jQuery('#formfavorita').submit(function(){
-// 		var dados = jQuery( this ).serialize();
-
-// 		jQuery.ajax({
-// 			type: "POST",
+// 		$.ajax({
+// 			url: 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/addsearch.php',
+// 			type: 'post',
 // 			dataType: 'html',
-// 			url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/addsearch.php",
 // 			data: dados,
-// 			success: function( data )
-// 			{
-// 				alert("Sucesso ajax");
-// 				$("#resultado").html(result);
-// 				// window.location.href = 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/addsearch.php';
-// 			}
-// 		});
+
+// 		success: function (result) {
+
+// 		// alert("Sucesso ajax!!!");
+// 		// location = ("http://localhost:8888/elenco-ui/perfil-slim/perfil-html/addsearch.php");
+// 			$(".resultado").html(result);
+// 		},
+
+// 		error: function (result) {
+// 			console.log(result);
+// 			alert('Erro: passar para php!!');
+// 		}
+
+//    	});
+//   });
+// });
+
+
+$(".botaofavorita").click(function(){
+  $("#formfavorita").submit();
+});  
+
+jQuery(document).ready(function(){
+	jQuery('#formfavorita').submit(function(){
+		var dados = jQuery( this ).serialize();
+
+		jQuery.ajax({
+			type: "POST",
+			dataType: 'html',
+			url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/addsearch.php",
+			data: dados,
+			success: function( data )
+			{
+				// alert("Sucesso ajax");
+				// $("#formfavorita").submit();
+				$(".favoritado").html(data);
+				// location = 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/addsearch.php';
+			}
+		});
 		
-// 		return false;
-// 	});
-// })
+		return false;
+	});
+})
