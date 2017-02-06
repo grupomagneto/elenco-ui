@@ -222,29 +222,29 @@ $(document).ready(function() {
 
 //discard and fav actions
 
-$(document).ready(function(){
-  $(".tab-actions > img:nth-child(3)").hide();
+// $(document).ready(function(){
+//   $(".tab-actions > img:nth-child(3)").hide();
 
-  $(".discard").click(function(e){
-    $('> img:nth-child(3)', $(this).closest(".tab-actions")).fadeToggle('fast');
-  });
+//   $(".discard").click(function(e){
+//     $('> img:nth-child(3)', $(this).closest(".tab-actions")).fadeToggle('fast');
+//   });
 
-});
+// });
 
-$(document).ready(function(){
-  $(".tab-actions > img").dblclick(function(){
-    $('> img:nth-child(4)', $(this).closest(".tab-actions")).fadeToggle('fast');
-  });
-});
+// $(document).ready(function(){
+//   $(".tab-actions > img").dblclick(function(){
+//     $('> img:nth-child(4)', $(this).closest(".tab-actions")).fadeToggle('fast');
+//   });
+// });
 
-$(document).ready(function(){
-  $(".tab-actions > img:nth-child(4)").hide();
+// $(document).ready(function(){
+//   $(".tab-actions > img:nth-child(4)").hide();
 
-  $(".fav").click(function(){
-    $('> img:nth-child(4)', $(this).closest(".tab-actions")).fadeToggle('fast');
-  });
+//   $(".fav").click(function(){
+//     $('> img:nth-child(4)', $(this).closest(".tab-actions")).fadeToggle('fast');
+//   });
 
-});
+// });
 
 // Gradient
 var colors = new Array(
@@ -289,4 +289,3 @@ function updateGradient(container) {
   }
 }
 setInterval(function(){updateGradient('.gradient')},10);
-

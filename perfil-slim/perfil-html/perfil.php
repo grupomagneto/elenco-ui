@@ -174,33 +174,50 @@
             <div class="tab_content" id="tab1">
               <div class="container-outline__multiples">
 
-                <form method="post" action="" id="formfavorita">
+<!--                 <form method="post" action="" id="formfavorita">
 
                   <input type="checkbox" id="botaofavorita" class="botaofavorita imagefavorita" value="valor da imagem" name="imagefavorita">
                   <input type="checkbox" class="botaofavorita imagefavorita" value="valor da imagem 2" name="imagefavorita">
                   
                   
-                </form>
+                </form> -->
                 
                   <div class="tab__box">
                     <div class="tab-actions">
-                      <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                      <img alt="fav" class="fav cursor botaofavorita" src="images/fav-icon.svg" />
+                      <!-- <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" /> -->
+                      <!-- <img alt="fav" class="fav cursor botaofavorita" src="" /> -->
+
+                      <input type='checkbox' name='q1_myOptions' class="fav input_1_0 cursor"/>
+                      <label for="input_1_0 cursor"></label>
+
+                      <input type='checkbox' name='q1_myOptions' class="discard input_1_1 cursor"/>
+                      <label for="input_1_1 cursor"></label> 
+
                       <img alt="discard" class="cursor" src="images/discard.svg" />
                       <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
+
                       <p class="subtitle font-family color-primary font-small cursor">
                         Bruna, 23
                       </p>
                       <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
+
                     </div>
                   </div>
 
                   <div class="tab__box">
                     <div class="tab-actions">
-                      <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                      <img alt="fav" class="fav cursor botaofavorita" src="images/fav-icon.svg" />
-                      <img alt="fav" class="cursor" src="images/discard.svg" />
+                      <input type='checkbox' name='q1_myOptions' class="fav input_1_0 cursor"/>
+                      <label for="input_1_0 cursor"></label>
+                      
+                      <input type='checkbox' name='q1_myOptions' class="discard input_1_1 cursor"/>
+                      <label for="input_1_1 cursor"></label> 
+
+                      <img alt="discard" class="cursor" src="images/discard.svg" />
                       <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
+
+                      <p class="subtitle__prof  font-family color-primary font-small cursor">
+                        Profissional
+                      </p>
                       <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
                     </div>
                   </div>
