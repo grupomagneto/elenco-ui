@@ -1,5 +1,5 @@
 <?php 
 
-$conexao = mysqli_connect("localhost:8888", "root", "root", "testeperfil");
+$conexao = mysqli_connect("localhost:8889", "root", "root", "testeperfil");
 
  ?>

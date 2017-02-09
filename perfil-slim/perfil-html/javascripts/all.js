@@ -268,21 +268,21 @@ $(document).ready(function(){
 });
 
 //hover fav, discard and subtitle
-$(document).ready(function(){ 
-  $(".tab-actions__multiples > img.tab-image__background").hover(function () {
-      // mouseover event codes...
-        $(".checkbox-multiples-action__discard img").css("display", "block");
-        $(".checkbox-multiples-action__fav img").css("display", "block");
-        $(".subtitle__prof").css("display", "block");
-        $( ".subtitle" ).css( "display", "block" );
-  }, function () {
-      // mouseout event codes...
-        $(".checkbox-multiples-action__discard img").css("display", "none");
-        $(".checkbox-multiples-action__fav img").css("display", "none");
-        $(".subtitle").css("display", "none");
-        $( ".subtitle__prof" ).css( "display", "none" );
-  });
-});
+// $(document).ready(function(){ 
+//   $(".tab-actions__multiples > img.tab-image__background").hover(function () {
+//       // mouseover event codes...
+//         $(".checkbox-multiples-action__discard img").css("display", "block");
+//         $(".checkbox-multiples-action__fav img").css("display", "block");
+//         $(".subtitle__prof").css("display", "block");
+//         $( ".subtitle" ).css( "display", "block" );
+//   }, function () {
+//       // mouseout event codes...
+//         $(".checkbox-multiples-action__discard img").css("display", "none");
+//         $(".checkbox-multiples-action__fav img").css("display", "none");
+//         $(".subtitle").css("display", "none");
+//         $( ".subtitle__prof" ).css( "display", "none" );
+//   });
+// });
 
 $(document).ready(function(){
   $(".tab-actions__four > img.tab-image__background").hover(function () {
@@ -346,11 +346,12 @@ setInterval(function(){updateGradient('.gradient')},10);
 
 $(document).on('click', '.checkbox-multiples-action__fav', function () {
     var $input = $("input[name=imagefavorita]")
-    $input.prop('checked', !$input.prop('checked'))
+    $input.prop('checked', true);
+    // $input.prop.setAttribute('checked', 'checked');
 });
 
 $(document).on('click', '.checkbox-multiples-action__discard', function () {
-    alert('on change');
+    // alert('on change');
     var $input = $("input[name=imagefavorita]")
-    $input.prop('checked', !$input.prop('checked'))
+    $input.prop('checked', false);
 });

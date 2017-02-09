@@ -18,6 +18,12 @@
   <link rel="stylesheet" href="stylesheets/popularidade.css">
   <link rel="stylesheet" href="stylesheets/reputacao.css">
   <link rel="stylesheet" href="stylesheets/site.css">
+
+
+  <script type="text/javascript">
+       var url = "http://localhost:8888/";
+  </script>
+
 </head>
 <body>
   
@@ -143,7 +149,7 @@
                     <tr>
                       <td>
                         <div class="perfil-fav__select font-family color-primary cursor" href="">
-                          <img alt="" class="cursor" src="images/elenco_019589_20160913140545.jpg" />
+                          <img alt="" class="cursor img__fav" src="images/elenco_019589_20160913140545.jpg" />
                           <p class="cursor favoritado">
                             
                           </p>
@@ -174,7 +180,7 @@
             <div class="tab_content" id="tab1">
               <div class="container-outline__multiples">
 
-                <form method="post" action="" id="formfavorita">
+                <form method="post" action="addsearch.php" id="formfavorita">
 
                <!--   <input type="checkbox" id="botaofavorita" class="botaofavorita imagefavorita" value="valor da imagem" name="imagefavorita">
                 
@@ -182,13 +188,13 @@
                     <div class="tab__box">
                       <div class="tab-actions tab-actions__multiples">
 
-                        <input type="checkbox" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
-                        <button class="checkbox-multiples-action__fav botaofavorita">
+                        <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__fav botaofavorita">
                           <img src="images/fav-icon.svg" alt="">
                         </button>
 
-                        <input type="checkbox" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
-                        <button class="checkbox-multiples-action__discard botaofavorita">
+                        <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__discard botaofavorita">
                           <img src="images/discard-icon.svg" alt="">
                         </button> 
 
@@ -207,12 +213,12 @@
                       <div class="tab-actions tab-actions__multiples">
 
                         <input type="checkbox" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
-                        <button class="checkbox-multiples-action__fav  botaofavorita">
+                        <button type="submit" class="checkbox-multiples-action__fav  botaofavorita">
                           <img src="images/fav-icon.svg" alt="">
                         </button>
 
                         <input type="checkbox" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
-                        <button class="checkbox-multiples-action__discard  botaofavorita">
+                        <button type="submit" class="checkbox-multiples-action__discard botaofavorita">
                           <img src="images/discard-icon.svg" alt="">
                         </button> 
 
