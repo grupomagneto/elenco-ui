@@ -73,7 +73,6 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   var $range = $(".js-range-slider");
-
   $range.ionRangeSlider({
       type: "double",
       min: 0,

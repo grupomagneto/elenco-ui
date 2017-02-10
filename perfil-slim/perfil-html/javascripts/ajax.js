@@ -19,9 +19,36 @@ $(".botaofavorita").click(function(){
 		
 		return false;
 	});
-});  
+}); 
 
-// jQuery(document).ready(function(){
 
-// })
+(function($) {
+  AddTableRow = function() {
 
+    var newRow = $("<tr>");
+    var cols = "";
+
+    cols += '<td>&nbsp;</td>';
+    cols += '<td>&nbsp;</td>';
+    cols += '<td>&nbsp;</td>';
+    cols += '<td>&nbsp;</td>';
+
+    newRow.append(cols);
+    $(".table-menu-fav").append(newRow);
+
+    return false;
+  };
+})(jQuery);
+
+
+(function($) {
+  RemoveTableRow = function(item) {
+    var tr = $(item).closest('tr');
+
+    tr.fadeOut(400, function() {
+      tr.remove();  
+    });
+
+    return false;
+  }
+})(jQuery);

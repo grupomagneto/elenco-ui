@@ -19,11 +19,6 @@
   <link rel="stylesheet" href="stylesheets/reputacao.css">
   <link rel="stylesheet" href="stylesheets/site.css">
 
-
-  <script type="text/javascript">
-       var url = "http://localhost:8888/";
-  </script>
-
 </head>
 <body>
   
@@ -154,7 +149,7 @@
                             
                           </p>
                         </div>
-                        <div class="excluir">
+                        <div class="excluir"  onclick="RemoveTableRow(this)">
                           <img alt="" class="cursor" src="images/excluir.svg" />
                           <p class="cursor">
                             excluir
@@ -189,7 +184,7 @@
                       <div class="tab-actions tab-actions__multiples">
 
                         <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
-                        <button type="submit" class="checkbox-multiples-action__fav botaofavorita">
+                        <button type="submit" class="checkbox-multiples-action__fav botaofavorita" onclick="AddTableRow()">
                           <img src="images/fav-icon.svg" alt="">
                         </button>
 
