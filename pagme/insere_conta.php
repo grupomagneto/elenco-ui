@@ -21,11 +21,13 @@ $name = $userRow['nome'];
 $cpf = $userRow['cpf'];
 $bank_number = $_POST['banco'];
 $bank_agency = $_POST['agencia'];
-$bank_account = $_POST['conta'];
+$bank_account = trim($_POST['conta']);
+$bank_account = strip_tags($bank_account)
+$bank_account = htmlspecialchars($bank_account);
 $timestamp = date('Y-m-d h:i:s', time());
 
 require_once 'bank_names.php';
-// echo $cpf;
+// echo $bank_account;
 
 $insert = mysqli_query($link, "INSERT INTO bank_accounts (id_elenco_financeiro, bank_number, bank_name, bank_agency, bank_account, cpf, full_name, active, timestamp) VALUES ('$id','$bank_number','$bank_name','$bank_agency','$bank_account','$cpf','$name','1','$timestamp')");
 header("Location: dbancarios.php");
