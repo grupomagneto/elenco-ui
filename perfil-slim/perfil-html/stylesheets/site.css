@@ -547,7 +547,10 @@ a:visited {
   color: #FFFFFF;
   height: 50px;
   width: 100%;
-  user-select: none; }
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
 
 .menu-button {
   display: inline-block;
@@ -565,7 +568,10 @@ a:visited {
   left: 0;
   right: 0;
   z-index: -1;
-  user-select: none; }
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
   .fullscreen-menu a {
     color: #FFFFFF; }
   .fullscreen-menu .mask {
@@ -588,6 +594,9 @@ a:visited {
       margin-top: 30px;
       opacity: 0.5;
       transform: translateY(100%);
+      -webkit-transform: translateY(100%);
+      -moz-transform: translateY(100%);
+      -ms-transform: translateY(100%);
       color: #FFFFFF; }
 
 #multiple-image{
@@ -791,7 +800,7 @@ a:visited {
   width: 50px;
   height: 70px;
   float: right;
-  right: 10%;
+  right: 2%;
   margin-top: -22%; }
 
 .excluir img {
@@ -1069,6 +1078,7 @@ a:visited {
       transform: translateY(100%);
       -webkit-transform: translateY(100%);
       -moz-transform: translateY(100%);
+      -ms-transform: translateY(100%);
       -o-transform: translateY(100%);
       color: #FFFFFF; }
 
@@ -1308,7 +1318,7 @@ ul.tabs li.active {
   left: 0;
   right: 0;
   margin-left: 0;
-  margin-top: 0; }
+  margin-top: -20px; }
 
 .tab-actions__multiples  > img.fav-action {
   background: #DB1F97;
@@ -1349,7 +1359,7 @@ ul.tabs li.active {
   left: 0;
   right: 0;
   margin-left: 0;
-  margin-top: 0; }
+  margin-top: -20px; }
 
 .tab-actions__four  > img.fav-action {
   background: #DB1F97;

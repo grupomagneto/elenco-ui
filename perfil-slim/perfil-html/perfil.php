@@ -141,22 +141,6 @@
                 <div class="perfil-fav">
 
                   <table class="table-menu-fav">
-                    <tr>
-                      <td>
-                        <div class="perfil-fav__select font-family color-primary cursor" href="">
-                          <img alt="" class="cursor img__fav" src="images/elenco_019589_20160913140545.jpg" />
-                          <p class="cursor favoritado">
-                            
-                          </p>
-                        </div>
-                        <div class="excluir"  onclick="RemoveTableRow(this)">
-                          <img alt="" class="cursor" src="images/excluir.svg" />
-                          <p class="cursor">
-                            excluir
-                          </p>
-                        </div>
-                      </td>
-                    </tr>
 
                   </table>
 
@@ -175,7 +159,7 @@
             <div class="tab_content" id="tab1">
               <div class="container-outline__multiples">
 
-                <form method="post" action="addsearch.php" id="formfavorita">
+                <form method="post" action="" id="formfavorita">
 
                <!--   <input type="checkbox" id="botaofavorita" class="botaofavorita imagefavorita" value="valor da imagem" name="imagefavorita">
                 
@@ -184,12 +168,12 @@
                       <div class="tab-actions tab-actions__multiples">
 
                         <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
-                        <button type="submit" class="checkbox-multiples-action__fav botaofavorita" onclick="AddTableRow()">
+                        <button type="submit" class="checkbox-multiples-action__fav botaofavorita fav" onclick="AddTableRow()">
                           <img src="images/fav-icon.svg" alt="">
                         </button>
 
-                        <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
-                        <button type="submit" class="checkbox-multiples-action__discard botaofavorita">
+                        <input type="radio" name="imagediscard" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__discard botaodiscard discard">
                           <img src="images/discard-icon.svg" alt="">
                         </button> 
 
@@ -207,21 +191,21 @@
                     <div class="tab__box">
                       <div class="tab-actions tab-actions__multiples">
 
-                        <input type="checkbox" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
-                        <button type="submit" class="checkbox-multiples-action__fav  botaofavorita">
+                        <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__fav botaofavorita fav" onclick="AddTableRow()">
                           <img src="images/fav-icon.svg" alt="">
                         </button>
 
-                        <input type="checkbox" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
-                        <button type="submit" class="checkbox-multiples-action__discard botaofavorita">
+                        <input type="radio" name="imagediscard" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__discard botaodiscard discard">
                           <img src="images/discard-icon.svg" alt="">
                         </button> 
 
                         <img alt="discard" class="discard-action cursor" src="images/discard.svg" />
                         <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
 
-                        <p class="subtitle__prof font-family color-primary font-small cursor">
-                          Daniela, 23
+                        <p class="subtitle font-family color-primary font-small cursor">
+                          Bruna, 23
                         </p>
                         <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
 

@@ -222,16 +222,10 @@ $(document).ready(function() {
 //discard and fav actions
 
 $(document).ready(function(){
-  $(".tab-actions__multiples  > img.discard-action").hide();
+  $(".tab-actions__multiples > img.discard-action").hide();
 
-  $(".discard").click(function(e){
-    $('> img:nth-child(3)', $(this).closest(".tab-actions")).fadeToggle('fast');
-  });
-});
-
-$(document).ready(function(){
-  $(".tab-actions__multiples > img.tab-image__background").dblclick(function(){
-    $('> img.fav-action', $(this).closest(".tab-actions")).fadeToggle('fast');
+  $(".discard").click(function(){
+    $('> img.discard-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
   });
 });
 
@@ -239,7 +233,13 @@ $(document).ready(function(){
   $(".tab-actions__multiples  > img.fav-action").hide();
 
   $(".fav").click(function(){
-    $('> img:nth-child(4)', $(this).closest(".tab-actions")).fadeToggle('fast');
+    $('> img.fav-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
+  });
+});
+
+$(document).ready(function(){
+  $(".tab-actions__multiples > img.tab-image__background").dblclick(function(){
+    $('> img.fav-action', $(this).closest(".tab-actions")).fadeToggle('fast');
   });
 });
 
@@ -351,6 +351,6 @@ $(document).on('click', '.checkbox-multiples-action__fav', function () {
 
 $(document).on('click', '.checkbox-multiples-action__discard', function () {
     // alert('on change');
-    var $input = $("input[name=imagefavorita]")
-    $input.prop('checked', false);
+    var $input = $("input[name=imagediscard]")
+    $input.prop('checked', true);
 });

@@ -5,7 +5,7 @@ $(".botaofavorita").click(function(){
 		jQuery.ajax({
 			type: "POST",
 			dataType: 'html',
-			url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/addsearch.php",
+			url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/addsearch.php",
 			data: dados,
 			success: function( data )
 			{
@@ -21,6 +21,29 @@ $(".botaofavorita").click(function(){
 	});
 }); 
 
+$(".botaodiscard").click(function(){
+    jQuery('#formfavorita').submit(function(){
+    var dados = jQuery( this ).serialize();
+
+    jQuery.ajax({
+      type: "POST",
+      dataType: 'html',
+      url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/discardsearch.php",
+      data: dados,
+      success: function( data )
+      {
+        alert("Sucesso ajax");
+        // $("#formfavorita").submit();
+        // $('.img__fav').attr('src', img);
+        // $(".favoritado").html(data);
+        // location = 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/addsearch.php';
+      }
+    });
+    
+    return false;
+  });
+}); 
+
 
 (function($) {
   AddTableRow = function() {
@@ -28,10 +51,19 @@ $(".botaofavorita").click(function(){
     var newRow = $("<tr>");
     var cols = "";
 
-    cols += '<td>&nbsp;</td>';
-    cols += '<td>&nbsp;</td>';
-    cols += '<td>&nbsp;</td>';
-    cols += '<td>&nbsp;</td>';
+    cols += '<td>';
+    cols += '<div class="perfil-fav__select font-family color-primary cursor" href="">';
+    cols += '<img alt="" class="cursor img__fav" src="images/elenco_019589_20160913140545.jpg" />';
+    cols += '<p class="cursor favoritado">';
+    cols += '</p>';
+    cols += '</div>';
+    cols += '<div class="excluir discard" onclick="RemoveTableRow(this)">';
+    cols += '<img alt="excluir" class="cursor" src="images/excluir.svg" />';
+    cols += '<p class="cursor">';
+    cols += 'excluir';
+    cols += '</p>';
+    cols += '</div>';
+    cols += '</td>';
 
     newRow.append(cols);
     $(".table-menu-fav").append(newRow);

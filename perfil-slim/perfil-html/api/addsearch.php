@@ -1,5 +1,6 @@
 <?php 
 require_once("functions.php");
+
 if(isset($_POST)){
 
   $imagefavorita = $_POST['imagefavorita'];
@@ -8,7 +9,7 @@ if(isset($_POST)){
  };
 ?>
 <?php
-	if(insereImagem($conexao, $imagefavorita)) {
+	if(insereImagemFavorita($conexao, $imagefavorita)) {
 ?>
 	<!-- <p class="text-success">
 		imagem <?php $imagefavorita; ?> adicionado com sucesso!
