@@ -1260,6 +1260,7 @@ ul.tabs li.active {
 
 .checkbox-multiples-action__fav img {
   float: right;
+  display: none;
   position: absolute;
   z-index: 9999;
   width: 25px;
@@ -1273,6 +1274,7 @@ ul.tabs li.active {
 }
 .checkbox-multiples-action__discard img {
   float: left;
+  display: none;
   position: absolute;
   z-index: 9999;
   width: 25px;

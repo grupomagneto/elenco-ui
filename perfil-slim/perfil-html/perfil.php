@@ -159,7 +159,7 @@
             <div class="tab_content" id="tab1">
               <div class="container-outline__multiples">
 
-                <form method="post" action="" id="formfavorita">
+                <form method="post" action="" class="formfavorita">
 
                <!--   <input type="checkbox" id="botaofavorita" class="botaofavorita imagefavorita" value="valor da imagem" name="imagefavorita">
                 
@@ -183,7 +183,7 @@
                         <p class="subtitle font-family color-primary font-small cursor">
                           Bruna, 23
                         </p>
-                        <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
+                        <img onmouseenter="onEnterFunction()" alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
 
                       </div>
                     </div>
@@ -205,7 +205,7 @@
                         <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
 
                         <p class="subtitle font-family color-primary font-small cursor">
-                          Bruna, 23
+                          Daniela, 23
                         </p>
                         <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
 
@@ -221,15 +221,16 @@
           <div class="tab_content" id="tab2">
             <div class="container-outline__four">
               <div class="tab__box tab__box-four">
-                <div class="tab-actions tab-actions__four">
+                <form method="post" action="" class="formfavorita">
+                    <div class="tab-actions tab-actions__four">
 
-                      <input type="checkbox" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
-                      <button class="checkbox-multiples-action__fav  botaofavorita">
+                      <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
+                      <button class="checkbox-multiples-action__fav fav botaofavorita">
                         <img src="images/fav-icon.svg" alt="">
                       </button>
 
-                      <input type="checkbox" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
-                      <button class="checkbox-multiples-action__discard  botaofavorita">
+                      <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
+                      <button class="checkbox-multiples-action__discard discard  botaofavorita">
                         <img src="images/discard-icon.svg" alt="">
                       </button> 
 
@@ -239,9 +240,10 @@
                       <p class="subtitle__prof font-family color-primary font-small cursor">
                         Daniela, 23
                       </p>
-                      <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-
-                </div>
+                      <img onmouseenter="onEnterfourFunction()" alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
+                  
+                    </div>
+                  </form>
               </div>
             </div>
           </div>

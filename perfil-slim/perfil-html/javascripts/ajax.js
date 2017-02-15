@@ -1,5 +1,5 @@
 $(".botaofavorita").click(function(){
-  	jQuery('#formfavorita').submit(function(){
+  	jQuery('.formfavorita').submit(function(){
 		var dados = jQuery( this ).serialize();
 
 		jQuery.ajax({
@@ -22,7 +22,7 @@ $(".botaofavorita").click(function(){
 }); 
 
 $(".botaodiscard").click(function(){
-    jQuery('#formfavorita').submit(function(){
+    jQuery('.formfavorita').submit(function(){
     var dados = jQuery( this ).serialize();
 
     jQuery.ajax({

@@ -69,6 +69,13 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+
+    jQuery(".excluir").click(function(){
+      $(".checkbox-multiples-action__fav img").css("display", "none");
+    });
+});
+
 //Ranger Slide
 
 $(document).ready(function() {
@@ -243,12 +250,11 @@ $(document).ready(function(){
   });
 });
 
-
 $(document).ready(function(){
   $(".tab-actions__four > img.discard-action").hide();
 
   $(".discard").click(function(e){
-    $('> img:nth-child(3)', $(this).closest(".tab-actions")).fadeToggle('fast');
+    $('> img.discard-action', $(this).closest(".tab-actions__four")).fadeToggle('fast');
   });
 });
 
@@ -262,11 +268,26 @@ $(document).ready(function(){
   $(".tab-actions__four > img.fav-action").hide();
 
   $(".fav").click(function(){
-    $('> img:nth-child(4)', $(this).closest(".tab-actions")).fadeToggle('fast');
+    $('> img.fav-action', $(this).closest(".tab-actions__four")).fadeToggle('fast');
   });
 });
 
 //hover fav, discard and subtitle
+function onEnterFunction() {
+  $(".checkbox-multiples-action__discard img").css("display", "block");
+  $(".checkbox-multiples-action__fav img").css("display", "block");
+  $(".subtitle__prof").css("display", "block");
+  $( ".subtitle" ).css( "display", "block" );
+}
+
+function onEnterfourFunction() {
+  $(".checkbox-multiples-action__discard img").css("display", "block");
+  $(".checkbox-multiples-action__fav img").css("display", "block");
+  $(".subtitle__prof").css("display", "block");
+  $( ".subtitle" ).css( "display", "block" );
+}
+
+
 // $(document).ready(function(){ 
 //   $(".tab-actions__multiples > img.tab-image__background").hover(function () {
 //       // mouseover event codes...
@@ -283,21 +304,22 @@ $(document).ready(function(){
 //   });
 // });
 
-$(document).ready(function(){
-  $(".tab-actions__four > img.tab-image__background").hover(function () {
-      // mouseover event codes...
-        $(".checkbox-multiples-action__discard img").css("display", "block");
-        $(".checkbox-multiples-action__fav img").css("display", "block");
-        $(".subtitle__prof").css("display", "block");
-        $( ".subtitle" ).css( "display", "block" );
-  }, function () {
-      // mouseout event codes...
-        $(".checkbox-multiples-action__discard img").css("display", "none");
-        $(".checkbox-multiples-action__fav img").css("display", "none");
-        $( ".subtitle__prof" ).css( "display", "none" );
-        $(".subtitle").css("display", "none");
-  });
-});
+// $(document).ready(function(){
+//   $(".tab-actions__four > img.tab-image__background").hover(function () {
+//       // mouseover event codes...
+//         $(".checkbox-multiples-action__discard img").css("display", "block");
+//         $(".checkbox-multiples-action__fav img").css("display", "block");
+//         $(".subtitle__prof").css("display", "block");
+//         $( ".subtitle" ).css( "display", "block" );
+//   }, function () {
+//       // mouseout event codes...
+//         $(".checkbox-multiples-action__discard img").css("display", "none");
+//         $(".checkbox-multiples-action__fav img").css("display", "none");
+//         $( ".subtitle__prof" ).css( "display", "none" );
+//         $(".subtitle").css("display", "none");
+//   });
+// });
+
 // Gradient
 var colors = new Array(
 [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]
