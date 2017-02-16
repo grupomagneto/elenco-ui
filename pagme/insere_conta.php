@@ -17,11 +17,20 @@
   }
 
 $id = $_SESSION['user'];
-$name = $userRow['nome'];
+if (!empty($_SESSION['nome_responsavel'])) {
+     $name = $_SESSION['nome_responsavel'];
+}
+else {
+  $name = $userRow['nome'];
+}
 $cpf = $userRow['cpf'];
 $bank_number = $_POST['banco'];
-$bank_agency = $_POST['agencia'];
-$bank_account = $_POST['conta'];
+$bank_agency = trim($_POST['agencia']);
+$bank_agency = strip_tags($bank_agency);
+$bank_agency = htmlspecialchars($bank_agency);
+$bank_account = trim($_POST['conta']);
+$bank_account = strip_tags($bank_account);
+$bank_account = htmlspecialchars($bank_account);
 $timestamp = date('Y-m-d h:i:s', time());
 
 require_once 'bank_names.php';

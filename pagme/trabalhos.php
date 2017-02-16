@@ -7,14 +7,32 @@ if( !isset($_SESSION['user']) ) {
 	header("Location: index.php");
 	exit;
 }
+if (isset($_GET['new_id'])) {
+  $_SESSION['user'] = $_GET['new_id'];
+}
 // select loggedin users detail
 $res=mysqli_query($link, "SELECT * FROM tb_elenco WHERE id_elenco=".$_SESSION['user']);
 $userRow=mysqli_fetch_array($res);
+$cpf = $userRow['cpf'];
+$email = $userRow['email'];
 if ($userRow['sexo'] == 'F') {
   $sexo = 'a';
 }
 elseif ($userRow['sexo'] == 'M') {
   $sexo = 'o';
+}
+// cria o menu de nome artístico se existirem mais de um agenciado no mesmo cpf e email
+$result = mysqli_query($link, "SELECT nome_artistico, id_elenco FROM tb_elenco WHERE email='$email' AND cpf='$cpf' ORDER BY dt_nascimento ASC");
+$count = mysqli_num_rows($result);
+$n = 1;
+if ($n <= $count) {
+  while ($row = mysqli_fetch_array($result)) {
+    $id_temp = $row['id_elenco'];
+    if ($id_temp != $_SESSION['user']) {
+      ${'nome_artistico_dependente'.$n} = $row['nome_artistico'];
+      $n++;
+    }
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -50,6 +68,23 @@ elseif ($userRow['sexo'] == 'M') {
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 			  <span class="glyphicon glyphicon-user"></span>&nbsp;<?php echo $userRow['nome_artistico']; ?>&nbsp;<span class="caret"></span></a>
               <ul class="dropdown-menu">
+              <?php
+              $result = mysqli_query($link, "SELECT nome_artistico, id_elenco FROM tb_elenco WHERE email='$email' AND cpf='$cpf'");
+                $n = 1;
+                if ($n <= $count) {
+                  while ($row = mysqli_fetch_array($result)) {
+                    $id_temp = $row['id_elenco'];
+                    if ($id_temp != $_SESSION['user']) {
+                        echo "<li><a href='home.php?new_id=$id_temp'><span class='glyphicon glyphicon-user'></span>&nbsp;";
+                        echo ${'nome_artistico_dependente'.$n};
+                        echo "&nbsp;</a></li>";
+                      $n++;
+                    }
+                  }
+                }
+              ?>
+                <li><a href='mailto:vini@grupomagneto.com.br'><span class='glyphicon glyphicon-envelope'></span>&nbsp;Contato</a></li>
+
                 <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sair</a></li>
               </ul>
             </li>

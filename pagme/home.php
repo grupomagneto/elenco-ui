@@ -13,6 +13,9 @@
 	$res=mysqli_query($link, "SELECT * FROM tb_elenco WHERE id_elenco=".$_SESSION['user']);
 	$userRow=mysqli_fetch_array($res);
   $cpf = $userRow['cpf'];
+  if (!empty($userRow['nome_responsavel'])) {
+       $_SESSION['nome_responsavel'] = $userRow['nome_responsavel'];
+  }
   $_SESSION['cpf'] = $cpf;
   $email = $userRow['email'];
   if ($userRow['sexo'] == 'F') {
@@ -84,6 +87,7 @@
                   }
                 }
               ?>
+                <li><a href='mailto:vini@grupomagneto.com.br'><span class='glyphicon glyphicon-envelope'></span>&nbsp;Contato</a></li>
                 <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sair</a></li>
               </ul>
             </li>
