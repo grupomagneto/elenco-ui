@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="stylesheets/popularidade.css">
   <link rel="stylesheet" href="stylesheets/reputacao.css">
   <link rel="stylesheet" href="stylesheets/site.css">
+
 </head>
 <body>
   
@@ -140,22 +141,6 @@
                 <div class="perfil-fav">
 
                   <table class="table-menu-fav">
-                    <tr>
-                      <td>
-                        <div class="perfil-fav__select font-family color-primary cursor" href="">
-                          <img alt="" class="cursor" src="images/elenco_019589_20160913140545.jpg" />
-                          <p class="cursor favoritado">
-                            
-                          </p>
-                        </div>
-                        <div class="excluir">
-                          <img alt="" class="cursor" src="images/excluir.svg" />
-                          <p class="cursor">
-                            excluir
-                          </p>
-                        </div>
-                      </td>
-                    </tr>
 
                   </table>
 
@@ -174,37 +159,60 @@
             <div class="tab_content" id="tab1">
               <div class="container-outline__multiples">
 
-                <form method="post" action="" id="formfavorita">
+                <form method="post" action="" class="formfavorita">
 
-                  <input type="checkbox" id="botaofavorita" class="botaofavorita imagefavorita" value="valor da imagem" name="imagefavorita">
-                  <input type="checkbox" class="botaofavorita imagefavorita" value="valor da imagem 2" name="imagefavorita">
-                  
-                  
-                </form>
+               <!--   <input type="checkbox" id="botaofavorita" class="botaofavorita imagefavorita" value="valor da imagem" name="imagefavorita">
                 
-                  <div class="tab__box">
-                    <div class="tab-actions">
-                      <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                      <img alt="fav" class="fav cursor botaofavorita" src="images/fav-icon.svg" />
-                      <img alt="discard" class="cursor" src="images/discard.svg" />
-                      <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-                      <p class="subtitle font-family color-primary font-small cursor">
-                        Bruna, 23
-                      </p>
-                      <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-                    </div>
-                  </div>
+                -->
+                    <div class="tab__box">
+                      <div class="tab-actions tab-actions__multiples">
 
-                  <div class="tab__box">
-                    <div class="tab-actions">
-                      <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                      <img alt="fav" class="fav cursor botaofavorita" src="images/fav-icon.svg" />
-                      <img alt="fav" class="cursor" src="images/discard.svg" />
-                      <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-                      <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-                    </div>
-                  </div>
+                        <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__fav botaofavorita fav" onclick="AddTableRow()">
+                          <img src="images/fav-icon.svg" alt="">
+                        </button>
 
+                        <input type="radio" name="imagediscard" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__discard botaodiscard discard">
+                          <img src="images/discard-icon.svg" alt="">
+                        </button> 
+
+                        <img alt="discard" class="discard-action cursor" src="images/discard.svg" />
+                        <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
+
+                        <p class="subtitle font-family color-primary font-small cursor">
+                          Bruna, 23
+                        </p>
+                        <img onmouseenter="onEnterFunction()" alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
+
+                      </div>
+                    </div>
+
+                    <div class="tab__box">
+                      <div class="tab-actions tab-actions__multiples">
+
+                        <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__fav botaofavorita fav" onclick="AddTableRow()">
+                          <img src="images/fav-icon.svg" alt="">
+                        </button>
+
+                        <input type="radio" name="imagediscard" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__discard botaodiscard discard">
+                          <img src="images/discard-icon.svg" alt="">
+                        </button> 
+
+                        <img alt="discard" class="discard-action cursor" src="images/discard.svg" />
+                        <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
+
+                        <p class="subtitle font-family color-primary font-small cursor">
+                          Daniela, 23
+                        </p>
+                        <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
+
+                      </div>
+                    </div>
+
+                </form> 
               </div>
 
             </div>
@@ -213,13 +221,29 @@
           <div class="tab_content" id="tab2">
             <div class="container-outline__four">
               <div class="tab__box tab__box-four">
-                <div class="tab-actions tab-actions__four">
-                  <img alt="discard" class="discard cursor" onclick="myFunction(this)" src="images/discard-icon.svg" />
-                  <img alt="fav" class="fav cursor" src="images/fav-icon.svg" />
-                  <img alt="fav" class="discard-action cursor" src="images/discard.svg" />
-                  <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-                  <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-                </div>
+                <form method="post" action="" class="formfavorita">
+                    <div class="tab-actions tab-actions__four">
+
+                      <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
+                      <button class="checkbox-multiples-action__fav fav botaofavorita">
+                        <img src="images/fav-icon.svg" alt="">
+                      </button>
+
+                      <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
+                      <button class="checkbox-multiples-action__discard discard  botaofavorita">
+                        <img src="images/discard-icon.svg" alt="">
+                      </button> 
+
+                      <img alt="discard" class="discard-action cursor" src="images/discard.svg" />
+                      <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
+
+                      <p class="subtitle__prof font-family color-primary font-small cursor">
+                        Daniela, 23
+                      </p>
+                      <img onmouseenter="onEnterfourFunction()" alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
+                  
+                    </div>
+                  </form>
               </div>
             </div>
           </div>
