@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link rel="stylesheet" href="stylesheets/ion.rangeSlider.css">
   <link rel="stylesheet" href="stylesheets/ion.rangeSlider.skinFlat.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick-theme.css">
+  <link rel="stylesheet" href="stylesheets/bootstrap-glyphicons.css">
+  <link rel="stylesheet" href="stylesheets/slick.css">
+  <link rel="stylesheet" href="stylesheets/slick-theme.css">
   <link rel="stylesheet" href="stylesheets/contato.css">
   <link rel="stylesheet" href="stylesheets/assinatura.css">
   <link rel="stylesheet" href="stylesheets/portfolio.css">
@@ -161,9 +161,6 @@
 
                 <form method="post" action="" class="formfavorita">
 
-               <!--   <input type="checkbox" id="botaofavorita" class="botaofavorita imagefavorita" value="valor da imagem" name="imagefavorita">
-                
-                -->
                     <div class="tab__box">
                       <div class="tab-actions tab-actions__multiples">
 
@@ -179,11 +176,16 @@
 
                         <img alt="discard" class="discard-action cursor" src="images/discard.svg" />
                         <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-
                         <p class="subtitle font-family color-primary font-small cursor">
                           Bruna, 23
                         </p>
+
                         <img onmouseenter="onEnterFunction()" alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
+<!-- 
+                        <input type="radio" name="imagefavorita" value="valor da imagem background" class="checkbox-multiples" />
+                        <button type="submit" class="tab-image__background cursor botaofavorita" onclick="AddTableRow()">
+                          <img onmouseenter="onEnterFunction()" src="images/elenco_019589_20160913140545.jpg" alt="background">
+                        </button> -->
 
                       </div>
                     </div>
@@ -203,11 +205,80 @@
 
                         <img alt="discard" class="discard-action cursor" src="images/discard.svg" />
                         <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-
                         <p class="subtitle font-family color-primary font-small cursor">
-                          Daniela, 23
+                          Bruna, 23
                         </p>
-                        <img alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
+
+                        <img onmouseenter="onEnterFunction()" alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
+
+                      </div>
+                    </div>
+                    <div class="tab__box">
+                      <div class="tab-actions tab-actions__multiples">
+
+                        <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__fav botaofavorita fav" onclick="AddTableRow()">
+                          <img src="images/fav-icon.svg" alt="">
+                        </button>
+
+                        <input type="radio" name="imagediscard" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__discard botaodiscard discard">
+                          <img src="images/discard-icon.svg" alt="">
+                        </button> 
+
+                        <img alt="discard" class="discard-action cursor" src="images/discard.svg" />
+                        <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
+                        <p class="subtitle font-family color-primary font-small cursor">
+                          Bruna, 23
+                        </p>
+
+                        <img onmouseenter="onEnterFunction()" alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
+
+                      </div>
+                    </div>
+                    <div class="tab__box">
+                      <div class="tab-actions tab-actions__multiples">
+
+                        <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__fav botaofavorita fav" onclick="AddTableRow()">
+                          <img src="images/fav-icon.svg" alt="">
+                        </button>
+
+                        <input type="radio" name="imagediscard" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__discard botaodiscard discard">
+                          <img src="images/discard-icon.svg" alt="">
+                        </button> 
+
+                        <img alt="discard" class="discard-action cursor" src="images/discard.svg" />
+                        <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
+                        <p class="subtitle font-family color-primary font-small cursor">
+                          Bruna, 23
+                        </p>
+
+                        <img onmouseenter="onEnterFunction()" alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
+
+                      </div>
+                    </div>
+                    <div class="tab__box">
+                      <div class="tab-actions tab-actions__multiples">
+
+                        <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__fav botaofavorita fav" onclick="AddTableRow()">
+                          <img src="images/fav-icon.svg" alt="">
+                        </button>
+
+                        <input type="radio" name="imagediscard" value="valor da imagem" class="checkbox-multiples" />
+                        <button type="submit" class="checkbox-multiples-action__discard botaodiscard discard">
+                          <img src="images/discard-icon.svg" alt="">
+                        </button> 
+
+                        <img alt="discard" class="discard-action cursor" src="images/discard.svg" />
+                        <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
+                        <p class="subtitle font-family color-primary font-small cursor">
+                          Bruna, 23
+                        </p>
+
+                        <img onmouseenter="onEnterFunction()" alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
 
                       </div>
                     </div>
@@ -501,7 +572,6 @@
                 </svg>
               </li>
               <li class="box-4" rel="tab2">
-
                 <svg width="26px" height="25px" viewBox="0 0 26 25" version="1.1" xmlns="http://www.w3.org/2000/svg" id="box-4__image" xmlns:xlink="http://www.w3.org/1999/xlink">
 
                   <g id="Perfil---Mobile-(iPhone-4)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -521,11 +591,9 @@
                       </g>
                   </g>
                 </svg>
-
               </li>
 
               <li class="active single-image" rel="tab3">
-
                 <svg width="24px" height="25px" viewBox="0 0 24 25" version="1.1" xmlns="http://www.w3.org/2000/svg" id="single-image" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <g id="Perfil---Mobile-(iPhone-4)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <g id="Resultado---Grid-4" transform="translate(-224.000000, -400.000000)">
@@ -538,7 +606,6 @@
                       </g>
                   </g>
                 </svg>
-
               </li>
             </ul>
           </div>
@@ -601,11 +668,11 @@
   </div>
 </div>
 
-<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="javascripts/jquery-2.2.4.min.js"></script>
+<script src="javascripts/slick.min.js"></script>
+<script src="javascripts/jquery.easing.min.js"></script>
 <script src="javascripts/ion.rangeSlider.min.js"></script>
-<script src="http://rendro.github.io/easy-pie-chart/javascripts/jquery.easy-pie-chart.js"></script>
+<script src="javascripts/jquery.easy-pie-chart.js"></script>
 <script src="javascripts/all.js"></script>
 <script src="javascripts/tabs.js"></script>
 <script>
