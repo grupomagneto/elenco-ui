@@ -839,7 +839,7 @@ a:visited {
   margin-left: 10px; }
 
 .female {
-  background-image: url(../images/female-icon.svg);
+  background-image: url("../images/female-icon.svg");
   width: 42px;
   height: 55px; }
 
