@@ -73,7 +73,7 @@
 		display: table;
 	}
 	.container{
-		padding: 2px 2px 5px 2px;
+		padding: 1px 1px 1px 1px;
 	}
 	.wrapper .box{
 		float: left;
@@ -97,7 +97,7 @@
 		transition: all 1.0s ease;
 	}
 	.wrapper.list-mode .container{
-		padding-right: 2px;
+		padding-right: 1px;
 	}
 	.wrapper.list-mode .box{
 		width: 142px;
@@ -152,21 +152,26 @@
 	}
 
 	.animated {
+	  -moz-animation-duration: 1s;
 	  -webkit-animation-duration: 1s;
 	  animation-duration: 1s;
+	  -moz-animation-fill-mode: both;
 	  -webkit-animation-fill-mode: both;
 	  animation-fill-mode: both;
 	}
 
 	@-webkit-keyframes rotateOutUpLeft {
 	  from {
+	    -moz-transform-origin: left bottom;
 	    -webkit-transform-origin: left bottom;
 	    transform-origin: left bottom;
 	  }
 
 	  to {
+	    -moz-transform-origin: left bottom;
 	    -webkit-transform-origin: left bottom;
 	    transform-origin: left bottom;
+	    -moz-transform: rotate3d(0, 0, 1, -45deg);
 	    -webkit-transform: rotate3d(0, 0, 1, -45deg);
 	    transform: rotate3d(0, 0, 1, -45deg);
 	  }
@@ -174,21 +179,133 @@
 
 	@keyframes rotateOutUpLeft {
 	  from {
+	    -moz-transform-origin: left bottom;
 	    -webkit-transform-origin: left bottom;
 	    transform-origin: left bottom;
 	  }
 
 	  to {
+	    -moz-transform-origin: left bottom;
 	    -webkit-transform-origin: left bottom;
 	    transform-origin: left bottom;
+	    -moz-transform: rotate3d(0, 0, 1, -45deg);
 	    -webkit-transform: rotate3d(0, 0, 1, -45deg);
 	    transform: rotate3d(0, 0, 1, -45deg);
 	  }
 	}
 
 	.rotateOutUpLeft {
+	  -ms-animation-name: rotateOutUpLeft;
+	  -moz-animation-name: rotateOutUpLeft;
 	  -webkit-animation-name: rotateOutUpLeft;
 	  animation-name: rotateOutUpLeft;
+	}
+
+	@-ms-keyframes fadeOutRight {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+			-ms-transform: translate3d(100%, 0, 0);
+			transform: translate3d(100%, 0, 0);
+		}
+	}
+
+	@-moz-keyframes fadeOutRight {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+			-moz-transform: translate3d(100%, 0, 0);
+			transform: translate3d(100%, 0, 0);
+		}
+	}
+
+
+	@-webkit-keyframes fadeOutRight {
+	  from {
+	    opacity: 1;
+	  }
+
+	  to {
+	    opacity: 0;
+	    -webkit-transform: translate3d(100%, 0, 0);
+	    transform: translate3d(100%, 0, 0);
+	  }
+	}
+
+	@keyframes fadeOutRight {
+	  from {
+	    opacity: 1;
+	  }
+
+	  to {
+	    opacity: 0;
+	    -webkit-transform: translate3d(100%, 0, 0);
+	    transform: translate3d(100%, 0, 0);
+	  }
+	}
+
+	.fadeOutRight {
+	  -webkit-animation-name: fadeOutRight;
+	  -moz-animation-name: fadeOutRight;
+	  -ms-animation-name: fadeOutRight;
+	  animation-name: fadeOutRight;
+	}
+
+	@-ms-keyframes fadeOutLeft {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+			-ms-transform: translate3d(-100%, 0, 0);
+			transform: translate3d(-100%, 0, 0);
+		}
+	}
+
+	@-moz-keyframes fadeOutLeft {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+			-moz-transform: translate3d(-100%, 0, 0);
+			transform: translate3d(-100%, 0, 0);
+		}
+	}
+
+	@-webkit-keyframes fadeOutLeft {
+	  from {
+	    opacity: 1;
+	  }
+
+	  to {
+	    opacity: 0;
+	    -webkit-transform: translate3d(-100%, 0, 0);
+	    transform: translate3d(-100%, 0, 0);
+	  }
+	}
+
+	@keyframes fadeOutLeft {
+	  from {
+	    opacity: 1;
+	  }
+
+	  to {
+	    opacity: 0;
+	    -webkit-transform: translate3d(-100%, 0, 0);
+	    transform: translate3d(-100%, 0, 0);
+	  }
+	}
+
+	.fadeOutLeft {
+	  -ms-animation-name: fadeOutLeft;
+	  -moz-animation-name: fadeOutLeft;
+	  -webkit-animation-name: fadeOutLeft;
+	  animation-name: fadeOutLeft;
 	}
 
 </style>
@@ -220,7 +337,7 @@
 	    </div>
 
 		<button type="button" class="dislike" id="dislike">dislike</button>
-		<button type="button" id="like">like</button>
+		<button type="button" class="like" id="like">like</button>
 	</div>
 
  	<header>
@@ -239,29 +356,38 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 	<script>
-		$('.show-list-single').click(function(){
-			$('.wrapper').removeClass('list-mode');
-			$('.wrapper').addClass('list-mode-single');
-		});
+	$('.show-list-single').click(function(){
+		$('.wrapper').removeClass('list-mode');
+		$('.wrapper').addClass('list-mode-single');
+	});
 
-		$('.show-list').click(function(){
-			$('.wrapper').removeClass('list-mode-single');
-			$('.wrapper').addClass('list-mode');
-		});
+	$('.show-list').click(function(){
+		$('.wrapper').removeClass('list-mode-single');
+		$('.wrapper').addClass('list-mode');
+	});
 
-		$('.hide-list').click(function(){
-			$('.wrapper').removeClass('list-mode-single');
-			$('.wrapper').removeClass('list-mode');
-		});
+	$('.hide-list').click(function(){
+		$('.wrapper').removeClass('list-mode-single');
+		$('.wrapper').removeClass('list-mode');
+	});
 
-		$(".dislike").click(function(){
-		    $(".wrapper.list-mode-single.box:first-child").toggleClass('rotateOutUpLeft');
-		});
+	$(".dislike").click(function(){
+	    $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutLeft');
+	  $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+	              function(event) {
+	    // Do something when the transition ends
+	    $(".wrapper.list-mode-single .box").remove();
+	  });
+	});
 
+	$(".dislike").click(function (e){
+	    $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutLeft');
+	});
 
-		// $('#dislike').click(function (e) {
-  //   		$(".wrapper.list-mode-single.box.photo:first-of-type").addClass('rotateOutUpLeft');
-		// });
+	$(".like").click(function (e){
+	    $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutRight');
+	});
+
 
 	</script>
 
