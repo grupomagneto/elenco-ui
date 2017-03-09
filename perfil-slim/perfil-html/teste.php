@@ -30,6 +30,7 @@
 	}
 	.wrapper{
 		width: 290px;
+		height: auto;
 		margin: 30px auto 0;
 		background-color: #FFFFFF;
 		-webkit-box-sizing: border-box;
@@ -341,15 +342,15 @@
 	</div>
 
  	<header>
-    	<a href="javascript:void(0)" class="show-list-single">
-    		<i class="fa fa-square-o"></i>
-    	</a>
     	<a href="javascript:void(0)" class="show-list">
     		<i class="fa fa-th-list"></i>
     	</a>
         <a href="javascript:void(0)" class="hide-list">
         	<i class="fa fa-th"></i>
         </a>
+    	<a href="javascript:void(0)" class="show-list-single">
+    		<i class="fa fa-square-o"></i>
+    	</a>
     </header>
 
 
@@ -374,19 +375,28 @@
 	$(".dislike").click(function(){
 	    $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutLeft');
 	  $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
-	              function(event) {
+	              function (event) {
 	    // Do something when the transition ends
-	    $(".wrapper.list-mode-single .box").remove();
+	    $(".wrapper.list-mode-single .box:last-child").remove();
 	  });
 	});
 
-	$(".dislike").click(function (e){
-	    $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutLeft');
+	$(".like").click(function(){
+	    $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutRight');
+	  $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+	              function (event) {
+	    // Do something when the transition ends
+	    $(".wrapper.list-mode-single .box:last-child").remove();
+	  });
 	});
 
-	$(".like").click(function (e){
-	    $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutRight');
-	});
+	// $(".dislike").click(function (e){
+	//     $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutLeft');
+	// });
+
+	// $(".like").click(function (e){
+	//     $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutRight');
+	// });
 
 
 	</script>

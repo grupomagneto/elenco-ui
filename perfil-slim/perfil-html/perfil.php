@@ -181,11 +181,6 @@
                         </p>
 
                         <img onmouseenter="onEnterFunction()" alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-<!-- 
-                        <input type="radio" name="imagefavorita" value="valor da imagem background" class="checkbox-multiples" />
-                        <button type="submit" class="tab-image__background cursor botaofavorita" onclick="AddTableRow()">
-                          <img onmouseenter="onEnterFunction()" src="images/elenco_019589_20160913140545.jpg" alt="background">
-                        </button> -->
 
                       </div>
                     </div>
