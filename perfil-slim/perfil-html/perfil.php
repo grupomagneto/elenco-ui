@@ -170,7 +170,7 @@
                         </button>
 
                         <input type="radio" name="imagediscard" value="valor da imagem" class="checkbox-multiples" />
-                        <button type="submit" class="checkbox-multiples-action__discard botaodiscard discard">
+                        <button type="submit" class="checkbox-multiples-action__discard botaodiscard discard" onclick="AddTableRow()">
                           <img src="images/discard-icon.svg" alt="">
                         </button> 
 

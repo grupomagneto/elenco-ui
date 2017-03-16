@@ -260,19 +260,19 @@ $(document).ready(function(){
 });
 
 //hover fav, discard and subtitle
-function onEnterFunction() {
-  $(".checkbox-multiples-action__discard img").css("display", "block");
-  $(".checkbox-multiples-action__fav img").css("display", "block");
-  $(".subtitle__prof").css("display", "block");
-  $( ".subtitle" ).css( "display", "block" );
-}
+// function onEnterFunction() {
+//   $(".checkbox-multiples-action__discard img").css("display", "block");
+//   $(".checkbox-multiples-action__fav img").css("display", "block");
+//   $(".subtitle__prof").css("display", "block");
+//   $( ".subtitle" ).css( "display", "block" );
+// }
 
-function onEnterfourFunction() {
-  $(".checkbox-multiples-action__discard img").css("display", "block");
-  $(".checkbox-multiples-action__fav img").css("display", "block");
-  $(".subtitle__prof").css("display", "block");
-  $( ".subtitle" ).css( "display", "block" );
-}
+// function onEnterfourFunction() {
+//   $(".checkbox-multiples-action__discard img").css("display", "block");
+//   $(".checkbox-multiples-action__fav img").css("display", "block");
+//   $(".subtitle__prof").css("display", "block");
+//   $( ".subtitle" ).css( "display", "block" );
+// }
 
 // $(document).ready(function(){ 
 //   $(".tab-actions__multiples > img.tab-image__background").hover(function () {

@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="stylesheets/fisicos.css">
   <link rel="stylesheet" href="stylesheets/popularidade.css">
   <link rel="stylesheet" href="stylesheets/reputacao.css">
-  <link rel="stylesheet" href="stylesheets/site.css">
+  <link rel="stylesheet" href="stylesheets/newsite.css">
 
 </head>
 <body>
@@ -158,6 +158,7 @@
  
         <div class="wrapper">
 
+          <form method="post" action="" class="formfavorita">
             <div class="container">
               <div class="box animated">
                 
@@ -166,9 +167,9 @@
 
                         <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
                         <button type="submit" class="checkbox-multiples-action__fav botaofavorita fav" onclick="AddTableRow()">
-                          <img src="images/fav-icon.svg" alt="">
+                          <img class="checkbox-multiples-img__fav" src="images/fav-icon.svg" alt="">
                         </button>
-
+                        
                         <input type="radio" name="imagediscard" value="valor da imagem" class="checkbox-multiples" />
                         <button type="submit" class="checkbox-multiples-action__discard botaodiscard discard">
                           <img src="images/discard-icon.svg" alt="">
@@ -182,43 +183,83 @@
 
                         <img onmouseenter="onEnterFunction()" alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
 
-                      </div>
-                    </div>
-
-              </div>
-              <div class="box animated">
-                
-                    <div class="tab__box">
-                      <div class="tab-actions tab-actions__multiples">
-
-                        <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-multiples" />
-                        <button type="submit" class="checkbox-multiples-action__fav botaofavorita fav" onclick="AddTableRow()">
-                          <img src="images/fav-icon.svg" alt="">
+                        <button type="button" class="dislike">
+                          <img alt="overlay discard" src="images/discard-single.svg" />
+                        </button>
+                        
+                        <button type="button" class="like">
+                          <img alt="overlay fav" src="images/fav-single.svg" />
                         </button>
 
-                        <input type="radio" name="imagediscard" value="valor da imagem" class="checkbox-multiples" />
-                        <button type="submit" class="checkbox-multiples-action__discard botaodiscard discard">
-                          <img src="images/discard-icon.svg" alt="">
-                        </button> 
-
-                        <img alt="discard" class="discard-action cursor" src="images/discard.svg" />
-                        <img alt="fav" class="fav-action cursor" src="images/fav.svg" />
-                        <p class="subtitle font-family color-primary font-small cursor">
-                          Bruna, 23
-                        </p>
-
-                        <img onmouseenter="onEnterFunction()" alt="background" class="tab-image__background cursor" src="images/elenco_019589_20160913140545.jpg" />
-
+                              
                       </div>
                     </div>
-
               </div>
             </div>
 
+          </form>
         </div>
         
-          <button type="button" class="dislike" id="dislike">dislike</button>
-          <button type="button" class="like" id="like">like</button>
+        <div class="container-outline__categories">
+              <section class="intro">
+               <?php 
+                  include "contato.php";
+                ?>  
+              </section>
+              
+             <section class="second">
+               <?php 
+                  include "planoassinatura.php";
+                ?>  
+              </section>
+            
+              <section class="third">
+               <?php 
+                  include "portfolio.php";
+                ?>  
+              </section>
+              
+              <section class="fourth">
+               <?php 
+                 include "caches.php";
+                ?>  
+              </section>
+              
+              <section class="fifth">
+               <?php 
+                 include "jobs.php";
+                ?>  
+              </section>
+                
+              <section class="sixth">
+               <?php 
+                 include "fisicos.php";
+                ?>  
+              </section>
+              
+              <section class="seventh">
+               <?php 
+                 include "popularidade.php";
+                ?>  
+              </section>
+              
+              <section class="eighth">
+               <?php 
+                 include "reputacao.php";
+                ?>  
+              </section>
+              
+              <section class="footer__section">
+                <div class="container-outline__content">
+                  <a href="#intro">
+                    <img src="images/arrow-to-top.svg" alt="">
+                  </a>
+                  <hr>
+                  <p class="font-family color-primary">Magneto Elenco © 2009-2017</p>
+                </div>
+              </section>
+        </div>
+             
       </div>
     </div>
 
@@ -492,16 +533,33 @@ $(document).ready(function() {
   $('.show-list-single').click(function(){
     $('.wrapper').removeClass('list-mode');
     $('.wrapper').addClass('list-mode-single');
+    $('.checkbox-multiples-action__fav img').css('display', 'none');
+    $('.checkbox-multiples-action__discard img').css('display', 'none');
+    $('.dislike').css('display', 'block');
+    $('.like').css('display', 'block');
+    $('.container-outline__categories').css('display', 'block');
   });
+// .checkbox-multiples-action__fav img 
+// .checkbox-multiples-action__discard img
 
   $('.show-list').click(function(){
     $('.wrapper').removeClass('list-mode-single');
     $('.wrapper').addClass('list-mode');
+    $('.checkbox-multiples-action__fav img').css('display', 'block');
+    $('.checkbox-multiples-action__discard img').css('display', 'block');
+    $('.dislike').css('display', 'none');
+    $('.like').css('display', 'none');
+    $('.container-outline__categories').css('display', 'none');
   });
 
   $('.hide-list').click(function(){
     $('.wrapper').removeClass('list-mode-single');
     $('.wrapper').removeClass('list-mode');
+    $('.checkbox-multiples-action__fav img').css('display', 'block');
+    $('.checkbox-multiples-action__discard img').css('display', 'block');
+    $('.dislike').css('display', 'none');
+    $('.like').css('display', 'none');
+    $('.container-outline__categories').css('display', 'none');
   });
 
   $(".dislike").click(function(){

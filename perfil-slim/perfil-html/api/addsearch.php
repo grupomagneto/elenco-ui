@@ -5,9 +5,18 @@ if(isset($_POST)){
 
   $imagefavorita = $_POST['imagefavorita'];
   echo $imagefavorita;
+  $gender = $_POST['gender'];
+  echo $gender;
+  $ranger_age = $_POST['ranger_age'];
+  echo $ranger_age;
+  $raca_index = $_POST['raca_index'];
+  echo $raca_index;
+  $bairro = $_POST['bairro'];
+  echo $bairro;
 
  };
 ?>
+
 <?php
 	if(insereImagemFavorita($conexao, $imagefavorita)) {
 ?>
@@ -17,6 +26,24 @@ if(isset($_POST)){
 <?php
 	} else {
 		$msg = mysqli_error($conexao);
+?>
+	<!-- <p class="text-danger">
+		imagem favorita <?php $imagefavorita; ?> não foi adicionado: <?php $msg ?>
+	</p> -->
+<?php
+	}
+?>
+
+<?php
+	if(efetuaPesquisa($conexao_index, $sexo, $ranger_age, $raca_index, $bairro)) {
+?>
+	<!-- $gender, $ranger_age, $raca, $bairro -->
+	<!-- <p class="text-success">
+		imagem <?php $imagefavorita; ?> adicionado com sucesso!
+	</p> -->
+<?php
+	} else {
+		$msg = mysqli_error($conexao_index);
 ?>
 	<!-- <p class="text-danger">
 		imagem favorita <?php $imagefavorita; ?> não foi adicionado: <?php $msg ?>

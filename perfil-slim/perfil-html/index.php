@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Perfil</title>
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="stylesheets/swiper.css">
-    <link rel="stylesheet" href="stylesheets/ion.rangeSlider.css">
-    <link rel="stylesheet" href="stylesheets/ion.rangeSlider.skinFlat.css">
-    <link rel="stylesheet" href="stylesheets/index.css">
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
-</head>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, user-scalable=no">
+      <title>Perfil</title>
+      <!-- Link Swiper's CSS -->
+      <link rel="stylesheet" href="stylesheets/swiper.css">
+      <link rel="stylesheet" href="stylesheets/ion.rangeSlider.css">
+      <link rel="stylesheet" href="stylesheets/ion.rangeSlider.skinFlat.css">
+      <link rel="stylesheet" href="stylesheets/index.css">
+      <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+  </head>
 <body>
-  <form id="perfil_index" action="addsearch.php" method="POST" >
+  <form id="perfil_index" class="perfil_index" action="addsearch.php" method="POST" >
     <!-- Swiper -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -161,7 +161,7 @@
     					</div>
     					<div class="content__index">
                 <div class="ranger-slide__index">
-                  <input class="js-range-slider font-family color-primary" name="ranger" type="text" value="" />
+                  <input class="js-range-slider font-family color-primary" name="ranger_age" type="text" value="" />
                 </div>
     					</div>
     				</div>
@@ -213,7 +213,7 @@
                 <h1 class="font-family color-primary"> Qual a cor da pele?</h1>
               </div>
               <div class="content__index">
-                  <select id="raca" name="raca">
+                  <select id="raca" name="raca_index">
                     <option disabled value="1">Selecione...</option>
                     <option value="Amarela" >Amarela</option>
                     <option value="Branca">Branca</option>
@@ -333,7 +333,7 @@
                 </a>
                 <div class="button-next">
                   <div class="container-outline__content">
-                      <button class="button button-xsmall" type="submit">
+                      <button class="button button-xsmall search_index" type="submit">
                         <p>Buscar</p>
                       </button>
                   </div>

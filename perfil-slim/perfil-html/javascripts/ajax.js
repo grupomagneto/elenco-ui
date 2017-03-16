@@ -17,6 +17,24 @@ $(".botaofavorita").click(function(){
   });
 }); 
 
+$(".search_index").click(function(){
+  jQuery('.perfil_index').submit(function(){
+    var dados_index = jQuery( this ).serialize();
+
+    jQuery.ajax({
+      type: "POST",
+      dataType: 'html',
+      url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/addsearch.php",
+      data: dados_index,
+      success: function ( data )
+      {
+        alert("PESQUISOU");
+      }
+    });
+
+  });
+});
+
 
 $(".botaodiscard").click(function(){
     jQuery('.formfavorita').submit(function(){
@@ -38,7 +56,6 @@ $(".botaodiscard").click(function(){
 
 (function($) {
   AddTableRow = function() {
-
     var newRow = $("<tr>");
     var cols = "";
 
