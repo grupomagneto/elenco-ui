@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
   </head>
 <body>
-  <form id="perfil_index" class="perfil_index" action="addsearch.php" method="POST" >
+  <form id="perfil_index" class="perfil_index" action="novoperfil.php" method="POST" >
     <!-- Swiper -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -43,9 +43,9 @@
     					</div>
     					<div class="content__index">
                 <div class="gender_age-group__index">
-                  <input id="male" name="gender" type="radio" value="Male" />
+                  <input id="male" name="gender" type="radio" value="M" />
                   <label class="gender-cc male_index" for="male"></label>
-                  <input id="female" name="gender" type="radio" value="Female" /><label class="gender-cc female_index" for="female"></label>
+                  <input id="female" name="gender" type="radio" value="F" /><label class="gender-cc female_index" for="female"></label>
                 </div>
     					</div>
     				</div>
@@ -79,9 +79,9 @@
                         <p class="title-menu font-family color-primary">
                           Sexo:
                         </p>
-                        <input id="male" name="gender" type="radio" value="Male" />
+                        <input id="male" name="gender" type="radio" value="M" />
                         <label class="gender-cc male" for="male"></label>
-                        <input id="female" name="gender" type="radio" value="Female" /><label class="gender-cc female" for="female"></label>
+                        <input id="female" name="gender" type="radio" value="F" /><label class="gender-cc female" for="female"></label>
                       </div>
                       <div class="ranger-slide">
                         <p class="font-family color-primary">
@@ -215,11 +215,11 @@
               <div class="content__index">
                   <select id="raca" name="raca_index">
                     <option disabled value="1">Selecione...</option>
-                    <option value="Amarela" >Amarela</option>
-                    <option value="Branca">Branca</option>
-                    <option value="Indígena">Indígena</option>
-                    <option value="Negra">Negra</option>
-                    <option value="Parda">Parda</option>
+                    <option value="1" >Amarela</option>
+                    <option value="2">Branca</option>
+                    <option value="3">Indígena</option>
+                    <option value="4">Negra</option>
+                    <option value="5">Parda</option>
                   </select>
               </div>
             </div>

@@ -35,19 +35,19 @@ if(isset($_POST)){
 ?>
 
 <?php
-	if(efetuaPesquisa($conexao_index, $sexo, $ranger_age, $raca_index, $bairro)) {
+	if(efetuaPesquisa($conexao_index, $ranger_age, $gender, $raca_index, $bairro)) {
 ?>
 	<!-- $gender, $ranger_age, $raca, $bairro -->
-	<!-- <p class="text-success">
-		imagem <?php $imagefavorita; ?> adicionado com sucesso!
-	</p> -->
+	<p class="text-success">
+		imagem <?php $ranger_age; ?> pesquisou com sucesso!
+	</p> 
 <?php
 	} else {
 		$msg = mysqli_error($conexao_index);
 ?>
-	<!-- <p class="text-danger">
-		imagem favorita <?php $imagefavorita; ?> não foi adicionado: <?php $msg ?>
-	</p> -->
+	<p class="text-danger">
+		não pesquisou <?php $ranger_age; ?> não foi adicionado: <?php $msg ?>
+	</p>
 <?php
 	}
 ?>

@@ -1,3 +1,7 @@
+<?php 
+  require_once ("api/functions.php");
+?>
+
 <div class="container-outline__content">
     <div class="contact">
       <div class="title-section">
@@ -9,7 +13,7 @@
       <div class="content_section">
         <div class="content_contact">
           <h2 class="font-family font-medium color-primary">
-            daniela souza
+             daniela souza 
           </h2>
           <table class="table-left">
             <tr>

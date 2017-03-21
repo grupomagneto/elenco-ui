@@ -12,7 +12,6 @@ $(".botaofavorita").click(function(){
         $(".favoritado").html(data);
       }
     });
-    
     return false;
   });
 }); 

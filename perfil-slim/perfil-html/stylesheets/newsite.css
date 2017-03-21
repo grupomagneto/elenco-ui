@@ -1579,8 +1579,7 @@ button.like img{
   z-index: 9999;
   width: 95px;
   height: 22px;
-  margin-top: 55px;
-  display: none; }
+  margin-top: 55px; }
 
 .subtitle__prof {
   background: rgba(65,117,5,0.60);
@@ -1590,8 +1589,7 @@ button.like img{
   z-index: 9999;
   width: 95px;
   height: 22px;
-  margin-top: 55px;
-  display: none; }
+  margin-top: 55px;}
 
 .tab-actions__four > .subtitle__prof {
   width: 142px;

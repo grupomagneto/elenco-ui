@@ -1,3 +1,10 @@
+<?php 
+  require_once ("api/conecta.php");
+  $gender = $_POST['gender'];
+  $bairro = $_POST['bairro'];
+  $ranger_age = $_POST['ranger_age'];
+  $raca_index = $_POST['raca_index'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -190,8 +197,22 @@
                         <button type="button" class="like">
                           <img alt="overlay fav" src="images/fav-single.svg" />
                         </button>
+                <?php 
 
-                              
+          $sql = "SELECT sexo, bairro, nome, cd_pele FROM tb_elenco WHERE sexo='$gender' AND bairro='$bairro' AND cd_pele='raca_index' ";
+          // SELECT TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS age FROM table WHERE
+
+          // $sql    = "SELECT * FROM (SELECT id_elenco AS id, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade FROM tb_elenco WHERE sexo AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AND cd_pele AND bairro";
+
+          $res    = mysqli_query($conexao_index, $sql) or die (alerta("Falha na Conexão  ".mysqli_error()));
+
+          while($row = mysqli_fetch_array($res)) {
+            echo '<p>' .$row["sexo"].'</p> <br />';
+            echo '<p>' .$row["bairro"].'</p> <br />';
+            echo '<p>' .$row["nome"].'</p> <br />';
+            echo '<p>' .$row["raca_index"].'</p> <br />';
+          }
+                 ?>
                       </div>
                     </div>
               </div>
@@ -509,26 +530,26 @@
 <!-- <script src="javascripts/tabs.js"></script> -->
 <script>
 
-// var myTabs = tabs({
-//   el: '#tabs',
-//   tabNavigationLinks: '.c-tabs-nav__link',
-//   tabContentContainers: '.c-tab'
-// });
+  // var myTabs = tabs({
+  //   el: '#tabs',
+  //   tabNavigationLinks: '.c-tabs-nav__link',
+  //   tabContentContainers: '.c-tab'
+  // });
 
-// myTabs.init();
+  // myTabs.init();
 
-$(document).ready(function() {
+  $(document).ready(function() {
 
-  document.getElementById('dislike').style.display = 'none';
-  document.getElementById('like').style.display = 'none';
+    document.getElementById('dislike').style.display = 'none';
+    document.getElementById('like').style.display = 'none';
 
-  $(".box-multiple").click(function(){
-    document.getElementById("menu-link").style.display = "block";
-    document.getElementById("perfil-name").style.display = "none";
-    document.getElementById("single-perfil").style.display = "none";
+    $(".box-multiple").click(function(){
+      document.getElementById("menu-link").style.display = "block";
+      document.getElementById("perfil-name").style.display = "none";
+      document.getElementById("single-perfil").style.display = "none";
+    });
+
   });
-
-});
 
   $('.show-list-single').click(function(){
     $('.wrapper').removeClass('list-mode');
@@ -539,8 +560,8 @@ $(document).ready(function() {
     $('.like').css('display', 'block');
     $('.container-outline__categories').css('display', 'block');
   });
-// .checkbox-multiples-action__fav img 
-// .checkbox-multiples-action__discard img
+  // .checkbox-multiples-action__fav img 
+  // .checkbox-multiples-action__discard img
 
   $('.show-list').click(function(){
     $('.wrapper').removeClass('list-mode-single');
