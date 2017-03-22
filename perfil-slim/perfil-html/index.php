@@ -43,9 +43,9 @@
     					</div>
     					<div class="content__index">
                 <div class="gender_age-group__index">
-                  <input id="male" name="gender" type="radio" value="M" />
+                  <input id="male" name="gender" type="checkbox" value="M" />
                   <label class="gender-cc male_index" for="male"></label>
-                  <input id="female" name="gender" type="radio" value="F" /><label class="gender-cc female_index" for="female"></label>
+                  <input id="female" name="gender" type="checkbox" value="F" /><label class="gender-cc female_index" for="female"></label>
                 </div>
     					</div>
     				</div>
@@ -215,11 +215,16 @@
               <div class="content__index">
                   <select id="raca" name="raca_index">
                     <option disabled value="1">Selecione...</option>
-                    <option value="1" >Amarela</option>
+                    <option value="1">Oriental</option>
+                    <option value="2">Caucasiano</option>
+                    <option value="3">Mestiço</option>
+                    <option value="4">Negra</option>
+                    <option value="5">Indígena</option>
+<!--                <option value="1" >Amarela</option>
                     <option value="2">Branca</option>
                     <option value="3">Indígena</option>
                     <option value="4">Negra</option>
-                    <option value="5">Parda</option>
+                    <option value="5">Parda</option> -->
                   </select>
               </div>
             </div>
