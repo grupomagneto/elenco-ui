@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -161,9 +160,9 @@
 
           <form method="post" action="" class="formfavorita">
             <div class="container">
+              <div class="box animated">
                 
-
-                <?php 
+                                    <?php 
 
   require_once ("api/conecta.php");
 
@@ -182,25 +181,30 @@
 
           $res    = mysqli_query($conexao_index, $sql) or die (alerta("Falha na Conexão  ".mysqli_error()));
 
+          $count = mysqli_num_rows($res);
+
                     while($row = mysqli_fetch_array($res)) {
                       $nome = $row["nome_artistico"];
                       $nome = explode(" ", $nome);
                       $nome = $nome[0];
                       $idade = $row['idade'];
                       $arquivo = $row["arquivo"];
+                      $id = $row['id'];
                       echo  "
                       <div class='tab__box'>
                       <div class='tab-actions tab-actions__multiples'>
 
-                        <input type='radio' name='imagefavorita' value='valor da imagem' class='checkbox-multiples' />
-                        <button type='submit' class='checkbox-multiples-action__fav botaofavorita fav' onclick='AddTableRow()'>
+                        <input type='radio' name='imagefavorita"; echo $id."'";
+                        echo "' value='valor da imagem' class='checkbox-multiples' />
+                        <button type='submit' class='checkbox-multiples-action__fav botaofavorita";
+                        echo $id."'"; echo " fav' onclick='AddTableRow()'>
                           <img class='checkbox-multiples-img__fav' src='images/fav-icon.svg' alt=''>
                         </button>
                         
                         <input type='radio' name='imagediscard' value='valor da imagem' class='checkbox-multiples' />
                         <button type='submit' class='checkbox-multiples-action__discard botaodiscard discard'>
                           <img src='images/discard-icon.svg' alt=''>
-                        </button> 
+                        </button>
 
                         <img alt='discard' class='discard-action cursor' src='images/discard.svg' />
                         <img alt='fav' class='fav-action cursor' src='images/fav.svg' />
@@ -224,8 +228,8 @@
                     </div>";
                     }
 
-                 ?>
-                    
+                    ?>
+                              
               </div>
             </div>
 
@@ -303,7 +307,7 @@
               <div class="search" id="search">
                 <img src="images/search.svg" />
                 <p class="font-family color-primary">
-                  280 perfis
+                  <?php echo $count." perfis"; ?>
                 </p>
               </div>
             </a>
@@ -529,6 +533,7 @@
   </div>
 </div>
 
+<!-- <script src="javascripts/jquery-2.2.4.min.js"></script> -->
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
@@ -537,72 +542,68 @@
 <script src="javascripts/ion.rangeSlider.min.js"></script>
 <script src="javascripts/jquery.easy-pie-chart.js"></script>
 <script src="javascripts/all.js"></script>
-
+<!-- <script src="javascripts/tabs.js"></script> -->
 <script>
-
-
-  $(document).ready(function() {
-
-    document.getElementById('dislike').style.display = 'none';
-    document.getElementById('like').style.display = 'none';
-
-    $(".box-multiple").click(function(){
-      document.getElementById("menu-link").style.display = "block";
-      document.getElementById("perfil-name").style.display = "none";
-      document.getElementById("single-perfil").style.display = "none";
-    });
-
+// var myTabs = tabs({
+//   el: '#tabs',
+//   tabNavigationLinks: '.c-tabs-nav__link',
+//   tabContentContainers: '.c-tab'
+// });
+// myTabs.init();
+$(document).ready(function() {
+  document.getElementById('dislike').style.display = 'none';
+  document.getElementById('like').style.display = 'none';
+  $(".box-multiple").click(function(){
+    document.getElementById("menu-link").style.display = "block";
+    document.getElementById("perfil-name").style.display = "none";
+    document.getElementById("single-perfil").style.display = "none";
   });
-
+});
   $('.show-list-single').click(function(){
     $('.wrapper').removeClass('list-mode');
     $('.wrapper').addClass('list-mode-single');
-    alert("1");
-    // $('.checkbox-multiples-action__fav img').css('display', 'none');
-    // $('.checkbox-multiples-action__discard img').css('display', 'none');
-    // $('.dislike').css('display', 'block');
-    // $('.like').css('display', 'block');
-    // $('.container-outline__categories').css('display', 'block');
+    $('.checkbox-multiples-action__fav img').css('display', 'none');
+    $('.checkbox-multiples-action__discard img').css('display', 'none');
+    $('.dislike').css('display', 'block');
+    $('.like').css('display', 'block');
+    $('.container-outline__categories').css('display', 'block');
   });
-
+// .checkbox-multiples-action__fav img 
+// .checkbox-multiples-action__discard img
   $('.show-list').click(function(){
     $('.wrapper').removeClass('list-mode-single');
     $('.wrapper').addClass('list-mode');
-    alert("4");
-    // $('.checkbox-multiples-action__fav img').css('display', 'block');
-    // $('.checkbox-multiples-action__discard img').css('display', 'block');
-    // $('.dislike').css('display', 'none');
-    // $('.like').css('display', 'none');
-    // $('.container-outline__categories').css('display', 'none');
+    $('.checkbox-multiples-action__fav img').css('display', 'block');
+    $('.checkbox-multiples-action__discard img').css('display', 'block');
+    $('.dislike').css('display', 'none');
+    $('.like').css('display', 'none');
+    $('.container-outline__categories').css('display', 'none');
   });
-
   $('.hide-list').click(function(){
     $('.wrapper').removeClass('list-mode-single');
     $('.wrapper').removeClass('list-mode');
-    alert("multiples");
-    // $('.checkbox-multiples-action__fav img').css('display', 'block');
-    // $('.checkbox-multiples-action__discard img').css('display', 'block');
-    // $('.dislike').css('display', 'none');
-    // $('.like').css('display', 'none');
-    // $('.container-outline__categories').css('display', 'none');
+    $('.checkbox-multiples-action__fav img').css('display', 'block');
+    $('.checkbox-multiples-action__discard img').css('display', 'block');
+    $('.dislike').css('display', 'none');
+    $('.like').css('display', 'none');
+    $('.container-outline__categories').css('display', 'none');
   });
-
   $(".dislike").click(function(){
       $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutLeft');
     $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                 function(event) {
+      // Do something when the transition ends
       $(".wrapper.list-mode-single .box:last-child").remove();
     });
   });
-
   $(".like").click(function(){
       $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutRight');
     $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                 function(event) {
+      // Do something when the transition ends
       $(".wrapper.list-mode-single .box:last-child").remove();
     });
   });
-
 </script>
 
 <script src="javascripts/ajax.js"></script>

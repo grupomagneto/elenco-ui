@@ -1,5 +1,7 @@
-<?php 
+                <?php 
+
   require_once ("api/conecta.php");
+
   $gender = $_POST['gender'];
   $bairro = $_POST['bairro'];
   $ranger_age = $_POST['ranger_age'];
@@ -15,13 +17,46 @@
 
           $res    = mysqli_query($conexao_index, $sql) or die (alerta("Falha na Conexão  ".mysqli_error()));
 
-          echo $sql;
+                    while($row = mysqli_fetch_array($res)) {
+                      $nome = $row["nome_artistico"];
+                      $nome = explode(" ", $nome);
+                      $nome = $nome[0];
+                      $idade = $row['idade'];
+                      $arquivo = $row["arquivo"];
+                      echo  "
+                      <div class='tab__box'>
+                      <div class='tab-actions tab-actions__multiples'>
 
-          while($row = mysqli_fetch_array($res)) {
-            echo '<p>' .$row["nome_artistico"].'</p> <br />';
-            echo '<p>' .$row["sexo"].'</p> <br />';
-            echo '<p>' .$row["bairro"].'</p> <br />';
-            echo '<p>' .$row["arquivo"].'</p> <br />';
-          }
+                        <input type='radio' name='imagefavorita' value='valor da imagem' class='checkbox-multiples' />
+                        <button type='submit' class='checkbox-multiples-action__fav botaofavorita fav' onclick='AddTableRow()'>
+                          <img class='checkbox-multiples-img__fav' src='images/fav-icon.svg' alt=''>
+                        </button>
+                        
+                        <input type='radio' name='imagediscard' value='valor da imagem' class='checkbox-multiples' />
+                        <button type='submit' class='checkbox-multiples-action__discard botaodiscard discard'>
+                          <img src='images/discard-icon.svg' alt=''>
+                        </button>
 
-?>
+                        <img alt='discard' class='discard-action cursor' src='images/discard.svg' />
+                        <img alt='fav' class='fav-action cursor' src='images/fav.svg' />
+                        <p class='subtitle font-family color-primary font-small cursor'>";
+                        echo $nome.", ".$idade;
+                        echo "
+                        </p>
+
+                        <img onmouseenter='onEnterFunction()' alt='background' class='tab-image__background cursor' src='http://www.magnetoelenco.com.br/fotos/";
+                        echo $arquivo;
+                        echo "' />
+
+                        <button type='button' class='dislike'>
+                          <img alt='overlay discard' src='images/discard-single.svg' />
+                        </button>
+                        
+                        <button type='button' class='like'>
+                          <img alt='overlay fav' src='images/fav-single.svg' />
+                        </button>
+                      </div>
+                    </div>";
+                    }
+
+                    ?>
