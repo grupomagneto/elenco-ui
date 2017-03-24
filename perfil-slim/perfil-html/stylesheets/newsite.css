@@ -1215,10 +1215,10 @@ a:visited {
   display: block; }
 
 .wrapper .box {
-  position: absolute;
+  float: left;
   width: 95px;
   height: 95px;
-  margin: -1px 1px 1px 0;
+  margin: 2px 2px 1px 0;
   -webkit-transition: all 1.0s ease;
   -moz-transition: all 1.0s ease;
   -ms-transition: all 1.0s ease;
@@ -1227,9 +1227,10 @@ a:visited {
 }
 
 .wrapper .box .tab__box .tab-actions {
+  float: left;
   width: 95px;
   height: 95px;
-  margin: -1px 1px 1px 0;
+  margin: 2px 2px 1px 0;
   -webkit-transition: all 1.0s ease;
   -moz-transition: all 1.0s ease;
   -ms-transition: all 1.0s ease;
@@ -1237,18 +1238,20 @@ a:visited {
   transition: all 1.0s ease;
 }
 
-.wrapper.list-mode .container{
-  padding-right: 1px;
-}
+/*.wrapper.list-mode .container {*/
+/*  padding-right: 1px;*/
+/*}*/
 
-.wrapper.list-mode .box{
+.wrapper.list-mode .box {
   width: 142px;
   height: 142px;
+  margin: 2px 2px 1px 0;
 }
 
-.wrapper.list-mode .box .tab__box .tab-actions{
+.wrapper.list-mode .box .tab__box .tab-actions {
   width: 142px;
   height: 142px;
+  margin: 2px 2px 1px 0;
   -webkit-transition: all 1.0s ease;
   -moz-transition: all 1.0s ease;
   transition: all 1.0s ease;
@@ -1278,41 +1281,40 @@ a:visited {
 .wrapper.list-mode-single .container{
   padding-right: 5px;
 }
-.wrapper.list-mode-single .box{
+.wrapper.list-mode-single .box {
   width: 100%;
   position: relative;
 }
-
-.wrapper.list-mode-single .box .tab__box .tab-actions{
+.wrapper.list-mode-single .box .tab__box .tab-actions {
   width: 100%;
   height: 280px;
   -webkit-transition: all 1.0s ease;
   -moz-transition: all 1.0s ease;
-  transition: all 1.0s ease;
   transition: all 1.0s ease;
 }
-
-.wrapper.list-mode-single .box .tab__box .tab-actions img.tab-image__background{
+.wrapper.list-mode-single .box .tab__box .tab-actions img.tab-image__background {
   width: 100%;
   height: 280px;
   -webkit-transition: all 1.0s ease;
   -moz-transition: all 1.0s ease;
-  transition: all 1.0s ease;
   transition: all 1.0s ease;
 }
 .wrapper.list-mode-single .box:nth-child(even) {
-  margin-top: -92px;
+  position: absolute;
+  margin-top: -90px;
   width: 100%;
 }
 .wrapper.list-mode-single .box:nth-child(odd) {
-  margin-top: -92px;
+  position: absolute;
   width: 100%;
 }
-.wrapper.list-mode-single .box:first-of-type {
-  margin-top: 5px;
+.wrapper.list-mode-single .box:nth-of-type(1) {
+  margin-top: 0px;
+  position: absolute;
+  z-index: 9999;
   width: 100%;
 }
-.wrapper.list-mode-single .box .tab__box .tab-actions{
+.wrapper.list-mode-single .box .tab__box .tab-actions {
   transition: all 100ms ease-in-out;
   -webkit-transition: all 100ms ease-in-out;
   -moz-transition: all 100ms ease-in-out;
@@ -1327,17 +1329,15 @@ a:visited {
   margin: 0 auto;
   text-align: center;
 }
-
 .wrapper.list-mode-single .box .tab__box .tab-actions:first-of-type {
   top: 1px;
   width: 100%;
 }
-
 button.show-list-single, button.show-list, button.hide-list {
   border: none;
   background: none;
 }
-button.dislike{
+button.dislike {
   display: none;
   float: left;
   left: 1%;
@@ -1347,7 +1347,7 @@ button.dislike{
   background: transparent;
   border: none;
 }
-button.like{
+button.like {
   display: none;
   float: right;
   position: absolute;
@@ -1357,11 +1357,11 @@ button.like{
   background: transparent;
   border: none;
 }
-button.dislike img{
+button.dislike img {
   width: 50px;
   height: 50px;
 }
-button.like img{
+button.like img {
   width: 55px;
   height: 55px;
 }
@@ -1647,7 +1647,7 @@ display: none;}
 .container-outline__categories{
   display: none;
   position: absolute;
-  top: 70%;
+  top: 65%;
 }
 section {
   width: 100%;

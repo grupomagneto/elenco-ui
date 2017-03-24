@@ -351,9 +351,9 @@ function updateGradient(container) {
 setInterval(function(){updateGradient('.gradient')},10);
 
 //check nos inputs[type=radio]
+
 $(document).on('click', '.checkbox-multiples-action__fav', function () {
-    var $input = $("input[name=imagefavorita]")
-    $input.prop('checked', true);
+    $(".checkbox-multiples").attr("checked", "true");
 });
 
 $(document).on('click', '.checkbox-multiples-action__discard', function () {

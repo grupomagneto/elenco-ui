@@ -160,77 +160,78 @@
 
           <form method="post" action="" class="formfavorita">
             <div class="container">
-              <div class="box animated">
                 
-                                    <?php 
+        <?php 
 
-  require_once ("api/conecta.php");
+              require_once ("api/conecta.php");
 
-  $gender = $_POST['gender'];
-  $bairro = $_POST['bairro'];
-  $ranger_age = $_POST['ranger_age'];
-  $age1 =  $ranger_age[0]; 
-  $age1 .=  $ranger_age[1];
-  $age2 =  $ranger_age[3]; 
-  $age2 .=  $ranger_age[4];
-  $raca_index = $_POST['raca_index'];
+              $gender = $_POST['gender'];
+              $bairro = $_POST['bairro'];
+              $ranger_age = $_POST['ranger_age'];
+              $age1 =  $ranger_age[0]; 
+              $age1 .=  $ranger_age[1];
+              $age2 =  $ranger_age[3]; 
+              $age2 .=  $ranger_age[4];
+              $raca_index = $_POST['raca_index'];
 
-
-                  $sql = "SELECT * FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente FROM tb_elenco WHERE sexo='$gender' AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1' AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) <= '$age2' AND cd_pele='$raca_index' AND bairro='$bairro') t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto FROM tb_foto ORDER BY dh_cadastro ASC) t2 USING (id) GROUP BY id ORDER BY tipo_cadastro_vigente DESC";
+                  $sql = "SELECT * FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente FROM tb_elenco WHERE sexo='$gender' AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1' AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) <= '$age2' AND cd_pele='$raca_index' AND bairro='$bairro') t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto FROM tb_foto ORDER BY dh_cadastro ASC) t2 USING (id) GROUP BY id ORDER BY dt_foto DESC";
           // $sql = "SELECT sexo, bairro, nome, cd_pele FROM tb_elenco WHERE sexo='$gender' AND bairro='$bairro' AND cd_pele='raca_index' ";
 
           $res    = mysqli_query($conexao_index, $sql) or die (alerta("Falha na Conexão  ".mysqli_error()));
 
           $count = mysqli_num_rows($res);
 
-                    while($row = mysqli_fetch_array($res)) {
-                      $nome = $row["nome_artistico"];
-                      $nome = explode(" ", $nome);
-                      $nome = $nome[0];
-                      $idade = $row['idade'];
-                      $arquivo = $row["arquivo"];
-                      $id = $row['id'];
-                      echo  "
-                      <div class='tab__box'>
-                      <div class='tab-actions tab-actions__multiples'>
+            while($row = mysqli_fetch_array($res)) {
+              $nome = $row["nome_artistico"];
+              $nome = explode(" ", $nome);
+              $nome = $nome[0];
+              $idade = $row['idade'];
+              $arquivo = $row["arquivo"];
+              $id = $row['id'];
+                $nomefoto = "idfavoritada_";
+                $nomeFotoCompleta = $nomefoto.$id;
+              echo  "
+            <div class='box animated'>
+              <div class='tab__box'>
+              <div class='tab-actions tab-actions__multiples'>
 
-                        <input type='radio' name='imagefavorita"; echo $id."'";
-                        echo "' value='valor da imagem' class='checkbox-multiples' />
-                        <button type='submit' class='checkbox-multiples-action__fav botaofavorita";
-                        echo $id."'"; echo " fav' onclick='AddTableRow()'>
-                          <img class='checkbox-multiples-img__fav' src='images/fav-icon.svg' alt=''>
-                        </button>
-                        
-                        <input type='radio' name='imagediscard' value='valor da imagem' class='checkbox-multiples' />
-                        <button type='submit' class='checkbox-multiples-action__discard botaodiscard discard'>
-                          <img src='images/discard-icon.svg' alt=''>
-                        </button>
+                <input type='radio' name='"; echo $nomeFotoCompleta."'";
+                echo "' value='valor da imagem' class='checkbox-multiples' />
+                <button type='submit' class='checkbox-multiples-action__fav botaofavorita";
+                echo $id."'"; echo " fav' onclick='AddTableRow()'>
+                  <img class='checkbox-multiples-img__fav' src='images/fav-icon.svg' alt=''>
+                </button>
 
-                        <img alt='discard' class='discard-action cursor' src='images/discard.svg' />
-                        <img alt='fav' class='fav-action cursor' src='images/fav.svg' />
-                        <p class='subtitle font-family color-primary font-small cursor'>";
-                        echo $nome.", ".$idade;
-                        echo "
-                        </p>
+                <input type='radio' name='imagediscard' value='valor da imagem' class='checkbox-multiples' />
+                <button type='submit' class='checkbox-multiples-action__discard botaodiscard discard'>
+                  <img src='images/discard-icon.svg' alt=''>
+                </button>
 
-                        <img onmouseenter='onEnterFunction()' alt='background' class='tab-image__background cursor' src='http://www.magnetoelenco.com.br/fotos/";
-                        echo $arquivo;
-                        echo "' />
+                <img alt='discard' class='discard-action cursor' src='images/discard.svg' />
+                <img alt='fav' class='fav-action cursor' src='images/fav.svg' />
+                <p class='subtitle font-family color-primary font-small cursor'>";
+                echo $nome.", ".$idade;
+                echo "
+                </p>
 
-                        <button type='button' class='dislike'>
-                          <img alt='overlay discard' src='images/discard-single.svg' />
-                        </button>
-                        
-                        <button type='button' class='like'>
-                          <img alt='overlay fav' src='images/fav-single.svg' />
-                        </button>
-                      </div>
-                    </div>";
-                    }
+                <img onmouseenter='onEnterFunction()' alt='background' class='tab-image__background cursor' src='http://www.magnetoelenco.com.br/fotos/";
+                echo $arquivo;
+                echo "' />
 
-                    ?>
-                              
+                <button type='button' class='dislike'>
+                  <img alt='overlay discard' src='images/discard-single.svg' />
+                </button>
+
+                <button type='button' class='like'>
+                  <img alt='overlay fav' src='images/fav-single.svg' />
+                </button>
+
               </div>
+            </div>        
+          </div>";
+            }
+        ?>
+                      
             </div>
 
           </form>
@@ -295,7 +296,7 @@
                 </div>
               </section>
         </div>
-             
+         
       </div>
     </div>
 
@@ -533,8 +534,9 @@
   </div>
 </div>
 
-<!-- <script src="javascripts/jquery-2.2.4.min.js"></script> -->
 
+
+<!-- <script src="javascripts/jquery-2.2.4.min.js"></script> -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="javascripts/slick.min.js"></script>
@@ -559,6 +561,7 @@ $(document).ready(function() {
     document.getElementById("single-perfil").style.display = "none";
   });
 });
+    
   $('.show-list-single').click(function(){
     $('.wrapper').removeClass('list-mode');
     $('.wrapper').addClass('list-mode-single');
@@ -588,6 +591,7 @@ $(document).ready(function() {
     $('.like').css('display', 'none');
     $('.container-outline__categories').css('display', 'none');
   });
+    
   $(".dislike").click(function(){
       $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutLeft');
     $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
@@ -596,6 +600,7 @@ $(document).ready(function() {
       $(".wrapper.list-mode-single .box:last-child").remove();
     });
   });
+    
   $(".like").click(function(){
       $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutRight');
     $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
@@ -604,6 +609,7 @@ $(document).ready(function() {
       $(".wrapper.list-mode-single .box:last-child").remove();
     });
   });
+    
 </script>
 
 <script src="javascripts/ajax.js"></script>
