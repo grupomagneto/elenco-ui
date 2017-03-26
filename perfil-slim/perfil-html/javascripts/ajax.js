@@ -30,10 +30,9 @@ $(".search_index").click(function(){
         alert("PESQUISOU");
       }
     });
-
+    return false;
   });
 });
-
 
 $(".botaodiscard").click(function(){
     jQuery('.formfavorita').submit(function(){
@@ -46,7 +45,7 @@ $(".botaodiscard").click(function(){
       data: dados,
       success: function( data )
       {
-        // location = 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/addsearch.php';
+        // location = 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/novoperfil.php';
       }
     });
     return false;
@@ -57,7 +56,6 @@ $(".botaodiscard").click(function(){
   AddTableRow = function() {
     var newRow = $("<tr>");
     var cols = "";
-
     cols += '<td>';
     cols += '<div class="perfil-fav__select font-family color-primary cursor" href="">';
     cols += '<img alt="" class="cursor img__fav" src="images/elenco_019589_20160913140545.jpg" />';
