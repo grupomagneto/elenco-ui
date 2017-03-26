@@ -34,15 +34,13 @@
           return cpf.match(/^\d{3}\.?\d{3}\.?\d{3}\-?\d{2}$/);
         }
         $("#nascimento").mask("00/00/0000");
-        $("#cpf").mask("000.000.000-00");
-        $('#cpf, #nascimento').on('input', function(){
-          var cpf = $("#cpf").val(),
-            nascimento = $("#nascimento").val();
-          if (validCPF(cpf) && /^\d{2}\/\d{2}\/\d{4}$/.test(nascimento)) {
+
+        $('#cpf').on('input', function(){
+          var cpf = $("#cpf").val();
+          if (validCPF(cpf) && /^\d{2}\/\d{2}\/\d{4}$/) {
             $().bipbop("SELECT FROM 'BIPBOPJS'.'CPFCNPJ'", null, {
               data: {
-                  documento: cpf,
-                  nascimento: nascimento
+                  documento: cpf
               },
               success: function(data) {
                 var nome = $(data).find("body nome").text();
