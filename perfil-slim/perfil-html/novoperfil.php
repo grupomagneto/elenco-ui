@@ -206,7 +206,7 @@
           $array_premium = array();
           $array_gratuito = array();
           // $count = mysqli_num_rows($res);
-          echo $sql;
+//          echo $sql;
           while($row = mysqli_fetch_array($res)) {
             if ($row['tipo_cadastro_vigente'] == 'Profissional') {
               $addarray1 = array(
@@ -286,21 +286,23 @@
                 $id = $array[$key]["id"];
                 $dt_foto = $array[$key]["dt_foto"];
                 ${'position'.$id} = $key;
-                $nomefoto = "idfavoritada_";
-                $nomeFotoCompleta = $nomefoto.$id;
+                $nomefav = "idfavoritada_";
+                $nomeFotoCompleta = $nomefav.$id;
+                $nomefotoDis = "id-descartada_";
+                $nomeFotoDiscard = $nomefotoDis.$id;
               echo  "
             <div class='box animated'>
               <div class='tab__box'>
               <div class='tab-actions tab-actions__multiples'>
 
-                <input type='radio' name='"; echo $nomeFotoCompleta."'";
-                echo "' value='valor da imagem' class='checkbox-multiples' />
-                <button type='submit' class='checkbox-multiples-action__fav botaofavorita";
-                echo $id."'"; echo " fav' onclick='AddTableRow()'>
+                <input type='radio' name='imagefavorita' value='"; echo $nomeFotoCompleta."'";
+                echo "' class='checkbox-multiples' />
+                <button type='submit' class='checkbox-multiples-action__fav botaofavorita fav' onclick='AddTableRow()'>
                   <img class='checkbox-multiples-img__fav' src='images/fav-icon.svg' alt=''>
                 </button>
 
-                <input type='radio' name='imagediscard' value='valor da imagem' class='checkbox-multiples' />
+                <input type='radio' name='imagediscard' value='"; echo $nomeFotoDiscard."'";
+                echo "' class='checkbox-multiples' />
                 <button type='submit' class='checkbox-multiples-action__discard botaodiscard discard'>
                   <img src='images/discard-icon.svg' alt=''>
                 </button>
@@ -335,6 +337,52 @@
           </form>
         </div>
         
+        <div class="container-outline__single">
+
+              <section class="intro" id="intro">
+                <div class="content">
+                  <div class="parent">
+                    <div class="container-outline__center">
+                      <div class="carousel">
+                        <div class="item">
+                          <div class="container-outline__center">
+                            <div class="imageContainer">
+                              <img alt="background" src="images/elenco_019589_20160913140545.jpg" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div class="container-outline__center">
+                            <div class="imageContainer">
+ 
+                              <img alt="background" src="images/elenco_019589_20160913140545.jpg" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-single" />
+                    <button type="submit" class="checkbox-single-action__fav botaofavorita fav" onclick="AddTableRow()">
+                      <img src="images/fav-single.svg" alt="">
+                    </button>
+                    <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-single" />
+                    <button type="submit" class="checkbox-single-action__discard botaofavorita fav" onclick="AddTableRow()">
+                      <img src="images/discard-single.svg" alt="">
+                    </button>
+                      
+                      <div class="legend-after__carousel">
+                        <p class="font-family color-primary">
+                          Brasília-DF
+                        </p>
+                        <p class="font-family color-primary">
+                          Foto: 07/09/16
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+          </div>
         <div class="container-outline__categories">
               <section class="intro">
                <?php 
@@ -633,8 +681,6 @@
 </div>
 
 
-
-<!-- <script src="javascripts/jquery-2.2.4.min.js"></script> -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="javascripts/slick.min.js"></script>
@@ -642,14 +688,24 @@
 <script src="javascripts/ion.rangeSlider.min.js"></script>
 <script src="javascripts/jquery.easy-pie-chart.js"></script>
 <script src="javascripts/all.js"></script>
-<!-- <script src="javascripts/tabs.js"></script> -->
+
+
+
 <script>
-// var myTabs = tabs({
-//   el: '#tabs',
-//   tabNavigationLinks: '.c-tabs-nav__link',
-//   tabContentContainers: '.c-tab'
-// });
-// myTabs.init();
+$(document).on('click', '.checkbox-multiples-action__fav', function () {
+    var $input = $("input[name=imagefavorita]")
+    $input.prop('checked', true);
+});
+
+$(document).on('click', '.checkbox-multiples-action__discard', function () {
+    var $input = $("input[name=imagediscard]")
+    $input.prop('checked', true);
+
+    var $input = $("input[name=imagefavorita]")
+    $input.prop('checked', false);
+});
+    
+    
 $(document).ready(function() {
   document.getElementById('dislike').style.display = 'none';
   document.getElementById('like').style.display = 'none';
@@ -661,17 +717,14 @@ $(document).ready(function() {
 });
     
   $('.show-list-single').click(function(){
-    $('.wrapper').removeClass('list-mode');
-    $('.wrapper').addClass('list-mode-single');
-    $('.checkbox-multiples-action__fav img').css('display', 'none');
-    $('.checkbox-multiples-action__discard img').css('display', 'none');
-    $('.dislike').css('display', 'block');
-    $('.like').css('display', 'block');
     $('.container-outline__categories').css('display', 'block');
+    $('.container-outline__single').css('display', 'block');
+      $('.wrapper').css('display', 'none');
   });
-// .checkbox-multiples-action__fav img 
-// .checkbox-multiples-action__discard img
+
   $('.show-list').click(function(){
+    $('.container-outline__single').css('display', 'none');
+      $('.wrapper').css('display', 'block');
     $('.wrapper').removeClass('list-mode-single');
     $('.wrapper').addClass('list-mode');
     $('.checkbox-multiples-action__fav img').css('display', 'block');
@@ -681,6 +734,8 @@ $(document).ready(function() {
     $('.container-outline__categories').css('display', 'none');
   });
   $('.hide-list').click(function(){
+    $('.container-outline__single').css('display', 'none');
+      $('.wrapper').css('display', 'block');
     $('.wrapper').removeClass('list-mode-single');
     $('.wrapper').removeClass('list-mode');
     $('.checkbox-multiples-action__fav img').css('display', 'block');
@@ -694,7 +749,6 @@ $(document).ready(function() {
       $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutLeft');
     $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                 function(event) {
-      // Do something when the transition ends
       $(".wrapper.list-mode-single .box:last-child").remove();
     });
   });
@@ -703,7 +757,6 @@ $(document).ready(function() {
       $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutRight');
     $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                 function(event) {
-      // Do something when the transition ends
       $(".wrapper.list-mode-single .box:last-child").remove();
     });
   });

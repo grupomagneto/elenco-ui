@@ -1,4 +1,5 @@
-<?php header('Content-Type: text/html; charset=utf-8');
+<?php 
+//header('Content-Type: text/html; charset=utf-8');
 
 $conexao = mysqli_connect("localhost:8889", "root", "root", "testeperfil");
 

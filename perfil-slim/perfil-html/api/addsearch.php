@@ -4,9 +4,10 @@ require_once("functions.php");
 if(isset($_POST)){
     
     $imagefavorita = $_POST['imagefavorita'];
-    $id =  $_POST['id'];
-    $imgfav = $imagefavorita.$id;
     echo $imagefavorita;
+    
+    $imagediscard = $_POST['imagediscard'];
+    echo $imagediscard;
     
 //    $imagefavorita = $_POST['imagefavorita'];
 //    print_r($_POST);
@@ -35,6 +36,23 @@ if(isset($_POST)){
 ?>
 	 <p class="text-danger">
 		Imagem favorita <?php $imagefavorita; ?> não foi adicionado: <?php $msg ?>
+	</p> 
+<?php
+	}
+?>
+
+<?php
+	if(insereImagemDescartada($conexao, $imagediscard)) {
+?>
+	 <p class="text-success">
+		Imagem <?php echo $imagediscard;  ?> adicionado com sucesso!
+	</p> 
+<?php
+	} else {
+		$msg = mysqli_error($conexao);
+?>
+	 <p class="text-danger">
+		Imagem favorita <?php $imagediscard; ?> não foi adicionado: <?php $msg ?>
 	</p> 
 <?php
 	}
