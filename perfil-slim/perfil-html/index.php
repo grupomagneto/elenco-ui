@@ -210,16 +210,17 @@
 
             <div class="middle">
               <div class="question">
-                <h1 class="font-family color-primary"> Qual a cor da pele?</h1>
+                <h1 class="font-family color-primary">Qual a cor da pele?</h1>
               </div>
               <div class="content__index">
                   <select id="raca" name="raca_index">
-                    <option disabled value="1">Selecione...</option>
-                    <option value="1">Oriental</option>
-                    <option value="2">Caucasiano</option>
-                    <option value="3">Mestiço</option>
-                    <option value="4">Negra</option>
+                    <option disabled selected value="0">Selecione...</option>
+                    <option value="1">Amarela</option>
+                    <option value="2">Branca</option>
                     <option value="5">Indígena</option>
+                    <option value="4">Negra</option>
+                    <option value="3">Parda</option>
+                    
 <!--                <option value="1" >Amarela</option>
                     <option value="2">Branca</option>
                     <option value="3">Indígena</option>
@@ -280,7 +281,7 @@
               </div>
               <div class="content__index">
                   <select name="bairro" id="bairro">
-                    <option disabled value="1">Selecione...</option>
+                    <option disabled selected value="0">Selecione...</option>
                     <option value="Águas Claras">Águas Claras</option>
                     <option value="Asa Norte">Asa Norte</option>
                     <option value="Asa Sul">Asa Sul</option>
