@@ -1,11 +1,11 @@
-<?php 
+<?php
 require_once ("conecta.php");
 // foreach($_POST["produto"] as $produto) {
 //     mysql_query("INSERT INTO produtos (produtos) VALUES (".$produto.")") or die("Erro  query.<br>Mensagem do servidor: ".mysql_error());
 // }
 	function insereImagemFavorita($conexao, $imagefavorita) {
 	$query = "INSERT INTO perfiltable (imagefavorita) VALUES ('{$imagefavorita}')";
-	
+
 	return mysqli_query($conexao, $query);
 	}
 
@@ -20,5 +20,23 @@ require_once ("conecta.php");
 		return mysqli_query($conexao_index, $query_index);
 
 	}
-
+function mask($val, $mask)
+	{
+	 $maskared = '';
+	 $k = 0;
+	 for($i = 0; $i<=strlen($mask)-1; $i++)
+	 {
+	 if($mask[$i] == '#')
+	 {
+	 if(isset($val[$k]))
+	 $maskared .= $val[$k++];
+	 }
+	 else
+	 {
+	 if(isset($mask[$i]))
+	 $maskared .= $mask[$i];
+	 }
+	 }
+	 return $maskared;
+	}
 ?>

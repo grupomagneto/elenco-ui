@@ -1,5 +1,17 @@
-<?php 
+<?php
   require_once ("api/functions.php");
+  require_once ("api/conecta.php");
+  $sql_contato = "SELECT nome_artistico, tl_celular, endereco, email, bairro FROM tb_elenco WHERE id_elenco='$id'";
+  // echo $sql_contato;
+  $result_contato = mysqli_query($conexao_index, $sql_contato) or die (alerta("Falha na Conexão  ".mysqli_error()));
+  $row_contato = mysqli_fetch_array($result_contato);
+  $nome_artistico = $row_contato['nome_artistico'];
+  $tl_celular = $row_contato['tl_celular'];
+  $email = $row_contato['email'];
+  $endereco = strtolower($row_contato['endereco']);
+  $endereco = ucwords($endereco);
+  $bairro = strtolower($row_contato['bairro']);
+  $bairro = ucwords($bairro);
 ?>
 
 <div class="container-outline__content">
@@ -13,7 +25,7 @@
       <div class="content_section">
         <div class="content_contact">
           <h2 class="font-family font-medium color-primary">
-             daniela souza 
+             <?php echo $nome_artistico; ?>
           </h2>
           <table class="table-left">
             <tr>
@@ -36,17 +48,17 @@
           <table class="table-right">
             <tr>
               <td class="font-family color-primary">
-                +55 61 99311-0767
+                <?php echo mask($tl_celular, "+## (##) #####-####"); ?>
               </td>
             </tr>
             <tr>
               <td class="font-family color-primary">
-                São Sebastião
+                <?php echo $endereco.", ".$bairro; ?>
               </td>
             </tr>
             <tr>
               <td class="font-family color-primary">
-                daniela.souza@gmail.com
+                <?php echo $email; ?>
               </td>
             </tr>
           </table>

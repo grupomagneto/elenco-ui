@@ -22,7 +22,7 @@
 
 </head>
 <body>
-  
+
 <div class="gradient">
   <div class="container-outline__content">
     <div class="topbar">
@@ -155,13 +155,13 @@
 
     <div class="middle">
       <div class="container-outline__center">
- 
+
         <div class="wrapper">
 
           <form method="post" action="" class="formfavorita">
             <div class="container">
-                
-        <?php 
+
+        <?php
 
               require_once ("api/conecta.php");
               $ranger_age = $_POST['ranger_age'];
@@ -171,7 +171,7 @@
                   $age2 =  $ranger_age[3];
                   if (isset($ranger_age[4])) {
                     $age2 .=  $ranger_age[4];
-                  }  
+                  }
               }
               elseif ($ranger_age[1] == ';') {
                   $age1 =  $ranger_age[0];
@@ -180,12 +180,12 @@
                       $age2 .=  $ranger_age[3];
                   }
               }
-              $sql = "SELECT * FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente FROM tb_elenco WHERE TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1' AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) <= '$age2'";
+              $sql = "SELECT * FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, tl_celular, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente FROM tb_elenco WHERE TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1' AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) <= '$age2'";
               if (isset($_POST['gender'])) {
                 $gender = $_POST['gender'];
                 $sql .= " AND sexo='$gender'";
               }
-              if (isset($_POST['bairro']) && $_POST['bairro'] != 0) {
+              if (isset($_POST['bairro']) ) {
                 $bairro = $_POST['bairro'];
                 $sql .= " AND bairro='$bairro'";
               }
@@ -193,12 +193,12 @@
                 $raca_index = $_POST['raca_index'];
                 $sql .= " AND cd_pele='$raca_index'";
               }
-              
+
               $sql .= ") t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto FROM tb_foto ORDER BY dh_cadastro ASC) t2 USING (id) GROUP BY id ORDER BY dt_foto DESC";
 
                   // $sql = "SELECT * FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente FROM tb_elenco WHERE TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1' AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) <= '$age2' AND sexo='$gender' AND cd_pele='$raca_index' AND bairro='$bairro') t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto FROM tb_foto ORDER BY dh_cadastro ASC) t2 USING (id) GROUP BY id ORDER BY dt_foto DESC";
 
-          $res    = mysqli_query($conexao_index, $sql) or die (alerta("Falha na Conexão  ".mysqli_error()));
+          $res = mysqli_query($conexao_index, $sql) or die (alerta("Falha na Conexão  ".mysqli_error()));
 
           $count = mysqli_num_rows($res);
 
@@ -206,7 +206,7 @@
           $array_premium = array();
           $array_gratuito = array();
           // $count = mysqli_num_rows($res);
-//          echo $sql;
+          // echo $sql;
           while($row = mysqli_fetch_array($res)) {
             if ($row['tipo_cadastro_vigente'] == 'Profissional') {
               $addarray1 = array(
@@ -286,23 +286,21 @@
                 $id = $array[$key]["id"];
                 $dt_foto = $array[$key]["dt_foto"];
                 ${'position'.$id} = $key;
-                $nomefav = "idfavoritada_";
-                $nomeFotoCompleta = $nomefav.$id;
-                $nomefotoDis = "id-descartada_";
-                $nomeFotoDiscard = $nomefotoDis.$id;
+                $nomefoto = "idfavoritada_";
+                $nomeFotoCompleta = $nomefoto.$id;
               echo  "
             <div class='box animated'>
               <div class='tab__box'>
               <div class='tab-actions tab-actions__multiples'>
 
-                <input type='radio' name='imagefavorita' value='"; echo $nomeFotoCompleta."'";
-                echo "' class='checkbox-multiples' />
-                <button type='submit' class='checkbox-multiples-action__fav botaofavorita fav' onclick='AddTableRow()'>
+                <input type='radio' name='"; echo $nomeFotoCompleta."'";
+                echo "' value='valor da imagem' class='checkbox-multiples' />
+                <button type='submit' class='checkbox-multiples-action__fav botaofavorita";
+                echo $id."'"; echo " fav' onclick='AddTableRow()'>
                   <img class='checkbox-multiples-img__fav' src='images/fav-icon.svg' alt=''>
                 </button>
 
-                <input type='radio' name='imagediscard' value='"; echo $nomeFotoDiscard."'";
-                echo "' class='checkbox-multiples' />
+                <input type='radio' name='imagediscard' value='valor da imagem' class='checkbox-multiples' />
                 <button type='submit' class='checkbox-multiples-action__discard botaodiscard discard'>
                   <img src='images/discard-icon.svg' alt=''>
                 </button>
@@ -327,111 +325,65 @@
                 </button>
 
               </div>
-            </div>        
+            </div>
           </div>";
             }
         ?>
-                      
+
             </div>
 
           </form>
         </div>
-        
-        <div class="container-outline__single">
 
-              <section class="intro" id="intro">
-                <div class="content">
-                  <div class="parent">
-                    <div class="container-outline__center">
-                      <div class="carousel">
-                        <div class="item">
-                          <div class="container-outline__center">
-                            <div class="imageContainer">
-                              <img alt="background" src="images/elenco_019589_20160913140545.jpg" />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <div class="container-outline__center">
-                            <div class="imageContainer">
- 
-                              <img alt="background" src="images/elenco_019589_20160913140545.jpg" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                    <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-single" />
-                    <button type="submit" class="checkbox-single-action__fav botaofavorita fav" onclick="AddTableRow()">
-                      <img src="images/fav-single.svg" alt="">
-                    </button>
-                    <input type="radio" name="imagefavorita" value="valor da imagem" class="checkbox-single" />
-                    <button type="submit" class="checkbox-single-action__discard botaofavorita fav" onclick="AddTableRow()">
-                      <img src="images/discard-single.svg" alt="">
-                    </button>
-                      
-                      <div class="legend-after__carousel">
-                        <p class="font-family color-primary">
-                          Brasília-DF
-                        </p>
-                        <p class="font-family color-primary">
-                          Foto: 07/09/16
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-          </div>
         <div class="container-outline__categories">
               <section class="intro">
-               <?php 
+               <?php
                   include "contato.php";
-                ?>  
+                ?>
               </section>
-              
+
              <section class="second">
-               <?php 
+               <?php
                   include "planoassinatura.php";
-                ?>  
+                ?>
               </section>
-            
+
               <section class="third">
-               <?php 
+               <?php
                   include "portfolio.php";
-                ?>  
+                ?>
               </section>
-              
+
               <section class="fourth">
-               <?php 
+               <?php
                  include "caches.php";
-                ?>  
+                ?>
               </section>
-              
+
               <section class="fifth">
-               <?php 
+               <?php
                  include "jobs.php";
-                ?>  
+                ?>
               </section>
-                
+
               <section class="sixth">
-               <?php 
+               <?php
                  include "fisicos.php";
-                ?>  
+                ?>
               </section>
-              
+
               <section class="seventh">
-               <?php 
+               <?php
                  include "popularidade.php";
-                ?>  
+                ?>
               </section>
-              
+
               <section class="eighth">
-               <?php 
+               <?php
                  include "reputacao.php";
-                ?>  
+                ?>
               </section>
-              
+
               <section class="footer__section">
                 <div class="container-outline__content">
                   <a href="#intro">
@@ -442,7 +394,7 @@
                 </div>
               </section>
         </div>
-         
+
       </div>
     </div>
 
@@ -482,7 +434,7 @@
                 <g id="Perfil---Mobile-(iPhone-4)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g id="Resultado---Grid-9" transform="translate(-250.000000, -400.000000)">
                         <g id="iPhone-4-Safari">
-                 
+
                         <g id="Group-5" transform="translate(225.000000, 401.000000)" fill="#FFFFFF" opacity="0.6">
                             <g id="Group-4">
                                 <g id="Group-3" transform="translate(26.869792, 0.000000)">
@@ -681,6 +633,8 @@
 </div>
 
 
+
+<!-- <script src="javascripts/jquery-2.2.4.min.js"></script> -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="javascripts/slick.min.js"></script>
@@ -688,24 +642,14 @@
 <script src="javascripts/ion.rangeSlider.min.js"></script>
 <script src="javascripts/jquery.easy-pie-chart.js"></script>
 <script src="javascripts/all.js"></script>
-
-
-
+<!-- <script src="javascripts/tabs.js"></script> -->
 <script>
-$(document).on('click', '.checkbox-multiples-action__fav', function () {
-    var $input = $("input[name=imagefavorita]")
-    $input.prop('checked', true);
-});
-
-$(document).on('click', '.checkbox-multiples-action__discard', function () {
-    var $input = $("input[name=imagediscard]")
-    $input.prop('checked', true);
-
-    var $input = $("input[name=imagefavorita]")
-    $input.prop('checked', false);
-});
-    
-    
+// var myTabs = tabs({
+//   el: '#tabs',
+//   tabNavigationLinks: '.c-tabs-nav__link',
+//   tabContentContainers: '.c-tab'
+// });
+// myTabs.init();
 $(document).ready(function() {
   document.getElementById('dislike').style.display = 'none';
   document.getElementById('like').style.display = 'none';
@@ -715,16 +659,19 @@ $(document).ready(function() {
     document.getElementById("single-perfil").style.display = "none";
   });
 });
-    
-  $('.show-list-single').click(function(){
-    $('.container-outline__categories').css('display', 'block');
-    $('.container-outline__single').css('display', 'block');
-      $('.wrapper').css('display', 'none');
-  });
 
+  $('.show-list-single').click(function(){
+    $('.wrapper').removeClass('list-mode');
+    $('.wrapper').addClass('list-mode-single');
+    $('.checkbox-multiples-action__fav img').css('display', 'none');
+    $('.checkbox-multiples-action__discard img').css('display', 'none');
+    $('.dislike').css('display', 'block');
+    $('.like').css('display', 'block');
+    $('.container-outline__categories').css('display', 'block');
+  });
+// .checkbox-multiples-action__fav img
+// .checkbox-multiples-action__discard img
   $('.show-list').click(function(){
-    $('.container-outline__single').css('display', 'none');
-      $('.wrapper').css('display', 'block');
     $('.wrapper').removeClass('list-mode-single');
     $('.wrapper').addClass('list-mode');
     $('.checkbox-multiples-action__fav img').css('display', 'block');
@@ -734,8 +681,6 @@ $(document).ready(function() {
     $('.container-outline__categories').css('display', 'none');
   });
   $('.hide-list').click(function(){
-    $('.container-outline__single').css('display', 'none');
-      $('.wrapper').css('display', 'block');
     $('.wrapper').removeClass('list-mode-single');
     $('.wrapper').removeClass('list-mode');
     $('.checkbox-multiples-action__fav img').css('display', 'block');
@@ -744,23 +689,25 @@ $(document).ready(function() {
     $('.like').css('display', 'none');
     $('.container-outline__categories').css('display', 'none');
   });
-    
+
   $(".dislike").click(function(){
       $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutLeft');
     $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                 function(event) {
+      // Do something when the transition ends
       $(".wrapper.list-mode-single .box:last-child").remove();
     });
   });
-    
+
   $(".like").click(function(){
       $(".wrapper.list-mode-single .box:last-child").addClass('fadeOutRight');
     $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                 function(event) {
+      // Do something when the transition ends
       $(".wrapper.list-mode-single .box:last-child").remove();
     });
   });
-    
+
 </script>
 
 <script src="javascripts/ajax.js"></script>
