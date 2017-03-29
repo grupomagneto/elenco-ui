@@ -16,6 +16,43 @@ $(".botaofavorita").click(function(){
   });
 }); 
 
+$(".show-list-single").click(function(){
+    jQuery('.formfavorita').submit(function(){
+    var dados = jQuery( this ).serialize();
+
+    jQuery.ajax({
+      type: "POST",
+      dataType: 'html',
+      url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/single_profile.php",
+      data: dados,
+      success: function( data )
+      {
+        alert("chegou ajax");
+      }
+    });
+    return false;
+  });
+}); 
+
+
+$(".tab-image__background").click(function(){
+    jQuery('.formfavorita').submit(function(){
+    var dados = jQuery( this ).serialize();
+
+    jQuery.ajax({
+      type: "POST",
+      dataType: 'html',
+      url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/single_profile.php",
+      data: dados,
+      success: function( data )
+      {
+        alert("chegou ajax");
+      }
+    });
+    return false;
+  });
+}); 
+
 $(".search_index").click(function(){
   jQuery('.perfil_index').submit(function(){
     var dados_index = jQuery( this ).serialize();

@@ -938,6 +938,7 @@ form {
     filter: none; }
 
 .gender-cc {
+  outline: 100%;
   cursor: pointer;
   background-size: contain;
   background-repeat: no-repeat;

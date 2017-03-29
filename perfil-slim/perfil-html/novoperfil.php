@@ -288,21 +288,23 @@
                 $tipo_cadastro_vigente = $array[$key]["tipo_cadastro_vigente"];
                 $id = $array[$key]["id"];
                 $dt_foto = $array[$key]["dt_foto"];
-                $nomefoto = "idfavoritada_";
-                $nomeFotoCompleta = $nomefoto.$id;
+                $nomefav = "idfavoritada_";
+                $nomeFotoCompleta = $nomefav.$id;
+                $nomefotoDis = "id-descartada_";
+                $nomeFotoDiscard = $nomefotoDis.$id;
               echo  "
             <div class='box animated'>
               <div class='tab__box'>
               <div class='tab-actions tab-actions__multiples'>
 
-                <input type='radio' name='"; echo $nomeFotoCompleta."'";
-                echo "' value='valor da imagem' class='checkbox-multiples' />
-                <button type='submit' class='checkbox-multiples-action__fav botaofavorita";
-                echo $id."'"; echo " fav' onclick='AddTableRow()'>
+                <input type='radio' name='imagefavorita' value='"; echo $nomeFotoCompleta."'";
+                echo "' class='checkbox-multiples' />
+                <button type='submit' class='checkbox-multiples-action__fav botaofavorita fav' onclick='AddTableRow()'>
                   <img class='checkbox-multiples-img__fav' src='images/fav-icon.svg' alt=''>
                 </button>
-
-                <input type='radio' name='imagediscard' value='valor da imagem' class='checkbox-multiples' />
+                
+                <input type='radio' name='imagediscard' value='"; echo $nomeFotoDiscard."'";
+                echo "' class='checkbox-multiples' />
                 <button type='submit' class='checkbox-multiples-action__discard botaodiscard discard'>
                   <img src='images/discard-icon.svg' alt=''>
                 </button>
@@ -314,9 +316,13 @@
                 echo "
                 </p>
 
-                <button type='hidden'><input type='hidden' value='$key' name='array_key' /><img onmouseenter='onEnterFunction()' alt='background' class='tab-image__background cursor' src='http://www.magnetoelenco.com.br/fotos/";
+                <input type='radio' name='array_key' value='"; echo $key."'";
+                echo "' class='checkbox-image__background' />
+                <button type='submit' class='checkbox-image-action__fav'>
+                  <img class='tab-image__background show-list-single' src='http://www.magnetoelenco.com.br/fotos/";
                 echo $arquivo;
-                echo "' /></button>
+                echo "' />
+                </button>
 
                 <button type='button' class='dislike'>
                   <img alt='overlay discard' src='images/discard-single.svg' />
@@ -336,8 +342,11 @@
 
           </form>
         </div>
+        
+        
 
         <div class="container-outline__categories">
+              
               <section class="intro">
                <?php
                   include "contato.php";
@@ -636,7 +645,6 @@
 
 
 
-<!-- <script src="javascripts/jquery-2.2.4.min.js"></script> -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="javascripts/slick.min.js"></script>
@@ -644,14 +652,8 @@
 <script src="javascripts/ion.rangeSlider.min.js"></script>
 <script src="javascripts/jquery.easy-pie-chart.js"></script>
 <script src="javascripts/all.js"></script>
-<!-- <script src="javascripts/tabs.js"></script> -->
 <script>
-// var myTabs = tabs({
-//   el: '#tabs',
-//   tabNavigationLinks: '.c-tabs-nav__link',
-//   tabContentContainers: '.c-tab'
-// });
-// myTabs.init();
+
 $(document).ready(function() {
   document.getElementById('dislike').style.display = 'none';
   document.getElementById('like').style.display = 'none';
@@ -661,19 +663,22 @@ $(document).ready(function() {
     document.getElementById("single-perfil").style.display = "none";
   });
 });
-
-  $('.show-list-single').click(function(){
-    $('.wrapper').removeClass('list-mode');
-    $('.wrapper').addClass('list-mode-single');
-    $('.checkbox-multiples-action__fav img').css('display', 'none');
-    $('.checkbox-multiples-action__discard img').css('display', 'none');
-    $('.dislike').css('display', 'block');
-    $('.like').css('display', 'block');
-    $('.container-outline__categories').css('display', 'block');
+    
+ $('.tab-image__background').click(function(){
+    $('.wrapper').addClass('show-list-single');
   });
+
+    
+  $('.show-list-single').click(function(){
+    $('.container-outline__categories').css('display', 'block');
+    $('.container-outline__single').css('display', 'block');
+      $('.wrapper').css('display', 'none');
+  });
+
 // .checkbox-multiples-action__fav img
 // .checkbox-multiples-action__discard img
   $('.show-list').click(function(){
+    $('.container-outline__single').css('display', 'none');
     $('.wrapper').removeClass('list-mode-single');
     $('.wrapper').addClass('list-mode');
     $('.checkbox-multiples-action__fav img').css('display', 'block');
@@ -683,6 +688,7 @@ $(document).ready(function() {
     $('.container-outline__categories').css('display', 'none');
   });
   $('.hide-list').click(function(){
+    $('.container-outline__single').css('display', 'none');
     $('.wrapper').removeClass('list-mode-single');
     $('.wrapper').removeClass('list-mode');
     $('.checkbox-multiples-action__fav img').css('display', 'block');
