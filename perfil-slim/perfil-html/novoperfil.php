@@ -274,6 +274,9 @@
             array_push($array, $value);
           }
 
+          session_start();
+          $_SESSION['array_busca'] = $array;
+
             foreach ($array as $key => $value) {
                 $nome = $array[$key]["nome_artistico"];
                 $nome = explode(" ", $nome);
@@ -285,7 +288,6 @@
                 $tipo_cadastro_vigente = $array[$key]["tipo_cadastro_vigente"];
                 $id = $array[$key]["id"];
                 $dt_foto = $array[$key]["dt_foto"];
-                ${'position'.$id} = $key;
                 $nomefoto = "idfavoritada_";
                 $nomeFotoCompleta = $nomefoto.$id;
               echo  "
@@ -312,9 +314,9 @@
                 echo "
                 </p>
 
-                <img onmouseenter='onEnterFunction()' alt='background' class='tab-image__background cursor' src='http://www.magnetoelenco.com.br/fotos/";
+                <button type='hidden'><input type='hidden' value='$key' name='array_key' /><img onmouseenter='onEnterFunction()' alt='background' class='tab-image__background cursor' src='http://www.magnetoelenco.com.br/fotos/";
                 echo $arquivo;
-                echo "' />
+                echo "' /></button>
 
                 <button type='button' class='dislike'>
                   <img alt='overlay discard' src='images/discard-single.svg' />
