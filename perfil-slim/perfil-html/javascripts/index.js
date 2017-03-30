@@ -1,6 +1,7 @@
 var swiper = new Swiper('.swiper-container', {
     speed: 200,
     keyboardControl: true,
+    direction: 'vertical',
     nextButton: '.swiper-control.next',
     prevButton: '.swiper-control.prev'
 });
