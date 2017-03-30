@@ -292,6 +292,7 @@
                 $nomeFotoCompleta = $nomefav.$id;
                 $nomefotoDis = "id-descartada_";
                 $nomeFotoDiscard = $nomefotoDis.$id;
+                ${'key_'.$key} = $key;
               echo  "
             <div class='box animated'>
               <div class='tab__box'>
@@ -316,9 +317,10 @@
                 echo "
                 </p>
 
-                <input type='radio' name='array_key' value='"; echo $key."'";
-                echo "' class='checkbox-image__background' />
                 <button type='submit' class='checkbox-image-action__fav'>
+                
+                <input type='hidden' name='array_key' value='"; echo ${'key_'.$key}."'";
+                echo "' class='checkbox-image__background' />
                   <img class='tab-image__background show-list-single' src='http://www.magnetoelenco.com.br/fotos/";
                 echo $arquivo;
                 echo "' />
@@ -343,6 +345,10 @@
           </form>
         </div>
         
+        <div class="photo__single">
+            
+            
+        </div>
         
 
         <div class="container-outline__categories">
@@ -668,15 +674,12 @@ $(document).ready(function() {
     $('.wrapper').addClass('show-list-single');
   });
 
-    
   $('.show-list-single').click(function(){
     $('.container-outline__categories').css('display', 'block');
     $('.container-outline__single').css('display', 'block');
       $('.wrapper').css('display', 'none');
   });
-
-// .checkbox-multiples-action__fav img
-// .checkbox-multiples-action__discard img
+    
   $('.show-list').click(function(){
     $('.container-outline__single').css('display', 'none');
     $('.wrapper').removeClass('list-mode-single');
@@ -687,6 +690,7 @@ $(document).ready(function() {
     $('.like').css('display', 'none');
     $('.container-outline__categories').css('display', 'none');
   });
+    
   $('.hide-list').click(function(){
     $('.container-outline__single').css('display', 'none');
     $('.wrapper').removeClass('list-mode-single');

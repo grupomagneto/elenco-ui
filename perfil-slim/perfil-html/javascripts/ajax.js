@@ -16,6 +16,8 @@ $(".botaofavorita").click(function(){
   });
 }); 
 
+
+
 $(".show-list-single").click(function(){
     jQuery('.formfavorita').submit(function(){
     var dados = jQuery( this ).serialize();
@@ -27,13 +29,13 @@ $(".show-list-single").click(function(){
       data: dados,
       success: function( data )
       {
-        alert("chegou ajax");
+        $(".photo__single").html(data);
+//          $(".photo__single").load("../api/single_profile.php");
       }
     });
     return false;
   });
-}); 
-
+});
 
 $(".tab-image__background").click(function(){
     jQuery('.formfavorita').submit(function(){
@@ -46,12 +48,16 @@ $(".tab-image__background").click(function(){
       data: dados,
       success: function( data )
       {
-        alert("chegou ajax");
+          alert(data);
+//        $(".photo__single").html(data);
+//          $(".photo__single").load("../api/single_profile.php");
       }
     });
     return false;
   });
 }); 
+
+
 
 $(".search_index").click(function(){
   jQuery('.perfil_index').submit(function(){
