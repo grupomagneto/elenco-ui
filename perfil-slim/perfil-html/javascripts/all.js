@@ -336,15 +336,20 @@ setInterval(function(){updateGradient('.gradient')},10);
 
 //check nos inputs[type=radio]
 
-//$(document).on('click', '.checkbox-multiples-action__fav', function () {
-//    var $input = $("input[name=imagefavorita]")
-//    $input.prop('checked', true);
-//});
-//
-//$(document).on('click', '.checkbox-multiples-action__discard', function () {
-//    var $input = $("input[name=imagediscard]")
-//    $input.prop('checked', true);
-//
-//    var $input = $("input[name=imagefavorita]")
-//    $input.prop('checked', false);
-//});
+$(document).on('click', '.checkbox-multiples-action__fav', function () {
+    var $input = $("input[name=imagefavorita]")
+    $input.prop('checked', true);
+});
+
+$(document).on('click', '.checkbox-image-action__fav', function () {
+    var $input = $("input[name=array_key]")
+    $input.prop('checked', true);
+});
+
+$(document).on('click', '.checkbox-multiples-action__discard', function () {
+    var $input = $("input[name=imagediscard]")
+    $input.prop('checked', true);
+
+    var $input = $("input[name=imagefavorita]")
+    $input.prop('checked', false);
+});

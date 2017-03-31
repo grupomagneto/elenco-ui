@@ -1,6 +1,6 @@
 $(".botaofavorita").click(function(){
     jQuery('.formfavorita').submit(function(){
-    var dados = jQuery( this ).serialize();
+    var dados = jQuery(" this ").serialize();
 
     jQuery.ajax({
       type: "POST",
@@ -16,6 +16,24 @@ $(".botaofavorita").click(function(){
   });
 }); 
 
+
+$(".botaodiscard").click(function(){
+    jQuery('.formfavorita').submit(function(){
+    var dados = jQuery( this ).serialize();
+
+    jQuery.ajax({
+      type: "POST",
+      dataType: 'html',
+      url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/discardsearch.php",
+      data: dados,
+      success: function( data )
+      {        
+        // location = 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/novoperfil.php';
+      }
+    });
+    return false;
+  });
+}); 
 
 
 $(".show-list-single").click(function(){
@@ -37,19 +55,25 @@ $(".show-list-single").click(function(){
   });
 });
 
+
+$(document).ready(function() {
 $(".tab-image__background").click(function(){
     jQuery('.formfavorita').submit(function(){
-    var dados = jQuery( this ).serialize();
+//    var dados = jQuery(".tab-image__background").val();
+    var dados = $("input[type=radio][name=array_key]").val();
+//        var dados = $("input[name=rarray_key]").val();
+//     var dados = $('input[name=array_key]:checked', '.formfavorita').val();
 
     jQuery.ajax({
-      type: "POST",
+      type: "GET",
       dataType: 'html',
       url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/single_profile.php",
       data: dados,
       success: function( data )
       {
           alert(data);
-//        $(".photo__single").html(data);
+//          alert($('input[name=array_key]:checked', '.formfavorita').val());
+        $(".photo__single").html(data);
 //          $(".photo__single").load("../api/single_profile.php");
       }
     });
@@ -57,7 +81,7 @@ $(".tab-image__background").click(function(){
   });
 }); 
 
-
+});
 
 $(".search_index").click(function(){
   jQuery('.perfil_index').submit(function(){
@@ -76,24 +100,6 @@ $(".search_index").click(function(){
     return false;
   });
 });
-
-$(".botaodiscard").click(function(){
-    jQuery('.formfavorita').submit(function(){
-    var dados = jQuery( this ).serialize();
-
-    jQuery.ajax({
-      type: "POST",
-      dataType: 'html',
-      url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/discardsearch.php",
-      data: dados,
-      success: function( data )
-      {
-        // location = 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/novoperfil.php';
-      }
-    });
-    return false;
-  });
-}); 
 
 (function($) {
   AddTableRow = function() {

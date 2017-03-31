@@ -5,7 +5,7 @@ if(isset($_POST)){
 
   $imagediscard = $_POST['imagediscard'];
   echo $imagediscard;
-
+    
  };
  ?>
 <?php

@@ -316,15 +316,17 @@
                 echo $nome.", ".$idade;
                 echo "
                 </p>
-
+                
+                
                 <button type='submit' class='checkbox-image-action__fav'>
                 
-                <input type='hidden' name='array_key' value='"; echo ${'key_'.$key}."'";
+                <input type='radio' name='array_key' value='"; echo ${'key_'.$key}."'";
                 echo "' class='checkbox-image__background' />
                   <img class='tab-image__background show-list-single' src='http://www.magnetoelenco.com.br/fotos/";
                 echo $arquivo;
                 echo "' />
                 </button>
+              
 
                 <button type='button' class='dislike'>
                   <img alt='overlay discard' src='images/discard-single.svg' />
@@ -659,6 +661,10 @@
 <script src="javascripts/jquery.easy-pie-chart.js"></script>
 <script src="javascripts/all.js"></script>
 <script>
+    
+//$('.tab-image__background').click(function(){
+//    $('.checkbox-image__background').attr('name', 'array_');
+//});
 
 $(document).ready(function() {
   document.getElementById('dislike').style.display = 'none';
@@ -670,14 +676,14 @@ $(document).ready(function() {
   });
 });
     
- $('.tab-image__background').click(function(){
+  $('.tab-image__background').click(function(){
     $('.wrapper').addClass('show-list-single');
   });
 
   $('.show-list-single').click(function(){
     $('.container-outline__categories').css('display', 'block');
     $('.container-outline__single').css('display', 'block');
-      $('.wrapper').css('display', 'none');
+    $('.wrapper').css('display', 'none');
   });
     
   $('.show-list').click(function(){
