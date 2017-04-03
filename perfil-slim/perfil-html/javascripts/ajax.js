@@ -41,18 +41,13 @@ $(".checkbox-image-action__fav").click(function(){
     jQuery('form').submit(function(){
     var dados = jQuery( this ).serialize();
     
-
     jQuery.ajax({
       type: "POST",
       dataType: 'html',
       url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/single_profile.php",
       data: dados,
       success: function( data )
-      {
-          
-    $('.photo__single').css('display', 'block');
-    
-    $('.wrapper').css('display', 'none');
+      { 
         // alert(data);
         $(".photo__single").html(data);
          $(".photo__single").load("../api/single_profile.php");
@@ -62,23 +57,6 @@ $(".checkbox-image-action__fav").click(function(){
   });
 });
 
-$(".search_index").click(function(){
-  jQuery('.perfil_index').submit(function(){
-    var dados_index = jQuery( this ).serialize();
-
-    jQuery.ajax({
-      type: "POST",
-      dataType: 'html',
-      url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/addsearch.php",
-      data: dados_index,
-      success: function ( data )
-      {
-        alert("PESQUISOU");
-      }
-    });
-    return false;
-  });
-});
 
 (function($) {
   AddTableRow = function() {

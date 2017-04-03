@@ -300,7 +300,7 @@
                 </p>
                 
                 <form method='post' action='#' id='single_$key'>
-                <button type='submit' class='checkbox-image-action__fav'>
+                <button type='submit' class='checkbox-image-action__fav show-list-single'>
                 <input type='hidden' name='array_key' value='$key' class='checkbox-image__background' />
                 <img class='tab-image__background' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
                 </button>
@@ -350,7 +350,6 @@
               <?php echo $nome.", ".$idade; ?>
             </p>
           <footer class="tabs">
-<!--
             <button class="show-list-single">
               <svg width="24px" height="25px" viewBox="0 0 24 25" version="1.1" xmlns="http://www.w3.org/2000/svg" id="single-image" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="Perfil---Mobile-(iPhone-4)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -365,7 +364,6 @@
                 </g>
               </svg>
             </button>
--->
             <button class="show-list">
               <svg width="26px" height="25px" viewBox="0 0 26 25" version="1.1" xmlns="http://www.w3.org/2000/svg" id="box-4__image" xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -581,10 +579,6 @@
 <script src="javascripts/all.js"></script>
 <script>
     
-$('.close').click(function(){
-    $('.wrapper').css('display', 'block');
-    $('.photo__single').css('display', 'none');
-});
     
   $(document).ready(function() {
       document.getElementById('dislike').style.display = 'none';
