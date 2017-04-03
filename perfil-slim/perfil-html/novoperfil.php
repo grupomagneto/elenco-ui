@@ -158,11 +158,11 @@
 
         <div class="wrapper">
 
-          <form method="post" action="" class="formfavorita">
+          <!-- <form method="post" action="" class="formfavorita"> -->
             <div class="container">
 
         <?php
-
+              session_start();
               require_once ("api/conecta.php");
               $ranger_age = $_POST['ranger_age'];
               if ($ranger_age[1] != ';') {
@@ -194,9 +194,7 @@
                 $sql .= " AND cd_pele='$raca_index'";
               }
 
-              $sql .= ") t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto FROM tb_foto ORDER BY dh_cadastro ASC) t2 USING (id) GROUP BY id ORDER BY dt_foto DESC";
-
-                  // $sql = "SELECT * FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente FROM tb_elenco WHERE TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1' AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) <= '$age2' AND sexo='$gender' AND cd_pele='$raca_index' AND bairro='$bairro') t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto FROM tb_foto ORDER BY dh_cadastro ASC) t2 USING (id) GROUP BY id ORDER BY dt_foto DESC";
+              $sql .= ") t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto FROM tb_foto WHERE cd_tipo_foto = '1' ORDER BY dh_cadastro ASC) t2 USING (id) GROUP BY id ORDER BY dt_foto DESC";
 
           $res = mysqli_query($conexao_index, $sql) or die (alerta("Falha na Conexão  ".mysqli_error()));
 
@@ -205,15 +203,12 @@
           $array_profissional = array();
           $array_premium = array();
           $array_gratuito = array();
-          // $count = mysqli_num_rows($res);
-          // echo $sql;
+
           while($row = mysqli_fetch_array($res)) {
             if ($row['tipo_cadastro_vigente'] == 'Profissional') {
               $addarray1 = array(
               'id' => $row['id'],
               'nome_artistico' => $row['nome_artistico'],
-              'sexo' => $row['sexo'],
-              'bairro' => $row['bairro'],
               'arquivo' => $row['arquivo'],
               'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
               'idade' => $row['idade'],
@@ -230,8 +225,6 @@
               $addarray2 = array(
               'id' => $row['id'],
               'nome_artistico' => $row['nome_artistico'],
-              'sexo' => $row['sexo'],
-              'bairro' => $row['bairro'],
               'arquivo' => $row['arquivo'],
               'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
               'idade' => $row['idade'],
@@ -248,8 +241,6 @@
               $addarray3 = array(
               'id' => $row['id'],
               'nome_artistico' => $row['nome_artistico'],
-              'sexo' => $row['sexo'],
-              'bairro' => $row['bairro'],
               'arquivo' => $row['arquivo'],
               'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
               'idade' => $row['idade'],
@@ -273,8 +264,6 @@
           foreach ($array_gratuito as $key => $value) {
             array_push($array, $value);
           }
-
-          session_start();
           $_SESSION['array_busca'] = $array;
 
             foreach ($array as $key => $value) {
@@ -283,49 +272,38 @@
                 $nome = $nome[0];
                 $idade = $array[$key]['idade'];
                 $arquivo = $array[$key]["arquivo"];
-                $sexo = $array[$key]["sexo"];
-                $bairro = $array[$key]["bairro"];
-                $tipo_cadastro_vigente = $array[$key]["tipo_cadastro_vigente"];
                 $id = $array[$key]["id"];
-                $dt_foto = $array[$key]["dt_foto"];
-                $nomefav = "idfavoritada_";
-                $nomeFotoCompleta = $nomefav.$id;
-                $nomefotoDis = "id-descartada_";
-                $nomeFotoDiscard = $nomefotoDis.$id;
-                ${'key_'.$key} = $key;
               echo  "
             <div class='box animated'>
               <div class='tab__box'>
               <div class='tab-actions tab-actions__multiples'>
 
-                <input type='radio' name='imagefavorita' value='"; echo $nomeFotoCompleta."'";
-                echo "' class='checkbox-multiples' />
+                <form method='post' action='#' id='like_$key'>
+                <input type='radio' name='imagefavorita' value='$key' class='checkbox-multiples' />
                 <button type='submit' class='checkbox-multiples-action__fav botaofavorita fav' onclick='AddTableRow()'>
                   <img class='checkbox-multiples-img__fav' src='images/fav-icon.svg' alt=''>
                 </button>
-                
-                <input type='radio' name='imagediscard' value='"; echo $nomeFotoDiscard."'";
-                echo "' class='checkbox-multiples' />
+                </form>
+
+                <form method='post' action='#' id='dislike_$key'>
+                <input type='radio' name='imagediscard' value='$key' class='checkbox-multiples' />
                 <button type='submit' class='checkbox-multiples-action__discard botaodiscard discard'>
                   <img src='images/discard-icon.svg' alt=''>
                 </button>
+                </form>
 
                 <img alt='discard' class='discard-action cursor' src='images/discard.svg' />
                 <img alt='fav' class='fav-action cursor' src='images/fav.svg' />
-                <p class='subtitle font-family color-primary font-small cursor'>";
-                echo $nome.", ".$idade;
-                echo "
+                <p class='subtitle font-family color-primary font-small cursor'>
+                $nome, $idade
                 </p>
                 
-                
+                <form method='post' action='#' id='single_$key'>
                 <button type='submit' class='checkbox-image-action__fav'>
-                
-                <input type='radio' name='array_key' value='"; echo ${'key_'.$key}."'";
-                echo "' class='checkbox-image__background' />
-                  <img class='tab-image__background show-list-single' src='http://www.magnetoelenco.com.br/fotos/";
-                echo $arquivo;
-                echo "' />
+                <input type='hidden' name='array_key' value='$key' class='checkbox-image__background' />
+                <img class='tab-image__background show-list-single' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
                 </button>
+                </form>
               
 
                 <button type='button' class='dislike'>
@@ -344,75 +322,15 @@
 
             </div>
 
-          </form>
+          <!-- </form> -->
         </div>
         
         <div class="photo__single">
-            
-            
+         
         </div>
         
 
-        <div class="container-outline__categories">
-              
-              <section class="intro">
-               <?php
-                  include "contato.php";
-                ?>
-              </section>
-
-             <section class="second">
-               <?php
-                  include "planoassinatura.php";
-                ?>
-              </section>
-
-              <section class="third">
-               <?php
-                  include "portfolio.php";
-                ?>
-              </section>
-
-              <section class="fourth">
-               <?php
-                 include "caches.php";
-                ?>
-              </section>
-
-              <section class="fifth">
-               <?php
-                 include "jobs.php";
-                ?>
-              </section>
-
-              <section class="sixth">
-               <?php
-                 include "fisicos.php";
-                ?>
-              </section>
-
-              <section class="seventh">
-               <?php
-                 include "popularidade.php";
-                ?>
-              </section>
-
-              <section class="eighth">
-               <?php
-                 include "reputacao.php";
-                ?>
-              </section>
-
-              <section class="footer__section">
-                <div class="container-outline__content">
-                  <a href="#intro">
-                    <img src="images/arrow-to-top.svg" alt="">
-                  </a>
-                  <hr>
-                  <p class="font-family color-primary">Magneto Elenco © 2009-2017</p>
-                </div>
-              </section>
-        </div>
+        
 
       </div>
     </div>
@@ -430,7 +348,7 @@
               </div>
             </a>
             <p class="font-family color-primary" id="perfil-name">
-              Daniela, 22
+              <?php echo $nome.", ".$idade; ?>
             </p>
           <footer class="tabs">
             <button class="show-list-single">

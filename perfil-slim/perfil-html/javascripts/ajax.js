@@ -1,6 +1,6 @@
 $(".botaofavorita").click(function(){
-    jQuery('.formfavorita').submit(function(){
-    var dados = jQuery(" this ").serialize();
+    jQuery('form').submit(function(){
+    var dados = jQuery( this ).serialize();
 
     jQuery.ajax({
       type: "POST",
@@ -18,7 +18,7 @@ $(".botaofavorita").click(function(){
 
 
 $(".botaodiscard").click(function(){
-    jQuery('.formfavorita').submit(function(){
+    jQuery('form').submit(function(){
     var dados = jQuery( this ).serialize();
 
     jQuery.ajax({
@@ -33,12 +33,13 @@ $(".botaodiscard").click(function(){
     });
     return false;
   });
-}); 
+});
 
 
-$(".show-list-single").click(function(){
-    jQuery('.formfavorita').submit(function(){
+$(".checkbox-image-action__fav").click(function(){
+    jQuery('form').submit(function(){
     var dados = jQuery( this ).serialize();
+    
 
     jQuery.ajax({
       type: "POST",
@@ -47,40 +48,13 @@ $(".show-list-single").click(function(){
       data: dados,
       success: function( data )
       {
+        // alert(data);
         $(".photo__single").html(data);
-//          $(".photo__single").load("../api/single_profile.php");
+         $(".photo__single").load("../api/single_profile.php");
       }
     });
     return false;
   });
-});
-
-
-$(document).ready(function() {
-$(".tab-image__background").click(function(){
-    jQuery('.formfavorita').submit(function(){
-//    var dados = jQuery(".tab-image__background").val();
-    var dados = $("input[type=radio][name=array_key]").val();
-//        var dados = $("input[name=rarray_key]").val();
-//     var dados = $('input[name=array_key]:checked', '.formfavorita').val();
-
-    jQuery.ajax({
-      type: "GET",
-      dataType: 'html',
-      url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/single_profile.php",
-      data: dados,
-      success: function( data )
-      {
-          alert(data);
-//          alert($('input[name=array_key]:checked', '.formfavorita').val());
-        $(".photo__single").html(data);
-//          $(".photo__single").load("../api/single_profile.php");
-      }
-    });
-    return false;
-  });
-}); 
-
 });
 
 $(".search_index").click(function(){
