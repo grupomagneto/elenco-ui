@@ -1853,17 +1853,43 @@ section {
   right: 5%;
   text-transform: uppercase; }
 
-.footer__section{
+.footer__section {
   width: 100%;
   position: relative;
   bottom: 0;
   margin: 150px 10px 5px 10px;
 }
 
-.footer__section hr{
+.footer__section hr {
   color: #FFFFFF;
   width: 100%;
 }
+
+/* MODAL */
+#mask {
+    position: absolute;
+    z-index: 9000;
+    display: none;
+}
+#boxes .window {
+    position: absolute;
+    width: 95%;
+    height: 100px;
+    display: none;
+    z-index: 9999;
+}
+#boxes #dialog {
+    background-color: #FFFFFF;
+    width: 95%;
+    margin-top: -25%;
+    margin-left: -230px;
+    height: 100px;
+}
+.close {
+    display: block;
+    text-align: right;
+}
+
 /*TRUMPS*/
 .cursor {
   cursor: pointer; }

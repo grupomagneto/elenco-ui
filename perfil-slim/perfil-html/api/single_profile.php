@@ -15,7 +15,7 @@ if ($tipo_cadastro_vigente == 'Ator') {
 $id = $array[$array_key]["id"];
 $dt_foto = date('d/m/Y', strtotime($array[$array_key]["dt_foto"]));
 $sql_contato = "SELECT nome_artistico, tl_celular, endereco, email, bairro, cidade, uf, data_contrato_vigente FROM tb_elenco WHERE id_elenco='$id'";
-$result_contato = mysqli_query($conexao_index, $sql_contato) or die (alerta("Falha na Conexão  ".mysqli_error()));
+$result_contato = mysqli_query($conexao_index, $sql_contato) or die (alert("Falha na Conexão  ".mysqli_error()));
 $row_contato = mysqli_fetch_array($result_contato);
 $nome_artistico = $row_contato['nome_artistico'];
 $tl_celular = $row_contato['tl_celular'];
@@ -37,10 +37,11 @@ if ($validade_contrato > $today) {
 else {
   $validade_contrato = "CONTRATO VENCIDO";
 }
+$sql_cadastro = "SELECT SUM(cache_liquido) as doze_meses FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND data_job >= CURDATE() - INTERVAL 12 MONTH";
 // Recebido no último ano
 // Gratuito
 if ($tipo_cadastro_vigente == 'Gratuito') {
-$doze_meses = mysqli_query($conexao_index, "SELECT SUM(cache_liquido) as doze_meses FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND data_job >= CURDATE() - INTERVAL 12 MONTH") or die (alerta("Falha na Conexão  ".mysqli_error()));
+$doze_meses = mysqli_query($conexao_index, $sql_cadastro);
 $row = mysqli_fetch_array($doze_meses);
 $gratuito = $row['doze_meses'];
 $gratuito = number_format($gratuito,2,",",".");
@@ -62,7 +63,7 @@ $profissional_cents = $profissional_pieces[1];
 }
 // Premium
 if ($tipo_cadastro_vigente == 'Premium' || $tipo_cadastro_vigente == 'Ator') {
-$doze_meses = mysqli_query($conexao_index, "SELECT SUM(cache_liquido) as doze_meses FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND data_job >= CURDATE() - INTERVAL 12 MONTH") or die (alerta("Falha na Conexão  ".mysqli_error()));
+$doze_meses = mysqli_query($conexao_index, $sql_cadastro);
 $row = mysqli_fetch_array($doze_meses);
 $premium = $row['doze_meses'];
 $premium = number_format($premium,2,",",".");
@@ -84,7 +85,7 @@ $profissional_cents = $profissional_pieces[1];
 }
 // Profissional
 if ($tipo_cadastro_vigente == 'Profissional') {
-$doze_meses = mysqli_query($conexao_index, "SELECT SUM(cache_liquido) as doze_meses FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND data_job >= CURDATE() - INTERVAL 12 MONTH") or die (alerta("Falha na Conexão  ".mysqli_error()));
+$doze_meses = mysqli_query($conexao_index, $sql_cadastro);
 $row = mysqli_fetch_array($doze_meses);
 $profissional = $row['doze_meses'];
 $profissional = number_format($profissional,2,",",".");
@@ -301,6 +302,7 @@ function mask($val, $mask)
       </div>
     </div>
   </div>
+
 </section>
 <!-- Fim Plano Assinatura -->
 <section class='third'>

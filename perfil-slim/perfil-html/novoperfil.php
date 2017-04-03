@@ -274,6 +274,7 @@
                 $arquivo = $array[$key]["arquivo"];
                 $id = $array[$key]["id"];
               echo  "
+       
             <div class='box animated'>
               <div class='tab__box'>
               <div class='tab-actions tab-actions__multiples'>
@@ -301,7 +302,7 @@
                 <form method='post' action='#' id='single_$key'>
                 <button type='submit' class='checkbox-image-action__fav'>
                 <input type='hidden' name='array_key' value='$key' class='checkbox-image__background' />
-                <img class='tab-image__background show-list-single' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
+                <img class='tab-image__background' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
                 </button>
                 </form>
               
@@ -313,10 +314,13 @@
                 <button type='button' class='like'>
                   <img alt='overlay fav' src='images/fav-single.svg' />
                 </button>
+                    
 
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>";
+          
+          ";
             }
         ?>
 
@@ -325,12 +329,7 @@
           <!-- </form> -->
         </div>
         
-        <div class="photo__single">
-         
-        </div>
-        
-
-        
+        <div class="photo__single"></div>
 
       </div>
     </div>
@@ -351,6 +350,7 @@
               <?php echo $nome.", ".$idade; ?>
             </p>
           <footer class="tabs">
+<!--
             <button class="show-list-single">
               <svg width="24px" height="25px" viewBox="0 0 24 25" version="1.1" xmlns="http://www.w3.org/2000/svg" id="single-image" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="Perfil---Mobile-(iPhone-4)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -365,6 +365,7 @@
                 </g>
               </svg>
             </button>
+-->
             <button class="show-list">
               <svg width="26px" height="25px" viewBox="0 0 26 25" version="1.1" xmlns="http://www.w3.org/2000/svg" id="box-4__image" xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -580,22 +581,19 @@
 <script src="javascripts/all.js"></script>
 <script>
     
-//$('.tab-image__background').click(function(){
-//    $('.checkbox-image__background').attr('name', 'array_');
-//});
-
-$(document).ready(function() {
-  document.getElementById('dislike').style.display = 'none';
-  document.getElementById('like').style.display = 'none';
-  $(".box-multiple").click(function(){
-    document.getElementById("menu-link").style.display = "block";
-    document.getElementById("perfil-name").style.display = "none";
-    document.getElementById("single-perfil").style.display = "none";
-  });
+$('.close').click(function(){
+    $('.wrapper').css('display', 'block');
+    $('.photo__single').css('display', 'none');
 });
     
-  $('.tab-image__background').click(function(){
-    $('.wrapper').addClass('show-list-single');
+  $(document).ready(function() {
+      document.getElementById('dislike').style.display = 'none';
+      document.getElementById('like').style.display = 'none';
+      $(".box-multiple").click(function(){
+        document.getElementById("menu-link").style.display = "block";
+        document.getElementById("perfil-name").style.display = "none";
+        document.getElementById("single-perfil").style.display = "none";
+      });
   });
 
   $('.show-list-single').click(function(){
