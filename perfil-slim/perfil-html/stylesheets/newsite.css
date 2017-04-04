@@ -1238,14 +1238,22 @@ a:visited {
   transition: all 1.0s ease;
 }
 
-/*.wrapper.list-mode .container {*/
-/*  padding-right: 1px;*/
-/*}*/
+.wrapper .box .tab__box .tab-actions img.discard-action{
+  width: 95px;
+  height: 95px;
+  margin-top: 3px;
+  -webkit-transition: all 1.0s ease;
+  -moz-transition: all 1.0s ease;
+  transition: all 1.0s ease;
+}
 
-.wrapper.list-mode .box {
-  width: 142px;
-  height: 142px;
-  margin: 2px 2px 1px 0;
+.wrapper.box .tab__box .tab-actions img.fav-action{
+  width: 95px;
+  height: 95px;
+  margin-top: -10px;
+  -webkit-transition: all 1.0s ease;
+  -moz-transition: all 1.0s ease;
+  transition: all 1.0s ease;
 }
 
 .wrapper.list-mode .box .tab__box .tab-actions {
@@ -1257,21 +1265,10 @@ a:visited {
   transition: all 1.0s ease;
 }
 
-.wrapper .box .tab__box .tab-actions img.discard-action{
-  width: 95px;
-  height: 95px;
-    margin-top: 3px;
-  -webkit-transition: all 1.0s ease;
-  -moz-transition: all 1.0s ease;
-  transition: all 1.0s ease;
-}
-.wrapper.box .tab__box .tab-actions img.fav-action{
-  width: 95px;
-  height: 95px;
-    margin-top: 3px;
-  -webkit-transition: all 1.0s ease;
-  -moz-transition: all 1.0s ease;
-  transition: all 1.0s ease;
+.wrapper.list-mode .box {
+  width: 142px;
+  height: 142px;
+  margin: 2px 2px 1px 0;
 }
 
 .wrapper.list-mode .box .tab__box .tab-actions img.tab-image__background{
@@ -1284,7 +1281,8 @@ a:visited {
 .wrapper.list-mode .box .tab__box .tab-actions img.discard-action{
   width: 142px;
   height: 142px;
-    margin-top: 3px;
+  margin-top: 2px;
+  margin-left: 6px;
   -webkit-transition: all 1.0s ease;
   -moz-transition: all 1.0s ease;
   transition: all 1.0s ease;
@@ -1292,7 +1290,27 @@ a:visited {
 .wrapper.list-mode .box .tab__box .tab-actions img.fav-action{
   width: 142px;
   height: 142px;
-    margin-top: 3px;
+  margin-top: 2px;
+  margin-left: 6px;
+  -webkit-transition: all 1.0s ease;
+  -moz-transition: all 1.0s ease;
+  transition: all 1.0s ease;
+}
+
+.wrapper.list-mode-single .box .tab__box .tab-actions .fav-action {
+  width: 450px;
+  height: 460px;
+  margin-top: 2px;
+  margin-left: 5px;
+  -webkit-transition: all 1.0s ease;
+  -moz-transition: all 1.0s ease;
+  transition: all 1.0s ease;
+}
+.wrapper.list-mode-single .box .tab__box .tab-actions img.discard-action{
+ width: 450px;
+  height: 460px;
+  margin-top: 2px;
+  margin-left: 5px;
   -webkit-transition: all 1.0s ease;
   -moz-transition: all 1.0s ease;
   transition: all 1.0s ease;
@@ -1307,10 +1325,10 @@ a:visited {
   width: 142px;
   height: 22px;
   margin-top: 100px; 
-display: none;}
+  display: none; }
 
 .wrapper.list-mode .box .tab__box .tab-actions .subtitle__prof {
-  background: rgba(65,117,5,0.60);
+  background: rgba(65, 117, 5, 0.6);
   background-size: 25px 95px;
   background-repeat: no-repeat;
   position: absolute;
@@ -1318,7 +1336,7 @@ display: none;}
   width: 142px;
   height: 22px;
   margin-top: 100px;
-display: none;}
+  display: none; }
 
 .wrapper.list-mode-single .container{
   padding-right: 5px;
@@ -1329,34 +1347,29 @@ display: none;}
 }
 .wrapper.list-mode-single .box .tab__box .tab-actions {
   width: 100%;
-  height: 280px;
+  max-width: 461px;
+  height: 461px;
+  max-height: 461px;
   -webkit-transition: all 1.0s ease;
   -moz-transition: all 1.0s ease;
   transition: all 1.0s ease;
 }
 .wrapper.list-mode-single .box .tab__box .tab-actions img.tab-image__background {
   width: 100%;
-  height: 280px;
+  max-width: 461px;
+  height: 461px;
+  max-height: 461px;
   -webkit-transition: all 1.0s ease;
   -moz-transition: all 1.0s ease;
   transition: all 1.0s ease;
 }
 
-.wrapper.list-mode-single .box:nth-child(even) {
-  position: absolute;
-  margin-top: -90px;
+.wrapper.list-mode-single .box {
+  position: relative;
   width: 100%;
+    margin-top: 370px;
 }
-.wrapper.list-mode-single .box:nth-child(odd) {
-  position: absolute;
-  width: 100%;
-}
-.wrapper.list-mode-single .box:nth-of-type(1) {
-  margin-top: 0px;
-  position: absolute;
-  z-index: 9999;
-  width: 100%;
-}
+
 .wrapper.list-mode-single .box .tab__box .tab-actions {
   transition: all 100ms ease-in-out;
   -webkit-transition: all 100ms ease-in-out;
@@ -1372,10 +1385,12 @@ display: none;}
   margin: 0 auto;
   text-align: center;
 }
+
 .wrapper.list-mode-single .box .tab__box .tab-actions:first-of-type {
-  top: 1px;
+  top: -400px;
   width: 100%;
 }
+
 button.show-list-single, button.show-list, button.hide-list {
   border: none;
   background: none;
@@ -1483,10 +1498,20 @@ button.like img {
   z-index: 9999;
   width: 25px;
   height: 20px;
-  top: 25%;
+  top: 45%;
   right: -5%; 
-  display: none;
+/*  display: none;*/
 }
+
+.wrapper.list-mode .box .tab__box .tab-actions .checkbox-multiples-action__fav img {
+   top: 32%; 
+  right: -4%;
+}
+.wrapper.list-mode-single .box .tab__box .tab-actions .checkbox-multiples-action__fav img {
+   top: 50%; 
+  right: 4%;
+}
+
 .checkbox-multiples-action__discard {
   border: none;
   background: none;
@@ -1497,10 +1522,20 @@ button.like img {
   z-index: 9999;
   width: 25px;
   height: 20px;
-  top: 25%;
+  top: 45%;
   left: 5%; 
-  display: none;
+/*  display: none;*/
 }
+
+.wrapper.list-mode .box .tab__box .tab-actions .checkbox-multiples-action__discard img {
+  top: 32%;
+}
+
+.wrapper.list-mode-single .box .tab__box .tab-actions .checkbox-multiples-action__discard img {
+   top: 52%;
+   left: 3%;
+}
+
 .checkbox-single {
   visibility: hidden;
 }
@@ -1546,7 +1581,7 @@ button.like img {
 }
 .tab-image__background {
   border: none;
-    background: none;
+  background: none;
 /*   display: none;*/
 }
 
@@ -1670,6 +1705,16 @@ button.like img {
   margin-left: 6px;
   display: none; }
 
+.wrapper.list-mode .box .tab__box .tab-actions .subtitle {
+  margin-top: 122px;
+}
+
+.wrapper.list-mode-single .box .tab__box .tab-actions .subtitle {
+  margin-top: 441px;
+  margin-left: 6px;
+    width: 449px;
+}
+
 .subtitle__prof {
   background: rgba(65,117,5,0.60);
   background-size: 25px 95px;
@@ -1681,6 +1726,16 @@ button.like img {
   margin-top: 75px;
   margin-left: 6px;
   display: none; }
+
+.wrapper.list-mode .box .tab__box .tab-actions .subtitle__prof {
+  margin-top: 122px;
+}
+
+.wrapper.list-mode-single .box .tab__box .tab-actions .subtitle__prof {
+  margin-top: 441px;
+  margin-left: 6px;
+    width: 449px;
+}
 
 .tab-actions__four > .subtitle__prof {
   width: 142px;

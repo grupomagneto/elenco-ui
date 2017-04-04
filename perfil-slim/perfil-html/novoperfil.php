@@ -162,7 +162,7 @@
             <div class="container">
 
         <?php
-              session_start();
+//              session_start();
               require_once ("api/conecta.php");
               $ranger_age = $_POST['ranger_age'];
               if ($ranger_age[1] != ';') {
@@ -591,9 +591,8 @@
   });
 
   $('.show-list-single').click(function(){
-    $('.container-outline__categories').css('display', 'block');
-    $('.container-outline__single').css('display', 'block');
-    $('.wrapper').css('display', 'none');
+    $('.wrapper').addClass('list-mode-single');
+    $('.wrapper').removeClass('list-mode');
   });
     
   $('.show-list').click(function(){
