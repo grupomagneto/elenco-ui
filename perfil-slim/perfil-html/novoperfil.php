@@ -125,6 +125,11 @@ $_SESSION['array_busca'] = $array;
   <link rel="stylesheet" href="stylesheets/newsite.css">
 </head>
 <body>
+
+<div class="background__single">
+    
+<div class="photo__single"></div>
+    
 <div class="gradient">
   <div class="container-outline__content">
     <div class="topbar">
@@ -311,7 +316,6 @@ foreach ($array as $key => $value) {
 ?>
         </div>
     </div>
-    <div class="photo__single"></div>
     </div>
 </div>
     <div class="container-outline__center">
@@ -403,6 +407,8 @@ foreach ($array as $key => $value) {
       </div>
     </div>
   </div>
+</div>
+
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

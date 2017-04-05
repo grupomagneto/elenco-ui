@@ -283,12 +283,6 @@ $(document).ready(function(){
          $input.prop('checked', true);
     });
 });
-//$(document).on('dblclick', '.tab-image__background', function () {
-// event.preventDefault();
-// var $input = $("input[name=imagefavorita]")
-// $input.prop('checked', true);
-//});
-
 
 // Gradient
 var colors = new Array(

@@ -47,12 +47,14 @@ $(".checkbox-image-action__fav").click(function(){
       data: dados,
       success: function( data )
       { 
-        // alert(data);
+        $(".gradient").css('display', 'none');
+        $("body").removeClass('gradient');
+        $(".background__single").css('display', 'block');
         $(".photo__single").css('display', 'block');
         $(".photo__single").html(data);
-         $(".photo__single").load("../api/single_profile.php");
-         $('.container-outline__single').css('display', 'block');
-         $('.container').css('display', 'none');
+        $(".photo__single").load("../api/single_profile.php");
+        $('.container-outline__single').css('display', 'block');
+        $('.container').css('display', 'none');
       }
     });
     return false;

@@ -507,10 +507,20 @@ a:visited {
   top: 0;
   left: 0;
   bottom: 0;
-  display: block;
   width: 100%;
   padding: 0px;
   margin: 0px; }
+
+.background__single {
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  background-color: #441160; }
 
 .button-medium {
   width: 250px;
@@ -1364,6 +1374,37 @@ a:visited {
   transition: all 1.0s ease;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .wrapper.list-mode-single .box .tab__box .tab-actions {
+      width: 100%;
+      max-width: 461px;
+      height: 461px;
+      max-height: 461px;
+    }
+    .wrapper.list-mode-single .box .tab__box .tab-actions img.tab-image__background {
+      width: 100%;
+      max-width: 461px;
+      height: 461px;
+      max-height: 461px;
+    } 
+}
+
+@media only screen and (max-width: 767px)  {
+    .wrapper.list-mode-single .box .tab__box .tab-actions {
+        width: 100%;
+        max-width: 300px;
+        height: 200px;
+        max-height: 200px;
+    }
+    
+    .wrapper.list-mode-single .box .tab__box .tab-actions img.tab-tab__background{
+        width: 100%;
+        max-width: 300px;
+        height: 200px;
+        max-height: 200px;
+    }
+}
+
 .wrapper.list-mode-single .box {
   position: relative;
   width: 100%;
@@ -1387,7 +1428,7 @@ a:visited {
 }
 
 .wrapper.list-mode-single .box .tab__box .tab-actions:first-of-type {
-  top: -400px;
+  top: -410px;
   width: 100%;
 }
 
@@ -1712,7 +1753,25 @@ button.like img {
 .wrapper.list-mode-single .box .tab__box .tab-actions .subtitle {
   margin-top: 441px;
   margin-left: 6px;
-    width: 449px;
+  width: 449px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+.wrapper.list-mode-single .box .tab__box .tab-actions .subtitle {
+  margin-top: 441px;
+  margin-left: 6px;
+  width: 449px;
+}
+
+}
+
+@media only screen and (max-width: 767px)  {
+.wrapper.list-mode-single .box .tab__box .tab-actions .subtitle {
+  margin-top: 441px;
+  margin-left: 6px;
+  width: 285px;
+}
+
 }
 
 .subtitle__prof {
@@ -1734,7 +1793,15 @@ button.like img {
 .wrapper.list-mode-single .box .tab__box .tab-actions .subtitle__prof {
   margin-top: 441px;
   margin-left: 6px;
-    width: 449px;
+  width: 449px;
+}
+
+@media only screen and (max-width: 767px) {
+    .wrapper.list-mode-single .box .tab__box .tab-actions .subtitle__prof {
+        margin-top: 441px;
+        margin-left: 6px;
+        width: 285px;
+    } 
 }
 
 .tab-actions__four > .subtitle__prof {
@@ -1795,6 +1862,7 @@ button.like img {
 /* Sections */
 .container-outline__categories{
   position: absolute;
+    z-index: 9999;
   top: 100%;
   left: 0%;
 }
@@ -1876,11 +1944,14 @@ section {
     position: relative;
     background: inherit;
     color: #FFFFFF; }
+    
   .carousel .slick-dots {
     bottom: 30px; }
 
   .slick-dots li button:before, .slick-dots li.slick-active button:before {
-    color: #FFFFFF; } }
+    color: #FFFFFF; } 
+}
+
 @media only screen and (max-width: 450px) {
     
   .imageContainer > img {
@@ -1918,29 +1989,10 @@ section {
   width: 100%;
 }
 
-/* MODAL */
-#mask {
-    position: absolute;
-    z-index: 9000;
-    display: none;
-}
-#boxes .window {
-    position: absolute;
-    width: 95%;
-    height: 100px;
-    display: none;
-    z-index: 9999;
-}
-#boxes #dialog {
-    background-color: #FFFFFF;
-    width: 95%;
-    margin-top: -25%;
-    margin-left: -230px;
-    height: 100px;
-}
 .close {
-    display: block;
-    text-align: right;
+    position: absolute;
+ width: 30px;
+ height: 30px;
 }
 
 /*TRUMPS*/

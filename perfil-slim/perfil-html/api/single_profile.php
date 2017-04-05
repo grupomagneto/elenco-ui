@@ -124,8 +124,11 @@ function mask($val, $mask)
    return $maskared;
   }
 ?>
+
+
 <div class='container-outline__single'>
   <section class='intro' id='intro'>
+   
     <div class='content'>
       <div class='parent'>
         <div class='container-outline__center'>
@@ -140,7 +143,6 @@ function mask($val, $mask)
             <div class='item'>
               <div class='container-outline__center'>
                 <div class='imageContainer'>
-
                   <img alt='<?php echo $nome;?>' class='image__single' src='http://www.magnetoelenco.com.br/fotos/<?php echo $arquivo;?>' />
                 </div>
               </div>
@@ -167,11 +169,13 @@ function mask($val, $mask)
         </div>
       </div>
     </div>
+    
   </section>
 </div>
-        <div class='container-outline__categories'>
+
+<div class='container-outline__categories'>
 <!-- Início Contato -->
-  <section class='intro'>
+<section class='intro'>
    <div class="container-outline__content">
     <div class="contact">
       <div class="title-section">
@@ -242,111 +246,131 @@ function mask($val, $mask)
 </section>
 <!-- Fim Contato -->
 <!-- Início Plano Assinatura -->
-<section class='second'>
-  <div class="container-outline__content">
-    <div class="subscription-plan">
-      <div class="title-section">
-        <img alt="plano de assinatura" src="images/plano-assinatura.svg" />
-        <p class="font-family font-medium color-primary">
-          plano de assinatura
-        </p>
-      </div>
-      <div class="content_section">
-        <div class="content__subscription-plan">
-          <div class="after-title__subscription-plan">
-            <h2 class="font-family font-medium color-primary bold">
-              <?php echo $tipo_cadastro_vigente; ?>
-            </h2>
-            <div class="switch__subscription-plan">
-              <input checked="" class="switch-input" id="mensal" name="plan" type="radio" value="mensal" /><label class="switch-label switch-label-off" for="mensal"> mensal</label><input class="switch-input" id="anual" name="plan" type="radio" value="anual" /><label class="switch-label switch-label-on" for="anual"> anual</label><span class="switch-selection"></span>
-            </div>
-          </div>
-          <div class="change-plan__subscription-plan">
-            <p class="font-family font-small color-primary">
-              <?php echo $validade_contrato; ?>
+    <section class='second'>
+      <div class="container-outline__content">
+        <div class="subscription-plan">
+          <div class="title-section">
+            <img alt="plano de assinatura" src="images/plano-assinatura.svg" />
+            <p class="font-family font-medium color-primary">
+              plano de assinatura
             </p>
-            <button class="button button__medium" type="button">Mudar meu Plano</button>
-            <p class="font-family font-small color-primary">
-              No último ano, quanto receberia se fosse:
-            </p>
-            <table class="tabled-curved">
-              <tr>
-                <th class="font-family font-small color-primary">
-                  Gratuito
-                </th>
-                <th class="font-family font-small color-primary">
-                  Premium
-                </th>
-                <th class="font-family font-small color-primary">
-                  Profissional
-                </th>
-              </tr>
-              <tr>
-                <td class="font-family font-small color-primary">
-                  R$ <?php if(!empty($gratuito)){echo $gratuito;}else{echo "0";}?>,<?php if(!empty($gratuito_cents)){echo $gratuito_cents;}else{echo "00";}?>
-                </td>
-                <td class="font-family font-small color-primary">
-                  R$ <?php if(!empty($premium)){echo $premium;}else{echo "0";}?>,<?php if(!empty($premium_cents)){echo $premium_cents;}else{echo "00";}?>
-                </td>
-                <td class="font-family font-small color-primary">
-                  R$ <?php if(!empty($profissional)){echo $profissional;}else{echo "0";}?>,<?php if(!empty($profissional_cents)){echo $profissional_cents;}else{echo "00";}?>
-                </td>
-              </tr>
-            </table>
-            <div class="tooltiptext font-family color-primary">
-              Melhor Plano para mim
-            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</section>
-<!-- Fim Plano Assinatura -->
-<section class='third'>
-<?php
-  include 'portfolio.php';
-?>
-</section>
-
-<section class='fourth'>
-<?php
- include 'caches.php';
-?>
-</section>
-
-<section class='fifth'>
-<?php
- include 'jobs.php';
-?>
-</section>
-
-<section class='sixth'>
-<?php
- include 'fisicos.php';
-?>
-</section>
-
-<section class='seventh'>
-<?php
- include 'popularidade.php';
-?>
-</section>
-
-<section class='eighth'>
-<?php
- include 'reputacao.php';
-?>
-</section>
-
-              <section class='footer__section'>
-                <div class='container-outline__content'>
-                  <a href='#intro'>
-                    <img src='images/arrow-to-top.svg' alt=''>
-                  </a>
-                  <hr>
-                  <p class='font-family color-primary'>Magneto Elenco © 2009-2017</p>
+          <div class="content_section">
+            <div class="content__subscription-plan">
+              <div class="after-title__subscription-plan">
+                <h2 class="font-family font-medium color-primary bold">
+                  <?php echo $tipo_cadastro_vigente; ?>
+                </h2>
+                <div class="switch__subscription-plan">
+                  <input checked="" class="switch-input" id="mensal" name="plan" type="radio" value="mensal" /><label class="switch-label switch-label-off" for="mensal"> mensal</label><input class="switch-input" id="anual" name="plan" type="radio" value="anual" /><label class="switch-label switch-label-on" for="anual"> anual</label><span class="switch-selection"></span>
                 </div>
-              </section>
+              </div>
+              <div class="change-plan__subscription-plan">
+                <p class="font-family font-small color-primary">
+                  <?php echo $validade_contrato; ?>
+                </p>
+                <button class="button button__medium" type="button">Mudar meu Plano</button>
+                <p class="font-family font-small color-primary">
+                  No último ano, quanto receberia se fosse:
+                </p>
+                <table class="tabled-curved">
+                  <tr>
+                    <th class="font-family font-small color-primary">
+                      Gratuito
+                    </th>
+                    <th class="font-family font-small color-primary">
+                      Premium
+                    </th>
+                    <th class="font-family font-small color-primary">
+                      Profissional
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="font-family font-small color-primary">
+                      R$ <?php if(!empty($gratuito)){echo $gratuito;}else{echo "0";}?>,<?php if(!empty($gratuito_cents)){echo $gratuito_cents;}else{echo "00";}?>
+                    </td>
+                    <td class="font-family font-small color-primary">
+                      R$ <?php if(!empty($premium)){echo $premium;}else{echo "0";}?>,<?php if(!empty($premium_cents)){echo $premium_cents;}else{echo "00";}?>
+                    </td>
+                    <td class="font-family font-small color-primary">
+                      R$ <?php if(!empty($profissional)){echo $profissional;}else{echo "0";}?>,<?php if(!empty($profissional_cents)){echo $profissional_cents;}else{echo "00";}?>
+                    </td>
+                  </tr>
+                </table>
+                <div class="tooltiptext font-family color-primary">
+                  Melhor Plano para mim
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+    </section>
+    <!-- Fim Plano Assinatura -->
+    <section class='third'>
+    <?php
+      include 'portfolio.php';
+    ?>
+    </section>
+
+    <section class='fourth'>
+    <?php
+     include 'caches.php';
+    ?>
+    </section>
+
+    <section class='fifth'>
+    <?php
+     include 'jobs.php';
+    ?>
+    </section>
+
+    <section class='sixth'>
+    <?php
+     include 'fisicos.php';
+    ?>
+    </section>
+
+    <section class='seventh'>
+    <?php
+     include 'popularidade.php';
+    ?>
+    </section>
+
+    <section class='eighth'>
+    <?php
+     include 'reputacao.php';
+    ?>
+    </section>
+
+    <section class='footer__section'>
+        <div class='container-outline__content'>
+          <a href='#intro'>
+            <img src='images/arrow-to-top.svg' alt=''>
+          </a>
+          <hr>
+          <p class='font-family color-primary'>Magneto Elenco © 2009-2017</p>
+        </div>
+    </section>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
