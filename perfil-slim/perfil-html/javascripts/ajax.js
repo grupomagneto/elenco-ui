@@ -36,8 +36,7 @@ $(".botaodiscard").click(function(){
 });
 
 
-$(".checkbox-image-action__fav").click(function(){  
-    
+$(".checkbox-image-action__fav").click(function(){
     jQuery('form').submit(function(){
     var dados = jQuery( this ).serialize();
     
@@ -49,8 +48,11 @@ $(".checkbox-image-action__fav").click(function(){
       success: function( data )
       { 
         // alert(data);
+        $(".photo__single").css('display', 'block');
         $(".photo__single").html(data);
          $(".photo__single").load("../api/single_profile.php");
+         $('.container-outline__single').css('display', 'block');
+         $('.container').css('display', 'none');
       }
     });
     return false;

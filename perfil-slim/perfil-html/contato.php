@@ -1,5 +1,3 @@
-
-
 <div class="container-outline__content">
     <div class="contact">
       <div class="title-section">
