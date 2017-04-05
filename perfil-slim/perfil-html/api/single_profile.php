@@ -1,6 +1,6 @@
 <?php
-require_once ("conecta.php");
-session_start();
+include ("conecta.php");
+// session_start();
 $array_key = $_POST['array_key'];
 $array = $_SESSION['array_busca'];
 $nome = $array[$array_key]["nome_artistico"];
@@ -29,7 +29,6 @@ $uf = $row_contato['uf'];
 // Validade do Contrato
 $data_contrato_vigente = $row_contato['data_contrato_vigente'];
 $validade_contrato = date('d/m/Y', strtotime('+2 years', strtotime($data_contrato_vigente)));
-date_default_timezone_set('America/Sao_Paulo');
 $today = date('d/m/Y', time());
 if ($validade_contrato > $today) {
   $validade_contrato = "Ativo até: ".$validade_contrato;

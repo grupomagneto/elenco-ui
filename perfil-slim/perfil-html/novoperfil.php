@@ -1,3 +1,107 @@
+<?php
+include ("api/conecta.php");
+$ranger_age = $_POST['ranger_age'];
+if ($ranger_age[1] != ';') {
+    $age1 =  $ranger_age[0];
+    $age1 .=  $ranger_age[1];
+    $age2 =  $ranger_age[3];
+    if (isset($ranger_age[4])) {
+      $age2 .=  $ranger_age[4];
+    }
+}
+elseif ($ranger_age[1] == ';') {
+    $age1 =  $ranger_age[0];
+    $age2 =  $ranger_age[2];
+    if (isset($ranger_age[3])) {
+        $age2 .=  $ranger_age[3];
+    }
+}
+$sql = "SELECT * FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, tl_celular, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente FROM tb_elenco WHERE TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1' AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) <= '$age2'";
+if (isset($_POST['gender'])) {
+  $gender = $_POST['gender'];
+  $sql .= " AND sexo='$gender'";
+}
+if (isset($_POST['bairro']) ) {
+  $bairro = $_POST['bairro'];
+  $sql .= " AND bairro='$bairro'";
+}
+if ($_POST['raca_index'] != 0) {
+  $raca_index = $_POST['raca_index'];
+  $sql .= " AND cd_pele='$raca_index'";
+}
+
+$sql .= ") t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto FROM tb_foto WHERE cd_tipo_foto = '1' ORDER BY dh_cadastro ASC) t2 USING (id) GROUP BY id ORDER BY dt_foto DESC";
+
+$res = mysqli_query($conexao_index, $sql) or die (alerta("Falha na Conexão  ".mysqli_error()));
+
+$count = mysqli_num_rows($res);
+
+$array_profissional = array();
+$array_premium = array();
+$array_gratuito = array();
+
+while($row = mysqli_fetch_array($res)) {
+  if ($row['tipo_cadastro_vigente'] == 'Profissional') {
+    $addarray1 = array(
+    'id' => $row['id'],
+    'nome_artistico' => $row['nome_artistico'],
+    'arquivo' => $row['arquivo'],
+    'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
+    'idade' => $row['idade'],
+    'dt_foto' => $row['dt_foto']
+    );
+    array_push($array_profissional, $addarray1);
+    $cadastro1 = array();
+    foreach ($array_profissional as $key => $value){
+      $cadastro1[$key] = $value['dt_foto'];
+    }
+    array_multisort($cadastro1, SORT_DESC, $array_profissional);
+  }
+  elseif ($row['tipo_cadastro_vigente'] == 'Premium' || $row['tipo_cadastro_vigente'] == 'Ator') {
+    $addarray2 = array(
+    'id' => $row['id'],
+    'nome_artistico' => $row['nome_artistico'],
+    'arquivo' => $row['arquivo'],
+    'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
+    'idade' => $row['idade'],
+    'dt_foto' => $row['dt_foto']
+    );
+    array_push($array_premium, $addarray2);
+    $cadastro2 = array();
+    foreach ($array_premium as $key => $value){
+      $cadastro2[$key] = $value['dt_foto'];
+    }
+    array_multisort($cadastro2, SORT_DESC, $array_premium);
+  }
+  elseif ($row['tipo_cadastro_vigente'] == 'Gratuito') {
+    $addarray3 = array(
+    'id' => $row['id'],
+    'nome_artistico' => $row['nome_artistico'],
+    'arquivo' => $row['arquivo'],
+    'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
+    'idade' => $row['idade'],
+    'dt_foto' => $row['dt_foto']
+    );
+    array_push($array_gratuito, $addarray3);
+    $cadastro3 = array();
+    foreach ($array_gratuito as $key => $value){
+      $cadastro3[$key] = $value['dt_foto'];
+    }
+    array_multisort($cadastro3, SORT_DESC, $array_gratuito);
+  }
+}
+$array = array();
+foreach ($array_profissional as $key => $value) {
+  array_push($array, $value);
+}
+foreach ($array_premium as $key => $value) {
+  array_push($array, $value);
+}
+foreach ($array_gratuito as $key => $value) {
+  array_push($array, $value);
+}
+$_SESSION['array_busca'] = $array;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,10 +123,8 @@
   <link rel="stylesheet" href="stylesheets/popularidade.css">
   <link rel="stylesheet" href="stylesheets/reputacao.css">
   <link rel="stylesheet" href="stylesheets/newsite.css">
-
 </head>
 <body>
-
 <div class="gradient">
   <div class="container-outline__content">
     <div class="topbar">
@@ -140,11 +242,8 @@
                   </div>
                 </div>
                 <div class="perfil-fav">
-
                   <table class="table-menu-fav">
-
                   </table>
-
                 </div>
               </div>
             </form>
@@ -152,188 +251,69 @@
         </div>
       </div>
     </div>
-
     <div class="middle">
       <div class="container-outline__center">
-
         <div class="wrapper">
-
-          <!-- <form method="post" action="" class="formfavorita"> -->
             <div class="container">
 
-        <?php
-             session_start();
-              require_once ("api/conecta.php");
-              $ranger_age = $_POST['ranger_age'];
-              if ($ranger_age[1] != ';') {
-                  $age1 =  $ranger_age[0];
-                  $age1 .=  $ranger_age[1];
-                  $age2 =  $ranger_age[3];
-                  if (isset($ranger_age[4])) {
-                    $age2 .=  $ranger_age[4];
-                  }
-              }
-              elseif ($ranger_age[1] == ';') {
-                  $age1 =  $ranger_age[0];
-                  $age2 =  $ranger_age[2];
-                  if (isset($ranger_age[3])) {
-                      $age2 .=  $ranger_age[3];
-                  }
-              }
-              $sql = "SELECT * FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, tl_celular, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente FROM tb_elenco WHERE TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1' AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) <= '$age2'";
-              if (isset($_POST['gender'])) {
-                $gender = $_POST['gender'];
-                $sql .= " AND sexo='$gender'";
-              }
-              if (isset($_POST['bairro']) ) {
-                $bairro = $_POST['bairro'];
-                $sql .= " AND bairro='$bairro'";
-              }
-              if ($_POST['raca_index'] != 0) {
-                $raca_index = $_POST['raca_index'];
-                $sql .= " AND cd_pele='$raca_index'";
-              }
+<?php
+foreach ($array as $key => $value) {
+  $nome = $array[$key]["nome_artistico"];
+  $nome = explode(" ", $nome);
+  $nome = $nome[0];
+  $idade = $array[$key]['idade'];
+  $arquivo = $array[$key]["arquivo"];
+  $id = $array[$key]["id"];
+  echo "
+<div class='box animated'>
+  <div class='tab__box'>
+    <div class='tab-actions tab-actions__multiples'>
 
-              $sql .= ") t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto FROM tb_foto WHERE cd_tipo_foto = '1' ORDER BY dh_cadastro ASC) t2 USING (id) GROUP BY id ORDER BY dt_foto DESC";
+      <form method='post' action='#' id='like_$key'>
+      <input type='radio' name='imagefavorita' value='$key' class='checkbox-multiples' />
+      <button type='submit' class='checkbox-multiples-action__fav botaofavorita fav' onclick='AddTableRow()'>
+      <img class='checkbox-multiples-img__fav' src='images/fav-icon.svg' alt=''>
+      </button>
+      </form>
 
-          $res = mysqli_query($conexao_index, $sql) or die (alerta("Falha na Conexão  ".mysqli_error()));
+      <form method='post' action='#' id='dislike_$key'>
+      <input type='radio' name='imagediscard' value='$key' class='checkbox-multiples' />
+      <button type='submit' class='checkbox-multiples-action__discard botaodiscard discard'>
+      <img src='images/discard-icon.svg' alt=''>
+      </button>
+      </form>
 
-          $count = mysqli_num_rows($res);
+      <img alt='discard' class='discard-action cursor' src='images/discard.svg' />
+      <img alt='fav' class='fav-action cursor' src='images/fav.svg' />
+      <p class='subtitle font-family color-primary font-small cursor'>
+      $nome, $idade
+      </p>
 
-          $array_profissional = array();
-          $array_premium = array();
-          $array_gratuito = array();
+      <form method='post' action='#' id='single_$key'>
+      <button type='submit' class='checkbox-image-action__fav'>
+      <input type='hidden' name='array_key' value='$key' class='checkbox-image__background' />
+      <img class='tab-image__background' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
+      </button>
+      </form>
 
-          while($row = mysqli_fetch_array($res)) {
-            if ($row['tipo_cadastro_vigente'] == 'Profissional') {
-              $addarray1 = array(
-              'id' => $row['id'],
-              'nome_artistico' => $row['nome_artistico'],
-              'arquivo' => $row['arquivo'],
-              'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
-              'idade' => $row['idade'],
-              'dt_foto' => $row['dt_foto']
-              );
-              array_push($array_profissional, $addarray1);
-              $cadastro1 = array();
-              foreach ($array_profissional as $key => $value){
-                $cadastro1[$key] = $value['dt_foto'];
-              }
-              array_multisort($cadastro1, SORT_DESC, $array_profissional);
-            }
-            elseif ($row['tipo_cadastro_vigente'] == 'Premium' || $row['tipo_cadastro_vigente'] == 'Ator') {
-              $addarray2 = array(
-              'id' => $row['id'],
-              'nome_artistico' => $row['nome_artistico'],
-              'arquivo' => $row['arquivo'],
-              'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
-              'idade' => $row['idade'],
-              'dt_foto' => $row['dt_foto']
-              );
-              array_push($array_premium, $addarray2);
-              $cadastro2 = array();
-              foreach ($array_premium as $key => $value){
-                $cadastro2[$key] = $value['dt_foto'];
-              }
-              array_multisort($cadastro2, SORT_DESC, $array_premium);
-            }
-            elseif ($row['tipo_cadastro_vigente'] == 'Gratuito') {
-              $addarray3 = array(
-              'id' => $row['id'],
-              'nome_artistico' => $row['nome_artistico'],
-              'arquivo' => $row['arquivo'],
-              'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
-              'idade' => $row['idade'],
-              'dt_foto' => $row['dt_foto']
-              );
-              array_push($array_gratuito, $addarray3);
-              $cadastro3 = array();
-              foreach ($array_gratuito as $key => $value){
-                $cadastro3[$key] = $value['dt_foto'];
-              }
-              array_multisort($cadastro3, SORT_DESC, $array_gratuito);
-            }
-          }
-          $array = array();
-          foreach ($array_profissional as $key => $value) {
-            array_push($array, $value);
-          }
-          foreach ($array_premium as $key => $value) {
-            array_push($array, $value);
-          }
-          foreach ($array_gratuito as $key => $value) {
-            array_push($array, $value);
-          }
-          $_SESSION['array_busca'] = $array;
+      <button type='button' class='dislike'>
+      <img alt='overlay discard' src='images/discard-single.svg' />
+      </button>
 
-            foreach ($array as $key => $value) {
-                $nome = $array[$key]["nome_artistico"];
-                $nome = explode(" ", $nome);
-                $nome = $nome[0];
-                $idade = $array[$key]['idade'];
-                $arquivo = $array[$key]["arquivo"];
-                $id = $array[$key]["id"];
-              echo  "
-       
-            <div class='box animated'>
-              <div class='tab__box'>
-              <div class='tab-actions tab-actions__multiples'>
+      <button type='button' class='like'>
+      <img alt='overlay fav' src='images/fav-single.svg' />
+      </button>
 
-                <form method='post' action='#' id='like_$key'>
-                <input type='radio' name='imagefavorita' value='$key' class='checkbox-multiples' />
-                <button type='submit' class='checkbox-multiples-action__fav botaofavorita fav' onclick='AddTableRow()'>
-                  <img class='checkbox-multiples-img__fav' src='images/fav-icon.svg' alt=''>
-                </button>
-                </form>
-
-                <form method='post' action='#' id='dislike_$key'>
-                <input type='radio' name='imagediscard' value='$key' class='checkbox-multiples' />
-                <button type='submit' class='checkbox-multiples-action__discard botaodiscard discard'>
-                  <img src='images/discard-icon.svg' alt=''>
-                </button>
-                </form>
-
-                <img alt='discard' class='discard-action cursor' src='images/discard.svg' />
-                <img alt='fav' class='fav-action cursor' src='images/fav.svg' />
-                <p class='subtitle font-family color-primary font-small cursor'>
-                $nome, $idade
-                </p>
-                
-                <form method='post' action='#' id='single_$key'>
-                <button type='submit' class='checkbox-image-action__fav'>
-                <input type='hidden' name='array_key' value='$key' class='checkbox-image__background' />
-                <img class='tab-image__background' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
-                </button>
-                </form>
-              
-
-                <button type='button' class='dislike'>
-                  <img alt='overlay discard' src='images/discard-single.svg' />
-                </button>
-
-                <button type='button' class='like'>
-                  <img alt='overlay fav' src='images/fav-single.svg' />
-                </button>
-                    
-
-                  </div>
-                </div>
-              </div>
-          
-          ";
-            }
-        ?>
-
-            </div>
-
-          <!-- </form> -->
-        </div>
-        
-        <div class="photo__single"></div>
-
-      </div>
     </div>
-
+  </div>
+</div>";
+}
+?>
+        </div>
+    </div>
+    <div class="photo__single"></div>
+    </div>
+</div>
     <div class="container-outline__center">
       <div class="footer">
         <div class="bottombar">
@@ -368,7 +348,6 @@
           </footer>
           </div>
         </div>
-
         <div class="fullscreen-menu-search">
           <div class="mask-search">
             <form action="">
@@ -426,8 +405,6 @@
   </div>
 </div>
 
-
-
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="javascripts/slick.min.js"></script>
@@ -436,8 +413,7 @@
 <script src="javascripts/jquery.easy-pie-chart.js"></script>
 <script src="javascripts/all.js"></script>
 <script>
-    
-    
+
   $(document).ready(function() {
       document.getElementById('dislike').style.display = 'none';
       document.getElementById('like').style.display = 'none';
@@ -455,7 +431,7 @@
     $('.wrapper').addClass('list-mode-single');
     $('.wrapper').removeClass('list-mode');
   });
-    
+
   $('.show-list').click(function(){
     $('.container').css('display', 'block');
     $(".photo__single").css('display', 'none');
@@ -468,7 +444,7 @@
     $('.like').css('display', 'none');
     $('.container-outline__categories').css('display', 'none');
   });
-    
+
   $('.hide-list').click(function(){
     $('.container').css('display', 'block');
     $(".photo__single").css('display', 'none');
@@ -501,7 +477,6 @@
   });
 
 </script>
-
 <script src="javascripts/ajax.js"></script>
 
 </body>
