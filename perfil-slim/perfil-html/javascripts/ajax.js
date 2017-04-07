@@ -37,6 +37,7 @@ $(".botaodiscard").click(function(){
 
 
 $(".checkbox-image-action__fav").click(function(){
+    
     jQuery('form').submit(function(){
     var dados = jQuery( this ).serialize();
     
@@ -48,13 +49,32 @@ $(".checkbox-image-action__fav").click(function(){
       success: function( data )
       { 
         $(".gradient").css('display', 'none');
-        $("body").removeClass('gradient');
-        $(".background__single").css('display', 'block');
         $(".photo__single").css('display', 'block');
         $(".photo__single").html(data);
         $(".photo__single").load("../api/single_profile.php");
         $('.container-outline__single').css('display', 'block');
+        $('.container-outline__categories').css('display', 'block');
         $('.container').css('display', 'none');
+        //Slick
+        $(document).ready(function() {
+          $('.carousel').slick({
+            dots: true,
+            infinite: false,
+            speed: 200,
+            centerMode: false,
+            variableWidth: false,
+            autoplay: false,
+            arrows: false
+          });
+        }); 
+         
+        $(".close").click(function() {
+            $(".photo__single").css("display", "none");
+            $(".container-outline__single").css("display", "none");
+            $(".container-outline__categories").css("display", "none");
+            $(".gradient").css("display", "block");
+            $(".container").css("display", "block");
+        });
       }
     });
     return false;

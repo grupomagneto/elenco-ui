@@ -126,7 +126,44 @@ function mask($val, $mask)
 ?>
 
 
+<div class="topbar">
+  <div class="container-outline__center">
+    <a class="menu-button cursor">
+      <button class="close">
+       <svg width="23px" height="23px">
+          <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+          <title>Group 2</title>
+          <desc>Created with Sketch.</desc>
+          <defs>
+              <rect id="path-1" x="0" y="0" width="23" height="23"></rect>
+              <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="23" height="23" fill="white">
+                  <use xlink:href="#path-1"></use>
+              </mask>
+          </defs>
+          <g id="zz" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Resultado---Perfil-Copy-3" transform="translate(-20.000000, -76.000000)">
+                  <g id="Group-2" transform="translate(20.000000, 76.000000)">
+                      <polygon id="Shape" fill="#FFFFFF" points="19.0625 5.9 17.6625 4.5 12.0625 10.1 6.4625 4.5 5.0625 5.9 10.6625 11.5 5.0625 17.1 6.4625 18.5 12.0625 12.9 17.6625 18.5 19.0625 17.1 13.4625 11.5"></polygon>
+                      <use id="Rectangle-12" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                  </g>
+              </g>
+          </g>
+      </svg>
+      </button>
+    </a>
+    <a class="cursor top-name-single font-family color-primary font-medium">
+      <?php echo $nome . ', ' . $idade; ?>
+    </a>
+    <a class="menu-fav cursor">
+      <img src="images/menu-fav.svg" />
+      <span class="fav-number font-family">1</span>
+    </a>
+  </div>
+</div>
+
+
 <div class='container-outline__single'>
+ 
   <section class='intro' id='intro'>
    
     <div class='content'>
@@ -171,79 +208,78 @@ function mask($val, $mask)
     </div>
     
   </section>
-</div>
-
+  
 <div class='container-outline__categories'>
 <!-- Início Contato -->
-<section class='intro'>
-   <div class="container-outline__content">
-    <div class="contact">
-      <div class="title-section">
-        <img alt="contato" src="images/contato.svg" />
-        <p class="font-family font-medium color-primary">
-          Contato
-        </p>
-      </div>
-      <div class="content_section">
-        <div class="content_contact">
-          <h2 class="font-family font-medium color-primary">
-             <?php echo $nome_artistico; ?>
-          </h2>
-          <table class="table-left">
-            <tr>
-              <td>
-                <img src="images/icon-fone.svg" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="images/icon-maps.svg" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="images/icon-email.svg" />
-              </td>
-            </tr>
-          </table>
-          <span class="after__table-left"><img alt="" src="images/after-redes.svg" /></span>
-          <table class="table-right">
-            <tr>
-              <td class="font-family color-primary">
-                <?php echo mask($tl_celular, "+## (##) #####-####"); ?>
-              </td>
-            </tr>
-            <tr>
-              <td class="font-family color-primary">
-                <?php echo $endereco.", ".$bairro; ?>
-              </td>
-            </tr>
-            <tr>
-              <td class="font-family color-primary">
-                <a href='mailto:<?php echo $email; ?>'><?php echo $email; ?></a>
-              </td>
-            </tr>
-          </table>
-          <h2 class="second-title__contact font-family font-medium color-primary">
-            redes sociais
-          </h2>
-          <ul class="redes-icon__contact">
-            <li>
-              <img alt="" src="images/icon-face.svg" />
-            </li>
-            <li>
-              <img alt="" src="images/icon-insta.svg" />
-            </li>
-            <li>
-              <img alt="" src="images/icon-twitter.svg" />
-            </li>
-          </ul>
-         <button class="button__contact button button__medium cursor">editar</button>
+    <section class='intro'>
+       <div class="container-outline__content">
+        <div class="contact">
+          <div class="title-section">
+            <img alt="contato" src="images/contato.svg" />
+            <p class="font-family font-medium color-primary">
+              Contato
+            </p>
+          </div>
+          <div class="content_section">
+            <div class="content_contact">
+              <h2 class="font-family font-medium color-primary">
+                 <?php echo $nome_artistico; ?>
+              </h2>
+              <table class="table-left">
+                <tr>
+                  <td>
+                    <img src="images/icon-fone.svg" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="images/icon-maps.svg" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="images/icon-email.svg" />
+                  </td>
+                </tr>
+              </table>
+              <span class="after__table-left"><img alt="" src="images/after-redes.svg" /></span>
+              <table class="table-right">
+                <tr>
+                  <td class="font-family color-primary">
+                    <?php echo mask($tl_celular, "+## (##) #####-####"); ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-family color-primary">
+                    <?php echo $endereco.", ".$bairro; ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-family color-primary">
+                    <a href='mailto:<?php echo $email; ?>'><?php echo $email; ?></a>
+                  </td>
+                </tr>
+              </table>
+              <h2 class="second-title__contact font-family font-medium color-primary">
+                redes sociais
+              </h2>
+              <ul class="redes-icon__contact">
+                <li>
+                  <img alt="" src="images/icon-face.svg" />
+                </li>
+                <li>
+                  <img alt="" src="images/icon-insta.svg" />
+                </li>
+                <li>
+                  <img alt="" src="images/icon-twitter.svg" />
+                </li>
+              </ul>
+             <button class="button__contact button button__medium cursor">editar</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
+    </section>
 <!-- Fim Contato -->
 <!-- Início Plano Assinatura -->
     <section class='second'>
@@ -305,7 +341,6 @@ function mask($val, $mask)
           </div>
         </div>
       </div>
-
     </section>
     <!-- Fim Plano Assinatura -->
     <section class='third'>
@@ -347,15 +382,19 @@ function mask($val, $mask)
     <section class='footer__section'>
         <div class='container-outline__content'>
           <a href='#intro'>
-            <img src='images/arrow-to-top.svg' alt=''>
+            <img src='images/arrow-to-top.svg' alt='arrow-to-top'>
           </a>
           <hr>
           <p class='font-family color-primary'>Magneto Elenco © 2009-2017</p>
         </div>
     </section>
 
-
 </div>
+  
+</div>
+
+
+
 
 
 

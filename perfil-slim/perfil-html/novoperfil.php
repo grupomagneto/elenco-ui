@@ -123,297 +123,312 @@ $_SESSION['array_busca'] = $array;
   <link rel="stylesheet" href="stylesheets/popularidade.css">
   <link rel="stylesheet" href="stylesheets/reputacao.css">
   <link rel="stylesheet" href="stylesheets/newsite.css">
+  <link rel="stylesheet" href="stylesheets/swiper.css">
 </head>
 <body>
 
 <div class="background__single">
-    
+
 <div class="photo__single"></div>
-    
-<div class="gradient">
-  <div class="container-outline__content">
-    <div class="topbar">
-      <div class="container-outline__center">
-        <a class="menu-button cursor">
-          <img src="images/menu.svg" />
-        </a>
-        <a class="logo cursor">
-          <img src="images/logo.svg" />
-        </a>
-        <a class="menu-fav cursor">
-          <img src="images/menu-fav.svg" />
-          <span class="fav-number font-family">1</span>
-        </a>
-      </div>
-    </div>
-    <div class="fullscreen-menu">
-      <div class="mask">
-        <div class="container-outline__center">
-          <span class="arrow-up">
-            <form action="#">
-              <div class="content-menu-trigger">
-                <table class="table-menu">
-                  <tr>
-                    <td>
-                      <a class="font-family color-primary cursor" href="">
-                        <img alt="busca" src="images/search.svg" />
-                        <p>
-                          Busca
-                        </p>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a class="font-family color-primary cursor" href="">
-                        <img alt="jobs" src="images/jobs.svg" />
-                        <p>
-                          Meus Jobs
-                        </p>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a class="font-family color-primary cursor" href="">
-                        <img alt="notificação" src="images/notification.svg" />
-                        <p>
-                          Notificações
-                        </p>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a class="font-family color-primary cursor" href="">
-                        <img alt="perfil" src="images/perfil.svg" />
-                        <p>
-                          Meu Perfil
-                        </p>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a class="font-family color-primary cursor" href="">
-                        <img alt="configurar" src="images/configuration.svg" />
-                        <p>
-                          Configurações
-                        </p>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a class="font-family color-primary cursor" href="">
-                        <img alt="sair" src="images/logout.svg" />
-                        <p>
-                          Sair
-                        </p>
-                      </a>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </form>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="fullscreen-menu-fav">
-      <div class="mask-fav">
-        <div class="container-outline__center">
-          <span class="arrow-up-fav">
-            <form action="#">
-              <div class="content-menu-fav container-outline__center">
-                <div class="top-menu-fav-left">
-                  <img alt="" src="images/jobs.svg" />
-                  <p class="bold font-family color-primary">
-                    criar job
-                  </p>
-                </div>
-                <div class="top-menu-fav-right">
-                  <div class="top-menu-fav-right__picture">
-                    <img alt="" src="images/criar-jogo.svg" />
-                    <p class="bold font-family color-primary">
-                      criar jogo
-                    </p>
-                  </div>
-                  <div class="top-menu-fav-right__picture">
-                    <img alt="" src="images/encaminhar.svg" />
-                    <p class="bold font-family color-primary">
-                      encaminhar
-                    </p>
-                  </div>
-                </div>
-                <div class="perfil-fav">
-                  <table class="table-menu-fav">
-                  </table>
-                </div>
-              </div>
-            </form>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="middle">
-      <div class="container-outline__center">
-        <div class="wrapper">
-            <div class="container">
 
-<?php
-foreach ($array as $key => $value) {
-  $nome = $array[$key]["nome_artistico"];
-  $nome = explode(" ", $nome);
-  $nome = $nome[0];
-  $idade = $array[$key]['idade'];
-  $arquivo = $array[$key]["arquivo"];
-  $id = $array[$key]["id"];
-  echo "
-<div class='box animated'>
-  <div class='tab__box'>
-    <div class='tab-actions tab-actions__multiples'>
+ <div class="gradient">
 
-      <form method='post' action='#' id='like_$key'>
-      <input type='radio' name='imagefavorita' value='$key' class='checkbox-multiples' />
-      <button type='submit' class='checkbox-multiples-action__fav botaofavorita fav' onclick='AddTableRow()'>
-      <img class='checkbox-multiples-img__fav' src='images/fav-icon.svg' alt=''>
-      </button>
-      </form>
-
-      <form method='post' action='#' id='dislike_$key'>
-      <input type='radio' name='imagediscard' value='$key' class='checkbox-multiples' />
-      <button type='submit' class='checkbox-multiples-action__discard botaodiscard discard'>
-      <img src='images/discard-icon.svg' alt=''>
-      </button>
-      </form>
-
-      <img alt='discard' class='discard-action cursor' src='images/discard.svg' />
-      <img alt='fav' class='fav-action cursor' src='images/fav.svg' />
-      <p class='subtitle font-family color-primary font-small cursor'>
-      $nome, $idade
-      </p>
-
-      <form method='post' action='#' id='single_$key'>
-      <button type='submit' class='checkbox-image-action__fav'>
-      <input type='hidden' name='array_key' value='$key' class='checkbox-image__background' />
-      <img class='tab-image__background' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
-      </button>
-      </form>
-
-      <button type='button' class='dislike'>
-      <img alt='overlay discard' src='images/discard-single.svg' />
-      </button>
-
-      <button type='button' class='like'>
-      <img alt='overlay fav' src='images/fav-single.svg' />
-      </button>
-
-    </div>
-  </div>
-</div>";
-}
-?>
-        </div>
-    </div>
-    </div>
-</div>
-    <div class="container-outline__center">
-      <div class="footer">
-        <div class="bottombar">
+      <div class="container-outline__content">
+       
+        <div class="topbar">
           <div class="container-outline__center">
-            <a class="menu-search cursor" id="menu-link">
-              <div class="search" id="search">
-                <img src="images/search.svg" />
-                <p class="font-family color-primary">
-                  <?php echo $count." perfis"; ?>
-                </p>
-              </div>
+            <a class="menu-button cursor">
+              <img src="images/menu.svg" />
             </a>
-            <p class="font-family color-primary" id="perfil-name">
-              <?php echo $nome.", ".$idade; ?>
-            </p>
-          <footer class="tabs">
-            <button class="show-list-single">
-            <?php
-              include "images/show-list-single.svg";
-            ?>
-            </button>
-            <button class="show-list">
-            <?php
-              include "images/show-list.svg";
-            ?>
-            </button>
-            <button class="hide-list">
-            <?php
-              include "images/hide-list.svg";
-            ?>
-            </button>
-          </footer>
+            <a class="logo cursor">
+              <img src="images/logo.svg" />
+            </a>
+            <a class="menu-fav cursor">
+              <img src="images/menu-fav.svg" />
+              <span class="fav-number font-family">1</span>
+            </a>
           </div>
         </div>
-        <div class="fullscreen-menu-search">
-          <div class="mask-search">
-            <form action="">
-              <div class="content-menu-search">
-                <div class="container-outline__center">
-                  <div class="search-menu">
-                    <input class="font-family color-primary" name="search" placeholder="Parâmetros da Busca:" type="text" />
+        <div class="fullscreen-menu">
+          <div class="mask">
+            <div class="container-outline__center">
+              <span class="arrow-up">
+                <form action="#">
+                  <div class="content-menu-trigger">
+                    <table class="table-menu">
+                      <tr>
+                        <td>
+                          <a class="font-family color-primary cursor" href="">
+                            <img alt="busca" src="images/search.svg" />
+                            <p>
+                              Busca
+                            </p>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a class="font-family color-primary cursor" href="">
+                            <img alt="jobs" src="images/jobs.svg" />
+                            <p>
+                              Meus Jobs
+                            </p>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a class="font-family color-primary cursor" href="">
+                            <img alt="notificação" src="images/notification.svg" />
+                            <p>
+                              Notificações
+                            </p>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a class="font-family color-primary cursor" href="">
+                            <img alt="perfil" src="images/perfil.svg" />
+                            <p>
+                              Meu Perfil
+                            </p>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a class="font-family color-primary cursor" href="">
+                            <img alt="configurar" src="images/configuration.svg" />
+                            <p>
+                              Configurações
+                            </p>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a class="font-family color-primary cursor" href="">
+                            <img alt="sair" src="images/logout.svg" />
+                            <p>
+                              Sair
+                            </p>
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
                   </div>
-                  <div class="gender_age-group">
-                    <p class="title-menu font-family color-primary">
-                      Sexo:
-                    </p>
-                    <input id="male" name="gender" type="radio" value="male" />
-                    <label class="gender-cc male" for="male"></label>
-                    <input id="female" name="gender" type="radio" value="female" /><label class="gender-cc female" for="female"></label>
-                  </div>
-                  <div class="ranger-slide">
-                    <p class="font-family color-primary">
-                      Faixa etária:
-                    </p>
-                    <input class="js-range-slider" name="ranger" type="text" value="" />
-                  </div>
-                  <div class="after-ranger-slide__search">
-                    <p class="font-family color-primary">
-                      Cor da pele: <span class="font-family color-primary bold">Branca</span>
-                    </p>
-                    <p class="font-family color-primary">
-                      Bairro: <span class="font-family color-primary bold">Lago Norte</span>
-                    </p>
-                    <button class="button button__small" type="button"> Alterar</button>
-                  </div>
-                  <div class="title__order-perfil">
-                    <span class="glyphicon glyphicon-sort" />
-                    <p class="font-family color-primary">
-                      Exibir primeiro perfis:
-                    </p>
-                    <hr />
-                  </div>
-                  <div class="button__order-perfil">
-                    <div class="switch-field font-family">
-                      <input checked="" id="switch_left" name="order" type="radio" value="yes" />
-                      <label class="button button__small" for="switch_left"> Mais avaliados</label>
-                      <input id="switch_right" name="order" type="radio" value="no" />
-                      <label class="button button__small" for="switch_right"> Mais novos</label>
+                </form>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="fullscreen-menu-fav">
+          <div class="mask-fav">
+            <div class="container-outline__center">
+              <span class="arrow-up-fav">
+                <form action="#">
+                  <div class="content-menu-fav container-outline__center">
+                    <div class="top-menu-fav-left">
+                      <img alt="" src="images/jobs.svg" />
+                      <p class="bold font-family color-primary">
+                        criar job
+                      </p>
+                    </div>
+                    <div class="top-menu-fav-right">
+                      <div class="top-menu-fav-right__picture">
+                        <img alt="" src="images/criar-jogo.svg" />
+                        <p class="bold font-family color-primary">
+                          criar jogo
+                        </p>
+                      </div>
+                      <div class="top-menu-fav-right__picture">
+                        <img alt="" src="images/encaminhar.svg" />
+                        <p class="bold font-family color-primary">
+                          encaminhar
+                        </p>
+                      </div>
+                    </div>
+                    <div class="perfil-fav">
+                      <table class="table-menu-fav">
+                      </table>
                     </div>
                   </div>
-                  <div class="arrow-down"></div>
-                </div>
+                </form>
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="middle">
+          <div class="container-outline__center">
+            <div class="wrapper">
+                <div class="container">
+
+    <?php
+    foreach ($array as $key => $value) {
+      $nome = $array[$key]["nome_artistico"];
+      $nome = explode(" ", $nome);
+      $nome = $nome[0];
+      $idade = $array[$key]['idade'];
+      $arquivo = $array[$key]["arquivo"];
+      $id = $array[$key]["id"];
+      echo "
+    <div class='box animated'>
+      <div class='tab__box'>
+        <div class='tab-actions tab-actions__multiples'>
+
+          <form method='post' action='#' id='like_$key'>
+          <input type='radio' name='imagefavorita' value='$key' class='checkbox-multiples' />
+          <button type='submit' class='checkbox-multiples-action__fav botaofavorita fav' onclick='AddTableRow()'>
+          <img class='checkbox-multiples-img__fav' src='images/fav-icon.svg' alt=''>
+          </button>
+          </form>
+
+          <form method='post' action='#' id='dislike_$key'>
+          <input type='radio' name='imagediscard' value='$key' class='checkbox-multiples' />
+          <button type='submit' class='checkbox-multiples-action__discard botaodiscard discard'>
+          <img src='images/discard-icon.svg' alt=''>
+          </button>
+          </form>
+
+          <img alt='discard' class='discard-action cursor' src='images/discard.svg' />
+          <img alt='fav' class='fav-action cursor' src='images/fav.svg' />
+          <p class='subtitle font-family color-primary font-small cursor'>
+          $nome, $idade
+          </p>
+
+          <form method='post' action='#' id='single_$key'>
+          <button type='submit' class='checkbox-image-action__fav'>
+          <input type='hidden' name='array_key' value='$key' class='checkbox-image__background' />
+          <img class='tab-image__background' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
+          </button>
+          </form>
+
+          <button type='button' class='dislike'>
+          <img alt='overlay discard' src='images/discard-single.svg' />
+          </button>
+
+          <button type='button' class='like'>
+          <img alt='overlay fav' src='images/fav-single.svg' />
+          </button>
+
+        </div>
+      </div>
+    </div>";
+    }
+    ?>
+            </div>
+        </div>
+        </div>
+        
+        
+        
+    </div>
+        <div class="container-outline__center">
+          <div class="footer">
+            <div class="bottombar">
+              <div class="container-outline__center">
+                <a class="menu-search cursor" id="menu-link">
+                  <div class="search" id="search">
+                    <img src="images/search.svg" />
+                    <p class="font-family color-primary">
+                      <?php echo $count." perfis"; ?>
+                    </p>
+                  </div>
+                </a>
+                <p class="font-family color-primary" id="perfil-name">
+                  <?php echo $nome.", ".$idade; ?>
+                </p>
+              <footer class="tabs">
+                <button class="show-list-single">
+                <?php
+                  include "images/show-list-single.svg";
+                ?>
+                </button>
+                <button class="show-list">
+                <?php
+                  include "images/show-list.svg";
+                ?>
+                </button>
+                <button class="hide-list">
+                <?php
+                  include "images/hide-list.svg";
+                ?>
+                </button>
+              </footer>
               </div>
-            </form>
+            </div>
+            <div class="fullscreen-menu-search">
+              <div class="mask-search">
+                <form action="">
+                  <div class="content-menu-search">
+                    <div class="container-outline__center">
+                      <div class="search-menu">
+                        <input class="font-family color-primary" name="search" placeholder="Parâmetros da Busca:" type="text" />
+                      </div>
+                      <div class="gender_age-group">
+                        <p class="title-menu font-family color-primary">
+                          Sexo:
+                        </p>
+                        <input id="male" name="gender" type="radio" value="male" />
+                        <label class="gender-cc male" for="male"></label>
+                        <input id="female" name="gender" type="radio" value="female" /><label class="gender-cc female" for="female"></label>
+                      </div>
+                      <div class="ranger-slide">
+                        <p class="font-family color-primary">
+                          Faixa etária:
+                        </p>
+                        <input class="js-range-slider" name="ranger" type="text" value="" />
+                      </div>
+                      <div class="after-ranger-slide__search">
+                        <p class="font-family color-primary">
+                          Cor da pele: <span class="font-family color-primary bold">Branca</span>
+                        </p>
+                        <p class="font-family color-primary">
+                          Bairro: <span class="font-family color-primary bold">Lago Norte</span>
+                        </p>
+                        <button class="button button__small" type="button"> Alterar</button>
+                      </div>
+                      <div class="title__order-perfil">
+                        <span class="glyphicon glyphicon-sort" />
+                        <p class="font-family color-primary">
+                          Exibir primeiro perfis:
+                        </p>
+                        <hr />
+                      </div>
+                      <div class="button__order-perfil">
+                        <div class="switch-field font-family">
+                          <input checked="" id="switch_left" name="order" type="radio" value="yes" />
+                          <label class="button button__small" for="switch_left"> Mais avaliados</label>
+                          <input id="switch_right" name="order" type="radio" value="no" />
+                          <label class="button button__small" for="switch_right"> Mais novos</label>
+                        </div>
+                      </div>
+                      <div class="arrow-down"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    
+
+ 
 </div>
+
+
 
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="javascripts/slick.min.js"></script>
+<script src="javascripts/swiper.jquery.min.js"></script>
+<script src="javascripts/swiper.min.js"></script>
 <script src="javascripts/jquery.easing.min.js"></script>
 <script src="javascripts/ion.rangeSlider.min.js"></script>
 <script src="javascripts/jquery.easy-pie-chart.js"></script>
@@ -429,6 +444,7 @@ foreach ($array as $key => $value) {
         document.getElementById("single-perfil").style.display = "none";
       });
   });
+    
 
   $('.show-list-single').click(function(){
     $('.container').css('display', 'block');
