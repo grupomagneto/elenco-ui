@@ -214,18 +214,13 @@
               </div>
               <div class="content__index">
                   <select id="raca" name="raca_index">
-                    <option disabled selected value="0">Selecione...</option>
+                    <option selected value="0">Todas</option>
                     <option value="1">Amarela</option>
                     <option value="2">Branca</option>
                     <option value="5">Indígena</option>
                     <option value="4">Negra</option>
                     <option value="3">Parda</option>
-                    
-<!--                <option value="1" >Amarela</option>
-                    <option value="2">Branca</option>
-                    <option value="3">Indígena</option>
-                    <option value="4">Negra</option>
-                    <option value="5">Parda</option> -->
+
                   </select>
               </div>
             </div>
@@ -246,11 +241,68 @@
                 </div>
               </div>
             </div>
-
-
            </div>
-            	
         </div>
+
+<!-- Início Cabelo -->
+<div class="swiper-slide gradient">     
+          <div class="container-outline__content">
+              
+            <div class="topbar">
+              <div class="container-outline__center">
+                <a class="menu-button cursor">
+                  <img src="images/menu.svg" />
+                </a>
+                <a class="logo cursor">
+                  <img src="images/logo.svg" />
+                </a>
+                <a class="menu-fav cursor">
+                  <img src="images/menu-fav.svg" />
+                  <span class="fav-number font-family">1</span>
+                </a>
+              </div>
+            </div>
+
+            <?php 
+              include "top-menu.php";
+            ?>
+
+            <div class="middle">
+              <div class="question">
+                <h1 class="font-family color-primary">Qual a cor do cabelo?</h1>
+              </div>
+              <div class="content__index">
+                  <select id="cor_cabelo" name="cor_cabelo">
+                    <option selected value="0">Todas</option>
+                    <option value="1">Branco</option>
+                    <option value="2">Castanho</option>
+                    <option value="4">Grisalho</option>
+                    <option value="3">Loiro</option>
+                    <option value="5">Preto</option>
+                    <option value="6">Ruivo</option>
+                    <option value="7">Outras (Tingidos)</option>
+                  </select>
+              </div>
+            </div>
+            <div class="bottombar">
+              <div class="container-outline__content">
+                <a class="container__button-back cursor">
+                  <button class="button button-back button-xsmall  swiper-control prev" type="button">
+                    <p>Voltar</p>
+                  </button>
+                </a>
+                <div class="button-next">
+                  <div class="container-outline__content">
+                      <button class="button button-xsmall swiper-control next">
+                        <p>Avançar</p>
+                      </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+        </div>
+<!-- Fim Cabelo -->
 
 
        <div class="swiper-slide gradient">     
@@ -281,7 +333,7 @@
               </div>
               <div class="content__index">
                   <select name="bairro" id="bairro">
-                    <option disabled selected value="0">Selecione...</option>
+                    <option selected value="Todos">Todos</option>
                     <option value="Águas Claras">Águas Claras</option>
                     <option value="Asa Norte">Asa Norte</option>
                     <option value="Asa Sul">Asa Sul</option>

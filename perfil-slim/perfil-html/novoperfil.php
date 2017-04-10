@@ -16,12 +16,16 @@ elseif ($ranger_age[1] == ';') {
         $age2 .=  $ranger_age[3];
     }
 }
-$sql = "SELECT * FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, tl_celular, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente FROM tb_elenco WHERE TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1' AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) <= '$age2'";
+$sql = "SELECT * FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente, data_contrato_vigente, TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) AS contrato FROM tb_elenco WHERE TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1'";
+if ($age2 != 65) {
+  $sql .= " AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) <= '$age2'";
+}
+
 if (isset($_POST['gender'])) {
   $gender = $_POST['gender'];
   $sql .= " AND sexo='$gender'";
 }
-if (isset($_POST['bairro']) ) {
+if ($_POST['bairro'] != 'Todos') {
   $bairro = $_POST['bairro'];
   $sql .= " AND bairro='$bairro'";
 }
@@ -29,10 +33,14 @@ if ($_POST['raca_index'] != 0) {
   $raca_index = $_POST['raca_index'];
   $sql .= " AND cd_pele='$raca_index'";
 }
+if ($_POST['cor_cabelo'] != 0) {
+  $cor_cabelo = $_POST['cor_cabelo'];
+  $sql .= " AND cd_cor_cabelo='$cor_cabelo'";
+}
 
-$sql .= ") t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto FROM tb_foto WHERE cd_tipo_foto = '1' ORDER BY dh_cadastro ASC) t2 USING (id) GROUP BY id ORDER BY dt_foto DESC";
+$sql .= ") t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto, dh_cadastro FROM tb_foto WHERE cd_tipo_foto = '0') t2 USING (id) GROUP BY id ORDER BY dt_foto DESC";
 
-$res = mysqli_query($conexao_index, $sql) or die (alerta("Falha na Conexão  ".mysqli_error()));
+$res = mysqli_query($conexao_index, $sql);
 
 $count = mysqli_num_rows($res);
 
@@ -41,7 +49,7 @@ $array_premium = array();
 $array_gratuito = array();
 
 while($row = mysqli_fetch_array($res)) {
-  if ($row['tipo_cadastro_vigente'] == 'Profissional') {
+  if ($row['tipo_cadastro_vigente'] == 'Profissional' && $row['contrato'] < 2) {
     $addarray1 = array(
     'id' => $row['id'],
     'nome_artistico' => $row['nome_artistico'],
@@ -57,7 +65,7 @@ while($row = mysqli_fetch_array($res)) {
     }
     array_multisort($cadastro1, SORT_DESC, $array_profissional);
   }
-  elseif ($row['tipo_cadastro_vigente'] == 'Premium' || $row['tipo_cadastro_vigente'] == 'Ator') {
+  elseif (($row['tipo_cadastro_vigente'] == 'Premium' || $row['tipo_cadastro_vigente'] == 'Ator') && $row['contrato'] < 2) {
     $addarray2 = array(
     'id' => $row['id'],
     'nome_artistico' => $row['nome_artistico'],
@@ -73,7 +81,7 @@ while($row = mysqli_fetch_array($res)) {
     }
     array_multisort($cadastro2, SORT_DESC, $array_premium);
   }
-  elseif ($row['tipo_cadastro_vigente'] == 'Gratuito') {
+  elseif ($row['tipo_cadastro_vigente'] == 'Gratuito' || $row['contrato'] >= 2) {
     $addarray3 = array(
     'id' => $row['id'],
     'nome_artistico' => $row['nome_artistico'],
@@ -265,6 +273,7 @@ $_SESSION['array_busca'] = $array;
           <div class="container-outline__center">
             <div class="wrapper">
                 <div class="container">
+                <!-- <?php echo $sql; ?> -->
 
     <?php
     foreach ($array as $key => $value) {
@@ -500,6 +509,9 @@ $_SESSION['array_busca'] = $array;
 
 </script>
 <script src="javascripts/ajax.js"></script>
-
 </body>
 </html>
+<?php
+ob_end_flush();
+mysqli_close($conexao_index);
+?>

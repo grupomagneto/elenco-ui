@@ -9,12 +9,12 @@ $nome = $nome[0];
 $idade = $array[$array_key]['idade'];
 $arquivo = $array[$array_key]["arquivo"];
 $tipo_cadastro_vigente = $array[$array_key]["tipo_cadastro_vigente"];
-if ($tipo_cadastro_vigente == 'Ator') {
-  $tipo_cadastro_vigente = 'Premium';
-}
+// if ($tipo_cadastro_vigente == 'Ator') {
+//   $tipo_cadastro_vigente = 'Premium';
+// }
 $id = $array[$array_key]["id"];
 $dt_foto = date('d/m/Y', strtotime($array[$array_key]["dt_foto"]));
-$sql_contato = "SELECT nome_artistico, tl_celular, endereco, email, bairro, cidade, uf, data_contrato_vigente FROM tb_elenco WHERE id_elenco='$id'";
+$sql_contato = "SELECT nome_artistico, tl_celular, endereco, email, bairro, cidade, uf, data_contrato_vigente, TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) AS contrato FROM tb_elenco WHERE id_elenco='$id'";
 $result_contato = mysqli_query($conexao_index, $sql_contato) or die (alert("Falha na Conexão  ".mysqli_error()));
 $row_contato = mysqli_fetch_array($result_contato);
 $nome_artistico = $row_contato['nome_artistico'];
@@ -30,7 +30,13 @@ $uf = $row_contato['uf'];
 $data_contrato_vigente = $row_contato['data_contrato_vigente'];
 $validade_contrato = date('d/m/Y', strtotime('+2 years', strtotime($data_contrato_vigente)));
 $today = date('d/m/Y', time());
-if ($validade_contrato > $today) {
+// if ($validade_contrato > $today) {
+//   $validade_contrato = "Ativo até: ".$validade_contrato;
+// }
+// else {
+//   $validade_contrato = "CONTRATO VENCIDO";
+// }
+if ($row_contato['contrato'] < 2 && $row_contato['contrato'] != NULL) {
   $validade_contrato = "Ativo até: ".$validade_contrato;
 }
 else {
@@ -170,20 +176,21 @@ function mask($val, $mask)
       <div class='parent'>
         <div class='container-outline__center'>
           <div class='carousel'>
-            <div class='item'>
-              <div class='container-outline__center'>
-                <div class='imageContainer'>
-                  <img alt='<?php echo $nome;?>' class='image__single' src='http://www.magnetoelenco.com.br/fotos/<?php echo $arquivo;?>' />
+          <?php
+          $sql_foto = "SELECT arquivo FROM tb_foto WHERE cd_elenco='$id' AND cd_tipo_foto<>2 ORDER BY arquivo ASC";
+          $result_foto = mysqli_query($conexao_index, $sql_foto) or die (alert("Falha na Conexão  ".mysqli_error()));
+          while($row_foto = mysqli_fetch_array($result_foto)){
+            $arquivo = $row_foto['arquivo'];
+            echo "
+              <div class='item'>
+                <div class='container-outline__center'>
+                  <div class='imageContainer'>
+                    <img alt='$nome' class='image__single' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class='item'>
-              <div class='container-outline__center'>
-                <div class='imageContainer'>
-                  <img alt='<?php echo $nome;?>' class='image__single' src='http://www.magnetoelenco.com.br/fotos/<?php echo $arquivo;?>' />
-                </div>
-              </div>
-            </div>
+              </div>";
+            }
+          ?>
           </div>
 
         <input type='radio' name='imagefavorita' value='valor da imagem' class='checkbox-single' />
