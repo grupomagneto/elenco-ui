@@ -454,7 +454,6 @@ $_SESSION['array_busca'] = $array;
       });
   });
     
-
   $('.show-list-single').click(function(){
     $('.container').css('display', 'block');
     $(".photo__single").css('display', 'none');

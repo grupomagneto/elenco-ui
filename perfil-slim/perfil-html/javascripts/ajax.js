@@ -34,7 +34,13 @@ $(".botaodiscard").click(function(){
     return false;
   });
 });
-
+function slickCarousel() {
+  $('.skills_section').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1
+  });
+}
 
 $(".checkbox-image-action__fav").click(function(){
     
@@ -55,18 +61,6 @@ $(".checkbox-image-action__fav").click(function(){
         $('.container-outline__single').css('display', 'block');
         $('.container-outline__categories').css('display', 'block');
         $('.container').css('display', 'none');
-        //Slick
-        $(document).ready(function() {
-          $('.carousel').slick({
-            dots: true,
-            infinite: false,
-            speed: 200,
-            centerMode: false,
-            variableWidth: false,
-            autoplay: false,
-            arrows: false
-          });
-        }); 
          
         $(".close").click(function() {
             $(".photo__single").css("display", "none");
@@ -75,6 +69,17 @@ $(".checkbox-image-action__fav").click(function(){
             $(".gradient").css("display", "block");
             $(".container").css("display", "block");
         });
+          
+       var mySwiper = new Swiper ('.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+        keyboardControl: true,
+        // If we need pagination
+        pagination: '.swiper-pagination'
+      }) 
+          
+          
       }
     });
     return false;

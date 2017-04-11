@@ -169,29 +169,27 @@ function mask($val, $mask)
 
 
 <div class='container-outline__single'>
- 
-  <section class='intro' id='intro'>
-   
-    <div class='content'>
-      <div class='parent'>
-        <div class='container-outline__center'>
-          <div class='carousel'>
-          <?php
+
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+       
+                 <?php
           $sql_foto = "SELECT arquivo FROM tb_foto WHERE cd_elenco='$id' AND cd_tipo_foto<>2 ORDER BY arquivo ASC";
           $result_foto = mysqli_query($conexao_index, $sql_foto) or die (alert("Falha na Conexão  ".mysqli_error()));
           while($row_foto = mysqli_fetch_array($result_foto)){
             $arquivo = $row_foto['arquivo'];
             echo "
-              <div class='item'>
-                <div class='container-outline__center'>
-                  <div class='imageContainer'>
+              <div class='swiper-slide'>
                     <img alt='$nome' class='image__single' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
-                  </div>
-                </div>
               </div>";
             }
           ?>
-          </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    
 
         <input type='radio' name='imagefavorita' value='valor da imagem' class='checkbox-single' />
         <button type='submit' class='checkbox-single-action__fav botaofavorita fav' onclick='AddTableRow()'>
@@ -202,6 +200,15 @@ function mask($val, $mask)
           <img src='images/discard-single.svg' alt=''>
         </button>
 
+    
+    
+</div>
+ 
+  <section class='intro' id='intro'>
+   
+    <div class='content'>
+      <div class='parent'>
+        <div class='container-outline__center'>
           <div class='legend-after__carousel'>
             <p class='font-family color-primary'>
               <?php echo $cidade."-".$uf; ?>
@@ -211,8 +218,6 @@ function mask($val, $mask)
             </p>
           </div>
         </div>
-      </div>
-    </div>
     
   </section>
   
