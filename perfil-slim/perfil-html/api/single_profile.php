@@ -130,14 +130,12 @@ function mask($val, $mask)
    return $maskared;
   }
 // Caches
-$result = mysqli_query($link, "SELECT id, tipo_entrada, cliente_job, data_job, cache_liquido, status_pagamento, data_pagamento, liberado, request_timestamp FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' ORDER BY data_job DESC LIMIT 0, 100");
-
-$primeiro_contrato = mysqli_query($link, "SELECT tipo_cadastro_vigente, data_1o_contrato as primeiro_contrato FROM tb_elenco WHERE id_elenco='$id'");
+$primeiro_contrato = mysqli_query($conexao_index, "SELECT tipo_cadastro_vigente, data_1o_contrato as primeiro_contrato FROM tb_elenco WHERE id_elenco='$id'");
 $row = mysqli_fetch_array($primeiro_contrato);
 $primeiro_contrato = date('d/m/y',strtotime($row['primeiro_contrato']));
 $tipo_cadastro = $row['tipo_cadastro_vigente'];
 
-$doze_meses = mysqli_query($link, "SELECT SUM(cache_liquido) as doze_meses FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND data_job >= CURDATE() - INTERVAL 12 MONTH");
+$doze_meses = mysqli_query($conexao_index, "SELECT SUM(cache_liquido) as doze_meses FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND data_job >= CURDATE() - INTERVAL 12 MONTH");
 $row = mysqli_fetch_array($doze_meses);
 $doze_meses = $row['doze_meses'];
 $doze_meses = number_format($doze_meses,2,",",".");
@@ -145,7 +143,7 @@ $doze_meses_pieces = explode(",", $doze_meses);
 $doze_meses = $doze_meses_pieces[0];
 $doze_meses_cents = $doze_meses_pieces[1];
 
-$total_gerado = mysqli_query($link, "SELECT SUM(cache_liquido) as liquido FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache'");
+$total_gerado = mysqli_query($conexao_index, "SELECT SUM(cache_liquido) as liquido FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache'");
 $row = mysqli_fetch_array($total_gerado);
 $total_gerado = $row['liquido'];
 $total_gerado = number_format($total_gerado,2,",",".");
@@ -153,11 +151,11 @@ $total_gerado_pieces = explode(",", $total_gerado);
 $total_gerado = $total_gerado_pieces[0];
 $total_gerado_cents = $total_gerado_pieces[1];
 
-$n_jobs = mysqli_query($link, "SELECT COUNT(cache_liquido) as qtd FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache'");
+$n_jobs = mysqli_query($conexao_index, "SELECT COUNT(cache_liquido) as qtd FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache'");
 $row = mysqli_fetch_array($n_jobs);
 $n_jobs = $row['qtd'];
 
-$indisponivel = mysqli_query($link, "SELECT SUM(cache_liquido) as indisponivel FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento='0' AND (liberado IS NULL OR liberado='0')");
+$indisponivel = mysqli_query($conexao_index, "SELECT SUM(cache_liquido) as indisponivel FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento='0' AND (liberado IS NULL OR liberado='0')");
 $row = mysqli_fetch_array($indisponivel);
 $indisponivel = $row['indisponivel'];
 $indisponivel = number_format($indisponivel,2,",",".");
@@ -165,7 +163,7 @@ $indisponivel_pieces = explode(",", $indisponivel);
 $indisponivel = $indisponivel_pieces[0];
 $indisponivel_cents = $indisponivel_pieces[1];
 
-$recebivel = mysqli_query($link, "SELECT SUM(cache_liquido) as receber FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento='0' AND liberado='1'");
+$recebivel = mysqli_query($conexao_index, "SELECT SUM(cache_liquido) as receber FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento='0' AND liberado='1'");
 $row = mysqli_fetch_array($recebivel);
 $recebivel = $row['receber'];
 $recebivel = number_format($recebivel,2,",",".");
@@ -214,7 +212,7 @@ $recebivel_cents = $recebivel_pieces[1];
 <div class="swiper-container">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
-       
+
 <?php
 $sql_foto = "SELECT arquivo FROM tb_foto WHERE cd_elenco='$id' AND cd_tipo_foto<>2 ORDER BY arquivo ASC";
 $result_foto = mysqli_query($conexao_index, $sql_foto) or die (alert("Falha na Conexão  ".mysqli_error()));
@@ -229,7 +227,7 @@ while($row_foto = mysqli_fetch_array($result_foto)){
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
-    
+
 
         <input type='radio' name='imagefavorita' value='valor da imagem' class='checkbox-single' />
         <button type='submit' class='checkbox-single-action__fav botaofavorita fav' onclick='AddTableRow()'>
@@ -240,12 +238,12 @@ while($row_foto = mysqli_fetch_array($result_foto)){
           <img src='images/discard-single.svg' alt=''>
         </button>
 
-    
-    
+
+
 </div>
- 
+
   <section class='intro' id='intro'>
-   
+
     <div class='content'>
       <div class='parent'>
         <div class='container-outline__center'>
@@ -258,9 +256,9 @@ while($row_foto = mysqli_fetch_array($result_foto)){
             </p>
           </div>
         </div>
-    
+
   </section>
-  
+
 <div class='container-outline__categories'>
 <!-- Início Contato -->
     <section class='intro'>
@@ -468,18 +466,18 @@ while($row_foto = mysqli_fetch_array($result_foto)){
             <div class="total-cache">
               <div class="total-cache__box">
                 <p class="font-family font-small color-primary">
-                  últimos 12 meses
+                  último ano
                 </p>
                 <p class="font-family font-medium color-primary">
-                  <span>R$</span> 2.507,<sup>00</sup>
+                  <span>R$</span> <?php if(!empty($doze_meses)){echo $doze_meses;}else{echo "0";}?>,<sup><?php if(!empty($doze_meses_cents)){echo $doze_meses_cents;}else{echo "00";}?></sup>
                 </p>
               </div>
               <div class="total-cache__box">
                 <p class="font-family font-small color-primary">
-                  desde 11/12/2012
+                  desde <?php if(!empty($primeiro_contrato)){echo $primeiro_contrato;}else{echo "0";}?>
                 </p>
                 <p class="font-family font-medium color-primary">
-                  <span>R$</span> 12.568,<sup>00</sup>
+                  <span>R$</span> <?php if(!empty($total_gerado)){echo $total_gerado;}else{echo "0";}?>,<sup><?php if(!empty($total_gerado_cents)){echo $total_gerado_cents;}else{echo "00";}?></sup>
                 </p>
               </div>
             </div>
@@ -492,7 +490,7 @@ while($row_foto = mysqli_fetch_array($result_foto)){
                   disponível
                 </p>
                 <p class="font-family font-medium color-primary">
-                  <span>R$</span> 1980,<sup>00</sup>
+                  <span>R$</span> <?php if(!empty($recebivel)){echo $recebivel;}else{echo "0";}?>,<sup><?php if(!empty($recebivel_cents)){echo $recebivel_cents;}else{echo "00";}?></sup>
                 </p>
               </div>
               <div class="areceber__box">
@@ -500,7 +498,7 @@ while($row_foto = mysqli_fetch_array($result_foto)){
                   não disponível
                 </p>
                 <p class="font-family font-medium color-disable">
-                  <span>R$</span> 527,<sup>00</sup>
+                  <span>R$</span> <?php if(!empty($indisponivel)){echo $indisponivel;}else{echo "0";}?>,<sup><?php if(!empty($indisponivel_cents)){echo $indisponivel_cents;}else{echo "00";}?></sup>
                 </p>
               </div>
             </div>
@@ -528,111 +526,44 @@ while($row_foto = mysqli_fetch_array($result_foto)){
         <div class="content__jobs">
           <div class="after-title__jobs">
             <h2 class="font-family font-medium color-primary">
-              Total: 16 trabalho(s)
+              Total: <?php if(!empty($n_jobs)){echo $n_jobs;}else{echo "0";}?> trabalho(s) realizado(s)
             </h2>
           </div>
           <div class="my-jobs__box">
             <table class="table-menu-jobs">
-              <tr>
-                <td>
-                  <div class="title-jobs font-family color-primary">
-                    <p class="bold">
-                      Banco do Brasil
-                    </p>
-                    <p>
-                      Data do trabalho
-                    </p>
-                  </div>
-                  <div class="values-jobs font-family color-primary">
-                    <p class="bold">
-                      R$ 1980,00
-                    </p>
-                    <p>
-                      19/06/2016
-                    </p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="title-jobs font-family color-primary">
-                    <p class="bold">
-                      Ministério da Saúde
-                    </p>
-                    <p>
-                      Data do trabalho
-                    </p>
-                  </div>
-                  <div class="values-jobs font-family color-primary">
-                    <p class="bold">
-                      R$ 300,00
-                    </p>
-                    <p>
-                      19/06/2016
-                    </p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="title-jobs font-family color-primary">
-                    <p class="bold">
-                      Ministério da Saúde
-                    </p>
-                    <p>
-                      Data do trabalho
-                    </p>
-                  </div>
-                  <div class="values-jobs font-family color-primary">
-                    <p class="bold">
-                      R$ 300,00
-                    </p>
-                    <p>
-                      19/06/2016
-                    </p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="title-jobs font-family color-primary">
-                    <p class="bold">
-                      Ministério da Saúde
-                    </p>
-                    <p>
-                      Data do trabalho
-                    </p>
-                  </div>
-                  <div class="values-jobs font-family color-primary">
-                    <p class="bold">
-                      R$ 300,00
-                    </p>
-                    <p>
-                      19/06/2016
-                    </p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="title-jobs font-family color-primary">
-                    <p class="bold">
-                      Ministério da Saúde
-                    </p>
-                    <p>
-                      Data do trabalho
-                    </p>
-                  </div>
-                  <div class="values-jobs font-family color-primary">
-                    <p class="bold">
-                      R$ 300,00
-                    </p>
-                    <p>
-                      19/06/2016
-                    </p>
-                  </div>
-                </td>
-              </tr>
+<?php
+$result = mysqli_query($conexao_index, "SELECT id, tipo_entrada, cliente_job, data_job, cache_liquido, status_pagamento, data_pagamento, liberado, request_timestamp FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' ORDER BY data_job DESC LIMIT 0, 100");
+
+while ($row = mysqli_fetch_array($result)) {
+  $cliente = $row['cliente_job'];
+  $id_cache = $row['id'];
+  $cliente = mb_convert_case($cliente,  MB_CASE_UPPER, "UTF-8");
+  $cache = number_format($row['cache_liquido'],2,",",".");
+  $cache = 'R$ '.$cache;
+  $data_job = date('d/m/y',strtotime($row['data_job']));
+  $data_pagamento = date('d/m/y',strtotime($row['data_pagamento']));
+  echo "<tr>
+          <td>
+            <div class='title-jobs font-family color-primary'>
+              <p class='bold'>
+                $cliente
+              </p>
+              <p>
+                Data do trabalho: $data_job
+              </p>
+            </div>
+            <div class='values-jobs font-family color-primary'>
+              <p class='bold'>
+                $cache
+              </p>
+              <p>
+                Status
+              </p>
+            </div>
+          </td>
+        </tr>";
+      }
+?>
             </table>
           </div>
         </div>
