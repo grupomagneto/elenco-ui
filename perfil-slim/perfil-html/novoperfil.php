@@ -328,6 +328,15 @@ $_SESSION['array_busca'] = $array;
     </div>";
     }
     ?>
+    <section class='footer__section'>
+        <div class='container-outline__content'>
+          <a href='#intro'>
+            <img src='images/arrow-to-top.svg' alt='arrow-to-top'>
+          </a>
+          <hr>
+          <p class='font-family color-primary'>Magneto Elenco © 2009-<?php echo $year; ?></p>
+        </div>
+    </section>
             </div>
         </div>
         </div>
