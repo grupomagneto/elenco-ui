@@ -7,11 +7,12 @@ $nome = $array[$array_key]["nome_artistico"];
 $nome = explode(" ", $nome);
 $nome = $nome[0];
 $idade = $array[$array_key]['idade'];
+$sexo = $array[$array_key]['sexo'];
 $arquivo = $array[$array_key]["arquivo"];
 $tipo_cadastro_vigente = $array[$array_key]["tipo_cadastro_vigente"];
-// if ($tipo_cadastro_vigente == 'Ator') {
-//   $tipo_cadastro_vigente = 'Premium';
-// }
+if ($tipo_cadastro_vigente == 'Ator' || $sexo = 'F') {
+  $tipo_cadastro_vigente = 'Atriz';
+}
 $id = $array[$array_key]["id"];
 $dt_foto = date('d/m/Y', strtotime($array[$array_key]["dt_foto"]));
 $sql_contato = "SELECT nome_artistico, tl_celular, endereco, email, bairro, cidade, uf, data_contrato_vigente, TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) AS contrato FROM tb_elenco WHERE id_elenco='$id'";
@@ -414,24 +415,24 @@ while($row_foto = mysqli_fetch_array($result_foto)){
                 <div class="item">
                   <div class="container-outline__center">
                     <div class="imageContainer">
-                      <video class="vid1 video-js vjs-default-skin vjs-big-play-centered" controls="" data-setup="{ &quot;vid1&quot;: true }" poster=" images/poster-video.svg" preload="auto" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
-                      <img alt="" class="img_portfolio" src="images/elenco_019589_20160913140545.jpg" />
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="container-outline__center">
-                    <div class="imageContainer">
-                      <video class="vid1 video-js vjs-default-skin vjs-big-play-centered" controls="" data-setup="{ &quot;vid2&quot;: true }" poster=" images/poster-video.svg" preload="auto" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
-                      <img alt="" class="img_portfolio" height="200" src="images/elenco_019589_20160913140545.jpg" width="200" />
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="container-outline__center">
-                    <div class="imageContainer">
-                      <video class="vid1 video-js vjs-default-skin vjs-big-play-centered" controls="" data-setup="{ &quot;vid3&quot;: true }" poster=" images/poster-video.svg" preload="auto" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
-                      <img alt="" class="img_portfolio" height="200" src="images/elenco_019589_20160913140545.jpg" width="200" />
+                      <?php
+                      // Portfolio Videos
+                      $sql_video = "SELECT arquivo FROM tb_video WHERE cd_elenco='$id' ORDER BY cd_tipo_video ASC";
+                      $result_video = mysqli_query($conexao_index, $sql_video);
+                      while($row_video = mysqli_fetch_array($result_video)){
+                        $video = $row_video['arquivo'];
+                        echo "
+                        <video class='vid1 video-js vjs-default-skin vjs-big-play-centered' controls='' data-setup='{ &quot;vid1&quot;: true }' poster='images/poster-video.svg' preload='auto' src='http://www.magnetoelenco.com.br/videos/$video'></video>";
+                      }
+                      // Portfolio Fotos
+                      $sql_port = "SELECT arquivo FROM tb_foto WHERE cd_elenco='$id' AND cd_tipo_foto=2 ORDER BY arquivo ASC";
+                      $result_port = mysqli_query($conexao_index, $sql_port);
+                      while($row_port = mysqli_fetch_array($result_port)){
+                        $portfolio = $row_port['arquivo'];
+                        echo "
+                        <img alt='$nome' class='img_portfolio' src='http://www.magnetoelenco.com.br/fotos/$portfolio' />";
+                      }
+                      ?>
                     </div>
                   </div>
                 </div>
@@ -542,6 +543,18 @@ while ($row = mysqli_fetch_array($result)) {
   $cache = 'R$ '.$cache;
   $data_job = date('d/m/y',strtotime($row['data_job']));
   $data_pagamento = date('d/m/y',strtotime($row['data_pagamento']));
+  if ($row['status_pagamento'] == '0' && $row['liberado'] == '1' && $row['request_timestamp'] == NULL) {
+      $botao = "<p>Disponível para retirada</p>";
+    }
+    if ($row['status_pagamento'] == '0' && $row['liberado'] == '1' && $row['request_timestamp'] != NULL) {
+      $botao = "<p>Em transferência...</p>";
+    }
+    if ($row['status_pagamento'] == '1') {
+      $botao = "<p>Pago em $data_pagamento</p>";
+    }
+    if ($row['status_pagamento'] == '0' && $row['liberado'] == '0' || $row['liberado'] == NULL) {
+      $botao = "<p>Ainda não disponível</p>";
+    }
   echo "<tr>
           <td>
             <div class='title-jobs font-family color-primary'>
@@ -557,9 +570,10 @@ while ($row = mysqli_fetch_array($result)) {
                 $cache
               </p>
               <p>
-                Status
+                $botao
               </p>
             </div>
+            <hr>
           </td>
         </tr>";
       }
