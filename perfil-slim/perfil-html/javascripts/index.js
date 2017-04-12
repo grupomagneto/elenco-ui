@@ -249,6 +249,55 @@ $('#bairro').each(function(){
 
 });
 
+$('#cor_cabelo').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
+  
+    $this.addClass('select-hidden5'); 
+    $this.wrap('<div class="select5"></div>');
+    $this.after('<div class="select-styled5"></div>');
+
+    var $styledSelect = $this.next('div.select-styled5');
+    $styledSelect.text($this.children('option').eq(0).text());
+  
+    var $list = $('<ul />', {
+        'class': 'select-options5'
+    }).insertAfter($styledSelect);
+  
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+  
+    var $listItems = $list.children('li');
+  
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active5').each(function(){
+            $(this).removeClass('active').next('ul.select-options5').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options5').toggle();
+    });
+  
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel')); 
+        
+          // jump next slide
+          swiper.slideNext();
+        $list.hide();
+        //console.log($this.val());
+    });
+  
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
+
+});
+
 // jump next slide
 $(document).ready(function() {
   $("#perfil_index [name='gender']").click(function() {

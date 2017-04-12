@@ -1529,14 +1529,15 @@ form {
   position: absolute;
   left: -20%;
   height: 47px;
-  margin-top: -7px ; }
+  margin-top: -15px ; }
 
 .button-next {
   display:  inline-block;
-  position: relative;
+  position: absolute;
+    z-index: 9999;
   text-align: center;
-  top: -65%;
-  right: -55%; }
+  top: 91%;
+  right: 20%; }
 
 
 #select_city {
@@ -1590,7 +1591,6 @@ Tablets and Desktops (≥768px) portrait
   top: -65%;
   right: -70%;
 }
-
 
 }
 
