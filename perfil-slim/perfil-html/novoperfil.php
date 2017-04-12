@@ -56,6 +56,7 @@ while($row = mysqli_fetch_array($res)) {
     'arquivo' => $row['arquivo'],
     'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
     'idade' => $row['idade'],
+    'sexo' => $row['sexo'],
     'dt_foto' => $row['dt_foto']
     );
     array_push($array_profissional, $addarray1);
@@ -72,6 +73,7 @@ while($row = mysqli_fetch_array($res)) {
     'arquivo' => $row['arquivo'],
     'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
     'idade' => $row['idade'],
+    'sexo' => $row['sexo'],
     'dt_foto' => $row['dt_foto']
     );
     array_push($array_premium, $addarray2);
@@ -88,6 +90,7 @@ while($row = mysqli_fetch_array($res)) {
     'arquivo' => $row['arquivo'],
     'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
     'idade' => $row['idade'],
+    'sexo' => $row['sexo'],
     'dt_foto' => $row['dt_foto']
     );
     array_push($array_gratuito, $addarray3);
@@ -142,7 +145,7 @@ $_SESSION['array_busca'] = $array;
  <div class="gradient">
 
       <div class="container-outline__content">
-       
+
         <div class="topbar">
           <div class="container-outline__center">
             <a class="menu-button cursor">
@@ -267,8 +270,8 @@ $_SESSION['array_busca'] = $array;
             </div>
           </div>
         </div>
-        
-        
+
+
         <div class="middle">
           <div class="container-outline__center">
             <div class="wrapper">
@@ -340,9 +343,9 @@ $_SESSION['array_busca'] = $array;
             </div>
         </div>
         </div>
-        
-        
-        
+
+
+
     </div>
         <div class="container-outline__center">
           <div class="footer">
@@ -433,9 +436,9 @@ $_SESSION['array_busca'] = $array;
           </div>
         </div>
       </div>
-    
 
- 
+
+
 </div>
 
 
@@ -462,7 +465,7 @@ $_SESSION['array_busca'] = $array;
         document.getElementById("single-perfil").style.display = "none";
       });
   });
-    
+
   $('.show-list-single').click(function(){
     $('.container').css('display', 'block');
     $(".photo__single").css('display', 'none');
