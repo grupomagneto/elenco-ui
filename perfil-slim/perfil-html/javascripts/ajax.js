@@ -70,14 +70,14 @@ $(".checkbox-image-action__fav").click(function(){
             $(".container").css("display", "block");
         });
           
-       var mySwiper = new Swiper ('.swiper-container', {
-        // Optional parameters
-        direction: 'horizontal',
-        loop: false,
-        keyboardControl: true,
-        // If we need pagination
-        pagination: '.swiper-pagination'
-      }) 
+        var mySwiper = new Swiper ('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: false,
+            keyboardControl: true,
+            // If we need pagination
+            pagination: '.swiper-pagination'
+        });
           
           
       }

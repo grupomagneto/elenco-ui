@@ -213,7 +213,7 @@ $(document).ready(function() {
  });
 
  $(document).ready(function(){
-   $(".tab-actions__multiples  > img.fav-action").hide();
+   $("img.fav-action").hide();
 
    $(".fav").click(function(){
      $('> img.fav-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
@@ -221,51 +221,60 @@ $(document).ready(function() {
  });
 
  $(document).ready(function(){
-   $(".tab-actions__multiples > button.tab-image__background").dblclick(function(){
-     $('> img.fav-action', $(this).closest(".tab-actions")).fadeToggle('fast');
+   $(".checkbox-multiples-img__fav").dblclick(function(){
+     $('img.fav-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
    });
  });
 
 //hover fav, discard and subtitle
-$(document).ready(function(){
-    $(".tab-actions__multiples > .checkbox-multiples-action__discard img").hide();
-    
-  $("img.tab-image__background").mouseover(function(e){
-     $('> .checkbox-multiples-action__discard img', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
-   });
-    
-});
+//$(document).ready(function(){
+//    $(".tab-actions__multiples > .checkbox-multiples-action__discard img").hide();
+//    
+//  $("img.tab-image__background").mouseover(function(e){
+//     $('> .checkbox-multiples-action__discard img', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
+//   });
+//    
+//});
 
 $(document).ready(function(){
-   $(".tab-actions__multiples > .checkbox-multiples-action__fav img").hide();
+   $("img.checkbox-multiples-img__fav").css('display', 'none');
 
-  $("img.tab-image__background").mouseover(function(e){
-     $('> .checkbox-multiples-action__fav img', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
-   });
-    
-});
-
-$(document).ready(function(){
-   $(".tab-actions__multiples > .subtitle__prof").hide();
-
-  $("img.tab-image__background").mouseover(function(e){
-     $('> .subtitle__prof', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
-   });
+    $("img.tab-image__background").mouseenter(function(){
+        $("img.checkbox-multiples-img__fav", $(this).closest(".tab-actions__multiples")).css('display', 'block');
+    });
+    $("img.tab-image__background").mouseout(function(){
+        $("img.checkbox-multiples-img__fav", $(this).closest(".tab-actions__multiples")).css('display', 'none');
+    });
     
 });
 
 $(document).ready(function(){
-   $(".tab-actions__multiples > .subtitle").hide();
+   $(".tab-actions__multiples > .subtitle__prof").css('display', 'none');
 
-   
-  $("img.tab-image__background").mouseover(function(e){
-     $('> .subtitle', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
-   });
+    $("img.tab-image__background").mouseenter(function(){
+        $("> .subtitle__prof", $(this).closest(".tab-actions__multiples")).css('display', 'block');
+    });
+    $("img.tab-image__background").mouseout(function(){
+        $("> .subtitle__prof", $(this).closest(".tab-actions__multiples")).css('display', 'none');
+    });
+    
+});
+
+$(document).ready(function(){
+   $(".tab-actions__multiples > .subtitle").css('display', 'none');
+
+    $("img.tab-image__background").mouseenter(function(){
+        $("> .subtitle", $(this).closest(".tab-actions__multiples")).css('display', 'block');
+    });
+    $("img.tab-image__background").mouseout(function(){
+        $("> .subtitle", $(this).closest(".tab-actions__multiples")).css('display', 'none');
+    });
+    
 });
 
 //double click
 $(document).ready(function(){
-    $(".tab-image__background").dblclick(function(){
+    $("img.tab-image__background").dblclick(function(){
          event.preventDefault();
          var $input = $("input[name=imagefavorita]")
          $input.prop('checked', true);
