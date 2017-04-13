@@ -447,9 +447,9 @@ $_SESSION['array_busca'] = $array;
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script src="javascripts/slick.min.js"></script>
 <script src="javascripts/swiper.jquery.min.js"></script>
 <script src="javascripts/swiper.min.js"></script>
+<script src="javascripts/slick.min.js"></script>
 <script src="javascripts/jquery.easing.min.js"></script>
 <script src="javascripts/ion.rangeSlider.min.js"></script>
 <script src="javascripts/jquery.easy-pie-chart.js"></script>
@@ -480,8 +480,6 @@ $_SESSION['array_busca'] = $array;
     $('.container-outline__single').css('display', 'none');
     $('.wrapper').removeClass('list-mode-single');
     $('.wrapper').addClass('list-mode');
-    $('.checkbox-multiples-action__fav img').css('display', 'block');
-    $('.checkbox-multiples-action__discard img').css('display', 'block');
     $('.dislike').css('display', 'none');
     $('.like').css('display', 'none');
     $('.container-outline__categories').css('display', 'none');
@@ -493,8 +491,6 @@ $_SESSION['array_busca'] = $array;
     $('.container-outline__single').css('display', 'none');
     $('.wrapper').removeClass('list-mode-single');
     $('.wrapper').removeClass('list-mode');
-    $('.checkbox-multiples-action__fav img').css('display', 'block');
-    $('.checkbox-multiples-action__discard img').css('display', 'block');
     $('.dislike').css('display', 'none');
     $('.like').css('display', 'none');
     $('.container-outline__categories').css('display', 'none');

@@ -172,76 +172,78 @@ $recebivel_pieces = explode(",", $recebivel);
 $recebivel = $recebivel_pieces[0];
 $recebivel_cents = $recebivel_pieces[1];
 ?>
-<div class="topbar">
-  <div class="container-outline__center">
-    <a class="menu-button cursor">
-      <button class="close">
-       <svg width="23px" height="23px">
-          <title><?php echo $nome . ', ' . $idade; ?></title>
-          <defs>
-              <rect id="path-1" x="0" y="0" width="23" height="23"></rect>
-              <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="23" height="23" fill="white">
-                  <use xlink:href="#path-1"></use>
-              </mask>
-          </defs>
-          <g id="zz" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="Resultado---Perfil-Copy-3" transform="translate(-20.000000, -76.000000)">
-                  <g id="Group-2" transform="translate(20.000000, 76.000000)">
-                      <polygon id="Shape" fill="#FFFFFF" points="19.0625 5.9 17.6625 4.5 12.0625 10.1 6.4625 4.5 5.0625 5.9 10.6625 11.5 5.0625 17.1 6.4625 18.5 12.0625 12.9 17.6625 18.5 19.0625 17.1 13.4625 11.5"></polygon>
-                      <use id="Rectangle-12" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+
+<div class="top-menu-single">
+    <div class="topbar">
+      <div class="container-outline__center">
+        <a class="menu-button cursor">
+          <button class="close">
+           <svg width="23px" height="23px">
+              <title><?php echo $nome . ', ' . $idade; ?></title>
+              <defs>
+                  <rect id="path-1" x="0" y="0" width="23" height="23"></rect>
+                  <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="23" height="23" fill="white">
+                      <use xlink:href="#path-1"></use>
+                  </mask>
+              </defs>
+              <g id="zz" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Resultado---Perfil-Copy-3" transform="translate(-20.000000, -76.000000)">
+                      <g id="Group-2" transform="translate(20.000000, 76.000000)">
+                          <polygon id="Shape" fill="#FFFFFF" points="19.0625 5.9 17.6625 4.5 12.0625 10.1 6.4625 4.5 5.0625 5.9 10.6625 11.5 5.0625 17.1 6.4625 18.5 12.0625 12.9 17.6625 18.5 19.0625 17.1 13.4625 11.5"></polygon>
+                          <use id="Rectangle-12" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                      </g>
                   </g>
               </g>
-          </g>
-      </svg>
-<!--       <img src="../images/close.svg" /> -->
-      </button>
-    </a>
-    <a class="cursor top-name-single font-family color-primary font-medium">
-      <?php echo $nome . ', ' . $idade; ?>
-    </a>
-    <a class="menu-fav cursor">
-      <img src="images/menu-fav.svg" />
-      <span class="fav-number font-family">1</span>
-    </a>
-  </div>
+          </svg>
+    <!--       <img src="../images/close.svg" /> -->
+          </button>
+        </a>
+        <a class="cursor top-name-single font-family color-primary font-medium">
+          <?php echo $nome . ', ' . $idade; ?>
+        </a>
+        <a class="menu-fav__single cursor top-menu-single__fav ">
+          <img src="images/menu-fav.svg" />
+          <span class="fav-number font-family">1</span>
+        </a>
+      </div>
+    </div>
 </div>
+
 
 
 <div class='container-outline__single'>
 
 <!-- Slider main container -->
-<div class="swiper-container">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
+		<div class="swiper-container">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
 
-<?php
-$sql_foto = "SELECT arquivo FROM tb_foto WHERE cd_elenco='$id' AND cd_tipo_foto<>2 ORDER BY arquivo ASC";
-$result_foto = mysqli_query($conexao_index, $sql_foto) or die (alert("Falha na Conexão  ".mysqli_error()));
-while($row_foto = mysqli_fetch_array($result_foto)){
-  $arquivo = $row_foto['arquivo'];
-  echo "
-  <div class='swiper-slide'>
-  <img alt='$nome' class='image__single' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
-  </div>";
-}
-?>
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-
-        <input type='radio' name='imagefavorita' value='valor da imagem' class='checkbox-single' />
-        <button type='submit' class='checkbox-single-action__fav botaofavorita fav' onclick='AddTableRow()'>
-          <img src='images/fav-single.svg' alt=''>
-        </button>
-        <input type='radio' name='imagefavorita' value='valor da imagem' class='checkbox-single' />
-        <button type='submit' class='checkbox-single-action__discard botaofavorita fav' onclick='AddTableRow()'>
-          <img src='images/discard-single.svg' alt=''>
-        </button>
+		<?php
+		$sql_foto = "SELECT arquivo FROM tb_foto WHERE cd_elenco='$id' AND cd_tipo_foto<>2 ORDER BY arquivo ASC";
+		$result_foto = mysqli_query($conexao_index, $sql_foto) or die (alert("Falha na Conexão  ".mysqli_error()));
+		while($row_foto = mysqli_fetch_array($result_foto)){
+			$arquivo = $row_foto['arquivo'];
+			echo "
+			<div class='swiper-slide'>
+			<img alt='$nome' class='image__single' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
+			</div>";
+		}
+		?>
+				</div>
+				<!-- If we need pagination -->
+				<div class="swiper-pagination"></div>
 
 
+						<input type='radio' name='imagefavorita' value='valor da imagem' class='checkbox-single' />
+						<button type='submit' class='checkbox-single-action__fav botaofavorita fav' onclick='AddTableRow()'>
+							<img src='images/fav-single.svg' alt=''>
+						</button>
+						<input type='radio' name='imagefavorita' value='valor da imagem' class='checkbox-single' />
+						<button type='submit' class='checkbox-single-action__discard botaofavorita fav' onclick='AddTableRow()'>
+							<img src='images/discard-single.svg' alt=''>
+						</button>
 
-</div>
+		</div>
 
   <section class='intro' id='intro'>
 
@@ -453,7 +455,7 @@ while($row_foto = mysqli_fetch_array($result_foto)){
   <div class="container-outline__content">
     <div class="cache-section">
       <div class="title-section">
-        <img alt="cache" src="images/cache.svg" />
+        <img alt="cache" src="images/money_pig.svg" />
         <p class="font-family font-medium color-primary">
           cachês
         </p>
@@ -711,7 +713,7 @@ while ($row = mysqli_fetch_array($result)) {
     </section>
 <!-- FIM FÍSICOS -->
 <!-- INÍCIO POPULARIDADE -->
-    <section class='seventh'>
+  <section class='seventh'>
   <div class="container-outline__content">
     <div class="popular">
       <div class="title-section">

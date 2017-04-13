@@ -65,11 +65,15 @@
   left: 20px;
   top: 20px; }
 
+.popular__dados{
+	margin-top: 15px;	
+}
+
 .popular__dados h2 {
   position: absolute;
   text-transform: capitalize;
   text-align: left;
-  margin-top: 40%;
+  margin-top: 42%;
   margin-left: 0;
   float: left; }
 .popular__dados .popular-table-left {
