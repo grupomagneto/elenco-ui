@@ -298,7 +298,7 @@ $_SESSION['array_busca'] = $array;
         $arquivo = $array[$key]["arquivo"];
         $id = $array[$key]["id"];
         echo "
-      <div class='box animated'>
+      <div class='box'>
         <div class='tab__box'>
           <div class='tab-actions tab-actions__multiples'>
 
@@ -330,11 +330,11 @@ $_SESSION['array_busca'] = $array;
             </form>
 
             <button type='button' class='dislike'>
-            <img alt='overlay discard' src='images/discard-single.svg' />
+              <img alt='overlay discard' src='images/discard-single.svg' />
             </button>
 
             <button type='button' class='like'>
-            <img alt='overlay fav' src='images/fav-single.svg' />
+              <img alt='overlay fav' src='images/fav-single.svg' />
             </button>
 
           </div>

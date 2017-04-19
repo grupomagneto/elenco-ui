@@ -54,6 +54,7 @@ $(".checkbox-image-action__fav").click(function(){
       data: dados,
       success: function( data )
       { 
+				
         $(".gradient").css('display', 'none');
         $(".photo__single").css('display', 'block');
         $(".photo__single").html(data);
@@ -86,6 +87,8 @@ $(".checkbox-image-action__fav").click(function(){
   });
 });
 
+
+
 $(window).scroll(function() {
     var end = 0;
     var loading = false;
@@ -93,16 +96,19 @@ $(window).scroll(function() {
         end += 30;
         loading = true;
         $.ajax( {
-            url: 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/novoperfil.php?end='+end,
+            url: 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/novoperfil.php',
             type: 'GET',
             dataType: 'html',
-            success: function( result ) {
-                $('#content').append( result );
+            data: '?end='+ end,
+            success: function(data) {
+                $('.box').append(data);
                 loading = false;
             }
         } );
     }
 });
+
+
 
 (function($) {
   AddTableRow = function() {

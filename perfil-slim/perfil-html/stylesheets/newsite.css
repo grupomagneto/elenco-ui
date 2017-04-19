@@ -2334,7 +2334,9 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active{
 }
 
 }
-
+.noshow{
+  display: none;
+}
 
 .cursor {
   cursor: pointer; }
