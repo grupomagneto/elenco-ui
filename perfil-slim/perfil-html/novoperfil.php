@@ -21,7 +21,9 @@ elseif ($ranger_age[1] == ';') {
         $age2 .=  $ranger_age[3];
     }
 }
-$sql = "SELECT t1.id, t1.nome_artistico, t1.sexo, t1.bairro, t1.cd_pele, t1.idade, t1.tipo_cadastro_vigente, t1.data_contrato_vigente, t1.contrato, t2.arquivo, t2.dt_foto, t2.dh_cadastro, t3.visits, t3.likes, t3.jobs, t3.Bruto, t3.pop, t3.visits, t3.likes, t3.jobs FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente, data_contrato_vigente, TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) AS contrato FROM tb_elenco WHERE TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1'";
+$algoritmo = "((COALESCE(SUM(visits),0)*1+COALESCE(SUM(likes),0)*2+COALESCE(SUM(jobs),0)*3)+COALESCE(SUM(paid),1)/1000)/3";
+
+$sql = "SELECT t1.id, t1.nome_artistico, t1.sexo, t1.bairro, t1.cd_pele, t1.idade, t1.tipo_cadastro_vigente, t1.data_contrato_vigente, t1.contrato, t2.arquivo, t2.dt_foto, t2.dh_cadastro, t3.visits, t3.likes, t3.jobs, t3.Bruto, t3.pop FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente, data_contrato_vigente, TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) AS contrato FROM tb_elenco WHERE TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1'";
 if ($age2 != 65) {
   $sql .= " AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) <= '$age2'";
 }
@@ -43,7 +45,7 @@ if ($_POST['cor_cabelo'] != 0) {
   $sql .= " AND cd_cor_cabelo='$cor_cabelo'";
 }
 
-$sql .= ") t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto, dh_cadastro FROM tb_foto WHERE cd_tipo_foto = '0') t2 ON t1.id = t2.id INNER JOIN (SELECT id_elenco AS id, SUM(visits) AS visits, SUM(likes) AS likes, SUM(jobs) AS jobs, SUM(paid) AS Bruto, ((COALESCE(SUM(visits),0)*1+COALESCE(SUM(likes),0)*2+COALESCE(SUM(jobs),0)*3)+COALESCE(SUM(paid),1)/1000)/3-0.0003333333 AS pop FROM tb_popularidade GROUP BY id_elenco) t3 ON t1.id = t3.id GROUP BY t1.id ORDER BY pop DESC, dt_foto DESC";
+$sql .= ") t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto, dh_cadastro FROM tb_foto WHERE cd_tipo_foto = '0') t2 ON t1.id = t2.id INNER JOIN (SELECT id_elenco AS id, SUM(visits) AS visits, SUM(likes) AS likes, SUM(jobs) AS jobs, SUM(paid) AS Bruto, $algoritmo AS pop FROM tb_popularidade GROUP BY id_elenco) t3 ON t1.id = t3.id GROUP BY t1.id ORDER BY pop DESC, dt_foto DESC";
 
 $res = mysqli_query($conexao_index, $sql);
 
