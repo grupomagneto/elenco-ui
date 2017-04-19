@@ -353,7 +353,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul {
     box-sizing: border-box; }
 
 .container-outline__center {
-  width: 960px;
+  width: 930px;
   margin: 0 auto;
   padding: 0px;
   position: relative; }
@@ -421,7 +421,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul {
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   .container-outline__center {
-    width: 556px; }
+    width: 620px; }
 
   .grid-1 {
     width: 28px; }

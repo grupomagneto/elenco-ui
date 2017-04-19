@@ -10,7 +10,7 @@ $idade = $array[$array_key]['idade'];
 $sexo = $array[$array_key]['sexo'];
 $arquivo = $array[$array_key]["arquivo"];
 $tipo_cadastro_vigente = $array[$array_key]["tipo_cadastro_vigente"];
-if ($tipo_cadastro_vigente == 'Ator' || $sexo = 'F') {
+if ($tipo_cadastro_vigente == 'Ator' && $sexo = 'F') {
   $tipo_cadastro_vigente = 'Atriz';
 }
 $id = $array[$array_key]["id"];
@@ -68,7 +68,7 @@ $profissional = $profissional_pieces[0];
 $profissional_cents = $profissional_pieces[1];
 }
 // Premium
-if ($tipo_cadastro_vigente == 'Premium' || $tipo_cadastro_vigente == 'Ator') {
+if ($tipo_cadastro_vigente == 'Premium' || $tipo_cadastro_vigente == 'Ator' || $tipo_cadastro_vigente == 'Atriz') {
 $doze_meses = mysqli_query($conexao_index, $sql_cadastro);
 $row = mysqli_fetch_array($doze_meses);
 $premium = $row['doze_meses'];
@@ -172,7 +172,7 @@ $recebivel_pieces = explode(",", $recebivel);
 $recebivel = $recebivel_pieces[0];
 $recebivel_cents = $recebivel_pieces[1];
 ?>
-
+<section class='top' id='top'>
 <div class="top-menu-single">
     <div class="topbar">
       <div class="container-outline__center">
@@ -195,6 +195,7 @@ $recebivel_cents = $recebivel_pieces[1];
                   </g>
               </g>
           </svg>
+            </section>
     <!--       <img src="../images/close.svg" /> -->
           </button>
         </a>
@@ -212,7 +213,6 @@ $recebivel_cents = $recebivel_pieces[1];
 
 
 <div class='container-outline__single'>
-
 <!-- Slider main container -->
 		<div class="swiper-container">
 				<!-- Additional required wrapper -->
@@ -244,7 +244,6 @@ $recebivel_cents = $recebivel_pieces[1];
 						</button>
 
 		</div>
-
   <section class='intro' id='intro'>
 
     <div class='content'>
@@ -313,7 +312,7 @@ $recebivel_cents = $recebivel_pieces[1];
                   </td>
                 </tr>
               </table>
-              <h2 class="second-title__contact font-family font-medium color-primary">
+              <!-- <h2 class="second-title__contact font-family font-medium color-primary">
                 redes sociais
               </h2>
               <ul class="redes-icon__contact">
@@ -327,7 +326,7 @@ $recebivel_cents = $recebivel_pieces[1];
                   <img alt="" src="images/icon-twitter.svg" />
                 </li>
               </ul>
-             <button class="button__contact button button__medium cursor">editar</button>
+             <button class="button__contact button button__medium cursor">editar</button> -->
             </div>
           </div>
         </div>
@@ -350,15 +349,15 @@ $recebivel_cents = $recebivel_pieces[1];
                 <h2 class="font-family font-medium color-primary bold">
                   <?php echo $tipo_cadastro_vigente; ?>
                 </h2>
-                <div class="switch__subscription-plan">
+                <!-- <div class="switch__subscription-plan">
                   <input checked="" class="switch-input" id="mensal" name="plan" type="radio" value="mensal" /><label class="switch-label switch-label-off" for="mensal"> mensal</label><input class="switch-input" id="anual" name="plan" type="radio" value="anual" /><label class="switch-label switch-label-on" for="anual"> anual</label><span class="switch-selection"></span>
-                </div>
+                </div> -->
               </div>
               <div class="change-plan__subscription-plan">
                 <p class="font-family font-small color-primary">
                   <?php echo $validade_contrato; ?>
                 </p>
-                <button class="button button__medium" type="button">Mudar meu Plano</button>
+                <!-- <button class="button button__medium" type="button">Mudar meu Plano</button> -->
                 <p class="font-family font-small color-primary">
                   No último ano, quanto receberia se fosse:
                 </p>
@@ -386,9 +385,9 @@ $recebivel_cents = $recebivel_pieces[1];
                     </td>
                   </tr>
                 </table>
-                <div class="tooltiptext font-family color-primary">
+                <!-- <div class="tooltiptext font-family color-primary">
                   Melhor Plano para mim
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -802,7 +801,7 @@ while ($row = mysqli_fetch_array($result)) {
     </section>
 <!-- FIM POPULARIDADE -->
 <!-- INÍCIO REPUTAÇÃO -->
-    <section class='eighth'>
+    <!-- <section class='eighth'>
   <div class="container-outline__content">
     <div class="reputation">
       <div class="title-section">
@@ -847,11 +846,11 @@ while ($row = mysqli_fetch_array($result)) {
       </div>
     </div>
   </div>
-    </section>
+    </section> -->
 <!-- FIM REPUTAÇÃO -->
     <section class='footer__section'>
         <div class='container-outline__content'>
-          <a href='#intro'>
+          <a href='#top'>
             <img src='images/arrow-to-top.svg' alt='arrow-to-top'>
           </a>
           <hr>
