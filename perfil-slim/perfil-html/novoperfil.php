@@ -323,7 +323,7 @@ $_SESSION['array_busca'] = $array;
             </p>
 
             <form method='post' action='#' id='single_$key'>
-            <button type='submit' class='checkbox-image-action__fav'>
+            <button type='submit' class='checkbox-image-action__fav checkbox-image-action__fav__mobile'>
             <input type='hidden' name='array_key' value='$key' class='checkbox-image__background' />
             <img class='tab-image__background' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
             </button>
