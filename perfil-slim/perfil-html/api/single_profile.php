@@ -1,48 +1,46 @@
 <?php
 include ("conecta.php");
-// session_start();
-$array_key = $_POST['array_key'];
-$array = $_SESSION['array_busca'];
-$nome = $array[$array_key]["nome_artistico"];
+$id = $_POST['key'];
+// Dados básicos e de contato
+$sql = "SELECT nome_artistico, tl_celular, endereco, email, bairro, cidade, uf, data_contrato_vigente, TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) AS contrato, tipo_cadastro_vigente, data_1o_contrato AS primeiro_contrato, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade FROM tb_elenco WHERE id_elenco='$id'";
+$result = mysqli_query($conexao_index, $sql) or die (alert("Falha na Conexão  ".mysqli_error()));
+$row = mysqli_fetch_array($result);
+$nome = $row['nome_artistico'];
 $nome = explode(" ", $nome);
 $nome = $nome[0];
-$idade = $array[$array_key]['idade'];
-$sexo = $array[$array_key]['sexo'];
-$arquivo = $array[$array_key]["arquivo"];
-$tipo_cadastro_vigente = $array[$array_key]["tipo_cadastro_vigente"];
+$idade = $row['idade'];
+$sexo = $row['sexo'];
+$primeiro_contrato = date('d/m/y',strtotime($row['primeiro_contrato']));
+$tipo_cadastro = $row['tipo_cadastro_vigente'];
+$tipo_cadastro_vigente = $row['tipo_cadastro_vigente'];
 if ($tipo_cadastro_vigente == 'Ator' && $sexo = 'F') {
   $tipo_cadastro_vigente = 'Atriz';
 }
-$id = $array[$array_key]["id"];
-$dt_foto = date('d/m/Y', strtotime($array[$array_key]["dt_foto"]));
-$sql_contato = "SELECT nome_artistico, tl_celular, endereco, email, bairro, cidade, uf, data_contrato_vigente, TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) AS contrato FROM tb_elenco WHERE id_elenco='$id'";
-$result_contato = mysqli_query($conexao_index, $sql_contato) or die (alert("Falha na Conexão  ".mysqli_error()));
-$row_contato = mysqli_fetch_array($result_contato);
-$nome_artistico = $row_contato['nome_artistico'];
-$tl_celular = $row_contato['tl_celular'];
-$email = $row_contato['email'];
-$endereco = strtolower($row_contato['endereco']);
+$nome_artistico = $row['nome_artistico'];
+$tl_celular = $row['tl_celular'];
+$email = $row['email'];
+$endereco = strtolower($row['endereco']);
 $endereco = ucwords($endereco);
-$bairro = strtolower($row_contato['bairro']);
+$bairro = strtolower($row['bairro']);
 $bairro = ucwords($bairro);
-$cidade = $row_contato['cidade'];
-$uf = $row_contato['uf'];
+$cidade = $row['cidade'];
+$uf = $row['uf'];
 // Validade do Contrato
-$data_contrato_vigente = $row_contato['data_contrato_vigente'];
+$data_contrato_vigente = $row['data_contrato_vigente'];
 $validade_contrato = date('d/m/Y', strtotime('+2 years', strtotime($data_contrato_vigente)));
 $today = date('d/m/Y', time());
-// if ($validade_contrato > $today) {
-//   $validade_contrato = "Ativo até: ".$validade_contrato;
-// }
-// else {
-//   $validade_contrato = "CONTRATO VENCIDO";
-// }
-if ($row_contato['contrato'] < 2 && $row_contato['contrato'] != NULL) {
+if ($row['contrato'] < 2 && $row['contrato'] != NULL) {
   $validade_contrato = "Ativo até: ".$validade_contrato;
 }
 else {
   $validade_contrato = "CONTRATO VENCIDO";
 }
+// Data da foto
+$sql_foto = "SELECT dt_foto FROM tb_foto WHERE cd_elenco='$id' AND cd_tipo_foto<>2 ORDER BY arquivo ASC LIMIT 1";
+$result_foto = mysqli_query($conexao_index, $sql_foto) or die (alert("Falha na Conexão  ".mysqli_error()));
+$row_foto = mysqli_fetch_array($result_foto);
+$dt_foto = date('d/m/Y', strtotime($row_foto["dt_foto"]));
+// Caches
 $sql_cadastro = "SELECT SUM(cache_liquido) as doze_meses FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND data_job >= CURDATE() - INTERVAL 12 MONTH";
 // Recebido no último ano
 // Gratuito
@@ -131,11 +129,6 @@ function mask($val, $mask)
    return $maskared;
   }
 // Caches
-$primeiro_contrato = mysqli_query($conexao_index, "SELECT tipo_cadastro_vigente, data_1o_contrato as primeiro_contrato FROM tb_elenco WHERE id_elenco='$id'");
-$row = mysqli_fetch_array($primeiro_contrato);
-$primeiro_contrato = date('d/m/y',strtotime($row['primeiro_contrato']));
-$tipo_cadastro = $row['tipo_cadastro_vigente'];
-
 $doze_meses = mysqli_query($conexao_index, "SELECT SUM(cache_liquido) as doze_meses FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND data_job >= CURDATE() - INTERVAL 12 MONTH");
 $row = mysqli_fetch_array($doze_meses);
 $doze_meses = $row['doze_meses'];

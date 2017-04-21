@@ -1,10 +1,10 @@
 <?php
 include ("api/conecta.php");
 $ranger_age = $_POST['ranger_age'];
-if (!isset($_GET['end'])) {
-  $end = 60;
+if (!isset($_GET['page'])) {
+  $page = 0;
 } else {
-  $end = $_GET['end'];
+  $page = $_GET['page'];
 }
 if ($ranger_age[1] != ';') {
     $age1 =  $ranger_age[0];
@@ -23,7 +23,7 @@ elseif ($ranger_age[1] == ';') {
 }
 $algoritmo = "((COALESCE(SUM(visits),0)*1/(TIMESTAMPDIFF(DAY, timestamp, CURDATE()))+COALESCE(SUM(likes),0)*2/(TIMESTAMPDIFF(DAY, timestamp, CURDATE()))+COALESCE(SUM(jobs),0)*3/(TIMESTAMPDIFF(DAY, timestamp, CURDATE())))+COALESCE(SUM(paid),1)*(TIMESTAMPDIFF(DAY, timestamp, CURDATE()))/1000)/3";
 
-$sql = "SELECT t1.id, t1.nome_artistico, t1.sexo, t1.bairro, t1.cd_pele, t1.idade, t1.tipo_cadastro_vigente, t1.data_contrato_vigente, t1.contrato, t2.arquivo, t2.dt_foto, t2.dh_cadastro, t3.visits, t3.likes, t3.jobs, t3.Bruto, t3.pop FROM (SELECT id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, tipo_cadastro_vigente, data_contrato_vigente, TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) AS contrato FROM tb_elenco WHERE TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1'";
+$sql = "SELECT t1.id, t1.nome_artistico, t1.cadastro, t1.sexo, t1.bairro, t1.cd_pele, t1.idade, t1.data_contrato_vigente, t2.arquivo, t2.dt_foto, t2.dh_cadastro, t3.visits, t3.likes, t3.jobs, t3.Bruto, t3.pop FROM (SELECT IF(tipo_cadastro_vigente = 'Gratuito' OR TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) >= 2 OR tipo_cadastro_vigente = 'Ator','Gratuito',tipo_cadastro_vigente) AS cadastro, id_elenco AS id, nome_artistico, sexo, bairro, cd_pele, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, data_contrato_vigente FROM tb_elenco WHERE TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) >= '$age1'";
 if ($age2 != 65) {
   $sql .= " AND TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) <= '$age2'";
 }
@@ -45,89 +45,104 @@ if ($_POST['cor_cabelo'] != 0) {
   $sql .= " AND cd_cor_cabelo='$cor_cabelo'";
 }
 
-$sql .= ") t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto, dh_cadastro FROM tb_foto WHERE cd_tipo_foto = '0') t2 ON t1.id = t2.id LEFT JOIN (SELECT id_elenco AS id, SUM(visits) AS visits, SUM(likes) AS likes, SUM(jobs) AS jobs, SUM(paid) AS Bruto, $algoritmo AS pop FROM tb_popularidade GROUP BY id_elenco) t3 ON t1.id = t3.id GROUP BY t1.id ORDER BY pop DESC, dt_foto DESC";
+$sql .= ") t1 INNER JOIN (SELECT cd_elenco AS id, arquivo, dt_foto, dh_cadastro FROM tb_foto WHERE cd_tipo_foto = '0') t2 ON t1.id = t2.id LEFT JOIN (SELECT id_elenco AS id, SUM(visits) AS visits, SUM(likes) AS likes, SUM(jobs) AS jobs, SUM(paid) AS Bruto, $algoritmo AS pop FROM tb_popularidade GROUP BY id_elenco) t3 ON t1.id = t3.id GROUP BY t1.id ORDER BY cadastro DESC, pop DESC, dt_foto DESC LIMIT $page, 60";
 
 $res = mysqli_query($conexao_index, $sql);
+// $count = mysqli_num_rows($res);
 
-$count = mysqli_num_rows($res);
+// $array_profissional = array();
+// $array_premium = array();
+// $array_gratuito = array();
 
-$array_profissional = array();
-$array_premium = array();
-$array_gratuito = array();
-
-while($row = mysqli_fetch_array($res)) {
-  if ($row['tipo_cadastro_vigente'] == 'Profissional' && $row['contrato'] != NULL && $row['contrato'] < 2) {
-    $addarray1 = array(
-    'id' => $row['id'],
-    'nome_artistico' => $row['nome_artistico'],
-    'arquivo' => $row['arquivo'],
-    'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
-    'idade' => $row['idade'],
-    'sexo' => $row['sexo'],
-    'dt_foto' => $row['dt_foto'],
-    'popularidade' => $row['pop']
-    );
-    array_push($array_profissional, $addarray1);
-    // $sort1 = array();
-    // foreach ($array_profissional as $key => $value){
-    //   $sort1[$key] = $value['popularidade'];
-    // }
-    // array_multisort($sort1, SORT_DESC, $array_profissional);
-  }
-  elseif ($row['tipo_cadastro_vigente'] == 'Premium' && $row['contrato'] != NULL && $row['contrato'] < 2) {
-    $addarray2 = array(
-    'id' => $row['id'],
-    'nome_artistico' => $row['nome_artistico'],
-    'arquivo' => $row['arquivo'],
-    'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
-    'idade' => $row['idade'],
-    'sexo' => $row['sexo'],
-    'dt_foto' => $row['dt_foto'],
-    'popularidade' => $row['pop']
-    );
-    array_push($array_premium, $addarray2);
-    // $sort2 = array();
-    // foreach ($array_premium as $key => $value){
-    //   $sort2[$key] = $value['popularidade'];
-    // }
-    // array_multisort($sort2, SORT_DESC, $array_premium);
-  }
-  elseif (($row['tipo_cadastro_vigente'] == 'Gratuito' || $row['tipo_cadastro_vigente'] == 'Ator') || ($row['tipo_cadastro_vigente'] == 'Premium' || $row['tipo_cadastro_vigente'] == 'Profissional') && ($row['contrato'] >= 2 || $row['contrato'] = NULL)) {
-    $addarray3 = array(
-    'id' => $row['id'],
-    'nome_artistico' => $row['nome_artistico'],
-    'arquivo' => $row['arquivo'],
-    'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
-    'idade' => $row['idade'],
-    'sexo' => $row['sexo'],
-    'dt_foto' => $row['dt_foto'],
-    'popularidade' => $row['pop']
-    );
-    array_push($array_gratuito, $addarray3);
-    // $sort3 = array();
-    // foreach ($array_gratuito as $key => $value){
-    //   $sort3[$key] = $value['tipo_cadastro_vigente'];
-    // }
-    // array_multisort($sort3, SORT_ASC, $array_gratuito);
-  }
-}
-$array = array();
-foreach ($array_profissional as $key => $value) {
-  array_push($array, $value);
-}
-foreach ($array_premium as $key => $value) {
-  array_push($array, $value);
-}
-foreach ($array_gratuito as $key => $value) {
-  array_push($array, $value);
-}
-$_SESSION['array_busca'] = $array;
+// while($row = mysqli_fetch_array($res)) {
+//   if ($row['tipo_cadastro_vigente'] == 'Profissional' && $row['contrato'] != NULL && $row['contrato'] < 2) {
+//     $primeiro_nome = $row['nome_artistico'];
+//     $primeiro_nome = explode(" ", $primeiro_nome);
+//     $primeiro_nome = $primeiro_nome[0];
+//     $addarray1 = array(
+//     'id' => $row['id'],
+//     'primeiro_nome' => $primeiro_nome,
+//     'nome_artistico' => $row['nome_artistico'],
+//     'arquivo' => $row['arquivo'],
+//     'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
+//     'idade' => $row['idade'],
+//     'sexo' => $row['sexo'],
+//     'dt_foto' => $row['dt_foto'],
+//     'popularidade' => $row['pop']
+//     );
+//     array_push($array_profissional, $addarray1);
+//     // $sort1 = array();
+//     // foreach ($array_profissional as $key => $value){
+//     //   $sort1[$key] = $value['popularidade'];
+//     // }
+//     // array_multisort($sort1, SORT_DESC, $array_profissional);
+//   }
+//   elseif ($row['tipo_cadastro_vigente'] == 'Premium' && $row['contrato'] != NULL && $row['contrato'] < 2) {
+//     $primeiro_nome = $row['nome_artistico'];
+//     $primeiro_nome = explode(" ", $primeiro_nome);
+//     $primeiro_nome = $primeiro_nome[0];
+//     $addarray2 = array(
+//     'id' => $row['id'],
+//     'primeiro_nome' => $primeiro_nome,
+//     'nome_artistico' => $row['nome_artistico'],
+//     'arquivo' => $row['arquivo'],
+//     'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
+//     'idade' => $row['idade'],
+//     'sexo' => $row['sexo'],
+//     'dt_foto' => $row['dt_foto'],
+//     'popularidade' => $row['pop']
+//     );
+//     array_push($array_premium, $addarray2);
+//     // $sort2 = array();
+//     // foreach ($array_premium as $key => $value){
+//     //   $sort2[$key] = $value['popularidade'];
+//     // }
+//     // array_multisort($sort2, SORT_DESC, $array_premium);
+//   }
+//   elseif (($row['tipo_cadastro_vigente'] == 'Gratuito' || $row['tipo_cadastro_vigente'] == 'Ator') || ($row['tipo_cadastro_vigente'] == 'Premium' || $row['tipo_cadastro_vigente'] == 'Profissional') && ($row['contrato'] >= 2 || $row['contrato'] = NULL)) {
+//     $primeiro_nome = $row['nome_artistico'];
+//     $primeiro_nome = explode(" ", $primeiro_nome);
+//     $primeiro_nome = $primeiro_nome[0];
+//     $addarray3 = array(
+//     'id' => $row['id'],
+//     'primeiro_nome' => $primeiro_nome,
+//     'nome_artistico' => $row['nome_artistico'],
+//     'arquivo' => $row['arquivo'],
+//     'tipo_cadastro_vigente' => $row['tipo_cadastro_vigente'],
+//     'idade' => $row['idade'],
+//     'sexo' => $row['sexo'],
+//     'dt_foto' => $row['dt_foto'],
+//     'popularidade' => $row['pop']
+//     );
+//     array_push($array_gratuito, $addarray3);
+//     // $sort3 = array();
+//     // foreach ($array_gratuito as $key => $value){
+//     //   $sort3[$key] = $value['tipo_cadastro_vigente'];
+//     // }
+//     // array_multisort($sort3, SORT_ASC, $array_gratuito);
+//   }
+// }
+// $array = array();
+// foreach ($array_profissional as $key => $value) {
+//   array_push($array, $value);
+// }
+// foreach ($array_premium as $key => $value) {
+//   array_push($array, $value);
+// }
+// foreach ($array_gratuito as $key => $value) {
+//   array_push($array, $value);
+// }
+// $array = array('busca' => $array);
+// $_SESSION['array_busca'] = $array;
+// echo "<pre>";
+// print_r($array);
+// exit;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Perfil</title>
+  <title>Magneto Elenco</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link rel="stylesheet" href="stylesheets/ion.rangeSlider.css">
   <link rel="stylesheet" href="stylesheets/ion.rangeSlider.skinFlat.css">
@@ -146,6 +161,7 @@ $_SESSION['array_busca'] = $array;
   <link rel="stylesheet" href="stylesheets/newsite.css">
   <link rel="stylesheet" href="stylesheets/swiper.css">
 </head>
+
 <body>
 
 <div class="background__single">
@@ -289,14 +305,21 @@ $_SESSION['array_busca'] = $array;
                 <!-- <?php echo $sql; ?> -->
 
     <?php
-      foreach ($array as $key => $value) {
-        if ($key >= 0 && $key < $end) {
-        $nome = $array[$key]["nome_artistico"];
-        $nome = explode(" ", $nome);
-        $nome = $nome[0];
-        $idade = $array[$key]['idade'];
-        $arquivo = $array[$key]["arquivo"];
-        $id = $array[$key]["id"];
+      // foreach ($array as $key => $value) {
+      //   if ($key >= 0 && $key < $end) {
+      //   $nome = $array[$key]["nome_artistico"];
+      //   $nome = explode(" ", $nome);
+      //   $nome = $nome[0];
+      //   $idade = $array[$key]['idade'];
+      //   $arquivo = $array[$key]["arquivo"];
+      //   $id = $array[$key]["id"];
+    while($row = mysqli_fetch_array($res)) {
+            $primeiro_nome = $row['nome_artistico'];
+            $primeiro_nome = explode(" ", $primeiro_nome);
+            $primeiro_nome = $primeiro_nome[0];
+            $key = $row['id'];
+            $idade = $row['idade'];
+            $arquivo = $row['arquivo'];
         echo "
       <div class='box'>
         <div class='tab__box'>
@@ -319,12 +342,12 @@ $_SESSION['array_busca'] = $array;
             <img alt='discard' class='discard-action cursor' src='images/discard.svg' />
             <img alt='fav' class='fav-action cursor' src='images/fav.svg' />
             <p class='subtitle font-family color-primary font-small cursor'>
-            $nome, $idade
+            $primeiro_nome, $idade
             </p>
 
             <form method='post' action='#' id='single_$key'>
             <button type='submit' class='checkbox-image-action__fav checkbox-image-action__fav__mobile'>
-            <input type='hidden' name='array_key' value='$key' class='checkbox-image__background' />
+            <input type='hidden' name='key' value='$key' class='checkbox-image__background' />
             <img class='tab-image__background' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
             </button>
             </form>
@@ -340,7 +363,7 @@ $_SESSION['array_busca'] = $array;
           </div>
         </div>
       </div>";
-      }
+      // }
     }
     ?>
     <section class='footer__section'>
@@ -367,13 +390,13 @@ $_SESSION['array_busca'] = $array;
                   <div class="search" id="search">
                     <img src="images/search.svg" />
                     <p class="font-family color-primary">
-                      <?php echo $count." perfis"; ?>
+                      <!-- <?php echo $count." perfis"; ?> -->
                     </p>
                   </div>
                 </a>
-                <p class="font-family color-primary" id="perfil-name">
+                <!-- <p class="font-family color-primary" id="perfil-name">
                   <?php echo $nome.", ".$idade; ?>
-                </p>
+                </p> -->
               <footer class="tabs">
                 <button class="show-list-single">
                 <?php

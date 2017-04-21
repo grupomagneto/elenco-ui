@@ -87,29 +87,6 @@ $(".checkbox-image-action__fav").click(function(){
   });
 });
 
-
-
-$(window).scroll(function() {
-    var end = 0;
-    var loading = false;
-    if( !loading && $(window).scrollTop() + $(window).height() == $(document).height() ) {
-        end += 30;
-        loading = true;
-        $.ajax( {
-            url: 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/novoperfil.php',
-            type: 'GET',
-            dataType: 'html',
-            data: '?end='+ end,
-            success: function(data) {
-                $('.box').append(data);
-                loading = false;
-            }
-        } );
-    }
-});
-
-
-
 (function($) {
   AddTableRow = function() {
     var newRow = $("<tr>");
