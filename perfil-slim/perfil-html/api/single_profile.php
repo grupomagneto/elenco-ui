@@ -1,13 +1,15 @@
 <?php
 include ("conecta.php");
 $id = $_POST['key'];
+$user_id = "original";
 // Dados básicos e de contato
-$sql = "SELECT nome_artistico, tl_celular, endereco, email, bairro, cidade, uf, data_contrato_vigente, TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) AS contrato, tipo_cadastro_vigente, data_1o_contrato AS primeiro_contrato, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade FROM tb_elenco WHERE id_elenco='$id'";
+$sql = "SELECT nome_artistico, tl_celular, endereco, email, bairro, cidade, uf, sexo, data_contrato_vigente, TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) AS contrato, tipo_cadastro_vigente, data_1o_contrato AS primeiro_contrato, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade FROM tb_elenco WHERE id_elenco='$id'";
 $result = mysqli_query($conexao_index, $sql) or die (alert("Falha na Conexão  ".mysqli_error()));
 $row = mysqli_fetch_array($result);
 $nome = $row['nome_artistico'];
 $nome = explode(" ", $nome);
 $nome = $nome[0];
+$nome_artistico = $row['nome_artistico'];
 $idade = $row['idade'];
 $sexo = $row['sexo'];
 $primeiro_contrato = date('d/m/y',strtotime($row['primeiro_contrato']));
@@ -16,7 +18,6 @@ $tipo_cadastro_vigente = $row['tipo_cadastro_vigente'];
 if ($tipo_cadastro_vigente == 'Ator' && $sexo = 'F') {
   $tipo_cadastro_vigente = 'Atriz';
 }
-$nome_artistico = $row['nome_artistico'];
 $tl_celular = $row['tl_celular'];
 $email = $row['email'];
 $endereco = strtolower($row['endereco']);
@@ -25,6 +26,9 @@ $bairro = strtolower($row['bairro']);
 $bairro = ucwords($bairro);
 $cidade = $row['cidade'];
 $uf = $row['uf'];
+// Registra Visita na tabela de popularidade
+$insert = "INSERT INTO tb_popularidade (id_elenco, nome_artistico, visits, timestamp, ip, user_id) VALUES ('$id', '$nome_artistico', '1', '$timestamp', '$ip', '$user_id')";
+mysqli_query($conexao_index, $insert);
 // Validade do Contrato
 $data_contrato_vigente = $row['data_contrato_vigente'];
 $validade_contrato = date('d/m/Y', strtotime('+2 years', strtotime($data_contrato_vigente)));

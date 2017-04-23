@@ -1,3 +1,10 @@
+<?php
+include ("api/conecta.php");
+if (isset($_SESSION['sql'])) {
+  unset($_SESSION['sql']);
+  unset($_SESSION['max']);
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -419,3 +426,7 @@
 
 </body>
 </html>
+<?php
+ob_end_flush();
+mysqli_close($conexao_index);
+?>
