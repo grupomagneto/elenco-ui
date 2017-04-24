@@ -42,7 +42,9 @@ function slickCarousel() {
   });
 }
 
-$(".checkbox-image-action__fav").click(function(){
+$(function() { });
+
+$('.checkbox-image-action__fav').on('click touchstart', function() {
     
     jQuery('form').submit(function(){
     var dados = jQuery( this ).serialize();
@@ -50,7 +52,7 @@ $(".checkbox-image-action__fav").click(function(){
     jQuery.ajax({
       type: "POST",
       dataType: 'html',
-      url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/single_profile.php",
+      url: "api/single_profile.php",
       data: dados,
       success: function( data )
       { 
