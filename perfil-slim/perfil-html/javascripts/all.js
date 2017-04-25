@@ -205,14 +205,6 @@ $(document).ready(function() {
 
 //discard and fav actions
  $(document).ready(function(){
-   $("img.discard-action").hide();
-
-   $(".discard").click(function(){
-     $('> img.discard-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
-   });
- });
-
- $(document).ready(function(){
    $("img.fav-action").hide();
 
    $(".fav").click(function(){
@@ -310,12 +302,4 @@ $(document).on('click', '.checkbox-multiples-action__fav', function () {
 $(document).on('click', '.checkbox-image-action__fav', function () {
     var $input = $("input[name=array_key]")
     $input.prop('checked', true);
-});
-
-$(document).on('click', '.checkbox-multiples-action__discard', function () {
-    var $input = $("input[name=imagediscard]")
-    $input.prop('checked', true);
-
-    var $input = $("input[name=imagefavorita]")
-    $input.prop('checked', false);
 });

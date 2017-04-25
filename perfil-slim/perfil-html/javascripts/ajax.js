@@ -16,32 +16,6 @@ $(".botaofavorita").click(function(){
   });
 }); 
 
-
-$(".botaodiscard").click(function(){
-    jQuery('form').submit(function(){
-    var dados = jQuery( this ).serialize();
-
-    jQuery.ajax({
-      type: "POST",
-      dataType: 'html',
-      url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/discardsearch.php",
-      data: dados,
-      success: function( data )
-      {        
-        // location = 'http://localhost:8888/elenco-ui/perfil-slim/perfil-html/novoperfil.php';
-      }
-    });
-    return false;
-  });
-});
-function slickCarousel() {
-  $('.skills_section').slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1
-  });
-}
-
 $('.checkbox-image-action__fav').on('click touchstart', function() {
     
     jQuery('form').submit(function(){
