@@ -257,22 +257,6 @@ $(document).ready(function(){
 });
 
 
-//double click actions
-$(document).ready(function(){
-    $("img.tab-image__background").dblclick(function(){
-         event.preventDefault();
-         var $input = $("input[name=imagefavorita]")
-         $input.prop('checked', true);
-    });
-});
-
-
- $(document).ready(function(){
-   $(".checkbox-multiples-img__fav").dblclick(function(){
-     $('img.fav-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
-   });
- });
-
 // Gradient
 var colors = new Array(
 [165, 0, 200], [176, 116, 255], [255, 41, 129], [237, 107, 107], [201, 87, 222], [35, 188, 237]

@@ -42,10 +42,72 @@ function slickCarousel() {
   });
 }
 
-$(function() { });
+//CÓDIGO COM UM CLICK FUNCIONANDO
 
-$('.checkbox-image-action__fav').on('click touchstart', function() {
-    
+//$('.checkbox-image-action__fav').on('click touchstart', function() {
+//    
+//    jQuery('form').submit(function(){
+//    var dados = jQuery( this ).serialize();
+//    
+//    jQuery.ajax({
+//      type: "POST",
+//      dataType: 'html',
+//      url: "api/single_profile.php",
+//      data: dados,
+//      success: function( data )
+//      { 
+//				
+//        $(".gradient").css('display', 'none');
+//        $(".photo__single").css('display', 'block');
+//        $(".photo__single").html(data);
+//        $(".photo__single").load("../api/single_profile.php");
+//        $('.container-outline__single').css('display', 'block');
+//        $('.container-outline__categories').css('display', 'block');
+//        $('.container').css('display', 'none');
+//         
+//        $(".close").click(function() {
+//            $(".photo__single").css("display", "none");
+//            $(".container-outline__single").css("display", "none");
+//            $(".container-outline__categories").css("display", "none");
+//            $(".gradient").css("display", "block");
+//            $(".container").css("display", "block");
+//        });
+//          
+//        var mySwiper = new Swiper ('.swiper-container', {
+//            // Optional parameters
+//            direction: 'horizontal',
+//            loop: false,
+//            keyboardControl: true,
+//            // If we need pagination
+//            pagination: '.swiper-pagination'
+//        });
+//          
+//          
+//      }
+//    });
+//    return false;
+//  });
+//});
+
+//$(document).ready(function(){
+//    $("img.tab-image__background").dblclick(function(){
+//         event.preventDefault();
+//         var $input = $("input[name=imagefavorita]")
+//         $input.prop('checked', true);
+//    });
+//});
+
+//double click actions
+ $(document).ready(function(){
+   $(".checkbox-multiples-img__fav").dblclick(function(){
+     $('img.fav-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
+   });
+ });
+
+
+
+function doClickAction() {
+	
     jQuery('form').submit(function(){
     var dados = jQuery( this ).serialize();
     
@@ -56,7 +118,7 @@ $('.checkbox-image-action__fav').on('click touchstart', function() {
       data: dados,
       success: function( data )
       { 
-				
+			
         $(".gradient").css('display', 'none');
         $(".photo__single").css('display', 'block');
         $(".photo__single").html(data);
@@ -82,12 +144,39 @@ $('.checkbox-image-action__fav').on('click touchstart', function() {
             pagination: '.swiper-pagination'
         });
           
-          
-      }
+      },
+			error: function(){
+				alert('ajax falhou!');
+			}
     });
     return false;
   });
-});
+}
+function doDoubleClickAction() {
+
+				alert('dblclick!');
+}
+
+var timer = 0;
+var delay = 200;
+var prevent = false;
+
+$(".checkbox-image-action__fav")
+  .on("click", function() {
+    timer = setTimeout(function() {
+      
+    prevent = false;
+    doClickAction();
+    return false;
+    }, delay);
+  })
+  .on("dblclick", function() {
+    clearTimeout(timer);
+    prevent = false;
+    doDoubleClickAction();
+		return false;
+  });
+
 
 (function($) {
   AddTableRow = function() {
@@ -125,3 +214,4 @@ $('.checkbox-image-action__fav').on('click touchstart', function() {
     return false;
   }
 })(jQuery);
+
