@@ -1,110 +1,3 @@
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  // tasks to do if it is a Mobile Device
-  alert("Mobile Detected");
-	
-	
-
-$(document).ready(function(event){
-   $("img.checkbox-multiples-img__fav").css('display', 'none');
-
-    $("img.tab-image__background").mouseenter(function(){
-			event.preventDefault();
-        $("img.checkbox-multiples-img__fav", $(this).closest(".tab-actions__multiples")).css('display', 'block');
-    });
-    $("img.tab-image__background").mouseout(function(){
-			event.preventDefault();
-        $("img.checkbox-multiples-img__fav", $(this).closest(".tab-actions__multiples")).css('display', 'none');
-    });
-    
-});
-	
-	
-$(document).ready(function(){
-   $(".tab-actions__multiples > .subtitle__prof").css('display', 'none');
-
-    $("img.tab-image__background").mouseenter(function(event){
-			event.preventDefault();
-        $("> .subtitle__prof", $(this).closest(".tab-actions__multiples")).css('display', 'block');
-    });
-    $("img.tab-image__background").mouseout(function(event){
-			event.preventDefault();
-        $("> .subtitle__prof", $(this).closest(".tab-actions__multiples")).css('display', 'none');
-    });
-    
-});
-
-$(document).ready(function(){
-   $(".tab-actions__multiples > .subtitle").css('display', 'none');
-
-    $("img.tab-image__background").mouseenter(function(event){
-			event.preventDefault();
-        $("> .subtitle", $(this).closest(".tab-actions__multiples")).css('display', 'block');
-    });
-    $("img.tab-image__background").mouseout(function(event){
-			event.preventDefault();
-        $("> .subtitle", $(this).closest(".tab-actions__multiples")).css('display', 'none');
-    });
-    
-});
- 
-	
-	
-
-	 $(window).load(function() { // better to use $(document).ready(function(){
-    $('.checkbox-image-action__fav__mobile').on('click touchstart', function() {
-     
-//			alert("Mobile Detected Click");
-			 
-    jQuery('form').submit(function(){
-    var dados = jQuery( this ).serialize();
-    
-    jQuery.ajax({
-      type: "POST",
-      dataType: 'html',
-      url: "http://localhost:8888/elenco-ui/perfil-slim/perfil-html/api/single_profile.php",
-      data: dados,
-      success: function( data )
-      { 
-				
-        $(".gradient").css('display', 'none');
-        $(".photo__single").css('display', 'block');
-        $(".photo__single").html(data);
-        $(".photo__single").load("../api/single_profile.php");
-        $('.container-outline__single').css('display', 'block');
-        $('.container-outline__categories').css('display', 'block');
-        $('.container').css('display', 'none');
-         
-        $(".close").click(function() {
-            $(".photo__single").css("display", "none");
-            $(".container-outline__single").css("display", "none");
-            $(".container-outline__categories").css("display", "none");
-            $(".gradient").css("display", "block");
-            $(".container").css("display", "block");
-        });
-          
-        var mySwiper = new Swiper ('.swiper-container', {
-            // Optional parameters
-            direction: 'horizontal',
-            loop: false,
-            keyboardControl: true,
-            // If we need pagination
-            pagination: '.swiper-pagination'
-        });
-          
-          
-      }
-    });
-    return false;
-  });
-			
-
-   });
-		 
-		 
-});
-	 
-}
-    
 //circle
 $(function() {
   $('.circle-graph').easyPieChart({
@@ -312,14 +205,6 @@ $(document).ready(function() {
 
 //discard and fav actions
  $(document).ready(function(){
-   $("img.discard-action").hide();
-
-   $(".discard").click(function(){
-     $('> img.discard-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
-   });
- });
-
- $(document).ready(function(){
    $("img.fav-action").hide();
 
    $(".fav").click(function(){
@@ -363,23 +248,6 @@ $(document).ready(function(){
     
 });
 
-
-//double click actions
-$(document).ready(function(){
-    $("img.tab-image__background").dblclick(function(){
-         event.preventDefault();
-         var $input = $("input[name=imagefavorita]")
-         $input.prop('checked', true);
-    });
-});
-
-
-
- $(document).ready(function(){
-   $(".checkbox-multiples-img__fav").dblclick(function(){
-     $('img.fav-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
-   });
- });
 
 // Gradient
 var colors = new Array(
@@ -434,12 +302,4 @@ $(document).on('click', '.checkbox-multiples-action__fav', function () {
 $(document).on('click', '.checkbox-image-action__fav', function () {
     var $input = $("input[name=array_key]")
     $input.prop('checked', true);
-});
-
-$(document).on('click', '.checkbox-multiples-action__discard', function () {
-    var $input = $("input[name=imagediscard]")
-    $input.prop('checked', true);
-
-    var $input = $("input[name=imagefavorita]")
-    $input.prop('checked', false);
 });

@@ -275,7 +275,7 @@ $page = 0;
             </p>
 
             <form method='post' action='#' id='single_$id'>
-            <button type='submit' class='checkbox-image-action__fav checkbox-image-action__fav__mobile'>
+            <button type='submit' class='checkbox-image-action__fav'>
             <input type='hidden' name='key' value='$id' class='checkbox-image__background' />
             <img class='tab-image__background' alt='$nome' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
             </button>
@@ -388,6 +388,7 @@ $page = 0;
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="javascripts/swiper.jquery.min.js"></script>
 <script src="javascripts/swiper.min.js"></script>
