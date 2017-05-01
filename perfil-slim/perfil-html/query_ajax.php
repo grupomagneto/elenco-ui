@@ -1,8 +1,8 @@
 <?php
 include ("api/conecta.php");
 $times = $_POST['page'];
-$start = $times*36;
-if ($times*36 >= $_SESSION['max']) {
+$start = $times*60;
+if ($times*60 >= $_SESSION['max']) {
 $end = $_SESSION['max'];
 $limit = "LIMIT ".$start.",".$end;
 $sql = $_SESSION['sql_busca'];
@@ -10,8 +10,8 @@ $sql .= " $limit";
 $res = mysqli_query($conexao_index, $sql);
 }
 else {
-$end = $times*36;
-$limit = "LIMIT ".$start.",36";
+$end = $times*60;
+$limit = "LIMIT ".$start.",60";
 $sql = $_SESSION['sql_busca'];
 $sql .= " $limit";
 $res = mysqli_query($conexao_index, $sql);
@@ -68,7 +68,7 @@ while($row = mysqli_fetch_array($res)) {
   </div>";
   // }
 }
-if ($times*36 >= $_SESSION['max']) {
+if ($times*60 >= $_SESSION['max']) {
     echo"
       <section class='footer__section'>
         <div class='container-outline__content'>
