@@ -16,7 +16,7 @@ $(".botaofavorita").click(function(){
   });
 }); 
 
-$('.checkbox-image-action__fav').on('click touchstart', function() {
+$('.checkbox-image-action__fav').on('click', function() {
     
     jQuery('form').submit(function(){
     var dados = jQuery( this ).serialize();
@@ -75,7 +75,8 @@ $(document).ready(function(){
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	
 alert("mobile detected");
- 
+	
+
 jQuery.fn.single_double_click = function(single_click_callback, double_click_callback, timeout) {
     return this.each(function() {
         var clicks = 0,
@@ -86,19 +87,22 @@ jQuery.fn.single_double_click = function(single_click_callback, double_click_cal
                 setTimeout(function() {
                     if (clicks == 1) {
                         single_click_callback.call(self, event);
+ 												return false;
                     } else {
                         double_click_callback.call(self, event);
                     }
                     clicks = 0;
-                }, timeout || 300);
+                }, timeout || 200);
             }
-    				return false;
+					
         });
     });
 }
 
 $(".checkbox-image-action__fav").single_double_click(function (event) {
     
+//alert("click sucesso!!!");
+	
     jQuery('form').submit(function(){
     var dados = jQuery( this ).serialize();
     
@@ -108,7 +112,7 @@ $(".checkbox-image-action__fav").single_double_click(function (event) {
       url: "api/single_profile.php",
       data: dados,
       success: function( data )
-      { 
+      {		
 				
         $(".gradient").css('display', 'none');
         $(".photo__single").css('display', 'block');
@@ -138,14 +142,21 @@ $(".checkbox-image-action__fav").single_double_click(function (event) {
           
       }
     });
-    return false;
+ return false;
   });
 
 
 	
 }, function (event) { 
 //    alert("dblclick"); 
+	
+	
+alert("dblclick sucesso!!!");
 	$('img.fav-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
+	
+	
+
+ return false;
 });
 	
 	
