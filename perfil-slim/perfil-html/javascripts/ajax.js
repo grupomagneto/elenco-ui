@@ -37,7 +37,7 @@ $('.checkbox-image-action__fav').on('click touchstart', function() {
         $('.container-outline__single').css('display', 'block');
         $('.container-outline__categories').css('display', 'block');
         $('.container').css('display', 'none');
-         
+        
         $(".close").click(function() {
             $(".photo__single").css("display", "none");
             $(".container-outline__single").css("display", "none");
@@ -45,7 +45,7 @@ $('.checkbox-image-action__fav').on('click touchstart', function() {
             $(".gradient").css("display", "block");
             $(".container").css("display", "block");
         });
-          
+        
         var mySwiper = new Swiper ('.swiper-container', {
             // Optional parameters
             direction: 'horizontal',
@@ -54,8 +54,7 @@ $('.checkbox-image-action__fav').on('click touchstart', function() {
             // If we need pagination
             pagination: '.swiper-pagination'
         });
-          
-          
+            
       }
     });
     return false;
@@ -64,14 +63,34 @@ $('.checkbox-image-action__fav').on('click touchstart', function() {
 
 //double click actions
 
-$(document).ready(function(){
-    $("img.tab-image__background").dblclick(function(){
-         event.preventDefault();
-         var $input = $("input[name=key]")
-         $input.prop('checked', true);
-
-				$('img.fav-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
+$('.checkbox-image-action__fav').on('dblclick', function() {
+    
+		$('img.fav-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
+	
+    jQuery('form').submit(function(){
+    var dados = jQuery( this ).serialize();
+    
+    jQuery.ajax({
+      type: "POST",
+      dataType: 'html',
+      url: "api/addsearch.php",
+      data: dados,
+      success: function( data )
+      { 
+				console.log("ajax desktop dblclick success");
+				
+			  var $input = $("input[name=key]")
+			  $input.prop('checked', true);
+				
+				$(".photo__single").css("display", "none");
+				$(".container-outline__single").css("display", "none");
+				$(".container-outline__categories").css("display", "none");
+				$(".gradient").css("display", "block");
+        
+      }
     });
+    return false;
+  });
 });
 
 
@@ -82,7 +101,7 @@ alert("mobile detected");
 $(document).ready(function(){
    $("img.checkbox-multiples-img__fav").css('display', 'none');
 
-   $('img.tab-image__background').off('mouseover', function () {
+   $('img.tab-image__background').off('mouseleave', function () {
 			 $("img.checkbox-multiples-img__fav", $(this).closest(".tab-actions__multiples")).css('display', 'block');
 	 });
     $("img.tab-image__background").mouseout(function(){
@@ -94,7 +113,7 @@ $(document).ready(function(){
 $(document).ready(function(){
    $(".tab-actions__multiples > .subtitle__prof").css('display', 'none');
 
-		$('img.tab-image__background').off('mouseover', function () {
+		$('img.tab-image__background').off('mouseleave', function () {
         $("> .subtitle__prof", $(this).closest(".tab-actions__multiples")).css('display', 'block');
 	 });
     $("img.tab-image__background").mouseout(function(){
@@ -107,7 +126,7 @@ $(document).ready(function(){
    $(".tab-actions__multiples > .subtitle").css('display', 'none');
 
 	
-		$('img.tab-image__background').off('mouseover', function () {
+		$('img.tab-image__background').off('mouseleave', function () {
         $("> .subtitle", $(this).closest(".tab-actions__multiples")).css('display', 'block');
 	 });
 	
@@ -119,8 +138,6 @@ $(document).ready(function(){
 	
 	
 }
-
-
 
 (function($) {
   AddTableRow = function() {
