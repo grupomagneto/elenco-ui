@@ -1602,7 +1602,7 @@ button.like img {
   height: 20px;
   top: 30%;
   right: -5%; 
-/*  display: none;*/
+  display: none;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1614,7 +1614,7 @@ button.like img {
       height: 20px;
       top: 45%;
       right: -4%; 
-/*      display: none;*/
+      display: none;
     }
 }
 
@@ -2336,6 +2336,10 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active{
 }
 .noshow{
   display: none;
+}
+
+.container{
+	margin-top: -20px;
 }
 
 .cursor {
