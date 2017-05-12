@@ -212,42 +212,6 @@ $(document).ready(function() {
    });
  });
 
-$(document).ready(function(){
-   $("img.checkbox-multiples-img__fav").css('display', 'none');
-
-    $("img.tab-image__background").mouseenter(function(){
-        $("img.checkbox-multiples-img__fav", $(this).closest(".tab-actions__multiples")).css('display', 'block');
-    });
-    $("img.tab-image__background").mouseout(function(){
-        $("img.checkbox-multiples-img__fav", $(this).closest(".tab-actions__multiples")).css('display', 'none');
-    });
-    
-});
-
-$(document).ready(function(){
-   $(".tab-actions__multiples > .subtitle__prof").css('display', 'none');
-
-    $("img.tab-image__background").mouseenter(function(){
-        $("> .subtitle__prof", $(this).closest(".tab-actions__multiples")).css('display', 'block');
-    });
-    $("img.tab-image__background").mouseout(function(){
-        $("> .subtitle__prof", $(this).closest(".tab-actions__multiples")).css('display', 'none');
-    });
-    
-});
-
-$(document).ready(function(){
-   $(".tab-actions__multiples > .subtitle").css('display', 'none');
-
-    $("img.tab-image__background").mouseenter(function(){
-        $("> .subtitle", $(this).closest(".tab-actions__multiples")).css('display', 'block');
-    });
-    $("img.tab-image__background").mouseout(function(){
-        $("> .subtitle", $(this).closest(".tab-actions__multiples")).css('display', 'none');
-    });
-    
-});
-
 
 // Gradient
 var colors = new Array(

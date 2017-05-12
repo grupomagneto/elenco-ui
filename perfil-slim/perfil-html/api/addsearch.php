@@ -3,8 +3,8 @@ require_once("functions.php");
 
 if(isset($_POST)){
     
-    $imagefavorita = $_POST['imagefavorita'];
-    echo $imagefavorita;
+    $key = $_POST['key'];
+    echo $key;
     
     $imagediscard = $_POST['imagediscard'];
     echo $imagediscard;
@@ -25,10 +25,10 @@ if(isset($_POST)){
 ?>
 
 <?php
-	if(insereImagemFavorita($conexao, $imagefavorita)) {
+	if(insereImagemFavorita($conexao, $key)) {
 ?>
 	 <p class="text-success">
-		Imagem <?php echo $imagefavorita;  ?> adicionado com sucesso!
+		Imagem <?php echo $key;  ?> adicionado com sucesso!
 	</p> 
 <?php
 	} else {
