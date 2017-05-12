@@ -15,12 +15,11 @@ $(".botaofavorita").click(function(){
     return false;
   });
 }); 
-
-
+	
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	
 alert("mobile detected");
-	
+
 	$('.checkbox-image-action__fav').on('touchstart', function() {
     
     jQuery('form').submit(function(){
@@ -225,3 +224,7 @@ $(document).ready(function(){
     return false;
   }
 })(jQuery);
+
+
+
+

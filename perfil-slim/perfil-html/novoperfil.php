@@ -294,6 +294,7 @@ $page = 0;
       </div>";
     }
     ?>
+           
             
             </div>
         </div>
@@ -389,7 +390,6 @@ $page = 0;
 </div>
 
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="javascripts/swiper.jquery.min.js"></script>
 <script src="javascripts/swiper.min.js"></script>
