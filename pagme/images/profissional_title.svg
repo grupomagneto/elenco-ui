@@ -1,0 +1,18 @@
+<svg width="260px" height="53px" viewBox="0 0 260 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="desktop-hd" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Modal-Renovar-Profissional" transform="translate(-355.000000, -227.000000)">
+            <g id="Group" transform="translate(353.000000, 232.000000)">
+                <text id="PROFISSIONAL" font-family="Avenir-Light, Avenir" font-size="36" font-weight="300" fill="#FFFFFF">
+                    <tspan x="0.252" y="36">PROFISSIONAL</tspan>
+                </text>
+                <path d="M3,47.5 L260.507767,47.5" id="Line-Copy-7" stroke="#FFFFFF" stroke-linecap="square"></path>
+            </g>
+            <text id="CADASTRO" font-family="Avenir-Book, Avenir" font-size="12" font-weight="normal" fill="#FFFFFF">
+                <tspan x="356" y="237">CADASTRO</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

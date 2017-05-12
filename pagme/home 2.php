@@ -9,23 +9,20 @@
   if (isset($_GET['new_id'])) {
     $_SESSION['user'] = $_GET['new_id'];
   }
-  $user_id = $_SESSION['user'];
 	// select loggedin users detail
-  $sql = "SELECT * FROM tb_elenco WHERE id_elenco='$user_id'";
-	$res=mysqli_query($link, $sql) or die (mysqli_error($link));
-	if ($userRow = mysqli_fetch_array($res)) {
-    if (!empty($userRow['nome_responsavel'])) {
+	$res=mysqli_query($link, "SELECT * FROM tb_elenco WHERE id_elenco=".$_SESSION['user']);
+	$userRow=mysqli_fetch_array($res);
+  $cpf = $userRow['cpf'];
+  if (!empty($userRow['nome_responsavel'])) {
        $_SESSION['nome_responsavel'] = $userRow['nome_responsavel'];
-    }
-    $cpf = $userRow['cpf'];
-    $_SESSION['cpf'] = $cpf;
-    $email = $userRow['email'];
-    if ($userRow['sexo'] == 'F') {
-      $sexo = 'a';
-    }
-    elseif ($userRow['sexo'] == 'M') {
-      $sexo = 'o';
-    }
+  }
+  $_SESSION['cpf'] = $cpf;
+  $email = $userRow['email'];
+  if ($userRow['sexo'] == 'F') {
+    $sexo = 'a';
+  }
+  elseif ($userRow['sexo'] == 'M') {
+    $sexo = 'o';
   }
   // cria o menu de nome artístico se existirem mais de um agenciado no mesmo cpf e email
   $result = mysqli_query($link, "SELECT nome_artistico, id_elenco FROM tb_elenco WHERE email='$email' AND cpf='$cpf' ORDER BY dt_nascimento ASC");
@@ -45,7 +42,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Bem-vind<? echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
+<title>Bem-vind<?php echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -118,9 +115,8 @@
   </div>
 </div>
 </div>
- 
+    <script src="assets/jquery-1.11.3-jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src='assets/js/gradient.js'></script>
@@ -143,12 +139,9 @@
       $recebivel = $row_recebivel['receber'];
       $recebivel = number_format($recebivel,2,",",".");
       // Modal
-      echo "
-          <div id='myModal' class='modal'>
-          <div class='modal-content'>
-          <img src='images/fechar.svg' class='close navigation_buttons' />
-          <img src='images/voltar.svg' class='back navigation_buttons' />
-          <div class='renova_01'>
+      echo "<div id='myModal' class='modal'>
+         <div class='modal-content'>
+          <span class='close'>&times;</span>
          <div class='page-header'>
               <center><h1>Nosso contrato está vencido!</h1>
               <p><strong>Cadastro ".$userRow['tipo_cadastro_vigente']."</strong> expirado em: ".date('d/m/Y', strtotime($userRow['data_contrato_vigente'].'+2 years'))."</p></center>
@@ -156,41 +149,48 @@
         <div class='row'>
         <div class='col-lg-12'>
         <center>
-          <h4 class='renove'>Renove seu contrato para continuar trabalhando e aproveite os valores promocionais.</h4>
-          <p>Conheça nossas modalidades:</p></div><BR />
+          <h4 class='renove'>Renove seu contrato para continuar trabalhando e aproveite os valores promocionais. <BR />Escolha uma modalidade para o novo contrato:</h4></div><BR />
           <div class='quadrot'>
           <div class='quadro'>
           <div class='quadro_concordo'>
           <div class='botoes'>
-          <form method='post' action='#' class='forms' id='renova_cadastro'>
-          <button id='btn_renova_cadastro' type='submit' class='botao'>
-          <input type='hidden' id='input_renova_01' name='id_usuario' value='$id_usuario' />
-          <input type='hidden' id='input_renova_02' name='cadastro' value='gratuito' />
+          <form class='forms' name='renova_cadastro' id='renova_cadastro' action='renova_cadastro.php' method='post'>
+          <button type='submit'>
+          <input type='hidden' name='id_usuario' value='$id_usuario' />
+          <input type='hidden' name='cadastro' value='gratuito' />
             <img src='images/gratuito.svg' class='first' /></button></form>
-          <form method='post' action='#' class='forms' id='renova_cadastro_premium'>
-          <button id='btn_renova_cadastro_premium' type='submit' class='botao'>
-          <input type='hidden' id='input_renova_premium_01' name='id_usuario' value='$id_usuario' />
-          <input type='hidden' id='input_renova_premium_02' name='cadastro' value='premium' />
+          <form class='forms' name='renova_cadastro_premium' id='renova_cadastro_premium' action='renova_cadastro.php' method='post'>
+          <button type='submit'>
+          <input type='hidden' name='id_usuario' value='$id_usuario' />
+          <input type='hidden' name='cadastro' value='premium' />
             <img src='images/premium.svg' class='second' /></button></form>
-          <form method='post' action='#' class='forms' id='renova_cadastro_profissional'>
-          <button id='btn_renova_cadastro_profissional' id='renova_cadastro' type='submit' class='botao'>
-          <input type='hidden' id='input_renova_profissional_01' name='id_usuario' value='$id_usuario' />
-          <input type='hidden' id='input_renova_profissional_02' name='cadastro' value='profissional' />
+          <form class='forms' name='renova_cadastro_profissional' id='renova_cadastro_profissional' action='renova_cadastro.php' method='post'>
+          <button type='submit'>
+          <input type='hidden' name='id_usuario' value='$id_usuario' />
+          <input type='hidden' name='cadastro' value='profissional' />
             <img src='images/profissional.svg' class='third' /></button></form>
           <BR /><BR />
           </div>
           </div>
           </div>
           </div>
-
+          <div class='quadrot'>
+          <div class='quadro'>
+          <div class='quadro_concordo'>
+          <input type='checkbox' id='terms'>
+          <div class='aviso'>
+          <label for='concordo'><declaro class='declaro'>Declaro estar ciente dos Termos do Contrato e concordo em usar parte do meu Saldo em Cachês";
+          if ($recebivel > 0) { echo " (R$ $recebivel)";}
+           echo " caso necessário.</declaro></label>
+          </div>
+          </div>
+          </div>
+          </div>
         </center>
         </div>
         </div>
         </div>
-        ";
-        echo "<div class='renova_02'></div>
-        </div>
-        </div>";
+        <div>";
         echo "
         <script type='text/javascript'>
           // Get the modal
@@ -201,51 +201,30 @@
 
           // When the user clicks on <span> (x), close the modal
           span.onclick = function() {
-            $('#myModal').fadeOut(250);
+            modal.style.display = 'none';
+            $('#myModal').modal('hide');
           }
 
           // When the user clicks anywhere outside of the modal, close it
           window.onclick = function(event) {
             if (event.target == modal) {
-              $('#myModal').fadeOut(250);
+              modal.style.display = 'none';
+              $('#myModal').modal('hide');
             }
           }
-          // When the user presses ESC, close the modal
-          $(document).keyup(function(e) {
-            if (e.keyCode == 27) {
-              $('#myModal').fadeOut(250);
-            }
-          });
           $(window).on('load',function(){
-            $('#myModal').fadeIn(250);
+            $('#myModal').modal('show');
           });
-          $('.botao').click(function(){
-              jQuery('form').submit(function(){
-              var dados = jQuery( this ).serialize();
-
-              jQuery.ajax({
-                type: 'POST',
-                dataType: 'html',
-                url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
-                data: dados,
-                success: function( data ) {
-                  $('.renova_02').html(data);
-                  $('.renova_01').fadeOut(0);
-                  $('.renova_02').fadeIn(200);
-                  $('.back').fadeIn(200);
-                }
-              });
-              return false;
-              });
-          });
-          $('.back').click(function(){
-            $('.renova_02').fadeOut(0);
-            $('.renova_01').fadeIn(200);
-            $('.back').fadeOut(0);
+          $('.forms').submit(function(e){
+            if(!$('#terms').is(':checked')){
+              alert('Você precisa concordar com os Termos do Contrato para continuar.');
+              e.preventDefault();
+            }
           });
           </script>";
     }
     ?>
+    
 </body>
 </html>
 <?php

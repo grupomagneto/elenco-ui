@@ -1,0 +1,44 @@
+
+<svg width="256px" height="116px" viewBox="0 0 256 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="249.803125" height="110" rx="12"></rect>
+        <filter x="-2.2%" y="-3.2%" width="104.4%" height="110.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="desktop-hd" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy" transform="translate(-934.000000, -581.000000)">
+            <g id="Profissional" transform="translate(937.000000, 582.000000)">
+                <g id="Mask-Copy-7">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#2AA6E4" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <rect stroke="#FFFFFF" stroke-width="0.8" x="0.4" y="0.4" width="249.003125" height="109.2" rx="12"></rect>
+                </g>
+                <g id="Group-6-Copy-2" transform="translate(19.400000, 13.000000)">
+                    <text id="PROFISSIONAL" font-family="Avenir-Light, Avenir" font-size="28.8" font-weight="300" fill="#FFFFFF">
+                        <tspan x="5.1016" y="42">PROFISSIONAL</tspan>
+                    </text>
+                    <path d="M7,51.8 L203.409375,51.8" id="Line-Copy-9" stroke="#FFFFFF" stroke-width="0.8" stroke-linecap="square"></path>
+                    <text id="CADASTRO" font-family="Avenir-Light, Avenir" font-size="14.4" font-weight="300" fill="#FFFFFF">
+                        <tspan x="67.0216" y="14">CADASTRO</tspan>
+                    </text>
+                </g>
+                <text id="de-R$-999-por-R$" font-family="Avenir-Light, Avenir" font-size="14.4" font-weight="300" fill="#FFFFFF">
+                    <tspan x="43" y="93">de </tspan>
+                    <tspan x="63.5488" y="93" text-decoration="line-through">R$ 999</tspan>
+                    <tspan x="110.784" y="93"> por R$</tspan>
+                </text>
+                <g id="Group-2" transform="translate(157.000000, 68.000000)" font-size="30" font-family="Avenir-Heavy, Avenir" letter-spacing="-1" fill="#FFFFFF" font-weight="600">
+                    <text id="899">
+                        <tspan x="0" y="30">899</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
