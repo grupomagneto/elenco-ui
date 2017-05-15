@@ -59,7 +59,6 @@ background: rgba(255, 255, 255, 0.3);
 border: 1px solid #FFFFFF;
 border-radius: 8px;
 font-family: Avenir-Book;
-cursor: pointer;
 }
 
 .btn-primary:focus,
@@ -92,8 +91,28 @@ border-color: #FFFFFF;
 a {
 font-family: Avenir-Heavy;
 color: #FFFFFF;
+outline: 1;
 }
-
+.x-small{
+font-family: Avenir-Book;
+font-size: 10px;
+color: rgba(255,255,255,1);
+}
+.small{
+font-family: Avenir-Book;
+font-size: 14px;
+color: rgba(255,255,255,1);
+}
+.medium{
+font-family: Avenir-Book;
+font-size: 18px;
+color: rgba(255,255,255,1);
+}
+.large{
+font-family: Avenir-Book;
+font-size: 30px;
+color: rgba(255,255,255,1);
+}
 a:active,
 a:hover {
 outline: 0;
@@ -170,71 +189,6 @@ button {
 background: transparent;
 border: 0;
 }
-.quadro_concordo{
-position: relative;
-margin:auto;
-}
-
-input[type=checkbox] {
-position: absolute;
-left:-55%;
-right:0;
-top:0;
-bottom:0;
-margin: auto;
-}
-
-.quadrot {
-height: 100%; 
-width: 100%;
-display: table;    
-}
-
-.quadro {
-height: 100%;
-vertical-align: middle;
-display: table-cell;
-text-align: center;
-}
-
-.declaro {
-font-family: Avenir-Book;
-/*text-transform: uppercase;*/
-font-size: 10px;
-line-height: 1.75;
-margin: auto auto 10px auto;
-}
-
-.renove {
-width: 90%;
-font-family: Avenir-Book;
-/*text-transform: uppercase;*/
-font-size: 18px;
-line-height: 1.5;
-}
-
-.renova_02 {
-display: none;
-position: relative;
-margin: 2% auto; /* 15% from the top and centered */
-margin-top: -40%;
-width: 80%; /* Could be more or less, depending on screen size */
-height: 80%;
-padding: 20px;
-}
-
-.aviso {
-/*border-radius: 5px;*/
-/*border: 2px solid #FFFFFF;*/
-/*padding: 10px;*/
-text-align: left;
-color: #FFFFFF;
-display: inline-block;
-/*margin: 10px;*/
-/*position: relative;*/
-width: 50%;
-}
-
 .modal {
 position: fixed; /* Stay in place */
 left: 0;
@@ -245,137 +199,210 @@ overflow: auto; /* Enable scroll if needed */
 background-color: rgb(0,0,0); /* Fallback color */
 background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
-/* Modal Content/Box */
 .modal-content {
+position: relative;
 background-color: #441160;
 margin: 2% auto;
 padding: 20px;
 border: 1px solid #FFFFFF;
-width: 90%;
-height: 90%;
+width: 300px;
+height: 350px;
 border-radius: 10px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
 }
-
-.navigation_buttons {
+.botoes_navegacao {
 color: #FFFFFF;
 float: right;
 font-size: 28px;
 font-weight: bold;
 opacity: 0.5;
 }
-.navigation_buttons:hover,
-.navigation_buttons:focus {
+.botoes_navegacao:hover,
+.botoes_navegacao:focus {
 color: #FFFFFF;
 text-decoration: none;
-cursor: pointer;
 opacity: 1;
 }
-
-.close {
-float: right;
-}
-
-.back {
-display: none;
-float: left;
-}
-.confirma {
+.conteiner {
+position: absolute;
+height: 95%;
 width: 100%;
-height: 100%;
+display: -webkit-flex;
 display: flex;
+-webkit-flex-direction: row;
+flex-direction: row;
+-webkit-justify-content: center;
 justify-content: center;
-margin: -40px auto 20px auto;
+flex-wrap: wrap;
+margin-left: -50%;
 }
-.quadro_cadastro {
+.navegacao{
+position: relative;
+height: 30px;
 width: 100%;
-height: 100%;
 display: flex;
+opacity: 0.5;
+font-family: Avenir-Book;
+font-size: 14px;
+color: rgba(255,255,255,1);
+-webkit-align-items: center;
+align-items: center;
+margin-left: 10px;
+margin-right: 10px;
+margin-top: -10px;
+}
+.titulo{
+position: relative;
+display: flex;
+width: 90%;
+align-items: flex-start;
+justify-content: center;
+text-align: center;
+font-family: Avenir-Heavy;
+font-size: 30px;
+color: rgba(255,255,255,1);
+line-height: 32px;
+margin-top: -10px;
+}
+.descricao{
+width: 100%;
+height: 60px;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+font-family: Avenir-Book;
+font-size: 14px;
+color: rgba(255,255,255,0.7);
+margin: 0px 20px 0px 20px;
+}
+.botoes {
+height: 110px;
+position: relative;
+display: flex;
+align-items: flex-end;
+flex-wrap: wrap;
 justify-content: center;
 }
-.quadro_cadastro_01 {
-min-height: 490px;
-float: left;
+.botao{
+position: relative;
+background: rgba(255,255,255,0.30);
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+width: 250px;
+height: 50px;
+margin-bottom: 10px;
+margin-left: 5px;
+margin-right: 5px;
+text-align: center;
+}
+.botao:hover,
+.botao:focus {
+background: rgba(255,255,255,0.60);
+}
+.botoes_modalidades {
+height: 320px;
+position: relative;
+display: flex;
+align-items: flex-end;
+flex-wrap: wrap;
+justify-content: center;
+}
+.gratuito{
+opacity: 0.75;
+}
+.gratuito:hover,
+.gratuito:focus {
+opacity: 1;
+}
+.premium{
+opacity: 0.75;
+}
+.premium:hover,
+.premium:focus {
+opacity: 1;
+}
+.profissional{
+opacity: 0.75;
+}
+.profissional:hover,
+.profissional:focus {
+opacity: 1;
+}
+.quadro-gratuito{
+width: 90%;
+height: 450px;
+background: #FF5D85;
+border: 1px solid #FFFFFF;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+border-radius: 15px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+.quadro-premium{
+width: 90%;
+height: 555px;
+background: #CC64E0;
+border: 1px solid #FFFFFF;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+border-radius: 15px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+.quadro-profissional{
+width: 90%;
+height: 820px;
 background: #2AA6E4;
 border: 1px solid #FFFFFF;
 box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-border-radius: 20px;
+border-radius: 15px;
 display: flex;
 flex-wrap: wrap;
+justify-content: center;
 }
-
-.quadro_cadastro_02 {
+.icon{
+width: 50px;
+margin-left: -20px;
+margin-top: 15px;
+}
+.texto{
+width: 75%;
 display: flex;
-align-items: center;
 flex-wrap: wrap;
+align-items: flex-start;
+margin-left: 10px;
+margin-top: 20px;
 }
-.descricao {
-margin: 20px 20px 20px auto;
-width: 80%;
-text-align: left;
-}
-
-.icon {
-width: 75px;
-margin: 20px -36px auto auto;
-z-index: 2;
-}
-.small{
-font-family: Avenir-Book;
-font-size: 12px;
-color: #FFFFFF;
-}
-
-.large{
-font-family: Avenir-Light;
-font-size: 30px;
-color: #FFFFFF;
-}
-
-.line{
-border: 1px solid #FFFFFF;
-}
-
-.lista_cadastro {
-margin: 20px auto auto 20px;
-font-family: Avenir-Book;
-font-size: 16px;
-color: #FFFFFF;
-}
-
 .itens {
 margin: 20px auto auto auto;
 }
-
-.title {
-max-width: 260px;
-height: auto
-}
-
-.conteudo {
+.preco {
+width: 100%;
 display: flex;
-vertical-align: middle;
 justify-content: center;
-flex-wrap: wrap;
-margin: 0px auto auto auto;
+margin-bottom: 20px;
 }
 .subtracao {
-width: 227px;
-display: flex;
-}
-.operacoes {
-margin: -40px -20px 0px 0px;
-}
-.valores {
-margin: 0px auto 10px auto;
-width: 200px;
-border-radius: 20px;
+width: 90%;
 display: flex;
 flex-wrap: wrap;
-align-self: flex-start;
-justify-content:space-around;
+justify-content: center;
+margin-left: -26px;
 }
-
+.utilizando{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+margin-bottom: -10px;
+}
 .valor {
 width: 170px;
 height: 75px;
@@ -383,82 +410,30 @@ padding: 10px;
 border-radius: 10px;
 border: 1px solid #FFFFFF;
 margin: 10px auto 0px auto;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
 }
-
-.btn_confirma {
-width: 250px;
-height: 60px;
-font-size: 20px;
-padding: 15px;
-align-self: flex-end;
-margin: auto auto auto auto;
+.valor-cadastro{
 }
-
 .menos {
-margin: 115px auto auto auto;
-z-index: 2;
+margin: 87px auto auto auto;
 }
-
 .igual{
 margin: 60px auto auto auto;
-z-index: 2;
-}
-
-@media only screen and (max-width: 751px) {
-.modal-content {
-width: 90%;
-height: 800px;
-
-}
-.renove {
-width: 90%;
-font-size: 15px;
 }
 .aviso {
-width: 80%;
-}
-input[type=checkbox] {
-left:-85%;
-}
-.declaro {
-font-size: 10px;
-}
-.botoes {
-width: 100%;
+width: 280px;
 display: flex;
-flex-wrap: wrap;
-margin: auto auto auto auto;
+flex-wrap: nowrap;
 justify-content: center;
-/*overflow: hidden;*/
+margin: 10px auto -40px 20px;
 }
-.confirma {
-/*display: inline-flex;*/
-flex-wrap: wrap;
-/*    align-content: flex-start;*/
-/*    justify-content: flex-start;*/
+.declaro{
+width: 220px;
 }
-.icon {
-width: 75px;
-float: left;
-margin: 0px -36px auto auto;
-z-index: 3;
-}
-.quadro_cadastro {
-min-height: 650px;
-}
-
-}
-
-@media only screen and (min-width: 1025px) {
-.renove {
-width: 90%;
-font-size: 20px;
-}
-.botoes {
-width: 90%;
-display: flex;
-justify-content: center;
-margin: 20px auto 20px auto;
-position: relative;
-}
+.requerido{
+display: none;
+position: absolute;
+margin: 20px -28px;
 }

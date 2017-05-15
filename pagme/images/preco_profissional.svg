@@ -1,0 +1,26 @@
+
+<svg width="145px" height="67px" viewBox="0 0 145 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="desktop-hd" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Modal-Renovar-Profissional" transform="translate(-407.000000, -612.000000)" fill="#FFFFFF">
+            <g id="799" transform="translate(406.384776, 610.000000)">
+                <text font-family="Avenir-Heavy, Avenir" font-size="64" font-weight="600" letter-spacing="-3">
+                    <tspan x="25" y="66">799</tspan>
+                </text>
+                <text id=",00" font-family="Avenir-Heavy, Avenir" font-size="18" font-weight="600">
+                    <tspan x="120" y="66">,00</tspan>
+                </text>
+                <text id="R$" font-family="Avenir-Heavy, Avenir" font-size="18" font-weight="600">
+                    <tspan x="0" y="66">R$</tspan>
+                </text>
+                <text id="de-R$-999-por" font-family="Avenir-Book, Avenir" font-size="14" font-weight="normal">
+                    <tspan x="32.6152237" y="14">de </tspan>
+                    <tspan x="52.8452237" y="14" text-decoration="line-through">R$ 999</tspan>
+                    <tspan x="100.1752237" y="14"> por</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

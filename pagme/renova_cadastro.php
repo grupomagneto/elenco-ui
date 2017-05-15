@@ -29,34 +29,74 @@ $row_recebivel = mysqli_fetch_array($recebivel);
 $recebivel = $row_recebivel['receber'];
 $recebivel = number_format($recebivel,2,",",".");
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-<link rel='stylesheet' href='assets/css/bootstrap.min.css' type='text/css'  />
-<link rel='stylesheet' href='style.css' type='text/css' />
-</head>
-<body>
-<div class='row'>
-<div class='col-lg-12'>
-<div class='quadrot'>
-<div class='quadro'>
-<div class='quadro_concordo'>
-<div class='confirma'>
-<div class='icon'><img src='images/profissional_icon.svg' style='width:100%' /></div>
-<div class='quadro_cadastro quadro_cadastro_01'>
-<div class='descricao'>
-<div class='title'><img src='images/profissional_title.svg' style='width:100%' /></div>
-<ul class='lista_cadastro'>
-<li class='itens'>Inclui ensaio fotográfico completo com mínimo de 30 fotos tratadas entregues em DVD ou link;</li>
-<li class='itens'>Você recebe 90% do cachê líquido em todos os trabalhos;</li>
-<li class='itens'>Seu perfil aparece primeiro nas buscas por atores/modelos;</li>
-<li class='itens'>Transferência automática de cachês disponíveis para sua conta bancária;</li>
-<li class='itens'>Assinatura válida por 02 anos;</li>
-</ul>
-</div>
-<div><img src='images/899.svg' /></div>
-</div>
+<?php
+if ($cadastro == 'Gratuito') {
+	$valor = '0';
+}
+elseif ($cadastro == 'Premium') {
+	$valor = '199';
+}
+elseif ($cadastro == 'Profissional') {
+	$valor = '799';
+}
+if ($cadastro == 'Premium' || $cadastro == 'Profissional') { ?>
+    <div class='renova_04-1'>
+		<div class='conteiner conteiner-renova'>
+		  <div class='navegacao navegacao-renova'>
+		    <img src='images/voltar.svg' class='voltar-4 botoes_navegacao' />
+		    <span class='progresso'>3 de 4</span>
+            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+		  </div>
+		  <div class='titulo'>
+		    Como gostaria de pagar?
+		  </div>
+		  <div class='descricao'>
+		    Parcele em até 10x no cartão ou aproveite as vantagens de utilizar seu Saldo de Cachês a receber.
+		  </div>
+		  <div class='botoes'>
+		    <button class='botao botao_saldo'>Saldo de Cachês</button>
+		    <button class='botao botao_gateway'>Cartão ou Boleto</button>
+		  </div>
+		</div>
+	</div>
+	<?php
+	}
+	if ($cadastro == 'Premium') {
+		echo "
+			<script>
+			$('.voltar-4').click(function(){
+				$('.modal-content').fadeIn(0);
+				$('.renova_04').fadeOut(0);
+				$('.renova_03-premium').fadeIn(200);
+			});
+			</script>";
+	}
+	elseif ($cadastro == 'Profissional') {
+		echo "
+			<script>
+			$('.voltar-4').click(function(){
+				$('.modal-content').fadeIn(0);
+				$('.renova_04').fadeOut(0);
+				$('.renova_03-profissional').fadeIn(200);
+			});
+			</script>";
+	}
+	elseif ($cadastro == 'Gratuito') { ?>
+		<div class='renova_05-1'>
+		<div class='conteiner conteiner-sucesso'>
+		  <div class='navegacao navegacao-sucesso'>
+            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+		  </div>
+		  <div class='titulo'>
+		    Contrato renovado!
+		  </div>
+		  <div class='descricao'>
+		    Nosso contrato foi renovado e enviado, junto com todas as informações, para o seu e-mail cadastrado.
+		  </div>
+		</div>
+	</div>
+	<? } ?>
+<!-- 
 <div class='quadro_cadastro quadro_cadastro_02'>
 	<div class='renovar'><img src='images/renovar_contrato.svg' style='width:100%' /></div>
 		<div class='conteudo'>
@@ -70,7 +110,7 @@ $recebivel = number_format($recebivel,2,",",".");
 						<div class='small'>total disponível</div>
 						<div class='texto_valor_02'>
 							<span class='small'>R$ </span>
-							<span class='large'>2.500</span>
+							<span class='large'><? echo $recebivel; ?></span>
 							<span class='small'>,00</span>
 						</div>
 					</div>
@@ -78,7 +118,7 @@ $recebivel = number_format($recebivel,2,",",".");
 						<div class='small'>Cadastro <? echo $cadastro; ?></div>
 						<div class='texto_valor_02'>
 							<span class='small'>R$ </span>
-							<span class='large'>899</span>
+							<span class='large'><? echo $valor; ?></span>
 							<span class='small'>,00</span>
 						</div>
 					</div>
@@ -104,14 +144,8 @@ $recebivel = number_format($recebivel,2,",",".");
 		</div>
 	</div>
 </div>
-<div class='btn-primary btn_confirma'><button>Confirmar</button></div>
+<div class='botao btn-primary btn_confirma'><button>Confirmar</button></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</body>
-</html>
+</div>  -->

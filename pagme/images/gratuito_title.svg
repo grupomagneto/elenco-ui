@@ -1,0 +1,19 @@
+
+<svg width="261px" height="53px" viewBox="0 0 261 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Modalidades-de-Cadastro" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Modal-Renovar-Premium-Copy" transform="translate(-354.000000, -227.000000)">
+            <g id="Premium" transform="translate(353.000000, 225.000000)">
+                <text id="GRATUITO" font-family="Avenir-Light, Avenir" font-size="36" font-weight="300" fill="#FFFFFF">
+                    <tspan x="0" y="43">GRATUITO</tspan>
+                </text>
+                <path d="M3,54.5 L260.507767,54.5" id="Line-Copy-7" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <text id="CADASTRO" font-family="Avenir-Book, Avenir" font-size="12" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="3" y="12">CADASTRO</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

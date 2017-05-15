@@ -133,119 +133,265 @@
     ga('create', 'UA-22229864-1', 'auto');
     ga('send', 'pageview');
     </script>
-    <?php
-    // Verifica se o contrato do agenciado está vencido
-    if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contrato_vigente']."+2 years"))){
-      // Verifica quanto o agenciado tem de caches a receber
-      $id_usuario = $_SESSION['user'];
-      $recebivel = mysqli_query($link, "SELECT SUM(cache_liquido) as receber FROM financeiro WHERE id_elenco_financeiro='$id_usuario' AND tipo_entrada='cache' AND status_pagamento='0'");
-      $row_recebivel = mysqli_fetch_array($recebivel);
-      $recebivel = $row_recebivel['receber'];
-      $recebivel = number_format($recebivel,2,",",".");
-      // Modal
-      echo "
-          <div id='myModal' class='modal'>
-          <div class='modal-content'>
-          <img src='images/fechar.svg' class='close navigation_buttons' />
-          <img src='images/voltar.svg' class='back navigation_buttons' />
-          <div class='renova_01'>
-         <div class='page-header'>
-              <center><h1>Nosso contrato está vencido!</h1>
-              <p><strong>Cadastro ".$userRow['tipo_cadastro_vigente']."</strong> expirado em: ".date('d/m/Y', strtotime($userRow['data_contrato_vigente'].'+2 years'))."</p></center>
-      </div>
-        <div class='row'>
-        <div class='col-lg-12'>
-        <center>
-          <h4 class='renove'>Renove seu contrato para continuar trabalhando e aproveite os valores promocionais.</h4>
-          <p>Conheça nossas modalidades:</p></div><BR />
-          <div class='quadrot'>
-          <div class='quadro'>
-          <div class='quadro_concordo'>
+<?php
+// Verifica se o contrato do agenciado está vencido
+if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contrato_vigente']."+2 years"))){
+  // Verifica quanto o agenciado tem de caches a receber
+  $id_usuario = $_SESSION['user'];
+  $recebivel = mysqli_query($link, "SELECT SUM(cache_liquido) as receber FROM financeiro WHERE id_elenco_financeiro='$id_usuario' AND tipo_entrada='cache' AND status_pagamento='0'");
+  $row_recebivel = mysqli_fetch_array($recebivel);
+  $recebivel = $row_recebivel['receber'];
+  $recebivel = number_format($recebivel,2,",",".");
+  $recebivel_pieces = explode(",", $recebivel);
+  $recebivel = $recebivel_pieces[0];
+  $recebivel_cents = $recebivel_pieces[1];
+  // Modal
+  echo "
+<div id='myModal' class='modal'>
+  <div class='modal-content'>
+    <div class='renova_01'>
+        <div class='conteiner'>
+          <div class='navegacao'>
+            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          </div>
+          <div class='titulo'>
+            Nosso contrato expirou!
+          </div>
+          <div class='descricao'>
+            Seu cadastro foi temporariamente rebaixado de Premium para Gratuito até 27/07/2017, quando será cancelado.
+          </div>
           <div class='botoes'>
-          <form method='post' action='#' class='forms' id='renova_cadastro'>
-          <button id='btn_renova_cadastro' type='submit' class='botao'>
-          <input type='hidden' id='input_renova_01' name='id_usuario' value='$id_usuario' />
-          <input type='hidden' id='input_renova_02' name='cadastro' value='gratuito' />
-            <img src='images/gratuito.svg' class='first' /></button></form>
-          <form method='post' action='#' class='forms' id='renova_cadastro_premium'>
-          <button id='btn_renova_cadastro_premium' type='submit' class='botao'>
-          <input type='hidden' id='input_renova_premium_01' name='id_usuario' value='$id_usuario' />
-          <input type='hidden' id='input_renova_premium_02' name='cadastro' value='premium' />
-            <img src='images/premium.svg' class='second' /></button></form>
-          <form method='post' action='#' class='forms' id='renova_cadastro_profissional'>
-          <button id='btn_renova_cadastro_profissional' id='renova_cadastro' type='submit' class='botao'>
-          <input type='hidden' id='input_renova_profissional_01' name='id_usuario' value='$id_usuario' />
-          <input type='hidden' id='input_renova_profissional_02' name='cadastro' value='profissional' />
-            <img src='images/profissional.svg' class='third' /></button></form>
-          <BR /><BR />
+            <button class='botao botao_renovar-contrato'>Renovar meu contrato</button>
+            <button class='botao botao_apagar-perfil'>Apagar meu perfil</button>
           </div>
+        </div>
+    </div>
+    <div class='renova_02-1'>
+        <div class='conteiner'>
+            <div class='navegacao'>
+                <img src='images/voltar.svg' class='voltar-1 botoes_navegacao' />
+                <span class='progresso'>1 de 4</span>
+                <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+            </div>
+            <div class='titulo'>
+                Obrigada pela confiança :)
+            </div>
+            <div class='descricao'>
+                Clique nas modalidades de cadastro para conhecê-las e depois escolha a que melhor te atender:
+            </div>
+            <div class='botoes_modalidades'>
+                <button class='gratuito'><img src='images/botao-gratuito.svg' /></button>
+                <button class='premium'><img src='images/botao-premium.svg' /></button>
+                <button class='profissional'><img src='images/botao-profissional.svg' /></button>
+            </div>
+        </div>
+    </div>
+    <div class='renova_02-2'>
+        <div class='conteiner'>
+            <div class='navegacao'>
+                <img src='images/voltar.svg' class='voltar-2 botoes_navegacao' />
+                <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+            </div>
+            <div class='titulo'>
+                Você tem certeza?
+            </div>
+            <div class='descricao'>
+                Essa ação excluirá de forma permanente todos os seus dados, fotos e vídeos armazenados em nosso sistema.
+            </div>
+            <div class='botoes'>
+                <button class='botao botao_confirma_apagar'>Sim, adeus ;(</button>
+                <button class='botao voltar-2'>Nãão!! Cliquei errado!</button>
+            </div>
+        </div>
+    </div>
+    <div class='renova_03-gratuito'>
+        <div class='conteiner'>
+            <div class='navegacao'>
+                <img src='images/voltar.svg' class='voltar-3 botoes_navegacao' />
+                <span class='progresso'>2 de 4</span>
+                <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+            </div>
+            <div class='titulo'>
+                Perfeito para você começar
+            </div>
+            <div class='descricao'>
+                Nosso cadastro mais popular e que já deu oportunidade a mais de 10.000 pessoas desde 2009.
+            </div>
+            <div class='quadro-gratuito'>
+                <div class='icon'>
+                    <img src='images/gratuito_icon.svg' style='width:100%' />
+                </div>
+                <div class='texto'>
+                    <img src='images/gratuito_title.svg' style='width:100%' />
+                    <ul class='medium lista_cadastro'>
+                        <li class='itens'>Você faz suas fotos pelo celular e nos envia para cadastro e atualizações;</li>
+                        <li class='itens'>Cadastro sem custos;</li>
+                        <li class='itens'>Receba 60% do cachê líquido em todos os trabalhos;</li>
+                        <li class='itens'>Assinatura sem vencimento;</li>
+                    </ul>
+                </div>
+                <button id='btn_renova-cadastro-gratuito' class='escolher botao'>Escolher</button>
+            </div>
+        </div>
+    </div>
+    <div class='renova_03-premium'>
+    <div class='conteiner'>
+            <div class='navegacao'>
+                <img src='images/voltar.svg' class='voltar-3 botoes_navegacao' />
+                <span class='progresso'>2 de 4</span>
+                <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+            </div>
+            <div class='titulo'>
+                Mais chances de trabalhar
+            </div>
+            <div class='descricao'>
+                Melhor custo benefício que te deixa em vantagem na hora de ser escolhid$sexo para trabalhos.
+            </div>
+            <div class='quadro-premium'>
+                <div class='icon'>
+                    <img src='images/premium_icon.svg' style='width:100%' />
+                </div>
+                <div class='texto'>
+                    <img src='images/premium_title.svg' style='width:100%' />
+                    <ul class='medium lista_cadastro'>
+                        <li class='itens'>Cadastro com fotos e vídeos profissionais feitos em nosso estúdio;</li>
+                        <li class='itens'>Seu perfil tem destaque nas buscas por atores/modelos;</li>
+                        <li class='itens'>Receba 80% do cachê líquido em todos os trabalhos;</li>
+                        <li class='itens'>Assinatura anual;</li>
+                    </ul>
+                </div>
+                <div class='preco'><img src='images/preco_premium.svg' /></div>
+                <button id='btn_renova-cadastro-premium' class='escolher botao'>Escolher</button>
+            </div>
+        </div>
+    </div>
+    <div class='renova_03-profissional'>
+    <div class='conteiner'>
+            <div class='navegacao'>
+                <img src='images/voltar.svg' class='voltar-3 botoes_navegacao' />
+                <span class='progresso'>2 de 4</span>
+                <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+            </div>
+            <div class='titulo'>
+                Para quem trabalha muito
+            </div>
+            <div class='descricao'>
+                Headshots profissionais, menores taxas, super destaque nas buscas e transferências automáticas de cachês.
+            </div>
+            <div class='quadro-profissional'>
+                <div class='icon'>
+                    <img src='images/profissional_icon.svg' style='width:100%' />
+                </div>
+                <div class='texto'>
+                    <img src='images/profissional_title.svg' style='width:100%' />
+                    <ul class='medium lista_cadastro'>
+                        <li class='itens'>Ensaio fotográfico completo com 30 fotos tratadas entregues em DVD;</li>
+                        <li class='itens'>Cadastro e atualizações com fotos e vídeos profissionais feitos em nosso estúdio;</li>
+                        <li class='itens'>Você recebe 90% do cachê líquido em todos os trabalhos;</li>
+                        <li class='itens'>Seu perfil aparece primeiro nas buscas por atores/modelos;</li>
+                        <li class='itens'>Cachês disponíveis transferidos automaticamente para sua conta bancária;</li>
+                        <li class='itens'>Assinatura bienal;</li>
+                    </ul>
+                </div>
+                <div class='preco'><img src='images/preco_profissional.svg' /></div>
+              <button id='btn_renova-cadastro-profissional' class='escolher botao'>Escolher</button>
+            </div>
+            </div>
+        </div>
+    <div class='renova_04'>
+      <div class='conteiner'>
+        <div class='navegacao'>
+          <img src='images/voltar.svg' class='voltar-4 botoes_navegacao' />
+          <span class='progresso'>3 de 4</span>
+              <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+        </div>
+        <div class='titulo'>
+          Como gostaria de pagar?
+        </div>
+        <div class='descricao'>
+          Parcele em até 10x no cartão ou aproveite as vantagens de utilizar seu Saldo de Cachês a receber.
+        </div>
+        <div class='botoes'>
+          <button class='botao botao_saldo'>Saldo de Cachês</button>
+          <button class='botao botao_gateway'>Cartão ou Boleto</button>
+        </div>
+      </div>
+    </div>
+    <div class='renova_05'>
+      <div class='conteiner'>
+        <div class='navegacao'>
+          <img src='images/voltar.svg' class='voltar-4 botoes_navegacao' />
+          <span class='progresso'>4 de 4</span>
+              <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+        </div>
+        <div class='titulo'>
+          Renovar contrato
+        </div>
+        <div class='subtracao'>
+          <div class='operacoes'>
+            <div class='menos'><img src='images/menos.svg' /></div>
+            <div class='igual'><img src='images/igual.svg' /></div>
           </div>
+          <div class='valores'>
+            <div class='utilizando small'>utilizando meus cachês</div>
+            <div class='valor'>
+              <div class='small'>saldo disponível</div>
+              <div class='texto_valor'>
+                <span class='small'>R$ </span>
+                <span class='large' id='recebivel'>$recebivel</span>
+                <span class='small centavos'>,$recebivel_cents</span>
+              </div>
+            </div>
+            <div class='valor valor-cadastro'>
+              <div class='small'>Cadastro <span id='cadastro'></span></div>
+              <div class='texto_valor'>
+                <span class='small'>R$ </span>
+                <span class='large' id='valor'></span>
+                <span class='small centavos'>,00</span>
+              </div>
+            </div>
+            <div class='valor'>
+              <div class='small'>saldo remanescente</div>
+              <div class='texto_valor'>
+                <span class='small'>R$ </span>
+                <span class='large' id='remanescente'></span>
+                <span class='small centavos'>,$recebivel_cents</span>
+              </div>
+            </div>
           </div>
-          </div>
-
-        </center>
         </div>
+        <div class='aviso'>
+			<div class='checkbox'>
+					<input type='checkbox' id='terms' class='checado' />
+                    <img src='images/campo_obrigatorio.svg' class='requerido' />
+            </div>
+            <div class='declaro x-small'>
+                <label for='terms'>Declaro estar ciente dos <a href='#'>Termos do Contrato</a> e concordo em utilizar meu Saldo em Cachês para assinatura do Cadastro <span id='cadastro2'></span>.</label>
+            </div>
+		</div>
+        <div class='botoes'>
+          <button class='botao confirmar-saldo'>Confirmar</button>
         </div>
+      </div>
+    </div>
+    <div class='renova_06'>
+      <div class='conteiner'>
+        <div class='navegacao'>
+          <img src='images/fechar.svg' class='fechar botoes_navegacao' />
         </div>
-        ";
-        echo "<div class='renova_02'></div>
+        <div class='titulo'>
+          Contrato renovado!
         </div>
-        </div>";
-        echo "
-        <script type='text/javascript'>
-          // Get the modal
-          var modal = document.getElementById('myModal');
-
-          // Get the <span> element that closes the modal
-          var span = document.getElementsByClassName('close')[0];
-
-          // When the user clicks on <span> (x), close the modal
-          span.onclick = function() {
-            $('#myModal').fadeOut(250);
-          }
-
-          // When the user clicks anywhere outside of the modal, close it
-          window.onclick = function(event) {
-            if (event.target == modal) {
-              $('#myModal').fadeOut(250);
-            }
-          }
-          // When the user presses ESC, close the modal
-          $(document).keyup(function(e) {
-            if (e.keyCode == 27) {
-              $('#myModal').fadeOut(250);
-            }
-          });
-          $(window).on('load',function(){
-            $('#myModal').fadeIn(250);
-          });
-          $('.botao').click(function(){
-              jQuery('form').submit(function(){
-              var dados = jQuery( this ).serialize();
-
-              jQuery.ajax({
-                type: 'POST',
-                dataType: 'html',
-                url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
-                data: dados,
-                success: function( data ) {
-                  $('.renova_02').html(data);
-                  $('.renova_01').fadeOut(0);
-                  $('.renova_02').fadeIn(200);
-                  $('.back').fadeIn(200);
-                }
-              });
-              return false;
-              });
-          });
-          $('.back').click(function(){
-            $('.renova_02').fadeOut(0);
-            $('.renova_01').fadeIn(200);
-            $('.back').fadeOut(0);
-          });
-          </script>";
-    }
-    ?>
+        <div class='descricao'>
+          Nosso contrato foi renovado e enviado, junto com todas as informações, para o seu e-mail cadastrado.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>";
+}
+?>
+<script src='assets/js/modal.js'></script>
 </body>
 </html>
 <?php
