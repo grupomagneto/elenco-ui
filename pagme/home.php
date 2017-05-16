@@ -118,7 +118,7 @@
   </div>
 </div>
 </div>
- 
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
@@ -134,8 +134,9 @@
     ga('send', 'pageview');
     </script>
 <?php
+$cadastro = $userRow['tipo_cadastro_vigente'];
 // Verifica se o contrato do agenciado está vencido
-if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contrato_vigente']."+2 years"))){
+if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contrato_vigente']."+2 years"))){
   // Verifica quanto o agenciado tem de caches a receber
   $id_usuario = $_SESSION['user'];
   $recebivel = mysqli_query($link, "SELECT SUM(cache_liquido) as receber FROM financeiro WHERE id_elenco_financeiro='$id_usuario' AND tipo_entrada='cache' AND status_pagamento='0'");
@@ -146,6 +147,15 @@ if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtoti
   $recebivel = $recebivel_pieces[0];
   $recebivel_cents = $recebivel_pieces[1];
   // Modal
+  if ($cadastro == 'Gratuito') {
+    $descricao_cadastro = "Mudamos os termos do nosso contrato e você precisa renová-lo para continuar trabalhando";
+  }
+  if ($cadastro == 'Premium') {
+    $descricao_cadastro = "Seu cadastro foi temporariamente rebaixado de Premium para Gratuito até você renová-lo";
+  }
+  if ($cadastro == 'Profissional') {
+    $descricao_cadastro = "Seu cadastro foi temporariamente rebaixado de Profissional para Gratuito até você renová-lo";
+  }
   echo "
 <div id='myModal' class='modal'>
   <div class='modal-content'>
@@ -158,19 +168,19 @@ if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtoti
             Nosso contrato expirou!
           </div>
           <div class='descricao'>
-            Seu cadastro foi temporariamente rebaixado de Premium para Gratuito até 27/07/2017, quando será cancelado.
+            $descricao_cadastro
           </div>
           <div class='botoes'>
             <button class='botao botao_renovar-contrato'>Renovar meu contrato</button>
-            <button class='botao botao_apagar-perfil'>Apagar meu perfil</button>
+            <button class='botao botao_apagar-perfil'>Cancelar meu contrato</button>
           </div>
         </div>
     </div>
     <div class='renova_02-1'>
         <div class='conteiner'>
             <div class='navegacao'>
-                <img src='images/voltar.svg' class='voltar-1 botoes_navegacao' />
-                <span class='progresso'>1 de 4</span>
+                <img src='images/voltar.svg' class='voltar_1 botoes_navegacao' />
+                <span class='progresso'></span>
                 <img src='images/fechar.svg' class='fechar botoes_navegacao' />
             </div>
             <div class='titulo'>
@@ -189,33 +199,33 @@ if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtoti
     <div class='renova_02-2'>
         <div class='conteiner'>
             <div class='navegacao'>
-                <img src='images/voltar.svg' class='voltar-2 botoes_navegacao' />
+                <img src='images/voltar.svg' class='voltar_1-2 botoes_navegacao' />
                 <img src='images/fechar.svg' class='fechar botoes_navegacao' />
             </div>
             <div class='titulo'>
                 Você tem certeza?
             </div>
             <div class='descricao'>
-                Essa ação excluirá de forma permanente todos os seus dados, fotos e vídeos armazenados em nosso sistema.
+                Essa ação excluirá de forma permanente todos os seus dados, fotos e vídeos armazenados em nosso sistema
             </div>
             <div class='botoes'>
-                <button class='botao botao_confirma_apagar'>Sim, adeus ;(</button>
-                <button class='botao voltar-2'>Nãão!! Cliquei errado!</button>
+                <button class='botao botao_confirma_apagar'>Sim, apagar tudo</button>
+                <button class='botao voltar_1-2'>Não, cliquei errado</button>
             </div>
         </div>
     </div>
     <div class='renova_03-gratuito'>
         <div class='conteiner'>
             <div class='navegacao'>
-                <img src='images/voltar.svg' class='voltar-3 botoes_navegacao' />
-                <span class='progresso'>2 de 4</span>
+                <img src='images/voltar.svg' class='voltar_2 botoes_navegacao' />
+                <span class='progresso'></span>
                 <img src='images/fechar.svg' class='fechar botoes_navegacao' />
             </div>
             <div class='titulo'>
                 Perfeito para você começar
             </div>
             <div class='descricao'>
-                Nosso cadastro mais popular e que já deu oportunidade a mais de 10.000 pessoas desde 2009.
+                Nosso cadastro mais popular e que já deu oportunidade a mais de 10.000 pessoas desde 2009
             </div>
             <div class='quadro-gratuito'>
                 <div class='icon'>
@@ -227,17 +237,26 @@ if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtoti
                         <li class='itens'>Você faz suas fotos pelo celular e nos envia para cadastro e atualizações;</li>
                         <li class='itens'>Cadastro sem custos;</li>
                         <li class='itens'>Receba 60% do cachê líquido em todos os trabalhos;</li>
-                        <li class='itens'>Assinatura sem vencimento;</li>
+                        <li class='itens'>Nunca expira;</li>
                     </ul>
                 </div>
                 <button id='btn_renova-cadastro-gratuito' class='escolher botao'>Escolher</button>
+            </div>
+            <div class='aviso'>
+              <div class='checkbox'>
+                <input type='checkbox' id='terms-1' class='checado' />
+                <img src='images/campo_obrigatorio.svg' class='requerido' />
+              </div>
+              <div class='declaro x-small'>
+                <label for='terms'>Declaro estar ciente dos <a href='#'>Termos do Contrato</a> e concordo em renovar minha assinatura como Cadastro Gratuito</label>
+              </div>
             </div>
         </div>
     </div>
     <div class='renova_03-premium'>
     <div class='conteiner'>
             <div class='navegacao'>
-                <img src='images/voltar.svg' class='voltar-3 botoes_navegacao' />
+                <img src='images/voltar.svg' class='voltar_2 botoes_navegacao' />
                 <span class='progresso'>2 de 4</span>
                 <img src='images/fechar.svg' class='fechar botoes_navegacao' />
             </div>
@@ -245,7 +264,7 @@ if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtoti
                 Mais chances de trabalhar
             </div>
             <div class='descricao'>
-                Melhor custo benefício que te deixa em vantagem na hora de ser escolhid$sexo para trabalhos.
+                Melhor custo benefício e que te deixa em vantagem na hora de ser escolhid$sexo para trabalhos
             </div>
             <div class='quadro-premium'>
                 <div class='icon'>
@@ -263,12 +282,21 @@ if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtoti
                 <div class='preco'><img src='images/preco_premium.svg' /></div>
                 <button id='btn_renova-cadastro-premium' class='escolher botao'>Escolher</button>
             </div>
+            <div class='aviso'>
+              <div class='checkbox'>
+                <input type='checkbox' id='terms-2' class='checado' />
+                <img src='images/campo_obrigatorio.svg' class='requerido' />
+              </div>
+              <div class='declaro x-small'>
+                <label for='terms'>Declaro estar ciente dos <a href='#'>Termos do Contrato</a> e concordo em renovar minha assinatura como Cadastro Premium</label>
+              </div>
+            </div>
         </div>
     </div>
     <div class='renova_03-profissional'>
     <div class='conteiner'>
             <div class='navegacao'>
-                <img src='images/voltar.svg' class='voltar-3 botoes_navegacao' />
+                <img src='images/voltar.svg' class='voltar_2 botoes_navegacao' />
                 <span class='progresso'>2 de 4</span>
                 <img src='images/fechar.svg' class='fechar botoes_navegacao' />
             </div>
@@ -276,7 +304,7 @@ if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtoti
                 Para quem trabalha muito
             </div>
             <div class='descricao'>
-                Headshots profissionais, menores taxas, super destaque nas buscas e transferências automáticas de cachês.
+                Ensaio completo, menores taxas, super destaque nas buscas e transferências automáticas de cachês
             </div>
             <div class='quadro-profissional'>
                 <div class='icon'>
@@ -296,21 +324,28 @@ if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtoti
                 <div class='preco'><img src='images/preco_profissional.svg' /></div>
               <button id='btn_renova-cadastro-profissional' class='escolher botao'>Escolher</button>
             </div>
+            <div class='aviso'>
+              <div class='checkbox'>
+                <input type='checkbox' id='terms-3' class='checado' />
+                <img src='images/campo_obrigatorio.svg' class='requerido' />
+              </div>
+              <div class='declaro x-small'>
+                <label for='terms'>Declaro estar ciente dos <a href='#'>Termos do Contrato</a> e concordo em renovar minha assinatura como Cadastro Profissional</label>
+              </div>
+            </div>
             </div>
         </div>
     <div class='renova_04'>
       <div class='conteiner'>
         <div class='navegacao'>
-          <img src='images/voltar.svg' class='voltar-4 botoes_navegacao' />
+          <img src='images/voltar.svg' class='voltar_3 botoes_navegacao' />
           <span class='progresso'>3 de 4</span>
               <img src='images/fechar.svg' class='fechar botoes_navegacao' />
         </div>
         <div class='titulo'>
-          Como gostaria de pagar?
+          Ok! Como gostaria de pagar?
         </div>
-        <div class='descricao'>
-          Parcele em até 10x no cartão ou aproveite as vantagens de utilizar seu Saldo de Cachês a receber.
-        </div>
+        <div class='descricao' id='descricao-pagamento'></div>
         <div class='botoes'>
           <button class='botao botao_saldo'>Saldo de Cachês</button>
           <button class='botao botao_gateway'>Cartão ou Boleto</button>
@@ -320,7 +355,7 @@ if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtoti
     <div class='renova_05'>
       <div class='conteiner'>
         <div class='navegacao'>
-          <img src='images/voltar.svg' class='voltar-4 botoes_navegacao' />
+          <img src='images/voltar.svg' class='voltar_4 botoes_navegacao' />
           <span class='progresso'>4 de 4</span>
               <img src='images/fechar.svg' class='fechar botoes_navegacao' />
         </div>
@@ -360,17 +395,37 @@ if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtoti
             </div>
           </div>
         </div>
-        <div class='aviso'>
-			<div class='checkbox'>
-					<input type='checkbox' id='terms' class='checado' />
-                    <img src='images/campo_obrigatorio.svg' class='requerido' />
-            </div>
-            <div class='declaro x-small'>
-                <label for='terms'>Declaro estar ciente dos <a href='#'>Termos do Contrato</a> e concordo em utilizar meu Saldo em Cachês para assinatura do Cadastro <span id='cadastro2'></span>.</label>
-            </div>
-		</div>
         <div class='botoes'>
           <button class='botao confirmar-saldo'>Confirmar</button>
+        </div>
+      </div>
+    </div>
+    <div class='renova_05-2'>
+      <div class='conteiner'>
+        <div class='navegacao'>
+          <img src='images/voltar.svg' class='voltar_4 botoes_navegacao' />
+          <span class='progresso'>4 de 4</span>
+              <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+        </div>
+        <div class='titulo'>
+          Renovar contrato
+        </div>
+        <div class='subtracao'>
+
+          <div class='valores'>
+            <div class='utilizando small'>Pagamento em Cartão ou Boleto</div>
+            <div class='valor valor-cadastro'>
+              <div class='small'>Cadastro <span id='cadastro'></span></div>
+              <div class='texto_valor'>
+                <span class='small'>R$ </span>
+                <span class='large' id='valor'></span>
+                <span class='small centavos'>,00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='botoes'>
+          <button class='botao botao-gateway'></button>
         </div>
       </div>
     </div>
@@ -383,7 +438,7 @@ if ($userRow['tipo_cadastro_vigente'] != "Ator" && $hoje > date('Y-m-d', strtoti
           Contrato renovado!
         </div>
         <div class='descricao'>
-          Nosso contrato foi renovado e enviado, junto com todas as informações, para o seu e-mail cadastrado.
+          Nosso contrato foi renovado e enviado, junto com todas as informações, para o seu e-mail cadastrado
         </div>
       </div>
     </div>

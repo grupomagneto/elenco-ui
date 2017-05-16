@@ -87,11 +87,11 @@ fieldset[disabled] .btn-primary.focus {
 background-color: rgba(255,255,255,0.30);
 border-color: #FFFFFF;
 }
-
 a {
 font-family: Avenir-Heavy;
 color: #FFFFFF;
 outline: 1;
+text-decoration: underline;
 }
 .x-small{
 font-family: Avenir-Book;
@@ -114,8 +114,11 @@ font-size: 30px;
 color: rgba(255,255,255,1);
 }
 a:active,
-a:hover {
+a:hover,
+a:focus {
 outline: 0;
+color: #FFFFFF;
+opacity: 1;
 }
 .mini {
 color: #ffffff;
@@ -337,7 +340,7 @@ opacity: 1;
 }
 .quadro-gratuito{
 width: 90%;
-height: 450px;
+height: 430px;
 background: #FF5D85;
 border: 1px solid #FFFFFF;
 box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
@@ -392,10 +395,13 @@ margin-bottom: 20px;
 }
 .subtracao {
 width: 90%;
+height: 190px;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 margin-left: -26px;
+margin-bottom: 20px;
+margin-top: -10px;
 }
 .utilizando{
 display: flex;
@@ -427,13 +433,17 @@ width: 280px;
 display: flex;
 flex-wrap: nowrap;
 justify-content: center;
-margin: 10px auto -40px 20px;
+margin: 10px auto 20px 20px;
 }
 .declaro{
 width: 220px;
+opacity: 0.7;
 }
 .requerido{
 display: none;
 position: absolute;
-margin: 20px -28px;
+margin: -32px -28px;
+}
+.botao_saldo{
+display: none;
 }
