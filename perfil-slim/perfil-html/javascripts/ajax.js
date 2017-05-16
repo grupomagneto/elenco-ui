@@ -20,8 +20,79 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 	
 alert("mobile detected");
 
-	$('.checkbox-image-action__fav').on('touchstart', function() {
+//$('.checkbox-image-action__fav').on('touchstart', function(e) {
+//});
+
+$(document).ready(function(){
+   $("img.checkbox-multiples-img__fav").css('display', 'none');
+
+   $('img.tab-image__background').off('mouseleave', function () {
+			 $("img.checkbox-multiples-img__fav", $(this).closest(".tab-actions__multiples")).css('display', 'block');
+	 });
     
+});
+
+$(document).ready(function(){
+   $(".tab-actions__multiples > .subtitle__prof").css('display', 'none');
+
+		$('img.tab-image__background').off('mouseleave', function () {
+        $("> .subtitle__prof", $(this).closest(".tab-actions__multiples")).css('display', 'block');
+	 });
+    
+});
+
+$(document).ready(function(){
+   $(".tab-actions__multiples > .subtitle").css('display', 'none');
+
+	
+		$('img.tab-image__background').off('mouseleave', function () {
+        $("> .subtitle", $(this).closest(".tab-actions__multiples")).css('display', 'block');
+	 });
+	
+    
+});
+	
+	
+	// quantos milissegundos vai ser pressionado?
+  var longpressMin = 1000;
+	var longpressMax = 3000;
+	// mantem hora de inicio
+	var start;
+
+	$(".checkbox-image-action__fav").on('touchstart', function(e){
+	    start = new Date().getTime();
+	});
+    
+	$(".checkbox-image-action__fav").on('touchleave', function(e){
+        start = 0;
+    } );
+    
+	$( ".checkbox-image-action__fav" ).on('touchend', function(e){
+	    if (new Date().getTime() >= (start + longpressMin) && new Date().getTime() <= (start + longpressMax)){
+	      alert('long press!');   
+				
+		jQuery('form').submit(function(){
+    var dados = jQuery( this ).serialize();
+    
+    jQuery.ajax({
+      type: "POST",
+      dataType: 'html',
+      url: "api/addsearch.php",
+      data: dados,
+      success: function( data )
+      { 
+				console.log("ajax click longo mobile sucesso");
+				
+				$('img.fav-action', $(this).closest(".tab-actions__multiples")).fadeToggle('fast');
+            
+      }
+    });
+    return false;
+  });
+				
+	    } else {
+	       alert('clique curto');   
+				    
     jQuery('form').submit(function(){
     var dados = jQuery( this ).serialize();
     
@@ -63,37 +134,9 @@ alert("mobile detected");
     });
     return false;
   });
+				
+	 }
 });
-
-$(document).ready(function(){
-   $("img.checkbox-multiples-img__fav").css('display', 'none');
-
-   $('img.tab-image__background').off('mouseleave', function () {
-			 $("img.checkbox-multiples-img__fav", $(this).closest(".tab-actions__multiples")).css('display', 'block');
-	 });
-    
-});
-
-$(document).ready(function(){
-   $(".tab-actions__multiples > .subtitle__prof").css('display', 'none');
-
-		$('img.tab-image__background').off('mouseleave', function () {
-        $("> .subtitle__prof", $(this).closest(".tab-actions__multiples")).css('display', 'block');
-	 });
-    
-});
-
-$(document).ready(function(){
-   $(".tab-actions__multiples > .subtitle").css('display', 'none');
-
-	
-		$('img.tab-image__background').off('mouseleave', function () {
-        $("> .subtitle", $(this).closest(".tab-actions__multiples")).css('display', 'block');
-	 });
-	
-    
-});
-	
 	
 } else {
 	
@@ -145,7 +188,7 @@ $('.checkbox-image-action__fav').on('click', function() {
 	
 
 	
-	$(document).ready(function(){
+$(document).ready(function(){
    $("img.checkbox-multiples-img__fav").css('display', 'none');
 
 		$('img.tab-image__background').on('mouseover', function () {
@@ -224,6 +267,7 @@ $(document).ready(function(){
     return false;
   }
 })(jQuery);
+
 
 
 

@@ -1758,6 +1758,19 @@ button.like img {
 /*    display: none;*/
 }
 
+.teste {
+	background: transparent;
+  background-size: 95px 95px;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 95px;
+  height: 95px;
+  left: 0;
+  right: 0;
+  margin-left: -1px;
+  margin-top: 0px;
+}
+
 .tab-actions {
   position: relative;
   z-index: 1; }
@@ -2334,15 +2347,12 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active{
 }
 
 }
-.noshow{
+.noshow {
   display: none;
 }
 
-.teste {
-	width: 60px;
-}
 
-.container{
+.container {
 	margin-top: -20px;
 }
 
