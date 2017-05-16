@@ -15,6 +15,7 @@ $(".botaofavorita").click(function(){
     return false;
   });
 }); 
+
 	
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	
@@ -170,7 +171,20 @@ $('.checkbox-image-action__fav').on('click', function() {
             $(".gradient").css("display", "block");
             $(".container").css("display", "block");
         });
-        
+				
+				
+				//press ESC
+				$(document).keydown(function(e) {
+						// ESCAPE key pressed
+						if (e.keyCode == 27) {
+							$(".photo__single").css("display", "none");
+							$(".container-outline__single").css("display", "none");
+							$(".container-outline__categories").css("display", "none");
+							$(".gradient").css("display", "block");
+							$(".container").css("display", "block");
+						}
+				});
+
         var mySwiper = new Swiper ('.swiper-container', {
             // Optional parameters
             direction: 'horizontal',

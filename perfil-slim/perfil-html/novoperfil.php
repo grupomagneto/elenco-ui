@@ -278,7 +278,7 @@ $page = 0;
 							<button type='submit' class='checkbox-image-action__fav'>
 							<input type='hidden' name='key' value='$id' class='checkbox-image__background' />
 							<img class='tab-image__background' alt='$nome' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
-							<div class='teste'></div>
+							<div class='mask-photo'></div>
             </button>
             </form>
 
