@@ -441,15 +441,6 @@ $page = 0;
     $(".container-outline__categories").css("display", "none");
   });
 
-  $(".dislike").click(function(){
-      $(".wrapper.list-mode-single .box:last-child").addClass("fadeOutLeft");
-    $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
-                function(event) {
-      // Do something when the transition ends
-      $(".wrapper.list-mode-single .box:last-child").remove();
-    });
-  });
-
   $(".like").click(function(){
       $(".wrapper.list-mode-single .box:last-child").addClass("fadeOutRight");
     $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
