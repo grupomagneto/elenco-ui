@@ -192,7 +192,7 @@ $recebivel_cents = $recebivel_pieces[1];
                   </g>
               </g>
           </svg>
-            </section>
+</section>
     <!--       <img src="../images/close.svg" /> -->
           </button>
         </a>
@@ -229,7 +229,6 @@ $recebivel_cents = $recebivel_pieces[1];
 				</div>
 				<!-- If we need pagination -->
 				<div class="swiper-pagination"></div>
-
 
 						<input type='radio' name='imagefavorita' value='valor da imagem' class='checkbox-single' />
 						<button type='submit' class='checkbox-single-action__fav botaofavorita fav' onclick='AddTableRow()'>
