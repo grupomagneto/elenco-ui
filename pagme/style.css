@@ -95,7 +95,7 @@ text-decoration: underline;
 }
 .x-small{
 font-family: Avenir-Book;
-font-size: 10px;
+font-size: 11px;
 color: rgba(255,255,255,1);
 }
 .small{
@@ -447,3 +447,10 @@ margin: -32px -28px;
 .botao_saldo{
 display: none;
 }
+/*
+@media only screen and (min-width: 1025px) {
+    .modal-content {
+        width: 500px;
+    }
+}
+*/

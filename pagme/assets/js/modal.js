@@ -17,6 +17,7 @@ $(window).on('load',function(){
   $('#myModal').fadeIn(250);
   $('.renova_02-1').fadeOut(0);
   $('.renova_02-2').fadeOut(0);
+  $('.renova_02-3').fadeOut(0);
   $('.renova_03-gratuito').fadeOut(0);
   $('.renova_03-premium').fadeOut(0);
   $('.renova_03-profissional').fadeOut(0);
@@ -44,6 +45,11 @@ $('.botao_apagar-perfil').click(function(){
     $('.renova_02-2').fadeIn(200);
     $('.voltar').fadeIn(200);
     $('.navegacao').css('justify-content', 'space-between');
+});
+$('.botao_confirma_apagar').click(function(){
+  $('.renova_02-2').fadeOut(0);
+  $('.navegacao').css('justify-content', 'flex-end');
+  $('.renova_02-3').fadeIn(200);
 });
 $('.gratuito').click(function(){
     $('.renova_02-1').fadeOut(0);
@@ -98,6 +104,7 @@ $('.voltar_3').click(function(){
 });
 $('.voltar_4').click(function(){
   $('.renova_05').fadeOut(0);
+  $('.renova_05-2').fadeOut(0);
   $('.renova_04').fadeIn(200);
   $('.navegacao').css('justify-content', 'space-between');
   $('.modal-content').css('height', '350px');
@@ -251,5 +258,13 @@ $('.botao_gateway').click(function(){
 });
 $('.checado').click(function(){
   $('.requerido').fadeOut(200);
+});
+$('.confirmar-saldo').click(function(){
+  $('.renova_05').fadeOut(0);
+  $('.renova_06').fadeIn(200);
+  $('.modal-content').css('height', '350px');
+  $('.titulo').css('margin-top', '-10px');
+  $('.descricao').css('margin', '0px 20px 0px 20px');
+  $('.navegacao').css('justify-content', 'flex-end');
 });
 

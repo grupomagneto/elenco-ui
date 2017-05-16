@@ -112,7 +112,7 @@
       <p>As transferências apenas poderão ser feitas para contas bancárias vinculadas ao CPF do agenciado ou, no caso de menores de idade, para contas vinculadas ao CPF do responsável.</p>
       <p>Os pagamentos em cheque continuarão a ser feitos na nova sede da agência até o dia 31/03/2017, quando serão completamente substituídos pelo PAGME.</p>
       <p>Como estamos em fase de testes, pedimos desculpas antecipadas por qualquer erro e colocamos um número para suporte via whatsapp: 61 99311-0767.</p>
-      <p>Obrigado e sucesso!</p>
+      <p>Obrigada e sucesso!</p>
       </div>
     </div>
   </div>
@@ -206,11 +206,27 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 Você tem certeza?
             </div>
             <div class='descricao'>
-                Essa ação excluirá de forma permanente todos os seus dados, fotos e vídeos armazenados em nosso sistema
+                Essa ação removerá o seu perfil, fotos e vídeos de nosso sistema de buscas e revogará seu acesso ao sistema PAGME
             </div>
             <div class='botoes'>
-                <button class='botao botao_confirma_apagar'>Sim, apagar tudo</button>
+                <button class='botao botao_confirma_apagar'>Sim, encerrar contrato</button>
                 <button class='botao voltar_1-2'>Não, cliquei errado</button>
+            </div>
+        </div>
+    </div>
+    <div class='renova_02-3'>
+        <div class='conteiner'>
+            <div class='navegacao'>
+                <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+            </div>
+            <div class='titulo'>
+                Contrato encerrado ;(
+            </div>
+            <div class='descricao'>
+                Sentimos muito pela sua partida e esperamos poder te servir novamente no futuro
+            </div>
+            <div class='botoes'>
+                
             </div>
         </div>
     </div>
@@ -248,7 +264,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 <img src='images/campo_obrigatorio.svg' class='requerido' />
               </div>
               <div class='declaro x-small'>
-                <label for='terms'>Declaro estar ciente dos <a href='#'>Termos do Contrato</a> e concordo em renovar minha assinatura como Cadastro Gratuito</label>
+                <label for='terms'>Li e estou ciente dos <a href='#'>Termos do Contrato</a> para renovação de minha assinatura como Cadastro Gratuito</label>
               </div>
             </div>
         </div>
@@ -288,7 +304,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 <img src='images/campo_obrigatorio.svg' class='requerido' />
               </div>
               <div class='declaro x-small'>
-                <label for='terms'>Declaro estar ciente dos <a href='#'>Termos do Contrato</a> e concordo em renovar minha assinatura como Cadastro Premium</label>
+                <label for='terms'>Li e estou ciente dos <a href='#'>Termos do Contrato</a> para renovação de minha assinatura como Cadastro Premium</label>
               </div>
             </div>
         </div>
@@ -330,7 +346,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 <img src='images/campo_obrigatorio.svg' class='requerido' />
               </div>
               <div class='declaro x-small'>
-                <label for='terms'>Declaro estar ciente dos <a href='#'>Termos do Contrato</a> e concordo em renovar minha assinatura como Cadastro Profissional</label>
+                <label for='terms'>Li e estou ciente dos <a href='#'>Termos do Contrato</a> para renovação de minha assinatura como Cadastro Profissional</label>
               </div>
             </div>
             </div>
@@ -438,7 +454,10 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           Contrato renovado!
         </div>
         <div class='descricao'>
-          Nosso contrato foi renovado e enviado, junto com todas as informações, para o seu e-mail cadastrado
+          Nosso contrato foi renovado e enviado, junto com todas as informações, para o seu e-mail cadastrado. Obrigada!
+        </div>
+        <div class='botoes'>
+            <button class='botao revisar-dados'>Revisar dados pessoais</button>
         </div>
       </div>
     </div>
