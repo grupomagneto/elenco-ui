@@ -53,6 +53,7 @@ else {
 <html>
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <title>Bem-vind<?php echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel='stylesheet' href='assets/css/bootstrap.css' type='text/css'  />
 <link rel='stylesheet' href='style.css' type='text/css' />
@@ -107,7 +108,7 @@ else {
     </nav>
 
 <div id='wrapper'>
-<div class="gradient ">
+<div class="gradient inicio_login">
   <div class='container'>
 <?php
   $id = $_SESSION['user'];
@@ -371,7 +372,7 @@ else {
         </div>
 
         <div class='form-group'>
-          <p><h5>Agência (sem DV):</h5></p>
+          <p><h5>Agência (apenas números, sem DV):</h5></p>
           <div class='input-group'>
             <span class='input-group-addon'><span class='glyphicon glyphicon-piggy-bank'></span></span>
             <input type='number' name='agencia' class='form-control' placeholder='Digite o código da sua agência' required />
@@ -380,7 +381,7 @@ else {
         </div>
 
         <div class='form-group'>
-          <p><h5>Conta corrente (com DV):</h5></p>
+          <p><h5>Conta corrente (apenas números, com DV):</h5></p>
           <div class='input-group'>
             <span class='input-group-addon'><span class='glyphicon glyphicon-piggy-bank'></span></span>
             <input type='number' name='conta' class='form-control' placeholder='Digite o número da sua conta bancária' required />
@@ -395,7 +396,7 @@ else {
         </div>
 
         <div class='form-group'>
-          <button type='submit' class='btn btn-block btn-primary' name='cadastrar' id='cadastrar' disabled>Cadastrar conta</button>
+          <button type='submit' class='btn btn-block btn-primary botao' name='cadastrar' id='cadastrar' disabled>Cadastrar conta</button>
         </div>
 
 </div></form></div></div></div>

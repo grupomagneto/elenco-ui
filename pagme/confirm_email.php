@@ -34,6 +34,7 @@ if (empty($_SESSION['email_sent'])) {
     <html lang='pt-BR'>
     <head>
     <meta http-equiv='Content-type' content='text/html; charset=utf-8' />
+    <meta name='viewport' content='width=device-width, user-scalable=no'>
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:400' />
       <style type='text/css'>
         h1 { font-family: 'Roboto', sans-serif; font-weight: 400; }

@@ -45,6 +45,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <title>Bem-vind<? echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -99,14 +100,15 @@
       </div>
     </nav>
 	<div id="wrapper">
-<div class="gradient ">
+<div class="gradient inicio_login">
 	<div class="container">
+        <div class='row'>
+      <div class='col-md-12'>
     <div class='page-header'>
       <h2>Sistema PAGME</h2>
       <p>Pagamento de Agenciados Magneto Elenco (versão ßeta)</p>
     </div>
-    <div class='row'>
-      <div class='col-lg-12'>
+
       <p>O PAGME é o novo sistema de pagamentos da Magneto Elenco. Ainda em sua primeira versão de teste, o PAGME vai substituir o pagamento de cachês em cheques nominais e cruzados por tranferências para a conta bancária de cada agenciado.</p>
       <p>Cada pedido de transferência levará até 3 dias úteis para ser concluído e terá um custo de R$ 10,00 por transferência, descontado do saldo a ser transferido. É possível transferir mais de um cachê na mesma transferência e pagar a taxa apenas uma vez.</p>
       <p>As transferências apenas poderão ser feitas para contas bancárias vinculadas ao CPF do agenciado ou, no caso de menores de idade, para contas vinculadas ao CPF do responsável.</p>
@@ -226,7 +228,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 Sentimos muito pela sua partida e esperamos poder te servir novamente no futuro
             </div>
             <div class='botoes'>
-                
+
             </div>
         </div>
     </div>
@@ -264,7 +266,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 <img src='images/campo_obrigatorio.svg' class='requerido' />
               </div>
               <div class='declaro x-small'>
-                <label for='terms'>Li e estou ciente dos <a href='#'>Termos do Contrato</a> para renovação de minha assinatura como Cadastro Gratuito</label>
+                <label for='terms'>Li e estou de acordo com os <a href='#'>Termos do Contrato</a> para renovação de minha assinatura como Cadastro Gratuito</label>
               </div>
             </div>
         </div>
@@ -304,7 +306,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 <img src='images/campo_obrigatorio.svg' class='requerido' />
               </div>
               <div class='declaro x-small'>
-                <label for='terms'>Li e estou ciente dos <a href='#'>Termos do Contrato</a> para renovação de minha assinatura como Cadastro Premium</label>
+                <label for='terms'>Li e estou de acordo com os <a href='#'>Termos do Contrato</a> para renovação de minha assinatura como Cadastro Premium</label>
               </div>
             </div>
         </div>
@@ -346,7 +348,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 <img src='images/campo_obrigatorio.svg' class='requerido' />
               </div>
               <div class='declaro x-small'>
-                <label for='terms'>Li e estou ciente dos <a href='#'>Termos do Contrato</a> para renovação de minha assinatura como Cadastro Profissional</label>
+                <label for='terms'>Li e estou de acordo com os <a href='#'>Termos do Contrato</a> para renovação de minha assinatura como Cadastro Profissional</label>
               </div>
             </div>
             </div>

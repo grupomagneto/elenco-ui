@@ -39,6 +39,7 @@ if ($n <= $count) {
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <title>Bem-vind<?php echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="assets/css/jobs.css" type="text/css" />
@@ -93,7 +94,7 @@ if ($n <= $count) {
       </div>
     </nav>
 	<div id="wrapper">
-<div class="gradient">
+<div class="gradient inicio_login">
 	<div class="container">
        <div class="row">
         <div class="col-lg-6 col-center">
@@ -219,7 +220,7 @@ $recebivel_cents = $recebivel_pieces[1];
     $data_job = date('d/m/y',strtotime($row['data_job']));
     $data_pagamento = date('d/m/y',strtotime($row['data_pagamento']));
     if ($row['status_pagamento'] == '0' && $row['liberado'] == '1' && $row['request_timestamp'] == NULL) {
-      $botao = "<button type='submit' class='btn btn-sacar btn-block btn-primary'>Retirar dinheiro</button>";
+      $botao = "<button type='submit' class='btn btn-sacar btn-block btn-primary botao'>Retirar dinheiro</button>";
     }
     if ($row['status_pagamento'] == '0' && $row['liberado'] == '1' && $row['request_timestamp'] != NULL) {
       $botao = "<p class='btn btn-block btn-pago'>Em transferência...</p>";
