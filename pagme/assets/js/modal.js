@@ -109,7 +109,7 @@ $('.voltar_4').click(function(){
   $('.navegacao').css('justify-content', 'space-between');
   $('.modal-content').css('height', '350px');
 });
-$('#btn_renova-cadastro-gratuito').click(function(){
+$('#btn_renova-cadastro-gratuito').click(function(e){
   if(!$('#terms-1').is(':checked')){
     $('.requerido').fadeIn(200);
     e.preventDefault();
@@ -121,32 +121,20 @@ $('#btn_renova-cadastro-gratuito').click(function(){
     $('.titulo').css('margin-top', '-10px');
     $('.descricao').css('margin', '0px 20px 0px 20px');
     $('.navegacao').css('justify-content', 'flex-end');
-
     // Ajax Cadastros
-// $('.escolher').click(function(){
-//     jQuery('form').submit(function(){
-//     var dados = jQuery( this ).serialize();
-
-//     jQuery.ajax({
-//       type: 'POST',
-//       dataType: 'html',
-//       url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
-//       data: dados,
-//       success: function( data ) {
-//         $('.renova_04').html(data);
-//         $('.renova_03-gratuito').fadeOut(0);
-//         $('.renova_03-premium').fadeOut(0);
-//         $('.renova_03-profissional').fadeOut(0);
-//         $('.modal-content').fadeOut(0);
-//         $('.renova_04').fadeIn(200);
-//       }
-//     });
-//     return false;
-//     });
-// });
+    jQuery('#escolhe_gratuito').submit(function(){
+      var dados = jQuery( this ).serialize();
+      jQuery.ajax({
+        type: 'POST',
+        dataType: 'html',
+        url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
+        data: dados
+      });
+    });
+    e.preventDefault();
   }
 });
-$('#btn_renova-cadastro-premium').click(function(){
+$('#btn_renova-cadastro-premium').click(function(e){
   if(!$('#terms-2').is(':checked')){
     $('.requerido').fadeIn(200);
     e.preventDefault();
@@ -172,31 +160,20 @@ $('#btn_renova-cadastro-premium').click(function(){
       $('.botao_saldo').fadeOut(0);
       document.getElementById("descricao-pagamento").innerHTML = "Parcele em até 10x sem juros no Cartão de Crédito ou pague por Boleto Bancário.";
     }
-        // Ajax Cadastros
-// $('.escolher').click(function(){
-//     jQuery('form').submit(function(){
-//     var dados = jQuery( this ).serialize();
-
-//     jQuery.ajax({
-//       type: 'POST',
-//       dataType: 'html',
-//       url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
-//       data: dados,
-//       success: function( data ) {
-//         $('.renova_04').html(data);
-//         $('.renova_03-gratuito').fadeOut(0);
-//         $('.renova_03-premium').fadeOut(0);
-//         $('.renova_03-profissional').fadeOut(0);
-//         $('.modal-content').fadeOut(0);
-//         $('.renova_04').fadeIn(200);
-//       }
-//     });
-//     return false;
-//     });
-// });
+    // Ajax Cadastros
+    // jQuery('#escolhe_premium').submit(function(){
+    //   var dados = jQuery( this ).serialize();
+    //   jQuery.ajax({
+    //     type: 'POST',
+    //     dataType: 'html',
+    //     url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
+    //     data: dados
+    //   });
+    // });
+    // e.preventDefault();
   }
 });
-$('#btn_renova-cadastro-profissional').click(function(){
+$('#btn_renova-cadastro-profissional').click(function(e){
   if(!$('#terms-3').is(':checked')){
     $('.requerido').fadeIn(200);
     e.preventDefault();
@@ -222,28 +199,17 @@ $('#btn_renova-cadastro-profissional').click(function(){
       $('.botao_saldo').fadeOut(0);
       document.getElementById("descricao-pagamento").innerHTML = "Parcele em até 10x sem juros no Cartão de Crédito ou pague por Boleto Bancário.";
     }
-            // Ajax Cadastros
-// $('.escolher').click(function(){
-//     jQuery('form').submit(function(){
-//     var dados = jQuery( this ).serialize();
-
-//     jQuery.ajax({
-//       type: 'POST',
-//       dataType: 'html',
-//       url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
-//       data: dados,
-//       success: function( data ) {
-//         $('.renova_04').html(data);
-//         $('.renova_03-gratuito').fadeOut(0);
-//         $('.renova_03-premium').fadeOut(0);
-//         $('.renova_03-profissional').fadeOut(0);
-//         $('.modal-content').fadeOut(0);
-//         $('.renova_04').fadeIn(200);
-//       }
-//     });
-//     return false;
-//     });
-// });
+    // Ajax Cadastros
+    // jQuery('#escolhe_profissional').submit(function(){
+    //   var dados = jQuery( this ).serialize();
+    //   jQuery.ajax({
+    //     type: 'POST',
+    //     dataType: 'html',
+    //     url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
+    //     data: dados
+    //   });
+    // });
+    // e.preventDefault();
   }
 });
 $('.botao_saldo').click(function(){

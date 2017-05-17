@@ -101,7 +101,7 @@ if ($n <= $count) {
 <?php
 // $id = '10377';
 $id = $_SESSION['user'];
-$result = mysqli_query($link, "SELECT id, tipo_entrada, cliente_job, data_job, cache_liquido, status_pagamento, data_pagamento, liberado, request_timestamp FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' ORDER BY data_job DESC LIMIT 0, 100");
+$result = mysqli_query($link, "SELECT id, tipo_entrada, cliente_job, data_job, (cache_liquido - ifnull(abatimento_cache, 0) - ifnull(valor_pago, 0)) as cache, cache_liquido, abatimento_cache, data_abatimento, produto_abatimento, status_pagamento, data_pagamento, liberado, request_timestamp FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' ORDER BY data_job DESC LIMIT 0, 100");
 
 $primeiro_contrato = mysqli_query($link, "SELECT tipo_cadastro_vigente, data_1o_contrato as primeiro_contrato FROM tb_elenco WHERE id_elenco='$id'");
 $row = mysqli_fetch_array($primeiro_contrato);
@@ -128,7 +128,7 @@ $n_jobs = mysqli_query($link, "SELECT COUNT(cache_liquido) as qtd FROM financeir
 $row = mysqli_fetch_array($n_jobs);
 $n_jobs = $row['qtd'];
 
-$indisponivel = mysqli_query($link, "SELECT SUM(cache_liquido) as indisponivel FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento='0' AND (liberado IS NULL OR liberado='0')");
+$indisponivel = mysqli_query($link, "SELECT SUM(cache_liquido - ifnull(abatimento_cache, 0) - ifnull(valor_pago, 0)) as indisponivel FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento='0' AND (liberado IS NULL OR liberado='0')");
 $row = mysqli_fetch_array($indisponivel);
 $indisponivel = $row['indisponivel'];
 $indisponivel = number_format($indisponivel,2,",",".");
@@ -136,7 +136,7 @@ $indisponivel_pieces = explode(",", $indisponivel);
 $indisponivel = $indisponivel_pieces[0];
 $indisponivel_cents = $indisponivel_pieces[1];
 
-$recebivel = mysqli_query($link, "SELECT SUM(cache_liquido) as receber FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento='0' AND liberado='1'");
+$recebivel = mysqli_query($link, "SELECT SUM(cache_liquido - ifnull(abatimento_cache, 0) - ifnull(valor_pago, 0)) as receber FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento='0' AND liberado='1'");
 $row = mysqli_fetch_array($recebivel);
 $recebivel = $row['receber'];
 $recebivel = number_format($recebivel,2,",",".");
@@ -215,15 +215,16 @@ $recebivel_cents = $recebivel_pieces[1];
     $cliente = $row['cliente_job'];
     $id_cache = $row['id'];
     $cliente = mb_convert_case($cliente,  MB_CASE_UPPER, "UTF-8");
-    $cache = number_format($row['cache_liquido'],2,",",".");
+    $cache = number_format($row['cache'],2,",",".");
     $cache = 'R$ '.$cache;
+    $cache_liquido = number_format($row['cache_liquido'],2,",",".");
     $data_job = date('d/m/y',strtotime($row['data_job']));
     $data_pagamento = date('d/m/y',strtotime($row['data_pagamento']));
     if ($row['status_pagamento'] == '0' && $row['liberado'] == '1' && $row['request_timestamp'] == NULL) {
       $botao = "<button type='submit' class='btn btn-sacar btn-block btn-primary botao'>Retirar dinheiro</button>";
     }
     if ($row['status_pagamento'] == '0' && $row['liberado'] == '1' && $row['request_timestamp'] != NULL) {
-      $botao = "<p class='btn btn-block btn-pago'>Em transferência...</p>";
+      $botao = "<p class='btn btn-block btn-pago'>Transferindo em até 3 dias úteis...</p>";
     }
     if ($row['status_pagamento'] == '1') {
       $botao = "<p class='btn btn-block btn-pago'>Pago em $data_pagamento</p>";
@@ -231,7 +232,17 @@ $recebivel_cents = $recebivel_pieces[1];
     if ($row['status_pagamento'] == '0' && $row['liberado'] == '0' || $row['liberado'] == NULL) {
       $botao = "<p class='btn btn-block btn-indisp'>Ainda não disponível</p>";
     }
-
+    if ($row['abatimento_cache'] != NULL && $row['abatimento_cache'] > 0) {
+      $asterisco = "*";
+      $valor_abatimento = number_format($row['abatimento_cache'],2,",",".");
+      $produto_abatimento = $row['produto_abatimento'];
+      $data_abatimento = date('d/m/y',strtotime($row['data_abatimento']));
+      $explicacao = "* Saldo do cachê subtraido o valor utilizado para $produto_abatimento em $data_abatimento.";
+    }
+    else {
+      $asterisco = "";
+      $explicacao = "";
+    }
     // $operacao = "<form id='checar".$id."' method='get' action='action_atualiza_contrato.php' target='resultado2".$id."'><input type='hidden' name='checar' value='$id'><button type='button' id='checa".$id."'>Atualizar</button></form>
     // <script type='text/javascript'>
     // document.getElementById('checa".$id."').addEventListener('click', function() {
@@ -250,7 +261,7 @@ echo "
       <p>Data do trabalho</p>
     </div>
     <div class='values-jobs font-family color-primary'>
-      <p class='bold'>$cache</p>
+      <p class='bold'>$cache$asterisco</p>
       <p>$data_job</p>
     </div>
   </td>
@@ -261,7 +272,8 @@ echo "
 <div>
 $botao
 </form>
-</div>";
+</div>
+<center><p class='x-small'>$explicacao</p></center>";
 }
 ?>
 

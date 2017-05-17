@@ -106,13 +106,13 @@
       <div class='col-md-12'>
     <div class='page-header'>
       <h2>Sistema PAGME</h2>
-      <p>Pagamento de Agenciados Magneto Elenco (versão ßeta)</p>
+      <p>Pagamento de Agenciados Magneto Elenco</p>
     </div>
 
-      <p>O PAGME é o novo sistema de pagamentos da Magneto Elenco. Ainda em sua primeira versão de teste, o PAGME vai substituir o pagamento de cachês em cheques nominais e cruzados por tranferências para a conta bancária de cada agenciado.</p>
-      <p>Cada pedido de transferência levará até 3 dias úteis para ser concluído e terá um custo de R$ 10,00 por transferência, descontado do saldo a ser transferido. É possível transferir mais de um cachê na mesma transferência e pagar a taxa apenas uma vez.</p>
+      <p>O PAGME é o novo sistema de pagamentos da Magneto Elenco. Ainda em versão de testes, o PAGME substituiu o pagamento de cachês em cheques nominais e cruzados por tranferências para a conta bancária de cada agenciado.</p>
+      <p>Cada pedido de transferência leva até 3 dias úteis para ser concluído e tem um custo de R$ 10,00 por transferência, descontado do saldo a ser transferido. É possível transferir mais de um cachê na mesma operação e pagar a taxa apenas uma vez.</p>
       <p>As transferências apenas poderão ser feitas para contas bancárias vinculadas ao CPF do agenciado ou, no caso de menores de idade, para contas vinculadas ao CPF do responsável.</p>
-      <p>Os pagamentos em cheque continuarão a ser feitos na nova sede da agência até o dia 31/03/2017, quando serão completamente substituídos pelo PAGME.</p>
+      <p>Os pagamentos em cheque foram completamente substituídos pelo PAGME a partir de 02/04/2017.</p>
       <p>Como estamos em fase de testes, pedimos desculpas antecipadas por qualquer erro e colocamos um número para suporte via whatsapp: 61 99311-0767.</p>
       <p>Obrigada e sucesso!</p>
       </div>
@@ -258,7 +258,13 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                         <li class='itens'>Nunca expira;</li>
                     </ul>
                 </div>
-                <button id='btn_renova-cadastro-gratuito' class='escolher botao'>Escolher</button>
+                <form class='forms' name='renova_cadastro' id='escolhe_gratuito' action='#' method='post'>
+                  <button id='btn_renova-cadastro-gratuito' class='escolher botao'>
+                    <input type='hidden' name='id_usuario' value='$id_usuario' />
+                    <input type='hidden' name='cadastro' value='gratuito' />
+                    Escolher
+                  </button>
+                </form>
             </div>
             <div class='aviso'>
               <div class='checkbox'>
@@ -298,7 +304,13 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                     </ul>
                 </div>
                 <div class='preco'><img src='images/preco_premium.svg' /></div>
-                <button id='btn_renova-cadastro-premium' class='escolher botao'>Escolher</button>
+                <form class='forms' name='renova_cadastro' id='escolhe_premium' action='#' method='post'>
+                  <button id='btn_renova-cadastro-premium' class='escolher botao'>
+                    <input type='hidden' name='id_usuario' value='$id_usuario' />
+                    <input type='hidden' name='cadastro' value='premium' />
+                    Escolher
+                  </button>
+                </form>
             </div>
             <div class='aviso'>
               <div class='checkbox'>
@@ -340,7 +352,13 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                     </ul>
                 </div>
                 <div class='preco'><img src='images/preco_profissional.svg' /></div>
-              <button id='btn_renova-cadastro-profissional' class='escolher botao'>Escolher</button>
+              <form class='forms' name='renova_cadastro' id='escolhe_profissional' action='#' method='post'>
+                  <button id='btn_renova-cadastro-profissional' class='escolher botao'>
+                    <input type='hidden' name='id_usuario' value='$id_usuario' />
+                    <input type='hidden' name='cadastro' value='profissional' />
+                    Escolher
+                  </button>
+                </form>
             </div>
             <div class='aviso'>
               <div class='checkbox'>
