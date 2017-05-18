@@ -46,7 +46,7 @@
 
 			$password = hash('sha256', $pass); // password hashing using SHA256
 
-			$res=mysqli_query($link, "SELECT id_elenco, senha FROM tb_elenco WHERE email='$email' ORDER BY dt_nascimento ASC LIMIT 1");
+			$res=mysqli_query($link, "SELECT id_elenco, senha FROM tb_elenco WHERE email='$email' AND ativo = 'Sim' ORDER BY dt_nascimento ASC LIMIT 1");
 			$row=mysqli_fetch_array($res);
 			$count = mysqli_num_rows($res); // if uname/pass correct it returns must be 1 row
 

@@ -120,7 +120,6 @@
   </div>
 </div>
 </div>
-
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
@@ -141,9 +140,10 @@ $cadastro = $userRow['tipo_cadastro_vigente'];
 if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contrato_vigente']."+2 years"))){
   // Verifica quanto o agenciado tem de caches a receber
   $id_usuario = $_SESSION['user'];
-  $recebivel = mysqli_query($link, "SELECT SUM(cache_liquido) as receber FROM financeiro WHERE id_elenco_financeiro='$id_usuario' AND tipo_entrada='cache' AND status_pagamento='0'");
-  $row_recebivel = mysqli_fetch_array($recebivel);
+  $result_recebivel = mysqli_query($link, "SELECT (SUM(cache_liquido) - ifnull(SUM(abatimento_cache), 0) - ifnull(SUM(valor_pago), 0)) as receber FROM financeiro WHERE id_elenco_financeiro='$id_usuario' AND tipo_entrada='cache' AND status_pagamento<>'1'");
+  $row_recebivel = mysqli_fetch_array($result_recebivel);
   $recebivel = $row_recebivel['receber'];
+  $recebivel_java = intval($recebivel);
   $recebivel = number_format($recebivel,2,",",".");
   $recebivel_pieces = explode(",", $recebivel);
   $recebivel = $recebivel_pieces[0];
@@ -158,7 +158,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
   if ($cadastro == 'Profissional') {
     $descricao_cadastro = "Seu cadastro foi temporariamente rebaixado de Profissional para Gratuito até você renová-lo";
   }
-  echo "
+?>
 <div id='myModal' class='modal'>
   <div class='modal-content'>
     <div class='renova_01'>
@@ -170,11 +170,11 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             Nosso contrato expirou!
           </div>
           <div class='descricao'>
-            $descricao_cadastro
+            <? echo $descricao_cadastro; ?>
           </div>
           <div class='botoes'>
-            <button class='botao botao_renovar-contrato'>Renovar meu contrato</button>
-            <button class='botao botao_apagar-perfil'>Cancelar meu contrato</button>
+            <button class='botao' id='botao_renovar-contrato'>Renovar meu contrato</button>
+            <button class='botao' id='botao_apagar-perfil'>Cancelar meu contrato</button>
           </div>
         </div>
     </div>
@@ -186,10 +186,10 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 <img src='images/fechar.svg' class='fechar botoes_navegacao' />
             </div>
             <div class='titulo'>
-                Obrigada pela confiança :)
+                Confiança renovada :)
             </div>
             <div class='descricao'>
-                Clique nas modalidades de cadastro para conhecê-las e depois escolha a que melhor te atender:
+                Qual cadastro é o ideal pra você? Clique nos botões abaixo para conhecer nossas modalidades:
             </div>
             <div class='botoes_modalidades'>
                 <button class='gratuito'><img src='images/botao-gratuito.svg' /></button>
@@ -211,7 +211,12 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 Essa ação removerá o seu perfil, fotos e vídeos de nosso sistema de buscas e revogará seu acesso ao sistema PAGME
             </div>
             <div class='botoes'>
-                <button class='botao botao_confirma_apagar'>Sim, encerrar contrato</button>
+              <form class='forms' name='apaga_cadastro' id='apaga_cadastro' action='#' method='post'>
+                  <button class='botao' id='botao_confirma_apagar'>
+                    <input type='hidden' name='apagar_id_usuario' id='apagar_id_usuario' value='<? echo $id_usuario; ?>' />
+                    Sim, encerrar contrato
+                  </button>
+                </form>
                 <button class='botao voltar_1-2'>Não, cliquei errado</button>
             </div>
         </div>
@@ -227,8 +232,8 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             <div class='descricao'>
                 Sentimos muito pela sua partida e esperamos poder te servir novamente no futuro
             </div>
-            <div class='botoes'>
-
+            <div class='timer'>
+            <span class='small' id="timer">Sua sessão será encerrada em 10 segundos</span>
             </div>
         </div>
     </div>
@@ -243,7 +248,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 Perfeito para você começar
             </div>
             <div class='descricao'>
-                Nosso cadastro mais popular e que já deu oportunidade a mais de 10.000 pessoas desde 2009
+                Nosso cadastro mais popular e que já deu oportunidade a mais de 15.000 pessoas desde 2009
             </div>
             <div class='quadro-gratuito'>
                 <div class='icon'>
@@ -259,8 +264,8 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                     </ul>
                 </div>
                 <form class='forms' name='renova_cadastro' id='escolhe_gratuito' action='#' method='post'>
-                  <button id='btn_renova-cadastro-gratuito' class='escolher botao'>
-                    <input type='hidden' name='id_usuario' value='$id_usuario' />
+                  <button id='btn_renova-cadastro-gratuito' class='botao'>
+                    <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
                     <input type='hidden' name='cadastro' value='gratuito' />
                     Escolher
                   </button>
@@ -288,7 +293,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 Mais chances de trabalhar
             </div>
             <div class='descricao'>
-                Melhor custo benefício e que te deixa em vantagem na hora de ser escolhid$sexo para trabalhos
+                Melhor custo benefício e que te deixa em vantagem na hora de ser escolhid<? echo $sexo; ?> para trabalhos
             </div>
             <div class='quadro-premium'>
                 <div class='icon'>
@@ -304,13 +309,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                     </ul>
                 </div>
                 <div class='preco'><img src='images/preco_premium.svg' /></div>
-                <form class='forms' name='renova_cadastro' id='escolhe_premium' action='#' method='post'>
-                  <button id='btn_renova-cadastro-premium' class='escolher botao'>
-                    <input type='hidden' name='id_usuario' value='$id_usuario' />
-                    <input type='hidden' name='cadastro' value='premium' />
-                    Escolher
-                  </button>
-                </form>
+                  <button id='btn_renova-cadastro-premium' class='botao'>Escolher</button>
             </div>
             <div class='aviso'>
               <div class='checkbox'>
@@ -352,13 +351,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                     </ul>
                 </div>
                 <div class='preco'><img src='images/preco_profissional.svg' /></div>
-              <form class='forms' name='renova_cadastro' id='escolhe_profissional' action='#' method='post'>
-                  <button id='btn_renova-cadastro-profissional' class='escolher botao'>
-                    <input type='hidden' name='id_usuario' value='$id_usuario' />
-                    <input type='hidden' name='cadastro' value='profissional' />
-                    Escolher
-                  </button>
-                </form>
+                  <button id='btn_renova-cadastro-profissional' class='botao'>Escolher</button>
             </div>
             <div class='aviso'>
               <div class='checkbox'>
@@ -379,11 +372,12 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <img src='images/fechar.svg' class='fechar botoes_navegacao' />
         </div>
         <div class='titulo'>
-          Ok! Como gostaria de pagar?
+          Como você gostaria de pagar?
         </div>
         <div class='descricao' id='descricao-pagamento'></div>
         <div class='botoes'>
-          <button class='botao botao_saldo'>Saldo de Cachês</button>
+          <button class='botao botao_saldo' id='botao_saldo-1'>Saldo de Cachês</button>
+          <button class='botao botao_saldo' id='botao_saldo-2'>Saldo de Cachês</button>
           <button class='botao botao_gateway'>Cartão ou Boleto</button>
         </div>
       </div>
@@ -409,8 +403,8 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <div class='small'>saldo disponível</div>
               <div class='texto_valor'>
                 <span class='small'>R$ </span>
-                <span class='large' id='recebivel'>$recebivel</span>
-                <span class='small centavos'>,$recebivel_cents</span>
+                <span class='large' id='recebivel'><?php echo $recebivel_java; ?></span>
+                <span class='small centavos'>,<?php echo $recebivel_cents; ?></span>
               </div>
             </div>
             <div class='valor valor-cadastro'>
@@ -426,13 +420,20 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <div class='texto_valor'>
                 <span class='small'>R$ </span>
                 <span class='large' id='remanescente'></span>
-                <span class='small centavos'>,$recebivel_cents</span>
+                <span class='small centavos'>,<? echo $recebivel_cents; ?></span>
               </div>
             </div>
           </div>
         </div>
         <div class='botoes'>
-          <button class='botao confirmar-saldo'>Confirmar</button>
+          <form class='forms' name='renova_cadastro' id='confirma_cadastro' action='#' method='post'>
+            <button id='confirmar-saldo' class='botao confirmar-saldo'>
+              <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
+              <input type='hidden' name='cadastro' id='input_saldo' value='' />
+              <input type='hidden' name='valor_cadastro' id='valor_cadastro' value='' />
+              Confirmar
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -447,7 +448,6 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           Renovar contrato
         </div>
         <div class='subtracao'>
-
           <div class='valores'>
             <div class='utilizando small'>Pagamento em Cartão ou Boleto</div>
             <div class='valor valor-cadastro'>
@@ -477,14 +477,13 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           Nosso contrato foi renovado e enviado, junto com todas as informações, para o seu e-mail cadastrado. Obrigada!
         </div>
         <div class='botoes'>
-            <button class='botao revisar-dados'>Revisar dados pessoais</button>
+            <button class='botao' id='revisar-dados'>Revisar dados pessoais</button>
         </div>
       </div>
     </div>
   </div>
-</div>";
-}
-?>
+</div>
+<? } ?>
 <script src='assets/js/modal.js'></script>
 </body>
 </html>
