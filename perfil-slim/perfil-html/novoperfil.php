@@ -445,7 +445,6 @@ $page = 0;
       $(".wrapper.list-mode-single .box:last-child").addClass("fadeOutRight");
     $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                 function(event) {
-      // Do something when the transition ends
       $(".wrapper.list-mode-single .box:last-child").remove();
     });
   });

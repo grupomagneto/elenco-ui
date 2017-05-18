@@ -169,8 +169,8 @@ $recebivel_pieces = explode(",", $recebivel);
 $recebivel = $recebivel_pieces[0];
 $recebivel_cents = $recebivel_pieces[1];
 ?>
-<section class='top' id='top'>
-<div class="top-menu-single">
+<!--<section class='top' id='top'>-->
+<div class="top-menu-single" id="top">
     <div class="topbar">
       <div class="container-outline__center">
         <a class="menu-button cursor">
@@ -192,11 +192,12 @@ $recebivel_cents = $recebivel_pieces[1];
                   </g>
               </g>
           </svg>
-</section>
+
     <!--       <img src="../images/close.svg" /> -->
           </button>
+<!--</section>-->
         </a>
-        <a class="cursor top-name-single font-family color-primary font-medium">
+        <a class="top-name-single cursor font-family color-primary font-medium">
           <?php echo $nome . ', ' . $idade; ?>
         </a>
         <a class="menu-fav__single cursor top-menu-single__fav ">
@@ -206,7 +207,6 @@ $recebivel_cents = $recebivel_pieces[1];
       </div>
     </div>
 </div>
-
 
 
 <div class='container-outline__single'>
@@ -844,7 +844,8 @@ while ($row = mysqli_fetch_array($result)) {
   </div>
     </section> -->
 <!-- FIM REPUTAÇÃO -->
-    <section class='footer__section'>
+</div>
+    <section class='footer__section footer__section-single'>
         <div class='container-outline__content'>
           <a href='#top'>
             <img src='images/arrow-to-top.svg' alt='arrow-to-top'>
@@ -853,7 +854,6 @@ while ($row = mysqli_fetch_array($result)) {
           <p class='font-family color-primary'>Magneto Elenco © 2009-<?php echo $year; ?></p>
         </div>
     </section>
-</div>
 </div>
 
 
