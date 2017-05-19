@@ -122,11 +122,14 @@ $('.voltar_2').click(function(){
 });
 $('.voltar_3').click(function(){
   $('.renova_04').fadeOut(0);
+  $('.botao_saldo').fadeOut(0);
   $('.renova_02-1').fadeIn(200);
   $('.navegacao').css('justify-content', 'space-between');
   $('.modal-content').css('height', '600px');
   $('.titulo').css('margin-top', '-10px');
   $('.descricao').css('margin', '0px 20px 0px 20px');
+  document.getElementById("terms-2").checked = false;
+  document.getElementById("terms-3").checked = false;
 });
 $('.voltar_4').click(function(){
   $('.renova_05').fadeOut(0);

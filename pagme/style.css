@@ -16,11 +16,12 @@ padding-top:50px;
 
 .gradient{
 display:block;
+position: fixed;
 width:100%;
 height: 100%;
 padding:0px;
 margin:0px;
-/*overflow: auto;*/
+overflow: auto;
 }
 
 @font-face {
@@ -306,7 +307,8 @@ margin-right: 5px;
 text-align: center;
 }
 .botao:hover,
-.botao:focus {
+.botao:focus,
+.botao:active {
 background: rgba(255,255,255,0.60);
 }
 .botoes_modalidades {
@@ -446,6 +448,22 @@ margin: -32px -28px;
 }
 .botao_saldo{
 display: none;
+}
+.content__jobs{
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+.scroll_up{
+opacity: 0.6;
+}
+.scroll_up:hover,
+.scroll_up:focus,
+.scroll_up:active {
+opacity: 0.9;
+}
+.footer__section{
+margin-top: 50px;
 }
 @media only screen and (max-width: 415px) {
 .modal-content {

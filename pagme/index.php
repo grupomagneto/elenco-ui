@@ -119,7 +119,7 @@
             	<hr />
             </div>
             <div class="form-group">
-            	<button type="submit" class="btn btn-block btn-primary botao" name="btn-login">Entrar</button>
+            	<button type="submit" class="botao" name="btn-login">Entrar</button>
             </div>
             <div class="form-group">
             	<a href="register.php">Primeira vez? Crie uma senha de acesso</a>

@@ -19,7 +19,14 @@
     }
     $cpf = $userRow['cpf'];
     $_SESSION['cpf'] = $cpf;
+    $full_name = $userRow['nome'];
     $email = $userRow['email'];
+    $cep = $userRow['cep'];
+    $cel = $userRow['tl_celular'];
+    if (strpos($cel, '5561') !== false) {
+      $cel = str_replace('5561','',$cel);
+      $ddd = '61';
+    }
     if ($userRow['sexo'] == 'F') {
       $sexo = 'a';
     }
@@ -49,9 +56,23 @@
 <title>Bem-vind<? echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src='assets/js/gradient.js'></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-22229864-1', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- <script src="https://assets.pagar.me/checkout/checkout.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
 </head>
 <body>
-
 	<nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -68,7 +89,7 @@
             <li class="active"><a href="home.php">Como funciona</a></li>
             <li><a href="trabalhos.php">Meus trabalhos</a></li>
             <li><a href="dbancarios.php">Meus dados bancários</a></li>
-
+            <li><a href="meu_perfil.php">Meu perfil</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
@@ -120,20 +141,6 @@
   </div>
 </div>
 </div>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src='assets/js/gradient.js'></script>
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-22229864-1', 'auto');
-    ga('send', 'pageview');
-    </script>
 <?php
 $cadastro = $userRow['tipo_cadastro_vigente'];
 // Verifica se o contrato do agenciado está vencido
@@ -378,7 +385,30 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         <div class='botoes'>
           <button class='botao botao_saldo' id='botao_saldo-1'>Saldo de Cachês</button>
           <button class='botao botao_saldo' id='botao_saldo-2'>Saldo de Cachês</button>
-          <button class='botao botao_gateway'>Cartão ou Boleto</button>
+            <form method='POST' action='/comprar' class='checkout_form'>
+              <script type='text/javascript'
+                  src='https://assets.pagar.me/checkout/checkout.js'
+                  data-button-text='Cartão ou Boleto'
+                  data-button-class='botao botao_gateway'
+                  data-encryption-key='ek_test_Ec8KhxISQ1tug1b8bCGxC2nXfxqRmk'
+                  data-max-installments='10'
+                  data-free-installments='10'
+                  data-default-installment='1'
+                  data-credit-card-helper-text='Parcele em até 10x sem juros'
+                  data-customer-data='true'
+                  data-create-token='true'
+                  data-postback-url='pagamento_confirmado.php'
+                  data-customer-name='<?php echo $full_name; ?>'
+                  data-customer-document-number='<?php echo $cpf; ?>'
+                  data-disable-zero-document-number='true'
+                  data-customer-email='<?php echo $email; ?>'
+                  data-customer-phone-ddd='<?php echo $ddd; ?>'
+                  data-customer-phone-number='<?php echo $cel; ?>'
+                  data-customer-address-zipcode='<?php echo $cep; ?>'
+                  data-ui-color='#441160'
+                  data-amount='19900'>
+              </script>
+            </form>
         </div>
       </div>
     </div>

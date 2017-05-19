@@ -2,6 +2,7 @@
 require_once 'dbconnect.php';
 require_once 'functions.php';
 setlocale(LC_MONETARY, 'pt_BR');
+$year = date('Y', time());
 // if session is not set this will redirect to login page
 if( !isset($_SESSION['user']) ) {
 	header("Location: index.php");
@@ -98,8 +99,8 @@ if ($n <= $count) {
 	<div class="container">
        <div class="row">
         <div class="col-lg-6 col-center">
+        <div id="top"></div>
 <?php
-// $id = '10377';
 $id = $_SESSION['user'];
 $result = mysqli_query($link, "SELECT id, tipo_entrada, cliente_job, data_job, (cache_liquido - ifnull(abatimento_cache, 0) - ifnull(valor_pago, 0)) as cache, cache_liquido, abatimento_cache, data_abatimento, produto_abatimento, status_pagamento, data_pagamento, liberado, request_timestamp FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' ORDER BY data_job DESC LIMIT 0, 100");
 
@@ -128,7 +129,7 @@ $n_jobs = mysqli_query($link, "SELECT COUNT(cache_liquido) as qtd FROM financeir
 $row = mysqli_fetch_array($n_jobs);
 $n_jobs = $row['qtd'];
 
-$indisponivel = mysqli_query($link, "SELECT SUM(cache_liquido - ifnull(abatimento_cache, 0) - ifnull(valor_pago, 0)) as indisponivel FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento='0' AND (liberado IS NULL OR liberado='0')");
+$indisponivel = mysqli_query($link, "SELECT SUM(cache_liquido - ifnull(abatimento_cache, 0) - ifnull(valor_pago, 0)) as indisponivel FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento<>'1' AND (liberado IS NULL OR liberado='0')");
 $row = mysqli_fetch_array($indisponivel);
 $indisponivel = $row['indisponivel'];
 $indisponivel = number_format($indisponivel,2,",",".");
@@ -136,7 +137,7 @@ $indisponivel_pieces = explode(",", $indisponivel);
 $indisponivel = $indisponivel_pieces[0];
 $indisponivel_cents = $indisponivel_pieces[1];
 
-$recebivel = mysqli_query($link, "SELECT SUM(cache_liquido - ifnull(abatimento_cache, 0) - ifnull(valor_pago, 0)) as receber FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento='0' AND liberado='1'");
+$recebivel = mysqli_query($link, "SELECT SUM(cache_liquido - ifnull(abatimento_cache, 0) - ifnull(valor_pago, 0)) as receber FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' AND status_pagamento<>'1' AND liberado='1'");
 $row = mysqli_fetch_array($recebivel);
 $recebivel = $row['receber'];
 $recebivel = number_format($recebivel,2,",",".");
@@ -150,7 +151,7 @@ $recebivel_cents = $recebivel_pieces[1];
         <img src="images/jobs.svg" />
         <p class="font-family font-medium color-primary">
           meus trabalhos
-          <!-- <?php if(!empty($tipo_cadastro)){echo "<span class='btn btn-cadastro color-primary'>Cadastro ".$tipo_cadastro."</span><BR />";}?> -->
+          <!-- <?php if(!empty($tipo_cadastro)){echo "<span class='btn-cadastro color-primary'>Cadastro ".$tipo_cadastro."</span><BR />";}?> -->
         </p>
       </div>
       <div class="content_section">
@@ -220,17 +221,17 @@ $recebivel_cents = $recebivel_pieces[1];
     $cache_liquido = number_format($row['cache_liquido'],2,",",".");
     $data_job = date('d/m/y',strtotime($row['data_job']));
     $data_pagamento = date('d/m/y',strtotime($row['data_pagamento']));
-    if ($row['status_pagamento'] == '0' && $row['liberado'] == '1' && $row['request_timestamp'] == NULL) {
-      $botao = "<button type='submit' class='btn btn-sacar btn-block btn-primary botao'>Retirar dinheiro</button>";
+    if ($row['status_pagamento'] <> '1' && $row['liberado'] == '1' && $row['request_timestamp'] == NULL) {
+      $botao = "<button type='submit' class='btn-sacar botao'>Retirar dinheiro</button>";
     }
-    if ($row['status_pagamento'] == '0' && $row['liberado'] == '1' && $row['request_timestamp'] != NULL) {
-      $botao = "<p class='btn btn-block btn-pago'>Transferindo em até 3 dias úteis...</p>";
+    if ($row['status_pagamento'] <> '1' && $row['liberado'] == '1' && $row['request_timestamp'] != NULL) {
+      $botao = "<p class='btn-pago'>Transferindo em até 3 dias úteis...</p>";
     }
     if ($row['status_pagamento'] == '1') {
-      $botao = "<p class='btn btn-block btn-pago'>Pago em $data_pagamento</p>";
+      $botao = "<p class='btn-pago'>Pago em $data_pagamento</p>";
     }
-    if ($row['status_pagamento'] == '0' && $row['liberado'] == '0' || $row['liberado'] == NULL) {
-      $botao = "<p class='btn btn-block btn-indisp'>Ainda não disponível</p>";
+    if ($row['status_pagamento'] <> '1' && $row['liberado'] == '0' || $row['liberado'] == NULL) {
+      $botao = "<p class='btn-indisp'>Ainda não disponível</p>";
     }
     if ($row['abatimento_cache'] != NULL && $row['abatimento_cache'] > 0) {
       $asterisco = "*";
@@ -278,9 +279,20 @@ $botao
 ?>
 
         </div>
-      </div>
+        <center>
+        <div class='footer__section'>
+          <a href='#top'>
+            <img src='images/scroll_up.svg' alt='arrow-to-top' class="scroll_up" />
+            <!-- <p class='font-family color-primary'>Voltar ao topo</p> -->
+          </a>
+          <hr>
+          <p class='font-family color-primary'>Magneto Elenco © 2009-<?php echo $year; ?></p>
+          </div>
+          </center>
+        </div>
     </div>
   </div>
+
   </div>
   </div>
   </div>
