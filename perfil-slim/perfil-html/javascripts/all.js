@@ -12,37 +12,37 @@ $(function() {
 });
 
 //video e foto div portfólio
-$(document).ready(function() {
-  $( ".img_portfolio" ).hide();
-
-  $("#form__portfolio [name='portfolio']").click(function() {
-    if ($(this).attr("value") == "videos") {
-
-      $( ".vid1" ).show();
-      $( ".img_portfolio" ).hide();
-     
-    }
-    if ($(this).attr("value") == "fotos") {
-
-      $( ".vid1" ).hide();
-      $( ".img_portfolio" ).show();
-      
-    }
-  });
-});
+//$(document).ready(function() {
+//  $( ".img_portfolio" ).hide();
+//
+//  $("#form__portfolio [name='portfolio']").click(function() {
+//    if ($(this).attr("value") == "videos") {
+//
+//      $( ".vid1" ).show();
+//      $( ".img_portfolio" ).hide();
+//     
+//    }
+//    if ($(this).attr("value") == "fotos") {
+//
+//      $( ".vid1" ).hide();
+//      $( ".img_portfolio" ).show();
+//      
+//    }
+//  });
+//});
 
 //Slick
-$(document).ready(function() {
-  $('.carousel-portfolio').slick({
-    dots: true,
-    infinite: false,
-    speed: 200,
-    centerMode: false,
-    variableWidth: false,
-    autoplay: false,
-    arrows: false
-  });
-});
+//$(document).ready(function() {
+//  $('.carousel-portfolio').slick({
+//    dots: true,
+//    infinite: false,
+//    speed: 200,
+//    centerMode: false,
+//    variableWidth: false,
+//    autoplay: false,
+//    arrows: false
+//  });
+//});
 
 
 //Botão excluir - menu fav
