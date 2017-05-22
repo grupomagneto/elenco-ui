@@ -18,11 +18,6 @@ $(".botaofavorita").click(function(){
 
 	
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-	
-alert("mobile detected");
-
-//$('.checkbox-image-action__fav').on('touchstart', function(e) {
-//});
 
 $(document).ready(function(){
    $("img.checkbox-multiples-img__fav").css('display', 'none');
@@ -106,13 +101,51 @@ $(document).ready(function(){
       { 
 				console.log("ajax mobile success");
 				
-        $(".gradient").css('display', 'none');
+				var modal = document.getElementById('myModal');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    $('#myModal').fadeOut(250);
+  }
+}
+// When the user presses ESC, close the modal
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) {
+    $('#myModal').fadeOut(250);
+  }
+});
+$(window).on('load',function(){
+  $('#myModal').fadeIn(250);
+  $('.renova_02-1').fadeOut(0);
+  $('.renova_02-2').fadeOut(0);
+  $('.renova_02-3').fadeOut(0);
+  $('.renova_03-gratuito').fadeOut(0);
+  $('.renova_03-premium').fadeOut(0);
+  $('.renova_03-profissional').fadeOut(0);
+  $('.atualiza-dados').fadeOut(0);
+  $('.renova_04').fadeOut(0);
+  $('.renova_05').fadeOut(0);
+  $('.renova_06').fadeOut(0);
+  $('.renova_05-2').fadeOut(0);
+  $('.voltar').fadeOut(0);
+  $('.progresso').fadeOut(0);
+  $('.navegacao').css('justify-content', 'flex-end');
+});
+$('.fechar').click(function(){
+  $('#myModal').fadeOut(250);
+});
+
+				
+//        $(".gradient").css('display', 'none');
+				$('.modal').css('display', 'block');
+				$('.modal-content').css('display', 'block');
         $(".photo__single").css('display', 'block');
         $(".photo__single").html(data);
         $(".photo__single").load("../api/single_profile.php");
         $('.container-outline__single').css('display', 'block');
         $('.container-outline__categories').css('display', 'block');
-        $('.container').css('display', 'none');
+//        $('.container').css('display', 'none');
         
         $(".close").click(function() {
             $(".photo__single").css("display", "none");
@@ -120,14 +153,14 @@ $(document).ready(function(){
             $(".container-outline__categories").css("display", "none");
             $(".gradient").css("display", "block");
             $(".container").css("display", "block");
+					$('#myModal').css('display', 'none');
+					$('.modal-content').css('display', 'none');
         });
         
         var mySwiper = new Swiper ('.swiper-container', {
-            // Optional parameters
             direction: 'horizontal',
             loop: false,
             keyboardControl: true,
-            // If we need pagination
             pagination: '.swiper-pagination'
         });
 				
@@ -198,6 +231,8 @@ $('.checkbox-image-action__fav').on('click', function() {
             $(".container-outline__categories").css("display", "none");
             $(".gradient").css("display", "block");
             $(".container").css("display", "block");
+					$('#myModal').css('display', 'none');
+					$('.modal-content').css('display', 'none');
         });
 				
 				
@@ -214,11 +249,9 @@ $('.checkbox-image-action__fav').on('click', function() {
 				});
 
         var mySwiper = new Swiper ('.swiper-container', {
-            // Optional parameters
             direction: 'horizontal',
             loop: false,
             keyboardControl: true,
-            // If we need pagination
             pagination: '.swiper-pagination'
         });
             

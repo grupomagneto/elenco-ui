@@ -844,7 +844,6 @@ while ($row = mysqli_fetch_array($result)) {
   </div>
     </section> -->
 <!-- FIM REPUTAÇÃO -->
-</div>
     <section class='footer__section footer__section-single'>
         <div class='container-outline__content'>
           <a href='#top'>
@@ -854,6 +853,7 @@ while ($row = mysqli_fetch_array($result)) {
           <p class='font-family color-primary'>Magneto Elenco © 2009-<?php echo $year; ?></p>
         </div>
     </section>
+</div>
 </div>
 
 

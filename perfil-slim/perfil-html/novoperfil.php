@@ -102,7 +102,13 @@ $page = 0;
 
 <div class="background__single">
 
-<div class="photo__single"></div>
+<div id='myModal' class='modal'>
+  <div class='modal-content'>
+  
+    <div class="photo__single"></div>
+  
+  </div>
+</div>
 
  <div class="gradient">
 

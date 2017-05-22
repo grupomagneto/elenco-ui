@@ -267,3 +267,9 @@ $(document).on('click', '.checkbox-image-action__fav', function () {
     var $input = $("input[name=array_key]")
     $input.prop('checked', true);
 });
+
+
+
+
+
+
