@@ -130,8 +130,36 @@ $(document).ready(function(){
             // If we need pagination
             pagination: '.swiper-pagination'
         });
-            
+				
+				$('.carousel-portfolio').slick({
+						dots: true,
+						infinite: false,
+						speed: 200,
+						centerMode: false,
+						variableWidth: false,
+						autoplay: false,
+						arrows: false
+				}); 
+				
+				$( ".img_portfolio" ).hide();
+
+				$("#form__portfolio [name='portfolio']").click(function() {
+					if ($(this).attr("value") == "videos") {
+
+						$( ".vid1" ).show();
+						$( ".img_portfolio" ).hide();
+
+					}
+					if ($(this).attr("value") == "fotos") {
+
+						$( ".vid1" ).hide();
+						$( ".img_portfolio" ).show();
+
+					}
+				});
+				
       }
+			
     });
     return false;
   });
