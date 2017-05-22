@@ -22,6 +22,16 @@ if (isset($_POST['id_usuario'])) {
 	$cadastro = ucfirst($cadastro);
 	$valor_cadastro = $_POST['valor_cadastro'];
 	$valor_original_cadastro = $_POST['valor_cadastro'];
+    $ddd = $_POST['DDD'];
+    $cel = $_POST['cel'];
+    $email = $_POST['email'];
+    $cep = $_POST['cep'];
+    $endereco = $_POST['endereco'];
+    $numero = $_POST['numero'];
+    $complemento = $_POST['complemento'];
+    $bairro = $_POST['bairro'];
+    $cidade = $_POST['cidade'];
+    $uf = $_POST['uf'];
 }
 // select loggedin users detail
 $res=mysqli_query($link, "SELECT * FROM tb_elenco WHERE id_elenco=$id_usuario");
@@ -31,7 +41,6 @@ $nome_curto = explode(' ', $nome);
 $primeiro_nome = $nome_curto[0];
 $sobrenome = $nome_curto[1];
 $cpf = $userRow['cpf'];
-$email = $userRow['email'];
 if ($userRow['sexo'] == 'F') {
   $sexo = 'a';
 }
@@ -41,14 +50,14 @@ elseif ($userRow['sexo'] == 'M') {
 if ($cadastro == 'Gratuito') {
 	// SE O CADASTRO SELECIONADO FOR GRATUITO
 	$validade = "Indeterminada";
-	$complemento = "";
+	$adicional = "";
 	// RENOVA CADASTRO NO DB
-	mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente = '$hoje', tipo_cadastro_vigente = '$cadastro', ativo = 'Sim', concordo_timestamp = '$hora', ip = '$ip' WHERE id_elenco='$id_usuario'");
+	mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente = '$hoje', tipo_cadastro_vigente = '$cadastro', ativo = 'Sim', concordo_timestamp = '$hora', ip = '$ip', ddd_01 = '$ddd', tl_celular = '$cel', email = '$email', cep = '$cep', endereco = '$endereco', complemento = '$complemento', numero = '$numero', bairro = '$bairro', cidade = '$cidade', uf = '$uf' WHERE id_elenco='$id_usuario'");
 }
 elseif ($cadastro == 'Premium' || $cadastro == 'Profissional') {
 	// SE O CADASTRO SELECIONADO FOR PREMIUM OU PROFISSIONAL
 	$validade = "2 anos";
-	$complemento = "<li>Valor Pago:</li><li>Forma de Pagamento:</li>";
+	$adicional = "<li>Valor Pago:</li><li>Forma de Pagamento:</li>";
 	$result = mysqli_query($link, "SELECT id, (cache_liquido - ifnull(abatimento_cache, 0) - ifnull(valor_pago, 0)) as cache, ifnull(abatimento_cache, 0) AS abatimento_cache, produto_abatimento, data_abatimento FROM financeiro WHERE id_elenco_financeiro='$id_usuario' AND tipo_entrada='cache' AND status_pagamento<>'1' ORDER BY cache DESC");
 	while ($row = mysqli_fetch_array($result)) {
 		$id_cache = $row['id'];
@@ -102,7 +111,7 @@ if (empty($_SESSION[$id])) {
     <li>Modalidade selecionada: Cadastro $cadastro</li>
     <li>Data de ativação: $hoje_format</li>
     <li>Validade: $validade</li>
-    $complemento
+    $adicional
     <li>IP utilizado na renovaçao: $ip</li>
     </ul></strong>
     <p>Obrigada pela confiança e muitos trabalhos pra você!

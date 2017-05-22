@@ -56,7 +56,7 @@ $('#botao_confirma_apagar').click(function(){
       dataType: 'html',
       url: 'http://localhost:8888/elenco-ui/pagme/apaga_cadastro.php',
       data: dados2,
-      success: function( data ) { 
+      success: function( data ) {
         $('.renova_02-2').fadeOut(0);
         $('.navegacao').css('justify-content', 'flex-end');
         $('.renova_02-3').fadeIn(200);
@@ -139,6 +139,12 @@ $('.voltar_4').click(function(){
   $('.navegacao').css('justify-content', 'space-between');
   $('.modal-content').css('height', '350px');
 });
+$('.voltar_atualiza-dados').click(function(){
+  $('.atualiza-dados').fadeOut(0);
+  $('.renova_02-1').fadeIn(200);
+  $('.navegacao').css('justify-content', 'space-between');
+  $('.modal-content').css('height', '600px');
+});
 $('#btn_renova-cadastro-gratuito').click(function(){
   if(!$('#terms-1').is(':checked')){
     $('.requerido').fadeIn(200);
@@ -152,26 +158,38 @@ $('#btn_renova-cadastro-gratuito').click(function(){
   }
 });
 $('#botao_atualizar-dados').click(function(){
-  // Ajax Cadastros
-  jQuery('form').submit(function(){
-    var dados = jQuery( this ).serialize();
-    jQuery.ajax({
-      type: 'POST',
-      dataType: 'html',
-      url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
-      data: dados,
-      success: function( data ) { 
-        $('.atualiza-dados').fadeOut(0);
-        $('.modal-content').css('height', '350px');
-        $('.renova_06').fadeIn(200);
-        $('.titulo').css('margin-top', '-10px');
-        $('.descricao').css('margin', '0px 20px 0px 20px');
-        $('.navegacao').css('justify-content', 'flex-end');
-      }
-    });
-    return false;
-  });
+    // var a=document.forms["renova_cadastro"]["DDD"].value;
+    // var b=document.forms["renova_cadastro"]["cel"].value;
+    // var c=document.forms["renova_cadastro"]["email"].value;
+    // var d=document.forms["renova_cadastro"]["cep"].value;
+    // if (a==null || a=="",b==null || b=="",c==null || c=="",d==null || d=="") {
+    //   alert("Please Fill All Required Field");
+    //   return false;
+    //   event.preventDefault();
+    // }
+    // else {
+      // Ajax Cadastros
+      jQuery('#escolhe_gratuito').submit(function(){
+        var dados = jQuery( this ).serialize();
+        jQuery.ajax({
+          type: 'POST',
+          dataType: 'html',
+          url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
+          data: dados,
+          success: function( data ) {
+            $('.atualiza-dados').fadeOut(0);
+            $('.modal-content').css('height', '350px');
+            $('.renova_06').fadeIn(200);
+            $('.titulo').css('margin-top', '-10px');
+            $('.descricao').css('margin', '0px 20px 0px 20px');
+            $('.navegacao').css('justify-content', 'flex-end');
+          }
+        });
+        return false;
+      });
+    // }
 });
+
 $('#btn_renova-cadastro-premium').click(function(){
   if(!$('#terms-2').is(':checked')){
     $('.requerido').fadeIn(200);
@@ -179,7 +197,7 @@ $('#btn_renova-cadastro-premium').click(function(){
   }
   if($('#terms-2').is(':checked')){
     $('.renova_03-premium').fadeOut(0);
-    $('.modal-content').css('height', '350px');
+    $('.modal-content').css('height', '450px');
     $('.renova_04').fadeIn(200);
     $('.titulo').css('margin-top', '-10px');
     $('.descricao').css('margin', '0px 20px 0px 20px');
@@ -189,7 +207,7 @@ $('#btn_renova-cadastro-premium').click(function(){
     document.getElementById("input_saldo").value = "premium";
     document.getElementById("valor_cadastro").value = valor;
     if (parseInt(recebivel,10) >= valor) {
-      $('#botao_saldo-1').fadeIn(0);
+      $('#botao_saldo').fadeIn(0);
       document.getElementById("descricao-pagamento").innerHTML = "Parcele em até 10x sem juros no Cartão de Crédito ou utilize seu Saldo de Cachês a receber.";
       document.getElementById("valor").innerHTML = valor;
       var remanescente = parseInt(recebivel,10) - valor;
@@ -197,7 +215,7 @@ $('#btn_renova-cadastro-premium').click(function(){
       $('.valor-cadastro').css('background', '#CC64E0');
     }
     if (parseInt(recebivel,10) < valor) {
-      $('#botao_saldo-1').fadeOut(0);
+      $('#botao_saldo').fadeOut(0);
       document.getElementById("descricao-pagamento").innerHTML = "Parcele em até 10x sem juros no Cartão de Crédito ou pague por Boleto Bancário.";
     }
     event.preventDefault();
@@ -210,7 +228,7 @@ $('#btn_renova-cadastro-profissional').click(function(){
   }
   if($('#terms-3').is(':checked')){
     $('.renova_03-profissional').fadeOut(0);
-    $('.modal-content').css('height', '350px');
+    $('.modal-content').css('height', '450px');
     $('.renova_04').fadeIn(200);
     $('.titulo').css('margin-top', '-10px');
     $('.descricao').css('margin', '0px 20px 0px 20px');
@@ -234,7 +252,7 @@ $('#btn_renova-cadastro-profissional').click(function(){
     event.preventDefault();
   }
 });
-$('#botao_saldo-1').click(function(){
+$('#botao_saldo').click(function(){
   $('.renova_04').fadeOut(0);
   $('.renova_05').fadeIn(200);
   $('.modal-content').css('height', '450px');
@@ -261,7 +279,7 @@ $('#confirmar-saldo').click(function(){
         dataType: 'html',
         url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
         data: dados_2,
-        success: function( data ) { 
+        success: function( data ) {
           $('.renova_05').fadeOut(0);
           $('.renova_06').fadeIn(200);
           $('.modal-content').css('height', '350px');

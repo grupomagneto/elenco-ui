@@ -23,9 +23,19 @@
     $email = $userRow['email'];
     $cep = $userRow['cep'];
     $cel = $userRow['tl_celular'];
-    if (strpos($cel, '5561') !== false) {
-      $cel = str_replace('5561','',$cel);
-      $ddd = '61';
+    $endereco = $userRow['endereco'];
+    $complemento = $userRow['complemento'];
+    $numero = $userRow['numero'];
+    $bairro = $userRow['bairro'];
+    $cidade = $userRow['cidade'];
+    $uf = $userRow['uf'];
+    if ($userRow['ddd_01'] == '' || $userRow['ddd_01'] == NULL) {
+      if (strpos($cel, '5561') !== false) {
+        $cel = str_replace('5561','',$cel);
+        $ddd = '61';
+      }
+    } else {
+        $ddd = $userRow['ddd_01'];
     }
     if ($userRow['sexo'] == 'F') {
       $sexo = 'a';
@@ -189,7 +199,9 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         <div class='conteiner'>
             <div class='navegacao'>
                 <img src='images/voltar.svg' class='voltar_1 botoes_navegacao' />
-                <span class='progresso'></span>
+                <div class="barra_progresso">
+                  <span style="width: 20%"></span>
+                </div>
                 <img src='images/fechar.svg' class='fechar botoes_navegacao' />
             </div>
             <div class='titulo'>
@@ -248,7 +260,9 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         <div class='conteiner'>
             <div class='navegacao'>
                 <img src='images/voltar.svg' class='voltar_2 botoes_navegacao' />
-                <span class='progresso'></span>
+                <div class="barra_progresso">
+                  <span style="width: 40%"></span>
+                </div>
                 <img src='images/fechar.svg' class='fechar botoes_navegacao' />
             </div>
             <div class='titulo'>
@@ -270,13 +284,9 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                         <li class='itens'>Nunca expira;</li>
                     </ul>
                 </div>
-                <form class='forms' name='renova_cadastro' id='escolhe_gratuito' action='#' method='post'>
-                  <button id='btn_renova-cadastro-gratuito' class='botao'>
-                    <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
-                    <input type='hidden' name='cadastro' value='gratuito' />
-                    Escolher
-                  </button>
-                </form>
+                <button id='btn_renova-cadastro-gratuito' class='botao'>
+                  Escolher
+                </button>
             </div>
             <div class='aviso'>
               <div class='checkbox'>
@@ -293,7 +303,9 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
     <div class='conteiner'>
             <div class='navegacao'>
                 <img src='images/voltar.svg' class='voltar_2 botoes_navegacao' />
-                <span class='progresso'>2 de 4</span>
+                <div class="barra_progresso">
+                  <span style="width: 40%"></span>
+                </div>
                 <img src='images/fechar.svg' class='fechar botoes_navegacao' />
             </div>
             <div class='titulo'>
@@ -333,7 +345,9 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
     <div class='conteiner'>
             <div class='navegacao'>
                 <img src='images/voltar.svg' class='voltar_2 botoes_navegacao' />
-                <span class='progresso'>2 de 4</span>
+                <div class="barra_progresso">
+                  <span style="width: 40%"></span>
+                </div>
                 <img src='images/fechar.svg' class='fechar botoes_navegacao' />
             </div>
             <div class='titulo'>
@@ -387,30 +401,34 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             Clique sobre os campos para alterar seus dados e renovar seu contrato
           </div>
           <div class='campos'>
-            <span class='texto_input'>DDD:</span>
-            <input type='text' name='DDD' id='DDD' value='<?php echo $ddd; ?>' placeholder='DDD' />
-            <span class='texto_input'>TELEFONE:</span>
-            <input type='text' name='cel' id='cel' value='<?php echo $cel; ?>' placeholder='Telefone' /><BR />
-            <span class='texto_input'>E-MAIL:</span>
-            <input type='text' name='email' id='email' value='<?php echo $email; ?>' placeholder='E-mail' /><BR />
-            <span class='texto_input'>CEP:</span>
-            <input type='text' name='cep' id='cep' value='<?php echo $cep; ?>' placeholder='CEP' /><BR />
-            <span class='texto_input'>ENDEREÇO:</span>
-            <input type='text' name='endereco' id='endereco' value='<?php echo $endereco; ?>' placeholder='Endereço' />
-            <span class='texto_input'>NÚMERO:</span>
-            <input type='text' name='numero' id='numero' value='<?php echo $numero; ?>' placeholder='Nº' /><BR />
-            <span class='texto_input'>COMPLEMENTO:</span>
-            <input type='text' name='complemento' id='complemento' value='<?php echo $complemento; ?>' placeholder='Complemento' />
-            <span class='texto_input'>BAIRRO:</span>
-            <input type='text' name='bairro' id='bairro' value='<?php echo $bairro; ?>' placeholder='Bairro' />
-            <BR />
-            <span class='texto_input'>CIDADE:</span>
-            <input type='text' name='cidade' id='cidade' value='<?php echo $cidade; ?>' placeholder='Cidade' />
-            <span class='texto_input'>UF:</span>
-            <input type='text' name='uf' id='uf' value='<?php echo $uf; ?>' placeholder='UF' />
-          </div>
-          <div class='botoes'>
-            <button class='botao' id='botao_atualizar-dados'>Continuar</button>
+            <form class='forms' name='renova_cadastro' id='escolhe_gratuito' action='#' method='post'>
+              <span class='texto_input'>DDD:</span>
+              <input type='text' name='DDD' id='DDD' value='<?php echo $ddd; ?>' placeholder='DDD' required />
+              <span class='texto_input'>CELULAR:</span>
+              <input type='text' name='cel' id='cel' value='<?php echo $cel; ?>' placeholder='Telefone' required /><BR />
+              <span class='texto_input'>E-MAIL:</span>
+              <input type='text' name='email' id='email' value='<?php echo $email; ?>' placeholder='E-mail' required /><BR />
+              <span class='texto_input'>CEP:</span>
+              <input type='text' name='cep' id='cep' value='<?php echo $cep; ?>' placeholder='CEP' required /><BR />
+              <span class='texto_input'>ENDEREÇO:</span>
+              <input type='text' name='endereco' id='endereco' value='<?php echo $endereco; ?>' placeholder='Endereço' required />
+              <span class='texto_input'>NÚMERO:</span>
+              <input type='text' name='numero' id='numero' value='<?php echo $numero; ?>' placeholder='Nº' required /><BR />
+              <span class='texto_input'>COMPLEMENTO:</span>
+              <input type='text' name='complemento' id='complemento' value='<?php echo $complemento; ?>' placeholder='Complemento' required />
+              <span class='texto_input'>BAIRRO:</span>
+              <input type='text' name='bairro' id='bairro' value='<?php echo $bairro; ?>' placeholder='Bairro' required />
+              <BR />
+              <span class='texto_input'>CIDADE:</span>
+              <input type='text' name='cidade' id='cidade' value='<?php echo $cidade; ?>' placeholder='Cidade' required />
+              <span class='texto_input'>UF:</span>
+              <input type='text' name='uf' id='uf' value='<?php echo $uf; ?>' placeholder='UF' required />
+            </div>
+            <div class='botoes'>
+                <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
+                <input type='hidden' name='cadastro' value='gratuito' />
+                <button class='botao' id='botao_atualizar-dados'>Continuar</button>
+            </form>
           </div>
         </div>
     </div>
@@ -418,40 +436,19 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
       <div class='conteiner'>
         <div class='navegacao'>
           <img src='images/voltar.svg' class='voltar_3 botoes_navegacao' />
-          <span class='progresso'>3 de 4</span>
-              <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          <div class="barra_progresso">
+            <span style="width: 80%"></span>
+          </div>
+          <img src='images/fechar.svg' class='fechar botoes_navegacao' />
         </div>
         <div class='titulo'>
           Como você gostaria de pagar?
         </div>
         <div class='descricao' id='descricao-pagamento'></div>
         <div class='botoes'>
-          <button class='botao botao_saldo' id='botao_saldo-1'>Saldo de Cachês</button>
-          <button class='botao botao_saldo' id='botao_saldo-2'>Saldo de Cachês</button>
-            <form method='POST' action='/comprar' class='checkout_form'>
-              <script type='text/javascript'
-                  src='https://assets.pagar.me/checkout/checkout.js'
-                  data-button-text='Cartão ou Boleto'
-                  data-button-class='botao botao_gateway'
-                  data-encryption-key='ek_test_Ec8KhxISQ1tug1b8bCGxC2nXfxqRmk'
-                  data-max-installments='10'
-                  data-free-installments='10'
-                  data-default-installment='1'
-                  data-credit-card-helper-text='Parcele em até 10x sem juros'
-                  data-customer-data='true'
-                  data-create-token='true'
-                  data-postback-url='pagamento_confirmado.php'
-                  data-customer-name='<?php echo $full_name; ?>'
-                  data-customer-document-number='<?php echo $cpf; ?>'
-                  data-disable-zero-document-number='true'
-                  data-customer-email='<?php echo $email; ?>'
-                  data-customer-phone-ddd='<?php echo $ddd; ?>'
-                  data-customer-phone-number='<?php echo $cel; ?>'
-                  data-customer-address-zipcode='<?php echo $cep; ?>'
-                  data-ui-color='#441160'
-                  data-amount='19900'>
-              </script>
-            </form>
+          <button class='botao botao_saldo' id='botao_saldo'>Saldo de Cachês</button>
+          <button class='botao' id='botao_credito'>Cartão de Crédito</button>
+          <button class='botao' id='botao_boleto'>Boleto Bancário</button>
         </div>
       </div>
     </div>
@@ -459,8 +456,10 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
       <div class='conteiner'>
         <div class='navegacao'>
           <img src='images/voltar.svg' class='voltar_4 botoes_navegacao' />
-          <span class='progresso'>4 de 4</span>
-              <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          <div class="barra_progresso">
+            <span style="width: 95%"></span>
+          </div>
+          <img src='images/fechar.svg' class='fechar botoes_navegacao' />
         </div>
         <div class='titulo'>
           Renovar contrato
@@ -514,8 +513,10 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
       <div class='conteiner'>
         <div class='navegacao'>
           <img src='images/voltar.svg' class='voltar_4 botoes_navegacao' />
-          <span class='progresso'>4 de 4</span>
-              <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          <div class="barra_progresso">
+            <span style="width: 95%"></span>
+          </div>
+          <img src='images/fechar.svg' class='fechar botoes_navegacao' />
         </div>
         <div class='titulo'>
           Renovar contrato
