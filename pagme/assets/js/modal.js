@@ -21,6 +21,7 @@ $(window).on('load',function(){
   $('.renova_03-gratuito').fadeOut(0);
   $('.renova_03-premium').fadeOut(0);
   $('.renova_03-profissional').fadeOut(0);
+  $('.atualiza-dados').fadeOut(0);
   $('.renova_04').fadeOut(0);
   $('.renova_05').fadeOut(0);
   $('.renova_06').fadeOut(0);
@@ -144,26 +145,32 @@ $('#btn_renova-cadastro-gratuito').click(function(){
     event.preventDefault();
   }
   if($('#terms-1').is(':checked')){
-    // Ajax Cadastros
-    jQuery('form').submit(function(){
-      var dados = jQuery( this ).serialize();
-      jQuery.ajax({
-        type: 'POST',
-        dataType: 'html',
-        url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
-        data: dados,
-        success: function( data ) { 
-          $('.renova_03-gratuito').fadeOut(0);
-          $('.modal-content').css('height', '350px');
-          $('.renova_06').fadeIn(200);
-          $('.titulo').css('margin-top', '-10px');
-          $('.descricao').css('margin', '0px 20px 0px 20px');
-          $('.navegacao').css('justify-content', 'flex-end');
-        }
-      });
-      return false;
-    });
+    $('.renova_03-gratuito').fadeOut(0);
+    $('.modal-content').css('height', '700px');
+    $('.atualiza-dados').fadeIn(200);
+    event.preventDefault();
   }
+});
+$('#botao_atualizar-dados').click(function(){
+  // Ajax Cadastros
+  jQuery('form').submit(function(){
+    var dados = jQuery( this ).serialize();
+    jQuery.ajax({
+      type: 'POST',
+      dataType: 'html',
+      url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
+      data: dados,
+      success: function( data ) { 
+        $('.atualiza-dados').fadeOut(0);
+        $('.modal-content').css('height', '350px');
+        $('.renova_06').fadeIn(200);
+        $('.titulo').css('margin-top', '-10px');
+        $('.descricao').css('margin', '0px 20px 0px 20px');
+        $('.navegacao').css('justify-content', 'flex-end');
+      }
+    });
+    return false;
+  });
 });
 $('#btn_renova-cadastro-premium').click(function(){
   if(!$('#terms-2').is(':checked')){

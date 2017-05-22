@@ -371,6 +371,49 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             </div>
             </div>
         </div>
+      <div class='atualiza-dados'>
+        <div class='conteiner'>
+          <div class='navegacao'>
+            <img src='images/voltar.svg' class='voltar_atualiza-dados botoes_navegacao' />
+            <div class="barra_progresso">
+              <span style="width: 60%"></span>
+            </div>
+            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          </div>
+          <div class='titulo'>
+            Confira e atualize seus dados
+          </div>
+          <div class='descricao'>
+            Clique sobre os campos para alterar seus dados e renovar seu contrato
+          </div>
+          <div class='campos'>
+            <span class='texto_input'>DDD:</span>
+            <input type='text' name='DDD' id='DDD' value='<?php echo $ddd; ?>' placeholder='DDD' />
+            <span class='texto_input'>TELEFONE:</span>
+            <input type='text' name='cel' id='cel' value='<?php echo $cel; ?>' placeholder='Telefone' /><BR />
+            <span class='texto_input'>E-MAIL:</span>
+            <input type='text' name='email' id='email' value='<?php echo $email; ?>' placeholder='E-mail' /><BR />
+            <span class='texto_input'>CEP:</span>
+            <input type='text' name='cep' id='cep' value='<?php echo $cep; ?>' placeholder='CEP' /><BR />
+            <span class='texto_input'>ENDEREÇO:</span>
+            <input type='text' name='endereco' id='endereco' value='<?php echo $endereco; ?>' placeholder='Endereço' />
+            <span class='texto_input'>NÚMERO:</span>
+            <input type='text' name='numero' id='numero' value='<?php echo $numero; ?>' placeholder='Nº' /><BR />
+            <span class='texto_input'>COMPLEMENTO:</span>
+            <input type='text' name='complemento' id='complemento' value='<?php echo $complemento; ?>' placeholder='Complemento' />
+            <span class='texto_input'>BAIRRO:</span>
+            <input type='text' name='bairro' id='bairro' value='<?php echo $bairro; ?>' placeholder='Bairro' />
+            <BR />
+            <span class='texto_input'>CIDADE:</span>
+            <input type='text' name='cidade' id='cidade' value='<?php echo $cidade; ?>' placeholder='Cidade' />
+            <span class='texto_input'>UF:</span>
+            <input type='text' name='uf' id='uf' value='<?php echo $uf; ?>' placeholder='UF' />
+          </div>
+          <div class='botoes'>
+            <button class='botao' id='botao_atualizar-dados'>Continuar</button>
+          </div>
+        </div>
+    </div>
     <div class='renova_04'>
       <div class='conteiner'>
         <div class='navegacao'>
