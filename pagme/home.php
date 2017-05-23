@@ -67,7 +67,7 @@
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src='assets/js/gradient.js'></script>
@@ -79,8 +79,8 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-22229864-1', 'auto');
 ga('send', 'pageview');
 </script>
-<!-- <script src="https://assets.pagar.me/checkout/checkout.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+<script src="https://assets.pagar.me/js/pagarme.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -157,7 +157,7 @@ $cadastro = $userRow['tipo_cadastro_vigente'];
 if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contrato_vigente']."+2 years"))){
   // Verifica quanto o agenciado tem de caches a receber
   $id_usuario = $_SESSION['user'];
-  $result_recebivel = mysqli_query($link, "SELECT (SUM(cache_liquido) - ifnull(SUM(abatimento_cache), 0) - ifnull(SUM(valor_pago), 0)) as receber FROM financeiro WHERE id_elenco_financeiro='$id_usuario' AND tipo_entrada='cache' AND status_pagamento<>'1'");
+  $result_recebivel = mysqli_query($link, "SELECT (SUM(cache_liquido) - ifnull(SUM(abatimento_cache), 0) - ifnull(SUM(valor_pago), 0)) as receber FROM financeiro WHERE id_elenco_financeiro='$id_usuario' AND tipo_entrada='cache' AND status_pagamento<>'1' AND request_timestamp IS NULL");
   $row_recebivel = mysqli_fetch_array($result_recebivel);
   $recebivel = $row_recebivel['receber'];
   $recebivel_java = intval($recebivel);
@@ -401,7 +401,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             Clique sobre os campos para alterar seus dados e renovar seu contrato
           </div>
           <div class='campos'>
-            <form class='forms' name='renova_cadastro' id='escolhe_gratuito' action='#' method='post'>
+            <form class='forms' name='renova_cadastro' id='form_atualiza-dados' action='#' method='post'>
               <span class='texto_input'>DDD:</span>
               <input type='text' name='DDD' id='DDD' value='<?php echo $ddd; ?>' placeholder='DDD' required />
               <span class='texto_input'>CELULAR:</span>
@@ -426,7 +426,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             </div>
             <div class='botoes'>
                 <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
-                <input type='hidden' name='cadastro' value='gratuito' />
+                <input type='hidden' name='cadastro' value='' id='input-botao_atualiza-dados' />
                 <button class='botao' id='botao_atualizar-dados'>Continuar</button>
             </form>
           </div>
@@ -509,33 +509,72 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         </div>
       </div>
     </div>
-    <div class='renova_05-2'>
+    <div class='confirmacao-dados-cartao'>
+        <div class='conteiner'>
+          <div class='navegacao'>
+            <img src='images/voltar.svg' class='voltar_confirmacao-dados-cartao botoes_navegacao' />
+            <div class="barra_progresso">
+              <span style="width: 85%"></span>
+            </div>
+            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          </div>
+          <div class='titulo'>
+            Dados do cartão de crédito
+          </div>
+          <div class='descricao'>
+            Os dados previamente fornecidos são os mesmos do Titular do Cartão e Endereço da Fatura?
+          </div>
+          <div class='botoes'>
+            <button class='botao' id='botao_dados-cartao-sim'>Sim</button>
+            <button class='botao' id='botao_dados-cartao-nao'>Não</button>
+          </div>
+        </div>
+    </div>
+    <div class='dados-cartao'>
       <div class='conteiner'>
         <div class='navegacao'>
-          <img src='images/voltar.svg' class='voltar_4 botoes_navegacao' />
+          <img src='images/voltar.svg' class='voltar_dados-cartao botoes_navegacao' />
           <div class="barra_progresso">
-            <span style="width: 95%"></span>
+            <span style="width: 97%"></span>
           </div>
           <img src='images/fechar.svg' class='fechar botoes_navegacao' />
         </div>
         <div class='titulo'>
-          Renovar contrato
+          Dados do cartão de crédito
         </div>
-        <div class='subtracao'>
-          <div class='valores'>
-            <div class='utilizando small'>Pagamento em Cartão ou Boleto</div>
-            <div class='valor valor-cadastro'>
-              <div class='small'>Cadastro <span id='cadastro'></span></div>
-              <div class='texto_valor'>
-                <span class='small'>R$ </span>
-                <span class='large' id='valor'></span>
-                <span class='small centavos'>,00</span>
-              </div>
+        <div class='descricao'>
+          Clique sobre os campos para inserir os dados do Cartão de Crédito
+        </div>
+        <div class='campos'>
+          <form id='payment_form' action='#' method='POST'>
+            <span class='texto_input'>NÚMERO DO CARTÃO:</span>
+            <input type='text' id='card_number' placeholder= 'XXXX XXXX XXXX XXXX' required /><br/>
+            <span class='texto_input'>NOME:</span>
+            <input type='text' id='card_holder_name' placeholder= 'Nome (igual no cartão)' required /><br/>
+            <span class='texto_input'>VALIDADE:</span>
+            <input type='text' id='card_expiration_month' placeholder= 'Mês' required />
+            <input type='text' id='card_expiration_year' placeholder= 'Ano' required />
+            <span class='texto_input'>CVV:</span>
+            <input type='text' id='card_cvv' placeholder= 'CVV' required />
+            <span class='texto_input' id='texto_input-parcelas'>PARCELAS:</span>
+            <select id='installments' name='installments'>
+              <option value='1' selected>1x</option>
+              <option value='2'>2x</option>
+              <option value='3'>3x</option>
+              <option value='4'>4x</option>
+              <option value='5'>5x</option>
+              <option value='6'>6x</option>
+              <option value='7'>7x</option>
+              <option value='8'>8x</option>
+              <option value='9'>9x</option>
+              <option value='10'>10x</option>
+            </select><br/>
+            <div id='field_errors'></div><br/>
+            <div class='botoes'>
+              <input type='hidden' id='amount' name='amount' value='' />
+              <button type='submit' class='botao' id='botao_pagar-cartao'>Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
             </div>
-          </div>
-        </div>
-        <div class='botoes'>
-          <button class='botao botao-gateway'></button>
+          </form>
         </div>
       </div>
     </div>

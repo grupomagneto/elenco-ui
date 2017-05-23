@@ -25,7 +25,8 @@ $(window).on('load',function(){
   $('.renova_04').fadeOut(0);
   $('.renova_05').fadeOut(0);
   $('.renova_06').fadeOut(0);
-  $('.renova_05-2').fadeOut(0);
+  $('.confirmacao-dados-cartao').fadeOut(0);
+  $('.dados-cartao').fadeOut(0);
   $('.voltar').fadeOut(0);
   $('.progresso').fadeOut(0);
   $('.navegacao').css('justify-content', 'flex-end');
@@ -114,36 +115,36 @@ $('.voltar_2').click(function(){
   $('.renova_03-gratuito').fadeOut(0);
   $('.renova_03-premium').fadeOut(0);
   $('.renova_03-profissional').fadeOut(0);
-  $('.requerido').fadeOut(200);
+  $('.requerido').fadeOut(0);
   $('.renova_02-1').fadeIn(200);
   $('.navegacao').css('justify-content', 'space-between');
   $('.modal-content').css('height', '600px');
-  $('.titulo').css('margin-top', '-10px');
-  $('.descricao').css('margin', '0px 20px 0px 20px');
+  // $('.titulo').css('margin-top', '-10px');
+  // $('.descricao').css('margin', '0px 20px 0px 20px');
 });
 $('.voltar_3').click(function(){
   $('.renova_04').fadeOut(0);
   $('.botao_saldo').fadeOut(0);
-  $('.renova_02-1').fadeIn(200);
-  $('.navegacao').css('justify-content', 'space-between');
-  $('.modal-content').css('height', '600px');
-  $('.titulo').css('margin-top', '-10px');
-  $('.descricao').css('margin', '0px 20px 0px 20px');
-  document.getElementById("terms-2").checked = false;
-  document.getElementById("terms-3").checked = false;
+  $('.atualiza-dados').fadeIn(200);
+  $('.modal-content').css('height', '700px');
 });
 $('.voltar_4').click(function(){
   $('.renova_05').fadeOut(0);
-  $('.renova_05-2').fadeOut(0);
+  // $('.renova_05-2').fadeOut(0);
   $('.renova_04').fadeIn(200);
   $('.navegacao').css('justify-content', 'space-between');
-  $('.modal-content').css('height', '350px');
+  $('.modal-content').css('height', '400px');
+  $('.titulo').css('margin-top', '-10px');
+  $('.descricao').css('margin', '0px 20px 0px 20px');
 });
 $('.voltar_atualiza-dados').click(function(){
   $('.atualiza-dados').fadeOut(0);
   $('.renova_02-1').fadeIn(200);
   $('.navegacao').css('justify-content', 'space-between');
   $('.modal-content').css('height', '600px');
+  document.getElementById("terms-1").checked = false;
+  document.getElementById("terms-2").checked = false;
+  document.getElementById("terms-3").checked = false;
 });
 $('#btn_renova-cadastro-gratuito').click(function(){
   if(!$('#terms-1').is(':checked')){
@@ -152,44 +153,12 @@ $('#btn_renova-cadastro-gratuito').click(function(){
   }
   if($('#terms-1').is(':checked')){
     $('.renova_03-gratuito').fadeOut(0);
-    $('.modal-content').css('height', '700px');
+    $('.modal-content').css('height', '725px');
     $('.atualiza-dados').fadeIn(200);
+    document.getElementById("input-botao_atualiza-dados").value = "gratuito";
     event.preventDefault();
   }
 });
-$('#botao_atualizar-dados').click(function(){
-    // var a=document.forms["renova_cadastro"]["DDD"].value;
-    // var b=document.forms["renova_cadastro"]["cel"].value;
-    // var c=document.forms["renova_cadastro"]["email"].value;
-    // var d=document.forms["renova_cadastro"]["cep"].value;
-    // if (a==null || a=="",b==null || b=="",c==null || c=="",d==null || d=="") {
-    //   alert("Please Fill All Required Field");
-    //   return false;
-    //   event.preventDefault();
-    // }
-    // else {
-      // Ajax Cadastros
-      jQuery('#escolhe_gratuito').submit(function(){
-        var dados = jQuery( this ).serialize();
-        jQuery.ajax({
-          type: 'POST',
-          dataType: 'html',
-          url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
-          data: dados,
-          success: function( data ) {
-            $('.atualiza-dados').fadeOut(0);
-            $('.modal-content').css('height', '350px');
-            $('.renova_06').fadeIn(200);
-            $('.titulo').css('margin-top', '-10px');
-            $('.descricao').css('margin', '0px 20px 0px 20px');
-            $('.navegacao').css('justify-content', 'flex-end');
-          }
-        });
-        return false;
-      });
-    // }
-});
-
 $('#btn_renova-cadastro-premium').click(function(){
   if(!$('#terms-2').is(':checked')){
     $('.requerido').fadeIn(200);
@@ -197,27 +166,11 @@ $('#btn_renova-cadastro-premium').click(function(){
   }
   if($('#terms-2').is(':checked')){
     $('.renova_03-premium').fadeOut(0);
-    $('.modal-content').css('height', '450px');
-    $('.renova_04').fadeIn(200);
-    $('.titulo').css('margin-top', '-10px');
-    $('.descricao').css('margin', '0px 20px 0px 20px');
-    var valor = 199;
-    var recebivel = document.getElementById("recebivel").innerHTML;
-    document.getElementById("cadastro").innerHTML = "Premium";
-    document.getElementById("input_saldo").value = "premium";
-    document.getElementById("valor_cadastro").value = valor;
-    if (parseInt(recebivel,10) >= valor) {
-      $('#botao_saldo').fadeIn(0);
-      document.getElementById("descricao-pagamento").innerHTML = "Parcele em até 10x sem juros no Cartão de Crédito ou utilize seu Saldo de Cachês a receber.";
-      document.getElementById("valor").innerHTML = valor;
-      var remanescente = parseInt(recebivel,10) - valor;
-      document.getElementById("remanescente").innerHTML = remanescente;
-      $('.valor-cadastro').css('background', '#CC64E0');
-    }
-    if (parseInt(recebivel,10) < valor) {
-      $('#botao_saldo').fadeOut(0);
-      document.getElementById("descricao-pagamento").innerHTML = "Parcele em até 10x sem juros no Cartão de Crédito ou pague por Boleto Bancário.";
-    }
+    $('.modal-content').css('height', '725px');
+    $('.atualiza-dados').fadeIn(200);
+    document.getElementById("input-botao_atualiza-dados").value = "premium";
+    document.getElementById("amount").value = "19900";
+    document.getElementById("valor_pagar-cartao").innerHTML = "199";
     event.preventDefault();
   }
 });
@@ -228,47 +181,154 @@ $('#btn_renova-cadastro-profissional').click(function(){
   }
   if($('#terms-3').is(':checked')){
     $('.renova_03-profissional').fadeOut(0);
-    $('.modal-content').css('height', '450px');
-    $('.renova_04').fadeIn(200);
-    $('.titulo').css('margin-top', '-10px');
-    $('.descricao').css('margin', '0px 20px 0px 20px');
-    var valor = 799;
-    var recebivel = document.getElementById("recebivel").innerHTML;
-    document.getElementById("cadastro").innerHTML = "Profissional";
-    document.getElementById("input_saldo").value = "profissional";
-    document.getElementById("valor_cadastro").value = valor;
-    if (parseInt(recebivel,10) >= valor) {
-      $('#botao_saldo-2').fadeIn(0);
-      document.getElementById("descricao-pagamento").innerHTML = "Parcele em até 10x sem juros no Cartão de Crédito ou utilize seu Saldo de Cachês a receber.";
-      document.getElementById("valor").innerHTML = valor;
-      var remanescente = parseInt(recebivel,10) - valor;
-      document.getElementById("remanescente").innerHTML = remanescente;
-      $('.valor-cadastro').css('background', '#2AA6E4');
-    }
-    if (parseInt(recebivel,10) < valor) {
-      $('#botao_saldo-2').fadeOut(0);
-      document.getElementById("descricao-pagamento").innerHTML = "Parcele em até 10x sem juros no Cartão de Crédito ou pague por Boleto Bancário.";
-    }
+    $('.modal-content').css('height', '725px');
+    $('.atualiza-dados').fadeIn(200);
+    document.getElementById("input-botao_atualiza-dados").value = "profissional";
+    document.getElementById("amount").value = "79900";
+    document.getElementById("valor_pagar-cartao").innerHTML = "799";
     event.preventDefault();
+  }
+});
+$('#botao_atualizar-dados').click(function(){
+  if (document.getElementById("input-botao_atualiza-dados").value == "gratuito") {
+    // Ajax Atualiza Dados
+    jQuery('#form_atualiza-dados').submit(function(){
+      var dados = jQuery( this ).serialize();
+      jQuery.ajax({
+        type: 'POST',
+        dataType: 'html',
+        url: 'http://localhost:8888/elenco-ui/pagme/atualiza_dados.php',
+        data: dados,
+        success: function( data ) {
+          event.preventDefault();
+        }
+      });
+      return false;
+    });
+    // Ajax Renova Cadastros
+    jQuery('#form_atualiza-dados').submit(function(){
+      var dados = jQuery( this ).serialize();
+      jQuery.ajax({
+        type: 'POST',
+        dataType: 'html',
+        url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
+        data: dados,
+        success: function( data ) {
+          $('.atualiza-dados').fadeOut(0);
+          $('.modal-content').css('height', '350px');
+          $('.renova_06').fadeIn(200);
+          // $('.titulo').css('margin-top', '-10px');
+          // $('.descricao').css('margin', '0px 20px 0px 20px');
+          $('.navegacao').css('justify-content', 'flex-end');
+          event.preventDefault();
+        }
+      });
+      return false;
+    });
+  }
+  else if (document.getElementById("input-botao_atualiza-dados").value == "premium") {
+    // Ajax Atualiza Dados
+    jQuery('#form_atualiza-dados').submit(function(){
+      var dados = jQuery( this ).serialize();
+      jQuery.ajax({
+        type: 'POST',
+        dataType: 'html',
+        url: 'http://localhost:8888/elenco-ui/pagme/atualiza_dados.php',
+        data: dados,
+        success: function( data ) {
+          $('.atualiza-dados').fadeOut(0);
+          $('.renova_04').fadeIn(200);
+          // $('.titulo').css('margin-top', '-10px');
+          // $('.descricao').css('margin', '0px 20px 0px 20px');
+          var valor = 199;
+          var recebivel = document.getElementById("recebivel").innerHTML;
+          document.getElementById("cadastro").innerHTML = "Premium";
+          document.getElementById("input_saldo").value = "premium";
+          document.getElementById("valor_cadastro").value = valor;
+          if (parseInt(recebivel,10) >= valor) {
+            $('.modal-content').css('height', '400px');
+            $('#botao_saldo').fadeIn(0);
+            document.getElementById("descricao-pagamento").innerHTML = "Parcele em até 10x sem juros no Cartão de Crédito ou utilize seu Saldo de Cachês a receber.";
+            document.getElementById("valor").innerHTML = valor;
+            var remanescente = parseInt(recebivel,10) - valor;
+            document.getElementById("remanescente").innerHTML = remanescente;
+            $('.valor-cadastro').css('background', '#CC64E0');
+          }
+          if (parseInt(recebivel,10) < valor) {
+            $('.modal-content').css('height', '350px');
+            $('#botao_saldo').fadeOut(0);
+            document.getElementById("descricao-pagamento").innerHTML = "Parcele em até 10x sem juros no Cartão de Crédito ou pague por Boleto Bancário.";
+          }
+          event.preventDefault();
+        }
+      });
+      return false;
+    });       
+  }
+  else if (document.getElementById("input-botao_atualiza-dados").value == "profissional") {
+    // Ajax Atualiza Dados
+    jQuery('#form_atualiza-dados').submit(function(){
+      var dados = jQuery( this ).serialize();
+      jQuery.ajax({
+        type: 'POST',
+        dataType: 'html',
+        url: 'http://localhost:8888/elenco-ui/pagme/atualiza_dados.php',
+        data: dados,
+        success: function( data ) {
+          $('.atualiza-dados').fadeOut(0);
+          $('.renova_04').fadeIn(200);
+          // $('.titulo').css('margin-top', '-10px');
+          // $('.descricao').css('margin', '0px 20px 0px 20px');
+          var valor = 799;
+          var recebivel = document.getElementById("recebivel").innerHTML;
+          document.getElementById("cadastro").innerHTML = "Profissional";
+          document.getElementById("input_saldo").value = "profissional";
+          document.getElementById("valor_cadastro").value = valor;
+          if (parseInt(recebivel,10) >= valor) {
+            $('.modal-content').css('height', '400px');
+            $('#botao_saldo').fadeIn(0);
+            document.getElementById("descricao-pagamento").innerHTML = "Parcele em até 10x sem juros no Cartão de Crédito ou utilize seu Saldo de Cachês a receber.";
+            document.getElementById("valor").innerHTML = valor;
+            var remanescente = parseInt(recebivel,10) - valor;
+            document.getElementById("remanescente").innerHTML = remanescente;
+            $('.valor-cadastro').css('background', '#2AA6E4');
+          }
+          if (parseInt(recebivel,10) < valor) {
+            $('.modal-content').css('height', '350px');
+            $('#botao_saldo').fadeOut(0);
+            document.getElementById("descricao-pagamento").innerHTML = "Parcele em até 10x sem juros no Cartão de Crédito ou pague por Boleto Bancário.";
+          }
+          event.preventDefault();
+        }
+      });
+      return false;
+    });       
   }
 });
 $('#botao_saldo').click(function(){
   $('.renova_04').fadeOut(0);
   $('.renova_05').fadeIn(200);
-  $('.modal-content').css('height', '450px');
+  $('.titulo').css('margin-top', '-10px');
+  $('.descricao').css('margin', '0px 20px 0px 20px');
+  $('.modal-content').css('height', '500px');
 });
-$('#botao_saldo-2').click(function(){
+$('#botao_credito').click(function(){
   $('.renova_04').fadeOut(0);
-  $('.renova_05').fadeIn(200);
-  $('.modal-content').css('height', '450px');
+  $('.confirmacao-dados-cartao').fadeIn(200);
+  $('.modal-content').css('height', '350px');
 });
-$('.botao_gateway').click(function(){
+$('#botao_boleto').click(function(){
   $('.renova_04').fadeOut(0);
-  $('.renova_05-2').fadeIn(200);
+  // $('.renova_05-2').fadeIn(200);
   $('.modal-content').css('height', '350px');
 });
 $('.checado').click(function(){
   $('.requerido').fadeOut(200);
+});
+$('#botao_dados-cartao-sim').click(function(){
+  $('.confirmacao-dados-cartao').fadeOut(0);
+  $('.dados-cartao').fadeIn(200);
+  $('.modal-content').css('height', '500px');
 });
 $('#confirmar-saldo').click(function(){
   // Ajax Cadastros
@@ -283,12 +343,87 @@ $('#confirmar-saldo').click(function(){
           $('.renova_05').fadeOut(0);
           $('.renova_06').fadeIn(200);
           $('.modal-content').css('height', '350px');
-          $('.titulo').css('margin-top', '-10px');
-          $('.descricao').css('margin', '0px 20px 0px 20px');
+          // $('.titulo').css('margin-top', '-10px');
+          // $('.descricao').css('margin', '0px 20px 0px 20px');
           $('.navegacao').css('justify-content', 'flex-end');
         }
       });
       return false;
     });
 });
+// ENCRIPTANDO DADOS DO CARTÃO PELO PAGAR.ME
+$(document).ready(function() { // quando o jQuery estiver carregado...
+    PagarMe.encryption_key = "ek_test_Ec8KhxISQ1tug1b8bCGxC2nXfxqRmk";
 
+    var form = $("#payment_form");
+
+    form.submit(function(event) { // quando o form for enviado...
+        // inicializa um objeto de cartão de crédito e completa
+        // com os dados do form
+        var creditCard = new PagarMe.creditCard();
+        creditCard.cardHolderName = $("#payment_form #card_holder_name").val();
+        creditCard.cardExpirationMonth = $("#payment_form #card_expiration_month").val();
+        creditCard.cardExpirationYear = $("#payment_form #card_expiration_year").val();
+        creditCard.cardNumber = $("#payment_form #card_number").val();
+        creditCard.cardCVV = $("#payment_form #card_cvv").val();
+
+        // pega os erros de validação nos campos do form
+        var fieldErrors = creditCard.fieldErrors();
+
+        //Verifica se há erros
+        var hasErrors = false;
+        for(var field in fieldErrors) { hasErrors = true; break; }
+
+        if(hasErrors) {
+            // realiza o tratamento de errors
+            alert(fieldErrors);
+        } else {
+            // se não há erros, gera o card_hash...
+            creditCard.generateHash(function(cardHash) {
+                // ...coloca-o no form...
+                form.append($('<input type="hidden" name="card_hash">').val(cardHash));
+                // e envia o form
+                form.get(0).submit();
+            });
+        }
+
+        return false;
+    });
+});
+// FORMAT OS SELECTS
+$('#installments').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
+    $this.addClass('select-hidden'); 
+    $this.wrap('<div class="select"></div>');
+    $this.after('<div class="select-styled"></div>');
+    var $styledSelect = $this.next('div.select-styled');
+    $styledSelect.text($this.children('option').eq(0).text());
+    var $list = $('<ul />', {
+        'class': 'select-options'
+    }).insertAfter($styledSelect);
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+    var $listItems = $list.children('li');
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active').each(function(){
+            $(this).removeClass('active').next('ul.select-options').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options').toggle(); 
+    });
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $list.hide();
+        //console.log($this.val());
+    });
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
+});
