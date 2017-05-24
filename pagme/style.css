@@ -210,7 +210,7 @@ overflow: hidden;
 background: rgba(255,255,255,0.60);
 border-radius: 25px;
 }
-input[type='text']{
+input{
 background: rgba(255,255,255,0.20);
 border: 1px solid #FFFFFF;
 border-radius: 8px;
@@ -223,6 +223,12 @@ margin-bottom: 15px;
 font-family: Avenir-Book;
 font-size: 18px;
 line-height: 32px;
+}
+input[type="checkbox"]{
+width: 20px;
+height: 20px;
+border-radius: 0px;
+margin: 0px;
 }
 .select-hidden{ display:none; visibility:hidden; padding-right:10px; }
 .select{ cursor:pointer; display:inline-block; position:absolute; font-size:18px; color:#fff; width:69px; height:50px; margin-left:-25px; }
@@ -473,60 +479,65 @@ display: flex;
 justify-content: center;
 margin-bottom: 20px;
 }
-input[type='text']#DDD{
+input#DDD{
 width: 50px;
 }
-input[type='text']#cel{
+input#cel{
 width: 190px;
 }
-input[type='text']#email{
+input#email{
 width: 253px;
 }
-input[type='text']#cep{
+input#cep{
 width: 253px;
 }
-input[type='text']#endereco{
+input#endereco{
 width: 190px;
 }
-input[type='text']#numero{
+input#numero{
 width: 50px;
 }
-input[type='text']#complemento{
+input#complemento{
 width: 120px;
 }
-input[type='text']#bairro{
+input#bairro{
 width: 120px;
 }
-input[type='text']#cidade{
+input#cidade{
 width: 190px;
 }
-input[type='text']#uf{
+input#uf{
 width: 50px;
 }
-input[type='text']#card_number{
+input#card_number{
 width: 250px;
 }
-input[type='text']#card_holder_name{
+input#card_holder_name{
 width: 250px;
 }
-input[type='text']#card_expiration_month{
+input#card_expiration_month{
 width: 50px;
 margin-right: 0px;
 margin-bottom: -15px;
 }
-input[type='text']#card_expiration_year{
+input#card_expiration_year{
 width: 50px;
 margin-left: 0px;
 margin-right: 5px;
 margin-bottom: -15px;
 }
-input[type='text']#card_cvv{
+input#card_cvv{
 width: 50px;
 margin-right: 35px;
 margin-bottom: -5px;
 }
 .texto_input#texto_input-parcelas{
 margin-left: -25px;
+}
+.moip {
+display: flex;
+justify-content: center;
+margin-top: -25px;
 }
 .subtracao {
 width: 90%;

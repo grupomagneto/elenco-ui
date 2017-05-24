@@ -67,7 +67,7 @@
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src='assets/js/gradient.js'></script>
@@ -79,8 +79,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-22229864-1', 'auto');
 ga('send', 'pageview');
 </script>
-<script src="https://assets.pagar.me/js/pagarme.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -403,11 +401,11 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           <div class='campos'>
             <form class='forms' name='renova_cadastro' id='form_atualiza-dados' action='#' method='post'>
               <span class='texto_input'>DDD:</span>
-              <input type='text' name='DDD' id='DDD' value='<?php echo $ddd; ?>' placeholder='DDD' required />
+              <input type='tel' name='DDD' id='DDD' value='<?php echo $ddd; ?>' placeholder='DDD' required />
               <span class='texto_input'>CELULAR:</span>
-              <input type='text' name='cel' id='cel' value='<?php echo $cel; ?>' placeholder='Telefone' required /><BR />
+              <input type='tel' name='cel' id='cel' value='<?php echo $cel; ?>' placeholder='Telefone' required /><BR />
               <span class='texto_input'>E-MAIL:</span>
-              <input type='text' name='email' id='email' value='<?php echo $email; ?>' placeholder='E-mail' required /><BR />
+              <input type='email' name='email' id='email' value='<?php echo $email; ?>' placeholder='E-mail' required /><BR />
               <span class='texto_input'>CEP:</span>
               <input type='text' name='cep' id='cep' value='<?php echo $cep; ?>' placeholder='CEP' required /><BR />
               <span class='texto_input'>ENDEREÇO:</span>
@@ -573,6 +571,9 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             <div class='botoes'>
               <input type='hidden' id='amount' name='amount' value='' />
               <button type='submit' class='botao' id='botao_pagar-cartao'>Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
+            </div>
+            <div class='moip'>
+              <a href='http://www.moip.com.br' target='_blank'><img src='images/moip150px.png' /></a>
             </div>
           </form>
         </div>
