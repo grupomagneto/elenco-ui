@@ -86,8 +86,7 @@ $(document).ready(function(){
     return false;
   });
 				
-	    } else {
-	       alert('clique curto');   
+	    } else { 
 				    
     jQuery('form').submit(function(){
     var dados = jQuery( this ).serialize();
@@ -216,14 +215,51 @@ $('.checkbox-image-action__fav').on('click', function() {
       success: function( data )
       { 
 				console.log("ajax desktop success");
+				var modal = document.getElementById('myModal');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    $('#myModal').fadeOut(250);
+  }
+}
+// When the user presses ESC, close the modal
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) {
+    $('#myModal').fadeOut(250);
+  }
+});
+$(window).on('load',function(){
+  $('#myModal').fadeIn(250);
+  $('.renova_02-1').fadeOut(0);
+  $('.renova_02-2').fadeOut(0);
+  $('.renova_02-3').fadeOut(0);
+  $('.renova_03-gratuito').fadeOut(0);
+  $('.renova_03-premium').fadeOut(0);
+  $('.renova_03-profissional').fadeOut(0);
+  $('.atualiza-dados').fadeOut(0);
+  $('.renova_04').fadeOut(0);
+  $('.renova_05').fadeOut(0);
+  $('.renova_06').fadeOut(0);
+  $('.renova_05-2').fadeOut(0);
+  $('.voltar').fadeOut(0);
+  $('.progresso').fadeOut(0);
+  $('.navegacao').css('justify-content', 'flex-end');
+});
+$('.fechar').click(function(){
+  $('#myModal').fadeOut(250);
+});
+
 				
-        $(".gradient").css('display', 'none');
+//        $(".gradient").css('display', 'none');
+				$('.modal').css('display', 'block');
+				$('.modal-content').css('display', 'block');
         $(".photo__single").css('display', 'block');
         $(".photo__single").html(data);
         $(".photo__single").load("../api/single_profile.php");
         $('.container-outline__single').css('display', 'block');
         $('.container-outline__categories').css('display', 'block');
-        $('.container').css('display', 'none');
+//        $('.container').css('display', 'none');
         
         $(".close").click(function() {
             $(".photo__single").css("display", "none");
@@ -234,26 +270,40 @@ $('.checkbox-image-action__fav').on('click', function() {
 					$('#myModal').css('display', 'none');
 					$('.modal-content').css('display', 'none');
         });
-				
-				
-				//press ESC
-				$(document).keydown(function(e) {
-						// ESCAPE key pressed
-						if (e.keyCode == 27) {
-							$(".photo__single").css("display", "none");
-							$(".container-outline__single").css("display", "none");
-							$(".container-outline__categories").css("display", "none");
-							$(".gradient").css("display", "block");
-							$(".container").css("display", "block");
-						}
-				});
-
+        
         var mySwiper = new Swiper ('.swiper-container', {
             direction: 'horizontal',
             loop: false,
             keyboardControl: true,
             pagination: '.swiper-pagination'
         });
+				
+				$('.carousel-portfolio').slick({
+						dots: true,
+						infinite: false,
+						speed: 200,
+						centerMode: false,
+						variableWidth: false,
+						autoplay: false,
+						arrows: false
+				}); 
+				
+				$( ".img_portfolio" ).hide();
+
+				$("#form__portfolio [name='portfolio']").click(function() {
+					if ($(this).attr("value") == "videos") {
+
+						$( ".vid1" ).show();
+						$( ".img_portfolio" ).hide();
+
+					}
+					if ($(this).attr("value") == "fotos") {
+
+						$( ".vid1" ).hide();
+						$( ".img_portfolio" ).show();
+
+					}
+				});
             
       }
     });
@@ -342,8 +392,3 @@ $(document).ready(function(){
     return false;
   }
 })(jQuery);
-
-
-
-
-

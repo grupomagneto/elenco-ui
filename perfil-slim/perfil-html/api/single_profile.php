@@ -240,6 +240,7 @@ $recebivel_cents = $recebivel_pieces[1];
 						</button>
 
 		</div>
+		
   <section class='intro' id='intro'>
 
     <div class='content'>
@@ -797,7 +798,7 @@ while ($row = mysqli_fetch_array($result)) {
     </section>
 <!-- FIM POPULARIDADE -->
 <!-- INÍCIO REPUTAÇÃO -->
-    <!-- <section class='eighth'>
+<!-- <section class='eighth'>
   <div class="container-outline__content">
     <div class="reputation">
       <div class="title-section">
