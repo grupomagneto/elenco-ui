@@ -2049,10 +2049,30 @@ button.like img {
 .container-outline__single {
   overflow-y: auto;
   overflow-x: hidden;
-  width: 300px;
+  width: 95%;
   height: 95%;
   margin-top: -50px;
   margin-left: -10px; }
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .container-outline__single {
+    position: relative;
+    margin-top: -1%;
+    left: 0%;
+    width: 300px;
+    height: 95%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .container-outline__single {
+    position: relative;
+    margin-top: -1%;
+    left: 0%;
+    width: 300px;
+    height: 95%;
+  }
+}
 
 .container-outline__single::-webkit-scrollbar {
   width: 8px;
@@ -2086,8 +2106,28 @@ button.like img {
   position: relative;
   margin-top: -1%;
   left: 0%;
-	width: 300px;
+	width: 95%;
 	height: 95%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .container-outline__categories{
+    position: relative;
+    margin-top: -1%;
+    left: 0%;
+    width: 300px;
+    height: 95%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .container-outline__categories{
+    position: relative;
+    margin-top: -1%;
+    left: 0%;
+    width: 300px;
+    height: 95%;
+  }
 }
 
 section {
