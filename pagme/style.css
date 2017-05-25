@@ -114,6 +114,9 @@ font-family: Avenir-Book;
 font-size: 30px;
 color: rgba(255,255,255,1);
 }
+.heavy{
+font-family: Avenir-Heavy;
+}
 a:active,
 a:hover,
 a:focus {
@@ -211,7 +214,7 @@ background: rgba(255,255,255,0.60);
 border-radius: 25px;
 }
 input{
-background: rgba(255,255,255,0.20);
+background: rgba(255,255,255,0.10);
 border: 1px solid #FFFFFF;
 border-radius: 8px;
 height: 50px;
@@ -232,12 +235,12 @@ margin: 0px;
 }
 .select-hidden{ display:none; visibility:hidden; padding-right:10px; }
 .select{ cursor:pointer; display:inline-block; position:absolute; font-size:18px; color:#fff; width:69px; height:50px; margin-left:-25px; }
-.select-styled{ font-family:Avenir-Book; font-size:18px; position:absolute; top:0px; right:0px; bottom:0px; left:0px; background-color:rgba(255,255,255,0.20); padding:11px 15px;; border-radius:6px; border:1px solid #fff; -moz-transition:all 0.2s ease-in; -o-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition:all 0.2s ease-in; text-align:left; }
+.select-styled{ font-family:Avenir-Book; font-size:18px; position:absolute; top:0px; right:0px; bottom:0px; left:0px; background-color:rgba(255,255,255,0.10); padding:11px 15px;; border-radius:6px; border:1px solid #fff; -moz-transition:all 0.2s ease-in; -o-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition:all 0.2s ease-in; text-align:left; }
 .select-styled:after{ content:""; width:0px; height:0px; border:5px solid transparent; border-color:#fff transparent transparent transparent; top:21px; position:absolute; right:4px; }
 /*.select-styled:hover{ background-color:rgba(255,255,255,0.20); }*/
 /*.select-styled:active, .select-styled.active{ background-color:rgba(255,255,255,0.20); }*/
 .select-styled.active:after{ top:16px; border-color:transparent transparent #fff transparent; }
-.select-options{ font-family:Avenir-Book; font-size:14px; line-height:12px; display:none; position:absolute; top:100%; right:0px; left:0; width: inherit; z-index:2; margin:0px; list-style:none; overflow:none; border-radius:6px; border:1px solid #fff; background-color:#694180; margin-top:8px; }
+.select-options{ font-family:Avenir-Book; font-size:14px; line-height:12px; display:none; position:absolute; top:100%; right:0px; left:0; width: inherit; z-index:2; margin:0px; list-style:none; overflow:none; border-radius:6px; border:1px solid #fff; background-color:#572970; margin-top:8px; }
 .select-options li{ margin:0px; padding:6px; -moz-transition:all 0.15s ease-in; -o-transition:all 0.15s ease-in; -webkit-transition:all 0.15s ease-in; transition:all 0.15s ease-in; text-align:center; }
 .select-options li:hover{ color:#fff; background:rgba(255,255,255,0.20); }
 .select-options li[rel="hide"]{ display:none; }
@@ -247,6 +250,7 @@ margin: 0px;
 .texto_input{
 color: #FFFFFF;
 font-family: Avenir-Book;
+opacity: 0.7;
 font-size: 10px;
 position: absolute;
 margin-top: -15px;
@@ -531,6 +535,12 @@ width: 50px;
 margin-right: 35px;
 margin-bottom: -5px;
 }
+input#cpf{
+width: 250px;
+}
+input#nome_completo{
+width: 250px;
+}
 .texto_input#texto_input-parcelas{
 margin-left: -25px;
 }
@@ -608,6 +618,18 @@ opacity: 0.9;
 }
 .footer__section{
 margin-top: 50px;
+}
+.descricao_validade-novo-cadastro{
+width: 250px;
+height: 60px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+margin: 20px 20px -10px 20px;
+border: 1px solid #FFFFFF;
+border-radius: 8px;
 }
 @media only screen and (max-width: 415px) {
 .modal-content {

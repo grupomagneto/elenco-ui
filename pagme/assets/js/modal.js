@@ -15,18 +15,21 @@ $(document).keyup(function(e) {
 });
 $(window).on('load',function(){
   $('#myModal').fadeIn(250);
-  $('.renova_02-1').fadeOut(0);
-  $('.renova_02-2').fadeOut(0);
-  $('.renova_02-3').fadeOut(0);
-  $('.renova_03-gratuito').fadeOut(0);
-  $('.renova_03-premium').fadeOut(0);
-  $('.renova_03-profissional').fadeOut(0);
-  $('.atualiza-dados').fadeOut(0);
-  $('.renova_04').fadeOut(0);
-  $('.renova_05').fadeOut(0);
-  $('.renova_06').fadeOut(0);
-  $('.confirmacao-dados-cartao').fadeOut(0);
-  $('.dados-cartao').fadeOut(0);
+  $('.div-renovar_modalidades').fadeOut(0);
+  $('.div-renovar_cancelar').fadeOut(0);
+  $('.div-renovar_sucesso-cancelar').fadeOut(0);
+  $('.div-renovar_gratuito').fadeOut(0);
+  $('.div-renovar_premium').fadeOut(0);
+  $('.div-renovar_profissional').fadeOut(0);
+  $('.div-renovar_atualiza-dados').fadeOut(0);
+  $('.div-renovar_forma-pagamento').fadeOut(0);
+  $('.div-renovar_saldo-caches').fadeOut(0);
+  $('.div-renovar_sucesso-renovacao').fadeOut(0);
+  $('.div-renovar_confirmacao-dados-cartao').fadeOut(0);
+  $('.div-renovar_dados-cartao').fadeOut(0);
+  $('.div-renovar_dados-fatura-cartao').fadeOut(0);
+  $('.div-renovar_dados-titular-cartao').fadeOut(0);
+  $('.div-renovar_boleto-bancario').fadeOut(0);
   $('.voltar').fadeOut(0);
   $('.progresso').fadeOut(0);
   $('.navegacao').css('justify-content', 'flex-end');
@@ -35,16 +38,16 @@ $('.fechar').click(function(){
   $('#myModal').fadeOut(250);
 });
 $('#botao_renovar-contrato').click(function(){
-    $('.renova_01').fadeOut(0);
-    $('.renova_02-1').fadeIn(200);
+    $('.div-renovar_renova-ou-cancela').fadeOut(0);
+    $('.div-renovar_modalidades').fadeIn(200);
     $('.voltar').fadeIn(200);
     $('.progresso').fadeIn(200);
     $('.navegacao').css('justify-content', 'space-between');
     $('.modal-content').css('height', '600px');
 });
 $('#botao_apagar-perfil').click(function(){
-    $('.renova_01').fadeOut(0);
-    $('.renova_02-2').fadeIn(200);
+    $('.div-renovar_renova-ou-cancela').fadeOut(0);
+    $('.div-renovar_cancelar').fadeIn(200);
     $('.voltar').fadeIn(200);
     $('.navegacao').css('justify-content', 'space-between');
 });
@@ -58,9 +61,9 @@ $('#botao_confirma_apagar').click(function(){
       url: 'http://localhost:8888/elenco-ui/pagme/apaga_cadastro.php',
       data: dados2,
       success: function( data ) {
-        $('.renova_02-2').fadeOut(0);
+        $('.div-renovar_cancelar').fadeOut(0);
         $('.navegacao').css('justify-content', 'flex-end');
-        $('.renova_02-3').fadeIn(200);
+        $('.div-renovar_sucesso-cancelar').fadeIn(200);
         // Recarrega em 5 segundos
         setTimeout(function() {window.location.href='index.php';},10000);
         // Exibe o timer
@@ -80,71 +83,90 @@ $('#botao_confirma_apagar').click(function(){
   });
 });
 $('.gratuito').click(function(){
-    $('.renova_02-1').fadeOut(0);
-    $('.renova_03-gratuito').fadeIn(200);
+    $('.div-renovar_modalidades').fadeOut(0);
+    $('.div-renovar_gratuito').fadeIn(200);
     $('.modal-content').css('height', '725px');
     $('.titulo').css('margin-top', '15px');
     $('.descricao').css('margin', '25px');
 });
 $('.premium').click(function(){
-    $('.renova_02-1').fadeOut(0);
-    $('.renova_03-premium').fadeIn(200);
+    $('.div-renovar_modalidades').fadeOut(0);
+    $('.div-renovar_premium').fadeIn(200);
     $('.modal-content').css('height', '850px');
     $('.titulo').css('margin-top', '15px');
     $('.descricao').css('margin', '25px');
 });
 $('.profissional').click(function(){
-    $('.renova_02-1').fadeOut(0);
-    $('.renova_03-profissional').fadeIn(200);
+    $('.div-renovar_modalidades').fadeOut(0);
+    $('.div-renovar_profissional').fadeIn(200);
     $('.modal-content').css('height', '1110px');
     $('.titulo').css('margin-top', '15px');
     $('.descricao').css('margin', '25px');
 });
 $('.voltar_1').click(function(){
-  $('.renova_02-1').fadeOut(0);
-  $('.renova_01').fadeIn(200);
+  $('.div-renovar_modalidades').fadeOut(0);
+  $('.div-renovar_renova-ou-cancela').fadeIn(200);
   $('.modal-content').css('height', '350px');
   $('.navegacao').css('justify-content', 'flex-end');
 });
 $('.voltar_1-2').click(function(){
-  $('.renova_02-2').fadeOut(0);
-  $('.renova_01').fadeIn(200);
+  $('.div-renovar_cancelar').fadeOut(0);
+  $('.div-renovar_renova-ou-cancela').fadeIn(200);
   $('.navegacao').css('justify-content', 'flex-end');
 });
 $('.voltar_2').click(function(){
-  $('.renova_03-gratuito').fadeOut(0);
-  $('.renova_03-premium').fadeOut(0);
-  $('.renova_03-profissional').fadeOut(0);
+  $('.div-renovar_gratuito').fadeOut(0);
+  $('.div-renovar_premium').fadeOut(0);
+  $('.div-renovar_profissional').fadeOut(0);
   $('.requerido').fadeOut(0);
-  $('.renova_02-1').fadeIn(200);
+  $('.div-renovar_modalidades').fadeIn(200);
   $('.navegacao').css('justify-content', 'space-between');
   $('.modal-content').css('height', '600px');
   // $('.titulo').css('margin-top', '-10px');
   // $('.descricao').css('margin', '0px 20px 0px 20px');
 });
 $('.voltar_3').click(function(){
-  $('.renova_04').fadeOut(0);
+  $('.div-renovar_forma-pagamento').fadeOut(0);
   $('.botao_saldo').fadeOut(0);
-  $('.atualiza-dados').fadeIn(200);
+  $('.div-renovar_atualiza-dados').fadeIn(200);
   $('.modal-content').css('height', '700px');
 });
-$('.voltar_4').click(function(){
-  $('.renova_05').fadeOut(0);
-  // $('.renova_05-2').fadeOut(0);
-  $('.renova_04').fadeIn(200);
+$('.voltar_saldo-caches').click(function(){
+  $('.div-renovar_saldo-caches').fadeOut(0);
+  $('.div-renovar_forma-pagamento').fadeIn(200);
   $('.navegacao').css('justify-content', 'space-between');
   $('.modal-content').css('height', '400px');
   $('.titulo').css('margin-top', '-10px');
   $('.descricao').css('margin', '0px 20px 0px 20px');
 });
 $('.voltar_atualiza-dados').click(function(){
-  $('.atualiza-dados').fadeOut(0);
-  $('.renova_02-1').fadeIn(200);
+  $('.div-renovar_atualiza-dados').fadeOut(0);
+  $('.div-renovar_modalidades').fadeIn(200);
   $('.navegacao').css('justify-content', 'space-between');
   $('.modal-content').css('height', '600px');
   document.getElementById("terms-1").checked = false;
   document.getElementById("terms-2").checked = false;
   document.getElementById("terms-3").checked = false;
+});
+$('.voltar_confirmacao-dados-cartao').click(function(){
+  $('.div-renovar_confirmacao-dados-cartao').fadeOut(0);
+  $('.div-renovar_forma-pagamento').fadeIn(200);
+  $('.modal-content').css('height', '400px');
+});
+$('.voltar_dados-cartao').click(function(){
+  $('.div-renovar_dados-cartao').fadeOut(0);
+  $('.div-renovar_confirmacao-dados-cartao').fadeIn(200);
+  $('.modal-content').css('height', '350px');
+});
+$('.voltar_dados-titular-cartao').click(function(){
+  $('.div-renovar_dados-titular-cartao').fadeOut(0);
+  $('.div-renovar_confirmacao-dados-cartao').fadeIn(200);
+  $('.modal-content').css('height', '350px');
+});
+$('.voltar_dados-fatura-cartao').click(function(){
+  $('.div-renovar_dados-fatura-cartao').fadeOut(0);
+  $('.div-renovar_dados-titular-cartao').fadeIn(200);
+  $('.modal-content').css('height', '550px');
 });
 $('#btn_renova-cadastro-gratuito').click(function(){
   if(!$('#terms-1').is(':checked')){
@@ -152,9 +174,9 @@ $('#btn_renova-cadastro-gratuito').click(function(){
     event.preventDefault();
   }
   if($('#terms-1').is(':checked')){
-    $('.renova_03-gratuito').fadeOut(0);
+    $('.div-renovar_gratuito').fadeOut(0);
     $('.modal-content').css('height', '725px');
-    $('.atualiza-dados').fadeIn(200);
+    $('.div-renovar_atualiza-dados').fadeIn(200);
     document.getElementById("input-botao_atualiza-dados").value = "gratuito";
     event.preventDefault();
   }
@@ -165,9 +187,9 @@ $('#btn_renova-cadastro-premium').click(function(){
     event.preventDefault();
   }
   if($('#terms-2').is(':checked')){
-    $('.renova_03-premium').fadeOut(0);
+    $('.div-renovar_premium').fadeOut(0);
     $('.modal-content').css('height', '725px');
-    $('.atualiza-dados').fadeIn(200);
+    $('.div-renovar_atualiza-dados').fadeIn(200);
     document.getElementById("input-botao_atualiza-dados").value = "premium";
     document.getElementById("amount").value = "19900";
     document.getElementById("valor_pagar-cartao").innerHTML = "199";
@@ -180,9 +202,9 @@ $('#btn_renova-cadastro-profissional').click(function(){
     event.preventDefault();
   }
   if($('#terms-3').is(':checked')){
-    $('.renova_03-profissional').fadeOut(0);
+    $('.div-renovar_profissional').fadeOut(0);
     $('.modal-content').css('height', '725px');
-    $('.atualiza-dados').fadeIn(200);
+    $('.div-renovar_atualiza-dados').fadeIn(200);
     document.getElementById("input-botao_atualiza-dados").value = "profissional";
     document.getElementById("amount").value = "79900";
     document.getElementById("valor_pagar-cartao").innerHTML = "799";
@@ -214,9 +236,10 @@ $('#botao_atualizar-dados').click(function(){
         url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
         data: dados,
         success: function( data ) {
-          $('.atualiza-dados').fadeOut(0);
+          $('.div-renovar_atualiza-dados').fadeOut(0);
+          $('.div-renovar_forma-pagamento').fadeOut(0);
           $('.modal-content').css('height', '350px');
-          $('.renova_06').fadeIn(200);
+          $('.div-renovar_sucesso-renovacao').fadeIn(200);
           // $('.titulo').css('margin-top', '-10px');
           // $('.descricao').css('margin', '0px 20px 0px 20px');
           $('.navegacao').css('justify-content', 'flex-end');
@@ -236,8 +259,8 @@ $('#botao_atualizar-dados').click(function(){
         url: 'http://localhost:8888/elenco-ui/pagme/atualiza_dados.php',
         data: dados,
         success: function( data ) {
-          $('.atualiza-dados').fadeOut(0);
-          $('.renova_04').fadeIn(200);
+          $('.div-renovar_atualiza-dados').fadeOut(0);
+          $('.div-renovar_forma-pagamento').fadeIn(200);
           // $('.titulo').css('margin-top', '-10px');
           // $('.descricao').css('margin', '0px 20px 0px 20px');
           var valor = 199;
@@ -275,8 +298,8 @@ $('#botao_atualizar-dados').click(function(){
         url: 'http://localhost:8888/elenco-ui/pagme/atualiza_dados.php',
         data: dados,
         success: function( data ) {
-          $('.atualiza-dados').fadeOut(0);
-          $('.renova_04').fadeIn(200);
+          $('.div-renovar_atualiza-dados').fadeOut(0);
+          $('.div-renovar_forma-pagamento').fadeIn(200);
           // $('.titulo').css('margin-top', '-10px');
           // $('.descricao').css('margin', '0px 20px 0px 20px');
           var valor = 799;
@@ -306,28 +329,29 @@ $('#botao_atualizar-dados').click(function(){
   }
 });
 $('#botao_saldo').click(function(){
-  $('.renova_04').fadeOut(0);
-  $('.renova_05').fadeIn(200);
+  $('.div-renovar_forma-pagamento').fadeOut(0);
+  $('.div-renovar_saldo-caches').fadeIn(200);
   $('.titulo').css('margin-top', '-10px');
   $('.descricao').css('margin', '0px 20px 0px 20px');
   $('.modal-content').css('height', '500px');
 });
 $('#botao_credito').click(function(){
-  $('.renova_04').fadeOut(0);
-  $('.confirmacao-dados-cartao').fadeIn(200);
+  $('.div-renovar_forma-pagamento').fadeOut(0);
+  $('.div-renovar_confirmacao-dados-cartao').fadeIn(200);
   $('.modal-content').css('height', '350px');
 });
 $('#botao_boleto').click(function(){
-  $('.renova_04').fadeOut(0);
-  // $('.renova_05-2').fadeIn(200);
+  $('.div-renovar_forma-pagamento').fadeOut(0);
+  $('.div-renovar_boleto-bancario').fadeIn(200);
   $('.modal-content').css('height', '350px');
+  $('.navegacao').css('justify-content', 'flex-end');
 });
 $('.checado').click(function(){
   $('.requerido').fadeOut(200);
 });
 $('#botao_dados-cartao-sim').click(function(){
-  $('.confirmacao-dados-cartao').fadeOut(0);
-  $('.dados-cartao').fadeIn(200);
+  $('.div-renovar_confirmacao-dados-cartao').fadeOut(0);
+  $('.div-renovar_dados-cartao').fadeIn(200);
   $('.modal-content').css('height', '550px');
 });
 $('#confirmar-saldo').click(function(){
@@ -340,8 +364,8 @@ $('#confirmar-saldo').click(function(){
         url: 'http://localhost:8888/elenco-ui/pagme/renova_cadastro.php',
         data: dados_2,
         success: function( data ) {
-          $('.renova_05').fadeOut(0);
-          $('.renova_06').fadeIn(200);
+          $('.div-renovar_saldo-caches').fadeOut(0);
+          $('.div-renovar_sucesso-renovacao').fadeIn(200);
           $('.modal-content').css('height', '350px');
           // $('.titulo').css('margin-top', '-10px');
           // $('.descricao').css('margin', '0px 20px 0px 20px');
@@ -350,6 +374,21 @@ $('#confirmar-saldo').click(function(){
       });
       return false;
     });
+});
+$('#botao_dados-cartao-nao').click(function(){
+  $('.div-renovar_confirmacao-dados-cartao').fadeOut(0);
+  $('.div-renovar_dados-titular-cartao').fadeIn(200);
+  $('.modal-content').css('height', '550px');
+});
+$('#botao_dados-titular-cartao').click(function(){
+  $('.div-renovar_dados-titular-cartao').fadeOut(0);
+  $('.div-renovar_dados-fatura-cartao').fadeIn(200);
+  $('.modal-content').css('height', '550px');
+});
+$('#botao_dados-fatura-cartao').click(function(){
+  $('.div-renovar_dados-fatura-cartao').fadeOut(0);
+  $('.div-renovar_dados-cartao').fadeIn(200);
+  $('.modal-content').css('height', '550px');
 });
 // FORMAT OS SELECTS
 $('#installments').each(function(){

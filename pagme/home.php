@@ -176,7 +176,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
 ?>
 <div id='myModal' class='modal'>
   <div class='modal-content'>
-    <div class='renova_01'>
+    <div class='div-renovar_renova-ou-cancela'>
         <div class='conteiner'>
           <div class='navegacao'>
             <img src='images/fechar.svg' class='fechar botoes_navegacao' />
@@ -193,7 +193,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           </div>
         </div>
     </div>
-    <div class='renova_02-1'>
+    <div class='div-renovar_modalidades'>
         <div class='conteiner'>
             <div class='navegacao'>
                 <img src='images/voltar.svg' class='voltar_1 botoes_navegacao' />
@@ -215,7 +215,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             </div>
         </div>
     </div>
-    <div class='renova_02-2'>
+    <div class='div-renovar_cancelar'>
         <div class='conteiner'>
             <div class='navegacao'>
                 <img src='images/voltar.svg' class='voltar_1-2 botoes_navegacao' />
@@ -238,7 +238,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             </div>
         </div>
     </div>
-    <div class='renova_02-3'>
+    <div class='div-renovar_sucesso-cancelar'>
         <div class='conteiner'>
             <div class='navegacao'>
                 <img src='images/fechar.svg' class='fechar botoes_navegacao' />
@@ -254,7 +254,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             </div>
         </div>
     </div>
-    <div class='renova_03-gratuito'>
+    <div class='div-renovar_gratuito'>
         <div class='conteiner'>
             <div class='navegacao'>
                 <img src='images/voltar.svg' class='voltar_2 botoes_navegacao' />
@@ -279,7 +279,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                         <li class='itens'>Você faz suas fotos pelo celular e nos envia para cadastro e atualizações;</li>
                         <li class='itens'>Cadastro sem custos;</li>
                         <li class='itens'>Receba 60% do cachê líquido em todos os trabalhos;</li>
-                        <li class='itens'>Nunca expira;</li>
+                        <li class='itens'>Assinatura anual;</li>
                     </ul>
                 </div>
                 <button id='btn_renova-cadastro-gratuito' class='botao'>
@@ -297,7 +297,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             </div>
         </div>
     </div>
-    <div class='renova_03-premium'>
+    <div class='div-renovar_premium'>
     <div class='conteiner'>
             <div class='navegacao'>
                 <img src='images/voltar.svg' class='voltar_2 botoes_navegacao' />
@@ -339,7 +339,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             </div>
         </div>
     </div>
-    <div class='renova_03-profissional'>
+    <div class='div-renovar_profissional'>
     <div class='conteiner'>
             <div class='navegacao'>
                 <img src='images/voltar.svg' class='voltar_2 botoes_navegacao' />
@@ -383,7 +383,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             </div>
             </div>
         </div>
-      <div class='atualiza-dados'>
+      <div class='div-renovar_atualiza-dados'>
         <div class='conteiner'>
           <div class='navegacao'>
             <img src='images/voltar.svg' class='voltar_atualiza-dados botoes_navegacao' />
@@ -393,10 +393,10 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             <img src='images/fechar.svg' class='fechar botoes_navegacao' />
           </div>
           <div class='titulo'>
-            Confira e atualize seus dados
+            Atualize seus dados pessoais
           </div>
           <div class='descricao'>
-            Clique sobre os campos para alterar seus dados e renovar seu contrato
+            Mantenha seus contatos atualizados para renovação do seu contrato
           </div>
           <div class='campos'>
             <form class='forms' name='renova_cadastro' id='form_atualiza-dados' action='#' method='post'>
@@ -430,7 +430,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           </div>
         </div>
     </div>
-    <div class='renova_04'>
+    <div class='div-renovar_forma-pagamento'>
       <div class='conteiner'>
         <div class='navegacao'>
           <img src='images/voltar.svg' class='voltar_3 botoes_navegacao' />
@@ -450,10 +450,10 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         </div>
       </div>
     </div>
-    <div class='renova_05'>
+    <div class='div-renovar_saldo-caches'>
       <div class='conteiner'>
         <div class='navegacao'>
-          <img src='images/voltar.svg' class='voltar_4 botoes_navegacao' />
+          <img src='images/voltar.svg' class='voltar_saldo-caches botoes_navegacao' />
           <div class="barra_progresso">
             <span style="width: 95%"></span>
           </div>
@@ -507,7 +507,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         </div>
       </div>
     </div>
-    <div class='confirmacao-dados-cartao'>
+    <div class='div-renovar_confirmacao-dados-cartao'>
         <div class='conteiner'>
           <div class='navegacao'>
             <img src='images/voltar.svg' class='voltar_confirmacao-dados-cartao botoes_navegacao' />
@@ -528,7 +528,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           </div>
         </div>
     </div>
-    <div class='dados-cartao'>
+    <div class='div-renovar_dados-cartao'>
       <div class='conteiner'>
         <div class='navegacao'>
           <img src='images/voltar.svg' class='voltar_dados-cartao botoes_navegacao' />
@@ -573,13 +573,106 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <button type='submit' class='botao' id='botao_pagar-cartao'>Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
             </div>
             <div class='moip'>
-              <a href='http://www.moip.com.br' target='_blank'><img src='images/moip150px.png' /></a>
+              <a href='http://www.moip.com.br' target='_blank'><img src='images/moip167px.png' /></a>
             </div>
           </form>
         </div>
       </div>
     </div>
-    <div class='renova_06'>
+    <div class='div-renovar_dados-titular-cartao'>
+        <div class='conteiner'>
+          <div class='navegacao'>
+            <img src='images/voltar.svg' class='voltar_dados-titular-cartao botoes_navegacao' />
+            <div class="barra_progresso">
+              <span style="width: 90%"></span>
+            </div>
+            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          </div>
+          <div class='titulo'>
+            Dados do titular do cartão
+          </div>
+          <div class='descricao'>
+            Clique sobre os campos para inserir os dados do Titular do Cartão
+          </div>
+          <div class='campos'>
+            <form class='forms' name='form_dados-titular-cartao' id='form_dados-titular-cartao' action='#' method='post'>
+              <span class='texto_input'>CPF:</span>
+              <input type='text' name='cpf' id='cpf' value='' placeholder='CPF' required /><BR />
+              <span class='texto_input'>NOME COMPLETO:</span>
+              <input type='text' name='nome_completo' id='nome_completo' value='' placeholder='Nome completo' required /><BR />
+              <span class='texto_input'>DDD:</span>
+              <input type='tel' name='DDD' id='DDD' value='' placeholder='DDD' required />
+              <span class='texto_input'>CELULAR:</span>
+              <input type='tel' name='cel' id='cel' value='' placeholder='Telefone' required /><BR />
+              <span class='texto_input'>E-MAIL:</span>
+              <input type='email' name='email' id='email' value='' placeholder='E-mail' required /><BR />
+            </div>
+            <div class='botoes'>
+                <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
+                <input type='hidden' name='cadastro' value='' id='input-botao_dados-titular-cartao' />
+                <button class='botao' id='botao_dados-titular-cartao'>Continuar</button>
+            </form>
+          </div>
+        </div>
+    </div>
+    <div class='div-renovar_dados-fatura-cartao'>
+        <div class='conteiner'>
+          <div class='navegacao'> 
+            <img src='images/voltar.svg' class='voltar_dados-fatura-cartao botoes_navegacao' />
+            <div class="barra_progresso">
+              <span style="width: 95%"></span>
+            </div>
+            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          </div>
+          <div class='titulo'>
+            Endereço da fatura do cartão
+          </div>
+          <div class='descricao'>
+            Clique sobre os campos para inserir os dados do Endereço da Fatura
+          </div>
+          <div class='campos'>
+            <form class='forms' name='form_dados-fatura-cartao' id='form_dados-fatura-cartao' action='#' method='post'>
+              <span class='texto_input'>CEP:</span>
+              <input type='text' name='cep' id='cep' value='' placeholder='CEP' required /><BR />
+              <span class='texto_input'>ENDEREÇO:</span>
+              <input type='text' name='endereco' id='endereco' value='' placeholder='Endereço' required />
+              <span class='texto_input'>NÚMERO:</span>
+              <input type='text' name='numero' id='numero' value='' placeholder='Nº' required /><BR />
+              <span class='texto_input'>COMPLEMENTO:</span>
+              <input type='text' name='complemento' id='complemento' value='' placeholder='Complemento' required />
+              <span class='texto_input'>BAIRRO:</span>
+              <input type='text' name='bairro' id='bairro' value='' placeholder='Bairro' required />
+              <BR />
+              <span class='texto_input'>CIDADE:</span>
+              <input type='text' name='cidade' id='cidade' value='' placeholder='Cidade' required />
+              <span class='texto_input'>UF:</span>
+              <input type='text' name='uf' id='uf' value='' placeholder='UF' required />
+            </div>
+            <div class='botoes'>
+                <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
+                <input type='hidden' name='cadastro' value='' id='input-botao_dados-fatura-cartao' />
+                <button class='botao' id='botao_dados-fatura-cartao'>Continuar</button>
+            </form>
+          </div>
+        </div>
+    </div>
+    <div class='div-renovar_boleto-bancario'>
+        <div class='conteiner'>
+          <div class='navegacao'>
+            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          </div>
+          <div class='titulo'>
+            Boleto gerado
+          </div>
+          <div class='descricao'>
+            Seu contrato será renovado em até 3 dias úteis após a confirmação do pagamento deste boleto
+          </div>
+          <div class='botoes'>
+            <button class='botao' id='botao_visualizar-boleto'>Visualizar boleto</button>
+          </div>
+        </div>
+    </div>
+    <div class='div-renovar_sucesso-renovacao'>
       <div class='conteiner'>
         <div class='navegacao'>
           <img src='images/fechar.svg' class='fechar botoes_navegacao' />
@@ -587,11 +680,12 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         <div class='titulo'>
           Contrato renovado!
         </div>
+        <div class='descricao_validade-novo-cadastro'>
+            <span class="medium heavy">Cadastro Premium</span>
+            <span class="small">válido até 21/04/2017</span>
+        </div>
         <div class='descricao'>
           Nosso contrato foi renovado e enviado, junto com todas as informações, para o seu e-mail cadastrado. Obrigada!
-        </div>
-        <div class='botoes'>
-            <button class='botao' id='revisar-dados'>Revisar dados pessoais</button>
         </div>
       </div>
     </div>

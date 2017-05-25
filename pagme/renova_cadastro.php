@@ -71,7 +71,7 @@ elseif ($cadastro == 'Premium' || $cadastro == 'Profissional') {
 	// RENOVA O CONTRATO
 	mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente = '$hoje', tipo_cadastro_vigente = '$cadastro', ativo = 'Sim', concordo_timestamp = '$hora', ip = '$ip' WHERE id_elenco='$id_usuario'");
 	// INSERE A VENDA
-	mysqli_query($link, "INSERT INTO financeiro (tipo_entrada, nome, sobrenome, id_elenco_financeiro, produto, qtd, data_venda, valor_venda, forma_pagamento, n_parcelas) VALUES ('Venda', '$primeiro_nome', '$sobrenome', '$id_usuario', 'Cadastro $cadastro', '1', '$hoje', '$valor_original_cadastro', 'Abatimento de Cachê', '1')");
+	mysqli_query($link, "INSERT INTO financeiro (tipo_entrada, nome, sobrenome, id_elenco_financeiro, produto, qtd, data_venda, valor_venda, status_venda, forma_pagamento, n_parcelas) VALUES ('Venda', '$primeiro_nome', '$sobrenome', '$id_usuario', 'Cadastro $cadastro', '1', '$hoje', '$valor_original_cadastro', 'Pago', 'Abatimento de Cachê', '1')");
 }
 // ENVIA EMAIL
 $hoje_format = date('d/m/Y', strtotime($hoje));
