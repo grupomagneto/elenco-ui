@@ -1,5 +1,7 @@
 <?php
 	require_once 'dbconnect.php';
+	require 'vendor/autoload.php';
+
   $hoje = date('Y-m-d', time());
 	// if session is not set this will redirect to login page
 	if( !isset($_SESSION['user']) ) {
@@ -57,6 +59,24 @@
       }
     }
   }
+
+
+use Moip\Moip;
+use Moip\MoipBasicAuth;
+use Moip\Resource\Payment;
+
+$token = '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN';
+$key_token = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
+$endpoint = 'https://desenvolvedor.moip.com.br/sandbox';
+
+$moip = new Moip(new MoipBasicAuth($token, $key_token), $endpoint);
+
+$customer = $moip->customers()->setOwnId(uniqid());  //ID unico para identificar a compra
+
+
+//habilitar pagamento no cartão
+//$payment = $moip->payments()->setCreditCard(12, 21, '4073020000000002', '123', $customer)
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -338,6 +358,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               </div>
             </div>
         </div>
+    	 	
     </div>
     <div class='div-renovar_profissional'>
     <div class='conteiner'>
@@ -399,7 +420,9 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             Mantenha seus contatos atualizados para renovação do seu contrato
           </div>
           <div class='campos'>
-            <form class='forms' name='renova_cadastro' id='form_atualiza-dados' action='#' method='post'>
+            <form class='forms' name='renova_cadastro' id='form_atualiza-dados' action='https://www.moip.com.br/PagamentoMoIP.do' method='post'>
+             
+        <input type="hidden" name="id_carteira" value="vini@grupomagneto.com.br">
               <span class='texto_input'>DDD:</span>
               <input type='tel' name='DDD' id='DDD' value='<?php echo $ddd; ?>' placeholder='DDD' required />
               <span class='texto_input'>CELULAR:</span>
@@ -546,16 +569,16 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         <div class='campos'>
           <form id='payment_form' action='#' method='POST'>
             <span class='texto_input'>NÚMERO DO CARTÃO:</span>
-            <input type='text' id='card_number' placeholder= 'XXXX XXXX XXXX XXXX' required /><br/>
+            <input type='text' id='moip_cartao_numero' placeholder= 'XXXX XXXX XXXX XXXX' required /><br/>
             <span class='texto_input'>NOME:</span>
-            <input type='text' id='card_holder_name' placeholder= 'Nome (igual no cartão)' required /><br/>
+            <input type='text' id='moip_cartao_titular_nome' placeholder= 'Nome (igual no cartão)' required /><br/>
             <span class='texto_input'>VALIDADE:</span>
-            <input type='text' id='card_expiration_month' placeholder= 'Mês' required />
+            <input type='text' id='moip_cartao_validade' placeholder= 'Mês' required />
             <input type='text' id='card_expiration_year' placeholder= 'Ano' required />
             <span class='texto_input'>CVV:</span>
-            <input type='text' id='card_cvv' placeholder= 'CVV' required />
+            <input type='text' id='moip_cartao_codigo_seguranca' placeholder= 'CVV' required />
             <span class='texto_input' id='texto_input-parcelas'>PARCELAS:</span>
-            <select id='installments' name='installments'>
+            <select id='moip_cartao_parcelas' name='installments'>
               <option value='1' selected>1x</option>
               <option value='2'>2x</option>
               <option value='3'>3x</option>
@@ -570,7 +593,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             <div id='field_errors'></div><br/>
             <div class='botoes'>
               <input type='hidden' id='amount' name='amount' value='' />
-              <button type='submit' class='botao' id='botao_pagar-cartao'>Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
+              <button type='submit' class='botao' id='botao_pagar-cartao' onclick="MoipPagarCartao();">Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
             </div>
             <div class='moip'>
               <a href='http://www.moip.com.br' target='_blank'><img src='images/moip167px.png' /></a>
