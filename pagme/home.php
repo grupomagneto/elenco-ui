@@ -67,9 +67,9 @@ use Moip\Resource\Payment;
 
 $token = '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN';
 $key_token = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
-$endpoint = 'https://desenvolvedor.moip.com.br/sandbox';
+$endpoint = 'https://sandbox.moip.com.br';
 
-$moip = new Moip(new MoipBasicAuth($token, $key_token), $endpoint);
+$moip = new Moip(new MoipBasicAuth($token, $key_token), Moip::ENDPOINT_SANDBOX);
 
 $moip_cartao_numero = $_POST['moip_cartao_numero'];
 $moip_cartao_titular_nome = $_POST['moip_cartao_titular_nome'];
@@ -77,20 +77,16 @@ $moip_cartao_validade = $_POST['moip_cartao_validade'];
 $card_expiration_year = $_POST['card_expiration_year'];
 $moip_cartao_codigo_seguranca = $_POST['moip_cartao_codigo_seguranca'];
 
-//$customer = $moip->customers()->setOwnId(uniqid());  
-
-$payments = $moip->payments();
-
 //criar comprador
 try {
-    $customer = $moip->customers()->setOwnId(uniqid())
+    $customer = $moip->customers()->setOwnId('id_usuario')
         ->setFullname('Fulano')
         ->setEmail($email)
         ->setPhone($ddd, $cel)
         ->addAddress($endereco,
             $complemento, $numero,
             $bairro, $cidade, $uf,
-            $cep)
+            $cep, 'BRA')
         ->create();
 	
     $order = $moip->orders()->setOwnId(uniqid())
@@ -99,11 +95,20 @@ try {
         ->setCustomer($customer)
         ->create();
 	
+	 print_r($order);
+	 print_r($customer);
 	
+} catch (Exception $e) {
+	printf($e->__toString());
+}
+
+try {
     $payment = $order->payments()->setCreditCard($moip_cartao_validade, $card_expiration_year, $moip_cartao_numero, $moip_cartao_codigo_seguranca, $customer)
-				->setReturnURL("http://localhost:8888/elenco-ui/pagme/home.php#")
+				->setReturnURL("http://localhost:8888/elenco-ui/pagme/home.php")
         ->execute();
-	print_r($order);
+	
+	 print_r($payment);
+	
 } catch (Exception $e) {
 	printf($e->__toString());
 }
@@ -134,6 +139,7 @@ ga('send', 'pageview');
 </script>
 </head>
 <body>
+<!--
 	<nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -178,9 +184,10 @@ ga('send', 'pageview');
               </ul>
             </li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>/.nav-collapse 
       </div>
     </nav>
+-->
 	<div id="wrapper">
 <div class="gradient inicio_login">
 	<div class="container">
@@ -460,19 +467,19 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <span class='texto_input'>DDD:</span>
               <input type='tel' name='DDD' id='DDD' value='<?php echo $ddd; ?>' placeholder='DDD' required />
               <span class='texto_input'>CELULAR:</span>
-              <input type='tel' name='pagador_telefone' id='cel' value='<?php echo $cel; ?>' placeholder='Telefone' required /><BR />
+              <input type='tel' name='cel' id='cel' value='<?php echo $cel; ?>' placeholder='Telefone' required /><BR />
               <span class='texto_input'>E-MAIL:</span>
-              <input type='email' name='pagador_email' id='email' value='<?php echo $email; ?>' placeholder='E-mail' required /><BR />
+              <input type='email' name='email' id='email' value='<?php echo $email; ?>' placeholder='E-mail' required /><BR />
               <span class='texto_input'>CEP:</span>
-              <input type='text' name='pagador_cep' id='cep' value='<?php echo $cep; ?>' placeholder='CEP' required /><BR />
+              <input type='text' name='cep' id='cep' value='<?php echo $cep; ?>' placeholder='CEP' required /><BR />
               <span class='texto_input'>ENDEREÇO:</span>
-              <input type='text' name='pagador_logradouro' id='endereco' value='<?php echo $endereco; ?>' placeholder='Endereço' required />
+              <input type='text' name='endereco' id='endereco' value='<?php echo $endereco; ?>' placeholder='Endereço' required />
               <span class='texto_input'>NÚMERO:</span>
-              <input type='text' name='pagador_numero' id='numero' value='<?php echo $numero; ?>' placeholder='Nº' required /><BR />
+              <input type='text' name='numero' id='numero' value='<?php echo $numero; ?>' placeholder='Nº' required /><BR />
               <span class='texto_input'>COMPLEMENTO:</span>
-              <input type='text' name='pagador_complemento' id='complemento' value='<?php echo $complemento; ?>' placeholder='Complemento' required />
+              <input type='text' name='complemento' id='complemento' value='<?php echo $complemento; ?>' placeholder='Complemento' required />
               <span class='texto_input'>BAIRRO:</span>
-              <input type='text' name='pagador_bairro' id='bairro' value='<?php echo $bairro; ?>' placeholder='Bairro' required />
+              <input type='text' name='bairro' id='bairro' value='<?php echo $bairro; ?>' placeholder='Bairro' required />
               <BR />
               <span class='texto_input'>CIDADE:</span>
               <input type='text' name='cidade' id='pagador_cidade' value='<?php echo $cidade; ?>' placeholder='Cidade' required />
