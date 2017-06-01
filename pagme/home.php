@@ -60,58 +60,9 @@
     }
   }
 
+//$token = '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN';
+//$key_token = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
 
-use Moip\Moip;
-use Moip\MoipBasicAuth;
-use Moip\Resource\Payment;
-
-$token = '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN';
-$key_token = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
-$endpoint = 'https://sandbox.moip.com.br';
-
-$moip = new Moip(new MoipBasicAuth($token, $key_token), Moip::ENDPOINT_SANDBOX);
-
-$moip_cartao_numero = $_POST['moip_cartao_numero'];
-$moip_cartao_titular_nome = $_POST['moip_cartao_titular_nome'];
-$moip_cartao_validade = $_POST['moip_cartao_validade'];
-$card_expiration_year = $_POST['card_expiration_year'];
-$moip_cartao_codigo_seguranca = $_POST['moip_cartao_codigo_seguranca'];
-
-//criar comprador
-try {
-    $customer = $moip->customers()->setOwnId('id_usuario')
-        ->setFullname('Fulano')
-        ->setEmail($email)
-        ->setPhone($ddd, $cel)
-        ->addAddress($endereco,
-            $complemento, $numero,
-            $bairro, $cidade, $uf,
-            $cep, 'BRA')
-        ->create();
-	
-    $order = $moip->orders()->setOwnId(uniqid())
-        ->addItem("bicicleta 1",1, "sku1", 10000)
-        ->setShippingAmount(3000)->setAddition(1000)->setDiscount(5000)
-        ->setCustomer($customer)
-        ->create();
-	
-	 print_r($order);
-	 print_r($customer);
-	
-} catch (Exception $e) {
-	printf($e->__toString());
-}
-
-try {
-    $payment = $order->payments()->setCreditCard($moip_cartao_validade, $card_expiration_year, $moip_cartao_numero, $moip_cartao_codigo_seguranca, $customer)
-				->setReturnURL("http://localhost:8888/elenco-ui/pagme/home.php")
-        ->execute();
-	
-	 print_r($payment);
-	
-} catch (Exception $e) {
-	printf($e->__toString());
-}
 
 
 ?>
@@ -462,12 +413,10 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           <div class='campos'>
             <form class='forms' name='renova_cadastro' id='form_atualiza-dados' action='#' method='post'>
              
-        			<input type="hidden" name="id_carteira" value="vini@grupomagneto.com.br">
-             
               <span class='texto_input'>DDD:</span>
               <input type='tel' name='DDD' id='DDD' value='<?php echo $ddd; ?>' placeholder='DDD' required />
               <span class='texto_input'>CELULAR:</span>
-              <input type='tel' name='cel' id='cel' value='<?php echo $cel; ?>' placeholder='Telefone' required /><BR />
+              <input type='tel' name='Telefone' id='cel' value='<?php echo $cel; ?>' placeholder='Telefone' required /><BR />
               <span class='texto_input'>E-MAIL:</span>
               <input type='email' name='email' id='email' value='<?php echo $email; ?>' placeholder='E-mail' required /><BR />
               <span class='texto_input'>CEP:</span>
@@ -482,7 +431,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <input type='text' name='bairro' id='bairro' value='<?php echo $bairro; ?>' placeholder='Bairro' required />
               <BR />
               <span class='texto_input'>CIDADE:</span>
-              <input type='text' name='cidade' id='pagador_cidade' value='<?php echo $cidade; ?>' placeholder='Cidade' required />
+              <input type='text' name='cidade' id='cidade' value='<?php echo $cidade; ?>' placeholder='Cidade' required />
               <span class='texto_input'>UF:</span>
               <input type='text' name='uf' id='uf' value='<?php echo $uf; ?>' placeholder='UF' required />
             </div>
@@ -510,7 +459,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         <div class='botoes'>
           <button class='botao botao_saldo' id='botao_saldo'>Saldo de Cachês</button>
           <button class='botao' id='botao_credito'>Cartão de Crédito</button>
-          <button class='botao' id='botao_boleto'>Boleto Bancário</button>
+          <button class='botao' id='boleto'>Boleto Bancário</button>
         </div>
       </div>
     </div>
@@ -607,19 +556,44 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         <div class='descricao'>
           Clique sobre os campos para inserir os dados do Cartão de Crédito
         </div>
+        
+          <div id="MoipWidget" data-token="02K0Y1I2T0R5D1N0V1W5B03320Z9R0I7K8B080T000P0C090P4P410R5X503" callback-method-success="sucesso" callback-method-error="erroValidacao"></div>
+<!--          valor do token vai ser gerado por get  do callback-->
+        			<input type="hidden" id="token" class="span6" value="M2O0H1V7Y0Y583K1P1U8M098C5D4U8V0N06020U0P0Q0B183J4V6V6T1R3V2">
+        			
         <div class='campos'>
-          <form id='payment_form' action='#' method='POST'>
-            <span class='texto_input'>NÚMERO DO CARTÃO:</span>
-            <input type='text' name='moip_cartao_numero' id='moip_cartao_numero' placeholder= 'XXXX XXXX XXXX XXXX' required /><br/>
-            <span class='texto_input'>NOME:</span>
-            <input type='text' name='moip_cartao_titular_nome' id='moip_cartao_titular_nome' placeholder= 'Nome (igual no cartão)' required /><br/>
-            <span class='texto_input'>VALIDADE:</span>
-            <input type='text' name='moip_cartao_validade' id='moip_cartao_validade' placeholder= 'Mês' required />
-            <input type='text' name='card_expiration_year' id='card_expiration_year' placeholder= 'Ano' required />
-            <span class='texto_input'>CVV:</span>
-            <input type='text' name='moip_cartao_codigo_seguranca' id='moip_cartao_codigo_seguranca' placeholder= 'CVV' required />
+
+                <span class='texto_input'>Instituição:</span>
+                <select id="instituicao">
+                  <option value="Visa">Visa</option>
+                  <option value="Mastercard">Mastercard</option>
+                  <option value="AmericanExpress">AmericanExpress</option>
+                  <option value="Invalido">Invalido</option>
+                </select>
+
+                <span class='texto_input'>Numero do Cartão:</span>
+                <input type="text" id="Numero" name="Numero" value="4073020000000002">
+
+                <span class='texto_input'> Expiração:</span>
+                <input type="text" id="Expiracao" name="Expiracao" value="10/18" size="5">
+
+                <span class='texto_input'>CVV:</span>
+                <input type="text" id="CodigoSeguranca" name="CodigoSeguranca" value="123" size="4">
+
+                <span class='texto_input'>Portador:</span>
+                <input type="text" id="Portador" name="Portador" value="<?php echo $full_name; ?>">
+
+                <span class='texto_input'>CPF:</span>
+                <input type="text" id="CPF" name="CPF" value="<?php echo $cpf;?>">
+
+                <span class='texto_input'>Data Nascimento:</span>
+                <input type="text" id="DataNascimento" name="DataNascimento" value="17/11/1988"><br>
+
+                <span class='texto_input'>Telefone:</span>
+                <input type="text" id="Telefone" name="Telefone" value="(12)9999-9999"><br>
+
             <span class='texto_input' id='texto_input-parcelas'>PARCELAS:</span>
-            <select id='moip_cartao_parcelas' name='installments'>
+            <select id='parcelas' name='Parcelas'>
               <option value='1' selected>1x</option>
               <option value='2'>2x</option>
               <option value='3'>3x</option>
@@ -631,15 +605,50 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <option value='9'>9x</option>
               <option value='10'>10x</option>
             </select><br/>
+               
+            <div class='botoes'>
+              <input type='hidden' id='amount' name='amount' value='199' />
+              <button class='botao' id='sendToMoip'>Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
+            </div>
+           
+<!--
+            <span class='texto_input'>CPF:</span>
+            <input type='text' name='CPF' id='cpf' placeholder= 'XXXX XXXX XXXX XXXX' required value=' /><br/>
+						<span class='texto_input'>Data Nascimento:</span>
+						<input type="text" id="DataNascimento" name="DataNascimento" value="23/01/1993"><br>
+            <span class='texto_input'>NÚMERO DO CARTÃO:</span>
+            <input type='text' name='Numero' id='moip_cartao_numero' placeholder= 'XXXX XXXX XXXX XXXX' required /><br/>
+            <span class='texto_input'>NOME:</span>
+            <input type='text' name='Portador' id='moip_cartao_titular_nome' placeholder= 'Nome (igual no cartão)' required /><br/>
+            <span class='texto_input'>VALIDADE:</span>
+            <input type='text' name='Expiracao' id='moip_cartao_validade' placeholder= 'Mês' required />
+            <input type='text' name='card_expiration_year' id='card_expiration_year' placeholder= 'Ano' />
+            <span class='texto_input'>CVV:</span>
+            <input type='text' name='CodigoSeguranca' id='moip_cartao_codigo_seguranca' placeholder= 'CVV' required />
+            <span class='texto_input' id='texto_input-parcelas'>PARCELAS:</span>
+            <select id='moip_cartao_parcelas' name='Parcelas'>
+              <option value='1' selected>1x</option>
+              <option value='2'>2x</option>
+              <option value='3'>3x</option>
+              <option value='4'>4x</option>
+              <option value='5'>5x</option>
+              <option value='6'>6x</option>
+              <option value='7'>7x</option>
+              <option value='8'>8x</option>
+              <option value='9'>9x</option>
+              <option value='10'>10x</option>
+            </select><br/>
+            
             <div id='field_errors'></div><br/>
             <div class='botoes'>
               <input type='hidden' id='amount' name='amount' value='199' />
-              <button type='submit' class='botao' id='botao_pagar-cartao'>Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
+              <button class='botao' id='sendToMoip'>Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
             </div>
+-->
             <div class='moip'>
               <a href='http://www.moip.com.br' target='_blank'><img src='images/moip167px.png' /></a>
             </div>
-          </form>
+          
         </div>
       </div>
     </div>
@@ -757,6 +766,10 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
 </div>
 <? } ?>
 <script src='assets/js/modal.js'></script>
+<script src='assets/js/jquery-2.2.4.min.js'></script>
+<script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'>
+</script>
+<script src='assets/js/moip.js'></script>
 </body>
 </html>
 <?php
