@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
   $("#sendToMoip").click(function(){
     applyToken();
     sendToCreditCard();
@@ -13,20 +12,6 @@ $(document).ready(function(){
   });
 
 });
-
-calcular = function() {
-  var settings = {
-    cofre: '',
-    instituicao: $("#instituicao-calc-parcela").val(),
-    callback: "retornoCalculoParcelamento"
-  };
-
-  MoipUtil.calcularParcela(settings);
-};
-
-retornoCalculoParcelamento = function(data) {
-  alert(JSON.stringify(data));
-};
 
 sendToCreditCard = function() {
     var settings = {
@@ -50,7 +35,6 @@ sendToCreditCard = function() {
     $("#sendToMoip").attr("disabled", "disabled");
     MoipWidget(settings);
  };
-
 
 sendToBoleto = function() {
   var settings = {

@@ -1,36 +1,55 @@
 <?php
+require 'vendor/autoload.php';
 
-include_once "Moip.php";
-include_once "autoload.inc.php";
+$endpoint = 'sandbox.moip.com.br';
+$token = "4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN";
+$key_api = "FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI";
 
+$inxml = '
+<EnviarInstrucao>
+<InstrucaoUnica TipoValidacao="Transparente">
+<Razao>Teste api</Razao>
+<Valores>
+<Valor moeda="BRL">199</Valor>
+</Valores>
+<IdProprio>Meu_ID</IdProprio>
+<Pagador>
+<Nome>Cliente Sobrenome</Nome>
+<Email>login@meudominio.com.br</Email>
+<IdPagador>MEU_CLIENTE_ID</IdPagador>
+<EnderecoCobranca>
+<Logradouro>Av. Brigadeiro Faria Lima</Logradouro>
+<Numero>2927</Numero>
+<Complemento>8° Andar</Complemento>
+<Bairro>Jardim Paulistao</Bairro>
+<Cidade>Sao Paulo</Cidade>
+<Estado>SP</Estado>
+<Pais>BRA</Pais>
+<CEP>01452-000</CEP>
+<TelefoneFixo>(11)3165-4020</TelefoneFixo>
+</EnderecoCobranca>
+</Pagador>
+<FormasPagamento>
+<FormaPagamento>CartaoDeCredito</FormaPagamento>
+</FormasPagamento>
+      <Parcelamentos>
+         <Parcelamento>
+            <MinimoParcelas>1</MinimoParcelas>
+            <MaximoParcelas>10</MaximoParcelas>
+            <Recebimento>Parcelado</Recebimento>
+            <Juros>0.99</Juros>
+         </Parcelamento>
+         <Parcelamento>
+            <MinimoParcelas>1</MinimoParcelas>
+            <MaximoParcelas>10</MaximoParcelas>
+            <Recebimento>AVista</Recebimento>
+         </Parcelamento>
+      </Parcelamentos>
+</InstrucaoUnica>
+</EnviarInstrucao>
+';
 
-$moip = new MoIP();
+echo $inxml;
 
-
-$moip->setCredential(array('key'=>'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI', 'token'=>'4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN'));
-$moip->setUniqueID(12343);
-$moip->setReason('Teste MoIP-PHP');
-$moip->setValue('10.00');
-
-$moip->validate();
-$moip->send();
-
-echo $moip->getAnswer()->token;
-
-//$endpoint = 'https://desenvolvedor.moip.com.br/sandbox';
-//$token = '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN';
-//$key_token = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
-//
-//$moip = new Moip(new MoipBasicAuth($token, $key_token), $endpoint);
-//
-//$customer = $moip->customers()->setOwnId('sandbox_v2_1401147277')
-//                              ->setFullname(' ')
-//                              ->setEmail('sandbox_v2_1401147277@email.com');
-//
-//$order = $moip->orders()->setOwnId('sandbox_v2_1401147277')
-//                        ->addItem('Pedido de testes Sandbox - 1401147277', 1, 'Mais info...', 10000)
-//                        ->setShippingAmount(100)
-//                        ->setCustomer($customer)
-//                        ->create();
 
 ?>
