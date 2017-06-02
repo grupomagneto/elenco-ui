@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "01d5ffad999a3bc29b4914b86123276f",
-    "content-hash": "3e38712d09827883e84ec62c6f30bc0f",
+    "hash": "b810a9b1d9854974f0ba8ca94adfe39e",
+    "content-hash": "5f3e212f1b5327451c4242d03e011461",
     "packages": [
         {
             "name": "moip/moip-sdk-php",
-            "version": "v1.1.2",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moip/moip-sdk-php.git",
-                "reference": "8ccc1ba21f1d139fb391793612430791c1cd6d29"
+                "reference": "01cd01aee5a16299c0ee3a338e634bcaa842d145"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moip/moip-sdk-php/zipball/8ccc1ba21f1d139fb391793612430791c1cd6d29",
-                "reference": "8ccc1ba21f1d139fb391793612430791c1cd6d29",
+                "url": "https://api.github.com/repos/moip/moip-sdk-php/zipball/01cd01aee5a16299c0ee3a338e634bcaa842d145",
+                "reference": "01cd01aee5a16299c0ee3a338e634bcaa842d145",
                 "shasum": ""
             },
             "require": {
@@ -38,7 +38,10 @@
             "autoload": {
                 "psr-4": {
                     "Moip\\": "src/"
-                }
+                },
+                "files": [
+                    "src/Helper/helpers.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -63,7 +66,7 @@
                 "marketplace",
                 "moip"
             ],
-            "time": "2017-04-11 13:28:20"
+            "time": "2017-06-02 14:37:43"
         },
         {
             "name": "rmccue/requests",

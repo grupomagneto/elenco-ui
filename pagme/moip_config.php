@@ -1,55 +1,51 @@
 <?php
-require 'vendor/autoload.php';
+//require 'vendor/autoload.php';
 
-$endpoint = 'sandbox.moip.com.br';
-$token = "4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN";
-$key_api = "FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI";
+//API
+//use Moip\Moip;
+//use Moip\MoipBasicAuth;
 
-$inxml = '
-<EnviarInstrucao>
-<InstrucaoUnica TipoValidacao="Transparente">
-<Razao>Teste api</Razao>
-<Valores>
-<Valor moeda="BRL">199</Valor>
-</Valores>
-<IdProprio>Meu_ID</IdProprio>
-<Pagador>
-<Nome>Cliente Sobrenome</Nome>
-<Email>login@meudominio.com.br</Email>
-<IdPagador>MEU_CLIENTE_ID</IdPagador>
-<EnderecoCobranca>
-<Logradouro>Av. Brigadeiro Faria Lima</Logradouro>
-<Numero>2927</Numero>
-<Complemento>8° Andar</Complemento>
-<Bairro>Jardim Paulistao</Bairro>
-<Cidade>Sao Paulo</Cidade>
-<Estado>SP</Estado>
-<Pais>BRA</Pais>
-<CEP>01452-000</CEP>
-<TelefoneFixo>(11)3165-4020</TelefoneFixo>
-</EnderecoCobranca>
-</Pagador>
-<FormasPagamento>
-<FormaPagamento>CartaoDeCredito</FormaPagamento>
-</FormasPagamento>
-      <Parcelamentos>
-         <Parcelamento>
-            <MinimoParcelas>1</MinimoParcelas>
-            <MaximoParcelas>10</MaximoParcelas>
-            <Recebimento>Parcelado</Recebimento>
-            <Juros>0.99</Juros>
-         </Parcelamento>
-         <Parcelamento>
-            <MinimoParcelas>1</MinimoParcelas>
-            <MaximoParcelas>10</MaximoParcelas>
-            <Recebimento>AVista</Recebimento>
-         </Parcelamento>
-      </Parcelamentos>
-</InstrucaoUnica>
-</EnviarInstrucao>
-';
+//
+//$moip = new Moip();
+//$moip->setEnvironment('test');
+//$moip->setCredential(array(
+//    'key' => 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI',
+//    'token' => '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN'
+//));
+// 
+include_once "autoload.inc.php";
 
-echo $inxml;
 
+$moip = new Moip();
+$moip->setEnvironment('test');
+$moip->setCredential(array('key' => 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI', 'token' => '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN'));
+
+$moip->setUniqueID('testesite');
+$moip->setValue('199.00');
+$moip->setReason('Teste cadastro site');
+
+$moip->setPayer(array('name' => 'teste',
+    'email' => 'teste',
+    'payerId' => 'teste',
+    'billingAddress' => array('address' => 'teste',
+        'number' => 'teste',
+        'complement' => 'teste',
+        'city' => 'teste',
+        'neighborhood' => 'teste',
+        'state' => 'teste',
+        'country' => 'BRA',
+        'zipCode' => 'teste',
+        'phone' => '(11)8888-8888')));
+
+$moip->validate('Identification');
+ 
+print_r($moip->send());
+
+$response = $moip->getAnswer()->response;
+$error= $moip->getAnswer()->error;
+$token = $moip->getAnswer()->token;
+$payment_url = $moip->getAnswer()->payment_url;
+
+print_r($moip->getAnswer());
 
 ?>

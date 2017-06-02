@@ -4,8 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit92fdccc9ac5e81e29adea708d3deb9d2
+class ComposerStaticInit7fc3eccb2ef7e76a30db8b796a8174c9
 {
+    public static $files = array (
+        '7785487378a7be19e13559cd0ddda925' => __DIR__ . '/..' . '/moip/moip-sdk-php/src/Helper/helpers.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'M' => 
         array (
@@ -33,9 +37,9 @@ class ComposerStaticInit92fdccc9ac5e81e29adea708d3deb9d2
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit92fdccc9ac5e81e29adea708d3deb9d2::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit92fdccc9ac5e81e29adea708d3deb9d2::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit92fdccc9ac5e81e29adea708d3deb9d2::$prefixesPsr0;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7fc3eccb2ef7e76a30db8b796a8174c9::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7fc3eccb2ef7e76a30db8b796a8174c9::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7fc3eccb2ef7e76a30db8b796a8174c9::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

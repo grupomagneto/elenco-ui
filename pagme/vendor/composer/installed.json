@@ -52,17 +52,17 @@
     },
     {
         "name": "moip/moip-sdk-php",
-        "version": "v1.1.2",
-        "version_normalized": "1.1.2.0",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/moip/moip-sdk-php.git",
-            "reference": "8ccc1ba21f1d139fb391793612430791c1cd6d29"
+            "reference": "01cd01aee5a16299c0ee3a338e634bcaa842d145"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/moip/moip-sdk-php/zipball/8ccc1ba21f1d139fb391793612430791c1cd6d29",
-            "reference": "8ccc1ba21f1d139fb391793612430791c1cd6d29",
+            "url": "https://api.github.com/repos/moip/moip-sdk-php/zipball/01cd01aee5a16299c0ee3a338e634bcaa842d145",
+            "reference": "01cd01aee5a16299c0ee3a338e634bcaa842d145",
             "shasum": ""
         },
         "require": {
@@ -73,7 +73,7 @@
             "codacy/coverage": "dev-master",
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2017-04-11 13:28:20",
+        "time": "2017-06-02 14:37:43",
         "type": "libraries",
         "extra": {
             "branch-alias": {
@@ -84,7 +84,10 @@
         "autoload": {
             "psr-4": {
                 "Moip\\": "src/"
-            }
+            },
+            "files": [
+                "src/Helper/helpers.php"
+            ]
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [

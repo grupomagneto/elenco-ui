@@ -1,6 +1,5 @@
 <?php
 	require_once 'dbconnect.php';
-	require 'vendor/autoload.php';
 
   $hoje = date('Y-m-d', time());
 	// if session is not set this will redirect to login page
@@ -61,6 +60,8 @@
       }
     }
   }
+
+
 
 ?>
 
@@ -533,7 +534,9 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             Os dados previamente fornecidos são os mesmos do Titular do Cartão e Endereço da Fatura?
           </div>
           <div class='botoes'>
-            <button class='botao' id='botao_dados-cartao-sim'>Sim</button>
+           <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <button class='botao' type="submit" id='botao_dados-cartao-sim'>Sim</button>
+						</form>
             <button class='botao' id='botao_dados-cartao-nao'>Não</button>
           </div>
         </div>
@@ -556,7 +559,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         
           <div id='MoipWidget' data-token='02K0Y1I2T0R5D1N0V1W5B03320Z9R0I7K8B080T000P0C090P4P410R5X503' callback-method-success='sucesso' callback-method-error='erroValidacao'></div>
 <!--          valor do token vai ser gerado por get  do callback-->
-        			<input type='hidden' id='token' class='span6' value='M2O0H1V7Y0Y583K1P1U8M098C5D4U8V0N06020U0P0Q0B183J4V6V6T1R3V2'>
+        			<input type='hidden' id='token' class='span6' value='<?php echo $token;?>'>
         			
         <div class='campos'>
 <!--
@@ -767,6 +770,7 @@ Para maiores informações clique aqui. -->
 <script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'>
 </script>
 <script src='assets/js/moip.js'></script>
+<script src='assets/js/ajax.js'></script>
 </body>
 </html>
 <?php
