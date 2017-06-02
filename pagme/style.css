@@ -234,7 +234,7 @@ border-radius: 0px;
 margin: 0px;
 }
 .select-hidden{ display:none; visibility:hidden; padding-right:10px; }
-.select{ cursor:pointer; display:inline-block; position:absolute; font-size:18px; color:#fff; width:69px; height:50px; margin-left:-25px; }
+.select{ cursor:pointer; display:inline-block; position:absolute; font-size:18px; color:#fff; width:75px; height:50px; margin-left:-25px; }
 .select-styled{ font-family:Avenir-Book; font-size:18px; position:absolute; top:0px; right:0px; bottom:0px; left:0px; background-color:rgba(255,255,255,0.10); padding:11px 15px;; border-radius:6px; border:1px solid #fff; -moz-transition:all 0.2s ease-in; -o-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition:all 0.2s ease-in; text-align:left; }
 .select-styled:after{ content:""; width:0px; height:0px; border:5px solid transparent; border-color:#fff transparent transparent transparent; top:21px; position:absolute; right:4px; }
 /*.select-styled:hover{ background-color:rgba(255,255,255,0.20); }*/
@@ -244,6 +244,21 @@ margin: 0px;
 .select-options li{ margin:0px; padding:6px; -moz-transition:all 0.15s ease-in; -o-transition:all 0.15s ease-in; -webkit-transition:all 0.15s ease-in; transition:all 0.15s ease-in; text-align:center; }
 .select-options li:hover{ color:#fff; background:rgba(255,255,255,0.20); }
 .select-options li[rel="hide"]{ display:none; }
+/*.select-options::-webkit-scrollbar{ width:12px; }*/
+/*.select-options::-webkit-scrollbar-track{ -webkit-box-shadow:inset 0 0 6px rgba(255,255,255,0.30); color:#fff; border-radius:10px; }*/
+/*.select-options::-webkit-scrollbar-thumb{ border-radius:10px; -webkit-box-shadow:inset 0 0 20px #fff; }*/
+/* SELECT BANDEIRA */
+.select-hidden-bandeira{ display:none; visibility:hidden; padding-right:10px; }
+.select-bandeira{ cursor:pointer; display:flex; position:relative; font-size:18px; color:#fff; width:250px; height:50px; }
+.select-styled-bandeira{ font-family:Avenir-Book; font-size:18px; position:absolute; top:0px; right:0px; bottom:0px; left:0px; background-color:rgba(255,255,255,0.10); padding:11px 15px;; border-radius:6px; border:1px solid #fff; -moz-transition:all 0.2s ease-in; -o-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition:all 0.2s ease-in; text-align:left; }
+.select-styled-bandeira:after{ content:""; width:0px; height:0px; border:5px solid transparent; border-color:#fff transparent transparent transparent; top:21px; position:absolute; right:4px; }
+/*.select-styled:hover{ background-color:rgba(255,255,255,0.20); }*/
+/*.select-styled:active, .select-styled.active{ background-color:rgba(255,255,255,0.20); }*/
+.select-styled-bandeira.active:after{ top:16px; border-color:transparent transparent #fff transparent; }
+.select-options-bandeira{ font-family:Avenir-Book; font-size:14px; line-height:12px; display:none; position:absolute; top:100%; right:0px; left:0; width: inherit; z-index:2; margin:0px; list-style:none; overflow:none; border-radius:6px; border:1px solid #fff; background-color:#572970; margin-top:8px; }
+.select-options-bandeira li{ margin:0px; padding:6px; -moz-transition:all 0.15s ease-in; -o-transition:all 0.15s ease-in; -webkit-transition:all 0.15s ease-in; transition:all 0.15s ease-in; text-align:center; }
+.select-options-bandeira li:hover{ color:#fff; background:rgba(255,255,255,0.20); }
+.select-options-bandeira li[rel="hide"]{ display:none; }
 /*.select-options::-webkit-scrollbar{ width:12px; }*/
 /*.select-options::-webkit-scrollbar-track{ -webkit-box-shadow:inset 0 0 6px rgba(255,255,255,0.30); color:#fff; border-radius:10px; }*/
 /*.select-options::-webkit-scrollbar-thumb{ border-radius:10px; -webkit-box-shadow:inset 0 0 20px #fff; }*/
@@ -513,27 +528,18 @@ width: 190px;
 input#uf{
 width: 50px;
 }
-input#card_number{
+input#Numero{
 width: 250px;
 }
-input#card_holder_name{
+input#Portador{
 width: 250px;
 }
-input#card_expiration_month{
-width: 50px;
-margin-right: 0px;
-margin-bottom: -15px;
+input#Expiracao{
+width: 75px;
 }
-input#card_expiration_year{
-width: 50px;
-margin-left: 0px;
-margin-right: 5px;
-margin-bottom: -15px;
-}
-input#card_cvv{
-width: 50px;
+input#CodigoSeguranca{
+width: 75px;
 margin-right: 35px;
-margin-bottom: -5px;
 }
 input#cpf{
 width: 250px;

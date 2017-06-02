@@ -26,6 +26,8 @@
     $cep = $userRow['cep'];
     $cel = $userRow['tl_celular'];
     $endereco = $userRow['endereco'];
+    $nascimento = $userRow['dt_nascimento'];
+    $dt_nascimento = date('d/m/Y', strtotime($nascimento));
     $complemento = $userRow['complemento'];
     $numero = $userRow['numero'];
     $bairro = $userRow['bairro'];
@@ -75,17 +77,17 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src='assets/js/gradient.js'></script>
-<script>
+<!-- <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-22229864-1', 'auto');
 ga('send', 'pageview');
-</script>
+</script> -->
 </head>
 <body>
-<!--
+
 	<nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -130,10 +132,10 @@ ga('send', 'pageview');
               </ul>
             </li>
           </ul>
-        </div>/.nav-collapse 
+        </div>
       </div>
     </nav>
--->
+
 	<div id="wrapper">
 <div class="gradient inicio_login">
 	<div class="container">
@@ -411,7 +413,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <span class='texto_input'>DDD:</span>
               <input type='tel' name='DDD' id='DDD' value='<?php echo $ddd; ?>' placeholder='DDD' required />
               <span class='texto_input'>CELULAR:</span>
-              <input type='tel' name='Telefone' id='cel' value='<?php echo $cel; ?>' placeholder='Telefone' required /><BR />
+              <input type='tel' name='cel' id='cel' value='<?php echo $cel; ?>' placeholder='Telefone' required /><BR />
               <span class='texto_input'>E-MAIL:</span>
               <input type='email' name='email' id='email' value='<?php echo $email; ?>' placeholder='E-mail' required /><BR />
               <span class='texto_input'>CEP:</span>
@@ -552,40 +554,36 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           Clique sobre os campos para inserir os dados do Cartão de Crédito
         </div>
         
-          <div id="MoipWidget" data-token="02K0Y1I2T0R5D1N0V1W5B03320Z9R0I7K8B080T000P0C090P4P410R5X503" callback-method-success="sucesso" callback-method-error="erroValidacao"></div>
+          <div id='MoipWidget' data-token='02K0Y1I2T0R5D1N0V1W5B03320Z9R0I7K8B080T000P0C090P4P410R5X503' callback-method-success='sucesso' callback-method-error='erroValidacao'></div>
 <!--          valor do token vai ser gerado por get  do callback-->
-        			<input type="hidden" id="token" class="span6" value="M2O0H1V7Y0Y583K1P1U8M098C5D4U8V0N06020U0P0Q0B183J4V6V6T1R3V2">
+        			<input type='hidden' id='token' class='span6' value='M2O0H1V7Y0Y583K1P1U8M098C5D4U8V0N06020U0P0Q0B183J4V6V6T1R3V2'>
         			
         <div class='campos'>
-
-                <span class='texto_input'>Instituição:</span>
-                <select id="instituicao">
-                  <option value="Visa">Visa</option>
-                  <option value="Mastercard">Mastercard</option>
-                  <option value="AmericanExpress">AmericanExpress</option>
-                  <option value="Invalido">Invalido</option>
+<!--
+                <span class='texto_input'>BANDEIRA:</span>
+                <select id='instituicao'>
+                 <option value='0' selected disabled>Selecione</option>
+                  <option value='Visa'>Visa</option>
+                  <option value='Mastercard'>Mastercard</option>
+                  <option value='AmericanExpress'>American Express</option>
+                   <option value='Invalido'>Inválido</option> 
                 </select>
+-->
+            <span class='texto_input'>NÚMERO:</span>
+            <input type='text' id='Numero' name='Numero' value='4073020000000002' placeholder= 'Número do cartão' required /><br/>
+            
+            <span class='texto_input'>NOME:</span> 
+            <input type='text' id='Portador' name='Portador' value='<? echo $full_name; ?>' placeholder= 'Nome (como no cartão)' required /><br/>
 
-                <span class='texto_input'>Numero do Cartão:</span>
-                <input type="text" id="Numero" name="Numero" value="4073020000000002">
+            <span class='texto_input'>VALIDADE:</span>
+            <input type='text' id='Expiracao' name='Expiracao' value='10/18' size='5' required placeholder= 'MM/AA' />
 
-                <span class='texto_input'> Expiração:</span>
-                <input type="text" id="Expiracao" name="Expiracao" value="10/18" size="5">
+            <span class='texto_input'>CVV:</span>
+            <input type='text' id='CodigoSeguranca' name='CodigoSeguranca' value='123' size='4' required placeholder= 'CVV' />
 
-                <span class='texto_input'>CVV:</span>
-                <input type="text" id="CodigoSeguranca" name="CodigoSeguranca" value="123" size="4">
-
-                <span class='texto_input'>Portador:</span>
-                <input type="text" id="Portador" name="Portador" value="<?php echo $full_name; ?>">
-
-                <span class='texto_input'>CPF:</span>
-                <input type="text" id="CPF" name="CPF" value="<?php echo $cpf;?>">
-
-                <span class='texto_input'>Data Nascimento:</span>
-                <input type="text" id="DataNascimento" name="DataNascimento" value="17/11/1988"><br>
-
-                <span class='texto_input'>Telefone:</span>
-                <input type="text" id="Telefone" name="Telefone" value="(12)9999-9999"><br>
+            <input type='hidden' id='CPF' name='CPF' value='<? echo $cpf;?>' />
+            <input type='hidden' id='DataNascimento' name='DataNascimento' value='<? echo $dt_nascimento; ?>' />
+            <input type='hidden' id='Telefone' name='Telefone' value='<? echo $cel; ?>' />
 
             <span class='texto_input' id='texto_input-parcelas'>PARCELAS:</span>
             <select id='parcelas' name='Parcelas'>
@@ -665,7 +663,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           <div class='campos'>
             <form class='forms' name='form_dados-titular-cartao' id='form_dados-titular-cartao' action='#' method='post'>
               <span class='texto_input'>CPF:</span>
-              <input type='text' name='cpf' id='cpf' value='' placeholder='CPF' required /><BR />
+              <input type='text' name='cpf_titular' id='cpf_titular' value='' placeholder='CPF' required /><BR />
               <span class='texto_input'>NOME COMPLETO:</span>
               <input type='text' name='nome_completo' id='nome_completo' value='' placeholder='Nome completo' required /><BR />
               <span class='texto_input'>DDD:</span>
@@ -740,6 +738,10 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           </div>
         </div>
     </div>
+<!--   Sua transação foi processada pelo Moip Pagamentos S/A.
+A sua transação está "Autorizada" e o código Moip é "0000.0000.0000".
+Caso tenha alguma dúvida referente a transação, entre em contato com o Moip.
+Para maiores informações clique aqui. -->
     <div class='div-renovar_sucesso-renovacao'>
       <div class='conteiner'>
         <div class='navegacao'>
