@@ -456,8 +456,11 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         <div class='descricao' id='descricao-pagamento'></div>
         <div class='botoes'>
           <button class='botao botao_saldo' id='botao_saldo'>Saldo de Cachês</button>
-          <button class='botao' id='botao_credito'>Cartão de Crédito</button>
-          <button class='botao' id='boleto'>Boleto Bancário</button>
+          <form class='forms' name='requisita_dados-comprador' id='requisita_dados-comprador' action='#' method='post'>
+            <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
+            <button class='botao' id='botao_credito'>Cartão de Crédito</button>
+            <button class='botao' id='boleto'>Boleto Bancário</button>
+          </form>
         </div>
       </div>
     </div>
@@ -534,9 +537,22 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             Os dados previamente fornecidos são os mesmos do Titular do Cartão e Endereço da Fatura?
           </div>
           <div class='botoes'>
-           <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <button class='botao' type="submit" id='botao_dados-cartao-sim'>Sim</button>
-						</form>
+            <form class='forms' name='envia_dados-comprador' id='envia_dados-comprador' action='#' method='post'>
+              <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
+              <input type='hidden' name='produto' id='envia_dados-cadastro' value='' />
+              <input type='hidden' name='valor' id='envia_dados-valor' value='' />
+              <input type='hidden' name='nome' id='envia_dados-nome' value='' />
+              <input type='hidden' name='email' id='envia_dados-email' value='' />
+              <input type='hidden' name='endereco' id='envia_dados-endereco' value='' />
+              <input type='hidden' name='numero' id='envia_dados-numero' value='' />
+              <input type='hidden' name='complemento' id='envia_dados-complemento' value='' />
+              <input type='hidden' name='cidade' id='envia_dados-cidade' value='' />
+              <input type='hidden' name='bairro' id='envia_dados-bairro' value='' />
+              <input type='hidden' name='uf' id='envia_dados-uf' value='' />
+              <input type='hidden' name='cep' id='envia_dados-cep' value='' />
+              <input type='hidden' name='tel' id='envia_dados-tel' value='' />
+              <button class='botao' id='botao_dados-cartao-sim'>Sim</button>
+            </form>
             <button class='botao' id='botao_dados-cartao-nao'>Não</button>
           </div>
         </div>
@@ -559,7 +575,8 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         
           <div id='MoipWidget' data-token='02K0Y1I2T0R5D1N0V1W5B03320Z9R0I7K8B080T000P0C090P4P410R5X503' callback-method-success='sucesso' callback-method-error='erroValidacao'></div>
 <!--          valor do token vai ser gerado por get  do callback-->
-        			<input type='hidden' id='token' class='span6' value='<?php echo $token;?>'>
+        			<input type='hidden' id='token' class='span6' value='' />
+              <div id="callback"></div>
         			
         <div class='campos'>
 <!--

@@ -193,6 +193,8 @@ $('#btn_renova-cadastro-premium').click(function(){
     document.getElementById("input-botao_atualiza-dados").value = "premium";
     document.getElementById("amount").value = "19900";
     document.getElementById("valor_pagar-cartao").innerHTML = "199";
+    document.getElementById("envia_dados-cadastro").value = "Cadastro Premium";
+    document.getElementById("envia_dados-valor").value = "199.00";
     event.preventDefault();
   }
 });
@@ -208,6 +210,8 @@ $('#btn_renova-cadastro-profissional').click(function(){
     document.getElementById("input-botao_atualiza-dados").value = "profissional";
     document.getElementById("amount").value = "79900";
     document.getElementById("valor_pagar-cartao").innerHTML = "799";
+    document.getElementById("envia_dados-cadastro").value = "Cadastro Profissional";
+    document.getElementById("envia_dados-valor").value = "799.00";
     event.preventDefault();
   }
 });
@@ -339,6 +343,32 @@ $('#botao_credito').click(function(){
   $('.div-renovar_forma-pagamento').fadeOut(0);
   $('.div-renovar_confirmacao-dados-cartao').fadeIn(200);
   $('.modal-content').css('height', '350px');
+  // Ajax Dados Cartão
+    jQuery('form').submit(function(){
+      var novos_dados = jQuery( this ).serialize();
+      jQuery.ajax({
+        type: 'POST',
+        dataType: 'html',
+        url: 'http://localhost:8888/elenco-ui/pagme/puxa_dados.php',
+        data: novos_dados,
+        success: function( data ) {
+          // alert(data);
+          var dados_novos = JSON.parse(data);
+          document.getElementById("envia_dados-nome").value = (dados_novos['nome']);
+          document.getElementById("envia_dados-email").value = (dados_novos['email']);
+          document.getElementById("envia_dados-endereco").value = (dados_novos['endereco']);
+          document.getElementById("envia_dados-numero").value = (dados_novos['numero']);
+          document.getElementById("envia_dados-complemento").value = (dados_novos['complemento']);
+          document.getElementById("envia_dados-cidade").value = (dados_novos['cidade']);
+          document.getElementById("envia_dados-bairro").value = (dados_novos['bairro']);
+          document.getElementById("envia_dados-uf").value = (dados_novos['uf']);
+          document.getElementById("envia_dados-cep").value = (dados_novos['cep']);
+          document.getElementById("envia_dados-tel").value = (dados_novos['tel']);
+          event.preventDefault();
+          }
+      });
+      return false;
+    });
 });
 $('#botao_boleto').click(function(){
   $('.div-renovar_forma-pagamento').fadeOut(0);
@@ -353,6 +383,27 @@ $('#botao_dados-cartao-sim').click(function(){
   $('.div-renovar_confirmacao-dados-cartao').fadeOut(0);
   $('.div-renovar_dados-cartao').fadeIn(200);
   $('.modal-content').css('height', '550px');
+  // Ajax Token
+    jQuery('form').submit(function(){
+      var dados_enviados = jQuery( this ).serialize();
+      jQuery.ajax({
+        type: 'POST',
+        dataType: 'html',
+        url: 'http://localhost:8888/elenco-ui/pagme/moip_config.php',
+        data: dados_enviados,
+        success: function( data ) {
+          var dados = JSON.parse(data);
+          alert(dados['token']);
+          // document.getElementById("callback").html("<input type='hidden' id='token' class='span6' value='" + dados['token'] + "' />");
+          // document.getElementById("token").value = (dados['token']);
+          // $('#token').val(dados['token']);
+          // $("#token").attr("value",dados['token']);
+          // $("#callback").html("<input type='hidden' id='token' class='span6' value='" + dados['token'] + "' />");
+          event.preventDefault();
+        }
+      });
+      return false;
+    });
 });
 $('#confirmar-saldo').click(function(){
   // Ajax Cadastros
