@@ -16,8 +16,9 @@ if ($row = mysqli_fetch_array($res)) {
 		'bairro'=>$row['bairro'],
 		'uf'=>$row['uf'],
 		'cep'=>$row['cep'],
-		'tel'=>$tel
-	));
+		'tel'=>$tel),
+		JSON_UNESCAPED_UNICODE
+	);
 }
 mysqli_close($link);
 ?>
