@@ -50,6 +50,12 @@ $moip->setPayer(array('name' => $nome,
         'phone' => $tel)));
 
 $moip->validate('Identification');
+//configura boleto
+$moip->setBilletConf("2011-04-06",
+        	false,
+        	array("Primeira linha",
+            	"Segunda linha",
+            	"Terceira linha"),	"https://desenvolvedor.moip.com.br/sandbox/imgs/logo_moip.gif");
 $moip->send();
    
 $response = $moip->getAnswer()->response;

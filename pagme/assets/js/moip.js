@@ -39,20 +39,23 @@ sendToBoleto = function() {
     var settings = {
         "Forma": "BoletoBancario"
     };
+		
     // $("#sendToMoip2").attr("disabled", "disabled");
     MoipWidget(settings);
 };
 
 var sucesso = function(data){
-    // alert(data.Mensagem +
-    //     '\n\n Status: ' + data.Status +
-    //     '\n Status Pagamento: ' + data.StatusPagamento +
-    //     '\n ID Moip: ' + data.CodigoMoIP +
-    //     '\n Valor Pago: ' + data.TotalPago +
-    //     '\n Taxa Moip: ' + data.TaxaMoIP +
-    //     '\n Mensagem: ' + data.Mensagem +
-    //     '\n Cod. Operadora: ' + data.CodigoRetorno);
-    // alert("Dados\n\n" + JSON.stringify(data));
+     alert(data.Mensagem +
+         '\n\n Status: ' + data.Status +
+         '\n Status Pagamento: ' + data.StatusPagamento +
+         '\n ID Moip: ' + data.CodigoMoIP +
+         '\n Valor Pago: ' + data.TotalPago +
+         '\n Taxa Moip: ' + data.TaxaMoIP +
+         '\n Mensagem: ' + data.Mensagem +
+         '\n Cod. Operadora: ' + data.CodigoRetorno);
+	
+	
+     alert("Dados\n\n" + JSON.stringify(data));
     $("#sendToMoip").removeAttr("disabled");
     $(".div-renovar_imprimir-boleto").fadeOut(0);
     $(".div-renovar_dados-cartao").fadeOut(0);
