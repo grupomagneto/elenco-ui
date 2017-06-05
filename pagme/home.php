@@ -325,7 +325,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               </div>
             </div>
         </div>
-    	 	
+
     </div>
     <div class='div-renovar_profissional'>
     <div class='conteiner'>
@@ -432,12 +432,14 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         </div>
         <div class='descricao' id='descricao-pagamento'></div>
         <div class='botoes'>
-          <button class='botao botao_saldo' id='botao_saldo'>Saldo de Cachês</button>
+        <center>
           <form class='forms' name='requisita_dados-comprador' id='requisita_dados-comprador' action='#' method='post'>
             <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
+            <button class='botao botao_saldo' id='botao_saldo'>Saldo de Cachês</button>
             <button class='botao' id='botao_credito'>Cartão de Crédito</button>
             <button class='botao' id='botao_boleto'>Boleto Bancário</button>
           </form>
+        </center>
         </div>
       </div>
     </div>
@@ -552,8 +554,8 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         <div class='campos'>
             <span class='texto_input'>NÚMERO:</span>
             <input type='text' id='Numero' name='Numero' value='4073020000000002' placeholder= 'Número do cartão' required /><br/>
-            
-            <span class='texto_input'>NOME:</span> 
+
+            <span class='texto_input'>NOME:</span>
             <input type='text' id='Portador' name='Portador' value='<? echo $full_name; ?>' placeholder= 'Nome (como no cartão)' required /><br/>
 
             <span class='texto_input'>VALIDADE:</span>
@@ -579,7 +581,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <option value='9'>9x</option>
               <option value='10'>10x</option>
             </select><br/>
-               
+
             <div class='botoes'>
               <button class='botao' id='sendToMoip'>Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
               <input type="hidden" name="forma_pagamento" id="forma_pagamento" value="" />
@@ -688,7 +690,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
     </div>
     <div class='div-renovar_dados-fatura-cartao'>
         <div class='conteiner'>
-          <div class='navegacao'> 
+          <div class='navegacao'>
             <img src='images/voltar.svg' class='voltar_dados-fatura-cartao botoes_navegacao' />
             <div class="barra_progresso">
               <span style="width: 95%"></span>

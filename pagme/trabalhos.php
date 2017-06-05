@@ -102,7 +102,7 @@ if ($n <= $count) {
         <div id="top"></div>
 <?php
 $id = $_SESSION['user'];
-$result = mysqli_query($link, "SELECT id, tipo_entrada, cliente_job, data_job, (cache_liquido - ifnull(abatimento_cache, 0) - ifnull(valor_pago, 0)) as cache, cache_liquido, abatimento_cache, data_abatimento, produto_abatimento, status_pagamento, data_pagamento, liberado, request_timestamp FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' ORDER BY data_job DESC LIMIT 0, 100");
+$result = mysqli_query($link, "SELECT id, tipo_entrada, cliente_job, data_job, (cache_liquido - ifnull(abatimento_cache, 0) - ifnull(valor_pago, 0)) as cache, cache_liquido, valor_pago, abatimento_cache, data_abatimento, produto_abatimento, status_pagamento, data_pagamento, liberado, request_timestamp FROM financeiro WHERE id_elenco_financeiro='$id' AND tipo_entrada='cache' ORDER BY data_job DESC LIMIT 0, 100");
 
 $primeiro_contrato = mysqli_query($link, "SELECT tipo_cadastro_vigente, data_1o_contrato as primeiro_contrato FROM tb_elenco WHERE id_elenco='$id'");
 $row = mysqli_fetch_array($primeiro_contrato);
@@ -217,6 +217,9 @@ $recebivel_cents = $recebivel_pieces[1];
     $id_cache = $row['id'];
     $cliente = mb_convert_case($cliente,  MB_CASE_UPPER, "UTF-8");
     $cache = number_format($row['cache'],2,",",".");
+    if ($cache == 0) {
+      $cache = number_format($row['valor_pago'],2,",",".");
+    }
     $cache = 'R$ '.$cache;
     $cache_liquido = number_format($row['cache_liquido'],2,",",".");
     $data_job = date('d/m/y',strtotime($row['data_job']));
