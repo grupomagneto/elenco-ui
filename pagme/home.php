@@ -1,70 +1,65 @@
 <?php
-	require_once 'dbconnect.php';
-
-  $hoje = date('Y-m-d', time());
-	// if session is not set this will redirect to login page
-	if( !isset($_SESSION['user']) ) {
-		header("Location: index.php");
-		exit;
-	}
-  if (isset($_GET['new_id'])) {
-    $_SESSION['user'] = $_GET['new_id'];
+require_once 'dbconnect.php';
+$hoje = date('Y-m-d', time());
+// if session is not set this will redirect to login page
+if( !isset($_SESSION['user']) ) {
+	header("Location: index.php");
+	exit;
+}
+if (isset($_GET['new_id'])) {
+  $_SESSION['user'] = $_GET['new_id'];
+}
+$user_id = $_SESSION['user'];
+// select loggedin users detail
+$sql = "SELECT * FROM tb_elenco WHERE id_elenco='$user_id'";
+$res=mysqli_query($link, $sql) or die (mysqli_error($link));
+if ($userRow = mysqli_fetch_array($res)) {
+  if (!empty($userRow['nome_responsavel'])) {
+     $_SESSION['nome_responsavel'] = $userRow['nome_responsavel'];
   }
-  $user_id = $_SESSION['user'];
-	// select loggedin users detail
-  $sql = "SELECT * FROM tb_elenco WHERE id_elenco='$user_id'";
-	$res=mysqli_query($link, $sql) or die (mysqli_error($link));
-	if ($userRow = mysqli_fetch_array($res)) {
-    if (!empty($userRow['nome_responsavel'])) {
-       $_SESSION['nome_responsavel'] = $userRow['nome_responsavel'];
+  $cpf = $userRow['cpf'];
+  $_SESSION['cpf'] = $cpf;
+  $full_name = $userRow['nome'];
+  $email = $userRow['email'];
+  $cep = $userRow['cep'];
+  $cel = $userRow['tl_celular'];
+  $endereco = $userRow['endereco'];
+  $nascimento = $userRow['dt_nascimento'];
+  $dt_nascimento = date('d/m/Y', strtotime($nascimento));
+  $complemento = $userRow['complemento'];
+  $numero = $userRow['numero'];
+  $bairro = $userRow['bairro'];
+  $cidade = $userRow['cidade'];
+  $uf = $userRow['uf'];
+  if ($userRow['ddd_01'] == '' || $userRow['ddd_01'] == NULL) {
+    if (strpos($cel, '5561') !== false) {
+      $cel = str_replace('5561','',$cel);
+      $ddd = '61';
     }
-    $cpf = $userRow['cpf'];
-    $_SESSION['cpf'] = $cpf;
-    $full_name = $userRow['nome'];
-    $email = $userRow['email'];
-    $cep = $userRow['cep'];
-    $cel = $userRow['tl_celular'];
-    $endereco = $userRow['endereco'];
-    $nascimento = $userRow['dt_nascimento'];
-    $dt_nascimento = date('d/m/Y', strtotime($nascimento));
-    $complemento = $userRow['complemento'];
-    $numero = $userRow['numero'];
-    $bairro = $userRow['bairro'];
-    $cidade = $userRow['cidade'];
-    $uf = $userRow['uf'];
-    if ($userRow['ddd_01'] == '' || $userRow['ddd_01'] == NULL) {
-      if (strpos($cel, '5561') !== false) {
-        $cel = str_replace('5561','',$cel);
-        $ddd = '61';
-      }
-    } else {
-        $ddd = $userRow['ddd_01'];
-    }
-    if ($userRow['sexo'] == 'F') {
-      $sexo = 'a';
-    }
-    elseif ($userRow['sexo'] == 'M') {
-      $sexo = 'o';
-    }
+  } else {
+      $ddd = $userRow['ddd_01'];
   }
-  // cria o menu de nome artístico se existirem mais de um agenciado no mesmo cpf e email
-  $result = mysqli_query($link, "SELECT nome_artistico, id_elenco FROM tb_elenco WHERE email='$email' AND cpf='$cpf' ORDER BY dt_nascimento ASC");
-  $count = mysqli_num_rows($result);
-  $n = 1;
-  if ($n <= $count) {
-    while ($row = mysqli_fetch_array($result)) {
-      $id_temp = $row['id_elenco'];
-      if ($id_temp != $_SESSION['user']) {
-        ${'nome_artistico_dependente'.$n} = $row['nome_artistico'];
-        $n++;
-      }
+  if ($userRow['sexo'] == 'F') {
+    $sexo = 'a';
+  }
+  elseif ($userRow['sexo'] == 'M') {
+    $sexo = 'o';
+  }
+}
+// cria o menu de nome artístico se existirem mais de um agenciado no mesmo cpf e email
+$result = mysqli_query($link, "SELECT nome_artistico, id_elenco FROM tb_elenco WHERE email='$email' AND cpf='$cpf' ORDER BY dt_nascimento ASC");
+$count = mysqli_num_rows($result);
+$n = 1;
+if ($n <= $count) {
+  while ($row = mysqli_fetch_array($result)) {
+    $id_temp = $row['id_elenco'];
+    if ($id_temp != $_SESSION['user']) {
+      ${'nome_artistico_dependente'.$n} = $row['nome_artistico'];
+      $n++;
     }
   }
-
-
-
+}
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,22 +68,8 @@
 <title>Bem-vind<? echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src='assets/js/gradient.js'></script>
-<!-- <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-22229864-1', 'auto');
-ga('send', 'pageview');
-</script> -->
 </head>
 <body>
-
 	<nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -108,7 +89,6 @@ ga('send', 'pageview');
             <li><a href="meu_perfil.php">Meu perfil</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 			  <span class="glyphicon glyphicon-user"></span>&nbsp;<?php echo $userRow['nome_artistico']; ?>&nbsp;<span class="caret"></span></a>
@@ -136,7 +116,6 @@ ga('send', 'pageview');
         </div>
       </div>
     </nav>
-
 	<div id="wrapper">
 <div class="gradient inicio_login">
 	<div class="container">
@@ -146,7 +125,6 @@ ga('send', 'pageview');
       <h2>Sistema PAGME</h2>
       <p>Pagamento de Agenciados Magneto Elenco</p>
     </div>
-
       <p>O PAGME é o novo sistema de pagamentos da Magneto Elenco. Ainda em versão de testes, o PAGME substituiu o pagamento de cachês em cheques nominais e cruzados por tranferências para a conta bancária de cada agenciado.</p>
       <p>Cada pedido de transferência leva até 3 dias úteis para ser concluído e tem um custo de R$ 10,00 por transferência, descontado do saldo a ser transferido. É possível transferir mais de um cachê na mesma operação e pagar a taxa apenas uma vez.</p>
       <p>As transferências apenas poderão ser feitas para contas bancárias vinculadas ao CPF do agenciado ou, no caso de menores de idade, para contas vinculadas ao CPF do responsável.</p>
@@ -409,8 +387,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             Mantenha seus contatos atualizados para renovação do seu contrato
           </div>
           <div class='campos'>
-            <form class='forms' name='renova_cadastro' id='form_atualiza-dados' action='#' method='post'>
-             
+            <form class='forms' name='form_atualiza-dados' id='form_atualiza-dados' action='#' method='post'>
               <span class='texto_input'>DDD:</span>
               <input type='tel' name='DDD' id='DDD' value='<?php echo $ddd; ?>' placeholder='DDD' required />
               <span class='texto_input'>CELULAR:</span>
@@ -459,7 +436,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           <form class='forms' name='requisita_dados-comprador' id='requisita_dados-comprador' action='#' method='post'>
             <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
             <button class='botao' id='botao_credito'>Cartão de Crédito</button>
-            <button class='botao' id='boleto'>Boleto Bancário</button>
+            <button class='botao' id='botao_boleto'>Boleto Bancário</button>
           </form>
         </div>
       </div>
@@ -510,7 +487,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           </div>
         </div>
         <div class='botoes'>
-          <form class='forms' name='renova_cadastro' id='confirma_cadastro' action='#' method='post'>
+          <form class='forms' name='confirma_cadastro' id='confirma_cadastro' action='#' method='post'>
             <button id='confirmar-saldo' class='botao confirmar-saldo'>
               <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
               <input type='hidden' name='cadastro' id='input_saldo' value='' />
@@ -528,67 +505,53 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             <div class="barra_progresso">
               <span style="width: 85%"></span>
             </div>
-            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+            <img src="images/fechar.svg" class="fechar botoes_navegacao" />
           </div>
-          <div class='titulo'>
+          <div class="titulo">
             Dados do cartão de crédito
           </div>
-          <div class='descricao'>
+          <div class="descricao">
             Os dados previamente fornecidos são os mesmos do Titular do Cartão e Endereço da Fatura?
           </div>
-          <div class='botoes'>
-            <form class='forms' name='envia_dados-comprador' id='envia_dados-comprador' action='#' method='post'>
-              <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
-              <input type='hidden' name='produto' id='envia_dados-cadastro' value='' />
-              <input type='hidden' name='valor' id='envia_dados-valor' value='' />
-              <input type='hidden' name='nome' id='envia_dados-nome' value='' />
-              <input type='hidden' name='email' id='envia_dados-email' value='' />
-              <input type='hidden' name='endereco' id='envia_dados-endereco' value='' />
-              <input type='hidden' name='numero' id='envia_dados-numero' value='' />
-              <input type='hidden' name='complemento' id='envia_dados-complemento' value='' />
-              <input type='hidden' name='cidade' id='envia_dados-cidade' value='' />
-              <input type='hidden' name='bairro' id='envia_dados-bairro' value='' />
-              <input type='hidden' name='uf' id='envia_dados-uf' value='' />
-              <input type='hidden' name='cep' id='envia_dados-cep' value='' />
-              <input type='hidden' name='tel' id='envia_dados-tel' value='' />
-              <button class='botao' id='botao_dados-cartao-sim'>Sim</button>
+          <div class="botoes">
+            <form class="forms" name="envia_dados-comprador" id="envia_dados-comprador" action="#" method="post">
+              <input type="hidden" name="id_usuario" value="<? echo $id_usuario; ?>" />
+              <input type="hidden" name="produto" id="envia_dados-cadastro" value="" />
+              <input type="hidden" name="valor" id="envia_dados-valor" value="" />
+              <input type="hidden" name="nome" id="envia_dados-nome" value="" />
+              <input type="hidden" name="email" id="envia_dados-email" value="" />
+              <input type="hidden" name="endereco" id="envia_dados-endereco" value="" />
+              <input type="hidden" name="numero" id="envia_dados-numero" value="" />
+              <input type="hidden" name="complemento" id="envia_dados-complemento" value="" />
+              <input type="hidden" name="cidade" id="envia_dados-cidade" value="" />
+              <input type="hidden" name="bairro" id="envia_dados-bairro" value="" />
+              <input type="hidden" name="uf" id="envia_dados-uf" value="" />
+              <input type="hidden" name="cep" id="envia_dados-cep" value="" />
+              <input type="hidden" name="tel" id="envia_dados-tel" value="" />
+              <button class="botao" id="botao_dados-cartao-sim">Sim</button>
             </form>
-            <button class='botao' id='botao_dados-cartao-nao'>Não</button>
+            <button class="botao" id="botao_dados-cartao-nao">Não</button>
           </div>
         </div>
     </div>
-    <div class='div-renovar_dados-cartao'>
-      <div class='conteiner'>
-        <div class='navegacao'>
-          <img src='images/voltar.svg' class='voltar_dados-cartao botoes_navegacao' />
+    <div class="div-renovar_dados-cartao">
+      <div class="conteiner">
+        <div class="navegacao">
+          <img src="images/voltar.svg" class="voltar_dados-cartao botoes_navegacao" />
           <div class="barra_progresso">
             <span style="width: 97%"></span>
           </div>
-          <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          <img src="images/fechar.svg" class="fechar botoes_navegacao" />
         </div>
-        <div class='titulo'>
+        <div class="titulo">
           Dados do cartão de crédito
         </div>
-        <div class='descricao'>
+        <div class="descricao">
           Clique sobre os campos para inserir os dados do Cartão de Crédito
         </div>
-        
-          <div id='MoipWidget' data-token='02K0Y1I2T0R5D1N0V1W5B03320Z9R0I7K8B080T000P0C090P4P410R5X503' callback-method-success='sucesso' callback-method-error='erroValidacao'></div>
-<!--          valor do token vai ser gerado por get  do callback-->
-        			<input type='hidden' id='token' class='span6' value='' />
-              <div id="callback"></div>
-        			
+        <div id="MoipWidget" data-token="02K0Y1I2T0R5D1N0V1W5B03320Z9R0I7K8B080T000P0C090P4P410R5X503" callback-method-success="sucesso" callback-method-error="erroValidacao"></div>
+        <input type="hidden" id="token" class="span6" value="" />
         <div class='campos'>
-<!--
-                <span class='texto_input'>BANDEIRA:</span>
-                <select id='instituicao'>
-                 <option value='0' selected disabled>Selecione</option>
-                  <option value='Visa'>Visa</option>
-                  <option value='Mastercard'>Mastercard</option>
-                  <option value='AmericanExpress'>American Express</option>
-                   <option value='Invalido'>Inválido</option> 
-                </select>
--->
             <span class='texto_input'>NÚMERO:</span>
             <input type='text' id='Numero' name='Numero' value='4073020000000002' placeholder= 'Número do cartão' required /><br/>
             
@@ -620,50 +583,72 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             </select><br/>
                
             <div class='botoes'>
-              <input type='hidden' id='amount' name='amount' value='199' />
               <button class='botao' id='sendToMoip'>Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
             </div>
-           
-<!--
-            <span class='texto_input'>CPF:</span>
-            <input type='text' name='CPF' id='cpf' placeholder= 'XXXX XXXX XXXX XXXX' required value=' /><br/>
-						<span class='texto_input'>Data Nascimento:</span>
-						<input type="text" id="DataNascimento" name="DataNascimento" value="23/01/1993"><br>
-            <span class='texto_input'>NÚMERO DO CARTÃO:</span>
-            <input type='text' name='Numero' id='moip_cartao_numero' placeholder= 'XXXX XXXX XXXX XXXX' required /><br/>
-            <span class='texto_input'>NOME:</span>
-            <input type='text' name='Portador' id='moip_cartao_titular_nome' placeholder= 'Nome (igual no cartão)' required /><br/>
-            <span class='texto_input'>VALIDADE:</span>
-            <input type='text' name='Expiracao' id='moip_cartao_validade' placeholder= 'Mês' required />
-            <input type='text' name='card_expiration_year' id='card_expiration_year' placeholder= 'Ano' />
-            <span class='texto_input'>CVV:</span>
-            <input type='text' name='CodigoSeguranca' id='moip_cartao_codigo_seguranca' placeholder= 'CVV' required />
-            <span class='texto_input' id='texto_input-parcelas'>PARCELAS:</span>
-            <select id='moip_cartao_parcelas' name='Parcelas'>
-              <option value='1' selected>1x</option>
-              <option value='2'>2x</option>
-              <option value='3'>3x</option>
-              <option value='4'>4x</option>
-              <option value='5'>5x</option>
-              <option value='6'>6x</option>
-              <option value='7'>7x</option>
-              <option value='8'>8x</option>
-              <option value='9'>9x</option>
-              <option value='10'>10x</option>
-            </select><br/>
-            
-            <div id='field_errors'></div><br/>
-            <div class='botoes'>
-              <input type='hidden' id='amount' name='amount' value='199' />
-              <button class='botao' id='sendToMoip'>Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
-            </div>
--->
             <div class='moip'>
               <a href='http://www.moip.com.br' target='_blank'><img src='images/moip167px.png' /></a>
             </div>
-          
         </div>
       </div>
+    </div>
+    <div class='div-renovar_gerar-boleto'>
+        <div class='conteiner'>
+          <div class='navegacao'>
+            <img src='images/voltar.svg' class='voltar_gerar-boleto botoes_navegacao' />
+            <div class="barra_progresso">
+              <span style="width: 95%"></span>
+            </div>
+            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          </div>
+          <div class='titulo'>
+            Dados para emissão de boleto
+          </div>
+          <div class='descricao'>
+            Os dados de contato e endereço que você nos forneceu são os mesmos da pessoa responsável pelo pagamento?
+          </div>
+          <div class='botoes'>
+            <form class="forms" name="envia_dados_boleto-comprador" id="envia_dados_boleto-comprador" action="#" method="post">
+              <input type="hidden" name="id_usuario" value="<? echo $id_usuario; ?>" />
+              <input type="hidden" name="produto" id="envia_dados_boleto-cadastro" value="" />
+              <input type="hidden" name="valor" id="envia_dados_boleto-valor" value="" />
+              <input type="hidden" name="nome" id="envia_dados_boleto-nome" value="" />
+              <input type="hidden" name="email" id="envia_dados_boleto-email" value="" />
+              <input type="hidden" name="endereco" id="envia_dados_boleto-endereco" value="" />
+              <input type="hidden" name="numero" id="envia_dados_boleto-numero" value="" />
+              <input type="hidden" name="complemento" id="envia_dados_boleto-complemento" value="" />
+              <input type="hidden" name="cidade" id="envia_dados_boleto-cidade" value="" />
+              <input type="hidden" name="bairro" id="envia_dados_boleto-bairro" value="" />
+              <input type="hidden" name="uf" id="envia_dados_boleto-uf" value="" />
+              <input type="hidden" name="cep" id="envia_dados_boleto-cep" value="" />
+              <input type="hidden" name="tel" id="envia_dados_boleto-tel" value="" />
+              <button class="botao" id="botao_boleto-sim">Sim</button>
+            </form>
+            <button class="botao" id="botao_boleto-nao">Não</button>
+          </div>
+        </div>
+    </div>
+    <div class='div-renovar_imprimir-boleto'>
+        <div class='conteiner'>
+          <div class='navegacao'>
+            <img src='images/voltar.svg' class='voltar_imprimir-boleto botoes_navegacao' />
+            <div class="barra_progresso">
+              <span style="width: 99%"></span>
+            </div>
+            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          </div>
+          <div class='titulo'>
+            Imprimir boleto
+          </div>
+          <div class='descricao'>
+            Clique abaixo para imprimir seu boleto.
+          </div>
+          <div class='botoes'>
+            <button class='botao' id='sendToMoip2'>Pagar (R$ <span id='valor_pagar-boleto'></span>,00)</button>
+          </div>
+          <div class='moip'>
+            <a href='http://www.moip.com.br' target='_blank'><img src='images/moip167px.png' /></a>
+          </div>
+        </div>
     </div>
     <div class='div-renovar_dados-titular-cartao'>
         <div class='conteiner'>
@@ -742,22 +727,6 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
           </div>
         </div>
     </div>
-    <div class='div-renovar_boleto-bancario'>
-        <div class='conteiner'>
-          <div class='navegacao'>
-            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
-          </div>
-          <div class='titulo'>
-            Boleto gerado
-          </div>
-          <div class='descricao'>
-            Seu contrato será renovado em até 3 dias úteis após a confirmação do pagamento deste boleto
-          </div>
-          <div class='botoes'>
-            <button class='botao' id='botao_visualizar-boleto'>Visualizar boleto</button>
-          </div>
-        </div>
-    </div>
 <!--   Sua transação foi processada pelo Moip Pagamentos S/A.
 A sua transação está "Autorizada" e o código Moip é "0000.0000.0000".
 Caso tenha alguma dúvida referente a transação, entre em contato com o Moip.
@@ -782,10 +751,22 @@ Para maiores informações clique aqui. -->
   </div>
 </div>
 <? } ?>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src='assets/js/gradient.js'></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-22229864-1', 'auto');
+ga('send', 'pageview');
+</script>
 <script src='assets/js/modal.js'></script>
 <script src='assets/js/jquery-2.2.4.min.js'></script>
-<script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'>
-</script>
+<script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'></script>
 <script src='assets/js/moip.js'></script>
 <script src='assets/js/ajax.js'></script>
 </body>

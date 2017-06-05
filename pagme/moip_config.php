@@ -1,14 +1,28 @@
 <?php
 include_once "autoload.inc.php";
 
-date_default_timezone_set('America/Sao_Paulo');
+$id_usuario = $_POST['id_usuario'];
+$produto = $_POST['produto'];
+$valor = $_POST['valor'];
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$endereco = $_POST['endereco'];
+$numero = $_POST['numero'];
+$complemento = $_POST['complemento'];
+$cidade = $_POST['cidade'];
+$bairro = $_POST['bairro'];
+$uf = $_POST['uf'];
+$cep = $_POST['cep'];
+$tel = $_POST['tel'];
+
 if(!session_id()) {
     session_start();
 }
-ob_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
+$_SESSION['produto'] = $produto;
+$_SESSION['id_usuario'] = $id_usuario;
+$_SESSION['valor'] = $valor;
+// require_once "insere_prevenda.php";
 
 $moip = new Moip();
 $moip->setEnvironment('test');
@@ -16,24 +30,24 @@ $moip->setCredential(array(
    'key' => 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI',
    'token' => '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN'));
 
-$operation_id = rand(10000,99999);
+$operation_id = $id_usuario."-".rand(1000,9999);
 // $moip->setUniqueID(false);
 $moip->setUniqueID($operation_id);
-$moip->setValue('299.00');
-$moip->setReason('Cadastro Premium');
+$moip->setValue($valor);
+$moip->setReason($produto);
 
-$moip->setPayer(array('name' => 'Vinicius Goulart Batista',
-    'email' => 'vini@grupomagneto.com.br',
-    'payerId' => '19741',
-    'billingAddress' => array('address' => 'SHIN CA 6',
-        'number' => '15',
-        'complement' => 'Conjunto 5',
-        'city' => 'Brasília',
-        'neighborhood' => 'Lago Norte',
-        'state' => 'DF',
+$moip->setPayer(array('name' => $nome,
+    'email' => $email,
+    'payerId' => $id_usuario,
+    'billingAddress' => array('address' => $endereco,
+        'number' => $numero,
+        'complement' => $complemento,
+        'city' => $cidade,
+        'neighborhood' => $bairro,
+        'state' => $uf,
         'country' => 'BRA',
-        'zipCode' => '71503506',
-        'phone' => '61993110767')));
+        'zipCode' => $cep,
+        'phone' => $tel)));
 
 $moip->validate('Identification');
 $moip->send();
