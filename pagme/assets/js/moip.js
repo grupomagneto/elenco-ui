@@ -1,22 +1,22 @@
 $(document).ready(function(){
     $("#sendToMoip").click(function(){
-        var forma_pagamento = "Cartão de Crédito";
         applyToken();
         sendToCreditCard();
     });
     $("#sendToMoip2").click(function(){
-        var forma_pagamento = "Boleto Bancário";
         applyToken();
         sendToBoleto();
     });
 });
 sendToCreditCard = function() {
-    var n_parcelas = $("#parcelas").val();
+    document.getElementById("forma_pagamento").value = "Cartão de Crédito";
+    document.getElementById("n_parcelas").value = $("#parcelas").val();
     var settings = {
         "Forma": "CartaoCredito",
         "Instituicao": $("#instituicao").val(),
         "Parcelas": $("#parcelas").val(),
-        "Recebimento": "AVista",
+        // "Recebimento": "AVista",
+        "Recebimento": "Parcelado",
         "CartaoCredito": {
             "Numero": $("input[name=Numero]").val(),
             "Expiracao": $("input[name=Expiracao]").val(),
@@ -34,7 +34,8 @@ sendToCreditCard = function() {
  };
 
 sendToBoleto = function() {
-    var n_parcelas = "1";
+    document.getElementById("forma_pagamento").value = "Boleto Bancário";
+    document.getElementById("n_parcelas").value = "1";
     var settings = {
         "Forma": "BoletoBancario"
     };
@@ -51,7 +52,7 @@ var sucesso = function(data){
     //     '\n Taxa Moip: ' + data.TaxaMoIP +
     //     '\n Mensagem: ' + data.Mensagem +
     //     '\n Cod. Operadora: ' + data.CodigoRetorno);
-    alert("Dados\n\n" + JSON.stringify(data));
+    // alert("Dados\n\n" + JSON.stringify(data));
     $("#sendToMoip").removeAttr("disabled");
     $(".div-renovar_imprimir-boleto").fadeOut(0);
     $(".div-renovar_dados-cartao").fadeOut(0);
@@ -61,15 +62,18 @@ var sucesso = function(data){
     // Ajax Renova Cadastros
     var valor_venda = data.TotalPago - data.TaxaMoIP;
     var dados = {
-        "valor_venda" : valor_venda,
-        "forma_pagamento" : forma_pagamento,
-        "n_parcelas" : n_parcelas
+        valor_venda: valor_venda,
+        forma_pagamento: document.getElementById("forma_pagamento").value,
+        n_parcelas: document.getElementById("n_parcelas").value
     };
     jQuery.ajax({
       type: "POST",
-      dataType: "json",
+      dataType: "html",
       url: "http://localhost:8888/elenco-ui/pagme/confirma_venda.php",
-      data: dados
+      data: dados,
+      success: function( data ) {
+        event.preventDefault();
+      }
     });
     return false;
 };

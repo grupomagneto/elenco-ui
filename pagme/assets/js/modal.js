@@ -424,16 +424,11 @@ $(document).ready(function(){
           event.preventDefault();
         }
       });
+      $.get("http://localhost:8888/elenco-ui/pagme/insere_prevenda.php").done(function() {
+        event.preventDefault();
+      });
       return false;
     });
-    // jQuery.ajax({
-    //   url: "http://localhost:8888/elenco-ui/pagme/insere_prevenda.php"
-    // });
-    // return false;
-    // $.get("http://localhost:8888/elenco-ui/pagme/insere_prevenda.php");
-    // return false;
-    // xmlhttp.open("GET","http://localhost:8888/elenco-ui/pagme/insere_prevenda.php",true);
-    // xmlhttp.send();
   });
   $(".checado").click(function(){
     $(".requerido").fadeOut(200);
@@ -455,6 +450,9 @@ $(document).ready(function(){
             document.getElementById("token").value = dados72.token;
             event.preventDefault();
           }
+        });
+        $.get("http://localhost:8888/elenco-ui/pagme/insere_prevenda.php").done(function() {
+          event.preventDefault();
         });
         return false;
       });

@@ -27,10 +27,10 @@ $n_parcelas = $_POST['n_parcelas'];
 mysqli_query($link, "UPDATE financeiro SET valor_venda = '$valor_venda', forma_pagamento = '$forma_pagamento', n_parcelas = '$n_parcelas', status_venda = '$status_venda', data_venda = '$hoje' WHERE id = '$id_venda'");
 // RENOVA O CADASTRO NO DB
 if ($produto == "Renovação Premium") {
-	$cadastro = "Cadastro Premium";
+	$cadastro = "Premium";
 }
 elseif ($produto == "Renovação Profissional") {
-	$cadastro = "Cadastro Profissional";
+	$cadastro = "Profissional";
 }
 mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente = '$hoje', tipo_cadastro_vigente = '$cadastro', ativo = 'Sim', concordo_timestamp = '$hora', ip = '$ip' WHERE id_elenco='$id_elenco'");
 mysqli_close($link);

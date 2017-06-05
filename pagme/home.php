@@ -549,8 +549,6 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         <div class="descricao">
           Clique sobre os campos para inserir os dados do Cartão de Crédito
         </div>
-        <div id="MoipWidget" data-token="02K0Y1I2T0R5D1N0V1W5B03320Z9R0I7K8B080T000P0C090P4P410R5X503" callback-method-success="sucesso" callback-method-error="erroValidacao"></div>
-        <input type="hidden" id="token" class="span6" value="" />
         <div class='campos'>
             <span class='texto_input'>NÚMERO:</span>
             <input type='text' id='Numero' name='Numero' value='4073020000000002' placeholder= 'Número do cartão' required /><br/>
@@ -584,6 +582,8 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                
             <div class='botoes'>
               <button class='botao' id='sendToMoip'>Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
+              <input type="hidden" name="forma_pagamento" id="forma_pagamento" value="" />
+              <input type="hidden" name="n_parcelas" id="n_parcelas" value="" />
             </div>
             <div class='moip'>
               <a href='http://www.moip.com.br' target='_blank'><img src='images/moip167px.png' /></a>
@@ -750,6 +750,8 @@ Para maiores informações clique aqui. -->
     </div>
   </div>
 </div>
+<div id="MoipWidget" data-token="02K0Y1I2T0R5D1N0V1W5B03320Z9R0I7K8B080T000P0C090P4P410R5X503" callback-method-success="sucesso" callback-method-error="erroValidacao"></div>
+<input type="hidden" id="token" class="span6" value="" />
 <? } ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -768,7 +770,6 @@ ga('send', 'pageview');
 <script src='assets/js/jquery-2.2.4.min.js'></script>
 <script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'></script>
 <script src='assets/js/moip.js'></script>
-<script src='assets/js/ajax.js'></script>
 </body>
 </html>
 <?php
