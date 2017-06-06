@@ -51,11 +51,12 @@ $moip->setPayer(array('name' => $nome,
 
 $moip->validate('Identification');
 //configura boleto
-$moip->setBilletConf("2011-04-06",
-        	false,
-        	array("Primeira linha",
-            	"Segunda linha",
-            	"Terceira linha"),	"https://desenvolvedor.moip.com.br/sandbox/imgs/logo_moip.gif");
+$moip->setBilletConf("1",
+            false,
+            array("Seu cadastro está quase concluído!",
+                "Pague este boleto para ter sua sessão de fotos agendada",
+                "e seu cadastro concluído."),
+                "http://localhost:8888/elenco-ui/pagme/images/mini-logo.png");
 $moip->send();
    
 $response = $moip->getAnswer()->response;

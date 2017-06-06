@@ -59,10 +59,6 @@ if ($n <= $count) {
     }
   }
 }
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -388,7 +384,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             Atualize seus dados pessoais
           </div>
           <div class='descricao'>
-            Mantenha seus contatos atualizados para renovação do seu contrato
+            Mantenha seus contatos atualizados para participar de trabalhos
           </div>
           <div class='campos'>
             <form class='forms' name='form_atualiza-dados' id='form_atualiza-dados' action='#' method='post'>
@@ -437,9 +433,9 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         <div class='descricao' id='descricao-pagamento'></div>
         <div class='botoes'>
         <center>
+          <button class='botao botao_saldo' id='botao_saldo'>Saldo de Cachês</button>
           <form class='forms' name='requisita_dados-comprador' id='requisita_dados-comprador' action='#' method='post'>
             <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
-            <button class='botao botao_saldo' id='botao_saldo'>Saldo de Cachês</button>
             <button class='botao' id='botao_credito'>Cartão de Crédito</button>
             <button class='botao' id='botao_boleto'>Boleto Bancário</button>
           </form>
