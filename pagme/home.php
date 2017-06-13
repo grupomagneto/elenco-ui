@@ -756,7 +756,6 @@ Para maiores informações clique aqui. -->
 <input type="hidden" id="token" class="span6" value="" />
 <? } ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src='assets/js/gradient.js'></script>
@@ -769,7 +768,6 @@ ga('create', 'UA-22229864-1', 'auto');
 ga('send', 'pageview');
 </script>
 <script src='assets/js/modal.js'></script>
-<script src='assets/js/jquery-2.2.4.min.js'></script>
 <script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'></script>
 <script src='assets/js/moip.js'></script>
 </body>

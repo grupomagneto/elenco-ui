@@ -1,7 +1,5 @@
 <?php
-//require 'vendor/autoload.php';
-//include_once "autoload.inc.php";
-//
+
 $header[] = "Authorization: Basic " . base64_encode("4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN:FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI");
 
 $queryString = array(
@@ -31,17 +29,9 @@ echo '<br />';
 
 $xml = simplexml_load_string($ret);
 
-//echo '<pre>';
-//print_r($xml);
-//echo '</pre>';
-//echo '<br />';
 
 $json = json_encode($xml);
 $array = json_decode($json,TRUE);
-
-// echo '<pre>';
-// print_r($array);
-// echo '</pre>';
 
 echo '<br />';
 //navega pelos elementos do array, imprimindo cada id

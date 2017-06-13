@@ -33,7 +33,7 @@ $moip->setCredential(array(
    'token' => '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN'));
 
 $operation_id = $id_usuario."-".rand(1000,9999);
-// $moip->setUniqueID(false);
+
 $moip->setUniqueID($operation_id);
 $moip->setValue($valor);
 $moip->setReason($produto);
