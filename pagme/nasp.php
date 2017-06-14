@@ -1,14 +1,9 @@
 <?php
 
 $header[] = "Authorization: Basic " . base64_encode("4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN:FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI");
-
-$queryString = array(
-    'pagador' => 'nome',
-    'pagador' => 'email'
-);
  
 //Monta a URL
-$url = 'https://desenvolvedor.moip.com.br/sandbox/ws/alpha/ConsultarInstrucao/M2F0G1P7K0M6E086U1A7T4C230R8M6J1V5K040Y0F0D0T1T315W1O6X7U3K2?' . http_build_query($queryString);
+$url = 'https://desenvolvedor.moip.com.br/sandbox/ws/alpha/ConsultarInstrucao/M2F0G1P7K0M6E086U1A7T4C230R8M6J1V5K040Y0F0D0T1T315W1O6X7U3K2';
 
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
