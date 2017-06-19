@@ -153,12 +153,15 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
   // Modal
   if ($cadastro == 'Gratuito') {
     $descricao_cadastro = "Mudamos os termos do nosso contrato e você precisa renová-lo para continuar trabalhando";
+    $dt_validade = date('d/m/Y', strtotime('+1 years'));
   }
   if ($cadastro == 'Premium') {
     $descricao_cadastro = "Seu cadastro foi temporariamente rebaixado de Premium para Gratuito até você renová-lo";
+    $dt_validade = date('d/m/Y', strtotime('+1 years'));
   }
   if ($cadastro == 'Profissional') {
     $descricao_cadastro = "Seu cadastro foi temporariamente rebaixado de Profissional para Gratuito até você renová-lo";
+    $dt_validade = date('d/m/Y', strtotime('+2 years'));
   }
 ?>
 <div id='myModal' class='modal'>
@@ -254,7 +257,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 Perfeito para você começar
             </div>
             <div class='descricao'>
-                Nosso cadastro mais popular e que já deu oportunidade a mais de 15.000 pessoas desde 2009
+                Nosso cadastro mais popular e que já criou oportunidades a mais de 15.000 pessoas desde 2009
             </div>
             <div class='quadro-gratuito'>
                 <div class='icon'>
@@ -399,7 +402,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <span class='texto_input'>ENDEREÇO:</span>
               <input type='text' name='endereco' id='endereco' value='<?php echo $endereco; ?>' placeholder='Endereço' required />
               <span class='texto_input'>NÚMERO:</span>
-              <input type='text' name='numero' id='numero' value='<?php echo $numero; ?>' placeholder='Nº' required /><BR />
+              <input type='text' name='numero' id='numero-casa' value='<?php echo $numero; ?>' placeholder='Nº' required /><BR />
               <span class='texto_input'>COMPLEMENTO:</span>
               <input type='text' name='complemento' id='complemento' value='<?php echo $complemento; ?>' placeholder='Complemento' required />
               <span class='texto_input'>BAIRRO:</span>
@@ -639,13 +642,13 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             <img src='images/fechar.svg' class='fechar botoes_navegacao' />
           </div>
           <div class='titulo'>
-            Imprimir boleto
+            Renovar por boleto
           </div>
           <div class='descricao'>
-            Clique abaixo para imprimir seu boleto.
+            A renovação do seu cadastro será concluída após a confirmação de pagamento do Boleto Bancário.
           </div>
           <div class='botoes'>
-            <button class='botao' id='sendToMoip2'>Pagar (R$ <span id='valor_pagar-boleto'></span>,00)</button>
+            <button class='botao' id='sendToMoip2'>Gerar Boleto</button>
           </div>
           <div class='moip'>
             <a href='http://www.moip.com.br' target='_blank'><img src='images/moip167px.png' /></a>
@@ -673,6 +676,8 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <input type='text' name='cpf_titular' id='cpf_titular' value='' placeholder='CPF' required /><BR />
               <span class='texto_input'>NOME COMPLETO:</span>
               <input type='text' name='nome_completo' id='nome_completo' value='' placeholder='Nome completo' required /><BR />
+              <span class='texto_input'>DATA DE NASCIMENTO:</span>
+              <input type='date' name='data_nascimento' id='data_nascimento' value='' placeholder='dd/mm/aaaa'required /><BR />
               <span class='texto_input'>DDD:</span>
               <input type='tel' name='DDD' id='DDD' value='' placeholder='DDD' required />
               <span class='texto_input'>CELULAR:</span>
@@ -681,72 +686,88 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <input type='email' name='email' id='email' value='' placeholder='E-mail' required /><BR />
             </div>
             <div class='botoes'>
-                <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
-                <input type='hidden' name='cadastro' value='' id='input-botao_dados-titular-cartao' />
-                <button class='botao' id='botao_dados-titular-cartao'>Continuar</button>
+              <button class='botao' id='botao_dados-titular-cartao'>Continuar</button>
             </form>
           </div>
         </div>
     </div>
-    <div class='div-renovar_dados-fatura-cartao'>
-        <div class='conteiner'>
-          <div class='navegacao'>
-            <img src='images/voltar.svg' class='voltar_dados-fatura-cartao botoes_navegacao' />
+    <div class="div-renovar_dados-fatura-cartao">
+        <div class="conteiner">
+          <div class="navegacao">
+            <img src="images/voltar.svg" class="voltar_dados-fatura-cartao botoes_navegacao" />
             <div class="barra_progresso">
               <span style="width: 95%"></span>
             </div>
-            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+            <img src="images/fechar.svg" class="fechar botoes_navegacao" />
           </div>
-          <div class='titulo'>
+          <div class="titulo">
             Endereço da fatura do cartão
           </div>
-          <div class='descricao'>
+          <div class="descricao">
             Clique sobre os campos para inserir os dados do Endereço da Fatura
           </div>
-          <div class='campos'>
-            <form class='forms' name='form_dados-fatura-cartao' id='form_dados-fatura-cartao' action='#' method='post'>
-              <span class='texto_input'>CEP:</span>
-              <input type='text' name='cep' id='cep' value='' placeholder='CEP' required /><BR />
-              <span class='texto_input'>ENDEREÇO:</span>
-              <input type='text' name='endereco' id='endereco' value='' placeholder='Endereço' required />
-              <span class='texto_input'>NÚMERO:</span>
-              <input type='text' name='numero' id='numero' value='' placeholder='Nº' required /><BR />
-              <span class='texto_input'>COMPLEMENTO:</span>
-              <input type='text' name='complemento' id='complemento' value='' placeholder='Complemento' required />
-              <span class='texto_input'>BAIRRO:</span>
-              <input type='text' name='bairro' id='bairro' value='' placeholder='Bairro' required />
+          <div class="campos">
+            <form class="forms" name="form_dados-fatura-cartao" id="form_dados-fatura-cartao" action="#" method="post">
+              <span class="texto_input">CEP:</span>
+              <input type="text" name="cep" id="cep-pagador" value="" placeholder="CEP" required /><BR />
+              <span class="texto_input">ENDEREÇO:</span>
+              <input type="text" name="endereco" id="endereco-pagador" value="" placeholder="Endereço" required />
+              <span class="texto_input">NÚMERO:</span>
+              <input type="text" name="numero" id="numero-casa-pagador" value="" placeholder="Nº" required /><BR />
+              <span class="texto_input">COMPLEMENTO:</span>
+              <input type="text" name="complemento" id="complemento-pagador" value="" placeholder="Complemento" required />
+              <span class="texto_input">BAIRRO:</span>
+              <input type="text" name="bairro" id="bairro-pagador" value="" placeholder="Bairro" required />
               <BR />
-              <span class='texto_input'>CIDADE:</span>
-              <input type='text' name='cidade' id='cidade' value='' placeholder='Cidade' required />
-              <span class='texto_input'>UF:</span>
-              <input type='text' name='uf' id='uf' value='' placeholder='UF' required />
+              <span class="texto_input">CIDADE:</span>
+              <input type="text" name="cidade" id="cidade-pagador" value="" placeholder="Cidade" required />
+              <span class="texto_input">UF:</span>
+              <input type="text" name="uf" id="uf-pagador" value="" placeholder="UF" required />
             </div>
-            <div class='botoes'>
-                <input type='hidden' name='id_usuario' value='<? echo $id_usuario; ?>' />
-                <input type='hidden' name='cadastro' value='' id='input-botao_dados-fatura-cartao' />
-                <button class='botao' id='botao_dados-fatura-cartao'>Continuar</button>
+            <div class="botoes">
+              <input type="hidden" name="id_usuario" value="<? echo $id_usuario; ?>" />
+              <input type="hidden" name="produto" id="envia_pagador-cadastro" value="" />
+              <input type="hidden" name="valor" id="envia_pagador-valor" value="" />
+              <input type="hidden" name="nome" id="envia_pagador-nome" value="" />
+              <input type="hidden" name="cpf" id="envia_pagador-cpf" value="" />
+              <input type="hidden" name="email" id="envia_pagador-email" value="" />
+              <input type="hidden" name="tel" id="envia_pagador-tel" value="" />
+              <button class='botao' id='botao_dados-fatura-cartao'>Continuar</button>
             </form>
           </div>
         </div>
     </div>
-<!--   Sua transação foi processada pelo Moip Pagamentos S/A.
-A sua transação está "Autorizada" e o código Moip é "0000.0000.0000".
-Caso tenha alguma dúvida referente a transação, entre em contato com o Moip.
-Para maiores informações clique aqui. -->
+    <div class='div-renovar_aguardando-pagamento'>
+      <div class='conteiner'>
+        <div class='navegacao'>
+          <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+        </div>
+        <div class='titulo'>
+          Cadastro em renovação
+        </div>
+        <div class='descricao_validade-novo-cadastro'>
+            <span class="medium heavy" id="renovar_aguardando-cadastro"></span>
+            <span class="small">Aguardando pagamento</span>
+        </div>
+        <div class='descricao'>
+          <a href="" target="_blank" id="url_boleto">Clique aqui para imprimir seu Boleto</a>
+        </div>
+      </div>
+    </div>
     <div class='div-renovar_sucesso-renovacao'>
       <div class='conteiner'>
         <div class='navegacao'>
           <img src='images/fechar.svg' class='fechar botoes_navegacao' />
         </div>
         <div class='titulo'>
-          Contrato renovado!
+          Cadastro renovado!
         </div>
         <div class='descricao_validade-novo-cadastro'>
-            <span class="medium heavy">Cadastro Premium</span>
-            <span class="small">válido até 21/04/2017</span>
+            <span class="medium heavy" id="renovar_sucesso-cadastro"></span>
+            <span class="small" id="dt_validade"></span>
         </div>
         <div class='descricao'>
-          Nosso contrato foi renovado e enviado, junto com todas as informações, para o seu e-mail cadastrado. Obrigada!
+          Seu pagamento foi processado pelo MOIP PAGAMENTOS S/A e seu cadastro renovado. Obrigada!
         </div>
       </div>
     </div>

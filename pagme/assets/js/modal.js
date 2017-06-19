@@ -33,6 +33,7 @@ $(document).ready(function(){
     $(".div-renovar_boleto-bancario").fadeOut(0);
     $(".div-renovar_gerar-boleto").fadeOut(0);
     $(".div-renovar_imprimir-boleto").fadeOut(0);
+    $(".div-renovar_aguardando-pagamento").fadeOut(0);
     $(".voltar").fadeOut(0);
     $(".progresso").fadeOut(0);
     $(".navegacao").css("justify-content", "flex-end");
@@ -169,7 +170,17 @@ $(document).ready(function(){
   $(".voltar_dados-fatura-cartao").click(function(){
     $(".div-renovar_dados-fatura-cartao").fadeOut(0);
     $(".div-renovar_dados-titular-cartao").fadeIn(200);
-    $(".modal-content").css("height", "550px");
+    $(".modal-content").css("height", "600px");
+  });
+  $(".voltar_gerar-boleto").click(function(){
+    $(".div-renovar_gerar-boleto").fadeOut(0);
+    $(".div-renovar_forma-pagamento").fadeIn(200);
+    $(".modal-content").css("height", "400px");
+  });
+  $(".voltar_imprimir-boleto").click(function(){
+    $(".div-renovar_imprimir-boleto").fadeOut(0);
+    $(".div-renovar_gerar-boleto").fadeIn(200);
+    $(".modal-content").css("height", "350px");
   });
   $("#btn_renova-cadastro-gratuito").click(function(){
     if(!$("#terms-1").is(":checked")){
@@ -181,6 +192,14 @@ $(document).ready(function(){
       $(".modal-content").css("height", "725px");
       $(".div-renovar_atualiza-dados").fadeIn(200);
       document.getElementById("input-botao_atualiza-dados").value = "gratuito";
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1;
+      var yyyy = today.getFullYear()+1;
+      if(dd<10){dd="0"+dd;} 
+      if(mm<10){mm="0"+mm;} 
+      var today = dd+"/"+mm+"/"+yyyy;
+      document.getElementById("dt_validade").innerHTML = "válido até " + today;
       event.preventDefault();
     }
   });
@@ -199,6 +218,18 @@ $(document).ready(function(){
       document.getElementById("envia_dados-valor").value = "199.00";
       document.getElementById("envia_dados_boleto-cadastro").value = "Renovação Premium";
       document.getElementById("envia_dados_boleto-valor").value = "199.00";
+      document.getElementById("envia_pagador-cadastro").value = "Renovação Premium";
+      document.getElementById("envia_pagador-valor").value = "199.00";
+      document.getElementById("renovar_aguardando-cadastro").innerHTML = "Cadastro Premium";
+      document.getElementById("renovar_sucesso-cadastro").innerHTML = "Cadastro Premium";
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1;
+      var yyyy = today.getFullYear()+1;
+      if(dd<10){dd="0"+dd;} 
+      if(mm<10){mm="0"+mm;} 
+      var today = dd+"/"+mm+"/"+yyyy;
+      document.getElementById("dt_validade").innerHTML = "válido até " + today;
       event.preventDefault();
     }
   });
@@ -217,6 +248,18 @@ $(document).ready(function(){
       document.getElementById("envia_dados-valor").value = "799.00";
       document.getElementById("envia_dados_boleto-cadastro").value = "Renovação Profissional";
       document.getElementById("envia_dados_boleto-valor").value = "799.00";
+      document.getElementById("envia_pagador-cadastro").value = "Renovação Profissional";
+      document.getElementById("envia_pagador-valor").value = "799.00";
+      document.getElementById("renovar_aguardando-cadastro").innerHTML = "Cadastro Profissional";
+      document.getElementById("renovar_sucesso-cadastro").innerHTML = "Cadastro Profissional";
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1;
+      var yyyy = today.getFullYear()+2;
+      if(dd<10){dd="0"+dd;} 
+      if(mm<10){mm="0"+mm;} 
+      var today = dd+"/"+mm+"/"+yyyy;
+      document.getElementById("dt_validade").innerHTML = "válido até " + today;
       event.preventDefault();
     }
   });
@@ -457,6 +500,30 @@ $(document).ready(function(){
         return false;
       });
   });
+  $("#botao_dados-fatura-cartao").click(function(){
+    // Ajax Token
+      jQuery("#form_dados-fatura-cartao").submit(function(){
+        $(".div-renovar_dados-fatura-cartao").fadeOut(0);
+        $(".div-renovar_dados-cartao").fadeIn(200);
+        $(".modal-content").css("height", "550px");
+        var dadosX = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://localhost:8888/elenco-ui/pagme/moip_config.php",
+          data: dadosX,
+          success: function( data ) {
+            var dadosX2 = JSON.parse(data);
+            document.getElementById("token").value = dadosX2.token;
+            event.preventDefault();
+          }
+        });
+        $.get("http://localhost:8888/elenco-ui/pagme/insere_prevenda.php").done(function() {
+          event.preventDefault();
+        });
+        return false;
+      });
+  });
   $("#confirmar-saldo").click(function(){
     // Ajax Cadastros
       jQuery("form").submit(function(){
@@ -481,17 +548,41 @@ $(document).ready(function(){
   $("#botao_dados-cartao-nao").click(function(){
     $(".div-renovar_confirmacao-dados-cartao").fadeOut(0);
     $(".div-renovar_dados-titular-cartao").fadeIn(200);
-    $(".modal-content").css("height", "550px");
+    $(".modal-content").css("height", "600px");
   });
   $("#botao_dados-titular-cartao").click(function(){
-    $(".div-renovar_dados-titular-cartao").fadeOut(0);
-    $(".div-renovar_dados-fatura-cartao").fadeIn(200);
-    $(".modal-content").css("height", "550px");
-  });
-  $("#botao_dados-fatura-cartao").click(function(){
-    $(".div-renovar_dados-fatura-cartao").fadeOut(0);
-    $(".div-renovar_dados-cartao").fadeIn(200);
-    $(".modal-content").css("height", "550px");
+    // Ajax Dados Cartão
+    jQuery("#form_dados-titular-cartao").submit(function(){
+      $(".div-renovar_dados-titular-cartao").fadeOut(0);
+      $(".div-renovar_dados-fatura-cartao").fadeIn(200);
+      $(".modal-content").css("height", "550px");
+      var dadosX6 = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/pagme/processa_dados.php",
+        data: dadosX6,
+        success: function( data ) {
+            var dados_pagador = JSON.parse(data);
+            document.getElementById("envia_pagador-cpf").value = dados_pagador.cpf;
+            document.getElementById("envia_pagador-nome").value = dados_pagador.nome;
+            document.getElementById("envia_pagador-email").value = dados_pagador.email;
+            document.getElementById("envia_pagador-tel").value = dados_pagador.tel;
+            document.getElementById("CPF").value = dados_pagador.cpf;
+            document.getElementById("Telefone").value = dados_pagador.tel;
+            var dt_nasc = new Date(dados_pagador.data_nascimento);
+            var dd = dt_nasc.getDate()+1;
+            var mm = dt_nasc.getMonth()+1;
+            var yyyy = dt_nasc.getFullYear();
+            if(dd<10){dd="0"+dd;}
+            if(mm<10){mm="0"+mm;}
+            var dt_nasc = dd+"/"+mm+"/"+yyyy;
+            document.getElementById("DataNascimento").value = dt_nasc;
+            event.preventDefault();
+        }
+      });
+      return false;
+    });
   });
   // FORMAT O SELECTS DAS PARCELAS
   $("#parcelas").each(function(){

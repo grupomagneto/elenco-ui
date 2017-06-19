@@ -21,6 +21,8 @@ if ($forma_pagamento == "Boleto Bancário") {
 	$status_venda = "Boleto Impresso";
 	// ATUALIZA STATUS VENDA
 	mysqli_query($link, "UPDATE financeiro SET forma_pagamento = '$forma_pagamento', n_parcelas = '$n_parcelas', status_venda = '$status_venda', data_venda = '$hoje' WHERE id = '$id_venda'");
+	// Criar JSON com o ID da Venda para montar no Moip Config Id Usuario + Id Venda
+	// mysqli_insert_id($link);
 }
 elseif ($forma_pagamento == "Cartão de Crédito") {
 	$status_venda = "Em análise";

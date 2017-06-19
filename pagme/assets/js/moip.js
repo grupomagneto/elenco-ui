@@ -80,7 +80,9 @@ var sucesso = function(data){
     if (document.getElementById("forma_pagamento").value == "Boleto Bancário") {
         $(".div-renovar_imprimir-boleto").fadeOut(0);
         $(".div-renovar_aguardando-pagamento").fadeIn(200);
+        $(".navegacao").css("justify-content", "flex-end");
         window.open(data.url,"_blank","height=400,width=280");
+        document.getElementById("url_boleto").href = data.url;
         // Ajax Boleto Impresso
         var dados = {
             forma_pagamento: document.getElementById("forma_pagamento").value,

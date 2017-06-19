@@ -1,9 +1,24 @@
 <?php
 require_once 'dbconnect.php';
 $hoje = date('Y-m-d', time());
-$produto = $_SESSION['produto'];
-$id_usuario = $_SESSION['id_usuario'];
-$valor = $_SESSION['valor'];
+$id_usuario = $_POST['id_usuario'];
+$produto = $_POST['produto'];
+$valor = $_POST['valor'];
+
+$_SESSION['produto'] = $produto;
+$_SESSION['id_usuario'] = $id_usuario;
+$_SESSION['valor'] = $valor;
+$_SESSION['nome'] = $_POST['nome'];
+$_SESSION['email'] = $_POST['email'];
+$_SESSION['endereco'] = $_POST['endereco'];
+$_SESSION['numero'] = $_POST['numero'];
+$_SESSION['complemento'] = $_POST['complemento'];
+$_SESSION['cidade'] = $_POST['cidade'];
+$_SESSION['bairro'] = $_POST['bairro'];
+$_SESSION['uf'] = $_POST['uf'];
+$_SESSION['cep'] = $_POST['cep'];
+$_SESSION['tel'] = $_POST['tel'];
+
 // // INSERE PRÉ-VENDA
 $result=mysqli_query($link, "SELECT nome_artistico FROM tb_elenco WHERE id_elenco=$id_usuario");
 $row=mysqli_fetch_array($result);

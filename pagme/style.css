@@ -50,7 +50,6 @@ h6,
 font-family: Avenir-Heavy;
 color: #FFFFFF;
 }
-
 p {
 font-family: Avenir-Book;
 color: #FFFFFF;
@@ -513,7 +512,7 @@ width: 253px;
 input#endereco{
 width: 190px;
 }
-input#numero{
+input#numero-casa{
 width: 50px;
 }
 input#complemento{
@@ -526,6 +525,27 @@ input#cidade{
 width: 190px;
 }
 input#uf{
+width: 50px;
+}
+input#cep-pagador{
+width: 253px;
+}
+input#endereco-pagador{
+width: 190px;
+}
+input#numero-casa-pagador{
+width: 50px;
+}
+input#complemento-pagador{
+width: 120px;
+}
+input#bairro-pagador{
+width: 120px;
+}
+input#cidade-pagador{
+width: 190px;
+}
+input#uf-pagador{
 width: 50px;
 }
 input#Numero{
@@ -544,13 +564,20 @@ margin-right: 35px;
 input#cpf{
 width: 250px;
 }
+input#cpf_titular{
+width: 250px;
+}
 input#nome_completo{
+width: 250px;
+}
+input#data_nascimento{
 width: 250px;
 }
 .texto_input#texto_input-parcelas{
 margin-left: -25px;
 }
 .moip {
+width: 100%;
 display: flex;
 justify-content: center;
 margin-top: -25px;
