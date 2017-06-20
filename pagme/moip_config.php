@@ -70,7 +70,7 @@ $moip->setBilletConf("2",
             array("Seu cadastro está quase concluído!",
                 "Pague este boleto até o vencimento para",
                 "que a renovação do seu cadastro seja concluída."),
-                "http://localhost:8888/elenco-ui/pagme/images/mini-logo.png");
+                "http://www.magnetoelenco.com.br/pagme/images/mini-logo.png");
 $moip->send();
    
 $response = $moip->getAnswer()->response;

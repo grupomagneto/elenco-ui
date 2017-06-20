@@ -64,7 +64,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/apaga_cadastro.php",
+        url: "http://www.magnetoelenco.com.br/pagme/apaga_cadastro.php",
         data: dados1,
         success: function( data1 ) {
           $(".div-renovar_cancelar").fadeOut(0);
@@ -277,7 +277,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/atualiza_dados.php",
+          url: "http://www.magnetoelenco.com.br/pagme/atualiza_dados.php",
           data: dados2,
           success: function( data2 ) {
             event.preventDefault();
@@ -291,7 +291,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/renova_cadastro.php",
+          url: "http://www.magnetoelenco.com.br/pagme/renova_cadastro.php",
           data: dados3,
           success: function( data3 ) {
             $(".div-renovar_atualiza-dados").fadeOut(0);
@@ -314,7 +314,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/atualiza_dados.php",
+          url: "http://www.magnetoelenco.com.br/pagme/atualiza_dados.php",
           data: dados4,
           success: function( data4 ) {
             $(".div-renovar_atualiza-dados").fadeOut(0);
@@ -353,7 +353,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/atualiza_dados.php",
+          url: "http://www.magnetoelenco.com.br/pagme/atualiza_dados.php",
           data: dados5,
           success: function( data5 ) {
             $(".div-renovar_atualiza-dados").fadeOut(0);
@@ -404,7 +404,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/renova_cadastro.php",
+          url: "http://www.magnetoelenco.com.br/pagme/renova_cadastro.php",
           data: dados8,
           success: function( data8 ) {
             $(".div-renovar_saldo-caches").fadeOut(0);
@@ -428,7 +428,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/puxa_dados.php",
+        url: "http://www.magnetoelenco.com.br/pagme/puxa_dados.php",
         data: dados6,
         success: function( data ) {
             var dados_novos = JSON.parse(data);
@@ -459,7 +459,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/puxa_dados.php",
+        url: "http://www.magnetoelenco.com.br/pagme/puxa_dados.php",
         data: dados62,
         success: function( data ) {
             var dados_novos = JSON.parse(data);
@@ -491,7 +491,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/insere_prevenda.php",
+        url: "http://www.magnetoelenco.com.br/pagme/insere_prevenda.php",
         data: dados7,
         success: function( data ) {
           event.preventDefault();
@@ -501,7 +501,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/moip_config.php",
+        url: "http://www.magnetoelenco.com.br/pagme/moip_config.php",
         data: dados7,
         success: function( data ) {
           var dados72 = JSON.parse(data);
@@ -509,7 +509,7 @@ $(document).ready(function(){
           event.preventDefault();
         }
       });
-      // $.get("http://localhost:8888/elenco-ui/pagme/insere_prevenda.php").done(function() {
+      // $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
       //   event.preventDefault();
       // });
       return false;
@@ -525,7 +525,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/insere_prevenda.php",
+        url: "http://www.magnetoelenco.com.br/pagme/insere_prevenda.php",
         data: dados7,
         success: function( data ) {
           event.preventDefault();
@@ -535,7 +535,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/moip_config.php",
+        url: "http://www.magnetoelenco.com.br/pagme/moip_config.php",
         data: dados7,
         success: function( data ) {
           var dados72 = JSON.parse(data);
@@ -543,7 +543,7 @@ $(document).ready(function(){
           event.preventDefault();
         }
       });
-      // $.get("http://localhost:8888/elenco-ui/pagme/insere_prevenda.php").done(function() {
+      // $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
       //   event.preventDefault();
       // });
       return false;
@@ -574,7 +574,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/processa_dados.php",
+        url: "http://www.magnetoelenco.com.br/pagme/processa_dados.php",
         data: dadosX6,
         success: function( data ) {
             var dados_pagador = JSON.parse(data);
@@ -609,7 +609,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/insere_prevenda.php",
+          url: "http://www.magnetoelenco.com.br/pagme/insere_prevenda.php",
           data: dadosX,
           success: function( data ) {
             event.preventDefault();
@@ -619,7 +619,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/moip_config.php",
+          url: "http://www.magnetoelenco.com.br/pagme/moip_config.php",
           data: dadosX,
           success: function( data ) {
             var dadosX2 = JSON.parse(data);
@@ -627,7 +627,7 @@ $(document).ready(function(){
             event.preventDefault();
           }
         });
-        // $.get("http://localhost:8888/elenco-ui/pagme/insere_prevenda.php").done(function() {
+        // $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
         //   event.preventDefault();
         // });
         return false;
@@ -659,7 +659,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/processa_dados.php",
+        url: "http://www.magnetoelenco.com.br/pagme/processa_dados.php",
         data: dadosX6,
         success: function( data ) {
             var dados_pagador = JSON.parse(data);
@@ -695,7 +695,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/insere_prevenda.php",
+          url: "http://www.magnetoelenco.com.br/pagme/insere_prevenda.php",
           data: dadosX,
           success: function( data ) {
             event.preventDefault();
@@ -705,7 +705,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/moip_config.php",
+          url: "http://www.magnetoelenco.com.br/pagme/moip_config.php",
           data: dadosX,
           success: function( data ) {
             var dadosX2 = JSON.parse(data);
@@ -713,7 +713,7 @@ $(document).ready(function(){
             event.preventDefault();
           }
         });
-        // $.get("http://localhost:8888/elenco-ui/pagme/insere_prevenda.php").done(function() {
+        // $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
         //   event.preventDefault();
         // });
         return false;

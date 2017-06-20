@@ -69,7 +69,7 @@ var sucesso = function(data){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/confirma_venda.php",
+          url: "http://www.magnetoelenco.com.br/pagme/confirma_venda.php",
           data: dados,
           success: function( data ) {
             event.preventDefault();
@@ -91,7 +91,7 @@ var sucesso = function(data){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/confirma_venda.php",
+          url: "http://www.magnetoelenco.com.br/pagme/confirma_venda.php",
           data: dados,
           success: function( data ) {
             event.preventDefault();
