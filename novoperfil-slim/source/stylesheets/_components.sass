@@ -1,0 +1,58 @@
+// GERAL
+.gradient 
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  display: block
+  width: 100%
+  padding: 0px
+  margin: 0px
+  opacity: .9
+
+.gradient:after
+  content: ''
+  position: absolute
+  width: 100%
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background-image: url('../images/bg.svg')
+  background-repeat: no-repeat
+  background-size: cover
+
+.button
+  background: $background
+  border: $border
+  border-radius: $border-radius
+  opacity: 0.89
+  &:hover, &:active
+    background: $background-hover
+
+.button-medium
+  width: 250px
+  height: 60px
+
+.button-small
+  width: 120px
+  height: 50px
+
+.container-outline__content
+  height: 100vh
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  -webkit-flex-direction: column
+  -moz-flex-direction: column
+  -ms-flex-direction: column
+  -o-flex-direction: column
+  flex-direction: column
+
+  //top site
+  .logo img
+    position: absolute
+    z-index: 9999
