@@ -723,8 +723,6 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <input type="text" name="cidade" id="cidade-pagador" value="" placeholder="Cidade" required />
               <span class="texto_input">UF:</span>
               <input type="text" name="uf" id="uf-pagador" value="" placeholder="UF" required />
-            </div>
-            <div class="botoes">
               <input type="hidden" name="id_usuario" value="<? echo $id_usuario; ?>" />
               <input type="hidden" name="produto" id="envia_pagador-cadastro" value="" />
               <input type="hidden" name="valor" id="envia_pagador-valor" value="" />
@@ -732,11 +730,97 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
               <input type="hidden" name="cpf" id="envia_pagador-cpf" value="" />
               <input type="hidden" name="email" id="envia_pagador-email" value="" />
               <input type="hidden" name="tel" id="envia_pagador-tel" value="" />
+            </div>
+            <div class="botoes">
               <button class='botao' id='botao_dados-fatura-cartao'>Continuar</button>
             </form>
           </div>
         </div>
     </div>
+
+<div class='div-renovar_dados-titular-boleto'>
+        <div class='conteiner'>
+          <div class='navegacao'>
+            <img src='images/voltar.svg' class='voltar_dados-titular-boleto botoes_navegacao' />
+            <div class="barra_progresso">
+              <span style="width: 90%"></span>
+            </div>
+            <img src='images/fechar.svg' class='fechar botoes_navegacao' />
+          </div>
+          <div class='titulo'>
+            Dados do Boleto
+          </div>
+          <div class='descricao'>
+            Clique sobre os campos para inserir os dados do pagador do Boleto
+          </div>
+          <div class='campos'>
+            <form class='forms' name='form_dados-titular-boleto' id='form_dados-titular-boleto' action='#' method='post'>
+              <span class='texto_input'>CPF:</span>
+              <input type='text' name='cpf_titular' id='cpf_titular_boleto' value='' placeholder='CPF' required /><BR />
+              <span class='texto_input'>NOME COMPLETO:</span>
+              <input type='text' name='nome_completo' id='nome_completo_boleto' value='' placeholder='Nome completo' required /><BR />
+              <span class='texto_input'>DATA DE NASCIMENTO:</span>
+              <input type='date' name='data_nascimento' id='data_nascimento_boleto' value='' placeholder='dd/mm/aaaa'required /><BR />
+              <span class='texto_input'>DDD:</span>
+              <input type='tel' name='DDD' id='DDD_boleto' value='' placeholder='DDD' required />
+              <span class='texto_input'>CELULAR:</span>
+              <input type='tel' name='cel' id='cel_boleto' value='' placeholder='Telefone' required /><BR />
+              <span class='texto_input'>E-MAIL:</span>
+              <input type='email' name='email' id='email_boleto' value='' placeholder='E-mail' required /><BR />
+            </div>
+            <div class='botoes'>
+              <button class='botao' id='botao_dados-titular-boleto'>Continuar</button>
+            </form>
+          </div>
+        </div>
+    </div>
+    <div class="div-renovar_dados-fatura-boleto">
+        <div class="conteiner">
+          <div class="navegacao">
+            <img src="images/voltar.svg" class="voltar_dados-fatura-boleto botoes_navegacao" />
+            <div class="barra_progresso">
+              <span style="width: 95%"></span>
+            </div>
+            <img src="images/fechar.svg" class="fechar botoes_navegacao" />
+          </div>
+          <div class="titulo">
+            Endereço de cobrança
+          </div>
+          <div class="descricao">
+            Clique sobre os campos para inserir os dados de endereço do pagador do Boleto
+          </div>
+          <div class="campos">
+            <form class="forms" name="form_dados-fatura-boleto" id="form_dados-fatura-boleto" action="#" method="post">
+              <span class="texto_input">CEP:</span>
+              <input type="text" name="cep" id="cep-pagador_boleto" value="" placeholder="CEP" required /><BR />
+              <span class="texto_input">ENDEREÇO:</span>
+              <input type="text" name="endereco" id="endereco-pagador_boleto" value="" placeholder="Endereço" required />
+              <span class="texto_input">NÚMERO:</span>
+              <input type="text" name="numero" id="numero-casa-pagador_boleto" value="" placeholder="Nº" required /><BR />
+              <span class="texto_input">COMPLEMENTO:</span>
+              <input type="text" name="complemento" id="complemento-pagador_boleto" value="" placeholder="Complemento" required />
+              <span class="texto_input">BAIRRO:</span>
+              <input type="text" name="bairro" id="bairro-pagador_boleto" value="" placeholder="Bairro" required />
+              <BR />
+              <span class="texto_input">CIDADE:</span>
+              <input type="text" name="cidade" id="cidade-pagador_boleto" value="" placeholder="Cidade" required />
+              <span class="texto_input">UF:</span>
+              <input type="text" name="uf" id="uf-pagador_boleto" value="" placeholder="UF" required />
+              <input type="hidden" name="id_usuario" value="<? echo $id_usuario; ?>" />
+              <input type="hidden" name="produto" id="envia_pagador_boleto-cadastro" value="" />
+              <input type="hidden" name="valor" id="envia_pagador_boleto-valor" value="" />
+              <input type="hidden" name="nome" id="envia_pagador_boleto-nome" value="" />
+              <input type="hidden" name="cpf" id="envia_pagador_boleto-cpf" value="" />
+              <input type="hidden" name="email" id="envia_pagador_boleto-email" value="" />
+              <input type="hidden" name="tel" id="envia_pagador_boleto-tel" value="" />
+            </div>
+            <div class="botoes">
+              <button class='botao' id='botao_dados-fatura-boleto'>Continuar</button>
+            </form>
+          </div>
+        </div>
+    </div>
+
     <div class='div-renovar_aguardando-pagamento'>
       <div class='conteiner'>
         <div class='navegacao'>

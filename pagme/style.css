@@ -573,6 +573,45 @@ width: 250px;
 input#data_nascimento{
 width: 250px;
 }
+input#cpf_titular_boleto{
+width: 250px;
+}
+input#nome_completo_boleto{
+width: 250px;
+}
+input#data_nascimento_boleto{
+width: 250px;
+}
+input#DDD_boleto{
+width: 50px;
+}
+input#cel_boleto{
+width: 190px;
+}
+input#email_boleto{
+width: 253px;
+}
+input#cep-pagador_boleto{
+width: 253px;
+}
+input#endereco-pagador_boleto{
+width: 190px;
+}
+input#numero-casa-pagador_boleto{
+width: 50px;
+}
+input#complemento-pagador_boleto{
+width: 120px;
+}
+input#bairro-pagador_boleto{
+width: 120px;
+}
+input#cidade-pagador_boleto{
+width: 190px;
+}
+input#uf-pagador_boleto{
+width: 50px;
+}
 .texto_input#texto_input-parcelas{
 margin-left: -25px;
 }

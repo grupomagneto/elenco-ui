@@ -29,4 +29,21 @@ $sobrenome = $nome_curto[1];
 mysqli_query($link, "INSERT INTO financeiro (tipo_entrada, nome, sobrenome, id_elenco_financeiro, produto, qtd, data_venda, valor_venda, status_venda, forma_pagamento) VALUES ('Venda', '$primeiro_nome', '$sobrenome', '$id_usuario', '$produto', '1', '$hoje', '$valor', 'Pré-Venda', 'Moip')");
 $_SESSION['prevenda'] = mysqli_insert_id($link);
 mysqli_close($link);
+echo json_encode(array(
+		'produto'=>$_SESSION['produto'],
+		'id_usuario'=>$_SESSION['id_usuario'],
+		'valor'=>$_SESSION['valor'],
+		'nome'=>$_SESSION['nome'],
+		'email'=>$_SESSION['email'],
+		'endereco'=>$_SESSION['endereco'],
+		'numero'=>$_SESSION['numero'],
+		'complemento'=>$_SESSION['complemento'],
+		'cidade'=>$_SESSION['cidade'],
+		'bairro'=>$_SESSION['bairro'],
+		'uf'=>$_SESSION['uf'],
+		'cep'=>$_SESSION['cep'],
+		'tel'=>$_SESSION['tel'],
+		'prevenda'=>$_SESSION['prevenda']),
+		JSON_UNESCAPED_UNICODE
+	);
 ?>
