@@ -10,6 +10,9 @@ if (isset($_GET['new_id'])) {
   $_SESSION['user'] = $_GET['new_id'];
 }
 $user_id = $_SESSION['user'];
+if ($user_id == '99999') {
+  mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente='2014-05-21' WHERE id_elenco='99999'") or die (mysqli_error($link));
+}
 // select loggedin users detail
 $sql = "SELECT * FROM tb_elenco WHERE id_elenco='$user_id'";
 $res=mysqli_query($link, $sql) or die (mysqli_error($link));
@@ -556,16 +559,16 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
         </div>
         <div class='campos'>
             <span class='texto_input'>NÚMERO:</span>
-            <input type='text' id='Numero' name='Numero' value='4073020000000002' placeholder= 'Número do cartão' required /><br/>
+            <input type='text' id='Numero' name='Numero' value='' placeholder= 'Número do cartão' required /><br/>
 
             <span class='texto_input'>NOME:</span>
-            <input type='text' id='Portador' name='Portador' value='<? echo $full_name; ?>' placeholder= 'Nome (como no cartão)' required /><br/>
+            <input type='text' id='Portador' name='Portador' value='' placeholder= 'Nome (como no cartão)' required /><br/>
 
             <span class='texto_input'>VALIDADE:</span>
-            <input type='text' id='Expiracao' name='Expiracao' value='10/18' size='5' required placeholder= 'MM/AA' />
+            <input type='text' id='Expiracao' name='Expiracao' value='' size='5' required placeholder= 'MM/AA' />
 
             <span class='texto_input'>CVV:</span>
-            <input type='text' id='CodigoSeguranca' name='CodigoSeguranca' value='123' size='4' required placeholder= 'CVV' />
+            <input type='text' id='CodigoSeguranca' name='CodigoSeguranca' value='' size='4' required placeholder= 'CVV' />
 
             <input type='hidden' id='CPF' name='CPF' value='<? echo $cpf;?>' />
             <input type='hidden' id='DataNascimento' name='DataNascimento' value='<? echo $dt_nascimento; ?>' />
@@ -851,7 +854,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             <span class="small" id="dt_validade"></span>
         </div>
         <div class='descricao'>
-          Seu pagamento foi processado pelo MOIP PAGAMENTOS S/A e seu cadastro renovado. Obrigada!
+          <span id="mensagem_cadastro"></span>
         </div>
       </div>
     </div>

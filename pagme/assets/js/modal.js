@@ -194,6 +194,8 @@ $(document).ready(function(){
       $(".modal-content").css("height", "725px");
       $(".div-renovar_atualiza-dados").fadeIn(200);
       document.getElementById("input-botao_atualiza-dados").value = "gratuito";
+      document.getElementById("renovar_sucesso-cadastro").innerHTML = "Cadastro Gratuito";
+      document.getElementById("mensagem_cadastro").innerHTML = "Seu cadastro foi renovado com sucesso. Obrigada!";
       var today = new Date();
       var dd = today.getDate();
       var mm = today.getMonth()+1;
@@ -400,6 +402,7 @@ $(document).ready(function(){
   $("#confirmar-saldo").click(function(){
     // Ajax Cadastros
       jQuery("form").submit(function(){
+        document.getElementById("mensagem_cadastro").innerHTML = "Seu cadastro foi renovado utilizando seu saldo de cachês com sucesso. Obrigada!";
         var dados8 = jQuery(this).serialize();
         jQuery.ajax({
           type: "POST",

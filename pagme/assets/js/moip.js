@@ -55,6 +55,7 @@ var sucesso = function(data){
     // alert("Dados\n\n" + JSON.stringify(data));
     $("#sendToMoip").removeAttr("disabled");
     $(".modal-content").css("height", "350px");
+    document.getElementById("mensagem_cadastro").innerHTML = "Seu pagamento foi processado pelo MOIP PAGAMENTOS S/A e seu cadastro renovado. Obrigada!";
     if (document.getElementById("forma_pagamento").value == "Cartão de Crédito") {
         $(".div-renovar_dados-cartao").fadeOut(0);
         $(".navegacao").css("justify-content", "flex-end");
