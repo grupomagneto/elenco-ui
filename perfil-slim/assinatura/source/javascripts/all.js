@@ -242,4 +242,3 @@ function updateGradient(container) {
   }
 }
 setInterval(function(){updateGradient('.gradient')},10);
-
