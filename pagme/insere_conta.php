@@ -1,6 +1,5 @@
 <?php
 	require_once 'dbconnect.php';
-	date_default_timezone_set('America/Sao_Paulo');
 	// if session is not set this will redirect to login page
 	if( !isset($_SESSION['user']) ) {
 		header("Location: index.php");
@@ -31,7 +30,7 @@ $bank_agency = htmlspecialchars($bank_agency);
 $bank_account = trim($_POST['conta']);
 $bank_account = strip_tags($bank_account);
 $bank_account = htmlspecialchars($bank_account);
-$timestamp = date('Y-m-d h:i:s', time());
+$timestamp = date('Y-m-d H:i:s', time());
 
 require_once 'bank_names.php';
 // echo $cpf;

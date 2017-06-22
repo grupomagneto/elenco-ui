@@ -71,6 +71,8 @@ if ($n <= $count) {
 <title>Bem-vind<? echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src='assets/js/functions.js'></script>
 </head>
 <body>
@@ -140,6 +142,7 @@ if ($n <= $count) {
   </div>
 </div>
 </div>
+<script type="text/javascript">acesso("pagme_home");</script>
 <?php
 $cadastro = $userRow['tipo_cadastro_vigente'];
 // Verifica se o contrato do agenciado está vencido
@@ -157,15 +160,12 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
   // Modal
   if ($cadastro == 'Gratuito') {
     $descricao_cadastro = "Mudamos os termos do nosso contrato e você precisa renová-lo para continuar trabalhando";
-    // $dt_validade = date('d/m/Y', strtotime('+1 years'));
   }
   if ($cadastro == 'Premium') {
     $descricao_cadastro = "Seu cadastro foi temporariamente rebaixado de Premium para Gratuito até você renová-lo";
-    // $dt_validade = date('d/m/Y', strtotime('+1 years'));
   }
   if ($cadastro == 'Profissional') {
     $descricao_cadastro = "Seu cadastro foi temporariamente rebaixado de Profissional para Gratuito até você renová-lo";
-    // $dt_validade = date('d/m/Y', strtotime('+2 years'));
   }
 ?>
 <div id='myModal' class='modal'>
@@ -863,9 +863,8 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
 </div>
 <div id="MoipWidget" data-token="02K0Y1I2T0R5D1N0V1W5B03320Z9R0I7K8B080T000P0C090P4P410R5X503" callback-method-success="sucesso" callback-method-error="erroValidacao"></div>
 <input type="hidden" id="token" class="span6" value="" />
+<script type="text/javascript">acesso("modal_renovacao");</script>
 <? } ?>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src='assets/js/gradient.js'></script>
 <script>
@@ -880,7 +879,6 @@ ga('send', 'pageview');
 <script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'></script>
 <!-- <script src='https://assets.moip.com.br/transparente/MoipWidget-v2.js'></script> -->
 <script src='assets/js/moip.js'></script>
-<script type="text/javascript">acesso("pagme_home");</script>
 </body>
 </html>
 <?php

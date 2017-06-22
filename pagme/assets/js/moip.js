@@ -90,6 +90,7 @@ var sucesso = function(data){
             event.preventDefault();
           }
         });
+        acesso("sucesso-renovacao-cartao");
         return false;
     }
     if (document.getElementById("forma_pagamento").value == "Boleto Bancário") {
@@ -112,9 +113,9 @@ var sucesso = function(data){
             event.preventDefault();
           }
         });
+        acesso("sucesso-renovacao-boleto");
         return false;
     }
-    acesso("sucesso-renovacao");
 };
 
 var erroValidacao = function(data) {
