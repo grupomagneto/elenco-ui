@@ -401,9 +401,11 @@ else {
 
 </div></form></div></div></div>
 
-    <script src='//code.jquery.com/jquery-2.2.4.min.js'></script>
-    <script src='assets/js/bootstrap.min.js'></script>
-    <script src='assets/js/gradient.js'></script>
+<script src='//code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='assets/js/bootstrap.min.js'></script>
+<script src='assets/js/gradient.js'></script>
+<script src='assets/js/functions.js'></script>
+<script type="text/javascript">acesso("pagme_dbancarios");</script>
 
 </body>
 </html>

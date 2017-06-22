@@ -1,3 +1,16 @@
+function acesso(pagina) {
+  var dado = { pagina: pagina };
+  jQuery.ajax({
+    type: "POST",
+    dataType: "html",
+    url: "http://www.magnetoelenco.com.br/pagme/registra_acesso.php",
+    data: dado,
+    success: function( data ) {
+      event.preventDefault();
+    }
+  });
+  return false;
+}
 $(document).ready(function(){
     $("#sendToMoip").click(function(){
         applyToken();
@@ -38,7 +51,7 @@ sendToBoleto = function() {
     document.getElementById("n_parcelas").value = "1";
     var settings = {
         "Forma": "BoletoBancario"
-    };		
+    };
     // $("#sendToMoip2").attr("disabled", "disabled");
     MoipWidget(settings);
 };
@@ -101,11 +114,13 @@ var sucesso = function(data){
         });
         return false;
     }
+    acesso("sucesso-renovacao");
 };
 
 var erroValidacao = function(data) {
     alert("Erro !\n\n" + JSON.stringify(data));
     $("#sendToMoip").removeAttr("disabled");
+    acesso(JSON.stringify(data));
 };
 
 var applyToken = function() {

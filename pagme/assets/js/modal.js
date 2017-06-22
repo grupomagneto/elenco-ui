@@ -1,16 +1,3 @@
-function acesso(pagina) {
-  var dado = { pagina: pagina };
-  jQuery.ajax({
-    type: "POST",
-    dataType: "html",
-    url: "http://www.magnetoelenco.com.br/pagme/registra_acesso.php",
-    data: dado,
-    success: function( data ) {
-      event.preventDefault();
-    }
-  });
-  return false;
-}
 $(document).ready(function(){
   // Get the modal
   var modal = document.getElementById("myModal");
@@ -28,7 +15,6 @@ $(document).ready(function(){
     }
   });
   $(window).on("load",function(){
-    acesso("modal_renovacao");
     $("#myModal").fadeIn(250);
     $(".div-renovar_modalidades").fadeOut(0);
     $(".div-renovar_cancelar").fadeOut(0);
@@ -220,10 +206,11 @@ $(document).ready(function(){
       var dd = today.getDate();
       var mm = today.getMonth()+1;
       var yyyy = today.getFullYear()+1;
-      if(dd<10){dd="0"+dd;} 
-      if(mm<10){mm="0"+mm;} 
+      if(dd<10){dd="0"+dd;}
+      if(mm<10){mm="0"+mm;}
       var today = dd+"/"+mm+"/"+yyyy;
       document.getElementById("dt_validade").innerHTML = "válido até " + today;
+      acesso("btn_renova-cadastro-gratuito");
       event.preventDefault();
     }
   });
@@ -252,10 +239,11 @@ $(document).ready(function(){
       var dd = today.getDate();
       var mm = today.getMonth()+1;
       var yyyy = today.getFullYear()+1;
-      if(dd<10){dd="0"+dd;} 
-      if(mm<10){mm="0"+mm;} 
+      if(dd<10){dd="0"+dd;}
+      if(mm<10){mm="0"+mm;}
       var today = dd+"/"+mm+"/"+yyyy;
       document.getElementById("dt_validade").innerHTML = "válido até " + today;
+      acesso("btn_renova-cadastro-premium");
       event.preventDefault();
     }
   });
@@ -284,10 +272,11 @@ $(document).ready(function(){
       var dd = today.getDate();
       var mm = today.getMonth()+1;
       var yyyy = today.getFullYear()+2;
-      if(dd<10){dd="0"+dd;} 
-      if(mm<10){mm="0"+mm;} 
+      if(dd<10){dd="0"+dd;}
+      if(mm<10){mm="0"+mm;}
       var today = dd+"/"+mm+"/"+yyyy;
       document.getElementById("dt_validade").innerHTML = "válido até " + today;
+      acesso("btn_renova-cadastro-profissional");
       event.preventDefault();
     }
   });
@@ -417,6 +406,7 @@ $(document).ready(function(){
     $(".titulo").css("margin-top", "-10px");
     $(".descricao").css("margin", "0px 20px 0px 20px");
     $(".modal-content").css("height", "500px");
+    acesso("botao_saldo");
     event.preventDefault();
   });
   $("#confirmar-saldo").click(function(){
@@ -436,6 +426,7 @@ $(document).ready(function(){
             // $(".titulo").css("margin-top", "-10px");
             // $(".descricao").css("margin", "0px 20px 0px 20px");
             $(".navegacao").css("justify-content", "flex-end");
+            acesso("confirmar-saldo");
           }
         });
         return false;
@@ -445,6 +436,7 @@ $(document).ready(function(){
     $(".div-renovar_forma-pagamento").fadeOut(0);
     $(".div-renovar_confirmacao-dados-cartao").fadeIn(200);
     $(".modal-content").css("height", "350px");
+    acesso("botao_credito");
     // Ajax Dados Cartão
     jQuery("#requisita_dados-comprador").submit(function(){
       var dados6 = jQuery(this).serialize();
@@ -476,6 +468,7 @@ $(document).ready(function(){
     $(".div-renovar_gerar-boleto").fadeIn(200);
     $(".modal-content").css("height", "350px");
     $(".navegacao").css("justify-content", "space-between");
+    acesso("botao_boleto");
     // Ajax Dados Boleto
     jQuery("#requisita_dados-comprador").submit(function(){
       var dados62 = jQuery(this).serialize();
@@ -537,6 +530,7 @@ $(document).ready(function(){
       // });
       return false;
     });
+    acesso("botao_boleto-sim");
   });
   $("#botao_dados-cartao-sim").click(function(){
     // Ajax Pré-Venda
@@ -571,6 +565,7 @@ $(document).ready(function(){
       // });
       return false;
     });
+    acesso("botao_dados-cartao-sim");
   });
   $("#botao_dados-cartao-nao").click(function(){
     $(".div-renovar_confirmacao-dados-cartao").fadeOut(0);
@@ -586,8 +581,10 @@ $(document).ready(function(){
     document.getElementById("envia_dados-uf").value = "";
     document.getElementById("envia_dados-cep").value = "";
     document.getElementById("envia_dados-tel").value = "";
+    acesso("botao_dados-cartao-nao");
   });
   $("#botao_dados-titular-cartao").click(function(){
+    acesso("botao_dados-titular-cartao");
     // Ajax Dados Cartão
     jQuery("#form_dados-titular-cartao").submit(function(){
       $(".div-renovar_dados-titular-cartao").fadeOut(0);
@@ -622,6 +619,7 @@ $(document).ready(function(){
     });
   });
   $("#botao_dados-fatura-cartao").click(function(){
+    acesso("botao_dados-fatura-cartao");
     // Ajax Token
       jQuery("#form_dados-fatura-cartao").submit(function(){
         $(".div-renovar_dados-fatura-cartao").fadeOut(0);
@@ -671,6 +669,7 @@ $(document).ready(function(){
     document.getElementById("envia_dados_boleto-uf").value = "";
     document.getElementById("envia_dados_boleto-cep").value = "";
     document.getElementById("envia_dados_boleto-tel").value = "";
+    acesso("botao_boleto-nao");
   });
   $("#botao_dados-titular-boleto").click(function(){
     // Ajax Dados Cartão
@@ -705,6 +704,7 @@ $(document).ready(function(){
       });
       return false;
     });
+    acesso("botao_dados-titular-boleto");
   });
   $("#botao_dados-fatura-boleto").click(function(){
     // Ajax Token
@@ -741,8 +741,8 @@ $(document).ready(function(){
         // });
         return false;
       });
+      acesso("botao_dados-fatura-boleto");
   });
-
   // FORMAT O SELECTS DAS PARCELAS
   $("#parcelas").each(function(){
       var $this = $(this);
@@ -767,7 +767,7 @@ $(document).ready(function(){
           $("div.select-styled.active").each(function(){
               $(this).removeClass("active").next("ul.select-options").hide();
           });
-          $(this).toggleClass("active").next("ul.select-options").toggle(); 
+          $(this).toggleClass("active").next("ul.select-options").toggle();
       });
       $listItems.click(function(e) {
           e.stopPropagation();
@@ -785,7 +785,7 @@ $(document).ready(function(){
   $("#instituicao").each(function(){
       var $this = $(this);
       var numberOfOptions = $(this).children("option").length;
-      $this.addClass("select-hidden-bandeira"); 
+      $this.addClass("select-hidden-bandeira");
       $this.wrap("<div class='select-bandeira'></div>");
       $this.after("<div class='select-styled-bandeira'></div>");
       var $styledSelect = $this.next("div.select-styled-bandeira");
@@ -805,7 +805,7 @@ $(document).ready(function(){
           $("div.select-styled-bandeira.active").each(function(){
               $(this).removeClass("active").next("ul.select-options-bandeira").hide();
           });
-          $(this).toggleClass("active").next("ul.select-options-bandeira").toggle(); 
+          $(this).toggleClass("active").next("ul.select-options-bandeira").toggle();
       });
       $listItems.click(function(e) {
           e.stopPropagation();

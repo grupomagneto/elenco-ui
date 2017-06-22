@@ -1,7 +1,12 @@
 <?php
+$codigo_moip = $_POST['CodigoMoIP'];
+$status_pagamento = $_POST['Status'];
+echo $codigo_moip."<BR/>";
+echo $status_pagamento."<BR/>";
+exit;
 
 $header[] = "Authorization: Basic " . base64_encode("4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN:FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI");
- 
+
 //Monta a URL
 $url = 'https://desenvolvedor.moip.com.br/sandbox/ws/alpha/ConsultarInstrucao/X2P0M1L7Q0Z6C1X3X1T8V2L2U4T3R2U0Z1Z0U030O0U0Q163D6P0S1J5K8G2';
 

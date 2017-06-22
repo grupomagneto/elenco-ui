@@ -71,6 +71,7 @@ if ($n <= $count) {
 <title>Bem-vind<? echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
+<script src='assets/js/functions.js'></script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -879,6 +880,7 @@ ga('send', 'pageview');
 <script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'></script>
 <!-- <script src='https://assets.moip.com.br/transparente/MoipWidget-v2.js'></script> -->
 <script src='assets/js/moip.js'></script>
+<script type="text/javascript">acesso("pagme_home");</script>
 </body>
 </html>
 <?php

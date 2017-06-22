@@ -314,7 +314,8 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-22229864-1', 'auto');
 ga('send', 'pageview');
 </script>
-
+<script src='assets/js/functions.js'></script>
+<script type="text/javascript">acesso("pagme_trabalhos");</script>
 </body>
 </html>
 <?php
