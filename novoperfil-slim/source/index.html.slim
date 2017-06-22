@@ -2,15 +2,29 @@
 title: Magneto Elenco
 ---
 
-.gradient
-header#main-header
-  .container
-    a.logo href='#'
-    	img src="images/logo.svg" alt=""/
-    nav.top-menu
-      a.line-right.font-family.font-medium.color-primary.cursor href='#' Entrar
-      a.font-family.font-medium.color-primary.cursor href='#' Cadastrar
+section.gradient
+	header#main-header
+	  .container
+	    a.logo.cursor href='#'
+	    	img.cursor src="images/logo.svg" alt=""/
+	    nav.top-menu.cursor
+	      a.line-right.font-family.font-medium.color-primary.cursor href='#' Entrar
+	      a.font-family.font-medium.color-primary.cursor href='#' Cadastrar
 
-.console-container.font-xlarge.font-family.color-primary
-  span#text
-  .console-underscore#console &#95
+	#log.font-xlarge.font-family.color-primary.bold
+
+	.container-outline__button
+		button.button.button__medium 
+			img src="images/busca.svg" alt="busca"/
+			a.font-family.color-primary href="" Procuro um perfil
+		button.button.button__medium
+			img src="images/job.svg" alt="job"/
+			a.font-family.color-primary href="" Quero trabalhar
+
+	a.font-family.color-primary.font-small.text-after href="" Como funciona?
+
+	a.scroll-down.cursor href="#after_gradient"
+		img.cursor src="images/scroll-down.svg" alt=""/
+
+section#after_gradient
+	p.font-family.font-xlarge.color-primary Agência e marketplace de atores e modelos, num só lugar.
