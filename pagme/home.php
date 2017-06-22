@@ -10,9 +10,9 @@ if (isset($_GET['new_id'])) {
   $_SESSION['user'] = $_GET['new_id'];
 }
 $user_id = $_SESSION['user'];
-if ($user_id == '99999') {
-  mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente='2014-05-21' WHERE id_elenco='99999'") or die (mysqli_error($link));
-}
+// if ($user_id == '99999') {
+//   mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente='2014-05-21' WHERE id_elenco='99999'") or die (mysqli_error($link));
+// }
 // select loggedin users detail
 $sql = "SELECT * FROM tb_elenco WHERE id_elenco='$user_id'";
 $res=mysqli_query($link, $sql) or die (mysqli_error($link));
@@ -89,7 +89,7 @@ if ($n <= $count) {
             <li class="active"><a href="home.php">Como funciona</a></li>
             <li><a href="trabalhos.php">Meus trabalhos</a></li>
             <li><a href="dbancarios.php">Meus dados bancários</a></li>
-            <li><a href="meu_perfil.php">Meu perfil</a></li>
+            <!-- <li><a href="meu_perfil.php">Meu perfil</a></li> -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -156,15 +156,15 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
   // Modal
   if ($cadastro == 'Gratuito') {
     $descricao_cadastro = "Mudamos os termos do nosso contrato e você precisa renová-lo para continuar trabalhando";
-    $dt_validade = date('d/m/Y', strtotime('+1 years'));
+    // $dt_validade = date('d/m/Y', strtotime('+1 years'));
   }
   if ($cadastro == 'Premium') {
     $descricao_cadastro = "Seu cadastro foi temporariamente rebaixado de Premium para Gratuito até você renová-lo";
-    $dt_validade = date('d/m/Y', strtotime('+1 years'));
+    // $dt_validade = date('d/m/Y', strtotime('+1 years'));
   }
   if ($cadastro == 'Profissional') {
     $descricao_cadastro = "Seu cadastro foi temporariamente rebaixado de Profissional para Gratuito até você renová-lo";
-    $dt_validade = date('d/m/Y', strtotime('+2 years'));
+    // $dt_validade = date('d/m/Y', strtotime('+2 years'));
   }
 ?>
 <div id='myModal' class='modal'>
@@ -199,7 +199,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 Confiança renovada :)
             </div>
             <div class='descricao'>
-                Qual cadastro é o ideal pra você? Clique nos botões abaixo para conhecer nossas modalidades:
+                Qual é o cadastro ideal pra você? Clique nos botões abaixo para conhecer nossas modalidades:
             </div>
             <div class='botoes_modalidades'>
                 <button class='gratuito'><img src='images/botao-gratuito.svg' /></button>
@@ -572,7 +572,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
 
             <input type='hidden' id='CPF' name='CPF' value='<? echo $cpf;?>' />
             <input type='hidden' id='DataNascimento' name='DataNascimento' value='<? echo $dt_nascimento; ?>' />
-            <input type='hidden' id='Telefone' name='Telefone' value='<? echo $cel; ?>' />
+            <input type='hidden' id='Telefone' name='Telefone' value='<? echo $ddd.$cel; ?>' />
 
             <span class='texto_input' id='texto_input-parcelas'>PARCELAS:</span>
             <select id='parcelas' name='Parcelas'>
@@ -651,7 +651,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             A renovação do seu cadastro será concluída após a confirmação de pagamento do Boleto Bancário.
           </div>
           <div class='botoes'>
-            <button class='botao' id='sendToMoip2'>Gerar Boleto</button>
+            <button class='botao gerarboleto' id='sendToMoip2'>Gerar Boleto</button>
           </div>
           <div class='moip'>
             <a href='http://www.moip.com.br' target='_blank'><img src='images/moip167px.png' /></a>
@@ -877,6 +877,7 @@ ga('send', 'pageview');
 </script>
 <script src='assets/js/modal.js'></script>
 <script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'></script>
+<!-- <script src='https://assets.moip.com.br/transparente/MoipWidget-v2.js'></script> -->
 <script src='assets/js/moip.js'></script>
 </body>
 </html>

@@ -1,3 +1,16 @@
+function acesso(pagina) {
+  var dado = { pagina: pagina };
+  jQuery.ajax({
+    type: "POST",
+    dataType: "html",
+    url: "http://www.magnetoelenco.com.br/pagme/registra_acesso.php",
+    data: dado,
+    success: function( data ) {
+      event.preventDefault();
+    }
+  });
+  return false;
+}
 $(document).ready(function(){
   // Get the modal
   var modal = document.getElementById("myModal");
@@ -15,6 +28,7 @@ $(document).ready(function(){
     }
   });
   $(window).on("load",function(){
+    acesso("modal_renovacao");
     $("#myModal").fadeIn(250);
     $(".div-renovar_modalidades").fadeOut(0);
     $(".div-renovar_cancelar").fadeOut(0);
@@ -486,7 +500,7 @@ $(document).ready(function(){
     // Ajax Token
     jQuery("#envia_dados_boleto-comprador").submit(function(){
       $(".div-renovar_gerar-boleto").fadeOut(0);
-      $(".div-renovar_imprimir-boleto").fadeIn(200);
+      $(".div-renovar_imprimir-boleto").fadeIn(3000);
       $(".modal-content").css("height", "350px");
       $(".navegacao").css("justify-content", "space-between");
       var dados7 = jQuery(this).serialize();
@@ -690,7 +704,7 @@ $(document).ready(function(){
     // Ajax Token
       jQuery("#form_dados-fatura-boleto").submit(function(){
         $(".div-renovar_dados-fatura-boleto").fadeOut(0);
-        $(".div-renovar_imprimir-boleto").fadeIn(200);
+        $(".div-renovar_imprimir-boleto").fadeIn(3000);
         $(".modal-content").css("height", "350px");
         $(".navegacao").css("justify-content", "space-between");
         var dadosX = jQuery(this).serialize();

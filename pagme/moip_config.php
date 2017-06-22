@@ -1,20 +1,6 @@
 <?php
 include_once "autoload.inc.php";
 
-// $id_usuario = $_POST['id_usuario'];
-// $produto = $_POST['produto'];
-// $valor = $_POST['valor'];
-// $nome = $_POST['nome'];
-// $email = $_POST['email'];
-// $endereco = $_POST['endereco'];
-// $numero = $_POST['numero'];
-// $complemento = $_POST['complemento'];
-// $cidade = $_POST['cidade'];
-// $bairro = $_POST['bairro'];
-// $uf = $_POST['uf'];
-// $cep = $_POST['cep'];
-// $tel = $_POST['tel'];
-
 if(!session_id()) {
     session_start();
 }
@@ -32,11 +18,6 @@ $bairro = $_SESSION['bairro'];
 $uf = $_SESSION['uf'];
 $cep = $_SESSION['cep'];
 $tel = $_SESSION['tel'];
-
-// $_SESSION['produto'] = $produto;
-// $_SESSION['id_usuario'] = $id_usuario;
-// $_SESSION['valor'] = $valor;
-// require_once "insere_prevenda.php";
 
 $moip = new Moip();
 $moip->setEnvironment('test');

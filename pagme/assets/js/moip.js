@@ -66,6 +66,7 @@ var sucesso = function(data){
             valor_venda: valor_venda,
             forma_pagamento: document.getElementById("forma_pagamento").value,
             n_parcelas: document.getElementById("n_parcelas").value,
+            codigo_moip: data.CodigoMoIP
         };
         jQuery.ajax({
           type: "POST",
