@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Moip\\' => array($vendorDir . '/moip/moip-sdk-php/src'),
+    'CWG\\Moip\\' => array($vendorDir . '/carloswgama/php-moip/src'),
 );

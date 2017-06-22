@@ -54,24 +54,24 @@ elseif ($cadastro == 'Premium' || $cadastro == 'Profissional') {
 		$valor_cache = $row['cache'] - $row['abatimento_cache'];
 		$abatimento_cache = $valor_cadastro + $row['abatimento_cache'];
 		if (!empty($row['produto_abatimento'])) {
-			$produto_abatimento = $row['produto_abatimento']." (".$row['data_abatimento']."), Cadastro ".$cadastro;
+			$produto_abatimento = $row['produto_abatimento']." (".$row['data_abatimento']."), Renovação ".$cadastro;
 		}
 		else {
-			$produto_abatimento = "Cadastro ".$cadastro;
+			$produto_abatimento = "Renovação ".$cadastro;
 		}
 		if ($valor_cache >= $valor_cadastro) {
 			mysqli_query($link, "UPDATE financeiro SET abatimento_cache = '$abatimento_cache', data_abatimento = '$hoje', produto_abatimento = '$produto_abatimento' WHERE id = '$id_cache'");
 			$valor_cadastro = 0;
 		}
 		elseif ($valor_cache < $valor_cadastro) {
-			mysqli_query($link, "UPDATE financeiro SET abatimento_cache = '$valor_cache', data_abatimento = '$hoje', produto_abatimento = 'Cadastro $cadastro', status_pagamento = '1', data_pagamento = '$hoje' WHERE id = '$id_cache'");
+			mysqli_query($link, "UPDATE financeiro SET abatimento_cache = '$valor_cache', data_abatimento = '$hoje', produto_abatimento = 'Renovação $cadastro', status_pagamento = '1', data_pagamento = '$hoje' WHERE id = '$id_cache'");
 			$valor_cadastro = $valor_cadastro - $valor_cache;
 		}
 	}
 	// RENOVA O CONTRATO
 	mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente = '$hoje', tipo_cadastro_vigente = '$cadastro', ativo = 'Sim', concordo_timestamp = '$hora', ip = '$ip' WHERE id_elenco='$id_usuario'");
 	// INSERE A VENDA
-	mysqli_query($link, "INSERT INTO financeiro (tipo_entrada, nome, sobrenome, id_elenco_financeiro, produto, qtd, data_venda, valor_venda, status_venda, forma_pagamento, n_parcelas) VALUES ('Venda', '$primeiro_nome', '$sobrenome', '$id_usuario', 'Cadastro $cadastro', '1', '$hoje', '$valor_original_cadastro', 'Pago', 'Abatimento de Cachê', '1')");
+	mysqli_query($link, "INSERT INTO financeiro (tipo_entrada, nome, sobrenome, id_elenco_financeiro, produto, qtd, data_venda, valor_venda, status_venda, forma_pagamento, n_parcelas) VALUES ('Venda', '$primeiro_nome', '$sobrenome', '$id_usuario', 'Renovação $cadastro', '1', '$hoje', '$valor_original_cadastro', 'Pago', 'Abatimento de Cachê', '1')");
 }
 // ENVIA EMAIL
 $hoje_format = date('d/m/Y', strtotime($hoje));

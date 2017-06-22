@@ -1,3 +1,16 @@
+function acesso(pagina) {
+  var dado = { pagina: pagina };
+  jQuery.ajax({
+    type: "POST",
+    dataType: "html",
+    url: "http://www.magnetoelenco.com.br/pagme/registra_acesso.php",
+    data: dado,
+    success: function( data ) {
+      event.preventDefault();
+    }
+  });
+  return false;
+}
 $(document).ready(function(){
   // Get the modal
   var modal = document.getElementById("myModal");
@@ -15,6 +28,7 @@ $(document).ready(function(){
     }
   });
   $(window).on("load",function(){
+    acesso("modal_renovacao");
     $("#myModal").fadeIn(250);
     $(".div-renovar_modalidades").fadeOut(0);
     $(".div-renovar_cancelar").fadeOut(0);
@@ -33,6 +47,9 @@ $(document).ready(function(){
     $(".div-renovar_boleto-bancario").fadeOut(0);
     $(".div-renovar_gerar-boleto").fadeOut(0);
     $(".div-renovar_imprimir-boleto").fadeOut(0);
+    $(".div-renovar_aguardando-pagamento").fadeOut(0);
+    $(".div-renovar_dados-fatura-boleto").fadeOut(0);
+    $(".div-renovar_dados-titular-boleto").fadeOut(0);
     $(".voltar").fadeOut(0);
     $(".progresso").fadeOut(0);
     $(".navegacao").css("justify-content", "flex-end");
@@ -47,21 +64,24 @@ $(document).ready(function(){
       $(".progresso").fadeIn(200);
       $(".navegacao").css("justify-content", "space-between");
       $(".modal-content").css("height", "600px");
+      acesso("botao_renovar-contrato");
   });
   $("#botao_apagar-perfil").click(function(){
       $(".div-renovar_renova-ou-cancela").fadeOut(0);
       $(".div-renovar_cancelar").fadeIn(200);
       $(".voltar").fadeIn(200);
       $(".navegacao").css("justify-content", "space-between");
+      acesso("botao_apagar-perfil");
   });
   $("#botao_confirma_apagar").click(function(){
+    acesso("botao_confirma_apagar");
     // Ajax Cadastros
     jQuery("form").submit(function(){
       var dados1 = jQuery(this).serialize();
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/apaga_cadastro.php",
+        url: "http://www.magnetoelenco.com.br/pagme/apaga_cadastro.php",
         data: dados1,
         success: function( data1 ) {
           $(".div-renovar_cancelar").fadeOut(0);
@@ -91,6 +111,7 @@ $(document).ready(function(){
       $(".modal-content").css("height", "725px");
       $(".titulo").css("margin-top", "15px");
       $(".descricao").css("margin", "25px");
+      acesso("gratuito");
   });
   $(".premium").click(function(){
       $(".div-renovar_modalidades").fadeOut(0);
@@ -98,6 +119,7 @@ $(document).ready(function(){
       $(".modal-content").css("height", "850px");
       $(".titulo").css("margin-top", "15px");
       $(".descricao").css("margin", "25px");
+      acesso("premium");
   });
   $(".profissional").click(function(){
       $(".div-renovar_modalidades").fadeOut(0);
@@ -105,6 +127,7 @@ $(document).ready(function(){
       $(".modal-content").css("height", "1110px");
       $(".titulo").css("margin-top", "15px");
       $(".descricao").css("margin", "25px");
+      acesso("profissional");
   });
   $(".voltar_1").click(function(){
     $(".div-renovar_modalidades").fadeOut(0);
@@ -169,7 +192,17 @@ $(document).ready(function(){
   $(".voltar_dados-fatura-cartao").click(function(){
     $(".div-renovar_dados-fatura-cartao").fadeOut(0);
     $(".div-renovar_dados-titular-cartao").fadeIn(200);
-    $(".modal-content").css("height", "550px");
+    $(".modal-content").css("height", "600px");
+  });
+  $(".voltar_gerar-boleto").click(function(){
+    $(".div-renovar_gerar-boleto").fadeOut(0);
+    $(".div-renovar_forma-pagamento").fadeIn(200);
+    $(".modal-content").css("height", "400px");
+  });
+  $(".voltar_imprimir-boleto").click(function(){
+    $(".div-renovar_imprimir-boleto").fadeOut(0);
+    $(".div-renovar_gerar-boleto").fadeIn(200);
+    $(".modal-content").css("height", "350px");
   });
   $("#btn_renova-cadastro-gratuito").click(function(){
     if(!$("#terms-1").is(":checked")){
@@ -181,6 +214,16 @@ $(document).ready(function(){
       $(".modal-content").css("height", "725px");
       $(".div-renovar_atualiza-dados").fadeIn(200);
       document.getElementById("input-botao_atualiza-dados").value = "gratuito";
+      document.getElementById("renovar_sucesso-cadastro").innerHTML = "Cadastro Gratuito";
+      document.getElementById("mensagem_cadastro").innerHTML = "Seu cadastro foi renovado com sucesso. Obrigada!";
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1;
+      var yyyy = today.getFullYear()+1;
+      if(dd<10){dd="0"+dd;} 
+      if(mm<10){mm="0"+mm;} 
+      var today = dd+"/"+mm+"/"+yyyy;
+      document.getElementById("dt_validade").innerHTML = "válido até " + today;
       event.preventDefault();
     }
   });
@@ -199,6 +242,20 @@ $(document).ready(function(){
       document.getElementById("envia_dados-valor").value = "199.00";
       document.getElementById("envia_dados_boleto-cadastro").value = "Renovação Premium";
       document.getElementById("envia_dados_boleto-valor").value = "199.00";
+      document.getElementById("envia_pagador-cadastro").value = "Renovação Premium";
+      document.getElementById("envia_pagador-valor").value = "199.00";
+      document.getElementById("envia_pagador_boleto-cadastro").value = "Renovação Premium";
+      document.getElementById("envia_pagador_boleto-valor").value = "199.00";
+      document.getElementById("renovar_aguardando-cadastro").innerHTML = "Cadastro Premium";
+      document.getElementById("renovar_sucesso-cadastro").innerHTML = "Cadastro Premium";
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1;
+      var yyyy = today.getFullYear()+1;
+      if(dd<10){dd="0"+dd;} 
+      if(mm<10){mm="0"+mm;} 
+      var today = dd+"/"+mm+"/"+yyyy;
+      document.getElementById("dt_validade").innerHTML = "válido até " + today;
       event.preventDefault();
     }
   });
@@ -217,6 +274,20 @@ $(document).ready(function(){
       document.getElementById("envia_dados-valor").value = "799.00";
       document.getElementById("envia_dados_boleto-cadastro").value = "Renovação Profissional";
       document.getElementById("envia_dados_boleto-valor").value = "799.00";
+      document.getElementById("envia_pagador-cadastro").value = "Renovação Profissional";
+      document.getElementById("envia_pagador-valor").value = "799.00";
+      document.getElementById("envia_pagador_boleto-cadastro").value = "Renovação Profissional";
+      document.getElementById("envia_pagador_boleto-valor").value = "799.00";
+      document.getElementById("renovar_aguardando-cadastro").innerHTML = "Cadastro Profissional";
+      document.getElementById("renovar_sucesso-cadastro").innerHTML = "Cadastro Profissional";
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1;
+      var yyyy = today.getFullYear()+2;
+      if(dd<10){dd="0"+dd;} 
+      if(mm<10){mm="0"+mm;} 
+      var today = dd+"/"+mm+"/"+yyyy;
+      document.getElementById("dt_validade").innerHTML = "válido até " + today;
       event.preventDefault();
     }
   });
@@ -228,7 +299,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/atualiza_dados.php",
+          url: "http://www.magnetoelenco.com.br/pagme/atualiza_dados.php",
           data: dados2,
           success: function( data2 ) {
             event.preventDefault();
@@ -242,7 +313,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/renova_cadastro.php",
+          url: "http://www.magnetoelenco.com.br/pagme/renova_cadastro.php",
           data: dados3,
           success: function( data3 ) {
             $(".div-renovar_atualiza-dados").fadeOut(0);
@@ -265,7 +336,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/atualiza_dados.php",
+          url: "http://www.magnetoelenco.com.br/pagme/atualiza_dados.php",
           data: dados4,
           success: function( data4 ) {
             $(".div-renovar_atualiza-dados").fadeOut(0);
@@ -304,7 +375,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/atualiza_dados.php",
+          url: "http://www.magnetoelenco.com.br/pagme/atualiza_dados.php",
           data: dados5,
           success: function( data5 ) {
             $(".div-renovar_atualiza-dados").fadeOut(0);
@@ -337,12 +408,38 @@ $(document).ready(function(){
       });
     }
   });
+  $(".checado").click(function(){
+    $(".requerido").fadeOut(200);
+  });
   $("#botao_saldo").click(function(){
     $(".div-renovar_forma-pagamento").fadeOut(0);
     $(".div-renovar_saldo-caches").fadeIn(200);
     $(".titulo").css("margin-top", "-10px");
     $(".descricao").css("margin", "0px 20px 0px 20px");
     $(".modal-content").css("height", "500px");
+    event.preventDefault();
+  });
+  $("#confirmar-saldo").click(function(){
+    // Ajax Cadastros
+      jQuery("form").submit(function(){
+        document.getElementById("mensagem_cadastro").innerHTML = "Seu cadastro foi renovado utilizando seu saldo de cachês com sucesso. Obrigada!";
+        var dados8 = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://www.magnetoelenco.com.br/pagme/renova_cadastro.php",
+          data: dados8,
+          success: function( data8 ) {
+            $(".div-renovar_saldo-caches").fadeOut(0);
+            $(".div-renovar_sucesso-renovacao").fadeIn(200);
+            $(".modal-content").css("height", "350px");
+            // $(".titulo").css("margin-top", "-10px");
+            // $(".descricao").css("margin", "0px 20px 0px 20px");
+            $(".navegacao").css("justify-content", "flex-end");
+          }
+        });
+        return false;
+      });
   });
   $("#botao_credito").click(function(){
     $(".div-renovar_forma-pagamento").fadeOut(0);
@@ -354,7 +451,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/puxa_dados.php",
+        url: "http://www.magnetoelenco.com.br/pagme/puxa_dados.php",
         data: dados6,
         success: function( data ) {
             var dados_novos = JSON.parse(data);
@@ -385,7 +482,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/puxa_dados.php",
+        url: "http://www.magnetoelenco.com.br/pagme/puxa_dados.php",
         data: dados62,
         success: function( data ) {
             var dados_novos = JSON.parse(data);
@@ -406,17 +503,28 @@ $(document).ready(function(){
     });
   });
   $("#botao_boleto-sim").click(function(){
-    $(".div-renovar_gerar-boleto").fadeOut(0);
-    $(".div-renovar_imprimir-boleto").fadeIn(200);
-    $(".modal-content").css("height", "350px");
-    $(".navegacao").css("justify-content", "space-between");
     // Ajax Token
     jQuery("#envia_dados_boleto-comprador").submit(function(){
+      $(".div-renovar_gerar-boleto").fadeOut(0);
+      $(".div-renovar_imprimir-boleto").fadeIn(3000);
+      $(".modal-content").css("height", "350px");
+      $(".navegacao").css("justify-content", "space-between");
       var dados7 = jQuery(this).serialize();
+      // Ajax Pré-Venda
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/pagme/moip_config.php",
+        url: "http://www.magnetoelenco.com.br/pagme/insere_prevenda.php",
+        data: dados7,
+        success: function( data ) {
+          event.preventDefault();
+        }
+      });
+      // Ajax Token
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://www.magnetoelenco.com.br/pagme/moip_config.php",
         data: dados7,
         success: function( data ) {
           var dados72 = JSON.parse(data);
@@ -424,75 +532,217 @@ $(document).ready(function(){
           event.preventDefault();
         }
       });
-      $.get("http://localhost:8888/elenco-ui/pagme/insere_prevenda.php").done(function() {
-        event.preventDefault();
-      });
+      // $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
+      //   event.preventDefault();
+      // });
       return false;
     });
   });
-  $(".checado").click(function(){
-    $(".requerido").fadeOut(200);
-  });
   $("#botao_dados-cartao-sim").click(function(){
-    $(".div-renovar_confirmacao-dados-cartao").fadeOut(0);
-    $(".div-renovar_dados-cartao").fadeIn(200);
-    $(".modal-content").css("height", "550px");
-    // Ajax Token
-      jQuery("#envia_dados-comprador").submit(function(){
-        var dados7 = jQuery(this).serialize();
-        jQuery.ajax({
-          type: "POST",
-          dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/moip_config.php",
-          data: dados7,
-          success: function( data ) {
-            var dados72 = JSON.parse(data);
-            document.getElementById("token").value = dados72.token;
-            event.preventDefault();
-          }
-        });
-        $.get("http://localhost:8888/elenco-ui/pagme/insere_prevenda.php").done(function() {
+    // Ajax Pré-Venda
+    jQuery("#envia_dados-comprador").submit(function(){
+      $(".div-renovar_confirmacao-dados-cartao").fadeOut(0);
+      $(".div-renovar_dados-cartao").fadeIn(200);
+      $(".modal-content").css("height", "550px");
+      var dados7 = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://www.magnetoelenco.com.br/pagme/insere_prevenda.php",
+        data: dados7,
+        success: function( data ) {
           event.preventDefault();
-        });
-        return false;
+        }
       });
-  });
-  $("#confirmar-saldo").click(function(){
-    // Ajax Cadastros
-      jQuery("form").submit(function(){
-        var dados8 = jQuery(this).serialize();
-        jQuery.ajax({
-          type: "POST",
-          dataType: "html",
-          url: "http://localhost:8888/elenco-ui/pagme/renova_cadastro.php",
-          data: dados8,
-          success: function( data8 ) {
-            $(".div-renovar_saldo-caches").fadeOut(0);
-            $(".div-renovar_sucesso-renovacao").fadeIn(200);
-            $(".modal-content").css("height", "350px");
-            // $(".titulo").css("margin-top", "-10px");
-            // $(".descricao").css("margin", "0px 20px 0px 20px");
-            $(".navegacao").css("justify-content", "flex-end");
-          }
-        });
-        return false;
+      // Ajax Token
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://www.magnetoelenco.com.br/pagme/moip_config.php",
+        data: dados7,
+        success: function( data ) {
+          var dados72 = JSON.parse(data);
+          document.getElementById("token").value = dados72.token;
+          event.preventDefault();
+        }
       });
+      // $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
+      //   event.preventDefault();
+      // });
+      return false;
+    });
   });
   $("#botao_dados-cartao-nao").click(function(){
     $(".div-renovar_confirmacao-dados-cartao").fadeOut(0);
     $(".div-renovar_dados-titular-cartao").fadeIn(200);
-    $(".modal-content").css("height", "550px");
+    $(".modal-content").css("height", "600px");
+    document.getElementById("envia_dados-nome").value = "";
+    document.getElementById("envia_dados-email").value = "";
+    document.getElementById("envia_dados-endereco").value = "";
+    document.getElementById("envia_dados-numero").value = "";
+    document.getElementById("envia_dados-complemento").value = "";
+    document.getElementById("envia_dados-cidade").value = "";
+    document.getElementById("envia_dados-bairro").value = "";
+    document.getElementById("envia_dados-uf").value = "";
+    document.getElementById("envia_dados-cep").value = "";
+    document.getElementById("envia_dados-tel").value = "";
   });
   $("#botao_dados-titular-cartao").click(function(){
-    $(".div-renovar_dados-titular-cartao").fadeOut(0);
-    $(".div-renovar_dados-fatura-cartao").fadeIn(200);
-    $(".modal-content").css("height", "550px");
+    // Ajax Dados Cartão
+    jQuery("#form_dados-titular-cartao").submit(function(){
+      $(".div-renovar_dados-titular-cartao").fadeOut(0);
+      $(".div-renovar_dados-fatura-cartao").fadeIn(200);
+      $(".modal-content").css("height", "550px");
+      var dadosX6 = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://www.magnetoelenco.com.br/pagme/processa_dados.php",
+        data: dadosX6,
+        success: function( data ) {
+            var dados_pagador = JSON.parse(data);
+            document.getElementById("envia_pagador-cpf").value = dados_pagador.cpf;
+            document.getElementById("envia_pagador-nome").value = dados_pagador.nome;
+            document.getElementById("envia_pagador-email").value = dados_pagador.email;
+            document.getElementById("envia_pagador-tel").value = dados_pagador.tel;
+            document.getElementById("CPF").value = dados_pagador.cpf;
+            document.getElementById("Telefone").value = dados_pagador.tel;
+            var dt_nasc = new Date(dados_pagador.data_nascimento);
+            var dd = dt_nasc.getDate()+1;
+            var mm = dt_nasc.getMonth()+1;
+            var yyyy = dt_nasc.getFullYear();
+            if(dd<10){dd="0"+dd;}
+            if(mm<10){mm="0"+mm;}
+            var dt_nasc = dd+"/"+mm+"/"+yyyy;
+            document.getElementById("DataNascimento").value = dt_nasc;
+            event.preventDefault();
+        }
+      });
+      return false;
+    });
   });
   $("#botao_dados-fatura-cartao").click(function(){
-    $(".div-renovar_dados-fatura-cartao").fadeOut(0);
-    $(".div-renovar_dados-cartao").fadeIn(200);
-    $(".modal-content").css("height", "550px");
+    // Ajax Token
+      jQuery("#form_dados-fatura-cartao").submit(function(){
+        $(".div-renovar_dados-fatura-cartao").fadeOut(0);
+        $(".div-renovar_dados-cartao").fadeIn(200);
+        $(".modal-content").css("height", "550px");
+        var dadosX = jQuery(this).serialize();
+        // Ajax Pré-Venda
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://www.magnetoelenco.com.br/pagme/insere_prevenda.php",
+          data: dadosX,
+          success: function( data ) {
+            event.preventDefault();
+          }
+        });
+        // Ajax Token
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://www.magnetoelenco.com.br/pagme/moip_config.php",
+          data: dadosX,
+          success: function( data ) {
+            var dadosX2 = JSON.parse(data);
+            document.getElementById("token").value = dadosX2.token;
+            event.preventDefault();
+          }
+        });
+        // $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
+        //   event.preventDefault();
+        // });
+        return false;
+      });
   });
+
+  $("#botao_boleto-nao").click(function(){
+    $(".div-renovar_gerar-boleto").fadeOut(0);
+    $(".div-renovar_dados-titular-boleto").fadeIn(200);
+    $(".modal-content").css("height", "600px");
+    document.getElementById("envia_dados_boleto-nome").value = "";
+    document.getElementById("envia_dados_boleto-email").value = "";
+    document.getElementById("envia_dados_boleto-endereco").value = "";
+    document.getElementById("envia_dados_boleto-numero").value = "";
+    document.getElementById("envia_dados_boleto-complemento").value = "";
+    document.getElementById("envia_dados_boleto-cidade").value = "";
+    document.getElementById("envia_dados_boleto-bairro").value = "";
+    document.getElementById("envia_dados_boleto-uf").value = "";
+    document.getElementById("envia_dados_boleto-cep").value = "";
+    document.getElementById("envia_dados_boleto-tel").value = "";
+  });
+  $("#botao_dados-titular-boleto").click(function(){
+    // Ajax Dados Cartão
+    jQuery("#form_dados-titular-boleto").submit(function(){
+      $(".div-renovar_dados-titular-boleto").fadeOut(0);
+      $(".div-renovar_dados-fatura-boleto").fadeIn(200);
+      $(".modal-content").css("height", "550px");
+      var dadosX6 = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://www.magnetoelenco.com.br/pagme/processa_dados.php",
+        data: dadosX6,
+        success: function( data ) {
+            var dados_pagador = JSON.parse(data);
+            document.getElementById("envia_pagador_boleto-cpf").value = dados_pagador.cpf;
+            document.getElementById("envia_pagador_boleto-nome").value = dados_pagador.nome;
+            document.getElementById("envia_pagador_boleto-email").value = dados_pagador.email;
+            document.getElementById("envia_pagador_boleto-tel").value = dados_pagador.tel;
+            // document.getElementById("CPF").value = dados_pagador.cpf;
+            // document.getElementById("Telefone").value = dados_pagador.tel;
+            // var dt_nasc = new Date(dados_pagador.data_nascimento);
+            // var dd = dt_nasc.getDate()+1;
+            // var mm = dt_nasc.getMonth()+1;
+            // var yyyy = dt_nasc.getFullYear();
+            // if(dd<10){dd="0"+dd;}
+            // if(mm<10){mm="0"+mm;}
+            // var dt_nasc = dd+"/"+mm+"/"+yyyy;
+            // document.getElementById("DataNascimento").value = dt_nasc;
+            event.preventDefault();
+        }
+      });
+      return false;
+    });
+  });
+  $("#botao_dados-fatura-boleto").click(function(){
+    // Ajax Token
+      jQuery("#form_dados-fatura-boleto").submit(function(){
+        $(".div-renovar_dados-fatura-boleto").fadeOut(0);
+        $(".div-renovar_imprimir-boleto").fadeIn(3000);
+        $(".modal-content").css("height", "350px");
+        $(".navegacao").css("justify-content", "space-between");
+        var dadosX = jQuery(this).serialize();
+        // Ajax Pré-Venda
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://www.magnetoelenco.com.br/pagme/insere_prevenda.php",
+          data: dadosX,
+          success: function( data ) {
+            event.preventDefault();
+          }
+        });
+        // Ajax Token
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://www.magnetoelenco.com.br/pagme/moip_config.php",
+          data: dadosX,
+          success: function( data ) {
+            var dadosX2 = JSON.parse(data);
+            document.getElementById("token").value = dadosX2.token;
+            event.preventDefault();
+          }
+        });
+        // $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
+        //   event.preventDefault();
+        // });
+        return false;
+      });
+  });
+
   // FORMAT O SELECTS DAS PARCELAS
   $("#parcelas").each(function(){
       var $this = $(this);

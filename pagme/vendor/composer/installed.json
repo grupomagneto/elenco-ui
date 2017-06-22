@@ -1,5 +1,43 @@
 [
     {
+        "name": "carloswgama/php-moip",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/CarlosWGama/php-moip.git",
+            "reference": "50ee292edbb9f2149fd569fa58d5bf7d42bca87c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/CarlosWGama/php-moip/zipball/50ee292edbb9f2149fd569fa58d5bf7d42bca87c",
+            "reference": "50ee292edbb9f2149fd569fa58d5bf7d42bca87c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2017-02-09 01:33:06",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "CWG\\Moip\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Carlos W. Gama",
+                "email": "carloswgama@gmail.com"
+            }
+        ],
+        "description": "Biblioteca para realizar compras no MoIP com e sem checkout transparente"
+    },
+    {
         "name": "rmccue/requests",
         "version": "v1.7.0",
         "version_normalized": "1.7.0.0",
