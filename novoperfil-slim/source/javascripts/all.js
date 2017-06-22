@@ -45,54 +45,43 @@ setInterval(function(){updateGradient('.gradient')},10);
 
 
 //texto
-// function([string1, string2],target id,[color1,color2])    
-consoleText(['Cadastre-se e encontre os trabalhos da sua cidade.', 'Diga adeus a horas em filas de teste de elenco.', 'Você diz quanto quer receber e recebe em 15 dias', 'Convide 10 amigos e ganhe um upgrade no cadastro.', 'Cadastre-se em minutos sem pagar nada.', , 'Oportunidades de trabalho para todas as idades e perfis.'], 'text',['white']);
+var div = document.getElementById('log');
+var textos = ['Cadastre-se e encontre os trabalhos da sua cidade.', 'Diga adeus a horas em filas de teste de elenco.', 'Você diz quanto quer receber e recebe em 15 dias.', 'Convide 10 amigos e ganhe um upgrade no cadastro.', 'Cadastre-se em minutos sem pagar nada.', 'Oportunidades de trabalho para todas as idades e perfis.'];
 
-function consoleText(words, id, colors) {
-  if (colors === undefined) colors = ['#FFFFFF'];
-  var visible = true;
-  var con = document.getElementById('console');
-  var letterCount = 1;
-  var x = 1;
-  var waiting = false;
-  var target = document.getElementById(id)
-  target.setAttribute('style', 'color:' + colors[0])
-  window.setInterval(function() {
-
-    if (letterCount === 0 && waiting === false) {
-      waiting = true;
-      target.innerHTML = words[0].substring(0, letterCount)
-      window.setTimeout(function() {
-        var usedColor = colors.shift();
-        colors.push(usedColor);
-        var usedWord = words.shift();
-        words.push(usedWord);
-        x = 1;
-        target.setAttribute('style', 'color:' + colors[0])
-        letterCount += x;
-        waiting = false;
-      }, 100)
-    } else if (letterCount === words[0].length + 1 && waiting === false) {
-      waiting = true;
-      window.setTimeout(function() {
-        x = -1;
-        letterCount += x;
-        waiting = false;
-      }, 100)
-    } else if (waiting === false) {
-      target.innerHTML = words[0].substring(0, letterCount)
-      letterCount += x;
-    }
-  }, 100)
-  window.setInterval(function() {
-    if (visible === true) {
-      con.className = 'console-underscore hidden'
-      visible = false;
-
-    } else {
-      con.className = 'console-underscore'
-
-      visible = true;
-    }
-  }, 100)
+function escrever(str, done) {
+    var char = str.split('').reverse();
+    var typer = setInterval(function() {
+        if (!char.length) {
+            clearInterval(typer);
+            return setTimeout(done, 500);
+        }
+        var next = char.pop();
+        div.innerHTML += next;
+    }, 100);
 }
+
+function limpar(done) {
+    var char = div.innerHTML;
+    var nr = char.length;
+    var typer = setInterval(function() {
+        if (nr-- == 0) {
+            clearInterval(typer);
+            return done();
+        }
+        div.innerHTML = char.slice(0, nr);
+    }, 0);
+}
+
+function rodape(conteudos, el) {
+    var atual = -1;
+  function prox(cb){
+    if (atual < conteudos.length - 1) atual++;
+    else atual = 0;
+    var str = conteudos[atual];
+    escrever(str, function(){
+      limpar(prox);
+    });
+  }
+  prox(prox);
+}
+rodape(textos);
