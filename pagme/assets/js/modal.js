@@ -64,14 +64,17 @@ $(document).ready(function(){
       $(".progresso").fadeIn(200);
       $(".navegacao").css("justify-content", "space-between");
       $(".modal-content").css("height", "600px");
+      acesso("botao_renovar-contrato");
   });
   $("#botao_apagar-perfil").click(function(){
       $(".div-renovar_renova-ou-cancela").fadeOut(0);
       $(".div-renovar_cancelar").fadeIn(200);
       $(".voltar").fadeIn(200);
       $(".navegacao").css("justify-content", "space-between");
+      acesso("botao_apagar-perfil");
   });
   $("#botao_confirma_apagar").click(function(){
+    acesso("botao_confirma_apagar");
     // Ajax Cadastros
     jQuery("form").submit(function(){
       var dados1 = jQuery(this).serialize();
@@ -108,6 +111,7 @@ $(document).ready(function(){
       $(".modal-content").css("height", "725px");
       $(".titulo").css("margin-top", "15px");
       $(".descricao").css("margin", "25px");
+      acesso("gratuito");
   });
   $(".premium").click(function(){
       $(".div-renovar_modalidades").fadeOut(0);
@@ -115,6 +119,7 @@ $(document).ready(function(){
       $(".modal-content").css("height", "850px");
       $(".titulo").css("margin-top", "15px");
       $(".descricao").css("margin", "25px");
+      acesso("premium");
   });
   $(".profissional").click(function(){
       $(".div-renovar_modalidades").fadeOut(0);
@@ -122,6 +127,7 @@ $(document).ready(function(){
       $(".modal-content").css("height", "1110px");
       $(".titulo").css("margin-top", "15px");
       $(".descricao").css("margin", "25px");
+      acesso("profissional");
   });
   $(".voltar_1").click(function(){
     $(".div-renovar_modalidades").fadeOut(0);
