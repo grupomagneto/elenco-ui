@@ -79,7 +79,6 @@ var sucesso = function(data){
             valor_venda: valor_venda,
             forma_pagamento: document.getElementById("forma_pagamento").value,
             n_parcelas: document.getElementById("n_parcelas").value,
-            codigo_moip: data.CodigoMoIP
         };
         jQuery.ajax({
           type: "POST",
@@ -89,6 +88,10 @@ var sucesso = function(data){
           success: function( data ) {
             event.preventDefault();
           }
+        });
+        // Ajax Envia E-mail
+        $.get("http://www.magnetoelenco.com.br/pagme/email/email_renova_cadastro.php?pagamento=cartao").done(function() {
+          event.preventDefault();
         });
         acesso("sucesso-renovacao-cartao");
         return false;
@@ -103,6 +106,7 @@ var sucesso = function(data){
         var dados = {
             forma_pagamento: document.getElementById("forma_pagamento").value,
             n_parcelas: document.getElementById("n_parcelas").value,
+            url_boleto: data.url,
         };
         jQuery.ajax({
           type: "POST",
@@ -112,6 +116,10 @@ var sucesso = function(data){
           success: function( data ) {
             event.preventDefault();
           }
+        });
+        // Ajax Envia E-mail
+        $.get("http://www.magnetoelenco.com.br/pagme/email/email_renova_cadastro.php?pagamento=boleto").done(function() {
+          event.preventDefault();
         });
         acesso("sucesso-renovacao-boleto");
         return false;

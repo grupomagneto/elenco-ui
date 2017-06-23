@@ -525,9 +525,9 @@ $(document).ready(function(){
           event.preventDefault();
         }
       });
-      // $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
-      //   event.preventDefault();
-      // });
+      $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
+        event.preventDefault();
+      });
       return false;
     });
     acesso("botao_boleto-sim");
@@ -560,9 +560,9 @@ $(document).ready(function(){
           event.preventDefault();
         }
       });
-      // $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
-      //   event.preventDefault();
-      // });
+      $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
+        event.preventDefault();
+      });
       return false;
     });
     acesso("botao_dados-cartao-sim");

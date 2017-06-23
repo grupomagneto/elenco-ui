@@ -10,7 +10,7 @@ if (isset($_GET['new_id'])) {
   $_SESSION['user'] = $_GET['new_id'];
 }
 $user_id = $_SESSION['user'];
-// if ($user_id == '99999') {
+// if ($user_id == '89999') {
 //   mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente='2014-05-21' WHERE id_elenco='99999'") or die (mysqli_error($link));
 // }
 // select loggedin users detail
@@ -70,9 +70,10 @@ if ($n <= $count) {
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <title>Bem-vind<? echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
-<link rel="stylesheet" href="style.css" type="text/css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
 <script src='assets/js/functions.js'></script>
 </head>
 <body>
@@ -170,6 +171,8 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
 ?>
 <div id='myModal' class='modal'>
   <div class='modal-content'>
+    <div id="MoipWidget" data-token="02K0Y1I2T0R5D1N0V1W5B03320Z9R0I7K8B080T000P0C090P4P410R5X503" callback-method-success="sucesso" callback-method-error="erroValidacao"></div>
+    <input type="hidden" id="token" class="span6" value="" />
     <div class='div-renovar_renova-ou-cancela'>
         <div class='conteiner'>
           <div class='navegacao'>
@@ -861,20 +864,13 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
     </div>
   </div>
 </div>
-<div id="MoipWidget" data-token="02K0Y1I2T0R5D1N0V1W5B03320Z9R0I7K8B080T000P0C090P4P410R5X503" callback-method-success="sucesso" callback-method-error="erroValidacao"></div>
-<input type="hidden" id="token" class="span6" value="" />
 <script type="text/javascript">acesso("modal_renovacao");</script>
 <? } ?>
+<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js"
+  integrity="sha256-eEa1kEtgK9ZL6h60VXwDsJ2rxYCwfxi40VZ9E0XwoEA="
+  crossorigin="anonymous"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src='assets/js/gradient.js'></script>
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-22229864-1', 'auto');
-ga('send', 'pageview');
-</script>
 <script src='assets/js/modal.js'></script>
 <script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'></script>
 <!-- <script src='https://assets.moip.com.br/transparente/MoipWidget-v2.js'></script> -->

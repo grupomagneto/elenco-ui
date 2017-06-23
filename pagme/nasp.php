@@ -1,5 +1,8 @@
 <?php
 require_once 'dbconnect.php';
+// echo "<pre>";
+// print_r($_POST);
+// exit;
 $timestamp = date('Y-m-d H:i:s', time());
 $id_transacao = $_POST['id_transacao'];
 $pieces = explode("-", $id_transacao);
@@ -15,4 +18,5 @@ elseif ($status_pagamento == 7) { $status_pagamento = "Estornado"; }
 elseif ($status_pagamento == 9) { $status_pagamento = "Reembolsado"; }
 mysqli_query($link, "UPDATE financeiro SET status_venda = '$status_pagamento', timestamp_nasp = '$timestamp' WHERE id = '$id_venda'");
 mysqli_close($link);
+http_response_code(200);
 ?>

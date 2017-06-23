@@ -17,8 +17,12 @@ $produto = $row['produto'];
 $id_elenco = $row['id_elenco_financeiro'];
 $forma_pagamento = $_POST['forma_pagamento'];
 $n_parcelas = $_POST['n_parcelas'];
+$_SESSION['forma_pagamento'] = $forma_pagamento;
+$_SESSION['n_parcelas'] = $n_parcelas;
 if ($forma_pagamento == "Boleto Bancário") {
 	$status_venda = "Boleto Impresso";
+	$url_boleto = $_POST['url_boleto'];
+	$_SESSION['url_boleto'] = $url_boleto;
 	// ATUALIZA STATUS VENDA
 	mysqli_query($link, "UPDATE financeiro SET forma_pagamento = '$forma_pagamento', n_parcelas = '$n_parcelas', status_venda = '$status_venda', data_venda = '$hoje' WHERE id = '$id_venda'");
 }

@@ -50,7 +50,7 @@ if (empty($_SESSION['email_sent'])) {
     </body>
     </html>";
 
-    require_once "phpmailer/class.phpmailer.php";
+    require_once "email/phpmailer/class.phpmailer.php";
     smtpmailer($email, 'inteligencia@magnetoelenco.com.br', 'Magneto Elenco', $subject, $msg);
     $_SESSION['email_sent'] = "yes";
 }

@@ -70,7 +70,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <title>PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>
 <body>
 <div class="gradient inicio_login">
@@ -129,7 +129,14 @@
     </div>
 </div>
 </div>
-<script src='//code.jquery.com/jquery-2.2.4.min.js'></script>
+<!-- <script src='//code.jquery.com/jquery-2.2.4.min.js'></script> -->
+<!-- <script src='assets/js/jquery-3.2.1.min.js'></script> -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js"
+  integrity="sha256-eEa1kEtgK9ZL6h60VXwDsJ2rxYCwfxi40VZ9E0XwoEA="
+  crossorigin="anonymous"></script>
 <script src='assets/js/gradient.js'></script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
