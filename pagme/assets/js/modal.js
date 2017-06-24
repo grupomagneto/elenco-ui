@@ -503,16 +503,6 @@ $(document).ready(function(){
       $(".modal-content").css("height", "350px");
       $(".navegacao").css("justify-content", "space-between");
       var dados7 = jQuery(this).serialize();
-      // Ajax Pré-Venda
-      jQuery.ajax({
-        type: "POST",
-        dataType: "html",
-        url: "http://www.magnetoelenco.com.br/pagme/insere_prevenda.php",
-        data: dados7,
-        success: function( data ) {
-          event.preventDefault();
-        }
-      });
       // Ajax Token
       jQuery.ajax({
         type: "POST",
@@ -524,9 +514,6 @@ $(document).ready(function(){
           document.getElementById("token").value = dados72.token;
           event.preventDefault();
         }
-      });
-      $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
-        event.preventDefault();
       });
       return false;
     });
@@ -539,15 +526,6 @@ $(document).ready(function(){
       $(".div-renovar_dados-cartao").fadeIn(200);
       $(".modal-content").css("height", "550px");
       var dados7 = jQuery(this).serialize();
-      jQuery.ajax({
-        type: "POST",
-        dataType: "html",
-        url: "http://www.magnetoelenco.com.br/pagme/insere_prevenda.php",
-        data: dados7,
-        success: function( data ) {
-          event.preventDefault();
-        }
-      });
       // Ajax Token
       jQuery.ajax({
         type: "POST",
@@ -559,9 +537,6 @@ $(document).ready(function(){
           document.getElementById("token").value = dados72.token;
           event.preventDefault();
         }
-      });
-      $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
-        event.preventDefault();
       });
       return false;
     });
@@ -626,16 +601,6 @@ $(document).ready(function(){
         $(".div-renovar_dados-cartao").fadeIn(200);
         $(".modal-content").css("height", "550px");
         var dadosX = jQuery(this).serialize();
-        // Ajax Pré-Venda
-        jQuery.ajax({
-          type: "POST",
-          dataType: "html",
-          url: "http://www.magnetoelenco.com.br/pagme/insere_prevenda.php",
-          data: dadosX,
-          success: function( data ) {
-            event.preventDefault();
-          }
-        });
         // Ajax Token
         jQuery.ajax({
           type: "POST",
@@ -648,9 +613,6 @@ $(document).ready(function(){
             event.preventDefault();
           }
         });
-        // $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
-        //   event.preventDefault();
-        // });
         return false;
       });
   });
@@ -689,16 +651,6 @@ $(document).ready(function(){
             document.getElementById("envia_pagador_boleto-nome").value = dados_pagador.nome;
             document.getElementById("envia_pagador_boleto-email").value = dados_pagador.email;
             document.getElementById("envia_pagador_boleto-tel").value = dados_pagador.tel;
-            // document.getElementById("CPF").value = dados_pagador.cpf;
-            // document.getElementById("Telefone").value = dados_pagador.tel;
-            // var dt_nasc = new Date(dados_pagador.data_nascimento);
-            // var dd = dt_nasc.getDate()+1;
-            // var mm = dt_nasc.getMonth()+1;
-            // var yyyy = dt_nasc.getFullYear();
-            // if(dd<10){dd="0"+dd;}
-            // if(mm<10){mm="0"+mm;}
-            // var dt_nasc = dd+"/"+mm+"/"+yyyy;
-            // document.getElementById("DataNascimento").value = dt_nasc;
             event.preventDefault();
         }
       });
@@ -714,16 +666,6 @@ $(document).ready(function(){
         $(".modal-content").css("height", "350px");
         $(".navegacao").css("justify-content", "space-between");
         var dadosX = jQuery(this).serialize();
-        // Ajax Pré-Venda
-        jQuery.ajax({
-          type: "POST",
-          dataType: "html",
-          url: "http://www.magnetoelenco.com.br/pagme/insere_prevenda.php",
-          data: dadosX,
-          success: function( data ) {
-            event.preventDefault();
-          }
-        });
         // Ajax Token
         jQuery.ajax({
           type: "POST",
@@ -736,9 +678,6 @@ $(document).ready(function(){
             event.preventDefault();
           }
         });
-        // $.get("http://www.magnetoelenco.com.br/pagme/insere_prevenda.php").done(function() {
-        //   event.preventDefault();
-        // });
         return false;
       });
       acesso("botao_dados-fatura-boleto");
