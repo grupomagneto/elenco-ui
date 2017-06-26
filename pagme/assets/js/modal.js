@@ -67,7 +67,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://www.magnetoelenco.com.br/pagme/apaga_cadastro.php",
+        url: "http://pagme.magnetoelenco.com.br/apaga_cadastro.php",
         data: dados1,
         success: function( data1 ) {
           $(".div-renovar_cancelar").fadeOut(0);
@@ -288,7 +288,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://www.magnetoelenco.com.br/pagme/atualiza_dados.php",
+          url: "http://pagme.magnetoelenco.com.br/atualiza_dados.php",
           data: dados2,
           success: function( data2 ) {
             event.preventDefault();
@@ -302,7 +302,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://www.magnetoelenco.com.br/pagme/renova_cadastro.php",
+          url: "http://pagme.magnetoelenco.com.br/renova_cadastro.php",
           data: dados3,
           success: function( data3 ) {
             $(".div-renovar_atualiza-dados").fadeOut(0);
@@ -325,7 +325,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://www.magnetoelenco.com.br/pagme/atualiza_dados.php",
+          url: "http://pagme.magnetoelenco.com.br/atualiza_dados.php",
           data: dados4,
           success: function( data4 ) {
             $(".div-renovar_atualiza-dados").fadeOut(0);
@@ -364,7 +364,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://www.magnetoelenco.com.br/pagme/atualiza_dados.php",
+          url: "http://pagme.magnetoelenco.com.br/atualiza_dados.php",
           data: dados5,
           success: function( data5 ) {
             $(".div-renovar_atualiza-dados").fadeOut(0);
@@ -417,7 +417,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://www.magnetoelenco.com.br/pagme/renova_cadastro.php",
+          url: "http://pagme.magnetoelenco.com.br/renova_cadastro.php",
           data: dados8,
           success: function( data8 ) {
             $(".div-renovar_saldo-caches").fadeOut(0);
@@ -443,7 +443,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://www.magnetoelenco.com.br/pagme/puxa_dados.php",
+        url: "http://pagme.magnetoelenco.com.br/puxa_dados.php",
         data: dados6,
         success: function( data ) {
             var dados_novos = JSON.parse(data);
@@ -475,7 +475,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://www.magnetoelenco.com.br/pagme/puxa_dados.php",
+        url: "http://pagme.magnetoelenco.com.br/puxa_dados.php",
         data: dados62,
         success: function( data ) {
             var dados_novos = JSON.parse(data);
@@ -507,7 +507,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://www.magnetoelenco.com.br/pagme/moip_config.php",
+        url: "http://pagme.magnetoelenco.com.br/moip_config.php",
         data: dados7,
         success: function( data ) {
           var dados72 = JSON.parse(data);
@@ -530,7 +530,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://www.magnetoelenco.com.br/pagme/moip_config.php",
+        url: "http://pagme.magnetoelenco.com.br/moip_config.php",
         data: dados7,
         success: function( data ) {
           var dados72 = JSON.parse(data);
@@ -569,7 +569,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://www.magnetoelenco.com.br/pagme/processa_dados.php",
+        url: "http://pagme.magnetoelenco.com.br/processa_dados.php",
         data: dadosX6,
         success: function( data ) {
             var dados_pagador = JSON.parse(data);
@@ -605,7 +605,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://www.magnetoelenco.com.br/pagme/moip_config.php",
+          url: "http://pagme.magnetoelenco.com.br/moip_config.php",
           data: dadosX,
           success: function( data ) {
             var dadosX2 = JSON.parse(data);
@@ -643,7 +643,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://www.magnetoelenco.com.br/pagme/processa_dados.php",
+        url: "http://pagme.magnetoelenco.com.br/processa_dados.php",
         data: dadosX6,
         success: function( data ) {
             var dados_pagador = JSON.parse(data);
@@ -670,7 +670,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://www.magnetoelenco.com.br/pagme/moip_config.php",
+          url: "http://pagme.magnetoelenco.com.br/moip_config.php",
           data: dadosX,
           success: function( data ) {
             var dadosX2 = JSON.parse(data);

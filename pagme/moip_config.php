@@ -29,11 +29,16 @@ mysqli_close($link);
 
 include_once "autoload.inc.php";
 
+// $moip = new Moip();
+// $moip->setEnvironment('test');
+// $moip->setCredential(array(
+//    'key' => 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI',
+//    'token' => '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN'));
+
 $moip = new Moip();
-$moip->setEnvironment('test');
 $moip->setCredential(array(
-   'key' => 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI',
-   'token' => '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN'));
+   'key' => 'SHPPS0077Z8YVZPI8V6ZXAV2NPQB3JAJF8KVNJJ9',
+   'token' => 'YCROBLW04MTE1I3NZOJDX74FHGZNN44B'));
 
 $operation_id = $id_usuario."-".$prevenda;
 

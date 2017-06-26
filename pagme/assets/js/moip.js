@@ -4,7 +4,7 @@ $(document).ready(function(){
     jQuery.ajax({
       type: "POST",
       dataType: "html",
-      url: "http://www.magnetoelenco.com.br/pagme/registra_acesso.php",
+      url: "http://pagme.magnetoelenco.com.br/registra_acesso.php",
       data: dado,
       success: function( data ) {
         event.preventDefault();
@@ -83,14 +83,14 @@ var sucesso = function(data){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://www.magnetoelenco.com.br/pagme/confirma_venda.php",
+          url: "http://pagme.magnetoelenco.com.br/confirma_venda.php",
           data: dados,
           success: function( data ) {
             event.preventDefault();
           }
         });
         // Ajax Envia E-mail
-        $.get("http://www.magnetoelenco.com.br/pagme/email/email_renova_cadastro.php?pagamento=cartao").done(function() {
+        $.get("http://pagme.magnetoelenco.com.br/email/email_renova_cadastro.php?pagamento=cartao").done(function() {
           event.preventDefault();
         });
         acesso("sucesso-renovacao-cartao");
@@ -111,14 +111,14 @@ var sucesso = function(data){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://www.magnetoelenco.com.br/pagme/confirma_venda.php",
+          url: "http://pagme.magnetoelenco.com.br/confirma_venda.php",
           data: dados,
           success: function( data ) {
             event.preventDefault();
           }
         });
         // Ajax Envia E-mail
-        $.get("http://www.magnetoelenco.com.br/pagme/email/email_renova_cadastro.php?pagamento=boleto").done(function() {
+        $.get("http://pagme.magnetoelenco.com.br/email/email_renova_cadastro.php?pagamento=boleto").done(function() {
           event.preventDefault();
         });
         acesso("sucesso-renovacao-boleto");

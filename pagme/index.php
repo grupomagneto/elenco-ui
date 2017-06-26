@@ -46,7 +46,7 @@
 
 			$password = hash('sha256', $pass); // password hashing using SHA256
 
-			$res=mysqli_query($link, "SELECT id_elenco, senha FROM tb_elenco WHERE email='$email' AND ativo = 'Sim' ORDER BY dt_nascimento ASC LIMIT 1");
+			$res=mysqli_query($link, "SELECT id_elenco, senha FROM tb_elenco WHERE email='$email' AND ativo <> 'Não' ORDER BY dt_nascimento ASC LIMIT 1");
 			$row=mysqli_fetch_array($res);
 			$count = mysqli_num_rows($res); // if uname/pass correct it returns must be 1 row
 
@@ -68,6 +68,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, user-scalable=no">
+<meta data-react-helmet="true" charset="utf-8"/>
+<meta data-react-helmet="true" http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta data-react-helmet="true" name="description" content="Cadastre-se gratuitamente e encontre os trabalhos de audiovisual da sua cidade."/>
+<meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/>
+<meta data-react-helmet="true" name="mobile-web-app-capable" content="yes"/>
+<meta data-react-helmet="true" name="apple-mobile-web-app-capable" content="yes"/>
+<meta data-react-helmet="true" name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta data-react-helmet="true" name="apple-mobile-web-app-title" content="PAGME"/>
+<meta data-react-helmet="true" name="msapplication-TileColor" content="#FFFFFF"/>
+<meta data-react-helmet="true" property="og:site_name" content="PAGME"/>
+<meta data-react-helmet="true" property="og:url" content="http://www.magnetoelenco.com.br/pagme"/>
+<meta data-react-helmet="true" property="og:title" content="Cadastre-se gratuitamente e encontre os trabalhos de audiovisual da sua cidade."/>
 <title>PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="assets/css/style.css" type="text/css" />

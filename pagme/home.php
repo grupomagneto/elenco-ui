@@ -10,9 +10,9 @@ if (isset($_GET['new_id'])) {
   $_SESSION['user'] = $_GET['new_id'];
 }
 $user_id = $_SESSION['user'];
-// if ($user_id == '89999') {
-//   mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente='2014-05-21' WHERE id_elenco='99999'") or die (mysqli_error($link));
-// }
+if ($user_id == '79999') {
+  mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente='2014-05-21' WHERE id_elenco='$user_id'") or die (mysqli_error($link));
+}
 // select loggedin users detail
 $sql = "SELECT * FROM tb_elenco WHERE id_elenco='$user_id'";
 $res=mysqli_query($link, $sql) or die (mysqli_error($link));
@@ -71,6 +71,23 @@ if ($n <= $count) {
 <title>Bem-vind<? echo $sexo; ?> ao PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+<link rel="apple-touch-icon" sizes="57x57" href="images/icon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/icon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/icon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/icon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/icon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/icon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/icon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/icon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="images/icon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
+<link rel="manifest" href="images/icon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="images/icon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
@@ -289,7 +306,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 <img src='images/campo_obrigatorio.svg' class='requerido' />
               </div>
               <div class='declaro x-small'>
-                <label for='terms'>Li e estou de acordo com os <a href='#'>Termos do Contrato</a> para renovação de minha assinatura como Cadastro Gratuito</label>
+                <label for='terms'>Li e estou de acordo com os <a href='assets/termo_gratuito.pdf' target="_blank">Termos do Contrato</a> para renovação de minha assinatura como Cadastro Gratuito</label>
               </div>
             </div>
         </div>
@@ -331,7 +348,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 <img src='images/campo_obrigatorio.svg' class='requerido' />
               </div>
               <div class='declaro x-small'>
-                <label for='terms'>Li e estou de acordo com os <a href='#'>Termos do Contrato</a> para renovação de minha assinatura como Cadastro Premium</label>
+                <label for='terms'>Li e estou de acordo com os <a href='assets/termo_premium.pdf' target="_blank">Termos do Contrato</a> para renovação de minha assinatura como Cadastro Premium</label>
               </div>
             </div>
         </div>
@@ -376,7 +393,7 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
                 <img src='images/campo_obrigatorio.svg' class='requerido' />
               </div>
               <div class='declaro x-small'>
-                <label for='terms'>Li e estou de acordo com os <a href='#'>Termos do Contrato</a> para renovação de minha assinatura como Cadastro Profissional</label>
+                <label for='terms'>Li e estou de acordo com os <a href='assets/termo_profissional.pdf' target="_blank">Termos do Contrato</a> para renovação de minha assinatura como Cadastro Profissional</label>
               </div>
             </div>
             </div>
@@ -872,8 +889,8 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
 <script src="assets/js/bootstrap.min.js"></script>
 <script src='assets/js/gradient.js'></script>
 <script src='assets/js/modal.js'></script>
-<script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'></script>
-<!-- <script src='https://assets.moip.com.br/transparente/MoipWidget-v2.js'></script> -->
+<!-- <script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'></script> -->
+<script src='https://assets.moip.com.br/transparente/MoipWidget-v2.js'></script>
 <script src='assets/js/moip.js'></script>
 </body>
 </html>
