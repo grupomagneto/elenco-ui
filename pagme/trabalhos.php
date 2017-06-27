@@ -45,7 +45,7 @@ if ($n <= $count) {
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="assets/css/jobs.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/caches.css" type="text/css" />
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -274,10 +274,11 @@ echo "
 </div>
 <input type='hidden' name='id_cache' id='$id_cache' value='$id_cache'>
 <div>
+<center>
 $botao
 </form>
-</div>
-<center><p class='x-small'>$explicacao</p></center>";
+<p class='x-small'>$explicacao</p></center>
+</div>";
 }
 ?>
 
@@ -295,25 +296,14 @@ $botao
         </div>
     </div>
   </div>
-
   </div>
   </div>
   </div>
   </div>
   </div>
-
 <script src='//code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src='assets/js/gradient.js'></script>
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22229864-1', 'auto');
-ga('send', 'pageview');
-</script>
 <script src='assets/js/functions.js'></script>
 <script type="text/javascript">acesso("pagme_trabalhos");</script>
 </body>
