@@ -24,6 +24,7 @@ $(document).ready(function(){
 sendToCreditCard = function() {
     document.getElementById("forma_pagamento").value = "Cartão de Crédito";
     document.getElementById("n_parcelas").value = $("#parcelas").val();
+    alert($("#encrypted_value").val());
     var settings = {
         "Forma": "CartaoCredito",
         // "Instituicao": $("#instituicao").val(),
@@ -34,13 +35,13 @@ sendToCreditCard = function() {
             // "Numero": $("input[name=Numero]").val(),
             // "Expiracao": $("input[name=Expiracao]").val(),
             "Cofre": $("#encrypted_value").val(),
-            "CodigoSeguranca": $("input[name=CodigoSeguranca]").val(),
-            "Portador": {
-                "Nome": $("input[name=Portador]").val(),
-                "DataNascimento": $("input[name=DataNascimento]").val(),
-                "Telefone": $("input[name=Telefone]").val(),
-                "Identidade": $("input[name=CPF]").val()
-            }
+            "CodigoSeguranca": $("input[name=CodigoSeguranca]").val()
+            // "Portador": {
+            //     "Nome": $("input[name=Portador]").val(),
+            //     "DataNascimento": $("input[name=DataNascimento]").val(),
+            //     "Telefone": $("input[name=Telefone]").val(),
+            //     "Identidade": $("input[name=CPF]").val()
+            // }
         }
     }
     $("#sendToMoip").attr("disabled", "disabled");
