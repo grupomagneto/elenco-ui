@@ -393,7 +393,8 @@ flex-wrap: wrap;
 justify-content: center;
 margin-bottom: 20px;
 }
-.botao{
+
+.botao {
 position: static;
 background: rgba(255,255,255,0.30);
 border: 1px solid #FFFFFF;
