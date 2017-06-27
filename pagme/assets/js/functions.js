@@ -3,7 +3,7 @@ function acesso(pagina) {
   jQuery.ajax({
     type: "POST",
     dataType: "html",
-    url: "http://pagme.magnetoelenco.com.br/registra_acesso.php",
+    url: "http://www.grupomagneto.com.br/magnetoelenco/pagme/registra_acesso.php",
     data: dado,
     success: function( data ) {
       event.preventDefault();

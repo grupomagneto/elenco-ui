@@ -92,6 +92,38 @@ if ($n <= $count) {
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
 <script src='assets/js/functions.js'></script>
+<script type="text/javascript" src="https://assets.moip.com.br/v2/moip-2.7.1.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#sendToMoip").click(function() {
+          var exp = $("#Expiracao").val();
+          var res = exp.split("/");
+          var expMonth = res[0];
+          var expYear = res[1];
+          var cc = new Moip.CreditCard({
+            number  : $("#Numero").val(),
+            cvc     : $("#CodigoSeguranca").val(),
+            expMonth: expMonth,
+            expYear : expYear,
+            pubKey  : $("#public_key").val()
+          });
+          console.log(cc);
+          if( cc.isValid()){
+            $("#encrypted_value").val(cc.hash());
+            $("#card_type").val(cc.cardType());
+            applyToken();
+            sendToCreditCard();
+          }
+          else{
+            // $("#encrypted_value").val('');
+            // $("#card_type").val('');
+            alert('Cartão de Crédito inválido. Por favor verifique os parâmetros: número, cvv e validade');
+          }
+        });
+    });
+  </script>
+
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -611,8 +643,19 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
 
             <div class='botoes'>
               <button class='botao' id='sendToMoip'>Pagar (R$ <span id='valor_pagar-cartao'></span>,00)</button>
+              <input type="hidden" id="public_key" value="-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq3OIiMNWs40s509N2Jqo
+hcvvb/ebp9AoTjwv+apK08EBlk64MK890R1wpXWR21Fn6LN+b7RP6afkyN/Du0e7
+KBO99DJ97MA3h3d1R38AQkhogfnh34CaVL56vx/Bpo3yXuNXkbXFq1YIBfbEHJar
+zSxl0wPnPo46Vt4/vO3MYUVyEPgLzRV8aSf1JdQ6Tyjhg5QpCye0BEDRPwMxRKkT
++We8JeKtsLEi0y1tkHjbPcSMdHEowkgUkjL5zzBdE+F6bs5hdAg4OD/VGfhWp+jn
+z+vWGEqZxHDgEraHjzTXQnl6GoJqPojMfp3TxIMZDk/8rla432zy/qUHuMSAk6eB
+VQIDAQAB
+-----END PUBLIC KEY-----">
               <input type="hidden" name="forma_pagamento" id="forma_pagamento" value="" />
               <input type="hidden" name="n_parcelas" id="n_parcelas" value="" />
+              <input type="hidden" name="encrypted_value" id="encrypted_value" value="" />
+              <input type="hidden" name="card_type" id="card_type" value="" />
             </div>
             <div class='moip'>
               <a href='http://www.moip.com.br' target='_blank'><img src='images/moip167px.png' /></a>
@@ -889,8 +932,8 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
 <script src="assets/js/bootstrap.min.js"></script>
 <script src='assets/js/gradient.js'></script>
 <script src='assets/js/modal.js'></script>
-<!-- <script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'></script> -->
-<script src='https://assets.moip.com.br/transparente/MoipWidget-v2.js'></script>
+<script src='https://desenvolvedor.moip.com.br/sandbox/transparente/MoipWidget-v2.js'></script>
+<!-- <script src='https://assets.moip.com.br/transparente/MoipWidget-v2.js'></script> -->
 <script src='assets/js/moip.js'></script>
 </body>
 </html>

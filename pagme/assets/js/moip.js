@@ -4,7 +4,7 @@ $(document).ready(function(){
     jQuery.ajax({
       type: "POST",
       dataType: "html",
-      url: "http://pagme.magnetoelenco.com.br/registra_acesso.php",
+      url: "http://www.grupomagneto.com.br/magnetoelenco/pagme/registra_acesso.php",
       data: dado,
       success: function( data ) {
         event.preventDefault();
@@ -12,10 +12,10 @@ $(document).ready(function(){
     });
     return false;
   }
-    $("#sendToMoip").click(function(){
-        applyToken();
-        sendToCreditCard();
-    });
+    // $("#sendToMoip").click(function(){
+    //     applyToken();
+    //     sendToCreditCard();
+    // });
     $("#sendToMoip2").click(function(){
         applyToken();
         sendToBoleto();
@@ -26,13 +26,14 @@ sendToCreditCard = function() {
     document.getElementById("n_parcelas").value = $("#parcelas").val();
     var settings = {
         "Forma": "CartaoCredito",
-        "Instituicao": $("#instituicao").val(),
+        // "Instituicao": $("#instituicao").val(),
         "Parcelas": $("#parcelas").val(),
         // "Recebimento": "AVista",
         "Recebimento": "Parcelado",
         "CartaoCredito": {
-            "Numero": $("input[name=Numero]").val(),
-            "Expiracao": $("input[name=Expiracao]").val(),
+            // "Numero": $("input[name=Numero]").val(),
+            // "Expiracao": $("input[name=Expiracao]").val(),
+            "Cofre": $("#encrypted_value").val(),
             "CodigoSeguranca": $("input[name=CodigoSeguranca]").val(),
             "Portador": {
                 "Nome": $("input[name=Portador]").val(),
@@ -83,14 +84,14 @@ var sucesso = function(data){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://pagme.magnetoelenco.com.br/confirma_venda.php",
+          url: "http://www.grupomagneto.com.br/magnetoelenco/pagme/confirma_venda.php",
           data: dados,
           success: function( data ) {
             event.preventDefault();
           }
         });
         // Ajax Envia E-mail
-        $.get("http://pagme.magnetoelenco.com.br/email/email_renova_cadastro.php?pagamento=cartao").done(function() {
+        $.get("http://www.grupomagneto.com.br/magnetoelenco/pagme/email/email_renova_cadastro.php?pagamento=cartao").done(function() {
           event.preventDefault();
         });
         acesso("sucesso-renovacao-cartao");
@@ -111,14 +112,14 @@ var sucesso = function(data){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://pagme.magnetoelenco.com.br/confirma_venda.php",
+          url: "http://www.grupomagneto.com.br/magnetoelenco/pagme/confirma_venda.php",
           data: dados,
           success: function( data ) {
             event.preventDefault();
           }
         });
         // Ajax Envia E-mail
-        $.get("http://pagme.magnetoelenco.com.br/email/email_renova_cadastro.php?pagamento=boleto").done(function() {
+        $.get("http://www.grupomagneto.com.br/magnetoelenco/pagme/email/email_renova_cadastro.php?pagamento=boleto").done(function() {
           event.preventDefault();
         });
         acesso("sucesso-renovacao-boleto");
