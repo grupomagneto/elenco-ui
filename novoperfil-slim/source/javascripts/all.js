@@ -57,7 +57,7 @@ function escrever(str, done) {
         }
         var next = char.pop();
         div.innerHTML += next;
-    }, 100);
+    }, 50);
 }
 
 function limpar(done) {
