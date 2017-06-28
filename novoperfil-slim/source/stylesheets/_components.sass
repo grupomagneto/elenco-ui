@@ -1,6 +1,4 @@
-// GERAL
-
-body::-webkit-scrollbar-track
+// GERALbody::-webkit-scrollbar-track
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
   background-color: rgba(255,255,255,0.30)
 
@@ -154,6 +152,29 @@ nav.top-menu a:nth-child(2)
       text-align: left
       margin-right: 20px
 
+
+  // @media only screen and (min-width: 992px) and (max-width: 1199px)
+  // @media only screen and (min-width:768px) and (max-width:991px) and (orientation: landscape) 
+  // @media only screen and (min-width:768px) and (max-width:991px) and (orientation: portrait) 
+
+
+  @media only screen and (min-width: 341px) and (max-width: 767px) 
+  .container-outline__button
+    margin: 50px auto
+    max-width: 200px
+    display: flex
+    display: -webkit-flex
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+    flex-direction: column
+    -webkit-flex-direction: column
+
+  @media only screen and (max-width: 340px) and (orientation: portrait) 
+
 .text-after
   position: absolute
   z-index: 9999
@@ -233,9 +254,14 @@ nav.top-menu a:nth-child(2)
   height: 320px
   position: relative
   display: flex
-  align-items: flex-end
   flex-wrap: wrap
+  -webkit-flex-wrap: wrap
+  align-items: flex-end
+  -webkit-align-items: flex-end
+  -moz-align-items: flex-end
   justify-content: center
+  -webkit-justify-content: center 
+  -moz-justify-content: center
   margin-top: -150px
   padding: 30px
 
@@ -244,7 +270,6 @@ nav.top-menu a:nth-child(2)
   background: transparent
 
 // testimony
-
 .testimony
   background: $background-testimony
   height: 350px
@@ -368,6 +393,8 @@ nav.top-menu a:nth-child(2)
     text-align: left 
     line-height: 20px
 
+//como funciona?
+
 .how
   background: #A1165D
   height: 550px
@@ -441,24 +468,66 @@ nav.top-menu a:nth-child(2)
 //FOOTER
 section#footer
   position: absolute
-  top: 345%
+  top: 348%
   width: 100%
   height: 100px
   background: #441160
+  display: flex
+  display: -webkit-flex
+  align-items: center
+  -webkit-align-items: center
+  -moz-align-items: center
+  justify-content: center
+  -webkit-justify-content: center 
+  -moz-justify-content: center
+
+.footer-social
+  width: 300px
+  padding: 20px
+  p
+    text-align: left
+    margin-left: 8px
+    margin-bottom: 10px
 
 .footer-social__img ul
   padding: 0px
   margin: 0px
   list-style: none
+  margin-left: -60px
+
+.footer-sitemap__img ul, .footer-info__img ul
+  margin-left: 2px
 
 .footer-social__img ul li 
   display: inline
 
 .footer-social__img ul li a 
-  padding: 2px 10px
+  line-spacing: 2px
+  padding: 2px 5px
   display: inline-block
-
-  /* visual do link */
-  background-color: $color-primary
   color: $color-primary
   text-decoration: none
+
+
+.footer-sitemap__img ul li 
+  display: block
+  text-align: left
+
+.footer-info__img ul li 
+  display: block
+  text-align: left
+
+.last-footer
+  position: absolute
+  top: 363%
+  width: 100%
+  height: 30px
+  background: #2F0B43
+  display: flex
+  display: -webkit-flex
+  align-items: center
+  -webkit-align-items: center
+  -moz-align-items: center
+  justify-content: center
+  -webkit-justify-content: center 
+  -moz-justify-content: center
