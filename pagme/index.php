@@ -1,6 +1,18 @@
 <?php
 	require_once 'dbconnect.php';
-
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    } else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    $ip_details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+    $_SESSION['ip']         = $ip;
+    $_SESSION['cidade']     = $ip_details->city;
+    $_SESSION['uf']         = $ip_details->region;
+    $_SESSION['pais']       = $ip_details->country;
+    $_SESSION['loc']        = $ip_details->loc;
 	// it will never let you open index(login) page if session is set
 	if ( isset($_SESSION['user'])!="" ) {
 		header("Location: home.php");
