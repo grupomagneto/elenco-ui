@@ -35,6 +35,7 @@ function getOS() {
     global $user_agent;
     $os_platform    =   "Unknown OS Platform";
     $os_array       =   array(
+					    	'/windows NT 10/i'   	=>  'Windows 10',
                             '/windows nt 6.3/i'     =>  'Windows 8',
                             '/windows nt 6.2/i'     =>  'Windows 8',
                             '/windows nt 6.1/i'     =>  'Windows 7',
