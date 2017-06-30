@@ -13,6 +13,8 @@ $user_id = $_SESSION['user'];
 if ($user_id == '79999') {
   mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente='2014-05-21' WHERE id_elenco='$user_id'") or die (mysqli_error($link));
 }
+// Libera o menor cache de um agenciado que tem mais de um Cachê Urgente a receber e está com o contrato válido
+mysqli_query($link, "UPDATE financeiro SET liberado = 1 WHERE id = (SELECT id FROM (SELECT id_elenco FROM tb_elenco WHERE id_elenco = ‘$user_id' AND TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) <= 2) T1 LEFT JOIN (SELECT id_elenco_financeiro AS id_elenco, id FROM financeiro WHERE status_recebimento = 1 AND liberado <> 1 AND liberado <> 2 GROUP BY id_elenco HAVING COUNT(cache_liquido) > 1 ORDER BY cache_liquido ASC) T2 USING (id_elenco))") or die (mysqli_error($link));
 // select loggedin users detail
 $sql = "SELECT * FROM tb_elenco WHERE id_elenco='$user_id'";
 $res=mysqli_query($link, $sql) or die (mysqli_error($link));
