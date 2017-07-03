@@ -222,7 +222,7 @@ $recebivel_cents = $recebivel_pieces[1];
 			$arquivo = $row_foto['arquivo'];
 			echo "
 			<div class='swiper-slide'>
-			<img alt='$nome' class='image__single' src='http://www.magnetoelenco.com.br/fotos/$arquivo' />
+			<img alt='$nome' class='image__single' src='fotos/$arquivo' />
 			</div>";
 		}
 		?>

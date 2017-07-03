@@ -11,10 +11,10 @@ if (isset($_GET['new_id'])) {
 }
 $user_id = $_SESSION['user'];
 if ($user_id == '79999') {
-  mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente='2014-05-21' WHERE id_elenco='$user_id'") or die (mysqli_error($link));
+  mysqli_query($link, "UPDATE tb_elenco SET data_contrato_vigente='2015-06-21' WHERE id_elenco='$user_id'") or die (mysqli_error($link));
 }
 // Libera o menor cache de um agenciado que tem mais de um Cachê Urgente a receber e está com o contrato válido
-mysqli_query($link, "UPDATE financeiro SET liberado = 1 WHERE id = (SELECT id FROM (SELECT id_elenco FROM tb_elenco WHERE id_elenco = ‘$user_id' AND TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) <= 2) T1 LEFT JOIN (SELECT id_elenco_financeiro AS id_elenco, id FROM financeiro WHERE status_recebimento = 1 AND liberado <> 1 AND liberado <> 2 GROUP BY id_elenco HAVING COUNT(cache_liquido) > 1 ORDER BY cache_liquido ASC) T2 USING (id_elenco))") or die (mysqli_error($link));
+mysqli_query($link, "UPDATE financeiro SET liberado = 1 WHERE id = (SELECT id FROM (SELECT id_elenco FROM tb_elenco WHERE id_elenco = '$user_id' AND TIMESTAMPDIFF(YEAR, data_contrato_vigente, CURDATE()) <= 2) T1 LEFT JOIN (SELECT id_elenco_financeiro AS id_elenco, id FROM financeiro WHERE status_recebimento = 1 AND liberado <> 1 AND liberado <> 2 GROUP BY id_elenco HAVING COUNT(cache_liquido) > 1 ORDER BY cache_liquido ASC) T2 USING (id_elenco))") or die (mysqli_error($link));
 // select loggedin users detail
 $sql = "SELECT * FROM tb_elenco WHERE id_elenco='$user_id'";
 $res=mysqli_query($link, $sql) or die (mysqli_error($link));
@@ -211,13 +211,17 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
   $recebivel_cents = $recebivel_pieces[1];
   // Modal
   if ($cadastro == 'Gratuito') {
-    $descricao_cadastro = "Mudamos os termos do nosso contrato e você precisa renová-lo para continuar trabalhando";
+    $titulo_cadastro = "Seu perfil está desativado!";
+    $descricao_cadastro = "Você não poderá participar de trabalhos com o contrato vencido mas continuará com acesso ao PAGME";
   }
-  if ($cadastro == 'Premium') {
-    $descricao_cadastro = "Seu cadastro foi temporariamente rebaixado de Premium para Gratuito até você renová-lo";
-  }
-  if ($cadastro == 'Profissional') {
-    $descricao_cadastro = "Seu cadastro foi temporariamente rebaixado de Profissional para Gratuito até você renová-lo";
+  if ($cadastro == 'Premium' || $cadastro == 'Profissional') {
+    if ($hoje > date('Y-m-d', strtotime($userRow['data_contrato_vigente']."+2 years")) && $hoje < date('Y-m-d', strtotime($userRow['data_contrato_vigente']."+2 years"."+90 days"))) {
+      $titulo_cadastro = "Seu perfil será desativado!";
+      $descricao_cadastro = "Seu cadastro foi temporariamente rebaixado para Gratuito por 90 dias quando será desativado";
+    } elseif ($hoje > date('Y-m-d', strtotime($userRow['data_contrato_vigente']."+2 years"."+90 days"))) {
+      $titulo_cadastro = "Seu perfil está desativado!";
+      $descricao_cadastro = "Você não poderá participar de trabalhos com o contrato vencido mas continuará com acesso ao PAGME";
+    }   
   }
 ?>
 <div id='myModal' class='modal'>
@@ -230,14 +234,14 @@ if ($cadastro != "Ator" && $hoje > date('Y-m-d', strtotime($userRow['data_contra
             <img src='images/fechar.svg' class='fechar botoes_navegacao' />
           </div>
           <div class='titulo'>
-            Nosso contrato expirou!
+            <? echo $titulo_cadastro; ?>
           </div>
           <div class='descricao'>
             <? echo $descricao_cadastro; ?>
           </div>
           <div class='botoes'>
-            <button class='botao' id='botao_renovar-contrato'>Renovar meu contrato</button>
-            <button class='botao' id='botao_apagar-perfil'>Cancelar meu contrato</button>
+            <button class='botao' id='botao_renovar-contrato'>Renovar meu cadastro</button>
+            <button class='botao' id='botao_apagar-perfil'>Apagar meu perfil</button>
           </div>
         </div>
     </div>

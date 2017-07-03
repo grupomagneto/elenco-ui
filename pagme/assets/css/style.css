@@ -54,6 +54,9 @@ p {
 font-family: Avenir-Book;
 color: #FFFFFF;
 }
+.transition {
+ transition: all 1s ease; 
+}
 .btn-primary {
 background: rgba(255, 255, 255, 0.3);
 border: 1px solid #FFFFFF;
