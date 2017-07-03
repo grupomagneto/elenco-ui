@@ -15,8 +15,6 @@ body::-webkit-scrollbar-thumb
   background-color: rgba(255,255,255,0.60)
 
 .gradient
-  position: absolute
-  z-index: 9999
   display: block
   width: 100%
   height: 100vh
@@ -36,6 +34,10 @@ body::-webkit-scrollbar-thumb
   -moz-background-size: cover
   opacity: 0.4
 
+#intro
+  position: relative
+  width: 100%
+
 .button
   background: $background
   border: $border
@@ -51,19 +53,6 @@ body::-webkit-scrollbar-thumb
 .button-small
   width: 120px
   height: 50px
-
-.container-outline__content
-  height: 100vh
-  display: -webkit-flex
-  display: -moz-flex
-  display: -ms-flex
-  display: -o-flex
-  display: flex
-  -webkit-flex-direction: column
-  -moz-flex-direction: column
-  -ms-flex-direction: column
-  -o-flex-direction: column
-  flex-direction: column
 
 //top site
 #main-header
@@ -109,7 +98,7 @@ nav.top-menu a.line-right:after
   display: inline-block
   width: 1px
   height: 20px
-  margin: -5px 15px
+  margin: -5px 12px
 
 nav.top-menu a:nth-child(2)
   margin-left: -10px
@@ -126,7 +115,7 @@ nav.top-menu a:nth-child(2)
     display: inline-block
     width: 1px
     height: 20px
-    margin: -5px 10px
+    margin: -5px 8px
 
   nav.top-menu a:nth-child(1)
     margin-left: -20px
@@ -266,7 +255,7 @@ nav.top-menu a:nth-child(2)
         font-size: $font-size-medium
 
 .text-after
-  position: relative
+  position: absolute
   z-index: 9999
   display: flex
   display: -webkit-flex
@@ -283,7 +272,7 @@ nav.top-menu a:nth-child(2)
   right: 0
 @media only screen and (min-width: 341px) and (max-width: 767px)
   .text-after
-    top: 65%
+    top: 68%
 
 @media only screen and (max-width: 340px) and (orientation: portrait) 
   .text-after
@@ -305,45 +294,61 @@ nav.top-menu a:nth-child(2)
   bottom: 0
   left: 0
   right: 0
-//after gradient
 
+//after gradient
 #after_gradient
   position: relative
-  display: block
+  top: 100%
+
+.after_gradient
+  display: flex
+  display: -webkit-flex
+  align-items: center
+  -webkit-align-items: center
+  -moz-align-items: center
+  justify-content: center
+  -webkit-justify-content: center 
+  -moz-justify-content: center
   width: 100%
   height: 85px
-  padding: 0px
+  padding: 20px
   margin: 0px
   background: #A1165D
-  top: 100%
   p
     text-align: center
-    padding: 25px
     line-height: 32px
-  h1
-    padding: 20px
-    letter-spacing: -2px
-    line-height: 67px
+
 
 @media only screen and (min-width:768px) and (max-width:991px)
-  #after_gradient
-    p
-      font-size: $font-size-normal
-
-@media only screen and (min-width: 341px) and (max-width: 767px) 
-  #after_gradient
-    p
-      font-size: $font-size-normal
-
-@media only screen and (max-width: 340px) and (orientation: portrait) 
-  #after_gradient
+  .after_gradient
     p
       font-size: $font-size-medium
 
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  .after_gradient
+    p
+      font-size: $font-size-medium
+      padding-top: 20px
+      padding-bottom: 20px
+
+@media only screen and (max-width: 340px) and (orientation: portrait) 
+  .after_gradient
+    p
+      font-size: $font-size-medium
+      padding-top: 20px
+      padding-bottom: 20px
+
+#numbers
+  position: relative
+  top: 100%
+  h1
+    padding-top: 30px
+
 .numbers
+  padding-top: 60px
+  height: 200px
   display: flex
   display: -webkit-flex
-  position: relative
   align-items: center
   -webkit-align-items: center
   -moz-align-items: center
@@ -352,7 +357,7 @@ nav.top-menu a:nth-child(2)
   -moz-justify-content: center
   flex-direction: row
   -webkit-flex-direction: row
-  top: 100%
+  -moz-flex-direction: row
 
 .number-item
   width: 50%
@@ -360,46 +365,116 @@ nav.top-menu a:nth-child(2)
   padding: 10px
   
 @media only screen and (min-width: 341px) and (max-width: 767px) 
+  .numbers
+    height: 800px
+    display: flex
+    display: -webkit-flex
+    position: relative
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+    flex-direction: column
+    -webkit-flex-direction: column
+    -moz-flex-direction: column
+    top: 100%
+  .number-item:nth-child(1)
+    margin-top: -220px
+  .number-item:nth-child(2)
+    margin-top: 120px
+  .number-item:nth-child(3)
+    padding-top: 120px
+  .number-item
+    img
+      width: 150px
+      height: 150px
+
+#registration_mode
+  background: #A1165D
+  position: relative
+  top: 100%
+  height: 300px
 
 .registration_mode
+  display: flex
+  display: -webkit-flex
+  position: relative
+  align-items: center
+  -webkit-align-items: center
+  -moz-align-items: center
+  justify-content: center
+  -webkit-justify-content: center 
+  -moz-justify-content: center
   display: block
   background: #A1165D
   margin-top: 20px
-  position: relative
-  top: 100%
   h1
     margin: 50px auto auto auto
     letter-spacing: -2px
-    padding: 10px
+    padding-top: 30px
+    line-height: 67px
+    letter-spacing: -2px
   p
-    margin-top: -40px
     line-height: 32px
     color: rgba(255,255,255,0.87)
 
 .botoes_modalidades
-  height: 320px
   position: relative
   display: flex
-  flex-wrap: wrap
-  -webkit-flex-wrap: wrap
+  display: -webkit-flex
   align-items: flex-end
   -webkit-align-items: flex-end
   -moz-align-items: flex-end
   justify-content: center
   -webkit-justify-content: center 
   -moz-justify-content: center
-  margin-top: -150px
-  padding: 30px
+  flex-direction: row
+  -webkit-flex-direction: row
+  -moz-flex-direction: row
+  padding: 50px
+
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  #registration_mode
+    height: 550px
+  .registration_mode
+    h1
+      margin: 50px auto auto auto
+      letter-spacing: -2px
+      padding-top: 30px
+      line-height: 67px
+      font-size: $font-size-large
+      letter-spacing: -2px
+    p
+      line-height: 32px
+      color: rgba(255,255,255,0.87)
+
+  .botoes_modalidades
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+    flex-direction: column
+    -webkit-flex-direction: column
+    -moz-flex-direction: column
 
 .gratuito, .premium, .profissional
   border: none
   background: transparent
 
 // testimony
+#testimony
+  position: relative
+  top: 100%
+  padding-top: 45px
+
 .testimony
   background: $background-testimony
   width: 100%
-  height: 350px
+  height: 420px
   display: flex
   display: -webkit-flex
   align-items: center
@@ -408,13 +483,111 @@ nav.top-menu a:nth-child(2)
   justify-content: center
   -webkit-justify-content: center 
   -moz-justify-content: center
-  position: relative
-  top: 100%
+
+//SLIDE TESTIMONIAL
+.slider 
+  width: 50%
+  margin: 200px auto
+
+
+.slick-slide
+  display: flex
+  display: -webkit-flex
+  align-items: center
+  -webkit-align-items: center
+  -moz-align-items: center
+  justify-content: center
+  -webkit-justify-content: center 
+  -moz-justify-content: center
+  height: 350px
+  max-width: 200px
+  width: 200px
+
+
+// .slick-slide img
+//   width: 100%
+
+.slick-prev:before,
+.slick-next:before
+  color: black
+
+//arrow
+
+.slick-prev, .slick-next
+  font-size: 0
+  line-height: 0
+  position: absolute
+  top: 50%
+  display: block
+  width: 20px
+  height: 20px
+  padding: 0
+  -webkit-transform: translate(0, -50%)
+  -ms-transform: translate(0, -50%)
+  transform: translate(0, -50%)
+  cursor: pointer
+  color: transparent
+  border: none
+  background: transparent
+
+.slick-prev
+  &:hover, &:focus
+    color: transparent
+    background: transparent
+
+.slick-next
+  &:hover, &:focus
+    color: transparent
+    background: transparent
+
+.slick-prev
+  &:hover:before, &:focus:before
+    opacity: 1
+
+.slick-next
+  &:hover:before, &:focus:before
+    opacity: 1
+
+.slick-prev.slick-disabled:before, .slick-next.slick-disabled:before
+  opacity: .25
+
+.slick-prev:before, .slick-next:before
+  font-family: 'slick'
+  font-size: 20px
+  line-height: 1
+  opacity: .75
+  color: black
+
+.slick-prev
+  left: -25px
+
+[dir='rtl'] .slick-prev
+  right: -25px
+  left: auto
+
+.slick-prev:before
+  content: '<'
+
+[dir='rtl'] .slick-prev:before
+  content: '>'
+
+.slick-next
+  right: -25px
+
+[dir='rtl'] .slick-next
+  right: auto
+  left: -25px
+
+.slick-next:before
+  content: '>'
+
+[dir='rtl'] .slick-next:before
+  content: '<'
 
 .testimony-content
   background: $background-testimony
+  height: 250px
   width: 100%
-  height: 350px
   display: flex
   display: -webkit-flex
   align-items: center
@@ -423,11 +596,6 @@ nav.top-menu a:nth-child(2)
   justify-content: center
   -webkit-justify-content: center 
   -moz-justify-content: center
-  position: absolute
-  top: 0
-  bottom: 0
-  left: -25%
-  right: 0
 
 .circle
   width: 200px
@@ -441,114 +609,68 @@ nav.top-menu a:nth-child(2)
   overflow: hidden
 
 .arroba
-  position: absolute
+  position: relative
   display: block
-  margin-top: 165px
-  margin-left: 10px
+  margin-top: 300px
+  margin-left: 60px
   p
     margin-left: -20px
     text-align: left
     span.arroba_since
       position: absolute
-      margin-top: -10px
-      margin-left: -70px
+      margin-top: 2px
+      margin-left: 1px
       text-align: left
 
   p#depoimento
     position: relative
     display: block
-    max-width: 220px
-    margin-top: -20px
-    margin-left: 5px
-    text-align: left 
-    line-height: 20px
-
-.circle-2
-  width: 200px
-  height: 200px
-  float: left
-  margin: 10px
-  margin-left: 220px
-  margin-top: 18px
-  padding: 0
-  position: absolute
-  background: $background-testimony
-  border-radius: 50%
-  overflow: hidden
-
-.arroba-2
-  position: absolute
-  display: block
-  margin-top: 165px
-  margin-left: 220px
-  p
-    margin-left: -20px
-    text-align: left
-    span.arroba_since-2
-      position: absolute
-      margin-top: -10px
-      margin-left: -70px
-      text-align: left
-
-  p#depoimento-2
-    position: relative
-    display: block
-    max-width: 220px
-    margin-top: -20px
-    margin-left: 10px
-    text-align: left 
-    line-height: 20px
-
-.circle-3
-  width: 200px
-  height: 200px
-  float: left
-  margin: 10px
-  margin-left: 420px
-  margin-top: 30px
-  padding: 0
-  position: absolute
-  background: $background-testimony
-  border-radius: 50%
-  overflow: hidden
-
-.arroba-3
-  position: absolute
-  display: block
-  margin-top: 165px
-  margin-left: 420px
-  p
-    margin-left: -20px
-    text-align: left
-    span.arroba_since-3
-      position: absolute
-      margin-top: -10px
-      margin-left: -60px
-      text-align: left
-
-  p#depoimento-3
-    position: relative
-    display: block
-    max-width: 220px
-    margin-top: -20px
-    margin-left: 20px
+    max-width: 180px
+    margin-top: 25px
+    margin-left: -22px
     text-align: left 
     line-height: 20px
 
 //como funciona?
-
-.how
-  background: #A1165D
-  height: 550px
+#how
   position: relative
   top: 100%
+  background: #A1165D
+  height: 550px
+
 
 .how-title
   width: 600px
   position: relative
-  display: block
-  padding: 0px
-  text-align center
+  bottom: 0
+  left: 50%
+  margin-left: -300px
+  right: 0
+  top: 20px
+  h1
+    display: block
+    position: relative
+    margin: 0 auto
+  span.how-subtitle
+    position: relative
+    bottom: 0
+    left: 50%
+    margin-left: -300px
+    right: 0
+    width: 600px
+    display: flex
+    display: -webkit-flex
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+    margin-top: 10px
+
+.how-detail
+  padding-top: 80px
+  position: relative
   display: flex
   display: -webkit-flex
   align-items: center
@@ -557,26 +679,9 @@ nav.top-menu a:nth-child(2)
   justify-content: center
   -webkit-justify-content: center 
   -moz-justify-content: center
-  bottom: 0
-  left: 50%
-  margin-left: -300px
-  right: 0
-  top: 0
-  h1
-    display: block
-    position: relative
-    margin: 0 auto
-    margin-top: 30px
-  span.how-subtitle
-    margin-top: -25px
-
-.how-detail
-  width: 700px
-  display: flex
-  display: -webkit-flex
-  position: relative
-  left: 50%
-  margin-left: -350px
+  flex-direction: row
+  -webkit-flex-direction: row
+  -moz-flex-direction: row
 
 .how-detail_item
   width: 200px
@@ -608,10 +713,80 @@ nav.top-menu a:nth-child(2)
   top: 90px
 
 
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  #how
+    height: 930px
+  .how-title
+    h1
+      font-size: $font-size-large
+      display: block
+      position: relative
+      margin: 0 auto
+    span.how-subtitle
+      font-size: $font-size-medium
+  .how-detail
+    flex-direction: column
+    -webkit-flex-direction: column
+    -moz-flex-direction: column
+    img
+      width: 120px
+  .how-detail_item
+    width: 200px
+    margin-left: -5%
+    height: 120px
+    padding: 10px
+
+  img.arrow-right 
+    width: 20px
+    margin-top: 30px
+    -ms-transform: rotate(90deg) /* IE 9 */
+    -webkit-transform: rotate(90deg) /* Chrome, Safari, Opera */
+    -moz-transform: rotate(90deg) /* Mozilla */
+    transform: rotate(90deg)
+
+  .how-footer
+    max-width: 350px
+    margin-left: -175px
+
+@media only screen and (max-width: 340px) and (orientation: portrait) 
+  #how
+    height: 930px
+  .how-title
+    h1
+      font-size: $font-size-large
+      display: block
+      position: relative
+      margin: 0 auto
+    span.how-subtitle
+      font-size: $font-size-medium
+  .how-detail
+    flex-direction: column
+    -webkit-flex-direction: column
+    -moz-flex-direction: column
+    img
+      width: 120px
+  .how-detail_item
+    width: 200px
+    margin-left: -5%
+    height: 120px
+    padding: 10px
+
+  img.arrow-right 
+    width: 20px
+    margin-top: 30px
+    -ms-transform: rotate(90deg) /* IE 9 */
+    -webkit-transform: rotate(90deg) /* Chrome, Safari, Opera */
+    -moz-transform: rotate(90deg) /* Mozilla */
+    transform: rotate(90deg)
+
+  .how-footer
+    max-width: 350px
+    margin-left: -175px
+
 //FOOTER
 section#footer
-  position: absolute
-  top: 360%
+  position: relative
+  top: 100%
   width: 100%
   height: 100px
   background: #441160
@@ -623,6 +798,10 @@ section#footer
   justify-content: center
   -webkit-justify-content: center 
   -moz-justify-content: center
+  flex-direction: row
+  -webkit-flex-direction: row
+  -moz-flex-direction: row
+
 
 .footer-social
   width: 300px
@@ -631,6 +810,7 @@ section#footer
     text-align: left
     margin-left: 8px
     margin-bottom: 10px
+
 
 .footer-social__img ul
   padding: 0px
@@ -659,12 +839,24 @@ section#footer
   display: block
   text-align: left
 
+
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  section#footer
+    height: 310px
+    padding: 10px
+    flex-direction: column
+    -webkit-flex-direction: column
+    -moz-flex-direction: column
+
 .last-footer
   position: relative
-  top: 362%
+  top: 100%
   width: 100%
   height: 30px
+  padding-right: 20px
+  padding-left: 20px
   background: #2F0B43
+  text-align center
   display: flex
   display: -webkit-flex
   align-items: center
@@ -674,3 +866,6 @@ section#footer
   -webkit-justify-content: center 
   -moz-justify-content: center
 
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  .last-footer
+    height: 80px
