@@ -437,7 +437,7 @@ nav.top-menu a:nth-child(2)
 
 @media only screen and (min-width: 341px) and (max-width: 767px) 
   #registration_mode
-    height: 550px
+    height: 580px
   .registration_mode
     h1
       margin: 50px auto auto auto
@@ -469,10 +469,10 @@ nav.top-menu a:nth-child(2)
 #testimony
   position: relative
   top: 100%
-  padding-top: 45px
 
 .testimony
   background: $background-testimony
+  position: relative
   width: 100%
   height: 420px
   display: flex
@@ -485,9 +485,10 @@ nav.top-menu a:nth-child(2)
   -moz-justify-content: center
 
 //SLIDE TESTIMONIAL
-.slider 
-  width: 50%
-  margin: 200px auto
+.slider
+  position: relative 
+  width: 590px
+  margin: 50px 50px
 
 
 .slick-slide
@@ -504,8 +505,9 @@ nav.top-menu a:nth-child(2)
   width: 200px
 
 
-// .slick-slide img
-//   width: 100%
+.slick-slide img 
+  width: 189px 
+  height: 196px
 
 .slick-prev:before,
 .slick-next:before
@@ -598,8 +600,8 @@ nav.top-menu a:nth-child(2)
   -moz-justify-content: center
 
 .circle
-  width: 200px
-  height: 200px
+  width: 189px 
+  height: 196px
   float: left
   margin: 10px
   padding: 0
@@ -607,6 +609,9 @@ nav.top-menu a:nth-child(2)
   background: $background-testimony
   border-radius: 50%
   overflow: hidden
+  img
+    width: 189px 
+    height: 196px
 
 .arroba
   position: relative
@@ -630,6 +635,94 @@ nav.top-menu a:nth-child(2)
     margin-left: -22px
     text-align: left 
     line-height: 20px
+
+@media only screen and (min-width: 341px) and (max-width: 767px)
+  #testimony
+    position: relative
+    top: 100%
+
+  .testimony
+    background: $background-testimony
+    position: relative
+    width: 100%
+    height: 420px
+    display: flex
+    display: -webkit-flex
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+
+  .slider
+    position: relative 
+    width: 320px
+    margin: 20px auto
+
+
+  .slick-slide
+    display: flex
+    display: -webkit-flex
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+    height: 320px
+    max-width: 320px
+    width: 320px
+
+  .testimony-content
+    background: $background-testimony
+    height: 250px
+    width: 100%
+    display: flex
+    display: -webkit-flex
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+
+  .circle
+    width: 150px 
+    height: 150px
+    float: left
+    margin: 0
+    padding: 0
+    position: absolute
+    background: $background-testimony
+    border-radius: 50%
+    overflow: hidden
+    img
+      width: 150px 
+      height: 150px
+
+  .arroba
+    position: relative
+    display: block
+    margin-top: 300px
+    margin-left: 35px
+    p
+      margin-left: -20px
+      text-align: left
+      span.arroba_since
+        position: absolute
+        margin-top: 2px
+        margin-left: 1px
+        text-align: left
+
+    p#depoimento
+      position: relative
+      display: block
+      max-width: 180px
+      margin-top: 25px
+      margin-left: -22px
+      text-align: left 
+      line-height: 20px
 
 //como funciona?
 #how
