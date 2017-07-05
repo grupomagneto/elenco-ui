@@ -54,6 +54,10 @@ body::-webkit-scrollbar-thumb
   width: 120px
   height: 50px
 
+.navbar
+  background: transparent
+  border: transparent
+
 //top site
 #main-header
   position: absolute
@@ -165,16 +169,15 @@ nav.top-menu a:nth-child(2)
 
 @media only screen and (min-width: 341px) and (max-width: 767px) 
   #log
-    max-width: 300px 
+    max-width: 330px 
     text-align: center
     font-size: $font-size-normal
 
 @media only screen and (max-width: 340px) and (orientation: portrait) 
   #log
-    max-width: 300px
+    max-width: 330px
     text-align: center
     font-size: $font-size-medium
-  
 
 //container outline button
 .container-outline__button
@@ -318,7 +321,6 @@ nav.top-menu a:nth-child(2)
     text-align: center
     line-height: 32px
 
-
 @media only screen and (min-width:768px) and (max-width:991px)
   .after_gradient
     p
@@ -338,6 +340,7 @@ nav.top-menu a:nth-child(2)
       padding-top: 20px
       padding-bottom: 20px
 
+// Nossos números
 #numbers
   position: relative
   top: 100%
@@ -345,8 +348,8 @@ nav.top-menu a:nth-child(2)
     padding-top: 30px
 
 .numbers
-  padding-top: 60px
-  height: 200px
+  padding-top: 5px
+  height: 250px
   display: flex
   display: -webkit-flex
   align-items: center
@@ -361,12 +364,26 @@ nav.top-menu a:nth-child(2)
 
 .number-item
   width: 50%
-  height: 175px
+  height: 120px
   padding: 10px
-  
-@media only screen and (min-width: 341px) and (max-width: 767px) 
+
+p.number-title
+  margin-top: 20px
+  line-height: 28px
+  text-align: center
+
+p.number-title__cache
+  margin-top: 25px
+  line-height: 12px
+
+span.number-subtitle
+  margin-top: -10px
+  line-height: 5px
+
+
+@media only screen and (min-width:768px) and (max-width:991px)
   .numbers
-    height: 800px
+    height: 880px
     display: flex
     display: -webkit-flex
     position: relative
@@ -383,19 +400,97 @@ nav.top-menu a:nth-child(2)
   .number-item:nth-child(1)
     margin-top: -220px
   .number-item:nth-child(2)
-    margin-top: 120px
+    margin-top: 180px
+  p.number-title
+    font-size: $font-size-large-medium
+  p.number-title__cache
+    margin-top: 25px
+    margin-left: -25px
+    line-height: 15px
   .number-item:nth-child(3)
-    padding-top: 120px
+    padding-top: 180px
   .number-item
     img
       width: 150px
       height: 150px
 
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  .numbers
+    height: 880px
+    display: flex
+    display: -webkit-flex
+    position: relative
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+    flex-direction: column
+    -webkit-flex-direction: column
+    -moz-flex-direction: column
+    top: 100%
+  .number-item:nth-child(1)
+    margin-top: -220px
+  .number-item:nth-child(2)
+    margin-top: 180px
+  p.number-title
+    font-size: $font-size-large-medium
+  .number-item:nth-child(3)
+    padding-top: 180px
+  .number-item
+    img
+      width: 150px
+      height: 150px
+  p.number-title__cache
+    margin-top: 25px
+    margin-left: -20px
+    line-height: 25px
+  span.number-subtitle__cache
+    margin-right: -20px
+
+
+@media only screen and (max-width: 340px) and (orientation: portrait) 
+  .numbers
+    height: 880px
+    display: flex
+    display: -webkit-flex
+    position: relative
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+    flex-direction: column
+    -webkit-flex-direction: column
+    -moz-flex-direction: column
+    top: 100%
+  .number-item:nth-child(1)
+    margin-top: -220px
+  .number-item:nth-child(2)
+    margin-top: 180px
+  p.number-title
+    font-size: $font-size-large-medium
+  .number-item:nth-child(3)
+    padding-top: 180px
+  .number-item
+    img
+      width: 150px
+      height: 150px
+  p.number-title__cache
+    margin-top: 25px
+    margin-left: -50px
+    line-height: 25px
+  span.number-subtitle__cache
+    margin-right: -70px
+
+//Modalidades de cadastro
 #registration_mode
   background: #A1165D
   position: relative
   top: 100%
-  height: 300px
+  height: 350px
 
 .registration_mode
   display: flex
@@ -435,16 +530,69 @@ nav.top-menu a:nth-child(2)
   -moz-flex-direction: row
   padding: 50px
 
-@media only screen and (min-width: 341px) and (max-width: 767px) 
+@media only screen and (min-width:768px) and (max-width:991px)
   #registration_mode
-    height: 580px
+    height: 680px
   .registration_mode
     h1
       margin: 50px auto auto auto
       letter-spacing: -2px
       padding-top: 30px
       line-height: 67px
-      font-size: $font-size-large
+      font-size: $font-size-large-medium
+      letter-spacing: -2px
+    p
+      line-height: 32px
+      color: rgba(255,255,255,0.87)
+
+  .botoes_modalidades
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+    flex-direction: column
+    -webkit-flex-direction: column
+    -moz-flex-direction: column
+
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  #registration_mode
+    height: 680px
+  .registration_mode
+    h1
+      margin: 50px auto auto auto
+      letter-spacing: -2px
+      padding-top: 30px
+      line-height: 67px
+      font-size: $font-size-large-medium
+      letter-spacing: -2px
+    p
+      line-height: 32px
+      color: rgba(255,255,255,0.87)
+
+  .botoes_modalidades
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+    flex-direction: column
+    -webkit-flex-direction: column
+    -moz-flex-direction: column
+
+
+@media only screen and (max-width: 340px) and (orientation: portrait)
+  #registration_mode
+    height: 680px
+  .registration_mode
+    h1
+      margin: 50px auto auto auto
+      letter-spacing: -2px
+      padding-top: 30px
+      line-height: 67px
+      font-size: $font-size-large-medium
       letter-spacing: -2px
     p
       line-height: 32px
@@ -490,7 +638,6 @@ nav.top-menu a:nth-child(2)
   width: 590px
   margin: 50px 50px
 
-
 .slick-slide
   display: flex
   display: -webkit-flex
@@ -514,7 +661,6 @@ nav.top-menu a:nth-child(2)
   color: black
 
 //arrow
-
 .slick-prev, .slick-next
   font-size: 0
   line-height: 0
@@ -639,13 +785,13 @@ nav.top-menu a:nth-child(2)
 @media only screen and (min-width: 341px) and (max-width: 767px)
   #testimony
     position: relative
+    background: $background-testimony
     top: 100%
+    height: 420px
 
   .testimony
-    background: $background-testimony
     position: relative
     width: 100%
-    height: 420px
     display: flex
     display: -webkit-flex
     align-items: center
@@ -658,8 +804,7 @@ nav.top-menu a:nth-child(2)
   .slider
     position: relative 
     width: 320px
-    margin: 20px auto
-
+    margin: 50px auto
 
   .slick-slide
     display: flex
@@ -670,13 +815,13 @@ nav.top-menu a:nth-child(2)
     justify-content: center
     -webkit-justify-content: center 
     -moz-justify-content: center
-    height: 320px
-    max-width: 320px
-    width: 320px
+    height: 350px
+    max-width: 310px
+    width: 310px
 
   .testimony-content
     background: $background-testimony
-    height: 250px
+    height: 260px
     width: 100%
     display: flex
     display: -webkit-flex
@@ -704,7 +849,7 @@ nav.top-menu a:nth-child(2)
   .arroba
     position: relative
     display: block
-    margin-top: 300px
+    margin-top: 280px
     margin-left: 35px
     p
       margin-left: -20px
@@ -724,13 +869,112 @@ nav.top-menu a:nth-child(2)
       text-align: left 
       line-height: 20px
 
+  .slick-prev
+    padding-left: 15px
+
+  .slick-next
+    padding-right: 25px
+
+
+@media only screen and (max-width: 340px) and (orientation: portrait)
+  #testimony
+    position: relative
+    background: $background-testimony
+    top: 100%
+    height: 420px
+
+  .testimony
+    position: relative
+    width: 100%
+    display: flex
+    display: -webkit-flex
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+
+  .slider
+    position: relative 
+    width: 320px
+    margin: 50px auto
+
+  .slick-slide
+    display: flex
+    display: -webkit-flex
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+    height: 350px
+    max-width: 310px
+    width: 310px
+
+  .testimony-content
+    background: $background-testimony
+    height: 260px
+    width: 100%
+    display: flex
+    display: -webkit-flex
+    align-items: center
+    -webkit-align-items: center
+    -moz-align-items: center
+    justify-content: center
+    -webkit-justify-content: center 
+    -moz-justify-content: center
+
+  .circle
+    width: 150px 
+    height: 150px
+    float: left
+    margin: 0
+    padding: 0
+    position: absolute
+    background: $background-testimony
+    border-radius: 50%
+    overflow: hidden
+    img
+      width: 150px 
+      height: 150px
+
+  .arroba
+    position: relative
+    display: block
+    margin-top: 280px
+    margin-left: 35px
+    p
+      margin-left: -20px
+      text-align: left
+      span.arroba_since
+        position: absolute
+        margin-top: 2px
+        margin-left: 1px
+        text-align: left
+
+    p#depoimento
+      position: relative
+      display: block
+      max-width: 180px
+      margin-top: 25px
+      margin-left: -22px
+      text-align: left 
+      line-height: 20px
+
+  .slick-prev
+    padding-left: 15px
+
+  .slick-next
+    padding-right: 25px
+
 //como funciona?
 #how
   position: relative
   top: 100%
   background: #A1165D
   height: 550px
-
 
 .how-title
   width: 600px
@@ -805,13 +1049,12 @@ nav.top-menu a:nth-child(2)
   right: 0
   top: 90px
 
-
-@media only screen and (min-width: 341px) and (max-width: 767px) 
+@media only screen and (min-width:768px) and (max-width:991px)
   #how
-    height: 930px
+    height: 980px
   .how-title
     h1
-      font-size: $font-size-large
+      font-size: $font-size-large-medium
       display: block
       position: relative
       margin: 0 auto
@@ -840,6 +1083,45 @@ nav.top-menu a:nth-child(2)
   .how-footer
     max-width: 350px
     margin-left: -175px
+    padding-right: 5px
+    padding-left: 5px
+
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  #how
+    height: 980px
+  .how-title
+    h1
+      font-size: $font-size-large-medium
+      display: block
+      position: relative
+      margin: 0 auto
+    span.how-subtitle
+      font-size: $font-size-medium
+  .how-detail
+    flex-direction: column
+    -webkit-flex-direction: column
+    -moz-flex-direction: column
+    img
+      width: 120px
+  .how-detail_item
+    width: 200px
+    margin-left: -5%
+    height: 120px
+    padding: 10px
+
+  img.arrow-right 
+    width: 20px
+    margin-top: 30px
+    -ms-transform: rotate(90deg) /* IE 9 */
+    -webkit-transform: rotate(90deg) /* Chrome, Safari, Opera */
+    -moz-transform: rotate(90deg) /* Mozilla */
+    transform: rotate(90deg)
+
+  .how-footer
+    max-width: 350px
+    margin-left: -175px
+    padding-right: 5px
+    padding-left: 5px
 
 @media only screen and (max-width: 340px) and (orientation: portrait) 
   #how
@@ -873,8 +1155,10 @@ nav.top-menu a:nth-child(2)
     transform: rotate(90deg)
 
   .how-footer
-    max-width: 350px
-    margin-left: -175px
+    max-width: 300px
+    margin-left: -150px
+    padding-right: 10px
+    padding-left: 10px
 
 //FOOTER
 section#footer
@@ -903,7 +1187,6 @@ section#footer
     text-align: left
     margin-left: 8px
     margin-bottom: 10px
-
 
 .footer-social__img ul
   padding: 0px
@@ -941,6 +1224,14 @@ section#footer
     -webkit-flex-direction: column
     -moz-flex-direction: column
 
+@media only screen and (max-width: 340px) and (orientation: portrait)
+  section#footer
+    height: 310px
+    padding: 10px
+    flex-direction: column
+    -webkit-flex-direction: column
+    -moz-flex-direction: column
+
 .last-footer
   position: relative
   top: 100%
@@ -960,5 +1251,9 @@ section#footer
   -moz-justify-content: center
 
 @media only screen and (min-width: 341px) and (max-width: 767px) 
+  .last-footer
+    height: 80px
+
+@media only screen and (max-width: 340px) and (orientation: portrait)
   .last-footer
     height: 80px

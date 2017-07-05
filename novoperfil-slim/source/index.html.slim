@@ -4,12 +4,27 @@ title: Magneto Elenco
 
 section#intro.gradient
 	header#main-header
-	  .container
-	    a.logo.cursor href='#'
-	    	img.cursor src="images/logo.svg" alt=""/
-	    nav.top-menu.cursor
-	      a.line-right.font-family.font-normal.color-primary.cursor href='#' Entrar
-	      a.font-family.font-normal.color-primary.cursor href='#' Cadastrar
+	  .navbar.navbar-default.navbar-static-top.navbar-inverse
+      .container
+        button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand href="#"
+	  	   	img.cursor src="images/logo.svg" alt=""/
+        .navbar-collapse.collapse.navbar-responsive-collapse
+          ul.nav.navbar-nav
+            li= link_to "Link 1", "/path1"
+            li= link_to "Link 2", "/path2"
+            li= link_to "Link 3", "/path3"
+
+
+	  / .container
+	  /   a.logo.cursor href='#'
+	  /   	img.cursor src="images/logo.svg" alt=""/
+	  /   nav.top-menu.cursor
+	  /     a.line-right.font-family.font-normal.color-primary.cursor href='#' Entrar
+	  /     a.font-family.font-normal.color-primary.cursor href='#' Cadastrar
 
 	#log.font-xlarge.font-family.color-primary.bold
 
@@ -33,32 +48,32 @@ section#after_gradient
 		p.font-family.font-large.color-primary Agência e marketplace de atores e modelos, num só lugar.
 
 section#numbers
-	h1.font-family.font-xlarge.color-secondary Nossos números
+	h1.font-family.font-xlarge.color-secondary.bold Nossos números
 	.numbers
 		.number-item
 			img src="images/img_perfil.svg" alt="perfil"/
-			p.font-family.font-large.color-secondary
+			p.number-title.font-family.font-xlarge.color-secondary
 			  | 6.671
 			  br/
-			  span.font-family.color-secondary.font-small perfis cadastrados
+			  span.number-subtitle.font-family.color-secondary.font-small perfis cadastrados
 		.number-item
 			img src="images/img_cache.svg" alt="cache"/
-			p.font-family.font-large.color-secondary
+			p.number-title.number-title__cache.font-family.font-xlarge.color-secondary
 			  span.font-medium R$
 			  | 1.822.461,
 			  span.font-medium 33
 			  br/
-			  span.font-family.color-secondary.font-small em cachês pagos desde 2009
+			  span.number-subtitle.number-subtitle__cache.font-family.color-secondary.font-small em cachês pagos desde 2009
 		.number-item
 			img src="images/img_job.svg" alt="job"/
-			p.font-family.font-large.color-secondary
+			p.number-title.font-family.font-xlarge.color-secondary
 			  | 8.101
 			  br/
-			  span.font-family.color-secondary.font-small trabalhos realizados
+			  span.number-subtitle.font-family.color-secondary.font-small trabalhos realizados
 
 section#registration_mode
 	.registration_mode
-		h1.font-family.font-xlarge.color-primary Modalidades de cadastro
+		h1.font-family.font-xlarge.color-primary.bold Modalidades de cadastro
 		p.font-family.font-medium Escolha o cadastro ideal para o seu perfil e comece a trabalhar
 		
 		.botoes_modalidades
@@ -120,7 +135,7 @@ section#testimony
 section#how							
 	.how
 		.how-title
-			h1.color-primary.font-xlarge
+			h1.color-primary.font-xlarge.bold
 			  | Como funciona?
 			  br/
 			  span.how-subtitle.color-primary.font-normal para atores, modelos e talentos
