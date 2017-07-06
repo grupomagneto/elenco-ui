@@ -54,9 +54,114 @@ body::-webkit-scrollbar-thumb
   width: 120px
   height: 50px
 
-.navbar
+.cf:before,
+.cf:after 
+  content: " "
+  display: table
+
+.cf:after 
+  clear: both
+
+.cf 
+  *zoom: 1
+
+.container 
+  position: relative
+  max-width: 100%
+  margin: 0 auto
+
+@media only screen and (max-width: 600px) 
+  .container 
+    max-width: 90%
+  
+.site-header
+  position: absolute
+  z-index: 9999
+  width: 100%
+  padding: 15px
+  .site-logo
+    float: left
+    width: 50%
+  .site-nav
+    float: left
+    width: 50%
+    margin: 5px 0 0
+    text-align: right
+    li
+      display: inline-block
+      margin: 0 5px
+    a
+      font-size: 1.1em
+      display: block
+      padding: 5px
+      text-decoration: none
+      text-transform: capitalize
+      transition: color .2s ease
+      border: 0
+      transition: color .5s ease-in-out
+  .site-logo
+    text-align: left
+    font-weight: 700
+    margin: 0
+    h1
+      margin: 0
+
+@media only screen and (max-width: 600px)
+  .site-header
+    padding: 15px 0
+
+.site-nav ul, .sidebar ul
+  list-style: none
+  padding: 0
+  margin: 0
+
+#responsive-menu
+  display: none
+  margin: 0
+  padding: 20px 15px
+  position: relative
+  z-index: 9999
+  top: 73px
+  left: 0
+  width: 100%
   background: transparent
-  border: transparent
+  li
+    display: block
+  a
+    display: block
+    border: none
+    margin: 20px 0
+    font-size: 1.5em
+    transition: color .2s ease-in
+
+@media only screen and (min-width: 600px)
+  #responsive-menu
+    z-index: 9999
+    display: none !important
+
+#std-menu
+  display: block
+
+@media only screen and (max-width: 600px)
+  #std-menu
+    display: none
+
+#menu-trigger
+  display: none
+  transition: none
+  border: 0
+  .fa
+    color: $color-primary
+    transition: color .2s ease-in-out
+
+@media only screen and (min-width: 600px)
+  #menu-trigger
+    display: none
+
+@media only screen and (max-width: 600px)
+  #menu-trigger
+    display: block
+
 
 //top site
 #main-header
@@ -95,6 +200,13 @@ body::-webkit-scrollbar-thumb
 #main-header nav a
   text-transform: capitalize
 
+a.line-right:after
+  background: #FFFFFF
+  content: ""
+  display: inline-block
+  width: 1px
+  height: 20px
+  margin: -5px 12px
 //menu
 nav.top-menu a.line-right:after
   background: #FFFFFF
