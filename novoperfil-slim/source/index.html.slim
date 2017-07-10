@@ -2,14 +2,24 @@
 title: Magneto Elenco
 ---
 
-section.gradient
-	header#main-header
+section#intro.gradient
+	header.site-header.cf
 	  .container
-	    a.logo.cursor href='#'
-	    	img.cursor src="images/logo.svg" alt=""/
-	    nav.top-menu.cursor
-	      a.line-right.font-family.font-normal.color-primary.cursor href='#' Entrar
-	      a.font-family.font-normal.color-primary.cursor href='#' Cadastrar
+	    .site-logo
+	      img.cursor src="images/logo.svg" alt=""/
+	    nav.site-nav
+	      ul#std-menu
+	        li
+	          a.active.line-right.font-family.font-normal.color-primary.cursor href=""  Entrar
+	        li
+	          a.font-family.font-normal.color-primary.cursor href=""  Cadastrar
+	      a#menu-trigger href="" 
+	        i.fa.fa-bars.fa-lg
+	ul#responsive-menu
+	  li
+	    a.active.font-family.font-normal.color-primary.cursor href=""  Entrar
+	  li
+	    a.font-family.font-normal.color-primary.cursor href=""  Cadastrar
 
 	#log.font-xlarge.font-family.color-primary.bold
 
@@ -26,33 +36,39 @@ section.gradient
 	a.scroll-down.cursor href="#after_gradient"
 		img.cursor src="images/scroll-down.svg" alt=""/
 
+
+
 section#after_gradient
-	p.font-family.font-large.color-primary Agência e marketplace de atores e modelos, num só lugar.
-	h1.font-family.font-xlarge.color-secondary Nossos números
+	.after_gradient
+		p.font-family.font-large.color-primary Agência e marketplace de atores e modelos, num só lugar.
+
+section#numbers
+	h1.font-family.font-xlarge.color-secondary.bold Nossos números
 	.numbers
 		.number-item
 			img src="images/img_perfil.svg" alt="perfil"/
-			p.font-family.font-large.color-secondary
+			p.number-title.font-family.font-xlarge.color-secondary
 			  | 6.671
 			  br/
-			  span.font-family.color-secondary.font-small perfis cadastrados
+			  span.number-subtitle.font-family.color-secondary.font-small perfis cadastrados
 		.number-item
 			img src="images/img_cache.svg" alt="cache"/
-			p.font-family.font-large.color-secondary
+			p.number-title.number-title__cache.font-family.font-xlarge.color-secondary
 			  span.font-medium R$
 			  | 1.822.461,
 			  span.font-medium 33
 			  br/
-			  span.font-family.color-secondary.font-small em cachês pagos desde 2009
+			  span.number-subtitle.number-subtitle__cache.font-family.color-secondary.font-small em cachês pagos desde 2009
 		.number-item
 			img src="images/img_job.svg" alt="job"/
-			p.font-family.font-large.color-secondary
+			p.number-title.font-family.font-xlarge.color-secondary
 			  | 8.101
 			  br/
-			  span.font-family.color-secondary.font-small trabalhos realizados
+			  span.number-subtitle.font-family.color-secondary.font-small trabalhos realizados
 
+section#registration_mode
 	.registration_mode
-		h1.font-family.font-xlarge.color-primary Modalidades de cadastro
+		h1.font-family.font-xlarge.color-primary.bold Modalidades de cadastro
 		p.font-family.font-medium Escolha o cadastro ideal para o seu perfil e comece a trabalhar
 		
 		.botoes_modalidades
@@ -63,42 +79,58 @@ section#after_gradient
 		  button.button-border_none.profissional
 		    img src="images/botao-profissional.svg" /
 
+section#testimony
 	.testimony
-		.testimony-content
-			.circle
-				img src="images/img-1.png" alt="img-1"/
-			.arroba
-				p.color-secondary.font-medium
-				  | @camila_vilasboa
-				  br/
-				  span.arroba_since.font-family.color-secondary.font-small agenciada desde 2010
-				p#depoimento.color-secondary.italic.font-small
-					| “Sou Premium e meu investimento já voltou várias vezes em todos esses anos.”
+		section.regular.slider
+		  div
+		    .testimony-content
+					.circle
+						img src="images/img-1.png" alt="img-1"/
+					.arroba
+						p.color-secondary.font-medium
+						  | @camila_vilasboa
+						  br/
+						  span.arroba_since.font-family.color-secondary.font-small agenciada desde 2010
+						p#depoimento.color-secondary.italic.font-small
+							| “Sou Premium e meu investimento já voltou várias vezes em todos esses anos.”
+		  div
+		    .testimony-content
+					.circle
+						img src="images/img-1.png" alt="img-1"/
+					.arroba
+						p.color-secondary.font-medium
+						  | @camila_vilasboa
+						  br/
+						  span.arroba_since.font-family.color-secondary.font-small agenciada desde 2010
+						p#depoimento.color-secondary.italic.font-small
+							| “Sou Premium e meu investimento já voltou várias vezes em todos esses anos.”
+		  div
+		    .testimony-content
+					.circle
+						img src="images/img-1.png" alt="img-2"/
+					.arroba
+						p.color-secondary.font-medium
+						  | @daniel_trindade
+						  br/
+						  span.arroba_since.font-family.color-secondary.font-small agenciado desde 2011
+						p#depoimento.color-secondary.italic.font-small
+							| “Ganhei meu tempo usando meu celular para conseguir mais trabalhos. Recomendo.”
+		  div
+		    .testimony-content
+					.circle
+						img src="images/img-1.png" alt="img-3"/
+					.arroba
+						p.color-secondary.font-medium
+						  | @joana_ribeiro
+						  br/
+						  span.arroba_since.font-family.color-secondary.font-small agenciada desde 2017
+						p#depoimento.color-secondary.italic.font-small
+							| “Agência democrática transparente e ligada no nosso tempo. Minha filha fez o primeiro trabalho e adorou!”
 
-			.circle-2
-				img src="images/img-2.png" alt="img-2"/
-			.arroba-2
-				p.color-secondary.font-medium
-				  | @daniel_trindade
-				  br/
-				  span.arroba_since-2.font-family.color-secondary.font-small agenciado desde 2011
-				p#depoimento-2.color-secondary.italic.font-small
-					| “Ganhei meu tempo usando meu celular para conseguir mais trabalhos. Recomendo.”
-
-			.circle-3
-				img src="images/img-3.png" alt="img-3"/
-			.arroba-3
-				p.color-secondary.font-medium
-				  | @joana_ribeiro
-				  br/
-				  span.arroba_since-3.font-family.color-secondary.font-small agenciada desde 2017
-				p#depoimento-3.color-secondary.italic.font-small
-					| “Agência democrática transparente e ligada no nosso tempo. Minha filha fez o primeiro trabalho e adorou!”
-
-
+section#how							
 	.how
 		.how-title
-			h1.color-primary.font-xlarge
+			h1.color-primary.font-xlarge.bold
 			  | Como funciona?
 			  br/
 			  span.how-subtitle.color-primary.font-normal para atores, modelos e talentos
