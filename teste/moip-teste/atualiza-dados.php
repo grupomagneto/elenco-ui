@@ -59,14 +59,34 @@ try {
     printf($e->__toString());
 }
 //criando o pagamento cartão
-try {
-    $payment = $order->payments()->setCreditCard($encrypted_value, $customer)
-        ->execute();
+// try {
+//     $payment = $order->payments()->setCreditCard($encrypted_value, $customer)
+//         ->execute();
 
+//     print_r($payment);
+// } catch (Exception $e) {
+//     printf($e->__toString());
+// }
+
+try {
+    $hash = $encrypted_value;
+    $payment = $order->payments()
+    ->setCreditCardHash($hash, $customer)
+    ->setInstallmentCount(3)
+    ->setStatementDescriptor('teste com criptografia')
+    ->setDelayCapture(false)
+    ->execute();
     print_r($payment);
 } catch (Exception $e) {
     printf($e->__toString());
 }
-
+//criando o pagamento boleto
+// try {
+//     $payment = $order->payments()->setBoleto(new \DateTime('today +1day'), 'http://dev.moip.com.br/images/logo-header-moip.png')->execute();
+    
+//     print_r($payment);
+// } catch (Exception $e) {
+//     printf($e->__toString());
+// }
 
  ?>
