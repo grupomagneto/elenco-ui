@@ -78,7 +78,8 @@ VQIDAQAB
 
 
     <input type="text" placeholder="Card Type" id="card_type" />
-      <input type="submit" class='botao' value="encrypt" id='encrypt' />
+      <input type="button" class='botao' value="encrypt" id='encrypt' />
+      <input type="submit" class='botao' value="pagar" id='pagar-com-cartao' />
 
  </form>
 
@@ -106,7 +107,26 @@ VQIDAQAB
 
             alert('Cartão de Crédito inválido. Por favor verifique os parâmetros: número, cvv e validade');
           }
-    // Ajax Cadastros
+
+           jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
+        data: dados,
+        success: function( data ) {
+
+          alert('dados enviados');
+        }
+      });
+      return false;
+    });
+  });
+
+
+  $("#pagar-com-cartao").click(function(){
+    // Ajax Pagamento com cartão
     jQuery("form").submit(function(){
       var dados = jQuery(this).serialize();
       jQuery.ajax({

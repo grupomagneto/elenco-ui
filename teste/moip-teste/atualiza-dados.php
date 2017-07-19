@@ -16,6 +16,7 @@ $uf = $_POST["uf"];
 $DataNascimento = $_POST["DataNascimento"];
 $CPF = $_POST["CPF"];
 $encrypted_value = $_POST["encrypted_value"];
+$Parcelas = $_POST["Parcelas"];
 
 require 'vendor/autoload.php';
 
@@ -30,7 +31,6 @@ $key = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
 
 $moip = new Moip(new BasicAuth($token, $key), Moip::ENDPOINT_SANDBOX);
 //Criando um comprador
-
 try {
     $customer = $moip->customers()->setOwnId(uniqid())
         ->setFullname($nome)
@@ -58,28 +58,22 @@ try {
 } catch (Exception $e) {
     printf($e->__toString());
 }
-//criando o pagamento cartão
-// try {
-//     $payment = $order->payments()->setCreditCard($encrypted_value, $customer)
-//         ->execute();
+//criando o pagamento cartão com hash
+try {  $hash = $encrypted_value;  
+    $payment = $order->payments()  
+    ->setCreditCardHash($hash, $customer)                                 
+    ->setInstallmentCount($Parcelas)                                 
+    ->setStatementDescriptor('teste de pag')                                 
+    ->setDelayCapture(false)                                 
+    ->execute();  
 
-//     print_r($payment);
-// } catch (Exception $e) {
-//     printf($e->__toString());
-// }
+    print_r($payment); 
 
-try {
-    $hash = $encrypted_value;
-    $payment = $order->payments()
-    ->setCreditCardHash($hash, $customer)
-    ->setInstallmentCount(3)
-    ->setStatementDescriptor('teste com criptografia')
-    ->setDelayCapture(false)
-    ->execute();
-    print_r($payment);
-} catch (Exception $e) {
-    printf($e->__toString());
-}
+    } 
+    catch (Exception $e) {     
+        printf($e->__toString()); 
+    }
+
 //criando o pagamento boleto
 // try {
 //     $payment = $order->payments()->setBoleto(new \DateTime('today +1day'), 'http://dev.moip.com.br/images/logo-header-moip.png')->execute();
