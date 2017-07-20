@@ -83,4 +83,17 @@ try {  $hash = $encrypted_value;
 //     printf($e->__toString());
 // }
 
+$logo_uri = 'https://cdn.moip.com.br/wp-content/uploads/2016/05/02163352/logo-moip.png';
+$expiration_date = new DateTime();
+$instruction_lines = ['INSTRUÇÃO 1', 'INSTRUÇÃO 2', 'INSTRUÇÃO 3'];
+try {
+    $payment = $order->payments()  
+        ->setBoleto($expiration_date, $logo_uri, $instruction_lines)
+        ->execute();
+        
+    print_r($payment);
+} catch (Exception $e) {
+    printf($e->__toString());
+}
+
  ?>
