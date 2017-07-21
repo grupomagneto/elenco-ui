@@ -6,7 +6,7 @@
 </head>
 <body>
 
- <form class='forms' name='form_atualiza-dados' id='form_atualiza-dados' action='atualiza-dados.php' method='post'>
+ <form class='forms' name='form_atualiza-dados' id='form_atualiza-dados' action='' method='post'>
               <span class='texto_input'>Nome:</span>
               <input type='text' name='nome' id='nome' value='Karina Pereira' placeholder='nome' required />
               <span class='texto_input'>DDD:</span>
@@ -79,10 +79,12 @@ VQIDAQAB
 
     <input type="text" placeholder="Card Type" id="card_type" />
       <input type="button" class='botao' value="encrypt" id='encrypt' />
-      <input type="submit" class='botao' value="pagar" id='pagar-com-cartao' />
+      <input type="submit" class='botao' value="pagar com cartão" id='pagar-com-cartao' />
+      <input type="submit" class='botao' value="pagar com boleto" id='pagar-com-boleto' />
 
  </form>
 
+ <pre id="boleto"></pre>
 
  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
  <script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
@@ -142,6 +144,25 @@ VQIDAQAB
       return false;
     });
   });
+
+  $("#pagar-com-boleto").click(function(){
+      // Ajax Pagamento com cartão
+      jQuery("form").submit(function(){
+        var dados = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://localhost:8888/elenco-ui/teste/moip-teste/pagamento-boleto.php",
+          data: dados,
+          success: function( data ) {
+
+            $("#boleto").html(data);
+          }
+        });
+        return false;
+      });
+    });
+
  </script>
 
 </body>

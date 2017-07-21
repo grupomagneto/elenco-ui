@@ -58,21 +58,26 @@ try {
 } catch (Exception $e) {
     printf($e->__toString());
 }
-//criando o pagamento cartão com hash
-try {  $hash = $encrypted_value;  
+
+//criando o pagamento boleto
+$logo_uri = 'https://cdn.moip.com.br/wp-content/uploads/2016/05/02163352/logo-moip.png';
+$expiration_date = new DateTime();
+$instruction_lines = ['INSTRUÇÃO 1', 'INSTRUÇÃO 2', 'INSTRUÇÃO 3'];
+try {
     $payment = $order->payments()  
-    ->setCreditCardHash($hash, $customer)                                 
-    ->setInstallmentCount($Parcelas)                                 
-    ->setStatementDescriptor('teste de pag')                                 
-    ->setDelayCapture(false)                                 
-    ->execute();  
+        ->setBoleto($expiration_date, $logo_uri, $instruction_lines)
+        ->execute();
+        // echo "<pre>";
+        // print_r($payment);
+        // echo "</pre>";
 
-    print_r($payment); 
+        $xml = json_decode(json_encode($payment),true);
+        $boleto = $xml["_links"]["payBoleto"]["redirectHref"];
 
-    } 
-    catch (Exception $e) {     
-        printf($e->__toString()); 
-    }
-
+        echo $boleto;
+        
+} catch (Exception $e) {
+    printf($e->__toString());
+}
 
  ?>
