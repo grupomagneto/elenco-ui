@@ -90,7 +90,7 @@
 <meta data-react-helmet="true" name="apple-mobile-web-app-title" content="PAGME"/>
 <meta data-react-helmet="true" name="msapplication-TileColor" content="#FFFFFF"/>
 <meta data-react-helmet="true" property="og:site_name" content="PAGME"/>
-<meta data-react-helmet="true" property="og:url" content="http://www.magnetoelenco.com.br/pagme"/>
+<meta data-react-helmet="true" property="og:url" content="https://www.magnetoelenco.com.br/pagme"/>
 <meta data-react-helmet="true" property="og:title" content="Cadastre-se gratuitamente e encontre os trabalhos de audiovisual da sua cidade."/>
 <title>PAGME - Pagamento de Agenciados Magneto Elenco</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
@@ -121,7 +121,7 @@
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
     	<div class="col-md-12">
         <div class="form-group">
-          <center><a href="http://www.magnetoelenco.com.br"><img src="images/logo_branca.svg" /></a></center>
+          <center><a href="https://www.magnetoelenco.com.br"><img src="images/logo_branca.svg" /></a></center>
         </div>
         	<div class="form-group">
             	<h2>PAGME</h2>

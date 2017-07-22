@@ -137,7 +137,7 @@ if ($n <= $count) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://www.magnetoelenco.com.br"><img src="images/logo.svg"></a>
+          <a class="navbar-brand" href="https://www.magnetoelenco.com.br"><img src="images/logo.svg"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
