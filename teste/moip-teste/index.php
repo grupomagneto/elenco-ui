@@ -6,7 +6,7 @@
 </head>
 <body>
 
- <form class='forms' name='form_atualiza-dados' id='form_atualiza-dados' action='#' method='post'>
+ <form class='forms' name='form_atualiza-dados' id='form_atualiza-dados' action='' method='post'>
               <span class='texto_input'>Nome:</span>
               <input type='text' name='nome' id='nome' value='Karina Pereira' placeholder='nome' required />
               <span class='texto_input'>DDD:</span>
@@ -39,10 +39,10 @@
             <input type='text' id='Portador' name='Portador' value='karina pereira' placeholder= 'Nome (como no cartão)' required />
             <br/>
 
- <input type="text" placeholder="Credit card number" id="cc_number" value="5555666677778884" />
-    <input type="text" placeholder="CVC" id="cc_cvc" value="123" />
-    <input type="text" placeholder="Month" id="cc_exp_month" value="05" />
-    <input type="text" placeholder="Year" id="cc_exp_year" value="18" />
+ <input type="text" placeholder="Credit card number" id="number" value="5555666677778884" />
+    <input type="text" placeholder="CVC" id="cvc" value="123" />
+    <input type="text" placeholder="Month" id="month" value="05" />
+    <input type="text" placeholder="Year" id="year" value="18" />
     <textarea id="public_key">
       -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq3OIiMNWs40s509N2Jqo
@@ -79,9 +79,12 @@ VQIDAQAB
 
     <input type="text" placeholder="Card Type" id="card_type" />
       <input type="button" class='botao' value="encrypt" id='encrypt' />
+      <input type="submit" class='botao' value="pagar com cartão" id='pagar-com-cartao' />
+      <input type="submit" class='botao' value="pagar com boleto" id='pagar-com-boleto' />
 
  </form>
 
+ <pre id="boleto"></pre>
 
  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
  <script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
@@ -89,10 +92,10 @@ VQIDAQAB
 
   $("#encrypt").click(function(){
        var cc = new Moip.CreditCard({
-            number  : $("#cc_number").val(),
-            cvc     : $("#cc_cvc").val(),
-            expMonth: $("#cc_exp_month").val(),
-            expYear : $("#cc_exp_year").val(),
+            number  : $("#number").val(),
+            cvc     : $("#cvc").val(),
+            expMonth: $("#month").val(),
+            expYear : $("#year").val(),
             pubKey  : $("#public_key").val()
           });
           console.log(cc);
@@ -106,7 +109,26 @@ VQIDAQAB
 
             alert('Cartão de Crédito inválido. Por favor verifique os parâmetros: número, cvv e validade');
           }
-    // Ajax Cadastros
+
+           jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
+        data: dados,
+        success: function( data ) {
+
+          alert('dados enviados');
+        }
+      });
+      return false;
+    });
+  });
+
+
+  $("#pagar-com-cartao").click(function(){
+    // Ajax Pagamento com cartão
     jQuery("form").submit(function(){
       var dados = jQuery(this).serialize();
       jQuery.ajax({
@@ -122,6 +144,25 @@ VQIDAQAB
       return false;
     });
   });
+
+  $("#pagar-com-boleto").click(function(){
+      // Ajax Pagamento com cartão
+      jQuery("form").submit(function(){
+        var dados = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://localhost:8888/elenco-ui/teste/moip-teste/pagamento-boleto.php",
+          data: dados,
+          success: function( data ) {
+
+            $("#boleto").html(data);
+          }
+        });
+        return false;
+      });
+    });
+
  </script>
 
 </body>
