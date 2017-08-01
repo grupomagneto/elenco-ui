@@ -1,0 +1,359 @@
+// GERAL
+body
+  overflow-x: hidden
+
+body::-webkit-scrollbar-track
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+  background-color: rgba(255,255,255,0.30)
+
+body::-webkit-scrollbar
+  width: 10px
+  background-color: rgba(255,255,255,0.30)
+
+body::-webkit-scrollbar-thumb
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  background-color: rgba(255,255,255,0.60)
+
+.gradient
+  display: block
+  width: 100%
+  height: 100%
+  padding: 0px
+  margin: 0px
+
+.gradient:after
+  content: ''
+  display: block
+  width: 100%
+  height: 100%
+  padding: 0px
+  margin: 0px
+  background: url('../images/img-DSC_2882-contraste.png') center center
+  background-size: cover
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  opacity: 0.4
+
+.gradient2
+  display: block
+  width: 100%
+  height: 100%
+  padding: 0px
+  margin: 0px
+
+.gradient2:after
+  content: ''
+  display: block
+  width: 100%
+  height: 100%
+  padding: 0px
+  margin: 0px
+  background: url('../images/img-DSC6681.png') center center
+  background-size: cover
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  opacity: 0.4
+
+.gradient3
+  display: block
+  width: 100%
+  height: 100%
+  padding: 0px
+  margin: 0px
+
+.gradient3:after
+  content: ''
+  display: block
+  width: 100%
+  height: 100%
+  padding: 0px
+  margin: 0px
+  background: url('../images/img-DSC6550.png') center center
+  background-size: cover
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  opacity: 0.4
+
+.gradient4
+  display: block
+  width: 100%
+  height: 100%
+  padding: 0px
+  margin: 0px
+
+.gradient4:after
+  content: ''
+  display: block
+  width: 100%
+  height: 100%
+  padding: 0px
+  margin: 0px
+  background: url('../images/img-DSC_3304.png') center center
+  background-size: cover
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  opacity: 0.4
+
+.button
+  background: $background
+  border: $border
+  border-radius: $border-radius
+  opacity: 0.89
+  &:hover, &:active
+    background: $background-hover
+
+.button-medium
+  width: 250px
+  height: 60px
+
+.button-small
+  width: 120px
+  height: 50px
+
+.cf:before,
+.cf:after 
+  content: " "
+  display: table
+
+.cf:after 
+  clear: both
+
+.container 
+  position: relative
+  max-width: 100%
+  margin: 0 auto
+
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  .container 
+    max-width: 90%
+
+@media only screen and (max-width: 340px) and (orientation: portrait) 
+  .container 
+    max-width: 100%
+  
+.swiper-container
+  position: absolute
+  width: 100%
+  height: 100%
+
+
+.site-header
+  position: absolute
+  z-index: 9999
+  width: 100%
+  padding: 15px
+  .site-logo
+    float: left
+    width: 50%
+  .site-nav
+    float: left
+    width: 50%
+    margin: 5px 0 0
+    text-align: right
+    li
+      display: inline-block
+      margin: 0 5px
+    a
+      font-size: 1.1em
+      display: block
+      padding: 5px
+      text-decoration: none
+      text-transform: capitalize
+      transition: color .2s ease
+      -moz-transition: color .2s ease
+      -webkit-transition: color .2s ease
+      border: 0
+      transition: color .5s ease-in-out
+      -webkit-transition: color .5s ease-in-out
+      -moz-transition: color .5s ease-in-out
+  .site-logo
+    text-align: left
+    margin: 0
+    h1
+      margin: 0
+
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  .site-header
+    padding: 15px 0
+
+@media only screen and (max-width: 340px) and (orientation: portrait) 
+  .site-header
+    padding: 15px 0
+
+.site-nav ul, .sidebar ul
+  list-style: none
+  padding: 0
+  margin: 0
+
+#responsive-menu
+  display: none
+  margin: 0
+  padding: 20px 15px
+  position: absolute
+  z-index: 9999
+  top: 73px
+  left: 0
+  width: 100%
+  background: transparent
+  li
+    margin-right: -70%
+    display: block
+  li:nth-child(1)
+    margin-top: -8%
+  a
+    display: block
+    border: none
+    margin: 20px 0
+    font-size: 1em
+    transition: color .2s ease-in
+    -webkit-transition: color .2s ease-in
+    -moz-transition: color .2s ease-in
+
+@media only screen and (min-width: 600px)
+  #responsive-menu
+    z-index: 9999
+    display: none !important
+
+#std-menu
+  display: block
+
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  #std-menu
+    display: none
+
+
+@media only screen and (max-width: 340px) and (orientation: portrait)
+  #responsive-menu
+    li:nth-child(1)
+      margin-top: -20% 
+    li:nth-child(2)
+      margin-top: -5px 
+  #std-menu
+    display: none
+
+#menu-trigger
+  display: none
+  transition: none
+  border: 0
+  .fa
+    color: $color-primary
+    transition: color .2s ease-in-out
+    -webkit-transition: color .2s ease-in-out
+    -moz-transition: color .2s ease-in-out
+
+@media only screen and (min-width: 600px)
+  #menu-trigger
+    display: none
+
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  #menu-trigger
+    z-index: 9999
+    display: block
+  a.line-right:after
+    display: none
+
+@media only screen and (max-width: 340px) and (orientation: portrait) 
+  #menu-trigger
+    z-index: 9999
+    display: block
+    margin-right: 5%
+    margin-top: -5%
+  a.line-right:after
+    display: none
+
+
+a.line-right:after
+  background: #FFFFFF
+  content: ""
+  display: inline-block
+  width: 1px
+  height: 20px
+  margin: -5px 12px
+
+
+//middle intro
+.middle-intro
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex         
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
+  flex-direction: column 
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center    
+  height: 90%
+  width: 100%
+  z-index: 9999
+  position: absolute
+
+.aligner-item 
+  max-width: 50%
+  margin: 5px
+  text-align: center 
+
+.aligner-item--top 
+  align-self: center
+  -ms-flex-item-align: center
+
+.aligner-item--bottom 
+  align-self: flex-end
+  -ms-flex-item-align: end
+
+.swiper-pagination
+  z-index: 9999
+  position: absolute
+  color: $color-primary
+  background: transparent
+  z-index: 9
+  margin-left: -25px
+
+.swiper-pagination-bullet
+  width: 10px
+  height: 10px
+  margin: 2px
+  background: none
+  border: 1px solid $color-primary
+  opacity: 1
+  cursor: pointer
+
+.swiper-pagination-bullet-active
+  background: $color-primary
+  border-color: $color-primary
+
+.footer-intro
+  text-align: center
+  z-index: 9999
+  position: absolute
+  width: 100%
+  height: 60px
+  background: $background
+  bottom: 0
+  left: 0
+
+.footer-intro p
+  margin-top: 20px
+
+.footer-intro img
+  position: absolute
+  margin-top: -25px
+  margin-left: 120px
+
+.footer-intro__last
+  bottom: 50px
+  background: transparent
+  button
+    img
+      position: relative
+      float: left
+      margin-left: 0
+      margin-top: 0px
+    p
+      position: relative
+      float: right
+      margin-left: 0
+      margin-top: 1px
