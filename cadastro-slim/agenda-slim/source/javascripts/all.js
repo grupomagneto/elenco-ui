@@ -93,7 +93,7 @@ selects.forEach(function(selectBox){
         }]
     });
 
-    var itemHeight = scrollHandle.querySelector('li').offsetHeight;
+    var itemHeight = scrollHandle.querySelector('option').offsetHeight;
     var originScrollTo = scroll.scrollTo;
     scroll.scrollTo = delay(function(x, y, time, easing){
         var targetY = y;
@@ -115,4 +115,12 @@ selects.forEach(function(selectBox){
     }, 10);
 
 
+});
+
+$("#date").drum({ 
+  panelCount: 9, 
+  dail_w: 50, 
+  dail_h: 9, 
+  dail_stroke_color: '#FFFFFF', 
+  dail_stroke_width: 3 
 });

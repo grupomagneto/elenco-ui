@@ -100,56 +100,186 @@ body::-webkit-scrollbar-thumb
   z-index: 9999
   position: absolute
 
-.multi-select
-  font-size: 16px
-  bottom: 0
-  .select
-    float: left
-    display: block
-    position: relative
-    width: 100px
-    box-sizing: border-box
-    &:last-child
-      border: none
-  .list, .option
-    box-sizing: border-box
-  .panel
-    width: 300px
-    overflow: hidden
-    margin-left: 10px
-  .box
-    height: 200px
-    margin: 10px 0
-    overflow: hidden
-  .handle
-    position: absolute
-    top: 10px
-    width: 100px
-    height: 200px
-    .option
-      background-color: transparent
-  .focus
-    position: absolute
-    width: 100px
-    height: 40px
-    overflow: hidden
-    top: 50%
-    margin-top: -20px
-    background: transparent
-    border-top: 1px solid $color-primary
-    border-bottom: 1px solid $color-primary
-    box-sizing: border-box
-  .scroll
-    padding: 80px 0
-  .option
-    height: 40px
-    line-height: 40px
-    vertical-align: middle
-    text-align: center
+// .multi-select
+//   font-size: 16px
+//   bottom: 0
+//   .select
+//     float: left
+//     display: block
+//     position: relative
+//     width: 100px
+//     box-sizing: border-box
+//     &:last-child
+//       border: none
+//   .list, .option
+//     box-sizing: border-box
+//   .panel
+//     width: 300px
+//     overflow: hidden
+//     margin-left: 10px
+//   .box
+//     height: 200px
+//     margin: 10px 0
+//     overflow: hidden
+//   .handle
+//     position: absolute
+//     top: 10px
+//     width: 100px
+//     height: 200px
+//     .option
+//       background-color: transparent
+//   .focus
+//     position: absolute
+//     width: 100px
+//     height: 40px
+//     overflow: hidden
+//     top: 50%
+//     margin-top: -20px
+//     background: transparent
+//     border-top: 1px solid $color-primary
+//     border-bottom: 1px solid $color-primary
+//     box-sizing: border-box
+//   .scroll
+//     padding: 80px 0
+//   .option
+//     height: 40px
+//     line-height: 40px
+//     vertical-align: middle
+//     text-align: center
 
-.box .option
-  color: $color-primary
+// .box .option
+//   color: $color-primary
 
-.focus .option
+// .focus .option
+//   color: $color-primary
+//   font-size: 24px
+
+.drum figure 
+  text-align: center
+
+div.drum-wrapper
+  position: relative
+  -webkit-touch-callout:none
+  -webkit-user-select:none
+  -moz-user-select:none
+  -ms-user-select:none
+  user-select:none
+  width: 50px
+
+div.drum-wrapper .inner
+  position: relative
+  overflow: hidden
+
+div.drum-wrapper div.container
+  position: absolute
+  width: 100%
+  top: 48px
+  left: 0px
+
+div.drum-wrapper, 
+div.drum-wrapper .inner
+  height: 120px
+
+.outside div.drum-wrapper
+  height: 140px
+
+.outside div.drum-wrapper .inner
+  top: 12px
+
+.outside div.drum-wrapper .container
+  top: 46px
+
+div.drum-wrapper .dial 
+  position: absolute
+  width: 100%
+  left: 0px
+  height: 48px
+  background-color: transparent
+  display: none
+
+.outside div.drum-wrapper .dial 
+  height: 58px
+
+div.drum-wrapper .dial div 
+  width: 20px
+  height: 10px
+  margin: 0 auto
+
+div.drum-wrapper .dial svg 
+  position: absolute
+
+div.drum-wrapper .up 
+  top: 0px
+
+div.drum-wrapper .up svg 
+  top: 2px
+
+div.drum-wrapper .down 
+  bottom: 0px
+
+div.drum-wrapper .down svg 
+  bottom: 2px
+
+div.drum
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0px
+  left: 0px
+  -webkit-transform-style: preserve-3d
+  -moz-transform-style: preserve-3d
+  -o-transform-style: preserve-3d
+  transform-style: preserve-3d
+
+div.drum figure
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box  
+  -webkit-backface-visibility: hidden
+  -moz-backface-visibility: hidden
+  -o-backface-visibility: hidden
+  backface-visibility: hidden
+  display: block
+  position: absolute
+  left: 0px
+  top: 0px
+  line-height: 20px
   color: $color-primary
-  font-size: 24px
+  margin: 0px
+  padding: 0px 3px
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+  width: 100%
+  text-align: left
+
+div.drum-wrapper div.container, div.drum-wrapper figure
+  height: 25px
+  line-height: 25px
+
+#drum_date 
+  width: 100px
+  height: 170px
+
+#drum_date .container 
+  top: 80px
+  height: 170px
+
+#drum_date, #drum_date .inner 
+  height: 170px
+
+#drum_date .container, #drum_date figure 
+  height: 30px
+
+#drum_date figure 
+  text-align: left
+  font-size: 1.2em
+  line-height: 30px
+
+
+#drum_date .dial 
+  height: 190px
+
+#drum_date .dial div 
+  width: 75px
+
