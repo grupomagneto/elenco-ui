@@ -87,8 +87,8 @@ body::-webkit-scrollbar-thumb
   display: flex         
   -webkit-box-orient: vertical
   -webkit-box-direction: normal
-  -ms-flex-direction: column
-  flex-direction: column 
+  -ms-flex-direction: row
+  flex-direction: row 
   -webkit-box-pack: center
   -ms-flex-pack: center
   justify-content: center
@@ -100,59 +100,28 @@ body::-webkit-scrollbar-thumb
   z-index: 9999
   position: absolute
 
-// .multi-select
-//   font-size: 16px
-//   bottom: 0
-//   .select
-//     float: left
-//     display: block
-//     position: relative
-//     width: 100px
-//     box-sizing: border-box
-//     &:last-child
-//       border: none
-//   .list, .option
-//     box-sizing: border-box
-//   .panel
-//     width: 300px
-//     overflow: hidden
-//     margin-left: 10px
-//   .box
-//     height: 200px
-//     margin: 10px 0
-//     overflow: hidden
-//   .handle
-//     position: absolute
-//     top: 10px
-//     width: 100px
-//     height: 200px
-//     .option
-//       background-color: transparent
-//   .focus
-//     position: absolute
-//     width: 100px
-//     height: 40px
-//     overflow: hidden
-//     top: 50%
-//     margin-top: -20px
-//     background: transparent
-//     border-top: 1px solid $color-primary
-//     border-bottom: 1px solid $color-primary
-//     box-sizing: border-box
-//   .scroll
-//     padding: 80px 0
-//   .option
-//     height: 40px
-//     line-height: 40px
-//     vertical-align: middle
-//     text-align: center
+.scroll
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex         
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  -ms-flex-direction: row
+  flex-direction: row 
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center    
+  height: 1%
+  width: 180px
+  margin-left: -100px
+  z-index: 9999
+  position: absolute
+  select
+    display: inline-block
 
-// .box .option
-//   color: $color-primary
-
-// .focus .option
-//   color: $color-primary
-//   font-size: 24px
 
 .drum figure 
   text-align: center
@@ -173,15 +142,15 @@ div.drum-wrapper .inner
 div.drum-wrapper div.container
   position: absolute
   width: 100%
-  top: 48px
+  top: 28px
   left: 0px
 
 div.drum-wrapper, 
 div.drum-wrapper .inner
-  height: 120px
+  height: 100px
 
 .outside div.drum-wrapper
-  height: 140px
+  height: 100px
 
 .outside div.drum-wrapper .inner
   top: 12px
@@ -243,6 +212,7 @@ div.drum figure
   position: absolute
   left: 0px
   top: 0px
+  font-size: $font-size-normal
   line-height: 20px
   color: $color-primary
   margin: 0px
@@ -259,11 +229,11 @@ div.drum-wrapper div.container, div.drum-wrapper figure
 
 #drum_date 
   width: 100px
-  height: 170px
+  height: 70px
 
 #drum_date .container 
   top: 80px
-  height: 170px
+  height: 70px
 
 #drum_date, #drum_date .inner 
   height: 170px
@@ -273,13 +243,41 @@ div.drum-wrapper div.container, div.drum-wrapper figure
 
 #drum_date figure 
   text-align: left
-  font-size: 1.2em
+  font-size: $font-size-normal
   line-height: 30px
 
 
 #drum_date .dial 
-  height: 190px
+  height: 100px
 
 #drum_date .dial div 
   width: 75px
 
+
+//hour
+
+#drum_hour 
+  width: 100px
+  height: 170px
+
+#drum_hour .container 
+  top: 80px
+  height: 170px
+
+#drum_hour, #drum_hour .inner 
+  height: 170px
+
+#drum_hour .container, #drum_hour figure 
+  height: 30px
+
+#drum_hour figure 
+  text-align: left
+  font-size: $font-size-normal
+  line-height: 30px
+
+
+#drum_hour .dial 
+  height: 190px
+
+#drum_hour .dial div 
+  width: 75px
