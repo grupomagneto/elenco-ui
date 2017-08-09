@@ -120,7 +120,7 @@ selects.forEach(function(selectBox){
 $("#date").drum({ 
   panelCount: 9, 
   dail_w: 50, 
-  dail_h: 9, 
+  dail_h: 4, 
   dail_stroke_color: '#FFFFFF', 
   dail_stroke_width: 3 
 });
@@ -128,7 +128,7 @@ $("#date").drum({
 $("#hour").drum({ 
   panelCount: 18, 
   dail_w: 50, 
-  dail_h: 18, 
+  dail_h: 4, 
   dail_stroke_color: '#FFFFFF', 
   dail_stroke_width: 3 
 });
@@ -137,7 +137,6 @@ $("#minutes").drum({
   panelCount: 4, 
   dail_w: 50, 
   dail_h: 4, 
-  dail_stroke_color: '#FFFFFF', 
+  dail_stroke_color: '#FFFFFF',
   dail_stroke_width: 3 
 });
-

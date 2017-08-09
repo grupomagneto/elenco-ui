@@ -217,12 +217,12 @@
 		var HTMLselect = ($(element))[0];
 		var obj = this;
 		var settings = $.extend({
-			panelCount : 16,
+			panelCount : 8,
 			rotateFn : 'rotateX',
 			interactive: true,
 			dail_w: 20,
 			dail_h: 5,
-			dail_stroke_color: '#999999',
+			dail_stroke_color: '#FFFFFF',
 			dail_stroke_width: 1
 		}, options || {});
 

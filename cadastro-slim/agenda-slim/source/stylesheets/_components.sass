@@ -115,13 +115,12 @@ body::-webkit-scrollbar-thumb
   -ms-flex-align: center
   align-items: center    
   height: 1%
-  width: 180px
+  width: 200px
   margin-left: -100px
   z-index: 9999
   position: absolute
   select
     display: inline-block
-
 
 .drum figure 
   text-align: center
@@ -142,8 +141,10 @@ div.drum-wrapper .inner
 div.drum-wrapper div.container
   position: absolute
   width: 100%
-  top: 28px
+  top: 15px
   left: 0px
+  border-top: 1px solid $color-primary
+  border-bottom: 1px solid $color-primary
 
 div.drum-wrapper, 
 div.drum-wrapper .inner
@@ -156,7 +157,7 @@ div.drum-wrapper .inner
   top: 12px
 
 .outside div.drum-wrapper .container
-  top: 46px
+  top: 42px
 
 div.drum-wrapper .dial 
   position: absolute
@@ -213,10 +214,10 @@ div.drum figure
   left: 0px
   top: 0px
   font-size: $font-size-normal
-  line-height: 20px
+  line-height: 30px
   color: $color-primary
   margin: 0px
-  padding: 0px 3px
+  padding: 15px 3px
   text-overflow: ellipsis
   white-space: nowrap
   overflow: hidden
@@ -224,27 +225,27 @@ div.drum figure
   text-align: left
 
 div.drum-wrapper div.container, div.drum-wrapper figure
-  height: 25px
-  line-height: 25px
+  height: 40px
+  line-height: 16px
 
 #drum_date 
   width: 100px
   height: 70px
 
 #drum_date .container 
-  top: 80px
+  top: 50px
   height: 70px
 
 #drum_date, #drum_date .inner 
   height: 170px
 
 #drum_date .container, #drum_date figure 
-  height: 30px
+  height: 40px
 
 #drum_date figure 
   text-align: left
   font-size: $font-size-normal
-  line-height: 30px
+  line-height: 15px
 
 
 #drum_date .dial 
@@ -258,26 +259,26 @@ div.drum-wrapper div.container, div.drum-wrapper figure
 
 #drum_hour 
   width: 100px
-  height: 170px
+  height: 150px
 
 #drum_hour .container 
-  top: 80px
+  top: 50px
   height: 170px
 
 #drum_hour, #drum_hour .inner 
   height: 170px
 
 #drum_hour .container, #drum_hour figure 
-  height: 30px
+  height: 40px
 
 #drum_hour figure 
   text-align: left
   font-size: $font-size-normal
-  line-height: 30px
+  line-height: 15px
 
 
 #drum_hour .dial 
-  height: 190px
+  height: 150px
 
 #drum_hour .dial div 
   width: 75px
