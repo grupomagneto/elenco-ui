@@ -100,6 +100,14 @@ body::-webkit-scrollbar-thumb
   z-index: 9999
   position: absolute
 
+.title
+  position: absolute
+  top: 10%
+
+.button-footer
+  position: absolute
+  bottom: 5%
+
 .scroll
   display: -webkit-box
   display: -ms-flexbox
@@ -157,22 +165,22 @@ div.drum-wrapper .inner
   top: 12px
 
 .outside div.drum-wrapper .container
-  top: 42px
+  top: 40px
 
 div.drum-wrapper .dial 
   position: absolute
   width: 100%
   left: 0px
-  height: 48px
+  height: 70px
   background-color: transparent
   display: none
 
 .outside div.drum-wrapper .dial 
-  height: 58px
+  height: 70px
 
 div.drum-wrapper .dial div 
   width: 20px
-  height: 10px
+  height: 40px
   margin: 0 auto
 
 div.drum-wrapper .dial svg 
@@ -182,13 +190,15 @@ div.drum-wrapper .up
   top: 0px
 
 div.drum-wrapper .up svg 
-  top: 2px
+  top: -5px
+  left: 25px
 
 div.drum-wrapper .down 
   bottom: 0px
 
 div.drum-wrapper .down svg 
-  bottom: 2px
+  bottom: 0px
+  left: 25px
 
 div.drum
   width: 100%
@@ -228,9 +238,12 @@ div.drum-wrapper div.container, div.drum-wrapper figure
   height: 40px
   line-height: 16px
 
+
+//date
 #drum_date 
   width: 100px
   height: 70px
+  left: 5px
 
 #drum_date .container 
   top: 50px
@@ -243,7 +256,7 @@ div.drum-wrapper div.container, div.drum-wrapper figure
   height: 40px
 
 #drum_date figure 
-  text-align: left
+  text-align: center
   font-size: $font-size-normal
   line-height: 15px
 
@@ -260,6 +273,7 @@ div.drum-wrapper div.container, div.drum-wrapper figure
 #drum_hour 
   width: 100px
   height: 150px
+  left: -10px
 
 #drum_hour .container 
   top: 50px
@@ -272,7 +286,7 @@ div.drum-wrapper div.container, div.drum-wrapper figure
   height: 40px
 
 #drum_hour figure 
-  text-align: left
+  text-align: center
   font-size: $font-size-normal
   line-height: 15px
 
@@ -281,4 +295,32 @@ div.drum-wrapper div.container, div.drum-wrapper figure
   height: 150px
 
 #drum_hour .dial div 
+  width: 75px
+
+
+#drum_minutes 
+  width: 100px
+  height: 150px
+  left: -20px
+
+#drum_minutes .container 
+  top: 50px
+  height: 170px
+
+#drum_minutes, #drum_minutes .inner 
+  height: 170px
+
+#drum_minutes .container, #drum_minutes figure 
+  height: 40px
+
+#drum_minutes figure 
+  text-align: center
+  font-size: $font-size-normal
+  line-height: 15px
+
+
+#drum_minutes .dial 
+  height: 150px
+
+#drum_minutes .dial div 
   width: 75px
