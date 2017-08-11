@@ -140,6 +140,3 @@ $("#minutes").drum({
   dail_stroke_color: '#FFFFFF',
   dail_stroke_width: 3 
 });
-
-
-
