@@ -1,0 +1,326 @@
+// GERAL
+body
+  overflow-x: hidden
+
+body::-webkit-scrollbar-track
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+  background-color: rgba(255,255,255,0.30)
+
+body::-webkit-scrollbar
+  width: 10px
+  background-color: rgba(255,255,255,0.30)
+
+body::-webkit-scrollbar-thumb
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  background-color: rgba(255,255,255,0.60)
+
+.gradient
+  position: absolute
+  display: block
+  width: 100%
+  height: 100%
+  padding: 0px
+  margin: 0px
+
+.gradient:after
+  content: ''
+  display: block
+  width: 100%
+  height: 100%
+  padding: 0px
+  margin: 0px
+  background-size: cover
+  -webkit-background-size: cover
+  -moz-background-size: cover
+
+.button
+  background: $background
+  border: $border
+  border-radius: $border-radius
+  opacity: 0.89
+  &:hover, &:active
+    background: $background-hover
+
+.button-medium
+  width: 250px
+  height: 60px
+
+.button-small
+  width: 120px
+  height: 50px
+
+.container 
+  position: relative
+  max-width: 100%
+  margin: 0 auto
+
+@media only screen and (min-width: 341px) and (max-width: 767px) 
+  .container 
+    max-width: 90%
+
+@media only screen and (max-width: 340px) and (orientation: portrait) 
+  .container 
+    max-width: 100%
+
+#intro
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex         
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
+  flex-direction: column 
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center    
+  height: 100%
+  width: 100%
+  z-index: 9999
+  position: absolute
+
+.input
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex         
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: row
+  flex-direction: row 
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center    
+  height: 90%
+  width: 100%
+  z-index: 9999
+  position: absolute
+
+.title
+  position: absolute
+  top: 10%
+
+.button-footer
+  position: absolute
+  bottom: 5%
+
+.scroll
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex         
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  -ms-flex-direction: row
+  flex-direction: row 
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center    
+  height: 1%
+  width: 200px
+  margin-left: -100px
+  z-index: 9999
+  position: absolute
+  select
+    display: inline-block
+
+.drum figure 
+  text-align: center
+
+div.drum-wrapper
+  position: relative
+  -webkit-touch-callout:none
+  -webkit-user-select:none
+  -moz-user-select:none
+  -ms-user-select:none
+  user-select:none
+  width: 50px
+
+div.drum-wrapper .inner
+  position: relative
+  overflow: hidden
+
+div.drum-wrapper div.container
+  position: absolute
+  width: 100%
+  top: 15px
+  left: 0px
+  border-top: 1px solid $color-primary
+  border-bottom: 1px solid $color-primary
+
+div.drum-wrapper, 
+div.drum-wrapper .inner
+  height: 100px
+
+.outside div.drum-wrapper
+  height: 100px
+
+.outside div.drum-wrapper .inner
+  top: 12px
+
+.outside div.drum-wrapper .container
+  top: 40px
+
+div.drum-wrapper .dial 
+  position: absolute
+  width: 100%
+  left: 0px
+  height: 70px
+  background-color: transparent
+  display: none
+
+.outside div.drum-wrapper .dial 
+  height: 70px
+
+div.drum-wrapper .dial div 
+  width: 20px
+  height: 40px
+  margin: 0 auto
+
+div.drum-wrapper .dial svg 
+  position: absolute
+
+div.drum-wrapper .up 
+  top: 0px
+
+div.drum-wrapper .up svg 
+  top: -5px
+  left: 25px
+
+div.drum-wrapper .down 
+  bottom: 0px
+
+div.drum-wrapper .down svg 
+  bottom: 0px
+  left: 25px
+
+div.drum
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0px
+  left: 0px
+  -webkit-transform-style: preserve-3d
+  -moz-transform-style: preserve-3d
+  -o-transform-style: preserve-3d
+  transform-style: preserve-3d
+
+div.drum figure
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box  
+  -webkit-backface-visibility: hidden
+  -moz-backface-visibility: hidden
+  -o-backface-visibility: hidden
+  backface-visibility: hidden
+  display: block
+  position: absolute
+  left: 0px
+  top: 0px
+  font-size: $font-size-normal
+  line-height: 30px
+  color: $color-primary
+  margin: 0px
+  padding: 15px 3px
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+  width: 100%
+  text-align: left
+
+div.drum-wrapper div.container, div.drum-wrapper figure
+  height: 40px
+  line-height: 16px
+
+
+//date
+#drum_date 
+  width: 100px
+  height: 70px
+  left: 5px
+
+#drum_date .container 
+  top: 50px
+  height: 70px
+
+#drum_date, #drum_date .inner 
+  height: 170px
+
+#drum_date .container, #drum_date figure 
+  height: 40px
+
+#drum_date figure 
+  text-align: center
+  font-size: $font-size-normal
+  line-height: 15px
+
+
+#drum_date .dial 
+  height: 100px
+
+#drum_date .dial div 
+  width: 75px
+
+
+//hour
+
+#drum_hour 
+  width: 100px
+  height: 150px
+  left: -10px
+
+#drum_hour .container 
+  top: 50px
+  height: 170px
+
+#drum_hour, #drum_hour .inner 
+  height: 170px
+
+#drum_hour .container, #drum_hour figure 
+  height: 40px
+
+#drum_hour figure 
+  text-align: center
+  font-size: $font-size-normal
+  line-height: 15px
+
+
+#drum_hour .dial 
+  height: 150px
+
+#drum_hour .dial div 
+  width: 75px
+
+
+#drum_minutes 
+  width: 100px
+  height: 150px
+  left: -20px
+
+#drum_minutes .container 
+  top: 50px
+  height: 170px
+
+#drum_minutes, #drum_minutes .inner 
+  height: 170px
+
+#drum_minutes .container, #drum_minutes figure 
+  height: 40px
+
+#drum_minutes figure 
+  text-align: center
+  font-size: $font-size-normal
+  line-height: 15px
+
+
+#drum_minutes .dial 
+  height: 150px
+
+#drum_minutes .dial div 
+  width: 75px
