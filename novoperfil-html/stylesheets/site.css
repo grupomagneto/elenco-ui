@@ -1177,9 +1177,9 @@ span.number-subtitle {
   justify-content: center;
   -webkit-justify-content: center;
   -moz-justify-content: center;
-  height: 350px;
-  max-width: 200px;
-  width: 200px; }
+  height: 387px;
+/*  max-width: 200px;*/
+  width: 350px; }
 
 .slick-slide img {
   width: 189px;
@@ -1258,8 +1258,8 @@ span.number-subtitle {
 
 .testimony-content {
   background: #FAFAFA;
-  height: 250px;
-  width: 100%;
+  height: 387px;
+  width: 350px;
   display: flex;
   display: -webkit-flex;
   align-items: center;

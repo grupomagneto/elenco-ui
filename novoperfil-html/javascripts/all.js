@@ -1,13 +1,13 @@
 //texto
 var div = document.getElementById('log');
-var textos = ['Cadastre-se e encontre os trabalhos da sua cidade.', 'Diga adeus a horas em filas de teste de elenco.', 'Você diz quanto quer receber e recebe em 15 dias.', 'Convide 10 amigos e ganhe um upgrade no cadastro.', 'Cadastre-se em minutos sem pagar nada.', 'Oportunidades de trabalho para todas as idades e perfis.'];
+var textos = ['Cadastre-se e encontre os trabalhos da sua cidade.', 'Aumente suas vendas com o elenco ideal para sua marca.', 'Trabalhos audiovisuais para todas as idades e perfis.', 'Convide 10 amigos e ganhe um upgrade no cadastro.', 'Faça seu cadastro em minutos sem pagar nada.', 'Encontre influenciadores para divulgar seu produto.', 'Diga adeus a horas em filas de teste de elenco.'];
 
 function escrever(str, done) {
     var char = str.split('').reverse();
     var typer = setInterval(function() {
         if (!char.length) {
             clearInterval(typer);
-            return setTimeout(done, 500);
+            return setTimeout(done, 3000);
         }
         var next = char.pop();
         div.innerHTML += next;
@@ -159,3 +159,62 @@ menuTrigger.click(function(e){
   }
   
 });
+
+// $('.count').each(function () {
+//     $(this).prop('Counter',0).animate({
+//         Counter: $(this).text()
+//     }, {
+//         duration: 2000,
+//         easing: 'swing',
+//         step: function (now) {
+//             $(this).text(Math.ceil(now));
+//         }
+//     });
+// });
+
+(function($) {
+    $.fn.animateNumbers = function(stop, commas, duration, ease) {
+        return this.each(function() {
+            var $this = $(this);
+            var start = parseInt($this.text().replace(/./g, ""));
+      commas = (commas === undefined) ? true : commas;
+            $({value: start}).animate({value: stop}, {
+              duration: duration == undefined ? 3000 : duration,
+              easing: ease == undefined ? "swing" : ease,
+              step: function() {
+                $this.text(Math.floor(this.value));
+          if (commas) { $this.text($this.text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")); }
+              },
+              complete: function() {
+                 if (parseInt($this.text()) !== stop) {
+                     $this.text(stop);
+             if (commas) { $this.text($this.text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")); }
+                 }
+              }
+            });
+        });
+    };
+})(jQuery);
+
+var count =1;
+$(function () {
+    var oTop = $('#log').offset().top - window.innerHeight;
+    $(window).scroll(function () {
+       if(count)
+       {   
+        var pTop = $('body').scrollTop();
+        if (pTop > oTop) {
+            $('.count').each(function () {
+              var $this = $(this);
+              $this.animateNumbers( Math.round($this.text()) );
+            });
+        }
+       count=0;           
+      }
+    });
+});
+
+// $('#spin').on( 'click', function( event ) {
+//   var $this = $(this);
+//   $this.animateNumbers( Math.round($this.text()) );
+// });
