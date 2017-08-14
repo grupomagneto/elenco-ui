@@ -603,11 +603,8 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 1%;
-  width: 200px;
-  margin-left: -100px;
-  z-index: 9999;
-  position: absolute; }
+  height: 90%;
+  width: 100%; }
   .scroll select {
     display: inline-block; }
 
@@ -704,19 +701,19 @@ div.drum figure {
   color: #FFFFFF;
   margin: 0px;
   padding: 15px 3px;
-  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   width: 100%;
-  text-align: left; }
+  text-align: center; }
 
 div.drum-wrapper div.container, div.drum-wrapper figure {
   height: 40px;
   line-height: 16px; }
 
 #drum_date {
-  height: 70px;
-  left: -70px; }
+  width: 250px;
+  height: 70px; 
+  left: 40px; }
 
 #drum_date .container {
   top: 50px;
@@ -746,7 +743,7 @@ div#drum_date.drum-wrapper .up {
 
 div#drum_date.drum-wrapper .up svg {
   top: -5px;
-  left: 90px; }
+  left: 50px; }
 
 div#drum_date.drum-wrapper .down {
   bottom: 0px;
@@ -754,12 +751,12 @@ div#drum_date.drum-wrapper .down {
 
 div#drum_date.drum-wrapper .down svg {
   bottom: 0px;
-  left: 90px; }
+  left: 50px; }
 
 #drum_hour {
-  width: 300px;
+  width: 200px;
   height: 150px;
-  left: -5px; }
+  left: 40px; }
 
 #drum_hour .container {
   top: 50px;
@@ -782,10 +779,25 @@ div#drum_date.drum-wrapper .down svg {
 #drum_hour .dial div {
   width: 75px; }
 
+div#drum_hour.drum-wrapper .up {
+  top: 0px;
+  width: 200px; }
+
+div#drum_hour.drum-wrapper .up svg {
+  top: -5px;
+  left: 50px; }
+
+div#drum_hour.drum-wrapper .down {
+  bottom: 0px;
+  width: 200px;  }
+
+div#drum_hour.drum-wrapper .down svg {
+  bottom: 0px;
+  left: 50px; }
+
 #drum_minutes {
   width: 200px;
-  height: 150px;
-  left: -20px; }
+  height: 150px; }
 
 #drum_minutes .container {
   top: 50px;
@@ -807,7 +819,60 @@ div#drum_date.drum-wrapper .down svg {
 
 #drum_minutes .dial div {
   width: 75px; }
+  
+div#drum_minutes.drum-wrapper .up {
+  top: 0px;
+  width: 200px; }
 
+div#drum_minutes.drum-wrapper .up svg {
+  top: -5px;
+  left: 50px; }
+
+div#drum_minutes.drum-wrapper .down {
+  bottom: 0px;
+  width: 200px;  }
+
+div#drum_minutes.drum-wrapper .down svg {
+  bottom: 0px;
+  left: 50px; }
+
+
+
+/*TRUMPS*/
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  #drum_date {
+    left: 80px; }
+}
+
+@media only screen and (min-width: 341px) and (max-width: 767px) {
+  #drum_date {
+    left: 90px; }
+
+  #drum_hour {
+    left: 60px; }
+
+
+div#drum_hour.drum-wrapper .up svg {
+  top: -5px;
+  left: 80px; }
+
+div#drum_hour.drum-wrapper .down svg {
+  bottom: 0px;
+  left: 80px; }
+
+
+div#drum_minutes.drum-wrapper .up svg {
+  top: -5px;
+  left: 80px; }
+
+
+div#drum_minutes.drum-wrapper .down svg {
+  bottom: 0px;
+  left: 80px; }
+
+     }
+     
 .cursor {
   cursor: pointer; }
 

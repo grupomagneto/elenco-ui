@@ -8,35 +8,96 @@
 </head>
 <body>
 <section class="gradient" id="intro">
-  <div class="input">
-
-    <div class="wrap">
-      <div class="multi-select" id="select">
-        <div class="panel">
+  <div class="input grid-5">
           <section class="select">
-            <div class="box"></div>
             <form action="" class="scroll" name="date">
               <select class="date grid-5 font-family font-normal color-primary list" id="date" name="date" size="2">
 
+<?php 
+setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+date_default_timezone_set('America/Sao_Paulo');
 
+ $data = date('D');
+    
+    $semana = array(
+        'Sun' => 'dom', 
+        'Mon' => 'seg',
+        'Tue' => 'ter',
+        'Wed' => 'qua',
+        'Thu' => 'qui',
+        'Fri' => 'sex',
+        'Sat' => 'sáb'
+    );
+    
+
+ ?>
                 <option value="<?php echo date('d/m/Y', strtotime("now"));?>" selected>Hoje</option>
                 <option value="<?php echo date('d/m/Y', strtotime("+1 day"));?>">Amanhã</option>
-                <option value="<?php echo date('d/m/Y', strtotime("+2 day"));?>"><?php echo date('d/m/Y', strtotime("+2 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+3 day"));?>"><?php echo date('d/m/Y', strtotime("+3 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+4 day"));?>"><?php echo date('d/m/Y', strtotime("+4 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+5 day"));?>"><?php echo date('d/m/Y', strtotime("+5 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+6 day"));?>"><?php echo date('d/m/Y', strtotime("+6 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+7 day"));?>"><?php echo date('d/m/Y', strtotime("+7 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+8 day"));?>"><?php echo date('d/m/Y', strtotime("+8 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+9 day"));?>"><?php echo date('d/m/Y', strtotime("+9 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+10 day"));?>"><?php echo date('d/m/Y', strtotime("+10 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+11 day"));?>"><?php echo date('d/m/Y', strtotime("+11 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+12 day"));?>"><?php echo date('d/m/Y', strtotime("+12 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+13 day"));?>"><?php echo date('d/m/Y', strtotime("+13 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+14 day"));?>"><?php echo date('d/m/Y', strtotime("+14 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+15 day"));?>"><?php echo date('d/m/Y', strtotime("+15 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+16 day"));?>"><?php echo date('d/m/Y', strtotime("+16 day"));?></option>
-                <option value="<?php echo date('d/m/Y', strtotime("+17 day"));?>"><?php echo date('d/m/Y', strtotime("+17 day"));?></option>
+                <option value="<?php echo date('d/m/Y', strtotime("+2 day"));?>">
+                  <?php 
+                  echo $semana["$data"] . strftime(' %d de %B', strtotime('+2 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+3 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+3 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+4 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+4 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+5 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+5 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+6 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+6 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+7 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+7 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+8 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+8 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+9 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+9 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+10 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+10 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+11 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+11 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+12 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+12 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+13 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+13 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+14 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+14 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+15 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+15 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+16 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+16 day')); ?>
+
+                </option>
+                <option value="<?php echo date('d/m/Y', strtotime("+17 day"));?>">
+                  <?php echo strftime(' %d de %B', strtotime('+17 day')); ?>
+
+                </option>
               </select>
 
               <select class="grid-5 font-family font-normal color-primary list" id="hour" name="hour" size="2">
@@ -122,9 +183,6 @@
               </select>
             </form>
           </section>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
