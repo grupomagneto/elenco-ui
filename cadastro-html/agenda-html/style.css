@@ -717,11 +717,12 @@ div.drum-wrapper div.container, div.drum-wrapper figure {
 
 #drum_date .container {
   top: 50px;
-  height: 70px; }
+  height: 70px;
+  width: 250px; }
 
 #drum_date, #drum_date .inner {
   height: 170px; 
-  width: 150px;}
+  width: 180px;}
 
 #drum_date .container, #drum_date figure {
   height: 40px; }
@@ -729,7 +730,8 @@ div.drum-wrapper div.container, div.drum-wrapper figure {
 #drum_date figure {
   text-align: center;
   font-size: 24px;
-  line-height: 15px; }
+  line-height: 15px;
+  text-transform: lowercase; }
 
 #drum_date .dial {
   height: 100px; }
@@ -743,7 +745,7 @@ div#drum_date.drum-wrapper .up {
 
 div#drum_date.drum-wrapper .up svg {
   top: -5px;
-  left: 50px; }
+  left: 70px; }
 
 div#drum_date.drum-wrapper .down {
   bottom: 0px;
@@ -751,7 +753,7 @@ div#drum_date.drum-wrapper .down {
 
 div#drum_date.drum-wrapper .down svg {
   bottom: 0px;
-  left: 50px; }
+  left: 70px; }
 
 #drum_hour {
   width: 200px;
@@ -785,7 +787,7 @@ div#drum_hour.drum-wrapper .up {
 
 div#drum_hour.drum-wrapper .up svg {
   top: -5px;
-  left: 50px; }
+  left: 90px; }
 
 div#drum_hour.drum-wrapper .down {
   bottom: 0px;
@@ -793,7 +795,7 @@ div#drum_hour.drum-wrapper .down {
 
 div#drum_hour.drum-wrapper .down svg {
   bottom: 0px;
-  left: 50px; }
+  left: 90px; }
 
 #drum_minutes {
   width: 200px;
@@ -826,7 +828,7 @@ div#drum_minutes.drum-wrapper .up {
 
 div#drum_minutes.drum-wrapper .up svg {
   top: -5px;
-  left: 50px; }
+  left: 90px; }
 
 div#drum_minutes.drum-wrapper .down {
   bottom: 0px;
@@ -834,7 +836,7 @@ div#drum_minutes.drum-wrapper .down {
 
 div#drum_minutes.drum-wrapper .down svg {
   bottom: 0px;
-  left: 50px; }
+  left: 90px; }
 
 
 
