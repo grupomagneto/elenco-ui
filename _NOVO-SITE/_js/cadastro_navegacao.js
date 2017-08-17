@@ -9,7 +9,7 @@ var swiper = new Swiper('.swiper-container', {
     simulateTouch: false,
     onlyExternal: true,
     speed: 200,
-    initialSlide: 0
+    initialSlide: 21
     // keyboardControl: true
     // onSlideChangeEnd : function(swiper) {
     //  console.log("activeIndex: "+swiper.activeIndex);
