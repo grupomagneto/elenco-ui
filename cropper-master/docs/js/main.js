@@ -251,9 +251,23 @@ $(function () {
           $image.cropper('destroy').attr('src', uploadedImageURL).cropper(options);
           $inputImage.val('');
         } else {
-          window.alert('Please choose an image file.');
+          window.alert('Por favor escolha uma foto.');
         }
       }
+      console.log('carregou');
+      $('#inputImage').attr( 'disabled', 'true' );
+      // $('#image').removeClass('cropper-hidden');
+      // $image.removeClass('cropper-hidden');
+      // jQuery('.cropper-crop-box').removeClass('cropper-hidden');
+      // $image.removeClass('cropper-hidden');
+      console.log($image);
+      console.log($inputImage);
+      console.log($image.data('cropper'));
+      // $image.removeClass(CLASS_HIDDEN);
+      // $image.removeClass('cropper-hide');
+      // $inputImage.removeClass('cropper-hide');
+      // $(this).removeClass('cropper-hide');
+      // $image.cropper('crop').cropper(options);
     });
   } else {
     $inputImage.prop('disabled', true).parent().addClass('disabled');

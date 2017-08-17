@@ -45,7 +45,7 @@ var DEFAULTS = {
   checkOrientation: true,
 
   // Show the black modal
-  modal: false,
+  modal: true,
 
   // Show the dashed lines for guiding
   guides: false,
@@ -63,7 +63,7 @@ var DEFAULTS = {
   autoCrop: false,
 
   // Define the percentage of automatic cropping area when initializes
-  autoCropArea: 1,
+  autoCropArea: 0.9,
 
   // Enable to move the image
   movable: false,
@@ -745,7 +745,7 @@ var render$1 = {
     var options = self.options;
     var canvas = self.canvas;
     var aspectRatio = options.aspectRatio;
-    var autoCropArea = Number(options.autoCropArea) || 0.8;
+    var autoCropArea = Number(options.autoCropArea) || 0.9;
     var cropBox = {
       width: canvas.width,
       height: canvas.height

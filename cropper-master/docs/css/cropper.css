@@ -316,7 +316,8 @@
 }
 
 .cropper-crop {
-  cursor: crosshair;
+  /*cursor: crosshair;*/
+  cursor: pointer;
 }
 
 .cropper-disabled .cropper-drag-box,
