@@ -21,11 +21,60 @@ $timestamp = strtotime('09:00') + 60*60;
 
 $time = date('H', $timestamp);
 
+
  ?>
-                <option value="<?php echo date('d/m/Y', strtotime("now"));?>" selected>Hoje</option>
-                <option value="<?php echo date('d/m/Y', strtotime("+1 day"));?>">Amanhã</option>
+                <option value="
+
+                <?php 
+                  if (strftime("%a %d %b %H:%M:%S", strtotime('now')) < strftime("%a %d %b 18:45:00", strtotime('now')) ) {
+
+                      echo strftime("%a %d %b %H:%M:%S", strtotime('now'));
+
+                    } elseif( strftime("%a %d %b %H:%M:%S", strtotime('now')) > strftime("%a %d %b 18:45:00", strtotime('now')) ) {
+
+                      echo strftime("%a %d %b %H:%M:%S", strtotime('+1 day'));
+
+                    } elseif( strftime("%a %d %b %H:%M:%S", strtotime('+1 day')) > strftime("%a %d %b 00:00:00", strtotime('now')) ) {
+
+                      echo strftime("%a %d %b %H:%M:%S", strtotime('+1 day'));
+
+                    } else {
+                        echo "Não indetificamos a hora";
+                    }
+
+                 ?>
+
+                " selected>
+
+                  <?php 
+                    if (strftime("%a %d %b %H:%M:%S", strtotime('now')) < strftime("%a %d %b 18:45:00", strtotime('now')) ) {
+
+                      echo "Hoje";
+
+                    } elseif( strftime("%a %d %b %H:%M:%S", strtotime('now')) > strftime("%a %d %b 18:45:00", strtotime('now')) ) {
+
+                      echo "Amanhã";
+
+                    } elseif( strftime("%a %d %b %H:%M:%S", strtotime('+1 day')) > strftime("%a %d %b 00:00:00", strtotime('now')) ) {
+
+                      echo "Hoje";
+
+                    } else {
+                        echo "Não indetificamos a hora";
+                    }
+
+                   ?>
+
+                </option>
+
+                <option value="<?php echo date('d/m/Y', strtotime("+1 day"));?>">
+                
+                  Amanhã
+
+                </option>
                 <option value="<?php echo date('d/m/Y', strtotime("+2 day"));?>">
-                  <?php echo strftime('%a %d de %b', strtotime('+2 day')); ?>
+
+                    <?php echo strftime('%a %d de %b', strtotime('+2 day')); ?> 
 
                 </option>
                 <option value="<?php echo date('d/m/Y', strtotime("+3 day"));?>">
