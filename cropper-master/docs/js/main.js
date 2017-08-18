@@ -263,6 +263,7 @@ $(function () {
       console.log($image);
       console.log($inputImage);
       console.log($image.data('cropper'));
+      cropper = new Cropper(img);
       // $image.removeClass(CLASS_HIDDEN);
       // $image.removeClass('cropper-hide');
       // $inputImage.removeClass('cropper-hide');
