@@ -1,21 +1,24 @@
-<form action="ajax/processa_upload.php" id="form-sorrindo" name="form-sorrindo" method="POST" enctype="multipart/form-data">
-    <div class='conteudo flexbox wrap text-align-center space-between-vertical'>
-        <div class='conteudo flexbox wrap text-align-center space-between-vertical'>
-            <div class='titulo heavy white large'>
+<div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
+    <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
+        <div class='titulo heavy white large comando'>
             Envie uma foto sorrindo
-            </div>
-            <div class='subtitulo avenir white small upload'>
-                <div class="docs-preview docs-dropzone">
-                    <input id="sorrindo" type="file" name="file" accept="image/*" />
-                    <label for="sorrindo">
-                        <div id="imagem-input01"><img src="../_images/upload.svg" alt="Clique para enviar"></div>
-                    </label>
-                </div>
-                <div class="txt-clique-enviar">Clique para enviar</div>
-            </div>
-            <div class='botoes'>
-                <button id='btn_sorrindo-enviar' class='botao'>Continuar</button>
+        </div>
+        <div class="result">
+            <div class='upload'>
+                <label for="file-input">
+                    <img class="upload" src="../_images/upload.svg"/>
+                </label>
+                <input type="file" id="file-input" accept="image/*">
             </div>
         </div>
+        <div class="img-result hide">
+            <img class="cropped" src="" height="100%" width="100%">
+        </div>
+        <div class="subtitulo avenir white small instrucao">Clique para escolher</div>
+        <div class='botoes'>
+            <button type="button" class="botao disabled" disabled>Continuar</button>
+            <button type="button" class="botao save hide">Continuar</button>
+            <button type="button" id='btn_sorrindo-enviar' class="botao download hide">Enviar</button>
+        </div>
     </div>
-</form>
+</div>

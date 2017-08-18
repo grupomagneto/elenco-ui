@@ -71,7 +71,7 @@ filter: alpha(opacity=10);
 .cropper-face {
 top: 0;
 left: 0;
-background-image: url('../images/align_eyes.svg');
+background-image: url('../_images/align_eyes.svg');
 background-repeat: no-repeat;
 background-size: 100%;
 }

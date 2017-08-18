@@ -44,6 +44,7 @@
 <link rel="stylesheet" href="../_css/flexbox.css" type="text/css" />
 <link rel="stylesheet" href="../_css/style.css" type="text/css" />
 <link rel="stylesheet" href="../_css/swiper.min.css" type="text/css" />
+<link rel="stylesheet" href="../_css/cropper.css" type="text/css" />
 <link rel="stylesheet" href="../_css/cadastro.css" type="text/css" />
 </head>
 <body>
@@ -108,6 +109,8 @@
 <script type="text/javascript" src="../_js/functions.js"></script>
 <script type="text/javascript" src="../_js/exif.js"></script>
 <script type="text/javascript" src="../_js/main.js"></script>
+<script type="text/javascript" src="../_js/cropper.js"></script>
+<script type="text/javascript" src="../_js/cropper_config.js"></script>
 <script type="text/javascript" src="../_js/cadastro_navegacao.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.js"></script>
 <script type="text/javascript" src="//irql.bipbop.com.br/js/jquery.bipbop.min.js"></script>

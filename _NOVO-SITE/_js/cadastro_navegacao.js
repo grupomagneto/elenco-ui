@@ -375,76 +375,7 @@ $("#btn_video").click(function(e){
   stopTransition();
 });
 
-  $("#btn_sorrindo-enviar").click(function(){
-    console.log('01');
-
-    // jQuery("form").submit(function(){
-    //   console.log('02');
-    //   var formData = new FormData(this);
-    //   form.append('file', event.target.files[0]);
-    //   console.log(formData);
-    //   $.ajax({
-    //       url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/processa_upload.php",
-    //       type: 'POST',
-    //       data: formData,
-    //       success: function (data) {
-    //           alert(data)
-    //           // swiper.unlockSwipeToNext();
-    //           // swiper.slideTo( $('#05-1-05_reenquadre-sorrindo').index(),200 );
-    //           // percentage = "40%";
-    //           // previousPercentage = "35%";
-    //           // stopTransition();
-    //       },
-    //       cache: false,
-    //       contentType: false,
-    //       processData: false,
-    //       xhr: function() {  // Custom XMLHttpRequest
-    //           var myXhr = $.ajaxSettings.xhr();
-    //           if (myXhr.upload) { // Avalia se tem suporte a propriedade upload
-    //               myXhr.upload.addEventListener('progress', function () {
-    //                   /* faz alguma coisa durante o progresso do upload */
-    //               }, false);
-    //           }
-    //       return myXhr;
-    //       }
-    //   });
-    // });
-
-  });
-
-var $formUpload = document.getElementById('form-sorrindo'),
-    $preview = document.getElementById('btn_sorrindo-enviar'),
-    i = 0;
-
-$formUpload.addEventListener('submit', function(event){
-  event.preventDefault();
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", $formUpload.getAttribute('action'));
-  var formData = new FormData($formUpload);
-  formData.append("i", i++);
-  xhr.send(formData);
-  xhr.addEventListener('readystatechange', function() {
-    if (xhr.readyState === 4 && xhr.status == 200) {
-      var json = JSON.parse(xhr.responseText);
-      if (!json.error && json.status === 'ok') {
-        $preview.innerHTML += 'Enviado!!';
-      } else {
-        $preview.innerHTML = 'Arquivo não enviado';
-        console.log(json.error);
-      }
-    } else {
-      $preview.innerHTML = xhr.statusText;
-    }
-  });
-  xhr.upload.addEventListener("progress", function(e) {
-    if (e.lengthComputable) {
-      var percentage = Math.round((e.loaded * 100) / e.total);
-      $preview.innerHTML = String(percentage) + '%';
-    }
-  }, false);
-  xhr.upload.addEventListener("load", function(e){
-    $preview.innerHTML = String(100) + '%';
-  }, false);
-}, false);
-
+$("#btn_sorrindo-enviar").click(function(){
+  console.log('01');
+});
 });
