@@ -8,13 +8,13 @@
                 <label for="file-input">
                     <img class="upload" src="../_images/upload.svg"/>
                 </label>
-                <input type="file" id="file-input" accept="image/*">
+                <input type="file" id="file-input" accept="image/*" capture="camera">
             </div>
         </div>
         <div class="img-result hide">
             <img class="cropped" src="" height="100%" width="100%">
         </div>
-        <div class="subtitulo avenir white small instrucao">Clique para escolher</div>
+        <div class="subtitulo avenir white small instrucao">Clique para capturar</div>
         <div class='botoes'>
             <button type="button" class="botao disabled" disabled>Continuar</button>
             <button type="button" class="botao save hide">Continuar</button>

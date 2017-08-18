@@ -222,4 +222,21 @@ width: 350px;
 margin-top: -100px;
 }
 }
+@media (min-width: 1200px) {
+.result {
+height: 461px;
+width: 345.75px;
+}
+.img-result{
+height: 461px;
+width: 461px;
+}
+.cropped{
+height: 461px;
+width: 461px;
+}
+.instrucao{
+margin-top: -100px;
+}
+}
 /* END CROPPER CSS */
