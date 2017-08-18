@@ -3,13 +3,13 @@
 // vars
 var result = document.querySelector('.result'),
     img_result = document.querySelector('.img-result'),
-    img_w = document.querySelector('.img-w'),
-    img_h = document.querySelector('.img-h'),
+    img_w = 461,
     options = document.querySelector('.options'),
     save = document.querySelector('.save'),
     cropped = document.querySelector('.cropped'),
     dwn = document.querySelector('.download'),
     upload = document.querySelector('#file-input'),
+    instrucao = document.querySelector('.instrucao'),
     cropper = '';
 
 // on change show image with crop options
@@ -29,7 +29,8 @@ upload.addEventListener('change', function (e) {
         result.appendChild(img);
         // show save btn and options
         save.classList.remove('hide');
-        options.classList.remove('hide');
+        instrucao.innerHTML = 'Redimensione e alinhe os olhos';
+        // options.classList.remove('hide');
         // init cropper
         cropper = new Cropper(img);
       }
@@ -43,14 +44,30 @@ save.addEventListener('click', function (e) {
   e.preventDefault();
   // get result to data uri
   var imgSrc = cropper.getCroppedCanvas({
-    width: img_w.value // input value
+    width: img_w // input value
   }).toDataURL();
   // remove hide class of img
   cropped.classList.remove('hide');
   img_result.classList.remove('hide');
+  result.classList.add('hide');
   // show image cropped
   cropped.src = imgSrc;
   dwn.classList.remove('hide');
-  dwn.download = 'imagename.png';
-  dwn.setAttribute('href', imgSrc);
+  // dwn.download = 'imagename.png';
+  // dwn.setAttribute('href', imgSrc);
+  save.classList.add('hide');
+  instrucao.innerHTML = 'Clique para enviar';
+  // console.log(imgSrc);
+  dwn.addEventListener('click', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "upload.php",
+      data: { 
+         imgBase64: imgSrc
+      }
+    }).done(function(o) {
+      console.log('saved'); 
+    });
+  });
 });
