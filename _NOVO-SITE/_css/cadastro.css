@@ -13,7 +13,16 @@
 	margin: 20px 0px 0px 0px;
     align-items: center;
 }
+.voltar{
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.barra_progresso_porcentagem{
+    width: 2%;
+    transition:all 0.5s ease;
+}
 .conteudo{
+    max-width: 320px;
 	height: 90%;
 	padding: 0;
 }
@@ -37,6 +46,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    /*z-index: -1;*/
 }
 .subtexto{
     position: relative;
@@ -173,6 +183,11 @@ margin-bottom: 50px;
 .hide {
 display: none;
 }
+.fade{
+visibility: hidden;
+opacity: 0;
+transition: visibility 0s 2s, opacity 2s linear;
+}
 img {
 max-width: 100%;
 }
@@ -224,19 +239,150 @@ margin-top: -100px;
 }
 @media (min-width: 1200px) {
 .result {
-height: 461px;
-width: 345.75px;
+/*height: 461px;*/
+/*width: 345.75px;*/
 }
 .img-result{
-height: 461px;
-width: 461px;
+/*height: 461px;*/
+/*width: 461px;*/
+max-width: 250px;
+max-height: 250px;
 }
 .cropped{
-height: 461px;
-width: 461px;
+    max-width: 250px;
+    max-height: 250px;
+/*height: 461px;*/
+/*width: 461px;*/
 }
 .instrucao{
 margin-top: -100px;
 }
 }
 /* END CROPPER CSS */
+.texto_input{
+color: #FFFFFF;
+font-family: Avenir-Book;
+opacity: 0.5;
+font-size: 10px;
+position: absolute;
+margin-top: -3px;
+margin-left: 5px;
+text-align: left;
+}
+input.numero-casa{
+width: 50px;
+margin-right: 10px;
+}
+input.complemento{
+width: 150px;
+}
+input.cidade{
+width: 150px;
+margin-right: 10px;
+}
+input.uf{
+width: 50px;
+}
+input.validade{
+width: 70px;
+margin-right: 10px;
+margin-bottom: 10px;
+}
+input.cvv{
+width: 40px;
+margin-right: 10px;
+    margin-bottom: 10px;
+}
+input.parcelas{
+width:50px;
+margin-bottom: 10px;
+}
+/*
+.select-dropdown-hidden{
+width:0px;
+}
+.select-dropdown-styled{
+width:50px;
+display: inline-block;
+}
+.select-dropdown-options{
+width:90px;
+float: right;
+margin-bottom: -100px;
+margin-right: 7px;
+background-color: purple;
+margin-top: 0px;
+}
+*/
+input.numero-casa::-webkit-input-placeholder{
+background: transparent;
+}
+input.complemento::-webkit-input-placeholder{
+background: transparent;
+}
+input.uf::-webkit-input-placeholder{
+background: transparent;
+}
+input.validade::-webkit-input-placeholder{
+background: transparent;
+}
+input.cvv::-webkit-input-placeholder{
+background: transparent;
+}
+input#DDD::-webkit-input-placeholder{
+background: transparent;
+}
+input#cpf_titular{
+width: 250px;
+}
+input#nome_completo{
+width: 250px;
+}
+input#data_nascimento{
+width: 250px;
+}
+input#nome_completo{
+width: 250px;
+}
+input#data_nascimento{
+width: 250px;
+}
+input#DDD{
+width: 50px;
+margin-right: 10px;
+}
+input#cel{
+width: 150px;
+}
+input#email{
+width: 250px;
+}
+.input-field{
+    margin-top: 15px;
+}
+.endereco-descricao{
+    width: 30%;
+    text-align: right;
+    font-family: Avenir-Heavy;
+}
+.endereco-dados{
+    width: 65%;
+    text-align: left;
+    margin-left: 5%;
+    margin-bottom: 20px;
+}
+.endereco-inputs{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.numero-casa{
+    text-align: left;
+}
+.complemento{
+    text-align: left;
+}
+.titular-inputs{
+    margin-bottom: 10px;
+}

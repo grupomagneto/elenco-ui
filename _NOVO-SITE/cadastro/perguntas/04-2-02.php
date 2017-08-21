@@ -1,5 +1,5 @@
-<div class='conteudo flexbox wrap text-align-center space-between-vertical'>
-    <div class='conteudo flexbox wrap text-align-center space-between-vertical'>
+<div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
+    <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
         <div class='titulo heavy white large'>
         El<span class="dele"></span> já tem CPF próprio?
         </div>

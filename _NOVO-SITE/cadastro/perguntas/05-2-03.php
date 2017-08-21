@@ -1,13 +1,14 @@
 <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
     <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
         <div class='titulo heavy white large'>
-        Você é menor de idade!
+        Desconto para horário pré-fixado
         </div>
         <div class='subtitulo avenir white small'>
-        Peça ajuda a um adulto para preencher o seu cadastro
+        Ganhe 5% de desconto ao aceitar o seguinte horário para sessão de fotos:
         </div>
         <div class='botoes'>
-            <button id='btn_recomecar-cadastro' class='botao'>Recomeçar Cadastro</button>
+            <button id='btn_aceito-data-desconto' class='botao'><?php echo $data_desconto; ?></button>
+            <button id='btn_nao-posso-nesse-horario' class='botao'>Não posso nesse horário</button>
         </div>
     </div>
 </div>

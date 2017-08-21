@@ -1,5 +1,5 @@
-<div class='conteudo flexbox wrap text-align-center validacao-ok'>
-    <div class='conteudo flexbox wrap text-align-center validacao-ok'>
+<div class='conteudo flexbox wrap text-align-center validacao-ok justify-center'>
+    <div class='conteudo flexbox wrap text-align-center validacao-ok justify-center'>
         <div class='titulo heavy white large'>
         Clique e conheça nossos planos
         </div>

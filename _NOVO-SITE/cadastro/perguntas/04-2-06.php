@@ -1,5 +1,5 @@
-<div class='conteudo flexbox wrap text-align-center space-between-vertical'>
-    <div class='conteudo flexbox wrap text-align-center space-between-vertical'>
+<div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
+    <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
         <div class='titulo heavy white large'>
         Qual a cor da pele del<span class="dele"></span>?
         </div>

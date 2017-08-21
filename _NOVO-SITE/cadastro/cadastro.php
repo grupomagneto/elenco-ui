@@ -45,16 +45,20 @@
 <link rel="stylesheet" href="../_css/style.css" type="text/css" />
 <link rel="stylesheet" href="../_css/swiper.min.css" type="text/css" />
 <link rel="stylesheet" href="../_css/cropper.css" type="text/css" />
+<link rel="stylesheet" href="../_css/drum.css" type="text/css" />
 <link rel="stylesheet" href="../_css/cadastro.css" type="text/css" />
 </head>
 <body>
+<?php $data_desconto = "Sáb 5 de ago às 11:00"; ?>
 <div class="gradient">
   <div class="container">
-    <div class='mancha flexbox relative wrap'>
-        <div class='menu align-items-center flexbox nowrap space-between-horizontal'>
-            <img src='../_images/seta-voltar.svg' class='voltar' style="opacity:0; transition:all 0.5s ease;" onclick="returnPrevious();" />
-            <div class="barra_progresso"><span class="barra_progresso_porcentagem" style="width: 10%; transition:all 0.5s ease;"></span></div>
-            <img src='../_images/menu.svg' class='fechar' />
+    <div class="mancha flexbox relative wrap">
+        <div class="menu align-items-center flexbox nowrap space-between-horizontal">
+            <img src="../_images/seta-voltar.svg" class="voltar" />
+            <div class="barra_progresso">
+              <span class="barra_progresso_porcentagem"></span>
+            </div>
+            <img src="../_images/menu.svg" class="mini-menu" />
         </div>
       <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -80,23 +84,21 @@
           <div class="swiper-slide" id="05-1-02_perfeito-para-quem-tem-drt">            <?php include "perguntas/05-1-02.php"; ?></div>
           <div class="swiper-slide" id="05-1-03_assista-ao-video">                      <?php include "perguntas/05-1-03.php"; ?></div>
           <div class="swiper-slide" id="05-1-04_envie-uma-foto-sorrindo">               <?php include "perguntas/05-1-04.php"; ?></div>
-          <div class="swiper-slide" id="05-1-05_reenquadre-sorrindo">                   <?php include "perguntas/05-1-05.php"; ?></div>
-          <!-- <div class="swiper-slide" id="05-1-06_agora-uma-foto-sem-sorrir">             <?php include "perguntas/05-1-06.php"; ?></div> -->
-          <!-- <div class="swiper-slide" id="05-1-07_reenquadre-sem-sorrir">                 <?php include "perguntas/05-1-07.php"; ?></div> -->
-          <!-- <div class="swiper-slide" id="05-1-08_cadastro-concluido-gratuito">           <?php include "perguntas/05-1-08.php"; ?></div> -->
+          <div class="swiper-slide" id="05-1-05_agora-uma-foto-sem-sorrir">             <?php include "perguntas/05-1-05.php"; ?></div>
+          <div class="swiper-slide" id="05-1-06_cadastro-concluido-gratuito">           <?php include "perguntas/05-1-06.php"; ?></div>
           <div class="swiper-slide" id="05-2-01_mais-chances-de-trabalhar">             <?php include "perguntas/05-2-01.php"; ?></div>
           <div class="swiper-slide" id="05-2-02_ideal-para-quem-trabalha-muito">        <?php include "perguntas/05-2-02.php"; ?></div>
-          <!-- <div class="swiper-slide" id="05-2-03_qual-a-forma-de-pagamento">             <?php include "perguntas/05-2-03.php"; ?></div> -->
-          <!-- <div class="swiper-slide" id="05-2-04_desconto-para-horario-pre-fixado">      <?php include "perguntas/05-2-04.php"; ?></div> -->
-          <!-- <div class="swiper-slide" id="05-2-05_escolha-o-horario-da-sessao-de-fotos">  <?php include "perguntas/05-2-05.php"; ?></div> -->
-          <!-- <div class="swiper-slide" id="05-2-06_complete-o-seu-endereco">               <?php include "perguntas/05-2-06.php"; ?></div> -->
-          <!-- <div class="swiper-slide" id="05-2-07_voce-e-o-titular-do-carta-de-credito">  <?php include "perguntas/05-2-07.php"; ?></div> -->
-          <!-- <div class="swiper-slide" id="05-2-08_pagamento-via-boleto-bancario">         <?php include "perguntas/05-2-08.php"; ?></div> -->
-          <!-- <div class="swiper-slide" id="05-2-09_dados-do-titular-do-cartao">            <?php include "perguntas/05-2-09.php"; ?></div> -->
-          <!-- <div class="swiper-slide" id="05-2-10_endereco-da-fatura-do-cartao">          <?php include "perguntas/05-2-10.php"; ?></div> -->
-          <!-- <div class="swiper-slide" id="05-2-11_dados-do-cartao-de-credito">            <?php include "perguntas/05-2-11.php"; ?></div> -->
-          <!-- <div class="swiper-slide" id="05-2-12_cadastro-agendado">                     <?php include "perguntas/05-2-12.php"; ?></div> -->
-          <!-- <div class="swiper-slide" id="05-2-13_prepare-se-para-suas-fotos">            <?php include "perguntas/05-2-13.php"; ?></div> -->
+          <div class="swiper-slide" id="05-2-03_desconto-para-horario-pre-fixado">      <?php include "perguntas/05-2-03.php"; ?></div>
+          <div class="swiper-slide" id="05-2-04_escolha-o-horario-da-sessao-de-fotos">  <?php include "perguntas/05-2-04.php"; ?></div>
+          <div class="swiper-slide" id="05-2-05_complete-o-seu-endereco">               <?php include "perguntas/05-2-05.php"; ?></div>
+          <div class="swiper-slide" id="05-2-06_qual-a-forma-de-pagamento">             <?php include "perguntas/05-2-06.php"; ?></div>
+          <div class="swiper-slide" id="05-2-07_voce-e-o-titular-do-carta-de-credito">  <?php include "perguntas/05-2-07.php"; ?></div>
+          <div class="swiper-slide" id="05-2-08_pagamento-via-boleto-bancario">         <?php include "perguntas/05-2-08.php"; ?></div>
+          <div class="swiper-slide" id="05-2-09_dados-do-titular-do-cartao">            <?php include "perguntas/05-2-09.php"; ?></div>
+          <div class="swiper-slide" id="05-2-10_endereco-da-fatura-do-cartao">          <?php include "perguntas/05-2-10.php"; ?></div>
+          <div class="swiper-slide" id="05-2-11_dados-do-cartao-de-credito">            <?php include "perguntas/05-2-11.php"; ?></div>
+          <div class="swiper-slide" id="05-2-12_cadastro-agendado">                     <?php include "perguntas/05-2-12.php"; ?></div>
+          <div class="swiper-slide" id="05-2-13_prepare-se-para-suas-fotos">            <?php include "perguntas/05-2-13.php"; ?></div>
         </div>
       </div>
     </div>
@@ -108,9 +110,10 @@
 <script type="text/javascript" src="../_js/swiper.min.js"></script>
 <script type="text/javascript" src="../_js/functions.js"></script>
 <script type="text/javascript" src="../_js/exif.js"></script>
-<script type="text/javascript" src="../_js/main.js"></script>
 <script type="text/javascript" src="../_js/cropper.js"></script>
-<script type="text/javascript" src="../_js/cropper_config.js"></script>
+<script type="text/javascript" src="../_js/upload.js"></script>
+<script type="text/javascript" src="../_js/drum.js"></script>
+<script type="text/javascript" src="../_js/drum-config.js"></script>
 <script type="text/javascript" src="../_js/cadastro_navegacao.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.js"></script>
 <script type="text/javascript" src="//irql.bipbop.com.br/js/jquery.bipbop.min.js"></script>

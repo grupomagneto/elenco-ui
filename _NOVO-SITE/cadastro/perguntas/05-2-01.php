@@ -1,5 +1,5 @@
-<div class='conteudo flexbox wrap text-align-center space-between-vertical caixas-cadastros'>
-    <div class='conteudo flexbox wrap text-align-center space-between-vertical'>
+<div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center caixas-cadastros'>
+    <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
         <div class='titulo heavy white large'>
         Mais chances de trabalhar
         </div>
@@ -21,7 +21,7 @@
                     </ul>
                 </div>
                 <div class='preco'><img src='../_images/preco_premium.svg' /></div>
-                  <button id='btn_renova-cadastro-premium' class='botao'>Escolher</button>
+                  <button id='btn_cadastro-premium' class='botao'>Escolher</button>
                 <div class='aviso'>
                   <div class='checkbox'>
                     <input type='checkbox' id='terms-3' class='checado' />

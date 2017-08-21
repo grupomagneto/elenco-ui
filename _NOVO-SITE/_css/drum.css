@@ -1,0 +1,287 @@
+.scroll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 90%;
+  width: 100%;
+  /*max-width: 320px;*/
+}
+  .scroll select {
+    display: inline-block; }
+
+.drum figure {
+  text-align: center; }
+
+div.drum-wrapper {
+  position: relative;
+  width: 100%; }
+
+div.drum-wrapper .inner {
+  position: relative;
+  overflow: hidden; }
+
+div.drum-wrapper div.container {
+  position: absolute;
+  width: 100%;
+  top: 15px;
+  left: 0px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF; }
+
+div.drum-wrapper,
+div.drum-wrapper .inner {
+  height: 100px; }
+
+.outside div.drum-wrapper {
+  height: 100px; }
+
+.outside div.drum-wrapper .inner {
+  top: 12px; }
+
+.outside div.drum-wrapper .container {
+  top: 40px; }
+
+div.drum-wrapper .dial {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  height: 70px;
+  background-color: transparent;
+  display: none; }
+
+.outside div.drum-wrapper .dial {
+  height: 70px; }
+
+div.drum-wrapper .dial div {
+  width: 20px;
+  height: 40px;
+  margin: 0 auto; }
+
+div.drum-wrapper .dial svg {
+  position: absolute; }
+
+div.drum-wrapper .up {
+  top: 0px; }
+
+div.drum-wrapper .up svg {
+  top: -5px;
+  left: 25px; }
+
+div.drum-wrapper .down {
+  bottom: 0px; }
+
+div.drum-wrapper .down svg {
+  bottom: 0px;
+  left: 25px; }
+
+div.drum {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+
+div.drum figure {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  font-size: 24px;
+  line-height: 30px;
+  color: #FFFFFF;
+  margin: 0px;
+  padding: 15px 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  text-align: center; }
+
+div.drum-wrapper div.container, div.drum-wrapper figure {
+  height: 40px;
+  line-height: 16px; }
+
+#drum_date {
+  width: 250px;
+  height: 70px; 
+  left: 40px; }
+
+#drum_date .container {
+  top: 50px;
+  height: 70px;
+  width: 250px; }
+
+#drum_date, #drum_date .inner {
+  height: 170px; 
+  width: 180px;}
+
+#drum_date .container, #drum_date figure {
+  height: 40px; }
+
+#drum_date figure {
+  text-align: center;
+  font-size: 24px;
+  line-height: 15px;
+  text-transform: lowercase; }
+
+#drum_date .dial {
+  height: 100px; }
+
+#drum_date .dial div {
+  width: 75px; }
+
+div#drum_date.drum-wrapper .up {
+  top: 0px;
+  width: 200px; }
+
+div#drum_date.drum-wrapper .up svg {
+  top: -5px;
+  left: 70px; }
+
+div#drum_date.drum-wrapper .down {
+  bottom: 0px;
+  width: 200px;  }
+
+div#drum_date.drum-wrapper .down svg {
+  bottom: 0px;
+  left: 70px; }
+
+#drum_hour {
+  width: 200px;
+  height: 150px;
+  left: 40px; }
+
+#drum_hour .container {
+  top: 50px;
+  height: 170px; }
+
+#drum_hour, #drum_hour .inner {
+  height: 170px; }
+
+#drum_hour .container, #drum_hour figure {
+  height: 40px; }
+
+#drum_hour figure {
+  text-align: center;
+  font-size: 24px;
+  line-height: 15px; }
+
+#drum_hour .dial {
+  height: 150px; }
+
+#drum_hour .dial div {
+  width: 75px; }
+
+div#drum_hour.drum-wrapper .up {
+  top: 0px;
+  width: 200px; }
+
+div#drum_hour.drum-wrapper .up svg {
+  top: -5px;
+  left: 90px; }
+
+div#drum_hour.drum-wrapper .down {
+  bottom: 0px;
+  width: 200px;  }
+
+div#drum_hour.drum-wrapper .down svg {
+  bottom: 0px;
+  left: 90px; }
+
+#drum_minutes {
+  width: 200px;
+  height: 150px; }
+
+#drum_minutes .container {
+  top: 50px;
+  height: 170px; }
+
+#drum_minutes, #drum_minutes .inner {
+  height: 170px; }
+
+#drum_minutes .container, #drum_minutes figure {
+  height: 40px; }
+
+#drum_minutes figure {
+  text-align: center;
+  font-size: 24px;
+  line-height: 15px; }
+
+#drum_minutes .dial {
+  height: 150px; }
+
+#drum_minutes .dial div {
+  width: 75px; }
+  
+div#drum_minutes.drum-wrapper .up {
+  top: 0px;
+  width: 200px; }
+
+div#drum_minutes.drum-wrapper .up svg {
+  top: -5px;
+  left: 90px; }
+
+div#drum_minutes.drum-wrapper .down {
+  bottom: 0px;
+  width: 200px;  }
+
+div#drum_minutes.drum-wrapper .down svg {
+  bottom: 0px;
+  left: 90px; }
+
+
+
+/*TRUMPS*/
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  #drum_date {
+    left: 80px; }
+}
+
+@media only screen and (min-width: 341px) and (max-width: 767px) {
+  #drum_date {
+    left: 90px; }
+
+  #drum_hour {
+    left: 60px; }
+
+
+div#drum_hour.drum-wrapper .up svg {
+  top: -5px;
+  left: 80px; }
+
+div#drum_hour.drum-wrapper .down svg {
+  bottom: 0px;
+  left: 80px; }
+
+
+div#drum_minutes.drum-wrapper .up svg {
+  top: -5px;
+  left: 80px; }
+
+
+div#drum_minutes.drum-wrapper .down svg {
+  bottom: 0px;
+  left: 80px; }
+
+     }

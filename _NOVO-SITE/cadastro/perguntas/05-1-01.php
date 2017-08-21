@@ -1,5 +1,5 @@
-<div class='conteudo flexbox wrap text-align-center space-between-vertical caixas-cadastros'>
-    <div class='conteudo flexbox wrap text-align-center space-between-vertical'>
+<div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center caixas-cadastros'>
+    <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
         <div class='titulo heavy white large'>
         Perfeito para começar
         </div>
@@ -20,7 +20,7 @@
                         <li class='itens'>Sem prazo de validade;</li>
                     </ul>
                 </div>
-                <button id='btn_renova-cadastro-gratuito' class='botao'>Escolher</button>
+                <button id='btn_cadastro-gratuito' class='botao'>Escolher</button>
                 <div class='aviso'>
                   <div class='checkbox'>
                     <input type='checkbox' id='terms-1' class='checado' />

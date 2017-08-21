@@ -1,13 +1,14 @@
 <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
     <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
         <div class='titulo heavy white large'>
-        Você é menor de idade!
+        Você é o titular do cartão de crédito?
         </div>
         <div class='subtitulo avenir white small'>
-        Peça ajuda a um adulto para preencher o seu cadastro
+        Seu CPF, telefone e CEP são os mesmos do Titular do Cartão?
         </div>
         <div class='botoes'>
-            <button id='btn_recomecar-cadastro' class='botao'>Recomeçar Cadastro</button>
+            <button id='btn_sim-titular-do-cartao' class='botao'>Sim</button>
+            <button id='btn_nao-titular-do-cartao' class='botao'>Não</button>
         </div>
     </div>
 </div>

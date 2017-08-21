@@ -87,20 +87,22 @@ height: 60px;
 padding-left: 10px;
 padding-right: 20px;
 }
-.select-hidden{ display:none; visibility:hidden; padding-right:10px; }
-.select{ cursor:pointer; font-size:20px; color:#fff; width:280px; height:60px; }
-.select-styled{ font-family:Avenir-Book; font-size:20px; top:0px; right:0px; bottom:0px; left:0px; background-color:rgba(255,255,255,0.15); padding:20px 20px; border-radius:8px; border:1px solid #fff; -moz-transition:all 0.2s ease-in; -o-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition:all 0.2s ease-in; text-align:left; }
-.select-styled:after{ position: relative; content:""; width:0px; height:0px; border:7px solid transparent; border-color:#fff transparent transparent transparent; top:10px; right:0px; float: right;}
-.select-styled:hover{ background-color:rgba(255,255,255,0.15); }
-.select-styled:active, .select-styled.active{ background-color:rgba(255,255,255,0.15); }
-.select-styled:active:after, .select-styl.active:after{ top:15px; border-color:transparent transparent #fff transparent; }
-.select-options{ font-family:Avenir-Book; font-size:16px; line-height:12px; display:none; top:100%; right:0px; left:0px; z-index:999; margin:0px; padding:0px; list-style:none; overflow:auto; height:100px; border-radius:8px; border:1px solid #fff; background-color:rgba(255,255,255,0.15); margin-top:8px; }
-.select-options li{ margin:0px; padding:12px 0px; text-indent:15px; -moz-transition:all 0.15s ease-in; -o-transition:all 0.15s ease-in; -webkit-transition:all 0.15s ease-in; transition:all 0.15s ease-in; text-align:left; }
-.select-options li:hover{ color:#fff; background:rgba(255,255,255,0.15); }
-.select-options li[rel="hide"]{ display:none; }
-.select-options::-webkit-scrollbar{ width:12px; }
-.select-options::-webkit-scrollbar-track{ -webkit-box-shadow:inset 0 0 6px rgba(255,255,255,0.30); color:#fff; border-radius:10px; }
-.select-options::-webkit-scrollbar-thumb{ border-radius:10px; -webkit-box-shadow:inset 0 0 20px #fff; }
+
+.select-dropdown-hidden{ display:none; visibility:hidden; padding-right:10px; }
+.select-dropdown{ cursor:pointer; font-size:20px; color:#fff; width:280px; height:60px; }
+.select-dropdown-styled{ font-family:Avenir-Book; font-size:20px; top:0px; right:0px; bottom:0px; left:0px; background-color:rgba(255,255,255,0.15); padding:20px 20px; border-radius:8px; border:1px solid #fff; -moz-transition:all 0.2s ease-in; -o-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in; transition:all 0.2s ease-in; text-align:left; }
+.select-dropdown-styled:after{ position: relative; content:""; width:0px; height:0px; border:7px solid transparent; border-color:#fff transparent transparent transparent; top:10px; right:0px; float: right;}
+.select-dropdown-styled:hover{ background-color:rgba(255,255,255,0.15); }
+.select-dropdown-styled:active, .select-dropdown-styled.active{ background-color:rgba(255,255,255,0.15); }
+.select-dropdown-styled:active:after, .select-dropdown-styl.active:after{ top:15px; border-color:transparent transparent #fff transparent; }
+.select-dropdown-options{ font-family:Avenir-Book; font-size:16px; line-height:12px; display:none; top:100%; right:0px; left:0px; z-index:999; margin:0px; padding:0px; list-style:none; overflow:auto; height:100px; border-radius:8px; border:1px solid #fff; background-color:rgba(255,255,255,0.15); margin-top:8px; }
+.select-dropdown-options li{ margin:0px; padding:12px 0px; text-indent:15px; -moz-transition:all 0.15s ease-in; -o-transition:all 0.15s ease-in; -webkit-transition:all 0.15s ease-in; transition:all 0.15s ease-in; text-align:left; }
+.select-dropdown-options li:hover{ color:#fff; background:rgba(255,255,255,0.15); }
+.select-dropdown-options li[rel="hide"]{ display:none; }
+.select-dropdown-options::-webkit-scrollbar{ width:12px; }
+.select-dropdown-options::-webkit-scrollbar-track{ -webkit-box-shadow:inset 0 0 6px rgba(255,255,255,0.30); color:#fff; border-radius:10px; }
+.select-dropdown-options::-webkit-scrollbar-thumb{ border-radius:10px; -webkit-box-shadow:inset 0 0 20px #fff; }
+
 /* Placeholder Desktop */
 /*::-webkit-input-placeholder{ color:#fff; opacity:0.4; font-family:Avenir-Book; font-size:20px; }
 :-moz-placeholder{ color:#fff; opacity:0.4; font-family:Avenir-Book; font-size:20px; }

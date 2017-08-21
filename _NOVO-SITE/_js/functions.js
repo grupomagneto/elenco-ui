@@ -368,16 +368,16 @@ $('.cep').keyup(function() {
 	}
 });
 // Formata os selects
-$(".select").each(function(){
+$(".select-dropdown").each(function(){
   var $this = $(this);
   var numberOfOptions = $(this).children("option").length;
-  $this.addClass("select-hidden");
-  $this.wrap("<div class='select'></div>");
-  $this.after("<div class='select-styled'></div>");
-  var $styledSelect = $this.next("div.select-styled");
+  $this.addClass("select-dropdown-hidden");
+  $this.wrap("<div class='select-dropdown'></div>");
+  $this.after("<div class='select-dropdown-styled'></div>");
+  var $styledSelect = $this.next("div.select-dropdown-styled");
   $styledSelect.text($this.children("option").eq(0).text());
   var $list = $("<ul />", {
-      "class": "select-options"
+      "class": "select-dropdown-options"
   }).insertAfter($styledSelect);
   for (var i = 0; i < numberOfOptions; i++) {
       $("<li />", {
@@ -388,10 +388,10 @@ $(".select").each(function(){
   var $listItems = $list.children("li");
   $styledSelect.click(function(e) {
       e.stopPropagation();
-      $("div.select-styled.active").each(function(){
-          $(this).removeClass("active").next("ul.select-options").hide();
+      $("div.select-dropdown-styled.active").each(function(){
+          $(this).removeClass("active").next("ul.select-dropdown-options").hide();
       });
-      $(this).toggleClass("active").next("ul.select-options").toggle();
+      $(this).toggleClass("active").next("ul.select-dropdown-options").toggle();
   });
   $listItems.click(function(e) {
       e.stopPropagation();
@@ -406,21 +406,21 @@ $(".select").each(function(){
   });
 });
 $(document).ready(function(){
-var mascara = function() { 
-if (window.matchMedia('(min-width: 1024px)').matches) {
-  var ua = navigator.userAgent.toLowerCase(); 
-  if (ua.indexOf('safari') != -1) { 
-    if (ua.indexOf('chrome') > -1) {
-      
-    } else {
-      $('.data').mask('00/00/0000');
+  $(".cel").mask("0 0000 0000");
+  var mascara = function() { 
+  if (window.matchMedia('(min-width: 1024px)').matches) {
+    var ua = navigator.userAgent.toLowerCase(); 
+    if (ua.indexOf('safari') != -1) { 
+      if (ua.indexOf('chrome') > -1) {
+        
+      } else {
+        $('.data').mask('00/00/0000');
+      }
     }
+  } else {
+   $('.data').unmask();
   }
-} else {
- $('.data').unmask();
-}
 };
 $(window).resize(mascara);
   mascara();  
 });
-

@@ -1,5 +1,5 @@
-<div class='conteudo flexbox wrap text-align-center space-between-vertical caixas-cadastros'>
-    <div class='conteudo flexbox wrap text-align-center space-between-vertical'>
+<div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center caixas-cadastros'>
+    <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
         <div class='titulo heavy white large'>
         Ideal para quem trabalha muito
         </div>
@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class='preco'><img src='../_images/preco_profissional.svg' /></div>
-                  <button id='btn_renova-cadastro-profissional' class='botao'>Escolher</button>
+                  <button id='btn_cadastro-profissional' class='botao'>Escolher</button>
                 <div class='aviso'>
                   <div class='checkbox'>
                     <input type='checkbox' id='terms-4' class='checado' />
