@@ -13,11 +13,10 @@
   -ms-flex-align: center;
   align-items: center;
   height: 90%;
-  width: 100%;
-  /*max-width: 320px;*/
+  max-width: 320px;
 }
-  .scroll select {
-    display: inline-block; }
+.scroll select {
+  display: inline-block; }
 
 .drum figure {
   text-align: center; }
@@ -122,25 +121,25 @@ div.drum-wrapper div.container, div.drum-wrapper figure {
   line-height: 16px; }
 
 #drum_date {
-  width: 250px;
+  width: 160px;
   height: 70px; 
-  left: 40px; }
+  left: 0px; }
 
 #drum_date .container {
   top: 50px;
   height: 70px;
-  width: 250px; }
+  width: 160px;}
 
 #drum_date, #drum_date .inner {
   height: 170px; 
-  width: 180px;}
+  width: 150px;}
 
 #drum_date .container, #drum_date figure {
   height: 40px; }
 
 #drum_date figure {
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 15px;
   text-transform: lowercase; }
 
@@ -152,28 +151,31 @@ div.drum-wrapper div.container, div.drum-wrapper figure {
 
 div#drum_date.drum-wrapper .up {
   top: 0px;
-  width: 200px; }
+  width: 160px; }
 
 div#drum_date.drum-wrapper .up svg {
   top: -5px;
-  left: 70px; }
+  left: 60px; }
 
 div#drum_date.drum-wrapper .down {
-  bottom: 0px;
-  width: 200px;  }
+  bottom: 10px;
+  width: 160px;  }
 
 div#drum_date.drum-wrapper .down svg {
-  bottom: 0px;
-  left: 70px; }
+  bottom: 10px;
+  left: 60px; }
+
+/*HORA*/
 
 #drum_hour {
-  width: 200px;
+  width: 80px;
   height: 150px;
-  left: 40px; }
+  left: 0px;  }
 
 #drum_hour .container {
   top: 50px;
-  height: 170px; }
+  height: 170px;
+  width: 80px; }
 
 #drum_hour, #drum_hour .inner {
   height: 170px; }
@@ -182,9 +184,10 @@ div#drum_date.drum-wrapper .down svg {
   height: 40px; }
 
 #drum_hour figure {
-  text-align: center;
-  font-size: 24px;
-  line-height: 15px; }
+  text-align: right;
+  font-size: 18px;
+  line-height: 15px;
+  margin-left: -10px; }
 
 #drum_hour .dial {
   height: 150px; }
@@ -194,27 +197,31 @@ div#drum_date.drum-wrapper .down svg {
 
 div#drum_hour.drum-wrapper .up {
   top: 0px;
-  width: 200px; }
+  width: 80px; }
 
 div#drum_hour.drum-wrapper .up svg {
   top: -5px;
-  left: 90px; }
+  left: 50px; }
 
 div#drum_hour.drum-wrapper .down {
-  bottom: 0px;
-  width: 200px;  }
+  bottom: 10px;
+  width: 80px;  }
 
 div#drum_hour.drum-wrapper .down svg {
-  bottom: 0px;
-  left: 90px; }
+  bottom: 10px;
+  left: 50px; }
+
+/*MINUTOS*/
 
 #drum_minutes {
-  width: 200px;
-  height: 150px; }
+  width: 70px;
+  height: 150px;
+  left: -5px;  }
 
 #drum_minutes .container {
   top: 50px;
-  height: 170px; }
+  height: 170px; 
+  width: 80px;}
 
 #drum_minutes, #drum_minutes .inner {
   height: 170px; }
@@ -223,9 +230,10 @@ div#drum_hour.drum-wrapper .down svg {
   height: 40px; }
 
 #drum_minutes figure {
-  text-align: center;
-  font-size: 24px;
-  line-height: 15px; }
+  text-align: left;
+  font-size: 18px;
+  line-height: 15px;
+  margin-left: 5px;}
 
 #drum_minutes .dial {
   height: 150px; }
@@ -235,23 +243,27 @@ div#drum_hour.drum-wrapper .down svg {
   
 div#drum_minutes.drum-wrapper .up {
   top: 0px;
-  width: 200px; }
+  width: 80px; }
 
 div#drum_minutes.drum-wrapper .up svg {
   top: -5px;
-  left: 90px; }
+  left: 10px; }
 
 div#drum_minutes.drum-wrapper .down {
-  bottom: 0px;
-  width: 200px;  }
+  bottom: 10px;
+  width: 80px;  }
 
 div#drum_minutes.drum-wrapper .down svg {
-  bottom: 0px;
-  left: 90px; }
+  bottom: 10px;
+  left: 10px; }
 
 
 
 /*TRUMPS*/
+
+.dois-pontos{
+  margin-top: -25px;
+}
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   #drum_date {
@@ -266,22 +278,95 @@ div#drum_minutes.drum-wrapper .down svg {
     left: 60px; }
 
 
-div#drum_hour.drum-wrapper .up svg {
-  top: -5px;
-  left: 80px; }
+div#drum_date.drum-wrapper .up {
+  display: block;
+  top: 0px;
+  width: 160px; }
 
-div#drum_hour.drum-wrapper .down svg {
-  bottom: 0px;
-  left: 80px; }
+div#drum_date.drum-wrapper .down {
+  display: block;
+  bottom: 10px;
+  width: 160px;  }
 
+div#drum_hour.drum-wrapper .up {
+  display: block;
+  top: 0px;
+  width: 80px; }
 
-div#drum_minutes.drum-wrapper .up svg {
-  top: -5px;
-  left: 80px; }
+div#drum_hour.drum-wrapper .down {
+  display: block;
+  bottom: 10px;
+  width: 80px;  }
 
+div#drum_minutes.drum-wrapper .up {
+  display: block;
+  top: 0px;
+  width: 80px; }
 
-div#drum_minutes.drum-wrapper .down svg {
-  bottom: 0px;
-  left: 80px; }
+div#drum_minutes.drum-wrapper .down {
+  display: block;
+  bottom: 10px;
+  width: 80px;  }
+
 
      }
+@media only screen and (max-width: 340px){
+
+/*
+div#drum_date.drum-wrapper .up {
+  display: block;
+  top: 0px;
+  width: 160px; }
+
+div#drum_date.drum-wrapper .down {
+  display: block;
+  bottom: 10px;
+  width: 160px;  }
+
+div#drum_hour.drum-wrapper .up {
+  display: block;
+  top: 0px;
+  width: 80px; }
+
+div#drum_hour.drum-wrapper .down {
+  display: block;
+  bottom: 10px;
+  width: 80px;  }
+
+div#drum_minutes.drum-wrapper .up {
+  display: block;
+  top: 0px;
+  width: 80px; }
+
+div#drum_minutes.drum-wrapper .down {
+  display: block;
+  bottom: 10px;
+  width: 80px;  }
+*/
+
+div#drum_date.drum-wrapper .up svg {
+  top: 10px;
+  left: 60px; }
+
+
+div#drum_date.drum-wrapper .down svg {
+  bottom: 20px;
+  left: 60px; }
+
+div#drum_hour.drum-wrapper .up svg {
+  top: 10px;
+  left: 50px; }
+
+div#drum_hour.drum-wrapper .down svg {
+  bottom: 20px;
+  left: 50px; }
+
+div#drum_minutes.drum-wrapper .up svg {
+  top: 10px;
+  left: 10px; }
+
+div#drum_minutes.drum-wrapper .down svg {
+  bottom: 20px;
+  left: 10px; }
+
+}

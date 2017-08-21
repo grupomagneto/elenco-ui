@@ -272,13 +272,17 @@
 			var dialDown = DrumIcon.down(settings);
 			$(wrapper).append(dialDown);
 
-			$(wrapper).hover(function () {
-				$(this).find(".up").show();
-				$(this).find(".down").show();
-			}, function () {
-				$(this).find(".up").hide();
-				$(this).find(".down").hide();
-			});
+
+      $(wrapper).find(".up").show();
+      $(wrapper).find(".down").show();
+
+			// $(wrapper).hover(function () {
+			// 	$(this).find(".up").show();
+			// 	$(this).find(".down").show();
+			// }, function () {
+			// 	$(this).find(".up").hide();
+			// 	$(this).find(".down").hide();
+			// });
 		}
 
 		settings.radius = Math.round( ( $(drum).height() / 2 ) / Math.tan( Math.PI / settings.panelCount ) );
@@ -454,4 +458,4 @@
 	};
 })(jQuery);
 
-	$(".drum-selector").drum();
+	$(".drum-select").drum();
