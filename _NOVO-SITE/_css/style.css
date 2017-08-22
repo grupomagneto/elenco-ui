@@ -190,3 +190,5 @@ input[type='checkbox']{
     cursor: default;
     background: rgba(255,255,255,0.30);
 }
+.cursor {
+  cursor: pointer; }
