@@ -1,25 +1,3 @@
-.gradient-intro {
-	display:block;
-	position: fixed;
-	width:100%;
-	height: 100%;
-	padding:0px;
-	margin:0px;
-	overflow: auto;
-}
-.gradient-intro:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 0px;
-  margin: 0px;
-  background: url("../_images/img-DSC_2882.png") center center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  opacity: 0.4;
-}
 .mancha{
     max-width: 90%;
     height: 100%;
@@ -407,4 +385,15 @@ width: 250px;
 }
 .titular-inputs{
     margin-bottom: 10px;
+}
+.swiper-slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-image: url("../_images/img-DSC_2882.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    /*opacity: 0.4;*/
 }

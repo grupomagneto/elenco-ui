@@ -48,19 +48,30 @@
 <!-- <link rel="stylesheet" href="../_css/cadastro-index.css" type="text/css" /> -->
 </head>
 <body>
-
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide" id="01-0-01_prazer-somos-uma-agencia-de-elenco"><?php include "perguntas/01-0-01.php"; ?></div>
-    <div class="swiper-slide" id="01-0-02_para-atores-modelos-e-inflenciadores-de-todos-perfis"><?php include "perguntas/01-0-02.php"; ?></div>
-    <div class="swiper-slide" id="01-0-03_conectando-pessoas-a-anunciantes"><?php include "perguntas/01-0-03.php"; ?></div>
-    <div class="swiper-slide" id="01-0-04_faca-parte-do-nosso-elenco"><?php include "perguntas/01-0-04.php"; ?></div>
-  </div>
-</div>
+<div class="gradient">
+  <div class="container">
+    <div class="mancha flexbox relative wrap">
+        <div class="menu align-items-center flexbox nowrap space-between-horizontal">
+            <img src="../_images/seta-voltar.svg" class="voltar" />
+            <div class="barra_progresso">
+              <span class="barra_progresso_porcentagem"></span>
+            </div>
+            <img src="../_images/menu.svg" class="mini-menu" />
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" id="01-0-01_prazer-somos-uma-agencia-de-elenco"><?php include "perguntas/01-0-01.php"; ?></div>
+            <div class="swiper-slide" id="01-0-02_para-atores-modelos-e-inflenciadores-de-todos-perfis"><?php include "perguntas/01-0-02.php"; ?></div>
+            <div class="swiper-slide" id="01-0-03_conectando-pessoas-a-anunciantes"><?php include "perguntas/01-0-03.php"; ?></div>
+            <div class="swiper-slide" id="01-0-04_faca-parte-do-nosso-elenco"><?php include "perguntas/01-0-04.php"; ?></div>
+          </div>
+        </div>
 <!-- <div class="swiper-slide" id="02-0-01_cadastre-se-com-seu-e-mail"><?php include "perguntas/02-0-01.php"; ?></div>
 <div class="swiper-slide" id="02-0-02_cheque-seu-e-mail-e-siga-as-instrucoes"><?php include "perguntas/02-0-02.php"; ?></div>
 <div class="swiper-slide" id="02-0-03_e-mail-confirmado"><?php include "perguntas/02-0-03.php"; ?></div> -->
-
+    </div>
+  </div>
+</div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js" integrity="sha256-eEa1kEtgK9ZL6h60VXwDsJ2rxYCwfxi40VZ9E0XwoEA=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../_js/gradient.js"></script>

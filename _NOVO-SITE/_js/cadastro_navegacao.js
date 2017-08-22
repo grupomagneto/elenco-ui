@@ -8,7 +8,7 @@ $(document).ready(function(){
       simulateTouch: false,
       onlyExternal: true,
       speed: 200,
-      initialSlide: 27
+      initialSlide: 0
       // keyboardControl: true
       // onSlideChangeEnd : function(swiper) {
       //  console.log("activeIndex: "+swiper.activeIndex);
