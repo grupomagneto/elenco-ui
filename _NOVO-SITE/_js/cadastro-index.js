@@ -1,5 +1,6 @@
 $(document).ready(function(){
   var swiper1 = new Swiper('.swiper1', {
+      preloadImages: true,
       spaceBetween: 30,
       simulateTouch: true,
       onlyExternal: true,
@@ -30,6 +31,7 @@ $(document).ready(function(){
           var styleElem = document.head.appendChild(document.createElement("style"));
           styleElem.innerHTML = ".gradient:after {background-image: url('../_images/img-DSC_3304.png');}";
           $(".footer-intro").fadeOut(200);
+          swiper1.enableKeyboardControl();
         }
         // console.log("activeIndex: "+swiper.activeIndex);
         //   var gradientBg = document.querySelector('.gradient');
@@ -45,7 +47,27 @@ $(document).ready(function(){
     initialSlide: 0,
     keyboardControl: false,
     direction: 'horizontal',
-    loop: false
+    loop: false,
+    onSlideChangeStart : function(swiper2) {
+      // swiper1.disableKeyboardControl();
+    //   // console.log(swiper2.activeIndex);
+    //   if (swiper2.activeIndex == 0) {
+    //     $(".voltar").click(function(e){
+    //       e.preventDefault();
+    //       $(".swiper2").fadeOut(200);
+    //       var styleElem = document.head.appendChild(document.createElement("style"));
+    //       styleElem.innerHTML = ".gradient:after {display: block;}";
+    //       $(".swiper1").fadeIn(200);
+    //       $(".voltar").css("opacity", "0");
+    //     });
+    //   }
+      if (swiper2.activeIndex == 2) {
+        $(".voltar").css("opacity", "0");
+        $(".voltar").click(function(e){
+          e.preventDefault();
+        });
+      }
+    }
   });
   $(".pular-intro").click(function(e){
     e.preventDefault();
@@ -53,12 +75,30 @@ $(document).ready(function(){
   });
   $(".seu-email").click(function(e){
     e.preventDefault();
+    swiper2.slideTo( $("#02-0-01_cadastre-se-com-seu-e-mail").index(), 200);
+    $(".voltar").css("opacity", "1");
     $(".swiper1").fadeOut(200);
+    $(".swiper2").fadeIn(200);
     var styleElem = document.head.appendChild(document.createElement("style"));
     styleElem.innerHTML = ".gradient:after {display: none;}";
+    swiper1.disableKeyboardControl();
+    swiper2.disableKeyboardControl();
   });
   $("#btn_inicia-cadastro").click(function(e){
     e.preventDefault();
     swiper2.slideNext();
+  });
+  $(".voltar").click(function(e){
+    e.preventDefault();
+    $(".swiper2").fadeOut(200);
+    var styleElem = document.head.appendChild(document.createElement("style"));
+    styleElem.innerHTML = ".gradient:after {display: block;}";
+    $(".swiper1").fadeIn(200);
+    $(".voltar").css("opacity", "0");
+    swiper1.enableKeyboardControl();
+  });
+  $("#btn_estou-com-problemas").click(function(e){
+    e.preventDefault();
+    swiper2.slideTo( $("#02-0-03_e-mail-confirmado").index(), 200);
   });
 });

@@ -94,6 +94,10 @@ width: 120px;
 background: #FFFFFF;
 }
 .seu-email{
-  margin-left: 5px;
-  margin-top: -1px;
+margin-left: 5px;
+margin-top: -1px;
+}
+.input-texto{
+margin-top: 10px;
+text-align: left;
 }
