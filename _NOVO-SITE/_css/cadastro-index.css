@@ -11,7 +11,7 @@ position: absolute;
 transition: all 0.5s ease;
 /*-webkit-animation: bummer 10s;
 animation: bummer 10s;
--webkit-transform: scale(1,1); 
+-webkit-transform: scale(1,1);
 transform: scale(1,1);
 -webkit-animation-fill-mode: forwards;
 animation-fill-mode: forwards;*/
@@ -34,12 +34,12 @@ opacity: 0.4;
 }
 /*@-webkit-keyframes bummer {
 100% {
--webkit-transform: scale(2,2); 
+-webkit-transform: scale(2,2);
 }
 }
 @keyframes bummer {
 100% {
-transform: scale(2,2); 
+transform: scale(2,2);
 }
 }*/
 .margin20{
@@ -96,10 +96,4 @@ background: #FFFFFF;
 .seu-email{
   margin-left: 5px;
   margin-top: -1px;
-}
-.botao{
-padding: 10px;
-display: flex;
-align-items: center;
-justify-content: space-around;
 }

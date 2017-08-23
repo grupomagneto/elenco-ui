@@ -1,3 +1,0 @@
-#!/usr/bin/env ruby
-require 'slim2html'
-Slim2html.convert!(ARGV)

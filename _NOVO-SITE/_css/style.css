@@ -146,6 +146,10 @@ margin-left: 5px;
 margin-right: 5px;
 text-align: center;
 cursor: pointer;
+padding: 10px;
+display: flex;
+align-items: center;
+justify-content: space-around;
 }
 .botao:hover,
 .botao:focus,

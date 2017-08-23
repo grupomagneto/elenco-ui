@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="33px" viewBox="0 0 50 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Novo-Cadastro---Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sign-Up---Email-Copy" transform="translate(-135.000000, -190.000000)" fill="#FFFFFF">
+            <g id="Group" transform="translate(30.000000, 190.000000)">
+                <g id="Page-1" transform="translate(105.000000, 0.000000)">
+                    <path d="M2.643375,0 C2.643375,0 23.008375,14.1580247 24.797125,14.1580247 C26.587125,14.1580247 46.592125,0 46.592125,0 L2.643375,0 Z" id="Fill-1"></path>
+                    <path d="M2.643375,32.5159259 L20.285875,15.4023457 C20.285875,15.4023457 23.164625,18.0467901 24.797125,18.0467901 C26.429625,18.0467901 29.107125,15.4023457 29.107125,15.4023457 L46.592125,32.5159259 L2.643375,32.5159259 Z" id="Fill-3"></path>
+                    <polygon id="Fill-5" points="0 2.02246914 0 30.9595062 17.45 13.3792593"></polygon>
+                    <polygon id="Fill-7" points="49.40125 2.02246914 49.40125 30.9595062 31.95125 13.3792593"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

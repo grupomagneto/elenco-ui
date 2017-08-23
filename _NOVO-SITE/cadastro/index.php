@@ -56,7 +56,7 @@
             <img src="../_images/logo-horizontal.svg" />
             <img src="../_images/menu.svg" class="mini-menu" />
         </div>
-        <div class="swiper-container">
+        <div class="swiper-container swiper1">
           <div class="swiper-wrapper">
             <div class="swiper-slide" id="01-0-01_prazer-somos-uma-agencia-de-elenco"><?php include "perguntas/01-0-01.php"; ?></div>
             <div class="swiper-slide" id="01-0-02_para-atores-modelos-e-inflenciadores-de-todos-perfis"><?php include "perguntas/01-0-02.php"; ?></div>
@@ -64,9 +64,13 @@
             <div class="swiper-slide" id="01-0-04_faca-parte-do-nosso-elenco"><?php include "perguntas/01-0-04.php"; ?></div>
           </div>
         </div>
-<!-- <div class="swiper-slide" id="02-0-01_cadastre-se-com-seu-e-mail"><?php include "perguntas/02-0-01.php"; ?></div>
-<div class="swiper-slide" id="02-0-02_cheque-seu-e-mail-e-siga-as-instrucoes"><?php include "perguntas/02-0-02.php"; ?></div>
-<div class="swiper-slide" id="02-0-03_e-mail-confirmado"><?php include "perguntas/02-0-03.php"; ?></div> -->
+        <div class="swiper-container swiper2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" id="02-0-01_cadastre-se-com-seu-e-mail"><?php include "perguntas/02-0-01.php"; ?></div>
+            <div class="swiper-slide" id="02-0-02_cheque-seu-e-mail-e-siga-as-instrucoes"><?php include "perguntas/02-0-02.php"; ?></div>
+            <div class="swiper-slide" id="02-0-03_e-mail-confirmado"><?php include "perguntas/02-0-03.php"; ?></div>
+          </div>
+        </div>
     </div>
     <div class="footer-intro cursor">
       <div class="swiper-pagination"></div>

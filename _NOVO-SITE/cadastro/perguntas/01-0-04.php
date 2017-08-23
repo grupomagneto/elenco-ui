@@ -22,9 +22,9 @@
         <span class="avenir white small">ou</span>
       <span class="after-line-title"></span>
       <span class="avenir white small">Preencher cadastro usando</span>
-      <a class="seu-email" href="cadastro.php">
-        <span class="heavy white small underlined">seu email</span>
-      </a>
+      <button class="seu-email heavy white small underlined cursor">
+        seu email
+      </button>
     </div>
   </div>
 </div>
