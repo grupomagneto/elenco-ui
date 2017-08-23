@@ -1,68 +1,68 @@
 .mancha{
-    max-width: 90%;
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
-    left: 50%;
-    margin-left: -45%;
+max-width: 90%;
+height: 100%;
+margin: 0;
+overflow: hidden;
+padding: 0;
+left: 50%;
+margin-left: -45%;
 }
 .menu{
-    width: 100%;
-	height: 30px;
-	margin: 20px 0px 0px 0px;
-    align-items: center;
+width: 100%;
+height: 30px;
+margin: 20px 0px 0px 0px;
+align-items: center;
 }
 .voltar{
-    opacity: 0;
-    transition: all 0.5s ease;
+opacity: 0;
+transition: all 0.5s ease;
 }
 .barra_progresso_porcentagem{
-    width: 2%;
-    transition:all 0.5s ease;
+width: 2%;
+transition:all 0.5s ease;
 }
 .conteudo{
-    max-width: 320px;
-	height: 90%;
-	padding: 0;
+max-width: 320px;
+height: 90%;
+padding: 0;
 }
 .titulo{
-	width: 90%;
-    height: auto;
-	margin-top: 20px;
-    margin-left: 5%;
+width: 90%;
+height: auto;
+margin-top: 20px;
+margin-left: 5%;
 }
 .subtitulo{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-	width: 100%;
-	height: auto;
-	margin: 10px 10px 10px 10px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+width: 100%;
+height: auto;
+margin: 10px 10px 10px 10px;
 }
 .botoes{
-	width: 100%;
-	margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    /*z-index: -1;*/
+width: 100%;
+margin-bottom: 20px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+/*z-index: -1;*/
 }
 .subtexto{
-    position: relative;
-    font-family: Avenir-Book;
-    font-size: 14px;
-    color: #FFFFFF;
+position: relative;
+font-family: Avenir-Book;
+font-size: 14px;
+color: #FFFFFF;
 }
 .icon-cpf{
-    padding-left: 10px;
+padding-left: 10px;
 }
 .validacao-ok{
-    display: flex;
-    align-content: flex-start;
+display: flex;
+align-content: flex-start;
 }
 .input-validacao-ok{
-    margin-top: 50px;
+margin-top: 50px;
 }
 input[type="text"].input_ddd::-webkit-input-placeholder{
 background: transparent;
@@ -80,20 +80,20 @@ padding-right: 10px;
 padding-left: 10px;
 }
 .select {
-	margin-top: -50px;
+margin-top: -50px;
 }
 .btn_planos{
-    width: 100%;
-    height: auto;
-    padding-right: 10px;
+width: 100%;
+height: auto;
+padding-right: 10px;
 }
 .btn_plano{
-    width: 100%;
-    height: 110%;
-    cursor: pointer;
+width: 100%;
+height: 110%;
+cursor: pointer;
 }
 .btn_plano-more{
-    cursor: pointer;
+cursor: pointer;
 }
 .quadro-gratuito{
 width: 90%;
@@ -177,7 +177,7 @@ overflow-y: scroll;
 margin-bottom: 50px;
 }
 .video{
-    margin-top: 10px;
+margin-top: 10px;
 }
 /* START CROPPER CSS */
 .hide {
@@ -249,8 +249,8 @@ max-width: 250px;
 max-height: 250px;
 }
 .cropped{
-    max-width: 250px;
-    max-height: 250px;
+max-width: 250px;
+max-height: 250px;
 /*height: 461px;*/
 /*width: 461px;*/
 }
@@ -291,7 +291,7 @@ margin-bottom: 10px;
 input.cvv{
 width: 40px;
 margin-right: 10px;
-    margin-bottom: 10px;
+margin-bottom: 10px;
 }
 input.parcelas{
 width:50px;
@@ -358,42 +358,31 @@ input#email{
 width: 250px;
 }
 .input-field{
-    margin-top: 15px;
+margin-top: 15px;
 }
 .endereco-descricao{
-    width: 30%;
-    text-align: right;
-    font-family: Avenir-Heavy;
+width: 30%;
+text-align: right;
+font-family: Avenir-Heavy;
 }
 .endereco-dados{
-    width: 65%;
-    text-align: left;
-    margin-left: 5%;
-    margin-bottom: 20px;
+width: 65%;
+text-align: left;
+margin-left: 5%;
+margin-bottom: 20px;
 }
 .endereco-inputs{
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
+width: 100%;
+display: flex;
+flex-wrap: nowrap;
+justify-content: center;
 }
 .numero-casa{
-    text-align: left;
+text-align: left;
 }
 .complemento{
-    text-align: left;
+text-align: left;
 }
 .titular-inputs{
-    margin-bottom: 10px;
-}
-.swiper-slide{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background-image: url("../_images/img-DSC_2882.png");
-    background-repeat:no-repeat;
-    background-size: cover;
-    background-position: center;
-    /*opacity: 0.4;*/
+margin-bottom: 10px;
 }

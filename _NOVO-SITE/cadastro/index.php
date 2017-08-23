@@ -42,10 +42,10 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="../_css/normalize.css" type="text/css" />
 <link rel="stylesheet" href="../_css/flexbox.css" type="text/css" />
-<link rel="stylesheet" href="../_css/style.css" type="text/css" />
 <link rel="stylesheet" href="../_css/swiper.min.css" type="text/css" />
+<link rel="stylesheet" href="../_css/style.css" type="text/css" />
 <link rel="stylesheet" href="../_css/cadastro.css" type="text/css" />
-<!-- <link rel="stylesheet" href="../_css/cadastro-index.css" type="text/css" /> -->
+<link rel="stylesheet" href="../_css/cadastro-index.css" type="text/css" />
 </head>
 <body>
 <div class="gradient">
@@ -53,9 +53,7 @@
     <div class="mancha flexbox relative wrap">
         <div class="menu align-items-center flexbox nowrap space-between-horizontal">
             <img src="../_images/seta-voltar.svg" class="voltar" />
-            <div class="barra_progresso">
-              <span class="barra_progresso_porcentagem"></span>
-            </div>
+            <img src="../_images/logo-horizontal.svg" />
             <img src="../_images/menu.svg" class="mini-menu" />
         </div>
         <div class="swiper-container">
@@ -70,13 +68,19 @@
 <div class="swiper-slide" id="02-0-02_cheque-seu-e-mail-e-siga-as-instrucoes"><?php include "perguntas/02-0-02.php"; ?></div>
 <div class="swiper-slide" id="02-0-03_e-mail-confirmado"><?php include "perguntas/02-0-03.php"; ?></div> -->
     </div>
+    <div class="footer-intro cursor">
+      <div class="swiper-pagination"></div>
+      <span class="pular-intro avenir white x-small">
+        Pular introdução
+        <img src="../_images/arrow-right.svg" alt="Pular introdução" />
+      </span>
+    </div>
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js" integrity="sha256-eEa1kEtgK9ZL6h60VXwDsJ2rxYCwfxi40VZ9E0XwoEA=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../_js/gradient.js"></script>
 <script type="text/javascript" src="../_js/swiper.min.js"></script>
-<!-- <script type="text/javascript" src="../_js/functions.js"></script> -->
 <script type="text/javascript" src="../_js/cadastro-index.js"></script>
 <!-- <?php include "../_sys/analytics.php"; ?> -->
 </body>

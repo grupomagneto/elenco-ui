@@ -1,17 +1,13 @@
-<div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center' id="intro1">
-  <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
+<div class='conteudo flexbox wrap text-align-center align-items-center justify-center' id="intro1">
+  <div class='conteudo flexbox wrap text-align-center align-items-center justify-center'>
     <div class='titulo heavy white large'>
-      Prazer!
+      <!-- Prazer! -->
     </div>
-    <div class='subtitulo avenir white small'>
-      Somos uma agência de oportunidades
-      <div class="swiper-pagination"></div>
+    <div class='subtitulo'>
+      <span class='titulo heavy white large margin20'>Prazer!</span>
+      <span class="avenir white small margin20">Somos uma agência de oportunidades</span>
     </div>
-    <div class="footer">
-      <a class="cursor footer-intro" href="#01-0-04_faca-parte-do-nosso-elenco">
-        Pular introdução
-        <img alt="Pular introdução" src="../_images/arrow-right.svg" />
-      </a>
+    <div class="botoes">
     </div>
   </div>
 </div>
