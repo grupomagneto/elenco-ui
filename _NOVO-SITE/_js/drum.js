@@ -273,16 +273,27 @@
 			$(wrapper).append(dialDown);
 
 
-      $(wrapper).find(".up").show();
-      $(wrapper).find(".down").show();
+        var mq = window.matchMedia('@media only screen and (max-width: 767px)');
+        if(mq.matches) {
+            
+             $(wrapper).find(".up").show();
+             $(wrapper).find(".down").show();
 
-			// $(wrapper).hover(function () {
-			// 	$(this).find(".up").show();
-			// 	$(this).find(".down").show();
-			// }, function () {
-			// 	$(this).find(".up").hide();
-			// 	$(this).find(".down").hide();
-			// });
+        } else {
+
+             $(wrapper).hover(function () {
+             $(this).find(".up").show();
+             $(this).find(".down").show();
+            }, function () {
+             $(this).find(".up").hide();
+             $(this).find(".down").hide();
+            });
+
+        }
+
+
+
+		
 		}
 
 		settings.radius = Math.round( ( $(drum).height() / 2 ) / Math.tan( Math.PI / settings.panelCount ) );
