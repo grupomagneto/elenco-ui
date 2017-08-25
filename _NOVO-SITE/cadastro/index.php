@@ -3,14 +3,17 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// require __DIR__.'../_api/facebook/vendor/autoload.php';
-// require __DIR__.'../_api/facebook/ids.php';
 require '../_api/facebook/vendor/autoload.php';
 require '../_api/facebook/ids.php';
 
 try {
     // $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
-    require '../_api/facebook/bootstrap.php';
+    // require '../_api/facebook/bootstrap.php';
+   $fb = new Facebook\Facebook([
+    'app_id' => $app_id,
+    'app_secret' => $app_secret
+    ]);
+
 
     if (!empty($_SESSION['facebook_access_token'])) {
       header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/register_access.php');
@@ -22,7 +25,7 @@ try {
 
             require '../_api/facebook/bootstrap.php';
             $helper = $fb->getRedirectLoginHelper();
-            $permissions = ['email,user_friends']; //permissões do usuario
+            $permissions = ['email, public_profile']; //permissões do usuario
             $loginUrl = $helper->getLoginUrl('http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php', $permissions);
 ?>
 <!DOCTYPE html>

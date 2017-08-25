@@ -1,4 +1,7 @@
 <?php
+if(!session_id()) {
+		session_start();
+	}
 
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
@@ -6,11 +9,11 @@
 
 	date_default_timezone_set('America/Sao_Paulo');
 
-	// require __DIR__.'vendor/autoload.php';
-	// require __DIR__.'ids.php';
-
 	require 'vendor/autoload.php';
 	require 'ids.php';
+
+	// require 'vendor/autoload.php';
+	// require 'ids.php';
 
 	$fb = new Facebook\Facebook([
 	  'app_id' => $app_id,
@@ -18,8 +21,5 @@
 	  'default_graph_version' => 'v2.7',
 	  ]);
 
-	// if(!session_id()) {
-	// 	session_start();
-	// }
-
+	
 ?>

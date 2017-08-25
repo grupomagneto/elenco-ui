@@ -10,6 +10,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 try {
     $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
+    
     if (!empty($_SESSION['facebook_access_token'])) {
 
         $user = $fb->User()->get($_SESSION['facebook_access_token']);

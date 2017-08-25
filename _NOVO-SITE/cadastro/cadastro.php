@@ -1,3 +1,26 @@
+<?php
+
+require '../_api/facebook/vendor/autoload.php';
+require '../_api/facebook/ids.php';
+
+if(!session_id()) {
+    session_start();
+}
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+try {
+    $fb = new Facebook\Facebook([
+    'app_id' => $app_id,
+    'app_secret' => $app_secret
+    ]);
+
+    if (!empty($_SESSION['facebook_access_token'])) {
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -120,3 +143,20 @@
 <!-- <?php include "../_sys/analytics.php"; ?> -->
 </body>
 </html>
+
+<?php 
+
+} else {
+        if (!empty($_GET['code']) and !empty($_GET['state'])) {
+            $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
+            // header('location: /home.php');
+        } else {
+            $url = $fb->Login()->url('http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/');
+            header('location: '.$url.'');
+        }
+    }
+} catch (Exception $e) {
+    echo 'Deu zica: '.$e->getMessage();
+}
+
+?>

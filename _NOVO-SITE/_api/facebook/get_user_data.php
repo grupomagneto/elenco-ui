@@ -19,14 +19,12 @@ if (isset($_SESSION['facebook_access_token'])) {
         exit;
     }
 
-    // header('location: register_access.php');
-    echo '<pre>';
-    var_dump($userNode->getEmail());
-    echo 'Logged in as ' . $userNode->getName();
+    header('location: register_access.php');
+
 
     
 } else {
-    header('location: index.php');
+    header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/index.php');
 }
 
 
