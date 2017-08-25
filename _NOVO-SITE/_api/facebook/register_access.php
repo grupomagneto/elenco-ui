@@ -23,34 +23,30 @@ try {
         // $user = $fb->User()->get($_SESSION['facebook_access_token']);
 
 
-        $Response = $fb->get('/me?fields=email,first_name,gender,id,last_name', $_SESSION['facebook_access_token']);
+        $Response = $fb->get('/me?fields=email,first_name,gender,id,last_name,link,friends,birthday', $_SESSION['facebook_access_token']);
         $user = $Response->getGraphUser();
         $_SESSION['id'] = $user->getId();
         $_SESSION['firstname'] = $user->getFirstName();
         $_SESSION['lastname'] = $user->getLastName();
         $_SESSION['gender'] = $user->getGender();
         $_SESSION['email'] = $user->getEmail();
-        echo "<pre>";
-        print_r($_SESSION['id']);
-        print_r($_SESSION['firstname']);
-        print_r($_SESSION['lastname']);
-        print_r($_SESSION['gender']);
-        print_r($_SESSION['email']);
+        $_SESSION['link'] = $user->getLink();
+        $_SESSION['birthday'] = $user->getProperty('birthday')->format('Y-m-d');
+        $_SESSION['friends'] = $user->getProperty('friends');
+        $_SESSION['total_count'] = $user->getProperty('friends')->getTotalCount();
 
-        exit();
-        // $_SESSION['id'] = $user->getId();
-        // $_SESSION['firstname'] = $user->getFirstName();
-        // $_SESSION['lastname'] = $user->getLastName();
-        // $_SESSION['gender'] = $user->getGender();
-        // $_SESSION['email'] = $user->getEmail();
         // echo "<pre>";
+        // print_r($_SESSION['id']);
+        // print_r($_SESSION['firstname']);
+        // print_r($_SESSION['lastname']);
+        // print_r($_SESSION['gender']);
+        // print_r($_SESSION['email']);
+        // print_r($_SESSION['link']);
+        // print_r($_SESSION['birthday']);
         // print_r($_SESSION['friends']);
-        // // exit();
-        // $id                 = $_SESSION['id'];
-        // $firstname          = $_SESSION['firstname'];
-        // $lastname           = $_SESSION['lastname'];
-        // $email              = $_SESSION['email'];
-        // $sex                = $_SESSION['gender'];
+        // print_r($_SESSION['total_count']);
+
+        // exit();
 
 // ACESSO REGISTRADO, SEGUE PARA PRÓXIMA ETAPA
 header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/cadastro.php');
@@ -59,7 +55,7 @@ header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/cadastro.p
         $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
 
         header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/cadastro.php');
-        
+
     } else {
         $url = $fb->Login()->url('http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/');
         header('location: '.$url.'');

@@ -25,7 +25,7 @@ try {
 
             require '../_api/facebook/bootstrap.php';
             $helper = $fb->getRedirectLoginHelper();
-            $permissions = ['email, public_profile']; //permissões do usuario
+            $permissions = ['email,public_profile,user_friends,user_birthday']; //permissões do usuario
             $loginUrl = $helper->getLoginUrl('http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php', $permissions);
 ?>
 <!DOCTYPE html>
