@@ -24,8 +24,7 @@ try {
             $helper = $fb->getRedirectLoginHelper();
             $permissions = ['email,user_friends']; //permissões do usuario
             $loginUrl = $helper->getLoginUrl('http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php', $permissions);
-  echo "
-
+?>
 <!DOCTYPE html>
 <html lang='pt-br'>
 <head>
@@ -86,22 +85,10 @@ try {
         </div>
         <div class='swiper-container swiper1'>
           <div class='swiper-wrapper'>
-            <div class='swiper-slide' id='01-0-01_prazer-somos-uma-agencia-de-elenco'>";?>
-            <?php include 'perguntas/01-0-01.php'; ?>
-            <?php echo"
-            </div>
-            <div class='swiper-slide' id='01-0-02_para-atores-modelos-e-inflenciadores-de-todos-perfis'>";?>
-            <?php include 'perguntas/01-0-02.php'; ?>
-            <?php echo"
-            </div>
-            <div class='swiper-slide' id='01-0-03_conectando-pessoas-a-anunciantes'>";?>
-              <?php include 'perguntas/01-0-03.php'; ?>
-            <?php echo"
-            </div>
-            <div class='swiper-slide' id='01-0-04_faca-parte-do-nosso-elenco'>";?>
-              <?php include 'perguntas/01-0-04.php'; ?>
-            <?php echo"
-            </div>
+            <div class='swiper-slide' id='01-0-01_prazer-somos-uma-agencia-de-elenco'><?php include 'perguntas/01-0-01.php'; ?></div>
+            <div class='swiper-slide' id='01-0-02_para-atores-modelos-e-inflenciadores-de-todos-perfis'><?php include 'perguntas/01-0-02.php'; ?></div>
+            <div class='swiper-slide' id='01-0-03_conectando-pessoas-a-anunciantes'><?php include 'perguntas/01-0-03.php'; ?></div>
+            <div class='swiper-slide' id='01-0-04_faca-parte-do-nosso-elenco'><?php include 'perguntas/01-0-04.php'; ?></div>
           </div>
         </div>
         <div class='swiper-container swiper2'>
@@ -114,8 +101,10 @@ try {
     </div>
     <div class='footer-intro cursor'>
       <div class='swiper-pagination'></div>
-      Pular introdução
-      <img src='../_images/arrow-right.svg' alt='Pular introdução' />
+      <button class="pular-intro avenir white x-small cursor">
+        Pular introdução
+        <img src='../_images/arrow-right.svg' alt='Pular introdução' />
+      </button>
     </div>
   </div>
 </div>
@@ -126,8 +115,8 @@ try {
 <script type='text/javascript' src='../_js/cadastro-index.js'></script>
 <!-- <?php include '../_sys/analytics.php'; ?> -->
 </body>
-</html>";
-
+</html>
+<?php
         }
     }
 } catch (Exception $e) {

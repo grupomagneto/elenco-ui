@@ -4,7 +4,7 @@
             E-mail confirmado!
         </div>
         <div class='subtitulo avenir white small'>
-            Insira seu e-mail e senha para continuar o cadastro:
+            Insira seu e-mail e senha para acessar o cadastro:
             <input type="email" name="email" id="email" class="input-texto" placeholder="Digite seu e-mail" />
             <input type="password" name="password" id="password" class="input-texto" placeholder="Digite sua senha" />
         </div>

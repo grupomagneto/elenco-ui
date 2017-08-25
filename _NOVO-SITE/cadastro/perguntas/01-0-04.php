@@ -8,10 +8,7 @@
       <span class='margin20'>Cadastre-se gratuitamente em minutos</span>
     </div>
     <div class='botoes'>
-
-      <?php 
-          echo " 
-      <a href=" . $loginUrl . " class='cursor'>
+      <a href="<?php echo $loginUrl; ?>" class='cursor'>
         <button class='botao'>
           <img alt='Entrar com Facebook' src='../_images/icon-fb.svg' />
           Entrar com Facebook
@@ -20,7 +17,7 @@
           <img alt='Entrar com Facebook' src='../_images/icon-ig.svg' />
           Entrar com Instagram
         </button>
-      </a>";?>
+      </a>
       <span class='line-title'></span>
         <span class='avenir white small'>ou</span>
       <span class='after-line-title'></span>
