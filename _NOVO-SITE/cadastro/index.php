@@ -1,14 +1,8 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require '../_api/facebook/vendor/autoload.php';
 require '../_api/facebook/ids.php';
 
 try {
-    // $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
-    // require '../_api/facebook/bootstrap.php';
    $fb = new Facebook\Facebook([
     'app_id' => $app_id,
     'app_secret' => $app_secret

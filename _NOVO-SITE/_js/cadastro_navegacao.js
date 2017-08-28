@@ -117,7 +117,7 @@ $(document).ready(function(){
     var nascimento = document.getElementById("data-maior").value;
     var idade = getAge(nascimento);
     if (idade >= 18) {
-      swiper.slideTo( $("#03-0-03_qual-o-seu-sexo").index(), 200);
+      swiper.slideNext();
       percentage = "5%";
       previousPercentage = "2%";
       stopTransition();
@@ -137,7 +137,22 @@ $(document).ready(function(){
   });
   $("#btn_recomecar-cadastro").click(function(e){
     e.preventDefault();
-    returnPrevious();
+    if (swiper.activeIndex === 0) {
+      window.location = "logout.php";
+    }
+    if (swiper.activeIndex === 1) {
+      returnPrevious();
+    }
+    
+  });
+  $("#btn_email-vazio").click(function(e){
+    e.preventDefault();
+    swiper.unlockSwipeToNext();
+    swiper.slideNext();
+    percentage = "12,5%";
+    previousPercentage = "10%";
+    stopTransition();
+    sexo("M");
   });
   $("#btn_sexo-maior-feminino").click(function(e){
     e.preventDefault();

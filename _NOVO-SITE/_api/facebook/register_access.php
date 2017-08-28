@@ -57,8 +57,9 @@ header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/cadastro.p
         header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/cadastro.php');
 
     } else {
-        $url = $fb->Login()->url('http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/');
-        header('location: '.$url.'');
+        // $url = $fb->Login()->url('http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/index.php');
+        // header('location: '.$url.'');
+        header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/index.php');
     }
 }
 } catch (Exception $e) {

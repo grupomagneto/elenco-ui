@@ -14,10 +14,10 @@
                 <div class='texto'>
                     <img src='../_images/gratuito_title-drt.svg' style='width:100%' />
                     <ul class='lista_cadastro avenir white small'>
-                        <li class='itens'>Você faz suas próprias fotos e nos envia no cadastro e atualizações;</li>
+                        <li class='itens'>Você faz suas próprias fotos e vídeo e nos envia para cadastro e atualizações;</li>
                         <li class='itens'>Você recebe 80% do cachê líquido nos trabalhos;</li>
-                        <li class='itens'>Sem custos;</li>
-                        <li class='itens'>Sem prazo de validade;</li>
+                        <li class='itens'>Perfil com vídeo de apresentação;</li>
+                        <li class='itens'>Sem custos e nem prazo de validade;</li>
                     </ul>
                 </div>
                 <button id='btn_cadastro-gratuito-DRT' class='botao'>Escolher</button>

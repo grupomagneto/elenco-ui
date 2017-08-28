@@ -1,24 +1,42 @@
 <?php
-
-require '../_api/facebook/vendor/autoload.php';
-require '../_api/facebook/ids.php';
-
-if(!session_id()) {
-    session_start();
-}
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-try {
-    $fb = new Facebook\Facebook([
-    'app_id' => $app_id,
-    'app_secret' => $app_secret
-    ]);
+if (empty($_SESSION['id_elenco'])) {
+  require '../_sys/conecta.php';
+  require '../_api/facebook/vendor/autoload.php';
+  require '../_api/facebook/ids.php';
 
-    if (!empty($_SESSION['facebook_access_token'])) {
+  if(!session_id()) {
+      session_start();
+  }
 
+  try {
+      $fb = new Facebook\Facebook([
+      'app_id' => $app_id,
+      'app_secret' => $app_secret
+      ]);
+
+      if (!empty($_SESSION['facebook_access_token'])) {
+        // CHECAR SE O FB_ID JÁ ESTÁ NO DB
+        $fb_id = $_SESSION['id'];
+        $sql = "SELECT id_elenco FROM tb_elenco WHERE facebook_ID = '$fb_id'";
+        $result = mysqli_query($link, $sql);
+        $row = mysqli_fetch_array($result);
+        $id_elenco = $row['id_elenco'];
+        $_SESSION['id_elenco'] = $row['id_elenco'];
+        if (empty($id_elenco)) {
+          $sql_insert = "INSERT INTO tb_elenco (facebook_ID) VALUES ('$fb_id')";
+          mysqli_query($link, $sql_insert);
+        }
+      }
+    }
+    catch (Exception $e) {
+    echo 'Erro: '.$e->getMessage();
+}
+}
+if (!empty($_SESSION['id_elenco'])) {
 ?>
 
 <!DOCTYPE html>
@@ -85,9 +103,34 @@ try {
         </div>
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" id="03-0-01_qual-a-sua-data-de-nascimento">         <?php include "perguntas/03-0-01.php"; ?></div>
-          <div class="swiper-slide" id="03-0-02_voce-e-menor-de-idade">                 <?php include "perguntas/03-0-02.php"; ?></div>
-          <div class="swiper-slide" id="03-0-03_qual-o-seu-sexo">                       <?php include "perguntas/03-0-03.php"; ?></div>
+        <?php
+        if (empty($_SESSION['birthday'])) {
+          echo"<div class='swiper-slide' id='03-0-01_qual-a-sua-data-de-nascimento'>";
+          include "perguntas/03-0-01.php";
+          echo "</div>";
+          echo"<div class='swiper-slide' id='03-0-02_voce-e-menor-de-idade'>";
+          include "perguntas/03-0-02.php";
+          echo "</div>";
+        }
+        if (!empty($_SESSION['birthday'])) {
+          $age = date_diff(date_create($_SESSION['birthday']), date_create('today'))->y;
+          if ($age < 18) {
+            echo"<div class='swiper-slide' id='03-0-02_voce-e-menor-de-idade'>";
+            include "perguntas/03-0-02.php";
+            echo "</div>";
+          }
+        }
+        if (empty($_SESSION['email'])) {
+          echo"<div class='swiper-slide' id='03-0-04_qual-o-seu-email'>";
+          include "perguntas/03-0-04.php";
+          echo "</div>";
+        }
+        if (empty($_SESSION['gender'])) {
+          echo"<div class='swiper-slide' id='03-0-03_qual-o-seu-sexo'>";
+          include "perguntas/03-0-03.php";
+          echo "</div>";
+        }
+        ?>
           <div class="swiper-slide" id="03-1-01_quem-voce-esta-cadastrando">            <?php include "perguntas/03-1-01.php"; ?></div>
           <div class="swiper-slide" id="03-1-02_qual-o-seu-cpf">                        <?php include "perguntas/03-1-02.php"; ?></div>
           <div class="swiper-slide" id="03-1-03_qual-o-seu-telefone-celular">           <?php include "perguntas/03-1-03.php"; ?></div>
@@ -145,18 +188,18 @@ try {
 </html>
 
 <?php 
-
-} else {
-        if (!empty($_GET['code']) and !empty($_GET['state'])) {
-            $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
-            // header('location: /home.php');
-        } else {
-            $url = $fb->Login()->url('http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/');
-            header('location: '.$url.'');
-        }
-    }
-} catch (Exception $e) {
-    echo 'Deu zica: '.$e->getMessage();
 }
-
+// } else {
+//         if (!empty($_GET['code']) and !empty($_GET['state'])) {
+//             $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
+//             // header('location: /home.php');
+//         } else {
+//             // $url = $fb->Login()->url('http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/');
+//             // header('location: '.$url.'');
+//             header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/index.php');
+//         }
+//     }
+// } catch (Exception $e) {
+//     echo 'Erro: '.$e->getMessage();
+// }
 ?>
