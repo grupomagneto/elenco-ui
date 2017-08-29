@@ -13,11 +13,14 @@
           <img alt='Entrar com Facebook' src='../_images/icon-fb.svg' />
           Entrar com Facebook
         </button>
+      </a>
+      <a href="<?php echo $loginUrlIg; ?>" class='cursor'>
         <button class='botao'>
           <img alt='Entrar com Facebook' src='../_images/icon-ig.svg' />
           Entrar com Instagram
         </button>
       </a>
+      
       <span class='line-title'></span>
         <span class='avenir white small'>ou</span>
       <span class='after-line-title'></span>

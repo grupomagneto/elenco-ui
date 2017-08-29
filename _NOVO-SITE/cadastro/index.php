@@ -1,6 +1,24 @@
 <?php
 require '../_api/facebook/vendor/autoload.php';
 require '../_api/facebook/ids.php';
+require '../_api/instagram/src/Instagram.php';
+
+use MetzWeb\Instagram\Instagram;
+session_start();
+if (isset($_SESSION['access_token'])) {
+  // user authentication -> redirect to media
+  header('Location: http://localhost/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php');
+}
+// initialize class
+$instagram = new Instagram(array(
+  'apiKey'      => ' 9182b584aad34572afcb910b63878fac',
+  'apiSecret'   => 'd5c976bbb0c144c295655aea6d2ab52a ',
+  'apiCallback' => 'http://localhost/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php'
+));
+// create login URL
+$loginUrlIg = $instagram->getLoginUrl(array(
+  'basic'
+));
 
 try {
    $fb = new Facebook\Facebook([
@@ -21,6 +39,8 @@ try {
             $helper = $fb->getRedirectLoginHelper();
             $permissions = ['email,public_profile,user_friends,user_birthday']; //permissões do usuario
             $loginUrl = $helper->getLoginUrl('http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php', $permissions);
+
+
 ?>
 <!DOCTYPE html>
 <html lang='pt-br'>
