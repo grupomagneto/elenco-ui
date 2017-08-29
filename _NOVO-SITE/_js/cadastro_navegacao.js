@@ -89,7 +89,7 @@ $(document).ready(function(){
     $(".invalido").hide();
     $(".valido").hide();
     $(".ok").hide();
-    console.log(swiper.activeIndex);
+    // console.log(swiper.activeIndex);
   }
   // SEXO DO MENOR
   function sexo (s){
@@ -172,8 +172,21 @@ $(document).ready(function(){
     stopTransition();
     sexo("M");
   });
-  $("#btn_eu-mesmo-tenho-18").click(function(e){
-    e.preventDefault();
+  $("#btn_eu-mesmo-tenho-18").click(function(){
+    // Ajax Cadastros
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          event.preventDefault();
+        }
+      });
+      return false;
+    });
     $(".voltar").css("opacity", "1");
     swiper.unlockSwipeToNext();
     swiper.slideTo( $("#03-1-02_qual-o-seu-cpf").index(), 200);
@@ -181,6 +194,7 @@ $(document).ready(function(){
     percentage = "15%";
     previousPercentage = "10%";
     stopTransition();
+    document.getElementById("nome-cpf_field").value = "nome";
     $("#ok_cep-maior").click(function(g){
       g.preventDefault();
       swiper.unlockSwipeToNext();
@@ -198,6 +212,7 @@ $(document).ready(function(){
     percentage = "15%";
     previousPercentage = "10%";
     stopTransition();
+    document.getElementById("nome-cpf_field").value = "nome_responsavel";
     $("#ok_cep-maior").click(function(f){
       f.preventDefault();
       swiper.unlockSwipeToNext();
@@ -208,7 +223,21 @@ $(document).ready(function(){
     });
   });
   $("#ok_cpf-maior").click(function(e){
-    e.preventDefault();
+    // e.preventDefault();
+    // Ajax Cadastros
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          event.preventDefault();
+        }
+      });
+      return false;
+    });
     swiper.unlockSwipeToNext();
     swiper.slideTo( $("#03-1-03_qual-o-seu-telefone-celular").index(), 200);
     percentage = "20%";

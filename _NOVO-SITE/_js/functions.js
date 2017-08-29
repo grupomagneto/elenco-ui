@@ -216,6 +216,7 @@ $(function(){
                 $('.ok').show();
                 $('.status').show();
                 $(".status").text(mensagem);
+                $("#nome-cpf_value").val(mensagem);
             }
           });
         } else {
@@ -253,6 +254,7 @@ $(function(){
                 $('.ok').show();
                 $('.status').show();
                 $(".status").text(mensagem);
+                $("#nome-cpf_value").val(mensagem);
             }
           });
         } else {

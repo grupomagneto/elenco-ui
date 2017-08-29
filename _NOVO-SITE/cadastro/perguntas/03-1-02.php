@@ -4,8 +4,13 @@
         Qual o seu CPF?
         </div>
         <div class='subtitulo avenir white small flexbox wrap text-align-center justify-center input-validacao-ok'>
-            <input type="text" name="cpf-maior" id="cpf-maior" class="cpf" placeholder="000.000.000-00" />
-            <img id="ok_cpf-maior" class="ok" src="../_images/ok_neg.svg" style="display: none;" />
+            <form action="#" method="post">
+                <input type="hidden" name="field" value="cpf" />
+                <input type="text" name="value" id="cpf-maior" class="cpf" placeholder="000.000.000-00" />
+                <input type="hidden" id="nome-cpf_field" name="field2" value="" />
+                <input type="hidden" id="nome-cpf_value" name="value2" value="" />
+                <button class="ok" style="display: none;"><img id="ok_cpf-maior" src="../_images/ok_neg.svg" /></button>
+            </form>
             <div class="subtexto flexbox nowrap text-align-center">
                 <p id="status" class="status"></p>
                 <img id="cpf-maior-valido" class="icon-cpf valido" src="../_images/ok_check.svg" style="display: none;" />

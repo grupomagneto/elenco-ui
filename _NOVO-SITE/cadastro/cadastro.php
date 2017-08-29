@@ -1,8 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 if (empty($_SESSION['id_elenco'])) {
   require '../_sys/conecta.php';
   require '../_api/facebook/vendor/autoload.php';
@@ -13,28 +9,55 @@ if (empty($_SESSION['id_elenco'])) {
   }
 
   try {
-      $fb = new Facebook\Facebook([
-      'app_id' => $app_id,
-      'app_secret' => $app_secret
-      ]);
+    $fb = new Facebook\Facebook([
+    'app_id' => $app_id,
+    'app_secret' => $app_secret
+    ]);
 
-      if (!empty($_SESSION['facebook_access_token'])) {
-        // CHECAR SE O FB_ID JÁ ESTÁ NO DB
-        $fb_id = $_SESSION['id'];
-        $sql = "SELECT id_elenco FROM tb_elenco WHERE facebook_ID = '$fb_id'";
-        $result = mysqli_query($link, $sql);
-        $row = mysqli_fetch_array($result);
-        $id_elenco = $row['id_elenco'];
+    if (!empty($_SESSION['facebook_access_token'])) {
+      // CHECAR SE O FB_ID JÁ ESTÁ NO DB
+      $fb_id = $_SESSION['id'];
+      $birthday = $_SESSION['birthday'];
+      $nome_artistico = $_SESSION['firstname']." ".$_SESSION['lastname'];
+      if ($_SESSION['gender'] == "male") {
+        $sexo = "M";
+      }
+      if ($_SESSION['gender'] == "female") {
+        $sexo = "F";
+      }
+      $sql = "SELECT id_elenco FROM tb_elenco WHERE facebook_ID = '$fb_id'";
+      $result = mysqli_query($link, $sql);
+      $row = mysqli_fetch_array($result);
+      $id_elenco = $row['id_elenco'];
+      if (!empty($id_elenco)) {
         $_SESSION['id_elenco'] = $row['id_elenco'];
-        if (empty($id_elenco)) {
-          $sql_insert = "INSERT INTO tb_elenco (facebook_ID) VALUES ('$fb_id')";
-          mysqli_query($link, $sql_insert);
+      }
+      // ADICIONA O FB ID
+      if (empty($id_elenco)) {
+        // CHECA SE JÁ EXISTE O EMAIL CADASTRADO
+        $email = $_SESSION['email'];
+        $fb_link = $_SESSION['link'];
+        $fb_total_friends = $_SESSION['total_count'];
+        $sql_2 = "SELECT id_elenco FROM tb_elenco WHERE email = '$email' ORDER BY dt_nascimento DESC LIMIT 1";
+        $result = mysqli_query($link, $sql_2);
+        if (mysqli_fetch_array($result)) {
+          $row = mysqli_fetch_array($result);
+          $id_elenco = $row['id_elenco'];
+          $sql_3 = "UPDATE tb_elenco SET facebook_ID = '$fb_id', fb_link = '$fb_link', fb_total_friends = '$fb_total_friends' WHERE id_elenco = '$id_elenco'";
+          mysqli_query($link, $sql_3);
+          $_SESSION['id_elenco'] = $id_elenco;
+        }
+        // CRIA UM NOVO ID DE USUARIO
+        else {
+          mysqli_query($link, "INSERT INTO tb_elenco (facebook_ID, email, fb_link, fb_total_friends) VALUES ('$fb_id', '$email', '$fb_link', '$fb_total_friends')");
+          $_SESSION['id_elenco'] = mysqli_insert_id($link);
         }
       }
     }
-    catch (Exception $e) {
+  }
+  catch (Exception $e) {
     echo 'Erro: '.$e->getMessage();
-}
+  }
 }
 if (!empty($_SESSION['id_elenco'])) {
 ?>
@@ -104,6 +127,7 @@ if (!empty($_SESSION['id_elenco'])) {
       <div class="swiper-container">
         <div class="swiper-wrapper">
         <?php
+        // CHECA SE O FACEBOOK ENTREGOU UMA DATA DE NASCIMENTO
         if (empty($_SESSION['birthday'])) {
           echo"<div class='swiper-slide' id='03-0-01_qual-a-sua-data-de-nascimento'>";
           include "perguntas/03-0-01.php";
@@ -112,19 +136,23 @@ if (!empty($_SESSION['id_elenco'])) {
           include "perguntas/03-0-02.php";
           echo "</div>";
         }
+        // SE EXISTE UMA DATA, SE É MAIOR DE IDADE
         if (!empty($_SESSION['birthday'])) {
           $age = date_diff(date_create($_SESSION['birthday']), date_create('today'))->y;
+          // $birthday = $_SESSION['birthday'];
           if ($age < 18) {
             echo"<div class='swiper-slide' id='03-0-02_voce-e-menor-de-idade'>";
             include "perguntas/03-0-02.php";
             echo "</div>";
           }
         }
+        // CHECA SE O E-MAIL NÃO VEIO VAZIO
         if (empty($_SESSION['email'])) {
           echo"<div class='swiper-slide' id='03-0-04_qual-o-seu-email'>";
           include "perguntas/03-0-04.php";
           echo "</div>";
         }
+        // CHECA O GENERO
         if (empty($_SESSION['gender'])) {
           echo"<div class='swiper-slide' id='03-0-03_qual-o-seu-sexo'>";
           include "perguntas/03-0-03.php";
@@ -202,4 +230,5 @@ if (!empty($_SESSION['id_elenco'])) {
 // } catch (Exception $e) {
 //     echo 'Erro: '.$e->getMessage();
 // }
+mysqli_close($link);
 ?>
