@@ -1,7 +1,7 @@
 <?php
 require '../_api/facebook/vendor/autoload.php';
 require '../_api/facebook/ids.php';
-require '../_api/instagram/src/Instagram.php';
+require '../_api/instagram/vendor/autoload.php';
 
 use MetzWeb\Instagram\Instagram;
 session_start();
@@ -11,8 +11,8 @@ if (isset($_SESSION['access_token'])) {
 }
 // initialize class
 $instagram = new Instagram(array(
-  'apiKey'      => ' 9182b584aad34572afcb910b63878fac',
-  'apiSecret'   => 'd5c976bbb0c144c295655aea6d2ab52a ',
+  'apiKey'      => '9182b584aad34572afcb910b63878fac',
+  'apiSecret'   => 'd5c976bbb0c144c295655aea6d2ab52a',
   'apiCallback' => 'http://localhost/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php'
 ));
 // create login URL

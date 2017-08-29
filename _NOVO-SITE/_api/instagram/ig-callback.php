@@ -1,6 +1,6 @@
 <?php
 
-require 'src/Instagram.php';
+require 'vendor/autoload.php';
 use MetzWeb\Instagram\Instagram;
 // initialize class
 $instagram = new Instagram(array(
@@ -20,8 +20,11 @@ if (isset($_SESSION['access_token'])) {
   if (isset($code)) {
     // receive and store OAuth token
     $data = $instagram->getOAuthToken($code);
+
     $token = $data->access_token;
+
     $_SESSION['access_token'] = $token;
+
   } else {
     // check whether an error occurred
     if (isset($_GET['error'])) {
@@ -32,7 +35,7 @@ if (isset($_SESSION['access_token'])) {
 // check authentication
 if ($token === false) {
   // authentication failed -> redirect to login
-  header('Location: http://localhost/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php/');
+  header('Location: http://localhost/elenco-ui/_NOVO-SITE/cadastro');
 } else {
   // store user access token
   $instagram->setAccessToken($token);
@@ -41,5 +44,32 @@ if ($token === false) {
   $media = $instagram->getUserMedia();
 }
 
-echo 'Your username is: ' . $data->user->username;
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Magneto Elenco</title>
+</head>
+<body>
+  
+  <h1>Instagram <?php 
+    echo $data->user->username;
+
+    $avatar = $media->user->profile_picture;
+    $username = $media->user->username;
+    $comment = $media->caption->text;
+    $content .= "<div class=\"content\">
+               <div class=\"avatar\" style=\"background-image: url({$avatar})\"></div>
+               <p>{$username}</p>
+               <div class=\"comment\">{$comment}</div>
+             </div>";
+    // output media
+    echo $content;
+
+  ?> 
+
+  </h1>
+
+</body>
+</html>
