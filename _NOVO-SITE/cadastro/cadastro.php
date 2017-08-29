@@ -28,24 +28,23 @@ if (empty($_SESSION['id_elenco'])) {
       $sql = "SELECT id_elenco FROM tb_elenco WHERE facebook_ID = '$fb_id'";
       $result = mysqli_query($link, $sql);
       $row = mysqli_fetch_array($result);
-      $id_elenco = $row['id_elenco'];
-      if (!empty($id_elenco)) {
+      if (mysqli_fetch_array($result)) {
         $_SESSION['id_elenco'] = $row['id_elenco'];
       }
       // ADICIONA O FB ID
-      if (empty($id_elenco)) {
+      if (!mysqli_fetch_array($result)) {
         // CHECA SE JÁ EXISTE O EMAIL CADASTRADO
         $email = $_SESSION['email'];
         $fb_link = $_SESSION['link'];
         $fb_total_friends = $_SESSION['total_count'];
-        $sql_2 = "SELECT id_elenco FROM tb_elenco WHERE email = '$email' ORDER BY dt_nascimento DESC LIMIT 1";
+        $sql_2 = "SELECT id_elenco FROM tb_elenco WHERE email = '$email' ORDER BY dt_nascimento ASC LIMIT 1";
         $result = mysqli_query($link, $sql_2);
-        if (mysqli_fetch_array($result)) {
-          $row = mysqli_fetch_array($result);
+        $row = mysqli_fetch_array($result);
+        if (!empty($row['id_elenco'])) {
           $id_elenco = $row['id_elenco'];
           $sql_3 = "UPDATE tb_elenco SET facebook_ID = '$fb_id', fb_link = '$fb_link', fb_total_friends = '$fb_total_friends' WHERE id_elenco = '$id_elenco'";
           mysqli_query($link, $sql_3);
-          $_SESSION['id_elenco'] = $id_elenco;
+          $_SESSION['id_elenco'] = $row['id_elenco'];
         }
         // CRIA UM NOVO ID DE USUARIO
         else {
@@ -61,7 +60,6 @@ if (empty($_SESSION['id_elenco'])) {
 }
 if (!empty($_SESSION['id_elenco'])) {
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -215,20 +213,7 @@ if (!empty($_SESSION['id_elenco'])) {
 </body>
 </html>
 
-<?php 
+<?php
 }
-// } else {
-//         if (!empty($_GET['code']) and !empty($_GET['state'])) {
-//             $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
-//             // header('location: /home.php');
-//         } else {
-//             // $url = $fb->Login()->url('http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/');
-//             // header('location: '.$url.'');
-//             header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/index.php');
-//         }
-//     }
-// } catch (Exception $e) {
-//     echo 'Erro: '.$e->getMessage();
-// }
 mysqli_close($link);
 ?>
