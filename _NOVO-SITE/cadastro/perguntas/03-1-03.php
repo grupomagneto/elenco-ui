@@ -4,14 +4,17 @@
         Qual o seu telefone celular?
         </div>
         <div class='subtitulo avenir white small nowrap input-validacao-ok'>
-        <input type="text" name="ddd" class="input_ddd inputs" placeholder="00" maxlength="2" />
-        <input type="text" name="celular" class="input_celular inputs" placeholder="0 0000 0000" />
-        <img id="ok_cel" class="ok" src="../_images/ok_neg.svg" style="display: none;" />
-        <div class="subtexto flexbox nowrap text-align-center">
-            <p id="status_cel" class="status"></p>
-            <img id="celular-sem-ddd" class="icon-cpf celular-sem-ddd" src="../_images/wrong.svg" style="display: none;" />
-        </div>
-        <!-- <input type="checkbox" name="whatsapp" /><label>Esse é também meu Whatsapp</label> -->
+            <form action="#" method="post">
+                <input type="hidden" name="field" value="ddd_01" id="ddd-cel" />
+                <input type="text" name="value" class="input_ddd inputs" placeholder="00" maxlength="2" />
+                <input type="hidden" name="field2" value="tl_celular" id="numero-cel" />
+                <input type="text" name="value2" class="input_celular inputs" placeholder="0 0000 0000" />
+                <button class="ok" id="ok_cel" style="display: none;"><img src="../_images/ok_neg.svg" /></button>
+            </form>
+            <div class="subtexto flexbox nowrap text-align-center">
+                <p id="status_cel" class="status"></p>
+                <img id="celular-sem-ddd" class="icon-cpf celular-sem-ddd" src="../_images/wrong.svg" style="display: none;" />
+            </div>
         </div>
     </div>
 </div>

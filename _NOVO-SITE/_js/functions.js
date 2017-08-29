@@ -30,10 +30,10 @@ function formataData(dataCompleta){
   var yyyy = dataOk.getFullYear();
   if(dd<10){
     dd='0'+dd;
-  } 
+  }
   if(mm<10){
     mm='0'+mm;
-  } 
+  }
   var dataOk = dd+'/'+mm+'/'+yyyy;
   return dataOk;
 }
@@ -311,6 +311,11 @@ function meu_callback(conteudo) {
         // console.log(mensagem);
         $('.ok').show();
         $(".status").text(mensagem);
+        $("#bairro_value").val(bairro);
+        $("#cidade_value").val(cidade);
+        $("#uf_value").val(uf);
+        $("#endereco_value").val(endereco);
+        console.log($("#endereco_value").val());
 		$('.status').show();
 		$('.valido').show();
     } //end if.
@@ -325,7 +330,7 @@ function meu_callback(conteudo) {
         // alert("CEP não encontrado.");
     }
 }
-    
+
 function pesquisacep(valor) {
     //Nova variável "cep" somente com dígitos.
     var cep = valor.replace(/\D/g, '');
@@ -409,12 +414,12 @@ $(".select-dropdown").each(function(){
 });
 $(document).ready(function(){
   $(".cel").mask("0 0000 0000");
-  var mascara = function() { 
+  var mascara = function() {
   if (window.matchMedia('(min-width: 1024px)').matches) {
-    var ua = navigator.userAgent.toLowerCase(); 
-    if (ua.indexOf('safari') != -1) { 
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf('safari') != -1) {
       if (ua.indexOf('chrome') > -1) {
-        
+
       } else {
         $('.data').mask('00/00/0000');
       }
@@ -424,5 +429,5 @@ $(document).ready(function(){
   }
 };
 $(window).resize(mascara);
-  mascara();  
+  mascara();
 });
