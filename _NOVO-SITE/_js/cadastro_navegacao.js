@@ -143,7 +143,7 @@ $(document).ready(function(){
     if (swiper.activeIndex === 1) {
       returnPrevious();
     }
-    
+
   });
   $("#btn_email-vazio").click(function(e){
     e.preventDefault();
@@ -195,8 +195,21 @@ $(document).ready(function(){
     previousPercentage = "10%";
     stopTransition();
     document.getElementById("nome-cpf_field").value = "nome";
-    $("#ok_cep-maior").click(function(g){
-      g.preventDefault();
+    $("#ok_cep-maior").click(function(){
+      // g.preventDefault();
+      jQuery("form").submit(function(){
+        var dados = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          data: dados,
+          success: function( data ) {
+            event.preventDefault();
+          }
+        });
+        return false;
+      });
       swiper.unlockSwipeToNext();
       swiper.slideTo( $("#04-1-01_qual-a-cor-da-sua-pele").index(), 200);
       percentage = "30%";
@@ -213,8 +226,21 @@ $(document).ready(function(){
     previousPercentage = "10%";
     stopTransition();
     document.getElementById("nome-cpf_field").value = "nome_responsavel";
-    $("#ok_cep-maior").click(function(f){
-      f.preventDefault();
+    $("#ok_cep-maior").click(function(){
+      // f.preventDefault();
+      jQuery("form").submit(function(){
+        var dados = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          data: dados,
+          success: function( data ) {
+            event.preventDefault();
+          }
+        });
+        return false;
+      });
       swiper.unlockSwipeToNext();
       swiper.slideTo( $("#04-2-01_qual-o-sexo-do-menor").index(), 200);
       percentage = "30%";
@@ -222,7 +248,7 @@ $(document).ready(function(){
       stopTransition();
     });
   });
-  $("#ok_cpf-maior").click(function(e){
+  $("#ok_cpf-maior").click(function(){
     // e.preventDefault();
     // Ajax Cadastros
     jQuery("form").submit(function(){
@@ -244,8 +270,21 @@ $(document).ready(function(){
     previousPercentage = "15%";
     stopTransition();
   });
-  $("#ok_cel").click(function(e){
-    e.preventDefault();
+  $("#ok_cel").click(function(){
+    // e.preventDefault();
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          event.preventDefault();
+        }
+      });
+      return false;
+    });
     swiper.unlockSwipeToNext();
     swiper.slideTo( $("#03-1-04_qual-o-cep-da-sua-residencia").index(), 200);
     percentage = "25%";

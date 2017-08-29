@@ -9,7 +9,7 @@
                 <input type="text" name="value" id="cpf-maior" class="cpf" placeholder="000.000.000-00" />
                 <input type="hidden" id="nome-cpf_field" name="field2" value="" />
                 <input type="hidden" id="nome-cpf_value" name="value2" value="" />
-                <button class="ok" style="display: none;"><img id="ok_cpf-maior" src="../_images/ok_neg.svg" /></button>
+                <button class="ok" id="ok_cpf-maior" style="display: none;"><img src="../_images/ok_neg.svg" /></button>
             </form>
             <div class="subtexto flexbox nowrap text-align-center">
                 <p id="status" class="status"></p>
