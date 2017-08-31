@@ -3,22 +3,19 @@ require '../_api/facebook/vendor/autoload.php';
 require '../_api/facebook/ids.php';
 require '../_api/instagram/vendor/autoload.php';
 
-use MetzWeb\Instagram\Instagram;
-session_start();
-if (isset($_SESSION['access_token'])) {
-  
-  header('Location: http://localhost:8888/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php');
-}
-
-$instagram = new Instagram(array(
-  'apiKey'      => '9182b584aad34572afcb910b63878fac',
-  'apiSecret'   => 'd5c976bbb0c144c295655aea6d2ab52a',
-  'apiCallback' => 'http://localhost:8888/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php'
+//Começo Login Instagram
+$instagram = new Andreyco\Instagram\Client(array(
+  'apiKey'      => '8c92de1fcb6247c09232d2033627ce96',
+  'apiSecret'   => 'c9faee8401db43d9b676d2a15852164c',
+  'apiCallback' => 'http://localhost:8888/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php',
+  'scope'      => array('basic', 'relationships', 'follower_list', 'public_content' ),
 ));
 // cria login URL
-$loginUrlIg = $instagram->getLoginUrl(array(
-  'basic'
-));
+$state = md5(time());
+$loginUrlIg = $instagram->getLoginUrl(array('relationships', 'follower_list'), $state);
+
+//Fim Login Instagram
+//Começo Login Facebook
 
 try {
    $fb = new Facebook\Facebook([
