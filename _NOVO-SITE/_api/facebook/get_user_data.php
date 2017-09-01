@@ -1,0 +1,32 @@
+<?php
+
+require 'bootstrap.php';
+
+if (isset($_SESSION['facebook_access_token'])) {
+    $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
+
+    try {
+        $response = $fb->get('/me?fields=email,first_name,gender,id,last_name,link,friends,birthday');
+        $userNode = $response->getGraphUser();
+        // $userNode = $response->getGraphObject(GraphUser::className());
+        
+    } catch (Facebook\Exceptions\FacebookResponseException $e) {
+      // When Graph returns an error
+        echo 'Graph returned an error: ' . $e->getMessage();
+        exit;
+    } catch (Facebook\Exceptions\FacebookSDKException $e) {
+      // When validation fails or other local issues
+        echo 'Facebook SDK returned an error: ' . $e->getMessage();
+        exit;
+    }
+
+    header('location: register_access.php');
+
+
+    
+} else {
+    header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/index.php');
+}
+
+
+?>
