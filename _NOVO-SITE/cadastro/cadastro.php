@@ -87,7 +87,7 @@ if (empty($_SESSION['id_elenco'])) {
       }
       // CRIA UM NOVO ID DE USUARIO
       else {
-        mysqli_query($link, "INSERT INTO tb_elenco (instagram_ID, ig_link, ig_seguindo_total, ig_seguidores_total, ig_total_posts) VALUES ('$ig_id', '$ig_link', '$ig_follows', '$ig_followers', '$ig_media')");
+        mysqli_query($link, "INSERT INTO tb_elenco (nome_artistico, instagram_ID, ig_link, ig_seguindo_total, ig_seguidores_total, ig_total_posts) VALUES ('$nome_artistico', '$ig_id', '$ig_link', '$ig_follows', '$ig_followers', '$ig_media')");
         $_SESSION['id_elenco'] = mysqli_insert_id($link);
       }
     }
