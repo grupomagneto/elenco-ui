@@ -291,8 +291,24 @@ $(document).ready(function(){
     previousPercentage = "20%";
     stopTransition();
   });
-  $("#btn_cor-da-pele-maior").click(function(e){
-    e.preventDefault();
+  $("#btn_cor-da-pele-maior").click(function(){
+    // e.preventDefault();
+    jQuery("form").submit(function(){
+      console.log("this: " + this);
+      var dados = jQuery(this).serialize();
+      console.log('dados: ' + dados);
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          // event.preventDefault();
+          console.log('data: ' + data);
+        }
+      });
+      return false;
+    });
     swiper.unlockSwipeToNext();
     swiper.slideTo( $("#04-1-02_voce-tem-registro-drt").index(), 200);
     percentage = "40%";
