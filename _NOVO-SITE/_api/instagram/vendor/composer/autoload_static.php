@@ -4,27 +4,27 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd555cb253c33c72005b6fc825a602a62
+class ComposerStaticInitad2dbfcf05f9a09b380d6299d8e4cb71
 {
     public static $prefixLengthsPsr4 = array (
-        'M' => 
+        'A' => 
         array (
-            'MetzWeb\\Instagram\\' => 18,
+            'Andreyco\\Instagram\\' => 19,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'MetzWeb\\Instagram\\' => 
+        'Andreyco\\Instagram\\' => 
         array (
-            0 => __DIR__ . '/..' . '/cosenary/instagram/src',
+            0 => __DIR__ . '/..' . '/andreyco/instagram/src',
         ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd555cb253c33c72005b6fc825a602a62::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd555cb253c33c72005b6fc825a602a62::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitad2dbfcf05f9a09b380d6299d8e4cb71::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitad2dbfcf05f9a09b380d6299d8e4cb71::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

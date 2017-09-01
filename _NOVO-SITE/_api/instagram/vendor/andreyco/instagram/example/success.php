@@ -1,21 +1,14 @@
 <?php
 
-/**
- * Instagram PHP API
- *
- * @link https://github.com/cosenary/Instagram-PHP-API
- * @author Christian Metz
- * @since 01.10.2013
- */
+ini_set('display_errors', 'off');
 
-require '../src/Instagram.php';
-use MetzWeb\Instagram\Instagram;
+require '../vendor/autoload.php';
 
 // initialize class
-$instagram = new Instagram(array(
-  'apiKey'      => '9182b584aad34572afcb910b63878fac',
-  'apiSecret'   => 'd5c976bbb0c144c295655aea6d2ab52a',
-  'apiCallback' => 'http://localhost/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php' // must point to success.php
+$instagram = new Andreyco\Instagram\Client(array(
+  'apiKey'      => 'YOUR_APP_KEY',
+  'apiSecret'   => 'YOUR_APP_SECRET',
+  'apiCallback' => 'YOUR_APP_CALLBACK' // must point to success.php
 ));
 
 // receive OAuth code parameter
@@ -44,6 +37,7 @@ if (isset($code)) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,7 +52,7 @@ if (isset($code)) {
     <div class="container">
       <header class="clearfix">
         <img src="assets/instagram.png" alt="Instagram logo">
-        <h1>Instagram photos <span>taken by <?php echo $data->user->username ?></span></h1>
+        <h1>Instagram photos <span>taken by <? echo $data->user->username ?></span></h1>
       </header>
       <div class="main">
         <ul class="grid">
@@ -111,12 +105,13 @@ if (isset($code)) {
         // rollover effect
         $('li').hover(
           function() {
-            var $media = $(this).find('.media');
-            var height = $media.height();
-            $media.stop().animate({ marginTop: -(height - 82) }, 1000);
+            var $image = $(this).find('.image');
+            var height = $image.height();
+            $image.stop().animate({ marginTop: -(height - 82) }, 1000);
           }, function() {
-            var $media = $(this).find('.media');
-            $media.stop().animate({ marginTop: '0px' }, 1000);
+            var $image = $(this).find('.image');
+            var height = $image.height();
+            $image.stop().animate({ marginTop: '0px' }, 1000);
           }
         );
       });

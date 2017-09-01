@@ -1,5 +1,5 @@
 {
     "require": {
-        "cosenary/instagram": "^2.3"
+        "andreyco/instagram": "^4.0"
     }
 }

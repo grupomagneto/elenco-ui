@@ -1,12 +1,14 @@
 <?php
 
-require '../src/Instagram.php';
-use MetzWeb\Instagram\Instagram;
+ini_set('display_errors', 'off');
 
-$instagram = new Instagram('YOUR_APP_KEY');
-$result = $instagram->getPopularMedia();
+require '../vendor/autoload.php';
+
+$instagram = new Andreyco\Instagram\Client('YOUR_APP_KEY');
+$result = $instagram->searchTags('summer');
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,7 +49,7 @@ $result = $instagram->getPopularMedia();
             // create meta section
             $avatar = $media->user->profile_picture;
             $username = $media->user->username;
-            $comment = (!empty($media->caption->text)) ? $media->caption->text : '';
+            $comment = $media->caption->text;
             $content .= "<div class=\"content\">
                            <div class=\"avatar\" style=\"background-image: url({$avatar})\"></div>
                            <p>{$username}</p>
