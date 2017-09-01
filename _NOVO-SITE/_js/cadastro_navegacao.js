@@ -294,7 +294,6 @@ $(document).ready(function(){
   $("#btn_cor-da-pele-maior").click(function(){
     // e.preventDefault();
     jQuery("form").submit(function(){
-      console.log("this: " + this);
       var dados = jQuery(this).serialize();
       console.log('dados: ' + dados);
       jQuery.ajax({
@@ -304,7 +303,6 @@ $(document).ready(function(){
         data: dados,
         success: function( data ) {
           // event.preventDefault();
-          console.log('data: ' + data);
         }
       });
       return false;

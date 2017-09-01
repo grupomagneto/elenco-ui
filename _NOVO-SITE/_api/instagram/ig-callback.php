@@ -28,7 +28,16 @@ if (isset($code)) {
     echo 'An error occurred: ' . $_GET['error_description'];
   }
 }
+$token = $data->access_token;
+$usuario = $data->user->id;
 
+$ig = "https://api.instagram.com/v1/users/".$usuario."/?access_token=".$token;
+$ig_followers = json_decode(file_get_contents($ig))->data->counts->followed_by;
+$ig_follows = json_decode(file_get_contents($ig))->data->counts->follows;
+$ig_media = json_decode(file_get_contents($ig))->data->counts->media;
+
+// $temp = json_decode(file_get_contents($ig));
+// echo "<pre>" . print_r($temp);
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +47,7 @@ if (isset($code)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram - photo stream</title>
     <link href="https://vjs.zencdn.net/4.2/video-js.css" rel="stylesheet">
-    <link href="assets/style.css" rel="stylesheet">
+    <!-- <link href="assets/style.css" rel="stylesheet"> -->
     <script src="https://vjs.zencdn.net/4.2/video.js"></script>
   </head>
   <body>
@@ -47,6 +56,9 @@ if (isset($code)) {
         <p>ID: <span> <? echo $data->user->id; ?></span></p>
         <p>Username: <span> <? echo $data->user->username; ?></span></p>
         <p>Nome Completo: <span> <? echo $data->user->full_name; ?></span></p>
+        <p>Seguidores: <span> <? echo $ig_followers ?></span></p>
+        <p>Seguindo: <span> <? echo $ig_follows ?></span></p>
+        <p>Total de fotos: <span> <? echo $ig_media ?></span></p>
         <p>Foto do perfil:  <img src="<?php echo $data->user->profile_picture; ?>" /> </p>
 
       </header>
@@ -58,16 +70,16 @@ if (isset($code)) {
             // output media
             if ($media->type === 'video') {
               // video
-              $poster = $media->images->low_resolution->url;
+              $poster = $media->images->standard_resolution->url;
               $source = $media->videos->standard_resolution->url;
-              $content .= "<video class=\"media video-js vjs-default-skin\" width=\"250\" height=\"250\" poster=\"{$poster}\"
+              $content .= "<video class=\"media video-js vjs-default-skin\" width=\"461\" height=\"461\" poster=\"{$poster}\"
                            data-setup='{\"controls\":true, \"preload\": \"auto\"}'>
                              <source src=\"{$source}\" type=\"video/mp4\" />
                            </video>";
             } else {
               // image
-              $image = $media->images->low_resolution->url;
-              $content .= "<img class=\"media\" src=\"{$image}\"/>";
+              $image = $media->images->standard_resolution->url;
+              $content .= "<img class=\"media\" src=\"{$image}\" width=\"461\" />";
             }
             // create meta section
             $avatar = $media->user->profile_picture;
