@@ -3,6 +3,10 @@ ini_set('display_errors', 'off');
 
 require 'vendor/autoload.php';
 
+if(!session_id()) {
+      session_start();
+  }
+
 // initialize class
 $instagram = new Andreyco\Instagram\Client(array(
   'apiKey'      => '8c92de1fcb6247c09232d2033627ce96',
@@ -28,17 +32,31 @@ if (isset($code)) {
     echo 'An error occurred: ' . $_GET['error_description'];
   }
 }
-$token = $data->access_token;
-$usuario = $data->user->id;
+$ig_token = $data->access_token;
+$ig_id = $data->user->id;
 
-$ig = "https://api.instagram.com/v1/users/".$usuario."/?access_token=".$token;
+$ig = "https://api.instagram.com/v1/users/".$ig_id."/?access_token=".$ig_token;
+$ig_username = json_decode(file_get_contents($ig))->data->username;
+$ig_full_name = json_decode(file_get_contents($ig))->data->full_name;
 $ig_followers = json_decode(file_get_contents($ig))->data->counts->followed_by;
 $ig_follows = json_decode(file_get_contents($ig))->data->counts->follows;
 $ig_media = json_decode(file_get_contents($ig))->data->counts->media;
 
+$_SESSION['ig_id'] = $ig_id;
+$_SESSION['ig_username'] = $ig_username;
+$_SESSION['ig_full_name'] = $ig_full_name;
+$_SESSION['ig_media'] = $ig_media;
+$_SESSION['ig_followers'] = $ig_followers;
+$_SESSION['ig_follows'] = $ig_follows;
+$_SESSION['instagram_access_token'] = $ig_token;
+
 // $temp = json_decode(file_get_contents($ig));
 // echo "<pre>" . print_r($temp);
+
+header('Location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/cadastro.php');
+exit();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
