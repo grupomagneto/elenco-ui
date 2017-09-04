@@ -64,29 +64,37 @@ if (!empty($_SESSION['instagram_access_token'])) {
     $ig_follows   = $_SESSION['ig_follows'];
     $ig_token     = $_SESSION['instagram_access_token'];
     $nome_artistico = $ig_full_name;
+    if (empty($_SESSION['id_elenco'])) {
     // CHECAR SE O IG_ID JÁ ESTÁ NO DB
-    $sql = "SELECT id_elenco FROM tb_elenco WHERE instagram_ID = '$ig_id'";
-    $result = mysqli_query($link, $sql);
-    $row = mysqli_fetch_array($result);
-    if (mysqli_fetch_array($result)) {
-      $_SESSION['id_elenco'] = $row['id_elenco'];
-    }
-    // ADICIONA O IG ID
-    if (!mysqli_fetch_array($result)) {
-      $sql_2 = "SELECT id_elenco FROM tb_elenco WHERE nome_artistico = '$nome_artistico' LIMIT 1";
-      $result = mysqli_query($link, $sql_2);
+      $sql = "SELECT id_elenco FROM tb_elenco WHERE instagram_ID = '$ig_id'";
+      $result = mysqli_query($link, $sql);
       $row = mysqli_fetch_array($result);
-      if (!empty($row['id_elenco'])) {
-        $id_elenco = $row['id_elenco'];
-        $sql_3 = "UPDATE tb_elenco SET instagram_ID = '$ig_id', ig_link = '$ig_link', ig_seguindo_total = '$ig_follows', ig_seguidores_total = '$ig_followers', ig_total_posts = '$ig_media' WHERE id_elenco = '$id_elenco'";
-        mysqli_query($link, $sql_3);
+      if (mysqli_fetch_array($result)) {
         $_SESSION['id_elenco'] = $row['id_elenco'];
       }
-      // CRIA UM NOVO ID DE USUARIO
-      else {
-        mysqli_query($link, "INSERT INTO tb_elenco (nome_artistico, instagram_ID, ig_link, ig_seguindo_total, ig_seguidores_total, ig_total_posts) VALUES ('$nome_artistico', '$ig_id', '$ig_link', '$ig_follows', '$ig_followers', '$ig_media')");
-        $_SESSION['id_elenco'] = mysqli_insert_id($link);
+      // ADICIONA O IG ID
+      if (!mysqli_fetch_array($result)) {
+        $sql_2 = "SELECT id_elenco FROM tb_elenco WHERE nome_artistico = '$nome_artistico' LIMIT 1";
+        $result = mysqli_query($link, $sql_2);
+        $row = mysqli_fetch_array($result);
+        if (!empty($row['id_elenco'])) {
+          $id_elenco = $row['id_elenco'];
+          $sql_3 = "UPDATE tb_elenco SET instagram_ID = '$ig_id', ig_link = '$ig_link', ig_seguindo_total = '$ig_follows', ig_seguidores_total = '$ig_followers', ig_total_posts = '$ig_media' WHERE id_elenco = '$id_elenco'";
+          mysqli_query($link, $sql_3);
+          $_SESSION['id_elenco'] = $row['id_elenco'];
+        }
+        // CRIA UM NOVO ID DE USUARIO
+        else {
+          mysqli_query($link, "INSERT INTO tb_elenco (nome_artistico, instagram_ID, ig_link, ig_seguindo_total, ig_seguidores_total, ig_total_posts) VALUES ('$nome_artistico', '$ig_id', '$ig_link', '$ig_follows', '$ig_followers', '$ig_media')");
+          $_SESSION['id_elenco'] = mysqli_insert_id($link);
+        }
       }
+    }
+    // SABENDO QUEM É O USUARIO, ASSOCIA UM ID DE INSTAGRAM A ELE
+    if (!empty($_SESSION['id_elenco'])) {
+      $id_elenco = $_SESSION['id_elenco'];
+      $sql = "UPDATE tb_elenco SET instagram_ID = '$ig_id', ig_link = '$ig_link', ig_seguindo_total = '$ig_follows', ig_seguidores_total = '$ig_followers', ig_total_posts = '$ig_media' WHERE id_elenco = '$id_elenco'";
+      mysqli_query($link, $sql);
     }
 }
 

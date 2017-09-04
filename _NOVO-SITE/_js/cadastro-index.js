@@ -85,7 +85,20 @@ $(document).ready(function(){
     swiper2.disableKeyboardControl();
   });
   $("#btn_inicia-cadastro").click(function(e){
-    e.preventDefault();
+    // Ajax Cadastros
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/cadastro_email.php",
+        data: dados,
+        success: function( data ) {
+          // console.log(dados);
+        }
+      });
+      return false;
+    });
     swiper2.slideNext();
   });
   $(".voltar").click(function(e){
@@ -100,5 +113,23 @@ $(document).ready(function(){
   $("#btn_estou-com-problemas").click(function(e){
     e.preventDefault();
     swiper2.slideTo( $("#02-0-03_e-mail-confirmado").index(), 200);
+  });
+  $("#btn_logar-com-email").click(function(e){
+    // e.preventDefault();
+    // Ajax Cadastros
+    jQuery("form").submit(function(){
+      var dados2 = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/_sys/email-login.php",
+        data: dados2,
+        success: function( data ) {
+          // event.preventDefault();
+          window.location = "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/cadastro.php";
+        }
+      });
+      return false;
+    });
   });
 });

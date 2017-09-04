@@ -1,19 +1,3 @@
-<?php
-require __DIR__.'/vendor/autoload.php';
-require __DIR__.'/ids.php';
-include 'functions.php';
-if(!session_id()) {
-    session_start();
-}
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-try {
-    $fb = new WebDevBr\Facebook\Facebook($app_id, $app_secret);
-    if (!empty($_SESSION['facebook_access_token'])) {
-        $page = basename(__FILE__);
-        include 'register_page.php';
-        echo "
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,13 +74,13 @@ img {
 <link href='https://fonts.googleapis.com/css?family=Roboto:100,400' rel='stylesheet'>
 </head>
 <body>
-<center><a href='index.php'><img src='images/image-1.svg'></a></center>
-<center><h1>Política de Privacidade 'Meu Modelo Favorito' por Magneto Elenco</h1></center>
-<strong><p>Última atualização: 04 de setembro de 2016</p></strong>
-<p>Mag2 Produções Artísticas e Fotográficas LTDA ('nós', 'nós' ou 'nosso') opera o site da www.meumodelofavorito.com.br (o 'Serviço').</p>
+<center><a href='index.php'><img src='_images/logo-horizontal.svg'></a></center>
+<center><h1>Política de Privacidade Magneto Elenco</h1></center>
+<strong><p>Última atualização: 04 de setembro de 2017</p></strong>
+<p>Mag2 Produções Artísticas e Fotográficas LTDA ('nós', 'nós' ou 'nosso') opera o site da www.magnetoelenco.com.br (o 'Serviço').</p>
 <p>Esta página informa sobre as nossas políticas em relação à coleta, uso e divulgação de informações pessoais quando você usa o nosso Serviço.</p>
 <p>Nós não vamos usar ou compartilhar suas informações pessoais com ninguém, exceto conforme descrito nesta Política de Privacidade.</p>
-<p>Nós usamos as suas informações para melhorar o serviço e fornecer dados anônimos sobre o(s) perfil(s) de modelo(s) preferido(s) por determinado público-alvo aos(s) anunciante(s). Ao utilizar o Serviço, você concorda com a coleta e uso de informações de acordo com esta política. Salvo indicação contrária, termos usados nesta Política de Privacidade têm os mesmos significados que nos nossos Termos e Condições, acessível em www.meumodelofavorito.com.br/privacidade.html.</p>
+<p>Nós usamos as suas informações para melhorar o serviço e fornecer dados anônimos sobre o(s) perfil(s) de modelo(s) preferido(s) por determinado público-alvo aos(s) anunciante(s). Ao utilizar o Serviço, você concorda com a coleta e uso de informações de acordo com esta política. Salvo indicação contrária, termos usados nesta Política de Privacidade têm os mesmos significados que nos nossos Termos e Condições, acessível em www.magnetoelenco.com.br/privacidade.html.</p>
 <p><strong>Coleta e uso de informações</strong></p>
 <p>Enquanto estiver usando nosso serviço, podemos pedir-lhe para nos fornecer certas informações de identificação pessoal que podem ser usadas para entrar em contato ou identificá-lo como um votante. As informações pessoais identificáveis podem incluir, mas não estão limitadas a: seu endereço de e-mail, nome, cidade, data de aniversário, outras informações ('Dados Pessoais').</p>
 <p><strong>Dados de Navegação</strong></p>
@@ -129,22 +113,22 @@ img {
 <p>Nós não temos nenhum controle sobre, e não assumimos nenhuma responsabilidade pelo conteúdo, políticas de privacidade ou práticas de qualquer sites ou serviços de terceiros.
 </p>
 <p><strong>Privacidade das Crianças</strong></p>
-<p>O nosso serviço não atende qualquer pessoa com menos de 13 anos ('Crianças').</p>
-<p>Nós não recolhemos informações pessoalmente identificáveis de crianças menores de 13. Se você é um pai ou tutor e você está ciente de que seu filho nos forneceu informações pessoais, entre em contato conosco. Se tomarmos conhecimento que coletamos informações pessoais de uma criança com menos de 13 anos de idade, sem verificação de consentimento dos pais, tomamos medidas para remover essas informações dos nossos servidores.</p>
+<p>O nosso serviço não atende qualquer pessoa com menos de 18 anos ('Crianças') sem a supervisão de um adulto responsável legalmente.</p>
+<p>Nós não recolhemos informações pessoalmente identificáveis de crianças menores de 18. Se você é um pai ou tutor e você está ciente de que seu filho nos forneceu informações pessoais, entre em contato conosco. Se tomarmos conhecimento que coletamos informações pessoais de uma criança com menos de 18 anos de idade, sem verificação de consentimento dos pais, tomamos medidas para remover essas informações dos nossos servidores.</p>
 <p><strong>Alterações a esta Política de Privacidade</strong></p>
 <p>Podemos atualizar nossa Política de Privacidade de tempos em tempos. Vamos notificá-lo de quaisquer alterações, colocando a nova Política de Privacidade nesta página.</p>
 <p>Você é aconselhado a avaliar esta Política de Privacidade periodicamente para quaisquer alterações. Alterações a esta Política de Privacidade são efetivas a partir da nesta página.</p>
 <p><strong>Entre em Contato Conosco</strong></p>
 <p>Se você tem dúvidas sobre esta Política de Privacidade, entre em contato conosco.</p>
 
-<!-- <BR /><hr><BR />
+<BR /><hr><BR />
 
-<center><h1>Privacy Policy 'Meu Modelo Favorito' by Magneto Elenco</h1></center>
+<center><h1>Privacy Policy Magneto Elenco</h1></center>
 <strong><p>Last updated: August 12, 2016</p></strong>
-<p>Mag2 Produções Artísticas e Fotográficas LTDA ('us', 'we', or 'our') operates the www.meumodelofavorito.com.br website (the 'Service').</p>
+<p>Mag2 Produções Artísticas e Fotográficas LTDA ('us', 'we', or 'our') operates the www.magnetoelenco.com.br website (the 'Service').</p>
 <p>This page informs you of our policies regarding the collection, use and disclosure of Personal Information when you use our Service.</p>
 <p>We will not use or share your information with anyone except as described in this Privacy Policy.</p>
-<p>We use your Personal Information for providing and improving the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible at www.meumodelofavorito.com.br/privacidade.html</p>
+<p>We use your Personal Information for providing and improving the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible at www.magnetoelenco.com.br/privacidade.html</p>
 <p><strong>Information Collection And Use</strong></p>
 <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to, your email address, name, phone number, postal address, other information ('Personal Information').</p>
 <p><strong>Log Data</strong></p>
@@ -176,27 +160,14 @@ img {
 <p>Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
 <p>We have no control over, and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
 <p><strong>Children's Privacy</strong></p>
-<p>Our Service does not address anyone under the age of 13 ('Children').</p>
-<p>We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your Children has provided us with Personal Information, please contact us. If we become aware that we have collected Personal Information from a children under age 13 without verification of parental consent, we take steps to remove that information from our servers.</p>
+<p>Our Service does not address anyone under the age of 18 ('Children') without verification of parental consent.</p>
+<p>We do not knowingly collect personally identifiable information from children under 18. If you are a parent or guardian and you are aware that your Children has provided us with Personal Information, please contact us. If we become aware that we have collected Personal Information from a children under age 18 without verification of parental consent, we take steps to remove that information from our servers.</p>
 <p><strong>Changes To This Privacy Policy</strong></p>
 <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
 <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
 <p><strong>Contact Us</strong></p>
-<p>If you have any questions about this Privacy Policy, please contact us.</p> -->
+<p>If you have any questions about this Privacy Policy, please contact us.</p>
 <BR /><hr><BR />
-<center><p><strong><a href='http://www.magnetoelenco.com.br' target='_blank'> Magneto Elenco © 2016</a></strong> - SHIN CA 02 Lote A Bloco A Loja 01 - Brasília - DF - Brasil - CEP 71.503-502 - Telefone: (61) 3202-7266</p></center><BR />
+<center><p><strong><a href='http://www.magnetoelenco.com.br' target='_blank'> Magneto Elenco © 2009-2017</a></strong> - SIA Trecho 17 Rua 3 Lote 600 3º andar - Brasília - DF</p></center><BR />
 </body>
-</html>";
-} else {
-      if (!empty($_GET['code']) and !empty($_GET['state'])) {
-          $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
-          // header('location: /home.php');
-      } else {
-          $url = $fb->Login()->url('http://www.meumodelofavorito.com.br/index.php');
-          header('location: '.$url.'');
-      }
-    }
-} catch (Exception $e) {
-    echo 'Deu zica: '.$e->getMessage();
-}
-?>
+</html>

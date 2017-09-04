@@ -2,6 +2,22 @@
 require '../_api/facebook/vendor/autoload.php';
 require '../_api/facebook/ids.php';
 require '../_api/instagram/vendor/autoload.php';
+require '../_sys/conecta.php';
+
+if(!session_id()) {
+  session_start();
+}
+if (isset($_GET['email']) && isset($_GET['hash'])) {
+  $email = $_GET['email'];
+  $senha = $_GET['hash'];
+  $sql = "SELECT id_elenco FROM tb_elenco WHERE email = '$email' AND senha = '$senha'";
+  $result = mysqli_query($link, $sql);
+  $row = mysqli_fetch_array($result);
+  if (mysqli_num_rows($result) == 1) {
+    $id_elenco = $row['id_elenco'];
+    $validacao_email = "OK";
+  }  
+}
 
 //Começo Login Instagram
 $instagram = new Andreyco\Instagram\Client(array(
@@ -25,19 +41,19 @@ try {
 
 
     if (!empty($_SESSION['facebook_access_token'])) {
-      header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/register_access.php');
-    } else {
-        if (!empty($_GET['code']) and !empty($_GET['state'])) {
-            $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
-            header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/register_access.php');
-        } else {
-
-            require '../_api/facebook/bootstrap.php';
-            $helper = $fb->getRedirectLoginHelper();
-            $permissions = ['email,public_profile,user_friends,user_birthday']; //permissões do usuario
-            $loginUrl = $helper->getLoginUrl('http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php', $permissions);
-
-
+      if (!empty($_SESSION['id_elenco'])) {
+          header('location: cadastro.php');  
+      }      
+    }
+    else {
+      if (!empty($_GET['code']) and !empty($_GET['state'])) {
+          $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
+          header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php');
+      } else {
+        require '../_api/facebook/bootstrap.php';
+        $helper = $fb->getRedirectLoginHelper();
+        $permissions = ['email,public_profile,user_friends,user_birthday']; //permissões do usuario
+        $loginUrl = $helper->getLoginUrl('http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php', $permissions);
 ?>
 <!DOCTYPE html>
 <html lang='pt-br'>
@@ -97,19 +113,32 @@ try {
             <img src='../_images/logo-horizontal.svg' />
             <img src='../_images/menu.svg' class='mini-menu' />
         </div>
-        <div class='swiper-container swiper1'>
-          <div class='swiper-wrapper'>
-            <div class='swiper-slide' id='01-0-01_prazer-somos-uma-agencia-de-elenco'><?php include 'perguntas/01-0-01.php'; ?></div>
-            <div class='swiper-slide' id='01-0-02_para-atores-modelos-e-inflenciadores-de-todos-perfis'><?php include 'perguntas/01-0-02.php'; ?></div>
-            <div class='swiper-slide' id='01-0-03_conectando-pessoas-a-anunciantes'><?php include 'perguntas/01-0-03.php'; ?></div>
-            <div class='swiper-slide' id='01-0-04_faca-parte-do-nosso-elenco'><?php include 'perguntas/01-0-04.php'; ?></div>
+          <?php if (!isset($validacao_email)) {
+            echo "
+          <div class='swiper-container swiper1'>
+            <div class='swiper-wrapper'>
+            <div class='swiper-slide' id='01-0-01_prazer-somos-uma-agencia-de-elenco'>";include 'perguntas/01-0-01.php';echo"</div>
+            <div class='swiper-slide' id='01-0-02_para-atores-modelos-e-inflenciadores-de-todos-perfis'>";include 'perguntas/01-0-02.php';echo"</div>
+            <div class='swiper-slide' id='01-0-03_conectando-pessoas-a-anunciantes'>";include 'perguntas/01-0-03.php';echo"</div>
+            <div class='swiper-slide' id='01-0-04_faca-parte-do-nosso-elenco'>";include 'perguntas/01-0-04.php';echo"</div>
           </div>
-        </div>
+        </div>";
+          }?>            
         <div class='swiper-container swiper2'>
           <div class='swiper-wrapper'>
-            <div class='swiper-slide' id='02-0-01_cadastre-se-com-seu-e-mail'><?php include 'perguntas/02-0-01.php'; ?></div>
-            <div class='swiper-slide' id='02-0-02_cheque-seu-e-mail-e-siga-as-instrucoes'><?php include 'perguntas/02-0-02.php'; ?></div>
-            <div class='swiper-slide' id='02-0-03_e-mail-confirmado'><?php include 'perguntas/02-0-03.php'; ?></div>
+          <?php
+          if (!isset($validacao_email)) {
+            echo "
+            <div class='swiper-slide' id='02-0-01_cadastre-se-com-seu-e-mail'>";include 'perguntas/02-0-01.php';echo"</div>
+            <div class='swiper-slide' id='02-0-02_cheque-seu-e-mail-e-siga-as-instrucoes'>";include 'perguntas/02-0-02.php';echo"</div>";
+          }
+          if (isset($validacao_email) && $validacao_email === "OK") {
+            $sql = "UPDATE tb_elenco SET ativo = 'New' WHERE id_elenco = '$id_elenco'";
+            mysqli_query($link, $sql);
+            echo "
+            <div class='swiper-slide' id='02-0-03_e-mail-confirmado'>";include 'perguntas/02-0-03.php';echo"</div>";
+          }
+          ?>
           </div>
         </div>
     </div>
@@ -127,6 +156,11 @@ try {
 <script type='text/javascript' src='../_js/gradient.js'></script>
 <script type='text/javascript' src='../_js/swiper.min.js'></script>
 <script type='text/javascript' src='../_js/cadastro-index.js'></script>
+<?php
+if (isset($validacao_email) && $validacao_email === "OK") {
+    echo "<script type='text/javascript' src='../_js/cadastro-index-email.js'></script>";
+}
+?>
 <!-- <?php include '../_sys/analytics.php'; ?> -->
 </body>
 </html>
@@ -134,6 +168,7 @@ try {
         }
     }
 } catch (Exception $e) {
-    echo 'Deu zica: '.$e->getMessage();
+    echo 'Erro: '.$e->getMessage();
 }
+mysqli_close($link);
 ?>

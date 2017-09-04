@@ -110,11 +110,26 @@ $(document).ready(function(){
     // console.log("sexo: "+s);
   }
   // AÇÕES DOS BOTÕES
-  $("#btn_data-maior").click(function(e){
-    e.preventDefault();
+  $("#btn_data-maior").click(function(){
+    // Ajax Cadastros
+    var nascimento = document.getElementById("data-maior").value;
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          // console.log(dados);
+          document.getElementById("dt_nascimento-maior").value = nascimento;
+          // event.preventDefault();
+        }
+      });
+      return false;
+    });
     $(".voltar").css("opacity", "1");
     swiper.unlockSwipeToNext();
-    var nascimento = document.getElementById("data-maior").value;
     var idade = getAge(nascimento);
     if (idade >= 18) {
       swiper.slideNext();
@@ -146,7 +161,20 @@ $(document).ready(function(){
 
   });
   $("#btn_email-vazio").click(function(e){
-    e.preventDefault();
+    // Ajax Cadastros
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          event.preventDefault();
+        }
+      });
+      return false;
+    });
     swiper.unlockSwipeToNext();
     swiper.slideNext();
     percentage = "12,5%";
@@ -154,19 +182,45 @@ $(document).ready(function(){
     stopTransition();
     sexo("M");
   });
-  $("#btn_sexo-maior-feminino").click(function(e){
-    e.preventDefault();
+  $("#btn_sexo-maior-feminino").click(function(){
+    // Ajax Cadastros
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          event.preventDefault();
+        }
+      });
+      return false;
+    });
     swiper.unlockSwipeToNext();
-    swiper.slideTo( $("#03-1-01_quem-voce-esta-cadastrando").index(), 200);
+    swiper.slideTo( $("#03-1-01_quem-voce-deseja-cadastrar").index(), 200);
     percentage = "10%";
     previousPercentage = "5%";
     stopTransition();
     sexo("F");
   });
-  $("#btn_sexo-maior-masculino").click(function(e){
-    e.preventDefault();
+  $("#btn_sexo-maior-masculino").click(function(){
+    // Ajax Cadastros
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          event.preventDefault();
+        }
+      });
+      return false;
+    });
     swiper.unlockSwipeToNext();
-    swiper.slideTo( $("#03-1-01_quem-voce-esta-cadastrando").index(), 200);
+    swiper.slideTo( $("#03-1-01_quem-voce-deseja-cadastrar").index(), 200);
     percentage = "10%";
     previousPercentage = "5%";
     stopTransition();
@@ -189,7 +243,8 @@ $(document).ready(function(){
     });
     $(".voltar").css("opacity", "1");
     swiper.unlockSwipeToNext();
-    swiper.slideTo( $("#03-1-02_qual-o-seu-cpf").index(), 200);
+    // swiper.slideTo( $("#03-1-02_qual-o-seu-cpf").index(), 200);
+    swiper.slideNext();
     // $("#cpf-maior").focus();
     percentage = "15%";
     previousPercentage = "10%";
@@ -295,7 +350,6 @@ $(document).ready(function(){
     // e.preventDefault();
     jQuery("form").submit(function(){
       var dados = jQuery(this).serialize();
-      console.log('dados: ' + dados);
       jQuery.ajax({
         type: "POST",
         dataType: "html",
@@ -314,7 +368,19 @@ $(document).ready(function(){
     stopTransition();
   });
   $("#btn_drt-sim").click(function(e){
-    e.preventDefault();
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          // event.preventDefault();
+        }
+      });
+      return false;
+    });
     swiper.unlockSwipeToNext();
     swiper.slideTo( $("#04-1-03_envie-uma-foto-do-seu-registro-drt").index(), 200);
     percentage = "50%";
@@ -330,7 +396,19 @@ $(document).ready(function(){
     stopTransition();
   });
   $("#btn_drt-nao").click(function(e){
-    e.preventDefault();
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          // event.preventDefault();
+        }
+      });
+      return false;
+    });
     swiper.unlockSwipeToNext();
     swiper.slideTo( $("#05-0-01_clique-e-conheca-nossos-planos").index(), 200);
     percentage = "55%";
@@ -475,12 +553,26 @@ $(document).ready(function(){
     $(".requerido").fadeOut(200);
   });
   $("#btn_cadastro-gratuito").click(function(e){
-    e.preventDefault();
+    // e.preventDefault();
     if(!$("#terms-1").is(":checked")){
       $(".requerido").fadeIn(200);
-      event.preventDefault();
+      // event.preventDefault();
     }
     if($("#terms-1").is(":checked")){
+      // event.preventDefault();
+      jQuery("form").submit(function(){
+        var dados = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          data: dados,
+          success: function( data ) {
+            // event.preventDefault();
+          }
+        });
+        return false;
+      });
       swiper.unlockSwipeToNext();
       swiper.slideTo( $("#05-1-03_assista-ao-video").index(), 200);
       percentage = "70%";

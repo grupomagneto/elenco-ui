@@ -20,7 +20,17 @@
                         <li class='itens'>Sem prazo de validade;</li>
                     </ul>
                 </div>
-                <button id='btn_cadastro-gratuito' class='botao'>Escolher</button>
+                    <form action="#" method="post">
+                        <input type="hidden" name="field" value="tipo_cadastro_vigente" />
+                        <input type="hidden" name="value" id="input_tipo_cadastro_vigente" value="Gratuito" />
+                        <input type="hidden" name="field2" value="data_contrato_vigente" />
+                        <input type="hidden" name="value2" id="input_data_contrato_vigente" value="<?php echo $hoje; ?>" />
+                        <input type="hidden" name="field3" value="concordo_timestamp" />
+                        <input type="hidden" name="value3" id="input_concordo_timestamp" value="<?php echo $timestamp; ?>" />
+                        <input type="hidden" name="field4" value="ip" />
+                        <input type="hidden" name="value4" id="input_ip" value="<?php echo $ip; ?>" />
+                        <button id='btn_cadastro-gratuito' class='botao'>Escolher</button>
+                    </form>
                 <div class='aviso'>
                   <div class='checkbox'>
                     <input type='checkbox' id='terms-1' class='checado' />

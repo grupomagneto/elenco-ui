@@ -45,10 +45,11 @@ require 'bootstrap.php';
         $_SESSION['id'] = $user->getId();
         $_SESSION['firstname'] = $user->getFirstName();
         $_SESSION['lastname'] = $user->getLastName();
-        $_SESSION['gender'] = $user->getGender();
+        $_SESSION['nome_artistico'] = $_SESSION['firstname']." ".$_SESSION['lastname'];
+        $_SESSION['sexo'] = $user->getGender();
         $_SESSION['email'] = $user->getEmail();
         $_SESSION['link'] = $user->getLink();
-        $_SESSION['birthday'] = $user->getProperty('birthday')->format('Y-m-d');
+        $_SESSION['dt_nascimento'] = $user->getProperty('birthday')->format('Y-m-d');
         $_SESSION['friends'] = $user->getProperty('friends');
         $_SESSION['total_count'] = $user->getProperty('friends')->getTotalCount();
 
@@ -65,40 +66,48 @@ require 'bootstrap.php';
           if (!empty($_SESSION['facebook_access_token'])) {
             // CHECAR SE O FB_ID JÁ ESTÁ NO DB
             $fb_id = $_SESSION['id'];
-            $birthday = $_SESSION['birthday'];
+            $dt_nascimento = $_SESSION['dt_nascimento'];
             $nome_artistico = $_SESSION['firstname']." ".$_SESSION['lastname'];
-            if ($_SESSION['gender'] == "male") {
+            if ($_SESSION['sexo'] == "male") {
               $sexo = "M";
             }
-            if ($_SESSION['gender'] == "female") {
+            if ($_SESSION['sexo'] == "female") {
               $sexo = "F";
             }
-            $sql = "SELECT id_elenco FROM tb_elenco WHERE facebook_ID = '$fb_id'";
-            $result = mysqli_query($link, $sql);
-            $row = mysqli_fetch_array($result);
-            if (mysqli_fetch_array($result)) {
-              $_SESSION['id_elenco'] = $row['id_elenco'];
-            }
-            // ADICIONA O FB ID
-            if (!mysqli_fetch_array($result)) {
-              // CHECA SE JÁ EXISTE O EMAIL CADASTRADO
-              $email = $_SESSION['email'];
-              $fb_link = $_SESSION['link'];
-              $fb_total_friends = $_SESSION['total_count'];
-              $sql_2 = "SELECT id_elenco FROM tb_elenco WHERE email = '$email' ORDER BY dt_nascimento ASC LIMIT 1";
-              $result = mysqli_query($link, $sql_2);
+            if (empty($_SESSION['id_elenco'])) {
+              $sql = "SELECT id_elenco FROM tb_elenco WHERE facebook_ID = '$fb_id'";
+              $result = mysqli_query($link, $sql);
               $row = mysqli_fetch_array($result);
-              if (!empty($row['id_elenco'])) {
-                $id_elenco = $row['id_elenco'];
-                $sql_3 = "UPDATE tb_elenco SET facebook_ID = '$fb_id', fb_link = '$fb_link', fb_total_friends = '$fb_total_friends' WHERE id_elenco = '$id_elenco'";
-                mysqli_query($link, $sql_3);
+              if (mysqli_fetch_array($result)) {
                 $_SESSION['id_elenco'] = $row['id_elenco'];
               }
-              // CRIA UM NOVO ID DE USUARIO
-              else {
-                mysqli_query($link, "INSERT INTO tb_elenco (facebook_ID, email, fb_link, fb_total_friends) VALUES ('$fb_id', '$email', '$fb_link', '$fb_total_friends')");
-                $_SESSION['id_elenco'] = mysqli_insert_id($link);
+              // ADICIONA O FB ID
+              if (!mysqli_fetch_array($result)) {
+                // CHECA SE JÁ EXISTE O EMAIL CADASTRADO
+                $email = $_SESSION['email'];
+                $fb_link = $_SESSION['link'];
+                $fb_total_friends = $_SESSION['total_count'];
+                $sql_2 = "SELECT id_elenco FROM tb_elenco WHERE email = '$email' ORDER BY dt_nascimento ASC LIMIT 1";
+                $result = mysqli_query($link, $sql_2);
+                $row = mysqli_fetch_array($result);
+                if (!empty($row['id_elenco'])) {
+                  $id_elenco = $row['id_elenco'];
+                  $sql_3 = "UPDATE tb_elenco SET facebook_ID = '$fb_id', fb_link = '$fb_link', fb_total_friends = '$fb_total_friends' WHERE id_elenco = '$id_elenco'";
+                  mysqli_query($link, $sql_3);
+                  $_SESSION['id_elenco'] = $row['id_elenco'];
+                }
+                // CRIA UM NOVO ID DE USUARIO
+                else {
+                  mysqli_query($link, "INSERT INTO tb_elenco (facebook_ID, dt_nascimento, email, fb_link, fb_total_friends) VALUES ('$fb_id', '$dt_nascimento', '$email', '$fb_link', '$fb_total_friends')");
+                  $_SESSION['id_elenco'] = mysqli_insert_id($link);
+                }
               }
+            }
+            // SABENDO QUEM É O USUARIO, ASSOCIA UM ID DE FACEBOOK A ELE
+            if (!empty($_SESSION['id_elenco'])) {
+              $id_elenco = $_SESSION['id_elenco'];
+              $sql = "UPDATE tb_elenco SET facebook_ID = '$fb_id', fb_link = '$fb_link', fb_total_friends = '$fb_total_friends' WHERE id_elenco = '$id_elenco'";
+              mysqli_query($link, $sql);
             }
           }
         }
