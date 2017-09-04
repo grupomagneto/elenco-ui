@@ -24,7 +24,8 @@ $instagram = new Andreyco\Instagram\Client(array(
   'apiKey'      => '8c92de1fcb6247c09232d2033627ce96',
   'apiSecret'   => 'c9faee8401db43d9b676d2a15852164c',
   'apiCallback' => 'http://localhost:8888/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php',
-  'scope'      => array('basic', 'relationships', 'follower_list', 'public_content' ),
+  // 'scope'      => array('basic', 'relationships', 'follower_list', 'public_content' ),
+  'scope'      => array('basic'),
 ));
 // cria login URL
 $state = md5(time());
