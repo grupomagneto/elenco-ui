@@ -1,10 +1,6 @@
 <?php
 date_default_timezone_set('America/Sao_Paulo');
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 $hoje = date('Y-m-d_H-i-s');
 $tipo = $_POST['tipo'];
 $img = $_POST['imgBase64'];

@@ -184,6 +184,7 @@ if (!empty($_SESSION['id_elenco'])) {
 <script type="text/javascript" src="../_js/cadastro_navegacao.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.js"></script>
 <script type="text/javascript" src="//irql.bipbop.com.br/js/jquery.bipbop.min.js"></script>
+<script type="text/javascript" src="../_js/progressbar.js"></script>
 <!-- <?php include "../_sys/analytics.php"; ?> -->
 </body>
 </html>

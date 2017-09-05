@@ -386,3 +386,25 @@ text-align: left;
 .titular-inputs{
 margin-bottom: 10px;
 }
+.upload_percentage {
+display: none;
+position: relative;
+height: 120px;
+width: 120px;
+margin: 20px;
+}
+.upload_percentage > svg {
+position: absolute;
+height: 100%;
+display: block;
+}
+.uploadbar-fill {
+	color: rgba(255, 255, 255, 0.3);
+}
+#icon_drt-enviar{
+    position: relative;
+    z-index: 1;
+}
+#drt_upload_text {
+    width: 90%;
+}

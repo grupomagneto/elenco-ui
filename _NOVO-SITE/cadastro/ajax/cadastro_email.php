@@ -20,7 +20,7 @@ if (empty($_SESSION['email_sent'])) {
 
     define('GUSER', 'inteligencia@magnetoelenco.com.br'); // <-- Insira aqui o seu GMail
     define('GPWD', 'rom54808285');    // <-- Insira aqui a senha do seu GMail
-    $subject = "[NOVO CADASTRO] Confirme seu e-mail";
+    $subject = "Confirme seu e-mail";
 
     // Corpo do email
     $msg = "

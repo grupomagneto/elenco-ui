@@ -199,8 +199,8 @@ input[type='file']{
     position: relative;
     border-radius:100px;
     opacity: 0;
-	margin: -50px 100px 10px 100px;
-	width: 100px;
+    margin: -50px 100px -60px 100px;
+    width: 100px;
     height: 120px;
     z-index: 2;
     cursor: pointer;

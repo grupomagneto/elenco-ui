@@ -387,8 +387,59 @@ $(document).ready(function(){
     previousPercentage = "40%";
     stopTransition();
   });
-  $("#btn_drt-enviar").click(function(e){
-    e.preventDefault();
+  $('input[name=drt_file]').change(function() {
+    document.getElementById('drt_enviar').style.display = "none";
+    document.getElementById('upload_percentage').style.display = "block";
+    var circulo = new ProgressBar.Circle('#upload_percentage', {
+      strokeWidth: 2,
+      trailWidth: 0,
+      easing: 'easeInOut',
+      duration: 1000,
+      svgStyle: null,
+      fill: 'rgba(255, 255, 255, 0.15)',
+      text: {
+        style: {
+            color: '#FFFFFF',
+            position: 'absolute',
+            left: '50%',
+            top: '50%',
+            padding: 0,
+            margin: 0,
+            transform: {
+                prefix: true,
+                value: 'translate(-50%, -50%)'
+            }
+        },
+        autoStyleContainer: true,
+        alignToBottom: true,
+        value: null,
+        className: 'uploadbar-text'
+      },
+      from: { color: 'rgba(255, 255, 255, 0)', width: 0 },
+      to: { color: 'rgba(255, 255, 255, 1)', width: 2 },
+      // Set default step function for all animate calls
+      step: function(state, circle) {
+        circle.path.setAttribute('stroke', state.color);
+        circle.path.setAttribute('stroke-width', state.width);
+        var value = Math.round(circle.value() * 100);
+        if (value === 0) {
+          circle.setText('');
+        } if (value === 100) {
+          document.getElementById("drt_upload_text").innerHTML = "DRT enviada!";
+          circle.setText(value + "%");
+        } else {
+          circle.setText(value + "%");
+        }
+      }
+    });
+    circulo.text.style.fontFamily = 'Avenir-Book';
+    circulo.text.style.fontSize = '1.5rem';
+    circulo.animate(1.0);  // Number from 0.0 to 1.0
+
+  });
+  $("#btn_drt-enviar").click(function(){
+    // e.preventDefault();
+    document.form_drt.submit();
     swiper.unlockSwipeToNext();
     swiper.slideTo( $("#05-0-02_clique-e-conheca-nossos-planos_drt").index(), 200);
     percentage = "55%";
