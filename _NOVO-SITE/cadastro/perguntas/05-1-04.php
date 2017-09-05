@@ -13,7 +13,7 @@
         </div>
         <div class="img-result hide" id="img-result">
             <img class="cropped" id="cropped" src="" height="100%" width="100%">
-            <input type="hidden" id="foto" class="foto" value="01" />
+            <input type="hidden" id="foto" class="foto" value="0" />
         </div>
         <div class="subtitulo avenir white small instrucao" id="instrucao">Clique para capturar</div>
         <div class='botoes'>

@@ -435,7 +435,8 @@ $(document).ready(function(){
     circulo.text.style.fontFamily = 'Avenir-Book';
     circulo.text.style.fontSize = '1.5rem';
     circulo.animate(1.0);  // Number from 0.0 to 1.0
-
+    $("#btn_drt-enviar").removeClass("disabled");
+    $("#btn_drt-enviar").removeAttr("disabled");
   });
   $("#btn_drt-enviar").click(function(){
     // e.preventDefault();
@@ -603,7 +604,7 @@ $(document).ready(function(){
   $(".checado").click(function(){
     $(".requerido").fadeOut(200);
   });
-  $("#btn_cadastro-gratuito").click(function(e){
+  $("#btn_cadastro-gratuito").click(function(){
     // e.preventDefault();
     if(!$("#terms-1").is(":checked")){
       $(".requerido").fadeIn(200);
@@ -631,13 +632,26 @@ $(document).ready(function(){
       stopTransition();
     }
   });
-  $("#btn_cadastro-gratuito-DRT").click(function(e){
-    e.preventDefault();
+  $("#btn_cadastro-gratuito-DRT").click(function(){
+    // e.preventDefault();
     if(!$("#terms-2").is(":checked")){
       $(".requerido").fadeIn(200);
-      event.preventDefault();
+      // event.preventDefault();
     }
     if($("#terms-2").is(":checked")){
+      jQuery("form").submit(function(){
+        var dados = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          data: dados,
+          success: function( data ) {
+            // event.preventDefault();
+          }
+        });
+        return false;
+      });
       swiper.unlockSwipeToNext();
       swiper.slideTo( $("#05-1-03_assista-ao-video").index(), 200);
       percentage = "70%";
@@ -669,13 +683,26 @@ $(document).ready(function(){
     previousPercentage = "90%";
     stopTransition();
   });
-  $("#btn_cadastro-premium").click(function(e){
-    e.preventDefault();
+  $("#btn_cadastro-premium").click(function(){
+    // e.preventDefault();
     if(!$("#terms-3").is(":checked")){
       $(".requerido").fadeIn(200);
-      event.preventDefault();
+      // event.preventDefault();
     }
     if($("#terms-3").is(":checked")){
+      jQuery("form").submit(function(){
+        var dados = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          data: dados,
+          success: function( data ) {
+            // event.preventDefault();
+          }
+        });
+        return false;
+      });
       swiper.unlockSwipeToNext();
       swiper.slideTo( $("#05-2-03_desconto-para-horario-pre-fixado").index(), 200);
       percentage = "65%";
@@ -683,13 +710,26 @@ $(document).ready(function(){
       stopTransition();
     }
   });
-  $("#btn_cadastro-profissional").click(function(e){
-    e.preventDefault();
+  $("#btn_cadastro-profissional").click(function(){
+    // e.preventDefault();
     if(!$("#terms-4").is(":checked")){
       $(".requerido").fadeIn(200);
-      event.preventDefault();
+      // event.preventDefault();
     }
     if($("#terms-4").is(":checked")){
+      jQuery("form").submit(function(){
+        var dados = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          data: dados,
+          success: function( data ) {
+            // event.preventDefault();
+          }
+        });
+        return false;
+      });
       swiper.unlockSwipeToNext();
       swiper.slideTo( $("#05-2-03_desconto-para-horario-pre-fixado").index(), 200);
       percentage = "65%";

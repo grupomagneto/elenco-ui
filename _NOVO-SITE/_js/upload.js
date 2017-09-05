@@ -130,7 +130,13 @@ save.addEventListener('click', function (e) {
       url: "ajax/upload.php",
       data: { 
          imgBase64: imgSrc,
-         tipo: foto.value
+         tipo: foto.value,
+         timestamp: ,
+         dt_foto: ,
+         camera: make + " " + model,
+         flash: flash,
+         coordenadas: ,
+         altitude: GPSAltitude
       }
     }).done(function(o) {
       // console.log('saved');
