@@ -13,42 +13,72 @@ var options = {
             // segments.push(console.log("tag: "+tag+"tags[tag]: "+tags[tag]));
             if (tag == 'Make') {
               var make = tags[tag];
-              console.log("Fabricante: "+make);
+              // console.log("Fabricante: "+make);
             }
             if (tag == 'Model') {
               var model = tags[tag];
-              console.log("Modelo: "+model);
+              // console.log("Modelo: "+model);
+              var aparelho = make + " " + model;
             }
             if (tag == 'DateTime') {
               var datetime = tags[tag];
-              console.log("Data e Hora: "+datetime);
+              // console.log("Datetime: "+datetime);
             }
             if (tag == 'Flash') {
               var flash = tags[tag];
-              console.log("Flash: "+flash);
+              // console.log("Flash: "+flash);
             }
             if (tag == 'GPSLatitudeRef') {
               var GPSLatitudeRef = tags[tag];
-              console.log("Latitude: "+GPSLatitudeRef);
+              // console.log("Latitude: "+GPSLatitudeRef);
             }
             if (tag == 'GPSLatitude') {
               var GPSLatitude = tags[tag];
-              console.log("Lat Nº: "+GPSLatitude);
+              // console.log("Lat Nº: "+GPSLatitude);
             }
             if (tag == 'GPSLongitudeRef') {
               var GPSLongitudeRef = tags[tag];
-              console.log("Longitude: "+GPSLongitudeRef);
+              // console.log("Longitude: "+GPSLongitudeRef);
             }
             if (tag == 'GPSLongitude') {
               var GPSLongitude = tags[tag];
-              console.log("Lon Nº: "+GPSLongitude);
+              // console.log("Lon Nº: "+GPSLongitude);
             }
             if (tag == 'GPSAltitude') {
               var GPSAltitude = tags[tag];
-              console.log("Altitude: "+GPSAltitude);
+              // console.log("Altitude: "+GPSAltitude);
             }
           }
         }
+        // Timestamp
+        var split = datetime.split(" ");
+        var date = split[0];
+        var time = split[1];
+        var dt_foto = date.replace(/:/g, "-");
+        var clearDate = date.replace(/:/g, "");
+        var clearTime = time.replace(/:/g, "");
+        var timestamp = clearDate+clearTime;
+        // Coordenadas
+        var Latitude = GPSLatitude.toString();
+        var Longitude = GPSLongitude.toString();
+        var coordenadas = Latitude + " " + GPSLatitudeRef + " " + Longitude + " " + GPSLongitudeRef;
+
+        // Save data to sessionStorage
+        sessionStorage.setItem('timestamp', timestamp);
+        sessionStorage.setItem('dt_foto', dt_foto);
+        sessionStorage.setItem('aparelho', aparelho);
+        sessionStorage.setItem('flash', flash);
+        sessionStorage.setItem('coordenadas', coordenadas);
+        sessionStorage.setItem('GPSAltitude', GPSAltitude);
+        
+        // Get saved data from sessionStorage
+        // var data = sessionStorage.getItem('key');
+
+        // Remove saved data from sessionStorage
+        // sessionStorage.removeItem('key');
+
+        // Remove all saved data from sessionStorage
+        // sessionStorage.clear();
       },
       fail: function (message) {
         // showcase.innerHTML = '<p>' + message + '</p>';
@@ -125,21 +155,28 @@ save.addEventListener('click', function (e) {
   // console.log(imgSrc);
   dwn.addEventListener('click', function (e) {
     e.preventDefault();
+    var timestamp = sessionStorage.getItem('timestamp');
+    var dt_foto = sessionStorage.getItem('dt_foto');
+    var aparelho = sessionStorage.getItem('aparelho');
+    var flash = sessionStorage.getItem('flash');
+    var coordenadas = sessionStorage.getItem('coordenadas');
+    var GPSAltitude = sessionStorage.getItem('GPSAltitude');
     $.ajax({
       type: "POST",
       url: "ajax/upload.php",
       data: { 
          imgBase64: imgSrc,
          tipo: foto.value,
-         timestamp: ,
-         dt_foto: ,
-         camera: make + " " + model,
+         timestamp: timestamp,
+         dt_foto: dt_foto,
+         camera: aparelho,
          flash: flash,
-         coordenadas: ,
-         altitude: GPSAltitude
+         coordenadas: coordenadas,
+         altitude: GPSAltitude         
       }
     }).done(function(o) {
       // console.log('saved');
+      sessionStorage.clear();
     });
   });
 });
@@ -210,15 +247,28 @@ save2.addEventListener('click', function (e) {
   // console.log(imgSrc);
   dwn2.addEventListener('click', function (e) {
     e.preventDefault();
+    var timestamp = sessionStorage.getItem('timestamp');
+    var dt_foto = sessionStorage.getItem('dt_foto');
+    var aparelho = sessionStorage.getItem('aparelho');
+    var flash = sessionStorage.getItem('flash');
+    var coordenadas = sessionStorage.getItem('coordenadas');
+    var GPSAltitude = sessionStorage.getItem('GPSAltitude');
     $.ajax({
       type: "POST",
       url: "ajax/upload.php",
       data: { 
          imgBase64: imgSrc2,
-         tipo: foto2.value
+         tipo: foto2.value,
+         timestamp: timestamp,
+         dt_foto: dt_foto,
+         camera: aparelho,
+         flash: flash,
+         coordenadas: coordenadas,
+         altitude: GPSAltitude 
       }
     }).done(function(o) {
       // console.log('saved');
+      sessionStorage.clear();
     });
   });
 });
