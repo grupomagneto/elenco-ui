@@ -51,6 +51,9 @@ text-decoration: none;
 	font-size: 30px;
 	line-height: 32px;
 }
+.bold{
+  font-weight: bold;
+}
 .swiper-pagination {
   z-index: 9999;
   position: relative;
