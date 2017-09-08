@@ -36,7 +36,8 @@ if (isset($code)) {
 $ig_token = $data->access_token;
 $ig_id = $data->user->id;
 
-$ig = "https://api.instagram.com/v1/users/".$ig_id."/?access_token=".$ig_token;
+// $ig = "https://api.instagram.com/v1/users/".$ig_id."/?access_token=".$ig_token;
+$ig = "https://api.instagram.com/v1/users/self/?access_token=".$ig_token;
 $ig_username = json_decode(file_get_contents($ig))->data->username;
 $ig_full_name = json_decode(file_get_contents($ig))->data->full_name;
 $ig_followers = json_decode(file_get_contents($ig))->data->counts->followed_by;

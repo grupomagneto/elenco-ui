@@ -226,3 +226,6 @@ input[type='checkbox']{
 .underlined {
   text-decoration: underline;
 }
+.display_none{
+    display: none;
+}

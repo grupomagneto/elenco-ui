@@ -1,5 +1,28 @@
+<?php
+if(!session_id()) {
+  session_start();
+}
+if (empty($_SESSION['id_elenco'])) {
+  header('location: ../cadastro/index.php');  
+}
+if (!empty($_SESSION['id_elenco'])) {
+  require '../_sys/conecta.php';
+  $id_elenco = $_SESSION['id_elenco'];
+  $sql = "SELECT * FROM tb_elenco WHERE id_elenco = '$id_elenco'";
+  $result = mysqli_query($link, $sql);
+  $row = mysqli_fetch_array($result);
+  $nome = $row['nome'];
+  if (!empty($row['nome_artistico']) && $row['nome_artistico'] != "") {
+  	$nome_artistico = $row['nome_artistico'];
+  }
+  else {
+  	$nome_partes = explode(" ", $nome);
+  	$nome_artistico = $nome_partes[0]." ".$nome_partes[1];
+  }
+  
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang='pt-br'>
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -73,9 +96,9 @@
 							</nav>
         </div>
 
-        <div class="conteudo align-items-center flexbox nowrap space-between-horizontalr">
+        <div class="conteudo align-items-center flexbox nowrap space-between-horizontal">
         	<div class="profile absolute flexbox text-align-center column justify-center nowrap">
-        		<p class="avenir white medium bold text-align-left">Daniela Souza</p>
+        		<p class="avenir white medium bold text-align-left"><?php echo $nome_artistico; ?></p>
         		<p class="avenir white small text-align-left">Plano Gratuito</p>
 
             <div class="barra_progresso">
@@ -87,7 +110,7 @@
         			<img class="img-circle" src="../_images/elenco_019589_20160913140545.jpg" alt="agenciado">
 	
 					</div>
-					<div class="depois-profile absolute align-items-center flexbox nowrap space-between-horizontal ">
+					<div class="depois-profile absolute align-items-center flexbox nowrap space-between-horizontal">
 							<p class="avenir white x-small">25% do perfil completado</p>
 					</div>
 
@@ -152,3 +175,7 @@
 </script>
 </body>
 </html>
+<?php
+}
+mysqli_close($link);
+?>

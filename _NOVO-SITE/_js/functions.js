@@ -37,6 +37,22 @@ function formataData(dataCompleta){
   var dataOk = dd+'/'+mm+'/'+yyyy;
   return dataOk;
 }
+// Formata data e define a timezone
+function formataData2(dataCompleta){
+  var data = new Date(dataCompleta);
+  var dataOk = new Date( data.getTime() + Math.abs(data.getTimezoneOffset()*60000) );
+  var dd = dataOk.getDate();
+  var mm = dataOk.getMonth()+1; //January is 0!
+  var yyyy = dataOk.getFullYear();
+  if(dd<10){
+    dd='0'+dd;
+  }
+  if(mm<10){
+    mm='0'+mm;
+  }
+  var dataOk = yyyy+'-'+mm+'-'+dd;
+  return dataOk;
+}
 // Calcula Idade
 function getAge(dateString) {
   var today = new Date();
@@ -57,8 +73,8 @@ function checarDataPassado(valorData){
   var valorData = new Date(valorData);
   if (Object.prototype.toString.call(valorData) === "[object Date]") {
     // it is a date
-    var dataOk = formataData(valorData);
-    var today = formataData(new Date());
+    var dataOk = formataData2(valorData);
+    var today = formataData2(new Date());
     if (isNaN(valorData.getTime())) {
         // Date is not valid
         var dataOk = "Invalid Date";
@@ -315,7 +331,7 @@ function meu_callback(conteudo) {
         $("#cidade_value").val(cidade);
         $("#uf_value").val(uf);
         $("#endereco_value").val(endereco);
-        console.log($("#endereco_value").val());
+        // console.log($("#endereco_value").val());
 		$('.status').show();
 		$('.valido').show();
     } //end if.

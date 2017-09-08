@@ -12,7 +12,7 @@
                 <div id="drt_upload_text">Clique para escolher</div>
             </div>
             <div class='botoes'>
-                <button type='submit' id='btn_drt-enviar' class='botao disabled' value='Submit' disabled>Continuar</button>
+                <button type='submit' id='btn_drt-enviar' class='botao disabled' disabled>Continuar</button>
                 <iframe id="upload_target" name="upload_target" src="#" style="width:0;height:0;border:0px solid #fff;display:none;"></iframe>
             </div>
         </div>

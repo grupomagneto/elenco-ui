@@ -101,6 +101,9 @@ if (!empty($_SESSION['id_elenco'])) {
         if (empty($_SESSION['dt_nascimento']) || $_SESSION['dt_nascimento'] == "0000-00-00") {
           echo"<div class='swiper-slide' id='03-0-01_qual-a-sua-data-de-nascimento'>";include "perguntas/03-0-01.php";echo"</div>";
         }
+        else {
+          echo"<div class='swiper-slide display_none' id='03-0-01_qual-a-sua-data-de-nascimento'>";include "perguntas/03-0-01.php";echo"</div>";
+        }
         // SE EXISTE UMA DATA, SE É MAIOR DE IDADE
         if (!empty($_SESSION['dt_nascimento']) && $_SESSION['dt_nascimento'] != "0000-00-00") {
           $age = date_diff(date_create($_SESSION['dt_nascimento']), date_create('today'))->y;
