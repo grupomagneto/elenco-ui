@@ -13,7 +13,7 @@ if (mysqli_num_rows($result) != 0) {
 	$_SESSION['id_elenco'] = $row['id_elenco'];
 }
 else {
-	header('Location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/index.php');
+	header('Location: https://www.magnetoelenco.com.br/cadastro/index.php');
 }
 mysqli_close($link);
 ?>

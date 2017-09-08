@@ -62,7 +62,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // console.log(dados);
@@ -111,7 +111,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -133,7 +133,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -156,7 +156,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -186,7 +186,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -210,7 +210,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             event.preventDefault();
@@ -248,7 +248,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             event.preventDefault();
@@ -281,7 +281,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -298,7 +298,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -320,7 +320,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -353,7 +353,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -443,7 +443,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -785,7 +785,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             // event.preventDefault();
@@ -815,7 +815,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             // event.preventDefault();
@@ -870,7 +870,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             // event.preventDefault();
@@ -900,7 +900,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             // event.preventDefault();
