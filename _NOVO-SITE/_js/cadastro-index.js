@@ -1,7 +1,7 @@
 $(document).ready(function(){
   var swiper1 = new Swiper('.swiper1', {
       preloadImages: true,
-      spaceBetween: 30,
+      spaceBetween: 0,
       simulateTouch: true,
       onlyExternal: true,
       speed: 200,
@@ -40,7 +40,7 @@ $(document).ready(function(){
       }
   });
   var swiper2 = new Swiper('.swiper2', {
-    spaceBetween: 30,
+    spaceBetween: 0,
     simulateTouch: false,
     onlyExternal: true,
     speed: 200,

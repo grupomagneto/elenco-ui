@@ -8,7 +8,7 @@
                 <label for="file-input">
                     <img class="upload" src="../_images/upload.svg"/>
                 </label>
-                <input type="file" id="file-input" class="file-input" accept="image/*" capture="camera">
+                <input type="file" id="file-input" class="file-input" accept="image/*">
             </div>
         </div>
         <div class="img-result hide" id="img-result">

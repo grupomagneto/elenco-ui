@@ -7,6 +7,8 @@ if (empty($_SESSION['id_elenco'])) {
 }
 if (!empty($_SESSION['id_elenco'])) {
   require '../_sys/conecta.php';
+  require '../_sys/functions.php';
+  require 'ajax/busca_horario.php';
   $id_elenco = $_SESSION['id_elenco'];
   date_default_timezone_set('America/Sao_Paulo');
   $hoje = date('Y-m-d', time());
@@ -70,7 +72,7 @@ if (!empty($_SESSION['id_elenco'])) {
 <link rel="stylesheet" href="../_css/cadastro.css" type="text/css" />
 </head>
 <body>
-<?php $data_desconto = "Sáb 5 de ago às 11:00"; ?>
+<?php $data_desconto = $_SESSION['prox_horario']; ?>
 <div class="gradient">
   <div class="container">
     <div class="mancha flexbox relative wrap">
@@ -100,9 +102,6 @@ if (!empty($_SESSION['id_elenco'])) {
         // CHECA SE O FACEBOOK ENTREGOU UMA DATA DE NASCIMENTO
         if (empty($_SESSION['dt_nascimento']) || $_SESSION['dt_nascimento'] == "0000-00-00") {
           echo"<div class='swiper-slide' id='03-0-01_qual-a-sua-data-de-nascimento'>";include "perguntas/03-0-01.php";echo"</div>";
-        }
-        else {
-          echo"<div class='swiper-slide display_none' id='03-0-01_qual-a-sua-data-de-nascimento'>";include "perguntas/03-0-01.php";echo"</div>";
         }
         // SE EXISTE UMA DATA, SE É MAIOR DE IDADE
         if (!empty($_SESSION['dt_nascimento']) && $_SESSION['dt_nascimento'] != "0000-00-00") {
