@@ -1,24 +1,24 @@
 <?php
-if(!session_id()) {
-  session_start();
-}
-if (empty($_SESSION['id_elenco'])) {
-  header('location: ../cadastro/index.php');  
-}
-if (!empty($_SESSION['id_elenco'])) {
-  require '../_sys/conecta.php';
-  $id_elenco = $_SESSION['id_elenco'];
-  $sql = "SELECT * FROM tb_elenco WHERE id_elenco = '$id_elenco'";
-  $result = mysqli_query($link, $sql);
-  $row = mysqli_fetch_array($result);
-  $nome = $row['nome'];
-  if (!empty($row['nome_artistico']) && $row['nome_artistico'] != "") {
-  	$nome_artistico = $row['nome_artistico'];
-  }
-  else {
-  	$nome_partes = explode(" ", $nome);
-  	$nome_artistico = $nome_partes[0]." ".$nome_partes[1];
-  }
+// if(!session_id()) {
+//   session_start();
+// }
+// if (empty($_SESSION['id_elenco'])) {
+//   header('location: ../cadastro/index.php');  
+// }
+// if (!empty($_SESSION['id_elenco'])) {
+//   require '../_sys/conecta.php';
+//   $id_elenco = $_SESSION['id_elenco'];
+//   $sql = "SELECT * FROM tb_elenco WHERE id_elenco = '$id_elenco'";
+//   $result = mysqli_query($link, $sql);
+//   $row = mysqli_fetch_array($result);
+//   $nome = $row['nome'];
+//   if (!empty($row['nome_artistico']) && $row['nome_artistico'] != "") {
+//   	$nome_artistico = $row['nome_artistico'];
+//   }
+//   else {
+//   	$nome_partes = explode(" ", $nome);
+//   	$nome_artistico = $nome_partes[0]." ".$nome_partes[1];
+//   }
   
 ?>
 <!DOCTYPE html>
@@ -77,14 +77,14 @@ if (!empty($_SESSION['id_elenco'])) {
         <div class="menu align-items-center flexbox nowrap space-between-horizontal">
 
        <!-- <nav class="menu-notificacao">
-							<ul id="ul-menu-notificacao">
-								<li><a class="avenir white small" href="#">Entrar</a></li>
-								<li><a class="avenir white small" href="#">Cadastrar</a></li>
-							</ul>
-						</nav> -->
+				<ul id="ul-menu-notificacao">
+					<li><a class="avenir white small" href="#">Entrar</a></li>
+					<li><a class="avenir white small" href="#">Cadastrar</a></li>
+				</ul>
+			</nav> -->
             <img src="../_images/notificacao.svg" class="notificação" />
 
-            <div class="logo">
+            <div class="logo absolute align-items-center flexbox nowrap space-between-horizontal text-align-center justify-center center-horizontal">
               <img src="../_images/logo-horizontal.svg" alt="logo" />
             </div>
 
@@ -96,7 +96,7 @@ if (!empty($_SESSION['id_elenco'])) {
 							</nav>
         </div>
 
-        <div class="conteudo align-items-center flexbox nowrap space-between-horizontal">
+        <div class="conteudo conteudo-perfil relative align-items-center flexbox nowrap space-between-horizontal">
         	<div class="profile absolute flexbox text-align-center column justify-center nowrap">
         		<p class="avenir white medium bold text-align-left"><?php echo $nome_artistico; ?></p>
         		<p class="avenir white small text-align-left">Plano Gratuito</p>
@@ -110,7 +110,7 @@ if (!empty($_SESSION['id_elenco'])) {
         			<img class="img-circle" src="../_images/elenco_019589_20160913140545.jpg" alt="agenciado">
 	
 					</div>
-					<div class="depois-profile absolute align-items-center flexbox nowrap space-between-horizontal">
+					<div class="depois-profile absolute align-items-center flexbox nowrap space-between-horizontal text-align-center justify-center center-horizontal">
 							<p class="avenir white x-small">25% do perfil completado</p>
 					</div>
 
@@ -176,6 +176,6 @@ if (!empty($_SESSION['id_elenco'])) {
 </body>
 </html>
 <?php
-}
-mysqli_close($link);
+// }
+// mysqli_close($link);
 ?>
