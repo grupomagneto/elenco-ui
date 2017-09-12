@@ -22,6 +22,25 @@ max-width: 320px;
 height: 90%;
 padding: 0;
 }
+.conteudo-perfil{
+overflow-x: hidden;
+overflow-y: auto;
+margin-bottom: 5px;
+}
+.conteudo-perfil::-webkit-scrollbar {
+    border-radius: 10px;
+} 
+.conteudo-perfil::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.30);
+}
+.conteudo-perfil::-webkit-scrollbar {
+    width: 6px;
+    background: rgba(255,255,255,0.30);
+}
+.conteudo-perfil::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+    border-radius: 10px;
+}
 .profile{
 width: 85%;
 height: 80px;
@@ -61,13 +80,12 @@ color: rgba(255,255,255,0.87);
 
 .depois-profile{
 margin-top: 100px;
-margin-left: 30%;
 }
 
 /*ACCORDION*/
 .accordions{
-	margin-top: 140px;
-  width: 100%;
+  margin-top: 140px;
+  width: 97%;
 }
 button.accordion {
     cursor: pointer;
