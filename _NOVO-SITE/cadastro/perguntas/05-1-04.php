@@ -15,7 +15,7 @@
             <img class="cropped" id="cropped" src="" height="100%" width="100%">
             <input type="hidden" id="foto" class="foto" value="0" />
         </div>
-        <div class="subtitulo avenir white small instrucao" id="instrucao">Clique para capturar</div>
+        <div class="subtitulo avenir white small instrucao" id="instrucao">Clique para escolher</div>
         <div class='botoes'>
             <button type="button" id="disabled" class="botao disabled" disabled>Continuar</button>
             <button type="button" id="save" class="botao save hide">Continuar</button>

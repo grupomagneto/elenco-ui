@@ -267,7 +267,6 @@ save2.addEventListener('click', function (e) {
          altitude: GPSAltitude 
       }
     }).done(function(o) {
-      // console.log('saved');
       sessionStorage.clear();
     });
   });

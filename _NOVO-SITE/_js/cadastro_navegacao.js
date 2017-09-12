@@ -180,6 +180,7 @@ $(document).ready(function(){
     document.getElementById("04-2-05_qual-a-data-de-nascimento-dele").className += " display_none";
     document.getElementById("04-2-06_qual-a-cor-da-pele-dele").className += " display_none";
     document.getElementById("04-1-02_voce-tem-registro-drt").classList.remove("display_none");
+    document.getElementById("04-1-01_qual-a-cor-da-sua-pele").classList.remove("display_none");
     // Ajax Cadastros
     jQuery("form").submit(function(){
       var dados = jQuery(this).serialize();
@@ -227,11 +228,17 @@ $(document).ready(function(){
     });
   });
   $("#btn_um-menor-de-idade").click(function(){
-    event.preventDefault();
+    // event.preventDefault();
     document.getElementById("04-1-02_voce-tem-registro-drt").className += " display_none";
     document.getElementById("04-1-03_envie-uma-foto-do-seu-registro-drt").className += " display_none";
     document.getElementById("05-0-02_clique-e-conheca-nossos-planos_drt").className += " display_none";
     document.getElementById("05-1-02_perfeito-para-quem-tem-drt").className += " display_none";
+    if (document.getElementById("04-1-01_qual-a-cor-da-sua-pele")) {
+      document.getElementById("04-1-01_qual-a-cor-da-sua-pele").className += " display_none";
+    }
+    if (document.getElementById("03-0-03_qual-o-seu-sexo")) {
+      document.getElementById("03-0-03_qual-o-seu-sexo").className += " display_none";
+    }
     document.getElementById("04-2-01_qual-o-sexo-do-menor").classList.remove("display_none");
     $(".voltar").css("opacity", "1");
     swiper.unlockSwipeToNext();
@@ -270,7 +277,6 @@ $(document).ready(function(){
     // swiper.slideTo( $("#03-1-03_qual-o-seu-telefone-celular").index(), 200);
     document.getElementById("03-1-03_qual-o-seu-telefone-celular").classList.remove("display_none");
     document.getElementById("03-1-04_qual-o-cep-da-sua-residencia").classList.remove("display_none");
-    document.getElementById("04-1-01_qual-a-cor-da-sua-pele").classList.remove("display_none");
     swiper.slideNext();
     percentage = "20%";
     previousPercentage = "15%";
@@ -455,7 +461,20 @@ $(document).ready(function(){
   });
   // Navegação Menor de Idade
   $("#btn_sexo-menor-feminino").click(function(){
-    event.preventDefault();
+    // Ajax Cadastros
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          event.preventDefault();
+        }
+      });
+      return false;
+    });
     document.getElementById("04-2-02_o-menor-tem-cpf-proprio").classList.remove("display_none");
     swiper.unlockSwipeToNext();
     // swiper.slideTo( $("#04-2-02_o-menor-tem-cpf-proprio").index(), 200);
@@ -466,7 +485,20 @@ $(document).ready(function(){
     sexo("F");
   });
   $("#btn_sexo-menor-masculino").click(function(){
-    event.preventDefault();
+    // Ajax Cadastros
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          event.preventDefault();
+        }
+      });
+      return false;
+    });
     document.getElementById("04-2-02_o-menor-tem-cpf-proprio").classList.remove("display_none");
     swiper.unlockSwipeToNext();
     // swiper.slideTo( $("#04-2-02_o-menor-tem-cpf-proprio").index(), 200);
@@ -488,7 +520,21 @@ $(document).ready(function(){
     stopTransition();
   });
   $("#ok_cpf-menor").click(function(){
-    event.preventDefault();
+    // Ajax Cadastros
+    jQuery("form").submit(function(){
+      var dados2 = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
+        data: dados2,
+        success: function( data ) {
+          // event.preventDefault();
+          console.log('cpf menor: '+dados2);
+        }
+      });
+      return false;
+    });
     document.getElementById("04-2-05_qual-a-data-de-nascimento-dele").classList.remove("display_none");
     swiper.unlockSwipeToNext();
     // swiper.slideTo( $("#04-2-05_qual-a-data-de-nascimento-dele").index(), 200);
@@ -519,12 +565,27 @@ $(document).ready(function(){
     stopTransition();
   });
   $("#btn_data-menor").click(function(){
-    event.preventDefault();
+    // event.preventDefault();
     var nascimentoMenor = document.getElementById("data-menor").value;
     var checaData = checarDataPassado(nascimentoMenor);
     if (checaData != "Invalid Date") {
       var checaIdade = getAge(nascimentoMenor);
       if (checaIdade < 18) {
+        // Ajax Cadastros
+        jQuery("form").submit(function(){
+          var dados9 = jQuery(this).serialize();
+          jQuery.ajax({
+            type: "POST",
+            dataType: "html",
+            url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
+            data: dados9,
+            success: function( data ) {
+              event.preventDefault();
+              console.log('btn_data_menor');
+            }
+          });
+          return false;
+        });
         document.getElementById("04-2-06_qual-a-cor-da-pele-dele").classList.remove("display_none");
         swiper.unlockSwipeToNext();
         // swiper.slideTo( $("#04-2-06_qual-a-cor-da-pele-dele").index(), 200);
@@ -548,7 +609,22 @@ $(document).ready(function(){
     }
   });
   $("#btn_cor-da-pele-menor").click(function(){
-    event.preventDefault();
+    // event.preventDefault();
+    // Ajax Cadastros
+        jQuery("form").submit(function(){
+          var dados = jQuery(this).serialize();
+          jQuery.ajax({
+            type: "POST",
+            dataType: "html",
+            url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
+            data: dados,
+            success: function( data ) {
+              // event.preventDefault();
+              console.log('rolou pele menor');
+            }
+          });
+          return false;
+        });
     document.getElementById("05-0-01_clique-e-conheca-nossos-planos").classList.remove("display_none");
     swiper.unlockSwipeToNext();
     // swiper.slideTo( $("#05-0-01_clique-e-conheca-nossos-planos").index(), 200);
@@ -846,8 +922,21 @@ $(document).ready(function(){
     stopTransition();
   });
   $("#btn_serio-enviar").click(function(){
-    event.preventDefault();
+    // event.preventDefault();
     document.getElementById("05-1-06_cadastro-concluido-gratuito").classList.remove("display_none");
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          // event.preventDefault();
+        }
+      });
+      return false;
+    });
     swiper.unlockSwipeToNext();
     // swiper.slideTo( $("#05-1-06_cadastro-concluido-gratuito").index(), 200);
     swiper.slideNext();

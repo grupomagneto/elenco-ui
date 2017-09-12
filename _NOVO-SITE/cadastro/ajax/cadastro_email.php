@@ -13,6 +13,9 @@ $row = mysqli_fetch_array($result);
 if (mysqli_num_rows($result) == 0) {
 	$sql_insert = "INSERT INTO tb_elenco (email, senha) VALUES ('$email', '$senha')";
 	mysqli_query($link, $sql_insert);
+    $id_OLD = mysqli_insert_id($link);
+    $sql_OldDB = "INSERT INTO tb_elenco (id_elenco, email) VALUES ('$id_OLD', '$email')";
+    mysqli_query($link2, $sql_OldDB);
 }
 $link = "https://www.magnetoelenco.com.br/cadastro/index.php?email=".$email."&hash=".$senha;
 
@@ -49,6 +52,6 @@ if (empty($_SESSION['email_sent'])) {
     smtpmailer($email, 'inteligencia@magnetoelenco.com.br', 'Magneto Elenco', $subject, $msg);
     $_SESSION['email_sent'] = "yes";
 }
-
 mysqli_close($link);
+mysqli_close($link2);
 ?>

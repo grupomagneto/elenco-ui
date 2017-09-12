@@ -114,10 +114,6 @@ if (!empty($_SESSION['id_elenco'])) {
         if (empty($_SESSION['email']) || $_SESSION['email'] == "") {
           echo"<div class='swiper-slide' id='03-0-04_qual-o-seu-email'>";include "perguntas/03-0-04.php";echo"</div>";
         }
-        // CHECA O GENERO
-        if (empty($_SESSION['sexo']) || $_SESSION['sexo'] == "") {
-          echo"<div class='swiper-slide' id='03-0-03_qual-o-seu-sexo'>";include "perguntas/03-0-03.php";echo"</div>";
-        }
         ?>
         <!-- QUEM VOCÊ DESEJA CADASTRAR -->
           <div class="swiper-slide" id="03-1-01_quem-voce-deseja-cadastrar">            <?php include "perguntas/03-1-01.php"; ?></div>
@@ -133,6 +129,10 @@ if (!empty($_SESSION['id_elenco'])) {
         // CHECA O CEP
         if (empty($_SESSION['cep']) || $_SESSION['cep'] == "") {
           echo"<div class='swiper-slide' id='03-1-04_qual-o-cep-da-sua-residencia'>";include 'perguntas/03-1-04.php';echo"</div>";
+        }
+        // CHECA O GENERO
+        if (empty($_SESSION['sexo']) || $_SESSION['sexo'] == "") {
+          echo"<div class='swiper-slide' id='03-0-03_qual-o-seu-sexo'>";include "perguntas/03-0-03.php";echo"</div>";
         }
         // CHECA A COR DA PELE
         if (empty($_SESSION['pele']) || $_SESSION['pele'] == "") {

@@ -264,13 +264,23 @@ $(function(){
             success: function(data) {
                 var nome = $(data).find("body nome").text();
                 nome = nome.toLowerCase();
-                mensagem = ucFirstAllWords(nome);
+                var mensagem = ucFirstAllWords(nome);
+                var res = mensagem.split(" ");
+                if (res[1] == "de") {
+                  var nome_artistico = res[0] + " " + res[2];
+                }
+                else {
+                  var nome_artistico = res[0] + " " + res[1];
+                }
                 $('.valido').show();
                 $('.invalido').hide();
                 $('.ok').show();
                 $('.status').show();
                 $(".status").text(mensagem);
-                $("#nome-cpf_value").val(mensagem);
+                $("#nome-cpf_value_menor").val(mensagem);
+                $("#nome-artistico_value_menor").val(nome_artistico);
+                console.log("nome: " + $("#nome-cpf_value_menor").val());
+                console.log("nome artistico: " + $("#nome-artistico_value_menor").val());
             }
           });
         } else {

@@ -28,6 +28,7 @@ if ($timestamp != null && $timestamp != "") {
 	// Salva o arquivo
 	$fileName = "elenco_".$id_elenco_formatado."_".$timestamp.".png";
 	$sql = "INSERT INTO tb_foto (arquivo, dt_foto, cd_elenco, cd_tipo_foto, dh_cadastro, camera, flash, coordenadas, altitude) VALUES ('$fileName', '$dt_foto', '$id_elenco', '$cd_tipo_foto', '$dh_cadastro', '$camera', '$flash', '$coordenadas', '$altitude')";
+	$sql_OLD = "INSERT INTO tb_foto (arquivo, dt_foto, cd_elenco, cd_tipo_foto, dh_cadastro) VALUES ('$fileName', '$dt_foto', '$id_elenco', '$cd_tipo_foto', '$dh_cadastro')";
 }
 // Se não tem EXIF
 else {
@@ -36,11 +37,40 @@ else {
 	// Salva o arquivo
 	$fileName = "elenco_".$id_elenco_formatado."_".$timestamp.".png";
 	$sql = "INSERT INTO tb_foto (arquivo, dt_foto, cd_elenco, cd_tipo_foto, dh_cadastro) VALUES ('$fileName', '$dt_foto', '$id_elenco', '$cd_tipo_foto', '$dh_cadastro')";
+	$sql_OLD = $sql;
 }
 // Salva arquivo e registra no DB
 $fileDir = $dir.$fileName;
 file_put_contents($fileDir, $fileData);
-mysqli_query($link, $sql);
 
+mysqli_query($link, $sql);
 mysqli_close($link);
+
+mysqli_query($link2, $sql_OLD);
+mysqli_close($link2);
+
+$file = $fileDir;
+// $remote_file = "public_html/magnetoelenco/fotos/".$fileName;
+$remote_file = "public_html/magnetoelenco/".$fileName;
+// $remote_file = $fileName;
+
+$ftp_server = "ftp.grupomagneto.com.br";
+$ftp_username = "grupomagneto";
+$ftp_senha = "Magfoto332211";
+
+// set up basic connection
+$ftp = ftp_connect($ftp_server);
+
+// login with username and password
+$login_result = ftp_login($ftp, $ftp_username, $ftp_senha);
+
+// upload a file
+if (ftp_put($ftp, $remote_file, $file, FTP_BINARY)) {
+ echo "successfully uploaded $file\n";
+} else {
+ echo "There was a problem while uploading $file\n";
+}
+
+// close the connection
+ftp_close($ftp);
 ?>

@@ -15,11 +15,15 @@
             <img class="cropped" id="cropped-2" src="" height="100%" width="100%">
             <input type="hidden" id="foto-2" class="foto" value="1" />
         </div>
-        <div class="subtitulo avenir white small instrucao" id="instrucao-2">Clique para capturar</div>
+        <div class="subtitulo avenir white small instrucao" id="instrucao-2">Clique para escolher</div>
         <div class='botoes'>
-            <button type="button" id="disabled-2" class="botao disabled" disabled>Continuar</button>
-            <button type="button" id="save-2" class="botao save hide">Continuar</button>
-            <button type="button" id='btn_serio-enviar' class="botao download hide">Enviar</button>
+            <form action="#" method="post">
+                <button type="button" id="disabled-2" class="botao disabled" disabled>Continuar</button>
+                <button type="button" id="save-2" class="botao save hide">Continuar</button>
+                <input type="hidden" name="field" value="ativo" />
+                <input type="hidden" name="value" value="New" />
+                <button type="button" id='btn_serio-enviar' class="botao download hide">Enviar</button>
+            </form>
         </div>
     </div>
 </div>

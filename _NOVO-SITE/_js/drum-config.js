@@ -19,49 +19,49 @@ var delay = function(fn, delay, bind){
     };
 };
 
-selects.forEach(function(selectBox){
-    var root = selectBox;
-    var scrollHandle = root.querySelector('.handle');
-    var scrollBox = root.querySelector('.box');
-    var scrollFocus = root.querySelector('.focus');
+// selects.forEach(function(selectBox){
+//     var root = selectBox;
+//     var scrollHandle = root.querySelector('.handle');
+//     var scrollBox = root.querySelector('.box');
+//     var scrollFocus = root.querySelector('.focus');
 
-    var scroll = new IScroll(scrollHandle, {
-        scrollX : false,
-        scrollY : true,
-        indicators : [{
-            el: scrollBox,
-            resize: false,
-            ignoreBoundaries: true
-        },{
-            el: scrollFocus,
-            resize: false,
-            ignoreBoundaries: true
-        }]
-    });
+//     // var scroll = new IScroll(scrollHandle, {
+//     //     scrollX : false,
+//     //     scrollY : true,
+//     //     indicators : [{
+//     //         el: scrollBox,
+//     //         resize: false,
+//     //         ignoreBoundaries: true
+//     //     },{
+//     //         el: scrollFocus,
+//     //         resize: false,
+//     //         ignoreBoundaries: true
+//     //     }]
+//     // });
 
-    var itemHeight = scrollHandle.querySelector('option').offsetHeight;
-    var originScrollTo = scroll.scrollTo;
-    scroll.scrollTo = delay(function(x, y, time, easing){
-        var targetY = y;
-        if(y > scroll.maxScrollY && y < 0){
-            var absY = Math.abs(y);
-            var step = Math.floor(absY / itemHeight);
-            var itemDelta = absY - step * itemHeight;
-            if(scroll.startY <= scroll.absStartY){
-                if(y - scroll.absStartY < 0){
-                    step = step + 1;
-                }
-            }           
-            targetY = 0 - step * itemHeight;
-            time = parseInt(time, 10) || 0;
-            time = Math.max(time, Math.abs(targetY - y) * 10);
-            targetY = limit(targetY, scroll.maxScrollY, 0);
-        }
-        originScrollTo.call(scroll, x, targetY, time, easing);
-    }, 10);
+//     var itemHeight = scrollHandle.querySelector('option').offsetHeight;
+//     var originScrollTo = scroll.scrollTo;
+//     scroll.scrollTo = delay(function(x, y, time, easing){
+//         var targetY = y;
+//         if(y > scroll.maxScrollY && y < 0){
+//             var absY = Math.abs(y);
+//             var step = Math.floor(absY / itemHeight);
+//             var itemDelta = absY - step * itemHeight;
+//             if(scroll.startY <= scroll.absStartY){
+//                 if(y - scroll.absStartY < 0){
+//                     step = step + 1;
+//                 }
+//             }           
+//             targetY = 0 - step * itemHeight;
+//             time = parseInt(time, 10) || 0;
+//             time = Math.max(time, Math.abs(targetY - y) * 10);
+//             targetY = limit(targetY, scroll.maxScrollY, 0);
+//         }
+//         originScrollTo.call(scroll, x, targetY, time, easing);
+//     }, 10);
 
 
-});
+// });
 
 $("#date").drum({ 
   panelCount: 9, 

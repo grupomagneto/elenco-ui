@@ -45,13 +45,13 @@ require 'bootstrap.php';
         $_SESSION['id'] = $user->getId();
         $_SESSION['firstname'] = $user->getFirstName();
         $_SESSION['lastname'] = $user->getLastName();
-        $_SESSION['nome_artistico'] = $_SESSION['firstname']." ".$_SESSION['lastname'];
         $_SESSION['sexo'] = $user->getGender();
         $_SESSION['email'] = $user->getEmail();
         $_SESSION['link'] = $user->getLink();
         $_SESSION['dt_nascimento'] = $user->getProperty('birthday')->format('Y-m-d');
         $_SESSION['friends'] = $user->getProperty('friends');
         $_SESSION['total_count'] = $user->getProperty('friends')->getTotalCount();
+        $_SESSION['nome_artistico'] = $_SESSION['firstname']." ".$_SESSION['lastname'];
 
         require '../../_sys/conecta.php';
         require 'vendor/autoload.php';
@@ -100,6 +100,8 @@ require 'bootstrap.php';
                 else {
                   mysqli_query($link, "INSERT INTO tb_elenco (facebook_ID, dt_nascimento, email, fb_link, fb_total_friends) VALUES ('$fb_id', '$dt_nascimento', '$email', '$fb_link', '$fb_total_friends')");
                   $_SESSION['id_elenco'] = mysqli_insert_id($link);
+                  $id_OLD = $_SESSION['id_elenco'];
+                  mysqli_query($link2, "INSERT INTO tb_elenco (id_elenco, dt_nascimento, email) VALUES ('$id_OLD', '$dt_nascimento', '$email')");
                 }
               }
             }
@@ -122,4 +124,5 @@ require 'bootstrap.php';
     }
   }
 mysqli_close($link);
+mysqli_close($link2);
 ?>

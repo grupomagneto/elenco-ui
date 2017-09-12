@@ -6,9 +6,17 @@
         <div class='subtitulo avenir white small'>
         Agora as informações do menor sendo cadastrado
         </div>
-        <div class='botoes' id='div_04-2_qual-o-sexo-do-menor'>
-            <button id='btn_sexo-menor-feminino' class='botao'>Feminino</button>
-            <button id='btn_sexo-menor-masculino' class='botao'>Masculino</button>
+        <div class='botoes'>
+        <form action="#" method="post">
+                <input type="hidden" id="sexo_field" name="field" value="sexo" />
+                <input type="hidden" id="sexo_value" name="value" value="F" />
+                <button id="btn_sexo-menor-feminino" class="botao">Feminino</button>
+            </form>
+            <form action="#" method="post">
+                <input type="hidden" id="sexo_field" name="field" value="sexo" />
+                <input type="hidden" id="sexo_value" name="value" value="M" />
+                <button id="btn_sexo-menor-masculino" class="botao">Masculino</button>
+            </form>
         </div>
     </div>
 </div>

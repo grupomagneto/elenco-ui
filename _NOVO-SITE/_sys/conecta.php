@@ -16,4 +16,19 @@ $success = mysqli_real_connect(
 mysqli_set_charset($link,"utf8");
 // Configura a timezone do DB
 mysqli_query($link, "SET time_zone='-03:00'");
+// DB 2 Online
+$user2 = 'elencooriginal';
+$password2 = 'M@g3l3nc0_0962';
+$db2 = 'elencooriginal';
+$host2 = 'elencooriginal.mysql.dbaas.com.br';
+
+$link2 = mysqli_init();
+$success2 = mysqli_real_connect(
+  $link2,
+  $host2,
+  $user2,
+  $password2,
+  $db2
+);
+mysqli_set_charset($link2,"utf8");
 ?>
