@@ -62,72 +62,24 @@ $('#ul-menu-trigger').magMenu({
 	color: "white"
 });
 
-$('#ul-menu-notificacao').magNote({
-	breakpoint: 960,
-	top: 52,
-	background: "transparent",
-	color: "white"
- });
 
-(function( $, window ) {
-$.fn.magNote = function( options ) {
-	// Opções	
-	var configs = $.extend({
-			breakpoint: 768,
-			top: 50,
-			color: 'white'
-	}, options );
-	
-	var mobileLargura = configs.breakpoint,
-			color = configs.color,
-			background = configs.background,
-			hambugerActive = false,
-			hamburger = '<a id="mag-note"></a>',
-			menu = $(this);
-	
-	var estilos = '<style>\
-					#mag-menu-note { background-color: ' + background + '; top: ' + configs.top + 'px; }\
-					#mag-menu-note li { border-color: ' + color + '; }\
-					#mag-menu-note li:last-of-type { border-color: ' + color + '; }\
-					#mag-menu-note li a { color: ' + color + '; }\
-					#mag-note::before { background:' + color + '; }\
-					#mag-note::after { box-shadow: 0 4px 0 0 ' + color + ', 0 -4px 0 0 ' + color + '; }\
-					#mag-note.active::before, #mag-note.active::after { background:' + color + '; }\
-				</style>';
+var menuTrigger = $('#menu-trigger');
+console.log($('.site-header').outerHeight());
 
-	var noteFunction = function() {
-		var width = $(window).width();
-		if (width < mobileLargura) {
-			menu.attr('id', 'mag-menu-note');
-			if(!hambugerActive) {
-				hambugerActive = true;
-				menu.before(hamburger);
-				$('#mag-menu-note').append(styles);
-			} else {
-				return false;
-			}
+var isToggled = false;
 
-		} else if (width > mobileLargura) {
-			hambugerActive = false;
-			$('#mag-note').remove();
-			$('#mag-menu-note style').remove();
-			menu.attr('id', '');
-		}
-
-		$('#mag-note').on('click touchstart', function(e) {
-			e.preventDefault();
-			$('#mag-note').toggleClass('active');
-			menu.toggleClass('active');
-		});
-	}
-
-	noteFunction();
-	$(window).resize(noteFunction);
-
-};
-
-}( jQuery, window ));
-
-
-//accordion
-
+menuTrigger.click(function(e){
+  e.preventDefault();  
+  if(!isToggled){
+   $(this).find('.notificacao').addClass('rotate-clockwise').removeClass('rotate-counter');
+    console.log("rotate clockwise");
+    isToggled = true;
+    $('#responsive-menu').slideToggle();
+  }else{
+    $(this).find('.notificacao').addClass('rotate-counter').removeClass('rotate-clockwise');
+    console.log("rotate counterclockwise");
+    $('#responsive-menu').slideToggle();
+    isToggled = false;
+  }
+  
+});
