@@ -9,7 +9,7 @@ $id_elenco = $_SESSION['id_elenco'];
 $sql_insert = "UPDATE tb_elenco SET $field = '$value' WHERE id_elenco = '$id_elenco'";
 mysqli_query($link, $sql_insert);
 // Atualiza o DB do site velho
-if ($field != "ddd_01" && $field != "pele" && $field != "DRT" && $field != "ativo") {
+if ($field != "ddd_01" && $field != "pele" && $field != "DRT" && $field != "ativo" && $field != "cpf_menor") {
 	mysqli_query($link2, $sql_insert);
 }
 if ($field == "pele") {

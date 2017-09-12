@@ -295,7 +295,7 @@ $(document).ready(function(){
       });
       return false;
     });
-    
+
   });
   $("#ok_cel").click(function(){
     // event.preventDefault();
@@ -457,7 +457,7 @@ $(document).ready(function(){
       });
       return false;
     });
-    
+
   });
   // Navegação Menor de Idade
   $("#btn_sexo-menor-feminino").click(function(){
@@ -521,13 +521,13 @@ $(document).ready(function(){
   });
   $("#ok_cpf-menor").click(function(){
     // Ajax Cadastros
-    jQuery("form").submit(function(){
-      var dados2 = jQuery(this).serialize();
+    jQuery("#form_cpf_menor").submit(function(){
+      var dados_2 = jQuery(this).serialize();
       jQuery.ajax({
         type: "POST",
         dataType: "html",
         url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
-        data: dados2,
+        data: dados_2,
         success: function( data ) {
           // event.preventDefault();
           console.log('cpf menor: '+dados2);
@@ -566,7 +566,7 @@ $(document).ready(function(){
   });
   $("#btn_data-menor").click(function(){
     // event.preventDefault();
-    var nascimentoMenor = document.getElementById("data-menor").value;
+    var nascimentoMenor = document.getElementById("dt_nascimento-menor_value").value;
     var checaData = checarDataPassado(nascimentoMenor);
     if (checaData != "Invalid Date") {
       var checaIdade = getAge(nascimentoMenor);

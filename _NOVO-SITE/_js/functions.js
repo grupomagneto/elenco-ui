@@ -252,7 +252,7 @@ $(function(){
       $('.ok').hide();
     }
   });
-  $('#cpf-menor').keyup(function() {
+  $('#cpf-menor-value').keyup(function() {
     if ($.trim(this.value).length == 14) {
       var cpf = $(this).val();
       if (validCPF(cpf) && /^\d{2}\/\d{2}\/\d{4}$/) {
