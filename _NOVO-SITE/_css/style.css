@@ -29,6 +29,9 @@ text-decoration: none;
 .white{
 	color: #FFFFFF;
 }
+.color_87{
+  color: rgba(255,255,255,0.87);
+}
 .avenir{
 	font-family: Avenir-Book;
 }
@@ -228,4 +231,8 @@ input[type='checkbox']{
 }
 .display_none{
     display: none;
+}
+
+.float_left{
+  float: left;
 }

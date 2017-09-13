@@ -74,6 +74,12 @@
     -ms-flex-pack: center;
     justify-content: center;
 }
+.justify-baseline{
+    -webkit-box-pack: baseline;    
+    -ms-flex-pack: baseline;    
+    justify-content: baseline;
+}
+
 .align-items-center{
     -webkit-box-align: center;
         -ms-flex-align: center;

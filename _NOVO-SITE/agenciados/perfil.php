@@ -66,6 +66,7 @@
 	<meta name="theme-color" content="#ffffff">
 	<link rel="stylesheet" href="../_css/normalize.css" type="text/css" />
 	<link rel="stylesheet" href="../_css/flexbox.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 	<link rel="stylesheet" href="../_css/style.css" type="text/css" />
 	<link rel="stylesheet" href="../_css/agenciados.css" type="text/css" />
 </head>
@@ -76,24 +77,33 @@
   	<div class="mancha flexbox relative wrap">
         <div class="menu align-items-center flexbox nowrap space-between-horizontal">
 
-       <!-- <nav class="menu-notificacao">
-				<ul id="ul-menu-notificacao">
-					<li><a class="avenir white small" href="#">Entrar</a></li>
-					<li><a class="avenir white small" href="#">Cadastrar</a></li>
-				</ul>
-			</nav> -->
-            <img src="../_images/notificacao.svg" class="notificação" />
+       <div class="site-header cf">
+	    <div class="container2">
+	      <nav class="site-nav">
+	        <ul id="std-menu">
+	          <li>
+	            <a class="active avenir white small cursor" href="">Notificação</a>
+	          </li>
+	        </ul>
+	        <a href="" id="menu-trigger">
+	        	<img src="../_images/notificacao.svg" class="notificacao" />
+	        </a>
+	      </nav>
+	    </div>
+	  </div>
+            <!-- <img src="../_images/notificacao.svg" class="notificação" /> -->
 
-            <div class="logo absolute align-items-center flexbox nowrap space-between-horizontal text-align-center justify-center center-horizontal">
-              <img src="../_images/logo-horizontal.svg" alt="logo" />
-            </div>
+        <div class="logo absolute align-items-center flexbox nowrap space-between-horizontal text-align-center justify-center center-horizontal">
+          <img src="../_images/logo-horizontal.svg" alt="logo" />
+        </div>
 
-            	<nav class="menu-trigger">
-								<ul id="ul-menu-trigger">
-									<li><a class="avenir white small" href="#">Entrar</a></li>
-									<li><a class="avenir white small" href="#">Cadastrar</a></li>
-								</ul>
-							</nav>
+    	<nav class="menu-trigger">
+			<ul id="ul-menu-trigger">
+				<li><a class="avenir white small" href="#">Entrar</a></li>
+				<li><a class="avenir white small" href="#">Cadastrar</a></li>
+			</ul>
+		</nav>
+
         </div>
 
         <div class="conteudo conteudo-perfil relative align-items-center flexbox nowrap space-between-horizontal">
@@ -116,31 +126,59 @@
 
 <!-- inicio accordion -->
 <div class="accordions absolute flexbox text-align-center column justify-center nowrap">
-					<button class="accordion avenir white small" id="accordion1">
-						Upgrade grátis</button>
-					<div class="panel avenir white " id="panel1">
-					  <p>Lorem ipsum...</p>
-					</div>
+	<button class="accordion avenir white small " id="accordion1">
+		<img src="../_images/upgrade.svg" alt="Upgrade Grátis">
+		<p class="avenir white medium ">Upgrade grátis</p>
+	</button>
+		<div class="panel avenir white " id="panel1">
+			<div class="conteudo_panel">
+		  		<h1 class="avenir color_87 large text-align-left">Quer virar Premium sem pagar nada?</h1>
+		  		<p class="avenir white small text-align-left">Compartilhe o link abaixo para seus amigos se cadastrarem na Magneto Elenco. Seu plano será promovido
+para Premium quando 3 pessoas se inscreverem através desse link.</p>
+		  		<p class="avenir white small text-align-left">E se um deles optar pelo Premium, você poderá vir junto com ele ao nosso estúdio e fazer também suas fotos de cadastro com um fotógrafo profissional. </p>
 
-					<button class="accordion avenir white small" id="accordion2">Meu perfil</button>
-					<div class="panel avenir white " id="panel2">
-					  <p>Lorem ipsum...</p>
-					</div>
+		  		<p class="avenir color_87 small bold text-align-left">Copie e compartilhe o seu link:</p>
 
-					<button class="accordion avenir white small" id="accordion3">Meus cachês</button>
-					<div class="panel avenir white " id="panel3">
-					  <p>Lorem ipsum...</p>
-					</div>
+		  		<div class="textbox relative">
+		  			<input type="text" value="http://magnetoelenco.com.br/Xy47H8" class="avenir white small relative">
+		  		</div>
+				
+			</div>
+		</div>
 
-					<button class="accordion avenir white small" id="accordion4">Fotos / vídeos</button>
-					<div class="panel avenir white " id="panel4">
-					  <p>Lorem ipsum...</p>
-					</div>
+	<button class="accordion avenir white small" id="accordion2">
+		<img src="../_images/meuperfil.svg" alt="Meu perfil">
+		<p class="avenir white medium ">Meu perfil</p>
+	</button>
+		<div class="panel avenir white " id="panel2">
+			<div class="conteudo_panel">
+		  		<?php include "fisicos.php"; ?>
+			</div>
+		</div>
 
-					<button class="accordion avenir white small" id="accordion5">Meus contatos</button>
-					<div class="panel avenir white " id="panel5">
-					  <p>Lorem ipsum...</p>
-					</div>
+	<button class="accordion avenir white small" id="accordion3">
+		<img src="../_images/meucache.svg" alt="Meus cachês">
+		<p class="avenir white medium ">Meus cachês</p>
+	</button>
+		<div class="panel avenir white " id="panel3">
+		  <p>Lorem ipsum...</p>
+		</div>
+
+	<button class="accordion avenir white small" id="accordion4">
+		<img src="../_images/fotosvideos.svg" alt="Fotos / vídeos">
+		<p class="avenir white medium ">Fotos / vídeos</p>
+	</button>
+		<div class="panel avenir white " id="panel4">
+		  <p>Lorem ipsum...</p>
+		</div>
+
+	<button class="accordion avenir white small" id="accordion5">
+		<img src="../_images/meuscontatos.svg" alt="Meus contatos">
+		<p class="avenir white medium ">Meus contatos</p>
+	</button>
+		<div class="panel avenir white " id="panel5">
+		  <p>Lorem ipsum...</p>
+		</div>
 	
 </div>
 <!-- fim accordion 	 -->

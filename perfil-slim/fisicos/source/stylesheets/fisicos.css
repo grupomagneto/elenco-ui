@@ -573,13 +573,11 @@ a:visited {
   .physical .physical__box {
     width: 135px;
     height: 90px;
-    margin: 10px; }
+    margin: 10px;}
   .physical .physical__box img {
-    float: left;
-    text-align: center; }
+    float: left; }
   .physical .physical__box p:nth-child(2) {
-    margin: 12px 0px;
-    text-align: center; }
+    margin: 12px 0px; }
 
 .physical-description {
   position: relative;
