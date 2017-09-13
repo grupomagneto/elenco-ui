@@ -219,6 +219,7 @@ $(function(){
       var cpf = $(this).val();
       if (validCPF(cpf) && /^\d{2}\/\d{2}\/\d{4}$/) {
         if ( CPF.validate($(this).val()) === true ) {
+          $('.ok').show();
           $.bipbop("SELECT FROM 'BIPBOPJS'.'CPFCNPJ'", BIPBOP_FREE, {
             data: {
                 documento: cpf
@@ -229,7 +230,7 @@ $(function(){
                 mensagem = ucFirstAllWords(nome);
                 $('.valido').show();
                 $('.invalido').hide();
-                $('.ok').show();
+                // $('.ok').show();
                 $('.status').show();
                 $(".status").text(mensagem);
                 $("#nome-cpf_value").val(mensagem);
@@ -257,6 +258,7 @@ $(function(){
       var cpf = $(this).val();
       if (validCPF(cpf) && /^\d{2}\/\d{2}\/\d{4}$/) {
         if ( CPF.validate($(this).val()) === true ) {
+          $('.ok').show();
           $.bipbop("SELECT FROM 'BIPBOPJS'.'CPFCNPJ'", BIPBOP_FREE, {
             data: {
                 documento: cpf
@@ -274,13 +276,11 @@ $(function(){
                 }
                 $('.valido').show();
                 $('.invalido').hide();
-                $('.ok').show();
+                // $('.ok').show();
                 $('.status').show();
                 $(".status").text(mensagem);
                 $("#nome-cpf_value_menor").val(mensagem);
                 $("#nome-artistico_value_menor").val(nome_artistico);
-                console.log("nome: " + $("#nome-cpf_value_menor").val());
-                console.log("nome artistico: " + $("#nome-artistico_value_menor").val());
             }
           });
         } else {

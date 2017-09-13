@@ -17,7 +17,7 @@ if (mysqli_num_rows($result) == 0) {
     $sql_OldDB = "INSERT INTO tb_elenco (id_elenco, email) VALUES ('$id_OLD', '$email')";
     mysqli_query($link2, $sql_OldDB);
 }
-$link = "https://www.magnetoelenco.com.br/cadastro/index.php?email=".$email."&hash=".$senha;
+$link = "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/index.php?email=".$email."&hash=".$senha;
 
 if (empty($_SESSION['email_sent'])) {
 

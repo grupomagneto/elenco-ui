@@ -7,7 +7,7 @@
         Agora as informações do menor sendo cadastrado
         </div>
         <div class='botoes'>
-        <form action="#" method="post">
+            <form action="#" method="post">
                 <input type="hidden" id="sexo_field" name="field" value="sexo" />
                 <input type="hidden" id="sexo_value" name="value" value="F" />
                 <button id="btn_sexo-menor-feminino" class="botao">Feminino</button>

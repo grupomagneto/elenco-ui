@@ -91,7 +91,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "https://www.magnetoelenco.com.br/cadastro/ajax/cadastro_email.php",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/cadastro_email.php",
         data: dados,
         success: function( data ) {
           // console.log(dados);
@@ -122,11 +122,11 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "https://www.magnetoelenco.com.br/_sys/email-login.php",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/_sys/email-login.php",
         data: dados2,
         success: function( data ) {
           // event.preventDefault();
-          window.location = "https://www.magnetoelenco.com.br/cadastro/cadastro.php";
+          window.location = "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/cadastro.php";
         }
       });
       return false;
