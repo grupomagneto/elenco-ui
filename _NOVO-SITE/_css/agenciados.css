@@ -41,10 +41,42 @@ margin-bottom: 5px;
     background: #FFFFFF;
     border-radius: 10px;
 }
+
+.botoes{
+width: 100%;
+margin-bottom: 20px;
+margin-top: 20px;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+-ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+/*z-index: -1;*/
+}
+
+.botoes button{
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 10px;
+  background: rgba(255,255,255,0.50);
+} 
+.botoes button:hover{
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 10px;
+  background: rgba(255,255,255,0.60);
+  cursor: pointer;
+}
+
 .profile{
 width: 85%;
 height: 80px;
-margin-top: 20px;
+top: 20px;
 margin-left: 10%;
 background: rgba(255,255,255,0.30);
 border: 1px solid #FFFFFF;
@@ -63,11 +95,13 @@ color: rgba(255,255,255,0.87);
 .barra_progresso{
 	margin-left: 60px;
 }
+.img-profile {
+top: 20px;
 
+}
 .img-profile img{
 width: 80px;
 height: 80px;
-margin-top: 20px;
 margin-left: 0%;
 background: rgba(255,255,255,0.30);
 border: 1px solid #FFFFFF;
@@ -79,12 +113,12 @@ color: rgba(255,255,255,0.87);
 }
 
 .depois-profile{
-margin-top: 100px;
+  top: 100px;
 }
 
 /*ACCORDION*/
 .accordions{
-  margin-top: 140px;
+  top: 140px;
   width: 97%;
 }
 button.accordion {
@@ -177,12 +211,72 @@ background: rgba(255,255,255,0.40);
   width: 100%;
   height: auto;
   margin: 10px; }
+
 .physical .physical__box img {
-  text-align: center;
   margin-left: -15px; }
+
+.physical .physical__box img:nth-child(1) {
+  margin-top: 5px;}
+
+.physical .physical__box img:nth-child(3) {
+  margin-left: -10px;
+  margin-top: 5px; }
+
+.physical .physical__box p:nth-child(1) {
+  margin-top: 30px;
+  margin-left: -10px; }
+
 .physical .physical__box p:nth-child(2) {
   margin: 10px -10px 10px 0px;
-  text-align: center; }
+  margin-left: 35px; }
+
+.physical .physical__box p:nth-child(3){
+  margin-top: 10px;
+}
+.physical .physical__box p:nth-child(4) {
+  margin-top: 20px;
+  margin-left: 35px; }
+
+.physical-description {
+  width: 100%; }
+  .physical-description .physical-description__box {
+    width: 150px;
+    height: 70px;
+    margin: 10px; }
+  .physical-description .physical-description__box p {
+    line-height: 5px; }
+   .physical-description .physical-description__box .physical-description__box_right p:nth-child(1) {
+    margin-right: 5px; }
+   .physical-description .physical-description__box .physical-description__box_left {
+    width: 60px;
+    margin-left: -10px; }
+   .physical-description .physical-description__box .physical-description__box_right p {
+    line-height: 12px;}
+   .physical-description .physical-description__box .physical-description__box_right {
+    width: 70px;
+    margin-right: -40px;
+    margin-top: 2px; }
+
+.physical-description-bottom  {
+  width: 100%;
+  margin-top: 20px; }
+.physical-description-bottom .physical-description-bottom__box {
+  width: 150px;
+  height: 70px;
+  margin: 15px; }
+.physical-description-bottom .physical-description-bottom__box p{
+  line-height: 5px; }
+.physical-description-bottom .physical-description-bottom__box .physical-description-bottom__box_left {
+    width: 60px;
+    margin-left: -10px; }
+.physical-description-bottom .physical-description-bottom__box .physical-description-bottom__box_right{
+    width: 70px;
+    margin-right: -40px;
+    margin-top: 2px;  }
+
+p.nome-artistico{
+  margin-top: -5px;
+}
 
 #panel3{
 background: rgba(255,255,255,0.30);

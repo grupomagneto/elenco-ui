@@ -603,7 +603,7 @@ a:visited {
     float: left;
     text-transform: uppercase; }
   .physical-description .physical-description__box_right {
-    position: relativet;
+    position: relative;
     float: right;
     text-align: left; }
 
@@ -631,7 +631,7 @@ a:visited {
     float: left;
     text-transform: uppercase; }
   .physical-description-bottom .physical-description-bottom__box_right {
-    position: relativet;
+    position: relative;
     float: right;
     text-align: left; }
 

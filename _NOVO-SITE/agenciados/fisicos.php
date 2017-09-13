@@ -1,10 +1,10 @@
 
     <p class="avenir white small text-align-left"> NOME ARTÍSTICO</p>
-    <p class="avenir color_87 large bold"> Daniela Souza</p>
+    <p class="avenir nome-artistico color_87 large bold"> Daniela Souza</p>
 
     <div class="physical-section">
       <div class="title-section">
-        <p class="avenir white small text-align-left ">
+        <p class="avenir white small text-align-left">
           ATRIBUTOS FÍSICOS
         </p>
       </div>
@@ -31,90 +31,90 @@
               </p>
             </div>
           </div>
-          <div class="physical-description">
+          <div class="physical-description flexbox row relative justify-center align-items-center">
             <div class="physical-description__box">
-              <div class="physical-description__box_left">
-                <p class="font-family font-small color-primary">
+              <div class="physical-description__box_left float_left absolute">
+                <p class="avenir white small text-align-left uppercase bold">
                   busto
                 </p>
-                <p class="font-family font-small color-primary">
+                <p class="avenir white small text-align-left uppercase bold">
                   cintura
                 </p>
-                <p class="font-family font-small color-primary">
+                <p class="avenir white small text-align-left uppercase bold">
                   quadril
                 </p>
               </div>
-              <div class="physical-description__box_right">
-                <p class="font-family font-small color-primary">
+              <div class="physical-description__box_right float_right relative">
+                <p class="avenir white x-small text-align-left">
                   82cm
                 </p>
-                <p class="font-family font-small color-primary">
+                <p class="avenir white x-small text-align-left">
                   66cm
                 </p>
-                <p class="font-family font-small color-primary">
+                <p class="avenir white x-small text-align-left">
                   97cm
                 </p>
               </div>
             </div>
-            <div class="physical-description__box">
-              <div class="physical-description__box_left">
-                <p class="font-family font-small color-primary">
+            <div class="physical-description__box ">
+              <div class="physical-description__box_left float_left absolute">
+                <p class="avenir white small text-align-left uppercase bold">
                   cabelo
                 </p>
               </div>
-              <div class="physical-description__box_right">
-                <p class="font-family font-small color-primary">
+              <div class="physical-description__box_right float_right relative">
+                <p class="avenir white x-small text-align-left">
                   cacheado
                 </p>
-                <p class="font-family font-small color-primary">
+                <p class="avenir white x-small text-align-left">
                   castanho
                 </p>
-                <p class="font-family font-small color-primary">
+                <p class="avenir white x-small text-align-left">
                   médio
                 </p>
               </div>
             </div>
           </div>
-          <div class="physical-description-bottom">
+          <div class="physical-description-bottom flexbox row relative justify-center align-items-center">
             <div class="physical-description-bottom__box">
-              <div class="physical-description-bottom__box_left">
-                <p class="font-family font-small color-primary">
+              <div class="physical-description-bottom__box_left float_left absolute">
+                <p class="avenir white small text-align-left uppercase bold">
                   olhos
                 </p>
               </div>
-              <div class="physical-description-bottom__box_right">
-                <p class="font-family font-small color-primary">
+              <div class="physical-description-bottom__box_right float_right relative">
+                <p class="avenir white x-small text-align-left">
                   castanho
                 </p>
-                <p class="font-family font-small color-primary">
+                <p class="avenir white x-small text-align-left">
                   escuro
                 </p>
               </div>
             </div>
             <div class="physical-description-bottom__box">
-              <div class="physical-description-bottom__box_left">
-                <p class="font-family font-small color-primary">
+              <div class="physical-description-bottom__box_left float_left absolute">
+                <p class="avenir white small text-align-left uppercase bold">
                   tatto
                 </p>
               </div>
-              <div class="physical-description-bottom__box_right">
-                <p class="font-family font-small color-primary">
+              <div class="physical-description-bottom__box_right float_right relative">
+                <p class="avenir white x-small text-align-left">
                   perna,
                 </p>
-                <p class="font-family font-small color-primary">
+                <p class="avenir white x-small text-align-left">
                   braço,
                 </p>
-                <p class="font-family font-small color-primary">
+                <p class="avenir white x-small text-align-left">
                   costas,
                 </p>
-                <p class="font-family font-small color-primary">
+                <p class="avenir white x-small text-align-left">
                   tórax
                 </p>
               </div>
             </div>
           </div>
-          <div class="button-physical">
-            <button class="button button__medium" type="button">Editar</button>
+          <div class="botoes">
+            <button class="avenir white small" type="button">Editar</button>
           </div>
         </div>
       </div>

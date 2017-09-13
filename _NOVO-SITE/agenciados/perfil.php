@@ -107,7 +107,7 @@
         </div>
 
         <div class="conteudo conteudo-perfil relative align-items-center flexbox nowrap space-between-horizontal">
-        	<div class="profile absolute flexbox text-align-center column justify-center nowrap">
+        	<div class="profile absolute flexbox text-align-center column justify-center nowrap ">
         		<p class="avenir white medium bold text-align-left"><?php echo $nome_artistico; ?></p>
         		<p class="avenir white small text-align-left">Plano Gratuito</p>
 
