@@ -2,8 +2,8 @@ $(document).ready(function(){
   var swiper1 = new Swiper('.swiper1', {
       preloadImages: true,
       spaceBetween: 0,
-      simulateTouch: true,
-      onlyExternal: true,
+      // simulateTouch: true,
+      // onlyExternal: true,
       speed: 200,
       initialSlide: 0,
       keyboardControl: true,
@@ -41,7 +41,7 @@ $(document).ready(function(){
   });
   var swiper2 = new Swiper('.swiper2', {
     spaceBetween: 0,
-    simulateTouch: false,
+    // simulateTouch: false,
     onlyExternal: true,
     speed: 200,
     initialSlide: 0,
@@ -84,17 +84,19 @@ $(document).ready(function(){
     swiper1.disableKeyboardControl();
     swiper2.disableKeyboardControl();
   });
-  $("#btn_inicia-cadastro").click(function(e){
+  $("#btn_inicia-cadastro").click(function(){
+    console.log('rolou');
     // Ajax Cadastros
     jQuery("form").submit(function(){
       var dados = jQuery(this).serialize();
+      console.log(dados);
       jQuery.ajax({
         type: "POST",
         dataType: "html",
         url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/cadastro_email.php",
         data: dados,
         success: function( data ) {
-          // console.log(dados);
+          console.log(dados);
         }
       });
       return false;
@@ -114,7 +116,7 @@ $(document).ready(function(){
     e.preventDefault();
     swiper2.slideTo( $("#02-0-03_e-mail-confirmado").index(), 200);
   });
-  $("#btn_logar-com-email").click(function(e){
+  $("#btn_logar-com-email").click(function(){
     // e.preventDefault();
     // Ajax Cadastros
     jQuery("form").submit(function(){

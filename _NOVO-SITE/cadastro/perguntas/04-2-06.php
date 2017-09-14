@@ -6,7 +6,7 @@
             </div>
             <div class='subtitulo avenir white small'>
                 <input type="hidden" id="pele_field-menor" name="field" value="pele" />
-    			<select id="cor-da-pele-menor" name="value" class="select">
+    			<select id="cor-da-pele-menor" name="value" class="select-dropdown">
     				<option disabled value="1">Selecione...</option>
     				<option value="Amarela" >Amarela</option>
     				<option value="Branca">Branca</option>
