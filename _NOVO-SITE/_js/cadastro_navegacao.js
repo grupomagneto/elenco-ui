@@ -174,6 +174,7 @@ $(document).ready(function(){
     sexo("M");
   });
   $("#btn_eu-mesmo-tenho-18").click(function(){
+    event.preventDefault();
     document.getElementById("04-2-01_qual-o-sexo-do-menor").className += " display_none";
     document.getElementById("04-2-02_o-menor-tem-cpf-proprio").className += " display_none";
     document.getElementById("04-2-03_qual-o-cpf-do-menor").className += " display_none";
@@ -234,13 +235,31 @@ $(document).ready(function(){
     document.getElementById("04-1-03_envie-uma-foto-do-seu-registro-drt").className += " display_none";
     document.getElementById("05-0-02_clique-e-conheca-nossos-planos_drt").className += " display_none";
     document.getElementById("05-1-02_perfeito-para-quem-tem-drt").className += " display_none";
+    document.getElementById("04-2-01_qual-o-sexo-do-menor").classList.remove("display_none");
+    document.getElementById("nome-cpf_field").value = "nome_responsavel";
+    if (document.getElementById("03-0-03_qual-o-seu-sexo")) {
+      document.getElementById("sexo_field-fem").value = "sexo_responsavel";
+      document.getElementById("sexo_field-masc").value = "sexo_responsavel";
+    } 
     if (document.getElementById("04-1-01_qual-a-cor-da-sua-pele")) {
       document.getElementById("04-1-01_qual-a-cor-da-sua-pele").className += " display_none";
     }
     // if (document.getElementById("03-0-03_qual-o-seu-sexo")) {
     //   document.getElementById("03-0-03_qual-o-seu-sexo").className += " display_none";
     // }
-    document.getElementById("04-2-01_qual-o-sexo-do-menor").classList.remove("display_none");
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          // event.preventDefault();
+        }
+      });
+      return false;
+    });
     $(".voltar").css("opacity", "1");
     swiper.unlockSwipeToNext();
     // swiper.slideTo( $("#03-1-02_qual-o-seu-cpf").index(), 200);
@@ -248,11 +267,7 @@ $(document).ready(function(){
     percentage = "15%";
     previousPercentage = "10%";
     stopTransition();
-    document.getElementById("nome-cpf_field").value = "nome_responsavel";
-    document.getElementById("sexo_field-fem").value = "sexo_responsavel";
-    document.getElementById("sexo_field-masc").value = "sexo_responsavel";
     $("#ok_cep-maior").click(function(){
-      // f.preventDefault();
       jQuery("form").submit(function(){
         var dados = jQuery(this).serialize();
         jQuery.ajax({
@@ -557,7 +572,22 @@ $(document).ready(function(){
     stopTransition();
   });
   $("#btn_nome-menor").click(function(){
-    event.preventDefault();
+    // event.preventDefault();
+    // Ajax Cadastros
+    jQuery("form").submit(function(){
+      var dados9 = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados9,
+        success: function( data ) {
+          event.preventDefault();
+          // console.log('btn_data_menor');
+        }
+      });
+      return false;
+    });
     document.getElementById("04-2-05_qual-a-data-de-nascimento-dele").classList.remove("display_none");
     swiper.unlockSwipeToNext();
     // swiper.slideTo( $("#04-2-05_qual-a-data-de-nascimento-dele").index(), 200);

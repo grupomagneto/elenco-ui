@@ -45,13 +45,21 @@ require 'bootstrap.php';
         $_SESSION['id'] = $user->getId();
         $_SESSION['firstname'] = $user->getFirstName();
         $_SESSION['lastname'] = $user->getLastName();
-        $_SESSION['sexo'] = $user->getGender();
         $_SESSION['email'] = $user->getEmail();
         $_SESSION['link'] = $user->getLink();
         $_SESSION['dt_nascimento'] = $user->getProperty('birthday')->format('Y-m-d');
         $_SESSION['friends'] = $user->getProperty('friends');
         $_SESSION['total_count'] = $user->getProperty('friends')->getTotalCount();
         $_SESSION['nome_artistico'] = $_SESSION['firstname']." ".$_SESSION['lastname'];
+        $sexo = $user->getGender();
+        if ($sexo == "male") {
+          $sexo = "M";
+          $_SESSION['sexo'] = "M";
+        }
+        if ($sexo == "female") {
+          $sexo = "F";
+          $_SESSION['sexo'] = "F";
+        }
 
         require '../../_sys/conecta.php';
         require 'vendor/autoload.php';
@@ -68,12 +76,14 @@ require 'bootstrap.php';
             $fb_id = $_SESSION['id'];
             $dt_nascimento = $_SESSION['dt_nascimento'];
             $nome_artistico = $_SESSION['firstname']." ".$_SESSION['lastname'];
-            if ($_SESSION['sexo'] == "male") {
-              $sexo = "M";
-            }
-            if ($_SESSION['sexo'] == "female") {
-              $sexo = "F";
-            }
+            // if ($_SESSION['sexo'] == "male") {
+            //   $sexo = "M";
+            //   $_SESSION['sexo'] = "M";
+            // }
+            // if ($_SESSION['sexo'] == "female") {
+            //   $sexo = "F";
+            //   $_SESSION['sexo'] = "F";
+            // }
             if (empty($_SESSION['id_elenco'])) {
               $sql = "SELECT id_elenco FROM tb_elenco WHERE facebook_ID = '$fb_id'";
               $result = mysqli_query($link, $sql);
@@ -98,10 +108,10 @@ require 'bootstrap.php';
                 }
                 // CRIA UM NOVO ID DE USUARIO
                 else {
-                  mysqli_query($link, "INSERT INTO tb_elenco (facebook_ID, dt_nascimento, email, fb_link, fb_total_friends) VALUES ('$fb_id', '$dt_nascimento', '$email', '$fb_link', '$fb_total_friends')");
+                  mysqli_query($link, "INSERT INTO tb_elenco (facebook_ID, email, fb_link, fb_total_friends) VALUES ('$fb_id', '$email', '$fb_link', '$fb_total_friends')");
                   $_SESSION['id_elenco'] = mysqli_insert_id($link);
                   $id_OLD = $_SESSION['id_elenco'];
-                  mysqli_query($link2, "INSERT INTO tb_elenco (id_elenco, dt_nascimento, email) VALUES ('$id_OLD', '$dt_nascimento', '$email')");
+                  mysqli_query($link2, "INSERT INTO tb_elenco (id_elenco, email) VALUES ('$id_OLD', '$email')");
                 }
               }
             }

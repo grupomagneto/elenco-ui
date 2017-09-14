@@ -91,13 +91,27 @@ if (!empty($_SESSION['id_elenco'])) {
         $result = mysqli_query($link, $sql);
         $row = mysqli_fetch_array($result);
         if (mysqli_num_rows($result) == 1) {
-          $_SESSION['dt_nascimento']  = $row['dt_nascimento'];
-          $_SESSION['email']          = $row['email'];
-          $_SESSION['sexo']           = $row['sexo'];
-          $_SESSION['cpf']            = $row['cpf'];
-          $_SESSION['celular']        = $row['tl_celular'];
-          $_SESSION['cep']            = $row['cep'];
-          $_SESSION['pele']           = $row['pele'];
+          if (empty($_SESSION['dt_nascimento']) || $_SESSION['dt_nascimento'] == "") {
+            $_SESSION['dt_nascimento']  = $row['dt_nascimento'];
+          }
+          if (empty($_SESSION['email']) || $_SESSION['email'] == "") {
+            $_SESSION['email']  = $row['email'];
+          }
+          if (empty($_SESSION['sexo']) || $_SESSION['sexo'] == "") {
+            $_SESSION['sexo']  = $row['sexo'];
+          }
+          if (empty($_SESSION['cpf']) || $_SESSION['cpf'] == "") {
+            $_SESSION['cpf']  = $row['cpf'];
+          }
+          if (empty($_SESSION['celular']) || $_SESSION['celular'] == "") {
+            $_SESSION['celular']  = $row['celular'];
+          }
+          if (empty($_SESSION['cep']) || $_SESSION['cep'] == "") {
+            $_SESSION['cep']  = $row['cep'];
+          }
+          if (empty($_SESSION['pele']) || $_SESSION['pele'] == "") {
+            $_SESSION['pele']  = $row['pele'];
+          }
         }
         // CHECA SE O FACEBOOK ENTREGOU UMA DATA DE NASCIMENTO
         if (empty($_SESSION['dt_nascimento']) || $_SESSION['dt_nascimento'] == "0000-00-00") {

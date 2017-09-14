@@ -42,6 +42,17 @@ if ($field == "DRT") {
 if ($field == "ativo") {
 	mysqli_query($link2, "UPDATE tb_elenco SET publicado = 1 WHERE id_elenco = '$id_elenco'");
 }
+if ($field == "nome") {
+	$pedacos = explode(" ", $value);
+	if ($pedacos[1] == "de") {
+		$nome_artistico = $pedacos[0]." ".$pedacos[2];
+	}
+	else {
+		$nome_artistico = $pedacos[0]." ".$pedacos[1];
+	}
+	mysqli_query($link, "UPDATE tb_elenco SET nome_artistico = '$nome_artistico' WHERE id_elenco = '$id_elenco'");
+	mysqli_query($link2, "UPDATE tb_elenco SET nome_artistico = '$nome_artistico' WHERE id_elenco = '$id_elenco'");
+}
 if (!empty($_POST['value2'])) {
 	$field2 = $_POST['field2'];
 	$value2 = $_POST['value2'];
