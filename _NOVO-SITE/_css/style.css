@@ -57,6 +57,11 @@ text-decoration: none;
 .bold{
   font-weight: bold;
 }
+
+.uppercase{
+  text-transform: uppercase; 
+}
+
 .swiper-pagination {
   z-index: 9999;
   position: relative;
@@ -236,3 +241,7 @@ input[type='checkbox']{
 .float_left{
   float: left;
 }
+.float_right{
+  float: right;
+}
+
