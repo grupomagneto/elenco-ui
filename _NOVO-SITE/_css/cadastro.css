@@ -224,8 +224,10 @@ margin: -100px 0px 0px -15px;
 }
 .caixas-cadastros{
 height: auto;
+/*
 overflow-x: hidden;
 overflow-y: scroll;
+*/
 margin-bottom: 50px;
 }
 .video{
@@ -475,4 +477,16 @@ display: block;
 }
 #drt_upload_text {
     width: 90%;
+}
+.ul_lista_selfies{
+margin-bottom: -20px;
+margin-top: 25px;
+}
+.li_lista_selfies{
+margin-left: -30px;
+margin-bottom: 20px;
+line-height: 20px;
+}
+.botao_cadastro{
+width: 260px;
 }
