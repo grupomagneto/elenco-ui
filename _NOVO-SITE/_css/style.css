@@ -32,6 +32,9 @@ text-decoration: none;
 .color_87{
   color: rgba(255,255,255,0.87);
 }
+.color_disable{
+  color: #F1BFE6;
+}
 .avenir{
 	font-family: Avenir-Book;
 }

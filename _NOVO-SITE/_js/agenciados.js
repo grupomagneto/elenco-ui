@@ -83,3 +83,16 @@ menuTrigger.click(function(e){
   }
   
 });
+
+
+// slide
+
+$('.slider-nav').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true,
+    autoplay: true,
+});

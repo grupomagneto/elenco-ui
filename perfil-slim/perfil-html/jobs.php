@@ -15,7 +15,7 @@
             </h2>
           </div>
           <div class="my-jobs__box">
-            <table class="table-menu-jobs">
+            <table class="table-menu-jobs flexbox justify-center align-items-center">
               <tr>
                 <td>
                   <div class="title-jobs font-family color-primary">

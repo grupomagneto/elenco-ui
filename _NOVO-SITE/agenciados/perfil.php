@@ -67,6 +67,7 @@
 	<link rel="stylesheet" href="../_css/normalize.css" type="text/css" />
 	<link rel="stylesheet" href="../_css/flexbox.css" type="text/css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.3.8/slick.css">
 	<link rel="stylesheet" href="../_css/style.css" type="text/css" />
 	<link rel="stylesheet" href="../_css/agenciados.css" type="text/css" />
 </head>
@@ -160,8 +161,10 @@ para Premium quando 3 pessoas se inscreverem através desse link.</p>
 		<img src="../_images/meucache.svg" alt="Meus cachês">
 		<p class="avenir white medium ">Meus cachês</p>
 	</button>
-		<div class="panel avenir white " id="panel3">
-		  <p>Lorem ipsum...</p>
+		<div class="panel avenir white" id="panel3">
+			<div class="conteudo_panel">
+		  		<?php include "caches.php"; ?>
+			</div>
 		</div>
 
 	<button class="accordion avenir white small" id="accordion4">
@@ -169,7 +172,9 @@ para Premium quando 3 pessoas se inscreverem através desse link.</p>
 		<p class="avenir white medium ">Fotos / vídeos</p>
 	</button>
 		<div class="panel avenir white " id="panel4">
-		  <p>Lorem ipsum...</p>
+			<div class="conteudo_panel">
+		  		<?php include "fotosevideos.php"; ?>
+			</div>
 		</div>
 
 	<button class="accordion avenir white small" id="accordion5">
@@ -191,6 +196,7 @@ para Premium quando 3 pessoas se inscreverem através desse link.</p>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js" integrity="sha256-eEa1kEtgK9ZL6h60VXwDsJ2rxYCwfxi40VZ9E0XwoEA=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.min.js"></script>
 <script type="text/javascript" src="../_js/gradient.js"></script>
 <script type="text/javascript" src="../_js/progressbar.js"></script>
 <script type="text/javascript" src="../_js/agenciados.js"></script>
