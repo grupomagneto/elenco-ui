@@ -12,7 +12,7 @@ date_default_timezone_set('America/Sao_Paulo');
 $instagram = new Andreyco\Instagram\Client(array(
   'apiKey'      => '8c92de1fcb6247c09232d2033627ce96',
   'apiSecret'   => 'c9faee8401db43d9b676d2a15852164c',
-  'apiCallback' => 'http://localhost:8888/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php'
+  'apiCallback' => 'https://www.magnetoelenco.com.br/_api/instagram/ig-callback.php'
 ));
 // receive OAuth code parameter
 $code = $_GET['code'];
@@ -26,7 +26,7 @@ if (isset($code)) {
   // store user access token
   $instagram->setAccessToken($data);
   // now you have access to all authenticated user methods
-  
+
   $result = $instagram->getUserMedia();
 
 } else {
@@ -118,7 +118,7 @@ exit();
           }
         ?>
         </ul>
-        
+
       </div>
     </div>
     <!-- javascript -->

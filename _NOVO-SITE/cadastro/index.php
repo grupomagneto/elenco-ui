@@ -16,14 +16,14 @@ if (isset($_GET['email']) && isset($_GET['hash'])) {
   if (mysqli_num_rows($result) == 1) {
     $id_elenco = $row['id_elenco'];
     $validacao_email = "OK";
-  }  
+  }
 }
 
 //Começo Login Instagram
 $instagram = new Andreyco\Instagram\Client(array(
   'apiKey'      => '8c92de1fcb6247c09232d2033627ce96',
   'apiSecret'   => 'c9faee8401db43d9b676d2a15852164c',
-  'apiCallback' => 'http://localhost:8888/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php',
+  'apiCallback' => 'https://www.magnetoelenco.com.br/_api/instagram/ig-callback.php',
   // 'scope'      => array('basic', 'relationships', 'follower_list', 'public_content' ),
   'scope'      => array('basic'),
 ));
@@ -43,18 +43,18 @@ try {
 
     if (!empty($_SESSION['facebook_access_token'])) {
       if (!empty($_SESSION['id_elenco'])) {
-          header('location: cadastro.php');  
-      }      
+          header('location: cadastro.php');
+      }
     }
     else {
       if (!empty($_GET['code']) and !empty($_GET['state'])) {
           $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
-          header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php');
+          header('location: https://www.magnetoelenco.com.br/_api/facebook/login-callback.php');
       } else {
         require '../_api/facebook/bootstrap.php';
         $helper = $fb->getRedirectLoginHelper();
         $permissions = ['email,public_profile,user_friends,user_birthday']; //permissões do usuario
-        $loginUrl = $helper->getLoginUrl('http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php', $permissions);
+        $loginUrl = $helper->getLoginUrl('https://www.magnetoelenco.com.br/_api/facebook/login-callback.php', $permissions);
 ?>
 <!DOCTYPE html>
 <html lang='pt-br'>
@@ -74,7 +74,7 @@ try {
 <meta data-react-helmet='true' name='apple-mobile-web-app-title' content='Magneto Elenco'/>
 <meta data-react-helmet='true' name='msapplication-TileColor' content='#FFFFFF'/>
 <meta data-react-helmet='true' property='og:site_name' content='Magneto Elenco'/>
-<meta data-react-helmet='true' property='og:url' content='http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro'/>
+<meta data-react-helmet='true' property='og:url' content='https://www.magnetoelenco.com.br/cadastro'/>
 <meta data-react-helmet='true' property='og:title' content='Agência e Marketplace de atores, modelos e influenciadores.'/>
 <title>Magneto Elenco - Atores, modelos e influenciadores para a sua marca</title>
 <link rel='apple-touch-icon' sizes='57x57' href='../_images/icon/apple-icon-57x57.png'>
@@ -124,7 +124,7 @@ try {
             <div class='swiper-slide' id='01-0-04_faca-parte-do-nosso-elenco'>";include 'perguntas/01-0-04.php';echo"</div>
           </div>
         </div>";
-          }?>            
+          }?>
         <div class='swiper-container swiper2'>
           <div class='swiper-wrapper'>
           <?php

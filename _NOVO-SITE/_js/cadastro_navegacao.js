@@ -8,7 +8,7 @@ $(document).ready(function(){
       simulateTouch: false,
       onlyExternal: true,
       speed: 200,
-      initialSlide: 16,
+      initialSlide: 0,
       // keyboardControl: true
       // onSlideChangeEnd : function(swiper) {
       //  console.log("activeIndex: "+swiper.activeIndex);
@@ -62,7 +62,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // console.log(dados);
@@ -112,7 +112,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -134,7 +134,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -157,7 +157,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -189,7 +189,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -213,7 +213,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             event.preventDefault();
@@ -240,7 +240,7 @@ $(document).ready(function(){
     if (document.getElementById("03-0-03_qual-o-seu-sexo")) {
       document.getElementById("sexo_field-fem").value = "sexo_responsavel";
       document.getElementById("sexo_field-masc").value = "sexo_responsavel";
-    } 
+    }
     if (document.getElementById("04-1-01_qual-a-cor-da-sua-pele")) {
       document.getElementById("04-1-01_qual-a-cor-da-sua-pele").className += " display_none";
     }
@@ -252,7 +252,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -273,7 +273,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             // event.preventDefault();
@@ -305,7 +305,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -322,7 +322,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -344,7 +344,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -377,7 +377,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -467,7 +467,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -485,7 +485,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -509,7 +509,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -544,7 +544,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: rawData,
         success: function( data ) {
           // console.log('cpf menor: ' + rawData);
@@ -579,7 +579,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados9,
         success: function( data ) {
           event.preventDefault();
@@ -609,7 +609,7 @@ $(document).ready(function(){
           jQuery.ajax({
             type: "POST",
             dataType: "html",
-            url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+            url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
             data: dados9,
             success: function( data ) {
               event.preventDefault();
@@ -647,7 +647,7 @@ $(document).ready(function(){
           jQuery.ajax({
             type: "POST",
             dataType: "html",
-            url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+            url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
             data: dados,
             success: function( data ) {
               // event.preventDefault();
@@ -891,7 +891,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             // event.preventDefault();
@@ -921,7 +921,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             // event.preventDefault();
@@ -959,7 +959,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -989,7 +989,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             // event.preventDefault();
@@ -1019,7 +1019,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "https://www.magnetoelenco.com.br/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             // event.preventDefault();
