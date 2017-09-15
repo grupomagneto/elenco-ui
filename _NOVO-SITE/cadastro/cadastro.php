@@ -3,7 +3,7 @@ if(!session_id()) {
   session_start();
 }
 if (empty($_SESSION['id_elenco'])) {
-  header('location: index.php');  
+  header('location: index.php');
 }
 if (!empty($_SESSION['id_elenco'])) {
   require '../_sys/conecta.php';
@@ -94,6 +94,9 @@ if (!empty($_SESSION['id_elenco'])) {
           if (empty($_SESSION['dt_nascimento']) || $_SESSION['dt_nascimento'] == "") {
             $_SESSION['dt_nascimento']  = $row['dt_nascimento'];
           }
+          if (empty($row['data_1o_contrato']) || $row['data_1o_contrato'] == "") {
+            $_SESSION['data_1o_contrato']  = $hoje;
+          }
           if (empty($_SESSION['email']) || $_SESSION['email'] == "") {
             $_SESSION['email']  = $row['email'];
           }
@@ -114,11 +117,11 @@ if (!empty($_SESSION['id_elenco'])) {
           }
         }
         // CHECA SE O FACEBOOK ENTREGOU UMA DATA DE NASCIMENTO
-        if (empty($_SESSION['dt_nascimento']) || $_SESSION['dt_nascimento'] == "0000-00-00") {
+        if (empty($_SESSION['dt_nascimento']) || $_SESSION['dt_nascimento'] == "0000-00-00" || $_SESSION['dt_nascimento'] == "") {
           echo"<div class='swiper-slide' id='03-0-01_qual-a-sua-data-de-nascimento'>";include "perguntas/03-0-01.php";echo"</div>";
         }
         // SE EXISTE UMA DATA, SE É MAIOR DE IDADE
-        if (!empty($_SESSION['dt_nascimento']) && $_SESSION['dt_nascimento'] != "0000-00-00") {
+        if (!empty($_SESSION['dt_nascimento']) && $_SESSION['dt_nascimento'] != "0000-00-00" || $_SESSION['dt_nascimento'] != "") {
           $age = date_diff(date_create($_SESSION['dt_nascimento']), date_create('today'))->y;
           if ($age < 18) {
             echo"<div class='swiper-slide' id='03-0-02_voce-e-menor-de-idade'>";include "perguntas/03-0-02.php";echo"</div>";

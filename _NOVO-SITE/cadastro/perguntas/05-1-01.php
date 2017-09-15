@@ -29,6 +29,10 @@
                     <input type="hidden" name="value3" id="input_concordo_timestamp-gratuito" value="<?php echo $timestamp; ?>" />
                     <input type="hidden" name="field4" value="ip" />
                     <input type="hidden" name="value4" id="input_ip-gratuito" value="<?php echo $ip; ?>" />
+                    <?php if (!empty($_SESSION['data_1o_contrato']) || $_SESSION['data_1o_contrato'] != "") {
+                            echo "<input type='hidden' name='field5' value='data_1o_contrato' />
+                                  <input type='hidden' name='value5' id='input_data_1o_contrato-gratuito' value='".$_SESSION['data_1o_contrato']."' />";
+                    } ?>
                     <button id='btn_cadastro-gratuito' class='botao botao_cadastro'>Escolher</button>
                     <div class='aviso'>
                       <div class='checkbox'>
