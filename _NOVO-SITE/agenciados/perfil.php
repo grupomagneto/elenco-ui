@@ -66,7 +66,6 @@
 	<meta name="theme-color" content="#ffffff">
 	<link rel="stylesheet" href="../_css/normalize.css" type="text/css" />
 	<link rel="stylesheet" href="../_css/flexbox.css" type="text/css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.3.8/slick.css">
 	<link rel="stylesheet" href="../_css/style.css" type="text/css" />
 	<link rel="stylesheet" href="../_css/agenciados.css" type="text/css" />
@@ -77,24 +76,20 @@
   <div class="container">    
   	<div class="mancha flexbox relative wrap">
         <div class="menu align-items-center flexbox nowrap space-between-horizontal">
+			
+		<div id="toggle">
+			<img src="../_images/notificacao.svg" class="notificação" />
+			<span class="numero avenir x-small white">1</span>
+		</div>
 
-       <div class="site-header cf">
-	    <div class="container2">
-	      <nav class="site-nav">
-	        <ul id="std-menu">
-	          <li>
-	            <a class="active avenir white small cursor" href="">Notificação</a>
-	          </li>
-	        </ul>
-	        <a href="" id="menu-trigger">
-	        	<img src="../_images/notificacao.svg" class="notificacao" />
-	        </a>
-	      </nav>
-	    </div>
-	  </div>
-            <!-- <img src="../_images/notificacao.svg" class="notificação" /> -->
+		<div id="menu-note">
+			<ul>
+				<li><a class="avenir white small" href="#">Notificação</a></li>
+			</ul>
+		</div>
+            <!-- fim menu notificação  -->
 
-        <div class="logo absolute align-items-center flexbox nowrap space-between-horizontal text-align-center justify-center center-horizontal">
+        <div class="logo absolute align-items-center flexbox nowrap space-between-horizontal  justify-center ">
           <img src="../_images/logo-horizontal.svg" alt="logo" />
         </div>
 
@@ -182,7 +177,9 @@ para Premium quando 3 pessoas se inscreverem através desse link.</p>
 		<p class="avenir white medium ">Meus contatos</p>
 	</button>
 		<div class="panel avenir white " id="panel5">
-		  <p>Lorem ipsum...</p>
+			<div class="conteudo_panel">
+		  		<?php include "contato.php"; ?>
+			</div>
 		</div>
 	
 </div>
@@ -191,6 +188,10 @@ para Premium quando 3 pessoas se inscreverem através desse link.</p>
         </div>
 	
 		</div>
+
+<footer class="seta footer-perfil relative align-items-center flexbox nowrap space-between-horizontal text-align-center justify-center center-horizonta">
+	<p class="avenir white x-small ">Magneto Elenco © 2009- <?php echo date('Y'); ?></p>
+</footer>
   </div>
 </div>
 
@@ -216,6 +217,7 @@ para Premium quando 3 pessoas se inscreverem através desse link.</p>
 	    } 
 	  }
 	}
+
 </script>
 </body>
 </html>

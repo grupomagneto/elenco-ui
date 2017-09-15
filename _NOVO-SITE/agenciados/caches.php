@@ -54,6 +54,7 @@
                   <table class="table-menu-jobs">
                     <tr>
                       <td>
+                      <div class="box-table">
                         <div class="title-jobs absolute avenir white x-small text-align-left">
                           <p class="bold">
                             Banco do Brasil
@@ -70,10 +71,12 @@
                             19/06/2016
                           </p>
                         </div>
+                      </div>
                       </td>
                     </tr>
                     <tr>
                       <td>
+                      <div class="box-table">
                         <div class="title-jobs absolute avenir white x-small text-align-left">
                           <p class="bold">
                             Ministério da Saúde
@@ -90,10 +93,12 @@
                             19/06/2016
                           </p>
                         </div>
+                      </div>
                       </td>
                     </tr>
                     <tr>
                       <td>
+                      <div class="box-table">
                         <div class="title-jobs absolute avenir white x-small text-align-left">
                           <p class="bold">
                             Ministério da Saúde
@@ -110,10 +115,12 @@
                             19/06/2016
                           </p>
                         </div>
+                      </div>
                       </td>
                     </tr>
                     <tr>
                       <td>
+                      <div class="box-table">
                         <div class="title-jobs absolute avenir white x-small text-align-left">
                           <p class="bold">
                             Ministério da Saúde
@@ -130,10 +137,12 @@
                             19/06/2016
                           </p>
                         </div>
+                      </div>
                       </td>
                     </tr>
                     <tr>
                       <td>
+                      <div class="box-table">
                         <div class="title-jobs absolute avenir white x-small text-align-left">
                           <p class="bold">
                             Ministério da Saúde
@@ -150,6 +159,7 @@
                             19/06/2016
                           </p>
                         </div>
+                      </div>
                       </td>
                     </tr>
                   </table>

@@ -63,36 +63,49 @@ $('#ul-menu-trigger').magMenu({
 });
 
 
-var menuTrigger = $('#menu-trigger');
-console.log($('.site-header').outerHeight());
-
-var isToggled = false;
-
-menuTrigger.click(function(e){
-  e.preventDefault();  
-  if(!isToggled){
-   $(this).find('.notificacao').addClass('rotate-clockwise').removeClass('rotate-counter');
-    console.log("rotate clockwise");
-    isToggled = true;
-    $('#responsive-menu').slideToggle();
-  }else{
-    $(this).find('.notificacao').addClass('rotate-counter').removeClass('rotate-clockwise');
-    console.log("rotate counterclockwise");
-    $('#responsive-menu').slideToggle();
-    isToggled = false;
-  }
-  
+$("#toggle").click(function() {
+  $("#menu-note").toggleClass('on');
 });
-
 
 // slide
 
 $('.slider-nav').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    asNavFor: '.slider-for',
     dots: true,
     centerMode: true,
     focusOnSelect: true,
-    autoplay: true,
+    autoplay: false,
+});
+$('.slider-video').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    centerMode: true,
+    focusOnSelect: true,
+    autoplay: false,
+});
+
+//barra de rolagem js
+$(document).ready(function(){
+	var posicaoAtual = $(window).scrollTop();
+	var documentSize = $(document).height();
+	var sizeWindow = $(window).height();
+	
+	$(window).scroll(function () {
+		posicaoAtual = $(window).scrollTop();
+ 	if ( posicaoAtual >= (documentSize - sizeWindow ) ) {
+			$( ".seta" ).css( "display", "block" );
+    }else{
+         $( ".seta" ).css( "display", "none" );
+    		}
+	});
+	
+	$(window).resize(function() {
+		posicaoAtual = $(window).scrollTop();
+		documentSize = $(document).height();
+		sizeWindow = $(window).height();
+	});
+	
+	
 });
