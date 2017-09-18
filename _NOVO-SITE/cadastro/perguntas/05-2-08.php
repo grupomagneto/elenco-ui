@@ -10,7 +10,8 @@
         </div>
         </div>
         <div class='botoes'>
-            <button class='botao' id='sendToMoip2'>Gerar Boleto</button>
+            <button class='botao' id='#pagar-com-boleto'>Gerar Boleto</button>
+             <pre id="boleto"></pre>
             <div class='moip'>
               <a href='http://www.moip.com.br' target='_blank'><img src='../_images/moip167px.png' /></a>
             </div>

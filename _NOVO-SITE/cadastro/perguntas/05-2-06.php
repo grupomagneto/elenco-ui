@@ -1,5 +1,6 @@
 <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
     <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
+        
         <div class='titulo heavy white large'>
         Qual a forma de pagamento?
         </div>

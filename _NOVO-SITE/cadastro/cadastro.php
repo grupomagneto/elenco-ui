@@ -1,25 +1,25 @@
 <?php
-if(!session_id()) {
-  session_start();
-}
-if (empty($_SESSION['id_elenco'])) {
-  header('location: index.php');
-}
-if (!empty($_SESSION['id_elenco'])) {
-  require '../_sys/conecta.php';
-  require '../_sys/functions.php';
-  require 'ajax/busca_horario.php';
-  $id_elenco = $_SESSION['id_elenco'];
-  date_default_timezone_set('America/Sao_Paulo');
-  $hoje = date('Y-m-d', time());
-  $timestamp = date('Y-m-d H:i:s', time());
-  if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-      $ip = $_SERVER['HTTP_CLIENT_IP'];
-  } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-      $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-  } else {
-      $ip = $_SERVER['REMOTE_ADDR'];
-  }
+// if(!session_id()) {
+//   session_start();
+// }
+// if (empty($_SESSION['id_elenco'])) {
+//   header('location: index.php');
+// }
+// if (!empty($_SESSION['id_elenco'])) {
+//   require '../_sys/conecta.php';
+//   require '../_sys/functions.php';
+//   require 'ajax/busca_horario.php';
+//   $id_elenco = $_SESSION['id_elenco'];
+//   date_default_timezone_set('America/Sao_Paulo');
+//   $hoje = date('Y-m-d', time());
+//   $timestamp = date('Y-m-d H:i:s', time());
+//   if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+//       $ip = $_SERVER['HTTP_CLIENT_IP'];
+//   } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+//       $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+//   } else {
+//       $ip = $_SERVER['REMOTE_ADDR'];
+//   }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -204,11 +204,91 @@ if (!empty($_SESSION['id_elenco'])) {
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.js"></script>
 <script type="text/javascript" src="//irql.bipbop.com.br/js/jquery.bipbop.min.js"></script>
 <script type="text/javascript" src="../_js/progressbar.js"></script>
+
+
+<script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
+<script type="text/javascript">
+
+  $("#encrypt").click(function(){
+       var cc = new Moip.CreditCard({
+            number  : $("#number").val(),
+            cvc     : $("#cvc").val(),
+            expMonth: $("#month").val(),
+            expYear : $("#year").val(),
+            pubKey  : $("#public_key").val()
+          });
+          console.log(cc);
+          if( cc.isValid()){
+            $("#encrypted_value").val(cc.hash());
+            $("#card_type").val(cc.cardType());
+          }
+          else{
+            $("#encrypted_value").val('');
+            $("#card_type").val('');
+
+            alert('Cartão de Crédito inválido. Por favor verifique os parâmetros: número, cvv e validade');
+          }
+
+           jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
+        data: dados,
+        success: function( data ) {
+
+          alert('dados enviados');
+        }
+      });
+      return false;
+    });
+  });
+
+
+  $("#pagar-com-cartao").click(function(){
+    // Ajax Pagamento com cartão
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
+        data: dados,
+        success: function( data ) {
+
+          alert('dados enviados');
+        }
+      });
+      return false;
+    });
+  });
+
+  $("#pagar-com-boleto").click(function(){
+      // Ajax Pagamento com cartão
+      jQuery("form").submit(function(){
+        var dados = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "http://localhost:8888/elenco-ui/teste/moip-teste/pagamento-boleto.php",
+          data: dados,
+          success: function( data ) {
+
+            $("#boleto").html(data);
+          }
+        });
+        return false;
+      });
+    });
+
+  </script>
+
 <!-- <?php include "../_sys/analytics.php"; ?> -->
 </body>
 </html>
 
 <?php
-}
-mysqli_close($link);
+// }
+// mysqli_close($link);
 ?>

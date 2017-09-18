@@ -1,24 +1,24 @@
 <?php
-// if(!session_id()) {
-//   session_start();
-// }
-// if (empty($_SESSION['id_elenco'])) {
-//   header('location: ../cadastro/index.php');  
-// }
-// if (!empty($_SESSION['id_elenco'])) {
-//   require '../_sys/conecta.php';
-//   $id_elenco = $_SESSION['id_elenco'];
-//   $sql = "SELECT * FROM tb_elenco WHERE id_elenco = '$id_elenco'";
-//   $result = mysqli_query($link, $sql);
-//   $row = mysqli_fetch_array($result);
-//   $nome = $row['nome'];
-//   if (!empty($row['nome_artistico']) && $row['nome_artistico'] != "") {
-//   	$nome_artistico = $row['nome_artistico'];
-//   }
-//   else {
-//   	$nome_partes = explode(" ", $nome);
-//   	$nome_artistico = $nome_partes[0]." ".$nome_partes[1];
-//   }
+if(!session_id()) {
+  session_start();
+}
+if (empty($_SESSION['id_elenco'])) {
+  header('location: ../cadastro/index.php');  
+}
+if (!empty($_SESSION['id_elenco'])) {
+  require '../_sys/conecta.php';
+  $id_elenco = $_SESSION['id_elenco'];
+  $sql = "SELECT * FROM tb_elenco WHERE id_elenco = '$id_elenco'";
+  $result = mysqli_query($link, $sql);
+  $row = mysqli_fetch_array($result);
+  $nome = $row['nome'];
+  if (!empty($row['nome_artistico']) && $row['nome_artistico'] != "") {
+  	$nome_artistico = $row['nome_artistico'];
+  }
+  else {
+  	$nome_partes = explode(" ", $nome);
+  	$nome_artistico = $nome_partes[0]." ".$nome_partes[1];
+  }
   
 ?>
 <!DOCTYPE html>
@@ -74,7 +74,7 @@
 
 <div class="gradient">
   <div class="container">    
-  	<div class="mancha flexbox relative wrap">
+  	<div class="mancha flexbox relative wrap justify-center">
         <div class="menu align-items-center flexbox nowrap space-between-horizontal">
 			
 		<div id="toggle">
@@ -222,6 +222,6 @@ para Premium quando 3 pessoas se inscreverem através desse link.</p>
 </body>
 </html>
 <?php
-// }
-// mysqli_close($link);
+}
+mysqli_close($link);
 ?>
