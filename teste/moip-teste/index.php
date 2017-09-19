@@ -86,8 +86,8 @@ VQIDAQAB
 
  <pre id="boleto"></pre>
 
- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
- <script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script type="text/javascript" src="https://assets.moip.com.br/v2/moip.min.js"></script>
  <script>
 
   $("#encrypt").click(function(){
@@ -116,10 +116,10 @@ VQIDAQAB
         type: "POST",
         dataType: "html",
         url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
-        data: dados,
-        success: function( data ) {
+        data01: dados,
+        success: function( data01 ) {
 
-          alert('dados enviados');
+          console.log('dados enviados');
         }
       });
       return false;
@@ -135,10 +135,10 @@ VQIDAQAB
         type: "POST",
         dataType: "html",
         url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
-        data: dados,
-        success: function( data ) {
+        data12: dados,
+        success: function( data12 ) {
 
-          alert('dados enviados');
+          console.log('dados enviados');
         }
       });
       return false;
@@ -153,9 +153,10 @@ VQIDAQAB
           type: "POST",
           dataType: "html",
           url: "http://localhost:8888/elenco-ui/teste/moip-teste/pagamento-boleto.php",
-          data: dados,
-          success: function( data ) {
+          data2: dados,
+          success: function( data2 ) {
 
+          console.log('dados enviados');
             $("#boleto").html(data);
           }
         });

@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=utf-8');
 
 
-$nome = $_POST["nome"];
+$nome = $_POST["nome_completo"];
 $DDD = $_POST["DDD"];
 $cel = $_POST["cel"];
 $email = $_POST["email"];
@@ -13,8 +13,8 @@ $complemento = $_POST["complemento"];
 $bairro = $_POST["bairro"];
 $cidade = $_POST["cidade"];
 $uf = $_POST["uf"];
-$DataNascimento = $_POST["DataNascimento"];
-$CPF = $_POST["CPF"];
+$DataNascimento = $_POST["data_nascimento"];
+$CPF = $_POST["cpf_titular"];
 $encrypted_value = $_POST["encrypted_value"];
 $Parcelas = $_POST["Parcelas"];
 
@@ -58,26 +58,21 @@ try {
 } catch (Exception $e) {
     printf($e->__toString());
 }
-
-//criando o pagamento boleto
-$logo_uri = 'https://cdn.moip.com.br/wp-content/uploads/2016/05/02163352/logo-moip.png';
-$expiration_date = new DateTime();
-$instruction_lines = ['INSTRUÇÃO 1', 'INSTRUÇÃO 2', 'INSTRUÇÃO 3'];
-try {
+//criando o pagamento cartão com hash
+try {  $hash = $encrypted_value;  
     $payment = $order->payments()  
-        ->setBoleto($expiration_date, $logo_uri, $instruction_lines)
-        ->execute();
-        // echo "<pre>";
-        // print_r($payment);
-        // echo "</pre>";
+    ->setCreditCardHash($hash, $customer)                                 
+    ->setInstallmentCount($Parcelas)                                 
+    ->setStatementDescriptor('teste de pag')                                 
+    ->setDelayCapture(false)                                 
+    ->execute();  
 
-        $xml = json_decode(json_encode($payment),true);
-        $boleto = $xml["_links"]["payBoleto"]["redirectHref"];
+    print_r($payment); 
 
-        echo $boleto;
-        
-} catch (Exception $e) {
-    printf($e->__toString());
-}
+    } 
+    catch (Exception $e) {     
+        printf($e->__toString()); 
+    }
+
 
  ?>

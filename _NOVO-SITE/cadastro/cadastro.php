@@ -229,12 +229,12 @@
             alert('Cartão de Crédito inválido. Por favor verifique os parâmetros: número, cvv e validade');
           }
 
-           jQuery("form").submit(function(){
+ jQuery("form").submit(function(){
       var dados = jQuery(this).serialize();
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/_api/moip/pagamento-cartao.php",
         data: dados,
         success: function( data ) {
 
@@ -253,7 +253,7 @@
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/_api/moip/pagamento-cartao.php",
         data: dados,
         success: function( data ) {
 
@@ -271,7 +271,7 @@
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/teste/moip-teste/pagamento-boleto.php",
+          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/_api/moip/boleto.php",
           data: dados,
           success: function( data ) {
 
