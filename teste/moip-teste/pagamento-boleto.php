@@ -31,19 +31,24 @@ $key = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
 
 $moip = new Moip(new BasicAuth($token, $key), Moip::ENDPOINT_SANDBOX);
 //Criando um comprador
+
 try {
     $customer = $moip->customers()->setOwnId(uniqid())
         ->setFullname($nome)
         ->setEmail($email)
         ->setBirthDate($DataNascimento)
         ->setTaxDocument($CPF)
-        ->setPhone($DDD, $cel)
+        ->setPhone(11, 66778899)
         ->addAddress('BILLING',
             $endereco, $numero,
             $bairro, $cidade, $uf,
             $cep, 8)
+        ->addAddress('SHIPPING',
+                    $endereco, $numero,
+                    $bairro, $cidade, $uf,
+                    $cep, 8)
         ->create();
-    //print_r($customer);
+    
 } catch (Exception $e) {
     printf($e->__toString());
 }

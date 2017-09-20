@@ -4,7 +4,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 $nome = $_POST["nome"];
 $DDD = $_POST["DDD"];
-$cel = $_POST["cel"];
+$cel = $_POST["celular"];
 $email = $_POST["email"];
 $cep = $_POST["cep"];
 $endereco = $_POST["endereco"];

@@ -12,7 +12,7 @@
               <span class='texto_input'>DDD:</span>
               <input type='tel' name='DDD' id='DDD' value='61' placeholder='DDD' required />
               <span class='texto_input'>CELULAR:</span>
-              <input type='tel' name='cel' id='cel' value='982837175' placeholder='Telefone' required /><BR />
+              <input type='tel' name='cel' id='cel' value='82837175' placeholder='Telefone' required /><BR />
               <span class='texto_input'>E-MAIL:</span>
               <input type='email' name='email' id='email' value='kapcruz@gmail.com' placeholder='E-mail' required /><BR />
               <span class='texto_input'>CEP:</span>
@@ -110,14 +110,14 @@ VQIDAQAB
             alert('Cartão de Crédito inválido. Por favor verifique os parâmetros: número, cvv e validade');
           }
 
-           jQuery("form").submit(function(){
+    jQuery("form").submit(function(){
       var dados = jQuery(this).serialize();
       jQuery.ajax({
         type: "POST",
         dataType: "html",
         url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
-        data01: dados,
-        success: function( data01 ) {
+        data: dados,
+        success: function( data ) {
 
           console.log('dados enviados');
         }
@@ -135,8 +135,8 @@ VQIDAQAB
         type: "POST",
         dataType: "html",
         url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
-        data12: dados,
-        success: function( data12 ) {
+        data: dados,
+        success: function( data ) {
 
           console.log('dados enviados');
         }
@@ -148,13 +148,13 @@ VQIDAQAB
   $("#pagar-com-boleto").click(function(){
       // Ajax Pagamento com cartão
       jQuery("form").submit(function(){
-        var dados = jQuery(this).serialize();
+        var dados3 = jQuery(this).serialize();
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/teste/moip-teste/pagamento-boleto.php",
-          data2: dados,
-          success: function( data2 ) {
+          url: "pagamento-boleto.php",
+          data: dados3,
+          success: function( data ) {
 
           console.log('dados enviados');
             $("#boleto").html(data);
