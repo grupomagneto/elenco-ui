@@ -264,23 +264,23 @@
     });
   });
 
-  $("#pagar-com-boleto").click(function(){
-      // Ajax Pagamento com cartão
-      jQuery("form").submit(function(){
-        var dados = jQuery(this).serialize();
-        jQuery.ajax({
-          type: "POST",
-          dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/_api/moip/boleto.php",
-          data: dados,
-          success: function( data ) {
+  // $("#btn_boleto-bancario").click(function(){
+  //     // Ajax Pagamento com cartão
+  //     jQuery("form").submit(function(){
+  //       var dados = jQuery(this).serialize();
+  //       jQuery.ajax({
+  //         type: "POST",
+  //         dataType: "html",
+  //         url: "../_api/moip/boleto.php",
+  //         data: dados,
+  //         success: function( data ) {
 
-            $("#boleto").html(data);
-          }
-        });
-        return false;
-      });
-    });
+  //           $("#boleto").html(data);
+  //         }
+  //       });
+  //       return false;
+  //     });
+  //   });
 
   </script>
 

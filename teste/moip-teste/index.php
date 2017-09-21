@@ -41,7 +41,7 @@
 
  <input type="text" placeholder="Credit card number" id="number" value="5555666677778884" />
     <input type="text" placeholder="CVC" id="cvc" value="123" />
-    <input type="text" placeholder="Month" id="month" value="05" />
+    <input type="text" placeholder="Month" id="month" value="12" />
     <input type="text" placeholder="Year" id="year" value="18" />
     <textarea id="public_key">
       -----BEGIN PUBLIC KEY-----
@@ -87,7 +87,8 @@ VQIDAQAB
  <pre id="boleto"></pre>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
- <script type="text/javascript" src="https://assets.moip.com.br/v2/moip.min.js"></script>
+<script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
+
  <script>
 
   $("#encrypt").click(function(){
@@ -109,21 +110,6 @@ VQIDAQAB
 
             alert('Cartão de Crédito inválido. Por favor verifique os parâmetros: número, cvv e validade');
           }
-
-    jQuery("form").submit(function(){
-      var dados = jQuery(this).serialize();
-      jQuery.ajax({
-        type: "POST",
-        dataType: "html",
-        url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
-        data: dados,
-        success: function( data ) {
-
-          console.log('dados enviados');
-        }
-      });
-      return false;
-    });
   });
 
 

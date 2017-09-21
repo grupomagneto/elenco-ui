@@ -1089,6 +1089,18 @@ $(document).ready(function(){
   });
   $("#btn_boleto-bancario").click(function(){
     event.preventDefault();
+  
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "../_api/moip/boleto.php",
+          data: dados,
+          success: function( data ) {
+
+            $("#boleto").html(data);
+
     document.getElementById("05-2-07_voce-e-o-titular-do-carta-de-credito").className += " display_none";
     document.getElementById("05-2-09_dados-do-titular-do-cartao").className += " display_none";
     document.getElementById("05-2-10_endereco-da-fatura-do-cartao").className += " display_none";
@@ -1100,7 +1112,14 @@ $(document).ready(function(){
     percentage = "90%";
     previousPercentage = "75%";
     stopTransition();
+
+
+          }
+        });
+        return false;
+      });
   });
+
   $("#btn_sim-titular-do-cartao").click(function(){
     event.preventDefault();
     document.getElementById("05-2-08_pagamento-via-boleto-bancario").className += " display_none";

@@ -74,7 +74,7 @@ try {
         $xml = json_decode(json_encode($payment),true);
         $boleto = $xml["_links"]["payBoleto"]["redirectHref"];
 
-        echo $boleto;
+       
         
 } catch (Exception $e) {
     printf($e->__toString());

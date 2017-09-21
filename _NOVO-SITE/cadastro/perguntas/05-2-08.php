@@ -10,9 +10,12 @@
         <div class="total heavy white large">
           TOTAL R$ 269,10
         </div>
+
         </div>
         <div class='botoes'>
-            <button class='botao' id='#pagar-com-boleto'>Gerar Boleto</button>
+            <a href="<?php  echo $boleto;?>" target="_blank">
+              <button class='botao'>Gerar Boleto</button>
+            </a>
              
             <div class='moip'>
               <a href='http://www.moip.com.br' target='_blank'><img src='../_images/moip167px.png' /></a>
