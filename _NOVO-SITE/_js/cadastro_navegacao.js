@@ -173,6 +173,7 @@ $(document).ready(function(){
     stopTransition();
     sexo("M");
   });
+
   $("#btn_eu-mesmo-tenho-18").click(function(){
     event.preventDefault();
     document.getElementById("04-2-01_qual-o-sexo-do-menor").className += " display_none";
@@ -229,6 +230,7 @@ $(document).ready(function(){
       stopTransition();
     });
   });
+
   $("#btn_um-menor-de-idade").click(function(){
     // event.preventDefault();
     document.getElementById("04-1-02_voce-tem-registro-drt").className += " display_none";
@@ -1089,18 +1091,6 @@ $(document).ready(function(){
   });
   $("#btn_boleto-bancario").click(function(){
     event.preventDefault();
-  
-    jQuery("form").submit(function(){
-      var dados = jQuery(this).serialize();
-        jQuery.ajax({
-          type: "POST",
-          dataType: "html",
-          url: "../_api/moip/boleto.php",
-          data: dados,
-          success: function( data ) {
-
-            $("#boleto").html(data);
-
     document.getElementById("05-2-07_voce-e-o-titular-do-carta-de-credito").className += " display_none";
     document.getElementById("05-2-09_dados-do-titular-do-cartao").className += " display_none";
     document.getElementById("05-2-10_endereco-da-fatura-do-cartao").className += " display_none";
@@ -1112,12 +1102,25 @@ $(document).ready(function(){
     percentage = "90%";
     previousPercentage = "75%";
     stopTransition();
+ 
+      // Ajax Pagamento com boleto
+      jQuery("form").submit(function(){
+        var dadosmoip = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "../_api/moip/boleto.php",
+          data: dadosmoip,
+          success: function( data ) {
 
+          console.log('dados enviados');
+            $("#boleto").html(data);
 
           }
         });
         return false;
       });
+    
   });
 
   $("#btn_sim-titular-do-cartao").click(function(){
@@ -1152,7 +1155,10 @@ $(document).ready(function(){
     percentage = "90%";
     previousPercentage = "85%";
     stopTransition();
+   
   });
+
+
   $("#btn_endereco-titular-cartao").click(function(){
     event.preventDefault();
     document.getElementById("05-2-11_dados-do-cartao-de-credito").classList.remove("display_none");
@@ -1162,6 +1168,23 @@ $(document).ready(function(){
     percentage = "95%";
     previousPercentage = "90%";
     stopTransition();
+
+    jQuery("form").submit(function(){
+        var dados = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "../_api/moip/pagamento-cartao.php",
+          data: dados,
+          success: function( data ) {
+
+            alert('dados enviados');
+          }
+        });
+        return false;
+      });
+
+    }
   });
   $("#sendToMoip").click(function(){
     event.preventDefault();
@@ -1173,6 +1196,41 @@ $(document).ready(function(){
     previousPercentage = "95%";
     stopTransition();
     $(".voltar").css("opacity", "0");
+ var cc = new Moip.CreditCard({
+      number  : $("#number").val(),
+      cvc     : $("#cvc").val(),
+      expMonth: $("#month").val(),
+      expYear : $("#year").val(),
+      pubKey  : $("#public_key").val()
+    });
+    console.log(cc);
+    if( cc.isValid()){
+      $("#encrypted_value").val(cc.hash());
+      $("#card_type").val(cc.cardType());
+      
+      jQuery("form").submit(function(){
+        var dados = jQuery(this).serialize();
+        jQuery.ajax({
+          type: "POST",
+          dataType: "html",
+          url: "../_api/moip/pagamento-cartao.php",
+          data: dados,
+          success: function( data ) {
+
+            alert('dados enviados');
+          }
+        });
+        return false;
+      });
+    }
+    else{
+      $("#encrypted_value").val('');
+      $("#card_type").val('');
+
+      alert('Cartão de Crédito inválido. Por favor verifique os parâmetros: número, cvv e validade');
+    }
+
+
   });
   $("#sendToMoip2").click(function(){
     event.preventDefault();

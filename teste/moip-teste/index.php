@@ -12,7 +12,7 @@
               <span class='texto_input'>DDD:</span>
               <input type='tel' name='DDD' id='DDD' value='61' placeholder='DDD' required />
               <span class='texto_input'>CELULAR:</span>
-              <input type='tel' name='cel' id='cel' value='82837175' placeholder='Telefone' required /><BR />
+              <input type='tel' name='cel' id='cel' value='982837175' placeholder='Telefone' required /><BR />
               <span class='texto_input'>E-MAIL:</span>
               <input type='email' name='email' id='email' value='kapcruz@gmail.com' placeholder='E-mail' required /><BR />
               <span class='texto_input'>CEP:</span>
@@ -41,7 +41,7 @@
 
  <input type="text" placeholder="Credit card number" id="number" value="5555666677778884" />
     <input type="text" placeholder="CVC" id="cvc" value="123" />
-    <input type="text" placeholder="Month" id="month" value="12" />
+    <input type="text" placeholder="Month" id="month" value="05" />
     <input type="text" placeholder="Year" id="year" value="18" />
     <textarea id="public_key">
       -----BEGIN PUBLIC KEY-----
@@ -86,13 +86,13 @@ VQIDAQAB
 
  <pre id="boleto"></pre>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
-
+ <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
  <script>
 
-  $("#encrypt").click(function(){
-       var cc = new Moip.CreditCard({
+  $("#pagar-com-cartao").click(function(){
+    // Ajax Pagamento com cartão
+     var cc = new Moip.CreditCard({
             number  : $("#number").val(),
             cvc     : $("#cvc").val(),
             expMonth: $("#month").val(),
@@ -103,6 +103,21 @@ VQIDAQAB
           if( cc.isValid()){
             $("#encrypted_value").val(cc.hash());
             $("#card_type").val(cc.cardType());
+            
+            jQuery("form").submit(function(){
+              var dados = jQuery(this).serialize();
+              jQuery.ajax({
+                type: "POST",
+                dataType: "html",
+                url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
+                data: dados,
+                success: function( data ) {
+
+                  alert('dados enviados');
+                }
+              });
+              return false;
+            });
           }
           else{
             $("#encrypted_value").val('');
@@ -112,37 +127,17 @@ VQIDAQAB
           }
   });
 
-
-  $("#pagar-com-cartao").click(function(){
-    // Ajax Pagamento com cartão
-    jQuery("form").submit(function(){
-      var dados = jQuery(this).serialize();
-      jQuery.ajax({
-        type: "POST",
-        dataType: "html",
-        url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
-        data: dados,
-        success: function( data ) {
-
-          console.log('dados enviados');
-        }
-      });
-      return false;
-    });
-  });
-
   $("#pagar-com-boleto").click(function(){
       // Ajax Pagamento com cartão
       jQuery("form").submit(function(){
-        var dados3 = jQuery(this).serialize();
+        var dados = jQuery(this).serialize();
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "pagamento-boleto.php",
-          data: dados3,
+          url: "http://localhost:8888/elenco-ui/teste/moip-teste/pagamento-boleto.php",
+          data: dados,
           success: function( data ) {
 
-          console.log('dados enviados');
             $("#boleto").html(data);
           }
         });

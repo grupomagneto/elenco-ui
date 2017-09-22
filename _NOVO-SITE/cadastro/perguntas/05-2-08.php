@@ -1,6 +1,5 @@
 <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
     <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
-      <input type="hidden" name="DataNascimento" id="dt_nascimento-maior" value="<?php echo $_SESSION['dt_nascimento']; ?>" />
       
         <div class='titulo heavy white large'>
         Pagamento via boleto bancário
@@ -13,9 +12,11 @@
 
         </div>
         <div class='botoes'>
-            <a href="<?php  echo $boleto;?>" target="_blank">
+            <a href="#"  target="_blank">
               <button class='botao'>Gerar Boleto</button>
             </a>
+
+            <div id="boleto"></div>
              
             <div class='moip'>
               <a href='http://www.moip.com.br' target='_blank'><img src='../_images/moip167px.png' /></a>

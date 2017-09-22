@@ -7,15 +7,14 @@ $DDD = $_POST["DDD"];
 $cel = $_POST["celular"];
 $email = $_POST["email"];
 $cep = $_POST["cep"];
-$endereco = $_POST["endereco"];
+$endereco = $_POST["value5"];
 $numero = $_POST["numero"];
 $complemento = $_POST["complemento"];
-$bairro = $_POST["bairro"];
-$cidade = $_POST["cidade"];
-$uf = $_POST["uf"];
+$bairro = $_POST["value2"];
+$cidade = $_POST["value3"];
+$uf = $_POST["value4"];
 $DataNascimento = $_POST["DataNascimento"];
-$CPF = $_POST["CPF"];
-$encrypted_value = $_POST["encrypted_value"];
+$CPF = $_POST["cpf"];
 $Parcelas = $_POST["Parcelas"];
 
 require 'vendor/autoload.php';
@@ -73,8 +72,7 @@ try {
 
         $xml = json_decode(json_encode($payment),true);
         $boleto = $xml["_links"]["payBoleto"]["redirectHref"];
-
-       
+        echo $boleto;
         
 } catch (Exception $e) {
     printf($e->__toString());

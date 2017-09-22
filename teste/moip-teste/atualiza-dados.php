@@ -43,7 +43,7 @@ try {
             $bairro, $cidade, $uf,
             $cep, 8)
         ->create();
-    print_r($customer);
+    //print_r($customer);
 } catch (Exception $e) {
     printf($e->__toString());
 }
@@ -59,18 +59,20 @@ try {
     printf($e->__toString());
 }
 //criando o pagamento cartão com hash
+try {  $hash = $encrypted_value;  
+    $payment = $order->payments()  
+    ->setCreditCardHash($hash, $customer)                                 
+    ->setInstallmentCount($Parcelas)                                 
+    ->setStatementDescriptor('teste de pag')                                 
+    ->setDelayCapture(false)                                 
+    ->execute();  
 
-try {
-    $hash = $encrypted_value;
-    $payment = $order->payments()
-        ->setCreditCardHash($hash, $customer)
-    ->setInstallmentCount(3)
-    ->setStatementDescriptor('teste de pag')
-    ->setDelayCapture(false)
-    ->execute();
-    print_r($payment);
-} catch (Exception $e) {
-    printf($e->__toString());
-}
+    print_r($payment); 
+
+    } 
+    catch (Exception $e) {     
+        printf($e->__toString()); 
+    }
+
 
  ?>

@@ -9,7 +9,7 @@
         </div>
         <div class='botoes'>
             <button id='btn_cartao-de-credito' class='botao'>Cartão de crédito</button>
-            <button id='btn_boleto-bancario' id='#pagar-com-boleto'class='botao'>Boleto bancário</button>
+            <button id='btn_boleto-bancario' class='botao'>Boleto bancário</button>
         </div>
     </div>
 </div>

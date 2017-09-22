@@ -23,7 +23,7 @@ if (isset($_GET['email']) && isset($_GET['hash'])) {
 $instagram = new Andreyco\Instagram\Client(array(
   'apiKey'      => '8c92de1fcb6247c09232d2033627ce96',
   'apiSecret'   => 'c9faee8401db43d9b676d2a15852164c',
-  'apiCallback' => 'https://www.magnetoelenco.com.br/_api/instagram/ig-callback.php',
+  'apiCallback' => 'http://localhost:8888/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php',
   // 'scope'      => array('basic', 'relationships', 'follower_list', 'public_content' ),
   'scope'      => array('basic'),
 ));
@@ -49,12 +49,12 @@ try {
     else {
       if (!empty($_GET['code']) and !empty($_GET['state'])) {
           $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
-          header('location: https://www.magnetoelenco.com.br/_api/facebook/login-callback.php');
+          header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php');
       } else {
         require '../_api/facebook/bootstrap.php';
         $helper = $fb->getRedirectLoginHelper();
         $permissions = ['email,public_profile,user_friends,user_birthday']; //permissões do usuario
-        $loginUrl = $helper->getLoginUrl('https://www.magnetoelenco.com.br/_api/facebook/login-callback.php', $permissions);
+        $loginUrl = $helper->getLoginUrl('http://localhost:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php', $permissions);
 ?>
 <!DOCTYPE html>
 <html lang='pt-br'>

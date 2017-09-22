@@ -32,10 +32,12 @@
                     <input type="hidden" name="id_usuario" value="<? echo $id_usuario; ?>" />
                     <input type="hidden" name="produto" id="envia_pagador-cadastro" value="" />
                     <input type="hidden" name="valor" id="envia_pagador-valor" value="" />
-                    <input type="hidden" name="nome" id="envia_pagador-nome" value="" />
-                    <input type="hidden" name="cpf" id="envia_pagador-cpf" value="" />
-                    <input type="hidden" name="email" id="envia_pagador-email" value="" />
-                    <input type="hidden" name="tel" id="envia_pagador-tel" value="" />
+                    <input type="text" name="nome" id="envia_pagador-nome" value="<?php $nome = $_POST["nome_completo"];?>" />
+                    <input type="text" name="cpf" id="envia_pagador-cpf" value="<?php $CPF = $_POST["cpf_titular"];?>" />
+                    <input type="text" name="email" id="envia_pagador-email" value="<?php $email = $_POST["email"];?>" />
+                    <input type="text" name="cel" id="envia_pagador-tel" value="<?php $cel = $_POST["cel"];?>" />
+                    <input type="text" name="DDD" id="envia_pagador-ddd" value="<?php $cel = $_POST["DDD"];?>" />
+                    <input type='text' name='data_nascimento' class="input-field inputs" id='data_nascimento' value='<?php $DataNascimento = $_POST["data_nascimento"];?>'/>
                 </div>
             </div>
         </div>

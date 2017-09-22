@@ -1,25 +1,25 @@
 <?php
-// if(!session_id()) {
-//   session_start();
-// }
-// if (empty($_SESSION['id_elenco'])) {
-//   header('location: index.php');
-// }
-// if (!empty($_SESSION['id_elenco'])) {
-//   require '../_sys/conecta.php';
-//   require '../_sys/functions.php';
-//   require 'ajax/busca_horario.php';
-//   $id_elenco = $_SESSION['id_elenco'];
-//   date_default_timezone_set('America/Sao_Paulo');
-//   $hoje = date('Y-m-d', time());
-//   $timestamp = date('Y-m-d H:i:s', time());
-//   if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-//       $ip = $_SERVER['HTTP_CLIENT_IP'];
-//   } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-//       $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-//   } else {
-//       $ip = $_SERVER['REMOTE_ADDR'];
-//   }
+if(!session_id()) {
+  session_start();
+}
+if (empty($_SESSION['id_elenco'])) {
+  header('location: index.php');
+}
+if (!empty($_SESSION['id_elenco'])) {
+  require '../_sys/conecta.php';
+  require '../_sys/functions.php';
+  require 'ajax/busca_horario.php';
+  $id_elenco = $_SESSION['id_elenco'];
+  date_default_timezone_set('America/Sao_Paulo');
+  $hoje = date('Y-m-d', time());
+  $timestamp = date('Y-m-d H:i:s', time());
+  if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+      $ip = $_SERVER['HTTP_CLIENT_IP'];
+  } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+      $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+  } else {
+      $ip = $_SERVER['REMOTE_ADDR'];
+  }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -246,7 +246,7 @@
   });
 
 
-  $("#pagar-com-cartao").click(function(){
+  $("#btn_dados-titular-cartao").click(function(){
     // Ajax Pagamento com cartão
     jQuery("form").submit(function(){
       var dados = jQuery(this).serialize();
@@ -264,23 +264,7 @@
     });
   });
 
-  // $("#btn_boleto-bancario").click(function(){
-  //     // Ajax Pagamento com cartão
-  //     jQuery("form").submit(function(){
-  //       var dados = jQuery(this).serialize();
-  //       jQuery.ajax({
-  //         type: "POST",
-  //         dataType: "html",
-  //         url: "../_api/moip/boleto.php",
-  //         data: dados,
-  //         success: function( data ) {
 
-  //           $("#boleto").html(data);
-  //         }
-  //       });
-  //       return false;
-  //     });
-  //   });
 
   </script>
 
@@ -289,6 +273,6 @@
 </html>
 
 <?php
-// }
-// mysqli_close($link);
+}
+mysqli_close($link);
 ?>
