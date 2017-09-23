@@ -90,8 +90,9 @@ VQIDAQAB
  <script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
  <script>
 
-  $("#encrypt").click(function(){
-       var cc = new Moip.CreditCard({
+  $("#pagar-com-cartao").click(function(){
+    // Ajax Pagamento com cartão
+     var cc = new Moip.CreditCard({
             number  : $("#number").val(),
             cvc     : $("#cvc").val(),
             expMonth: $("#month").val(),
@@ -102,6 +103,21 @@ VQIDAQAB
           if( cc.isValid()){
             $("#encrypted_value").val(cc.hash());
             $("#card_type").val(cc.cardType());
+            
+            jQuery("form").submit(function(){
+              var dados = jQuery(this).serialize();
+              jQuery.ajax({
+                type: "POST",
+                dataType: "html",
+                url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
+                data: dados,
+                success: function( data ) {
+
+                  alert('dados enviados');
+                }
+              });
+              return false;
+            });
           }
           else{
             $("#encrypted_value").val('');
@@ -109,40 +125,6 @@ VQIDAQAB
 
             alert('Cartão de Crédito inválido. Por favor verifique os parâmetros: número, cvv e validade');
           }
-
-           jQuery("form").submit(function(){
-      var dados = jQuery(this).serialize();
-      jQuery.ajax({
-        type: "POST",
-        dataType: "html",
-        url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
-        data: dados,
-        success: function( data ) {
-
-          alert('dados enviados');
-        }
-      });
-      return false;
-    });
-  });
-
-
-  $("#pagar-com-cartao").click(function(){
-    // Ajax Pagamento com cartão
-    jQuery("form").submit(function(){
-      var dados = jQuery(this).serialize();
-      jQuery.ajax({
-        type: "POST",
-        dataType: "html",
-        url: "http://localhost:8888/elenco-ui/teste/moip-teste/atualiza-dados.php",
-        data: dados,
-        success: function( data ) {
-
-          alert('dados enviados');
-        }
-      });
-      return false;
-    });
   });
 
   $("#pagar-com-boleto").click(function(){
