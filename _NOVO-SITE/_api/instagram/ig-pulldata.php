@@ -77,10 +77,10 @@ if (!empty($_SESSION['instagram_access_token'])) {
         }
         // CRIA UM NOVO ID DE USUARIO
         else {
-          mysqli_query($link, "INSERT INTO tb_elenco (nome_artistico, instagram_ID, ig_link, ig_seguindo_total, ig_seguidores_total, ig_total_posts, ig_likes_avg, ig_comments_avg) VALUES ('$nome_artistico', '$ig_id', '$ig_link', '$ig_follows', '$ig_followers', '$ig_media', '$likes_avg', '$comments_avg')");
+          mysqli_query($link, "INSERT INTO tb_elenco (instagram_ID, ig_link, ig_seguindo_total, ig_seguidores_total, ig_total_posts, ig_likes_avg, ig_comments_avg) VALUES ('$ig_id', '$ig_link', '$ig_follows', '$ig_followers', '$ig_media', '$likes_avg', '$comments_avg')");
           $_SESSION['id_elenco'] = mysqli_insert_id($link);
           $id_OLD = $_SESSION['id_elenco'];
-          mysqli_query($link2, "INSERT INTO tb_elenco (id_elenco, nome_artistico) VALUES ('$id_OLD', '$nome_artistico')");
+          mysqli_query($link2, "INSERT INTO tb_elenco (id_elenco) VALUES ('$id_OLD')");
         }
       }
     }
@@ -93,5 +93,5 @@ if (!empty($_SESSION['instagram_access_token'])) {
 }
 mysqli_close($link);
 mysqli_close($link2);
-header('Location: https://www.magnetoelenco.com.br/cadastro/cadastro.php');
+header('Location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/cadastro.php');
 ?>

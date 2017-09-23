@@ -40,7 +40,7 @@ if ($field == "DRT") {
 	mysqli_query($link2, "UPDATE tb_elenco SET drt = '$value' WHERE id_elenco = '$id_elenco'");
 }
 if ($field == "ativo") {
-	mysqli_query($link2, "UPDATE tb_elenco SET publicado = 1 WHERE id_elenco = '$id_elenco'");
+	mysqli_query($link2, "UPDATE tb_elenco SET publicado = 1, cd_qualificacao = 6, cd_cidade = 1 WHERE id_elenco = '$id_elenco'");
 }
 if ($field == "nome") {
 	$pedacos = explode(" ", $value);

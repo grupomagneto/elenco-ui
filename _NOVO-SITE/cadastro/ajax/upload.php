@@ -54,9 +54,7 @@ $file = $fileDir;
 $remote_file = "public_html/magnetoelenco/".$fileName;
 // $remote_file = $fileName;
 
-$ftp_server = "ftp.grupomagneto.com.br";
-$ftp_username = "grupomagneto";
-$ftp_senha = "Magfoto332211";
+include 'ftp_data.php';
 
 // set up basic connection
 $ftp = ftp_connect($ftp_server);
@@ -73,4 +71,7 @@ if (ftp_put($ftp, $remote_file, $file, FTP_BINARY)) {
 
 // close the connection
 ftp_close($ftp);
+
+// generate thumb
+// file_get_contents("http://www.grupomagneto.com.br/magnetoelenco/v2/thumb.php?src=".$fileName."&dest=".$fileName."&x=72&y=72");
 ?>

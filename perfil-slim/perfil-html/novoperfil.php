@@ -245,7 +245,7 @@ $page = 0;
           <div class="container-outline__center">
             <div class="wrapper">
                 <div class="container" id="container">
-                <!-- <?php echo $sql; ?> -->
+                <?php echo $sql; ?>
 
     <?php
     while($row = mysqli_fetch_array($res)) {

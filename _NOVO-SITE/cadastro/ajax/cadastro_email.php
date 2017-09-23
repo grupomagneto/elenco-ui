@@ -13,6 +13,7 @@ $row = mysqli_fetch_array($result);
 if (mysqli_num_rows($result) == 0) {
 	$sql_insert = "INSERT INTO tb_elenco (email, senha) VALUES ('$email', '$senha')";
 	mysqli_query($link, $sql_insert);
+    echo $sql_insert;
     $id_OLD = mysqli_insert_id($link);
     $sql_OldDB = "INSERT INTO tb_elenco (id_elenco, email) VALUES ('$id_OLD', '$email')";
     mysqli_query($link2, $sql_OldDB);

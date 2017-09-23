@@ -59,10 +59,17 @@ var options = {
         var clearTime = time.replace(/:/g, "");
         var timestamp = clearDate+clearTime;
         // Coordenadas
-        var Latitude = GPSLatitude.toString();
-        var Longitude = GPSLongitude.toString();
-        var coordenadas = Latitude + " " + GPSLatitudeRef + " " + Longitude + " " + GPSLongitudeRef;
-
+        if (GPSLatitude) {
+          // console.log(GPSLatitude);
+          var Latitude = GPSLatitude.toString();
+          var Longitude = GPSLongitude.toString();
+          var coordenadas = Latitude + " " + GPSLatitudeRef + " " + Longitude + " " + GPSLongitudeRef;
+        }
+        else {
+          var coordenadas = "--";
+          var GPSAltitude = "--";
+        }
+        
         // Save data to sessionStorage
         sessionStorage.setItem('timestamp', timestamp);
         sessionStorage.setItem('dt_foto', dt_foto);
@@ -70,6 +77,7 @@ var options = {
         sessionStorage.setItem('flash', flash);
         sessionStorage.setItem('coordenadas', coordenadas);
         sessionStorage.setItem('GPSAltitude', GPSAltitude);
+        
         
         // Get saved data from sessionStorage
         // var data = sessionStorage.getItem('key');
@@ -268,6 +276,15 @@ save2.addEventListener('click', function (e) {
       }
     }).done(function(o) {
       sessionStorage.clear();
+    });
+    $('#form_serio-enviar').submit();
+    var dados = jQuery(this).serialize();
+    $.ajax({
+      type: "POST",
+      url: "ajax/update_db.php",
+      data: dados
+    }).done(function(o) {
+      // console.log('rolou');
     });
   });
 });

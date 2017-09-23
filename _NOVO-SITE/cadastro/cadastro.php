@@ -91,35 +91,37 @@ if (!empty($_SESSION['id_elenco'])) {
         $result = mysqli_query($link, $sql);
         $row = mysqli_fetch_array($result);
         if (mysqli_num_rows($result) == 1) {
-          if (empty($_SESSION['dt_nascimento']) || $_SESSION['dt_nascimento'] == "") {
+          if ((!isset($_SESSION['dt_nascimento']) || empty($_SESSION['dt_nascimento']) || $_SESSION['dt_nascimento'] == "0000-00-00" || $_SESSION['dt_nascimento'] == "") && (!empty($row['dt_nascimento']) && $row['dt_nascimento'] != "0000-00-00" && $row['dt_nascimento'] != "")) {
             $_SESSION['dt_nascimento']  = $row['dt_nascimento'];
           }
-          if (empty($row['data_1o_contrato']) || $row['data_1o_contrato'] == "") {
+          if (!empty($row['data_1o_contrato']) || $row['data_1o_contrato'] != "0000-00-00" || $row['data_1o_contrato'] != "") {
             $_SESSION['data_1o_contrato']  = $hoje;
           }
-          if (empty($_SESSION['email']) || $_SESSION['email'] == "") {
+          if ((!isset($_SESSION['email']) || empty($_SESSION['email']) || $_SESSION['email'] == "") && (!empty($row['email']) && $row['email'] != "")) {
             $_SESSION['email']  = $row['email'];
           }
-          if (empty($_SESSION['sexo']) || $_SESSION['sexo'] == "") {
+          if ((!isset($_SESSION['sexo']) || empty($_SESSION['sexo']) || $_SESSION['sexo'] == "") && (!empty($row['sexo']) && $row['sexo'] != "")) {
             $_SESSION['sexo']  = $row['sexo'];
           }
-          if (empty($_SESSION['cpf']) || $_SESSION['cpf'] == "") {
+          if ((!isset($_SESSION['cpf']) || empty($_SESSION['cpf']) || $_SESSION['cpf'] == "") && (!empty($row['cpf']) && $row['cpf'] != "")) {
             $_SESSION['cpf']  = $row['cpf'];
           }
-          if (empty($_SESSION['celular']) || $_SESSION['celular'] == "") {
-            $_SESSION['celular']  = $row['celular'];
+          if ((!isset($_SESSION['tl_celular']) || empty($_SESSION['tl_celular']) || $_SESSION['tl_celular'] == "") && (!empty($row['tl_celular']) && $row['tl_celular'] != "")) {
+            $_SESSION['tl_celular']  = $row['tl_celular'];
           }
-          if (empty($_SESSION['cep']) || $_SESSION['cep'] == "") {
+          if ((!isset($_SESSION['cep']) || empty($_SESSION['cep']) || $_SESSION['cep'] == "") && (!empty($row['cep']) && $row['cep'] != "")) {
             $_SESSION['cep']  = $row['cep'];
           }
-          if (empty($_SESSION['pele']) || $_SESSION['pele'] == "") {
+          if ((!isset($_SESSION['pele']) || empty($_SESSION['pele']) || $_SESSION['pele'] == "") && (!empty($row['pele']) && $row['pele'] != "")) {
             $_SESSION['pele']  = $row['pele'];
           }
         }
         // CHECA SE O FACEBOOK ENTREGOU UMA DATA DE NASCIMENTO
-        if (empty($_SESSION['dt_nascimento']) || $_SESSION['dt_nascimento'] == "0000-00-00" || $_SESSION['dt_nascimento'] == "") {
+        if (!isset($_SESSION['dt_nascimento']) || empty($_SESSION['dt_nascimento']) || $_SESSION['dt_nascimento'] == "0000-00-00" || $_SESSION['dt_nascimento'] == "") {
           echo"<div class='swiper-slide' id='03-0-01_qual-a-sua-data-de-nascimento'>";include "perguntas/03-0-01.php";echo"</div>";
-        }
+        }?>
+        <div class='swiper-slide display_none' id='03-0-02_voce-e-menor-de-idade-1'><?php include "perguntas/03-0-02.php"; ?></div>
+        <?php
         // SE EXISTE UMA DATA, SE É MAIOR DE IDADE
         if (!empty($_SESSION['dt_nascimento']) && $_SESSION['dt_nascimento'] != "0000-00-00" || $_SESSION['dt_nascimento'] != "") {
           $age = date_diff(date_create($_SESSION['dt_nascimento']), date_create('today'))->y;
@@ -140,7 +142,7 @@ if (!empty($_SESSION['id_elenco'])) {
           echo"<div class='swiper-slide' id='03-1-02_qual-o-seu-cpf'>";include 'perguntas/03-1-02.php';echo"</div>";
         }
         // CHECA O CELULAR
-        if (empty($_SESSION['celular']) || $_SESSION['celular'] == "") {
+        if (empty($_SESSION['tl_celular']) || $_SESSION['tl_celular'] == "") {
           echo"<div class='swiper-slide' id='03-1-03_qual-o-seu-telefone-celular'>";include 'perguntas/03-1-03.php';echo"</div>";
         }
         // CHECA O CEP
@@ -190,8 +192,10 @@ if (!empty($_SESSION['id_elenco'])) {
     </div>
   </div>
 </div>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js" integrity="sha256-eEa1kEtgK9ZL6h60VXwDsJ2rxYCwfxi40VZ9E0XwoEA=" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js" integrity="sha256-eEa1kEtgK9ZL6h60VXwDsJ2rxYCwfxi40VZ9E0XwoEA=" crossorigin="anonymous"></script> -->
+<script src="../_js/jquery-2.2.4.min.js"></script>
+<script src="../_js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../_js/gradient.js"></script>
 <script type="text/javascript" src="../_js/swiper.min.js"></script>
 <script type="text/javascript" src="../_js/functions.js"></script>
@@ -201,8 +205,10 @@ if (!empty($_SESSION['id_elenco'])) {
 <script type="text/javascript" src="../_js/drum.js"></script>
 <script type="text/javascript" src="../_js/drum-config.js"></script>
 <script type="text/javascript" src="../_js/cadastro_navegacao.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.js"></script>
-<script type="text/javascript" src="//irql.bipbop.com.br/js/jquery.bipbop.min.js"></script>
+<!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.js"></script>
+<script type="text/javascript" src="//irql.bipbop.com.br/js/jquery.bipbop.min.js"></script> -->
+<script type="text/javascript" src="../_js/jquery.mask.js"></script>
+<script type="text/javascript" src="../_js/jquery.bipbop.min.js"></script>
 <script type="text/javascript" src="../_js/progressbar.js"></script>
 <!-- <?php include "../_sys/analytics.php"; ?> -->
 </body>

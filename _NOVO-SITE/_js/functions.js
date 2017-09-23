@@ -393,6 +393,7 @@ $('.cep').keyup(function() {
 	if ($.trim(this.value).length == 10) {
 		var cep = $(".cep").val();
 		pesquisacep(cep);
+    $('.ok').show();
 	} if ($.trim(this.value).length < 10) {
 		$('.ok').hide();
 		$('.status').hide();

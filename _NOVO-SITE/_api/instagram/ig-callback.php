@@ -12,7 +12,7 @@ date_default_timezone_set('America/Sao_Paulo');
 $instagram = new Andreyco\Instagram\Client(array(
   'apiKey'      => '8c92de1fcb6247c09232d2033627ce96',
   'apiSecret'   => 'c9faee8401db43d9b676d2a15852164c',
-  'apiCallback' => 'https://www.magnetoelenco.com.br/_api/instagram/ig-callback.php'
+  'apiCallback' => 'http://localhost:8888/elenco-ui/_NOVO-SITE/_api/instagram/ig-callback.php'
 ));
 // receive OAuth code parameter
 $code = $_GET['code'];
