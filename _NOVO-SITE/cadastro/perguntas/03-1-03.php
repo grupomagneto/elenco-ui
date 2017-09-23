@@ -5,10 +5,10 @@
         </div>
         <div class='subtitulo avenir white small nowrap input-validacao-ok'>
             <form action="#" method="post">
-                <input type="hidden" name="field" value="ddd_01" id="ddd-cel" />
-                <input type="text" name="value" class="input_ddd inputs" placeholder="00" maxlength="2" />
-                <input type="hidden" name="field2" value="tl_celular" id="numero-cel" />
-                <input type="text" name="value2" class="input_celular inputs" placeholder="0 0000 0000" />
+                <input type="hidden" name="field" value="ddd_01" id="ddd-cel-field" />
+                <input type="text" name="value" class="input_ddd inputs" id="ddd-cel-value" placeholder="00" maxlength="2" />
+                <input type="hidden" name="field2" value="tl_celular" id="numero-cel-field" />
+                <input type="text" name="value2" class="input_celular inputs" id="numero-cel-value" placeholder="0 0000 0000" />
                 <button class="ok" id="ok_cel" style="display: none;"><img src="../_images/ok_neg.svg" /></button>
             </form>
             <div class="subtexto flexbox nowrap text-align-center">

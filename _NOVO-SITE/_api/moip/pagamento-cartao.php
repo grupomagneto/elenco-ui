@@ -1,8 +1,8 @@
 <?php 
 header('Content-Type: text/html; charset=utf-8');
 
-
-$nome = $_POST["nome_completo"];
+$nome = $_POST["id_elenco"];
+$nome = $_POST["nome_titular"];
 $DDD = $_POST["DDD"];
 $cel = $_POST["cel"];
 $email = $_POST["email"];
@@ -16,7 +16,7 @@ $uf = $_POST["uf"];
 $DataNascimento = $_POST["data_nascimento"];
 $CPF = $_POST["cpf_titular"];
 $encrypted_value = $_POST["encrypted_value"];
-$Parcelas = $_POST["Parcelas"];
+$Parcelas = $_POST["parcelas"];
 
 require 'vendor/autoload.php';
 
@@ -50,7 +50,7 @@ try {
 //criando o pedido
 try {
     $order = $moip->orders()->setOwnId(uniqid())
-        ->addItem("cadastro premium",1, "premium", 19900)
+        ->addItem("Cadastro Premium",1, "Premium", 29900)
         ->setCustomer($customer)
         ->create();
 

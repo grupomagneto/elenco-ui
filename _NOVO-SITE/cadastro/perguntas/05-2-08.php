@@ -1,11 +1,10 @@
 <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
     <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
-      
         <div class='titulo heavy white large'>
         Pagamento via boleto bancário
         </div>
         <div class='subtitulo avenir white small'>
-          Clique nos campos para inserir os dados do Cartão de Crédito
+          Seu cadastro será ativado após a confirmação de recebimento
         <div class="total heavy white large">
           TOTAL R$ 269,10
         </div>

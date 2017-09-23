@@ -341,7 +341,9 @@ function meu_callback(conteudo) {
         $("#cidade_value").val(cidade);
         $("#uf_value").val(uf);
         $("#endereco_value").val(endereco);
-        // console.log($("#endereco_value").val());
+        $("#confirma-endereco").html(endereco);
+        $("#confirma-bairro").html(bairro);
+        $("#confirma-cidade-uf").html(cidade + "-" + uf);
 		$('.status').show();
 		$('.valido').show();
     } //end if.
@@ -394,12 +396,19 @@ $('.cep').keyup(function() {
 		var cep = $(".cep").val();
 		pesquisacep(cep);
     $('.ok').show();
+    $('#confirma-cep').html(cep);
 	} if ($.trim(this.value).length < 10) {
 		$('.ok').hide();
 		$('.status').hide();
 		$('.valido').hide();
 		$('.invalido').hide();
 	}
+});
+$('#numero-cartao-de-credito').keyup(function() {
+  $("#numero-cartao-de-credito").mask("0000 0000 0000 0000");
+});
+$('#validade-cartao').keyup(function() {
+  $("#validade-cartao").mask("00/00");
 });
 // Formata os selects
 $(".select-dropdown").each(function(){

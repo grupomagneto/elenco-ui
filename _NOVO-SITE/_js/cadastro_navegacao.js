@@ -8,7 +8,7 @@ $(document).ready(function(){
       simulateTouch: false,
       onlyExternal: true,
       speed: 200,
-      initialSlide: 29,
+      initialSlide: 0,
       // keyboardControl: true
       // onSlideChangeEnd : function(swiper) {
       //  console.log("activeIndex: "+swiper.activeIndex);
@@ -66,6 +66,7 @@ $(document).ready(function(){
       }
       document.getElementById("dt_nascimento-maior").value = nascimento;
       document.getElementById("dt_nasc_responsavel").value = nascimento;
+      document.getElementById("input-hidden-cartao-data_nascimento").value = nascimento;
       swiper.unlockSwipeToNext();
       swiper.slideNext();
       percentage = "5%";
@@ -115,7 +116,7 @@ $(document).ready(function(){
         url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
-          event.preventDefault();
+          // event.preventDefault();
         }
       });
       return false;
@@ -126,6 +127,7 @@ $(document).ready(function(){
     previousPercentage = "10%";
     stopTransition();
     sexo("M");
+    $('#input-hidden-cartao-email').val($('#email-vazio').val());
   });
   $("#btn_sexo-maior-feminino").click(function(){
     // Ajax Cadastros
@@ -175,7 +177,8 @@ $(document).ready(function(){
   });
 
   $("#btn_eu-mesmo-tenho-18").click(function(){
-    // event.preventDefault(); // Ajax Cadastros
+    // event.preventDefault();
+    // Ajax Cadastros
     jQuery("form").submit(function(){
       var dados = jQuery(this).serialize();
       jQuery.ajax({
@@ -184,7 +187,8 @@ $(document).ready(function(){
         url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
-          event.preventDefault();
+          // event.preventDefault();
+          // $("#cpf-maior").focus();
         }
       });
       return false;
@@ -199,15 +203,19 @@ $(document).ready(function(){
     document.getElementById("04-1-01_qual-a-cor-da-sua-pele").classList.remove("display_none");
     $(".voltar").css("opacity", "1");
     swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#03-1-02_qual-o-seu-cpf").index(), 200);
     swiper.slideNext();
-    // $("#cpf-maior").focus();
     percentage = "15%";
     previousPercentage = "10%";
     stopTransition();
-    document.getElementById("nome-cpf_field").value = "nome";
+    if (document.getElementById("nome-cpf_field")) {
+      document.getElementById("nome-cpf_field").value = "nome";
+    }
     $("#ok_cep-maior").click(function(){
-      // g.preventDefault();
+      swiper.unlockSwipeToNext();
+      swiper.slideNext();
+      percentage = "30%";
+      previousPercentage = "25%";
+      stopTransition();
       jQuery("form").submit(function(){
         var dados = jQuery(this).serialize();
         jQuery.ajax({
@@ -216,22 +224,22 @@ $(document).ready(function(){
           url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
-            event.preventDefault();
+            // event.preventDefault();
           }
         });
         return false;
       });
-      swiper.unlockSwipeToNext();
-      // swiper.slideTo( $("#04-1-01_qual-a-cor-da-sua-pele").index(), 200);
-      swiper.slideNext();
-      percentage = "30%";
-      previousPercentage = "25%";
-      stopTransition();
+      $('#input-hidden-cartao-data_nascimento').val($('#dt_nascimento-maior').val());
+      $('#input-hidden-cartao-cep').val($('#cep-maior').val());
+      $('#input-hidden-cartao-endereco').val($('#endereco_value').val());
+      $('#input-hidden-cartao-bairro').val($('#bairro_value').val());
+      $('#input-hidden-cartao-cidade').val($('#cidade_value').val());
+      $('#input-hidden-cartao-uf').val($('#uf_value').val());
+      // console.log($('#input-hidden-cartao-uf').val());
     });
   });
 
   $("#btn_um-menor-de-idade").click(function(){
-    // event.preventDefault();
     document.getElementById("04-1-02_voce-tem-registro-drt").className += " display_none";
     document.getElementById("04-1-03_envie-uma-foto-do-seu-registro-drt").className += " display_none";
     document.getElementById("05-0-02_clique-e-conheca-nossos-planos_drt").className += " display_none";
@@ -263,12 +271,16 @@ $(document).ready(function(){
     });
     $(".voltar").css("opacity", "1");
     swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#03-1-02_qual-o-seu-cpf").index(), 200);
     swiper.slideNext();
     percentage = "15%";
     previousPercentage = "10%";
     stopTransition();
     $("#ok_cep-maior").click(function(){
+      swiper.unlockSwipeToNext();
+      swiper.slideNext();
+      percentage = "30%";
+      previousPercentage = "25%";
+      stopTransition();
       jQuery("form").submit(function(){
         var dados = jQuery(this).serialize();
         jQuery.ajax({
@@ -282,25 +294,22 @@ $(document).ready(function(){
         });
         return false;
       });
-      swiper.unlockSwipeToNext();
-      // swiper.slideTo( $("#04-2-01_qual-o-sexo-do-menor").index(), 200);
-      swiper.slideNext();
-      percentage = "30%";
-      previousPercentage = "25%";
-      stopTransition();
+      $('#input-hidden-cartao-data_nascimento').val($('#dt_nasc_responsavel').val());
+      $('#input-hidden-cartao-cep').val($('#cep-maior').val());
+      $('#input-hidden-cartao-endereco').val($('#endereco_value').val());
+      $('#input-hidden-cartao-bairro').val($('#bairro_value').val());
+      $('#input-hidden-cartao-cidade').val($('#cidade_value').val());
+      $('#input-hidden-cartao-uf').val($('#uf_value').val());
     });
   });
   $("#ok_cpf-maior").click(function(){
-    // event.preventDefault();
-    swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#03-1-03_qual-o-seu-telefone-celular").index(), 200);
     document.getElementById("03-1-03_qual-o-seu-telefone-celular").classList.remove("display_none");
-    document.getElementById("03-1-04_qual-o-cep-da-sua-residencia").classList.remove("display_none");
+    swiper.unlockSwipeToNext();
     swiper.slideNext();
     percentage = "20%";
     previousPercentage = "15%";
     stopTransition();
-    // Ajax Cadastros
+    // Ajax
     jQuery("form").submit(function(){
       var dados = jQuery(this).serialize();
       jQuery.ajax({
@@ -309,34 +318,37 @@ $(document).ready(function(){
         url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
-          event.preventDefault();
+          // event.preventDefault();
         }
       });
       return false;
     });
-
+    $('#input-hidden-cartao-cpf_titular').val($('#cpf-maior').val());
+    $('#input-hidden-cartao-nome_titular').val($('#nome-cpf_value').val());
   });
   $("#ok_cel").click(function(){
-    // event.preventDefault();
-    jQuery("form").submit(function(){
-      var dados = jQuery(this).serialize();
-      jQuery.ajax({
-        type: "POST",
-        dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
-        data: dados,
-        success: function( data ) {
-          event.preventDefault();
-        }
-      });
-      return false;
-    });
+    document.getElementById("03-1-04_qual-o-cep-da-sua-residencia").classList.remove("display_none");
     swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#03-1-04_qual-o-cep-da-sua-residencia").index(), 200);
     swiper.slideNext();
     percentage = "25%";
     previousPercentage = "20%";
     stopTransition();
+    // Ajax
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          // event.preventDefault();
+        }
+      });
+      return false;
+    });
+    $('#input-hidden-cartao-DDD').val($('#ddd-cel-value').val());
+    $('#input-hidden-cartao-cel').val($('#numero-cel-value').val());
   });
   $("#btn_cor-da-pele-maior").click(function(){
     // event.preventDefault();
@@ -1054,7 +1066,19 @@ $(document).ready(function(){
     stopTransition();
   });
   $("#btn_completa-endereco").click(function(){
-    event.preventDefault();
+    jQuery("form").submit(function(){
+      var dados = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        data: dados,
+        success: function( data ) {
+          // event.preventDefault();
+        }
+      });
+      return false;
+    });
     document.getElementById("05-2-06_qual-a-forma-de-pagamento").classList.remove("display_none");
     swiper.unlockSwipeToNext();
     // swiper.slideTo( $("#05-2-06_qual-a-forma-de-pagamento").index(), 200);
@@ -1062,6 +1086,8 @@ $(document).ready(function(){
     percentage = "75%";
     previousPercentage = "70%";
     stopTransition();
+    $('#input-hidden-cartao-numero').val($('#input_numero-value').val());
+    $('#input-hidden-cartao-complemento').val($('#input_complemento-value').val());
   });
   $("#btn_cartao-de-credito").click(function(){
     event.preventDefault();
@@ -1115,7 +1141,6 @@ $(document).ready(function(){
     document.getElementById("05-2-10_endereco-da-fatura-do-cartao").className += " display_none";
     document.getElementById("05-2-11_dados-do-cartao-de-credito").classList.remove("display_none");
     swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#05-2-11_dados-do-cartao-de-credito").index(), 200);
     swiper.slideNext();
     percentage = "95%";
     previousPercentage = "80%";
@@ -1125,25 +1150,33 @@ $(document).ready(function(){
     event.preventDefault();
     document.getElementById("05-2-09_dados-do-titular-do-cartao").classList.remove("display_none");
     swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#05-2-09_dados-do-titular-do-cartao").index(), 200);
     swiper.slideNext();
     percentage = "85%";
     previousPercentage = "80%";
     stopTransition();
+    document.getElementById("input-hidden-cartao-data_nascimento").value = "";
+    document.getElementById("input-hidden-cartao-email").value = "";
+    document.getElementById("input-hidden-cartao-cpf_titular").value = "";
+    document.getElementById("input-hidden-cartao-nome_titular").value = "";
+    document.getElementById("input-hidden-cartao-DDD").value = "";
+    document.getElementById("input-hidden-cartao-cel").value = "";
+    document.getElementById("input-hidden-cartao-cep").value = "";
+    document.getElementById("input-hidden-cartao-endereco").value = "";
+    document.getElementById("input-hidden-cartao-bairro").value = "";
+    document.getElementById("input-hidden-cartao-cidade").value = "";
+    document.getElementById("input-hidden-cartao-uf").value = "";
+    document.getElementById("input-hidden-cartao-numero").value = "";
+    document.getElementById("input-hidden-cartao-complemento").value = "";
   });
   $("#btn_dados-titular-cartao").click(function(){
     event.preventDefault();
     document.getElementById("05-2-10_endereco-da-fatura-do-cartao").classList.remove("display_none");
     swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#05-2-10_endereco-da-fatura-do-cartao").index(), 200);
     swiper.slideNext();
     percentage = "90%";
     previousPercentage = "85%";
     stopTransition();
-   
   });
-
-
   $("#btn_endereco-titular-cartao").click(function(){
     event.preventDefault();
     document.getElementById("05-2-11_dados-do-cartao-de-credito").classList.remove("display_none");
@@ -1153,7 +1186,6 @@ $(document).ready(function(){
     percentage = "95%";
     previousPercentage = "90%";
     stopTransition();
-
     jQuery("form").submit(function(){
         var dados = jQuery(this).serialize();
         jQuery.ajax({
@@ -1168,31 +1200,23 @@ $(document).ready(function(){
         });
         return false;
       });
-
-    }
   });
   $("#sendToMoip").click(function(){
-    event.preventDefault();
-    document.getElementById("05-2-12_cadastro-agendado").classList.remove("display_none");
-    swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#05-2-12_cadastro-agendado").index(), 200);
-    swiper.slideNext();
-    percentage = "100%";
-    previousPercentage = "95%";
-    stopTransition();
-    $(".voltar").css("opacity", "0");
- var cc = new Moip.CreditCard({
-      number  : $("#number").val(),
-      cvc     : $("#cvc").val(),
-      expMonth: $("#month").val(),
-      expYear : $("#year").val(),
+    var validade = $('#validade-cartao').val();
+    var split = validade.split("/");
+    var month = split[0];
+    var year = "20" + split[1];
+    var cc = new Moip.CreditCard({
+      number  : $("#numero-cartao-de-credito").val(),
+      cvc     : $("#cvv").val(),
+      expMonth: month,
+      expYear : year,
       pubKey  : $("#public_key").val()
     });
-    console.log(cc);
-    if( cc.isValid()){
+    // console.log(cc);
+    if(cc.isValid()){
       $("#encrypted_value").val(cc.hash());
       $("#card_type").val(cc.cardType());
-      
       jQuery("form").submit(function(){
         var dados = jQuery(this).serialize();
         jQuery.ajax({
@@ -1201,8 +1225,15 @@ $(document).ready(function(){
           url: "../_api/moip/pagamento-cartao.php",
           data: dados,
           success: function( data ) {
-
-            alert('dados enviados');
+            console.log('dados enviados: ' + dados);
+            // event.preventDefault();
+            document.getElementById("05-2-12_cadastro-agendado").classList.remove("display_none");
+            swiper.unlockSwipeToNext();
+            swiper.slideNext();
+            percentage = "100%";
+            previousPercentage = "95%";
+            stopTransition();
+            $(".voltar").css("opacity", "0");
           }
         });
         return false;
@@ -1211,7 +1242,6 @@ $(document).ready(function(){
     else{
       $("#encrypted_value").val('');
       $("#card_type").val('');
-
       alert('Cartão de Crédito inválido. Por favor verifique os parâmetros: número, cvv e validade');
     }
 

@@ -58,7 +58,7 @@ if (!empty($_POST['value2'])) {
 	$value2 = $_POST['value2'];
 	$sql_insert2 = "UPDATE tb_elenco SET $field2 = '$value2' WHERE id_elenco = '$id_elenco'";
 	mysqli_query($link, $sql_insert2);
-	if ($field2 != "sexo_responsavel") {
+	if ($field2 != "sexo_responsavel" && $field2 != "complemento") {
 		mysqli_query($link2, $sql_insert2);
 	}
 }

@@ -214,65 +214,24 @@ if (!empty($_SESSION['id_elenco'])) {
 
 <script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
 <script type="text/javascript">
+$("#btn_dados-titular-cartao").click(function(){
+  // Ajax Pagamento com cartão
+  jQuery("form").submit(function(){
+    var dados = jQuery(this).serialize();
+    jQuery.ajax({
+      type: "POST",
+      dataType: "html",
+      url: "http://localhost:8888/elenco-ui/_NOVO-SITE/_api/moip/pagamento-cartao.php",
+      data: dados,
+      success: function( data ) {
 
-  $("#encrypt").click(function(){
-       var cc = new Moip.CreditCard({
-            number  : $("#number").val(),
-            cvc     : $("#cvc").val(),
-            expMonth: $("#month").val(),
-            expYear : $("#year").val(),
-            pubKey  : $("#public_key").val()
-          });
-          console.log(cc);
-          if( cc.isValid()){
-            $("#encrypted_value").val(cc.hash());
-            $("#card_type").val(cc.cardType());
-          }
-          else{
-            $("#encrypted_value").val('');
-            $("#card_type").val('');
-
-            alert('Cartão de Crédito inválido. Por favor verifique os parâmetros: número, cvv e validade');
-          }
-
- jQuery("form").submit(function(){
-      var dados = jQuery(this).serialize();
-      jQuery.ajax({
-        type: "POST",
-        dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/_api/moip/pagamento-cartao.php",
-        data: dados,
-        success: function( data ) {
-
-          alert('dados enviados');
-        }
-      });
-      return false;
+        alert('dados enviados');
+      }
     });
+    return false;
   });
-
-
-  $("#btn_dados-titular-cartao").click(function(){
-    // Ajax Pagamento com cartão
-    jQuery("form").submit(function(){
-      var dados = jQuery(this).serialize();
-      jQuery.ajax({
-        type: "POST",
-        dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/_api/moip/pagamento-cartao.php",
-        data: dados,
-        success: function( data ) {
-
-          alert('dados enviados');
-        }
-      });
-      return false;
-    });
-  });
-
-
-
-  </script>
+});
+</script>
 
 <!-- <?php include "../_sys/analytics.php"; ?> -->
 </body>
