@@ -210,28 +210,8 @@ if (!empty($_SESSION['id_elenco'])) {
 <script type="text/javascript" src="../_js/jquery.mask.js"></script>
 <script type="text/javascript" src="../_js/jquery.bipbop.min.js"></script>
 <script type="text/javascript" src="../_js/progressbar.js"></script>
-
-
 <script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
-<script type="text/javascript">
-$("#btn_dados-titular-cartao").click(function(){
-  // Ajax Pagamento com cartão
-  jQuery("form").submit(function(){
-    var dados = jQuery(this).serialize();
-    jQuery.ajax({
-      type: "POST",
-      dataType: "html",
-      url: "http://localhost:8888/elenco-ui/_NOVO-SITE/_api/moip/pagamento-cartao.php",
-      data: dados,
-      success: function( data ) {
 
-        alert('dados enviados');
-      }
-    });
-    return false;
-  });
-});
-</script>
 
 <!-- <?php include "../_sys/analytics.php"; ?> -->
 </body>

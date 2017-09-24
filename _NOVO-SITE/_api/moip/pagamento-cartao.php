@@ -1,7 +1,7 @@
 <?php 
 header('Content-Type: text/html; charset=utf-8');
 
-$nome = $_POST["id_elenco"];
+$id_elenco = $_POST["id_elenco"];
 $nome = $_POST["nome_titular"];
 $DDD = $_POST["DDD"];
 $cel = $_POST["cel"];
@@ -16,7 +16,8 @@ $uf = $_POST["uf"];
 $DataNascimento = $_POST["data_nascimento"];
 $CPF = $_POST["cpf_titular"];
 $encrypted_value = $_POST["encrypted_value"];
-$Parcelas = $_POST["parcelas"];
+$parcelas = $_POST["parcelas"];
+$valor_pagar = $_POST["valor_pagar"];
 
 require 'vendor/autoload.php';
 
@@ -62,8 +63,8 @@ try {
 try {  $hash = $encrypted_value;  
     $payment = $order->payments()  
     ->setCreditCardHash($hash, $customer)                                 
-    ->setInstallmentCount($Parcelas)                                 
-    ->setStatementDescriptor('teste de pag')                                 
+    ->setInstallmentCount($parcelas)                                 
+    ->setStatementDescriptor('MagnetoElenc')                                 
     ->setDelayCapture(false)                                 
     ->execute();  
 

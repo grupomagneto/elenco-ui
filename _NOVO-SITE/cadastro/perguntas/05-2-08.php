@@ -5,18 +5,12 @@
         </div>
         <div class='subtitulo avenir white small'>
           Seu cadastro será ativado após a confirmação de recebimento
-        <div class="total heavy white large">
-          TOTAL R$ 269,10
         </div>
-
+        <div class="total heavy white large">
+          TOTAL R$ <span id="valor-pagar-boleto" class="valor-pagar">299,00</span>
         </div>
         <div class='botoes'>
-            <a href="#"  target="_blank">
-              <button class='botao'>Gerar Boleto</button>
-            </a>
-
-            <div id="boleto"></div>
-             
+            <button id='link_boleto' class='botao'>Imprimir Boleto</button>         
             <div class='moip'>
               <a href='http://www.moip.com.br' target='_blank'><img src='../_images/moip167px.png' /></a>
             </div>

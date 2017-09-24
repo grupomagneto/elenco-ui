@@ -14,7 +14,7 @@
                     <li class="li_lista_selfies">Use um muro branco ao ar livre como fundo para suas fotos;</li>
                     <li class="li_lista_selfies">Faça suas fotos durante o dia, na sombra e desligue o flash;</li>
                     <li class="li_lista_selfies">Estique bem os braços e olhe para para câmera do celular, não olhe para a tela;</li>
-                    <li class="li_lista_selfies">Pele limpa, banho recém tomado, cabelo penteado e maquiagem leve ajudam muito;</li>
+                    <li class="li_lista_selfies">Pele limpa, cabelo penteado e maquiagem leve ajudam muito;</li>
                 </ul>
         </div>
         <div class='botoes'>

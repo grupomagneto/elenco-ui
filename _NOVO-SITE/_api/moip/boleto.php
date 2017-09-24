@@ -1,21 +1,47 @@
 <?php 
 header('Content-Type: text/html; charset=utf-8');
+require '../../_sys/conecta.php';
+date_default_timezone_set('America/Sao_Paulo');
+$hoje = date('Y-m-d', time());
 
-
-$nome = $_POST["nome"];
+$id_elenco = $_POST["id_elenco"];
+$nome = $_POST["nome_titular"];
 $DDD = $_POST["DDD"];
-$cel = $_POST["celular"];
+$cel = $_POST["cel"];
 $email = $_POST["email"];
 $cep = $_POST["cep"];
-$endereco = $_POST["value5"];
+$endereco = $_POST["endereco"];
 $numero = $_POST["numero"];
 $complemento = $_POST["complemento"];
-$bairro = $_POST["value2"];
-$cidade = $_POST["value3"];
-$uf = $_POST["value4"];
-$DataNascimento = $_POST["DataNascimento"];
-$CPF = $_POST["cpf"];
-$Parcelas = $_POST["Parcelas"];
+$bairro = $_POST["bairro"];
+$cidade = $_POST["cidade"];
+$uf = $_POST["uf"];
+$DataNascimento = $_POST["data_nascimento"];
+$CPF = $_POST["cpf_titular"];
+$valor = 29900;
+$desconto = $_POST["desconto"];
+if ($desconto == "0" || $desconto == "" || empty($desconto)) {
+    $discount = 1495;
+}if ($desconto == "5") {
+    $discount = 2990;
+}
+$produto = "Cadastro Premium";
+
+// INSERE PRÉ-VENDA
+$nome_curto = explode(' ', $nome);
+$primeiro_nome = $nome_curto[0];
+$sobrenome = $nome_curto[1];
+if ($discount == 1495) {
+    $valor_format = "284.05";
+}
+if ($discount == 2990) {
+    $valor_format = "269.10";
+}
+mysqli_query($link, "INSERT INTO financeiro (tipo_entrada, nome, sobrenome, id_elenco_financeiro, produto, qtd, data_venda, valor_venda, status_venda, forma_pagamento) VALUES ('Venda', '$primeiro_nome', '$sobrenome', '$id_elenco', '$produto', '1', '$hoje', '$valor_format', 'Pré-Venda', 'Boleto Bancário')");
+$prevenda = mysqli_insert_id($link);
+mysqli_close($link);
+
+$operation_id = $id_elenco."-".$prevenda;
 
 require 'vendor/autoload.php';
 
@@ -31,7 +57,8 @@ $key = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
 $moip = new Moip(new BasicAuth($token, $key), Moip::ENDPOINT_SANDBOX);
 //Criando um comprador
 try {
-    $customer = $moip->customers()->setOwnId(uniqid())
+    $customer = $moip->customers()->setOwnId($id_elenco)
+    // $customer = $moip->customers()->setOwnId(uniqid())
         ->setFullname($nome)
         ->setEmail($email)
         ->setBirthDate($DataNascimento)
@@ -48,8 +75,10 @@ try {
 }
 //criando o pedido
 try {
-    $order = $moip->orders()->setOwnId(uniqid())
-        ->addItem("cadastro premium",1, "premium", 19900)
+    $order = $moip->orders()->setOwnId($operation_id)
+    // $order = $moip->orders()->setOwnId(uniqid())
+        ->addItem($produto,1,$produto,$valor)
+        ->setDiscount($discount)
         ->setCustomer($customer)
         ->create();
 
@@ -59,23 +88,23 @@ try {
 }
 
 //criando o pagamento boleto
-$logo_uri = 'https://cdn.moip.com.br/wp-content/uploads/2016/05/02163352/logo-moip.png';
+$logoUri = 'https://www.magnetoelenco.com.br/pagme/images/mini-logo.png';
 $expiration_date = new DateTime();
-$instruction_lines = ['INSTRUÇÃO 1', 'INSTRUÇÃO 2', 'INSTRUÇÃO 3'];
+$instruction_lines = ['Seu cadastro está quase concluído!', 'Pague este boleto até o vencimento para', 'que seu perfil seja ativado.'];
+
 try {
     $payment = $order->payments()  
-        ->setBoleto($expiration_date, $logo_uri, $instruction_lines)
+        ->setBoleto($expiration_date, $logoUri, $instruction_lines)
         ->execute();
         // echo "<pre>";
         // print_r($payment);
         // echo "</pre>";
 
         $xml = json_decode(json_encode($payment),true);
-        $boleto = $xml["_links"]["payBoleto"]["redirectHref"];
+        $boleto = $xml["_links"]["payBoleto"]["printHref"];
         echo $boleto;
         
 } catch (Exception $e) {
     printf($e->__toString());
 }
-
- ?>
+?>

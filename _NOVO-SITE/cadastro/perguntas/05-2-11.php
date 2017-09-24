@@ -35,8 +35,6 @@
                     VQIDAQAB
                     -----END PUBLIC KEY-----
                     </textarea>
-                    <!-- <textarea style="display:none;" name="encrypted_value" id="encrypted_value"></textarea> -->
-                    <!-- <input type="hidden" class='botao' value="encrypt" id='encrypt' /> -->
                     <input type="hidden" name="id_elenco" id="input-hidden-cartao-id-elenco" value="<?php echo $_SESSION['id_elenco']; ?>" />
                     <input type="hidden" name="data_nascimento" id="input-hidden-cartao-data_nascimento" value="" />
                     <input type="hidden" name="email" id="input-hidden-cartao-email" value="<?php echo $_SESSION['email']; ?>" />
@@ -52,12 +50,14 @@
                     <input type="hidden" name="numero" id="input-hidden-cartao-numero" value="" />
                     <input type="hidden" name="complemento" id="input-hidden-cartao-complemento" value="" />
                     <input type="hidden" name="encrypted_value" id="encrypted_value" value="" />
-                    <input type="hidden" name="valor_pagar-cartao" id="input_valor_pagar-cartao" value="" />
+                    <input type="hidden" name="produto" id="input_produto-cartao" value="" />
+                    <input type="hidden" name="valor" id="input_valor-cartao" value="" />
+                    <input type="hidden" name="desconto" id="input_desconto-cartao" value="" />
                 </div>
               </div>
           </div>
           <div class='botoes'>
-              <button class='botao' id='sendToMoip'>Pagar R$ <span id='valor_pagar-cartao'></span>,00</button>
+              <button class='botao' id='sendToMoip'>Pagar R$ <span id="valor-pagar-cartao" class="valor_pagar"></span></button>
               <div class='moip'>
                 <a href='http://www.moip.com.br' target='_blank'><img src='../_images/moip167px.png' /></a>
               </div>
