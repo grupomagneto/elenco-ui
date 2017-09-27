@@ -1,36 +1,5 @@
 <?php 
 
-// require 'vendor/autoload.php';
-
-// use Moip\Moip;
-// use Moip\Auth\BasicAuth;
-// use MoipPayment\Payment;
-// use MoipPayment\Order;
-// use MoipPayment\Customer;
-
-// $token = '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN';
-// $key = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
-
-// $moip = new Moip(new BasicAuth($token, $key), Moip::ENDPOINT_SANDBOX);
-
-// try {
-//     $notification = $moip->notifications()
-//         ->addEvent('ORDER.*')
-//         ->setTarget("https://".DOMINIO."/notification")
-//         ->create();
-//     print_r($notification);
-// } catch (Exception $e) {
-//     printf($e->__toString());
-// }
-
-// // Pega o RAW data da requisição
-// $json = file_get_contents('php://input');
-// // Converte os dados recebidos
-// $response = json_decode($json, true);
-
-//require 'vendor/autoload.php';
-//include_once "autoload.inc.php";
-
 $header = [];
 $header[] = 'Content-type: application/json';
 
@@ -46,11 +15,9 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/4.0");
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-
 $ret = curl_exec($curl);
 $err = curl_error($curl);
 curl_close($curl);
-
 
 echo $ret;
 
@@ -63,7 +30,7 @@ echo '</pre>';
 echo '<br />';
 
 $json = json_encode($xml);
-$array = json_decode($json,TRUE);
+$array = json_decode($json, TRUE);
 echo '<pre>';
 print_r($array);
 echo '</pre>';
@@ -75,5 +42,6 @@ echo $id;
 
 $resourceId = $array['resourceId']['PAY-JVDTVDONUFKG'];
 echo $resourceId;
+
 
 ?>
