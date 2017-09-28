@@ -3,6 +3,8 @@
 namespace Moip\Resource;
 
 use ArrayIterator;
+use Moip\Helper\Filters;
+use Moip\Helper\Pagination;
 use stdClass;
 
 /**
@@ -78,10 +80,12 @@ class Orders extends MoipResource
      * @param string $moipAccount Id MoIP MoIP account that will receive payment values.
      * @param string $type        Define qual o tipo de recebedor do pagamento, valores possíveis: PRIMARY, SECONDARY.
      * @param int    $fixed       Value that the receiver will receive.
+     * @param int    $percentual  Percentual value that the receiver will receive. Possible values: 0 - 100
+     * @param bool   $feePayor    Flag to know if receiver is the payer of Moip tax.
      *
      * @return $this
      */
-    public function addReceiver($moipAccount, $type, $fixed)
+    public function addReceiver($moipAccount, $type, $fixed = null, $percentual = null, $feePayor = false)
     {
         $receiver = new stdClass();
         $receiver->moipAccount = new stdClass();
@@ -90,6 +94,11 @@ class Orders extends MoipResource
             $receiver->amount = new stdClass();
             $receiver->amount->fixed = $fixed;
         }
+        if (!empty($percentual)) {
+            $receiver->amount = new stdClass();
+            $receiver->amount->percentual = $percentual;
+        }
+        $receiver->feePayor = $feePayor;
         $receiver->type = $type;
 
         $this->data->receivers[] = $receiver;
@@ -111,6 +120,7 @@ class Orders extends MoipResource
         $this->data->receivers = [];
         $this->data->checkoutPreferences = new stdClass();
         $this->data->checkoutPreferences->redirectUrls = new stdClass();
+        $this->data->checkoutPreferences->installments = [];
     }
 
     /**
@@ -434,6 +444,18 @@ class Orders extends MoipResource
     }
 
     /**
+     * Create a new Orders list instance.
+     *
+     * @return \Moip\Resource\OrdersList
+     */
+    public function getList(Pagination $pagination = null, Filters $filters = null, $qParam = '')
+    {
+        $orderList = new OrdersList($this->moip);
+
+        return $orderList->get($pagination, $filters, $qParam);
+    }
+
+    /**
      * Structure of payment.
      *
      * @return \Moip\Resource\Payment
@@ -589,6 +611,27 @@ class Orders extends MoipResource
     public function setUrlFailure($urlFailure = '')
     {
         $this->data->checkoutPreferences->redirectUrls->urlFailure = $urlFailure;
+
+        return $this;
+    }
+
+    /**
+     * Set installment settings for checkout preferences.
+     *
+     * @param array $quantity
+     * @param int   $discountValue
+     * @param int   $additionalValue
+     *
+     * @return $this
+     */
+    public function addInstallmentCheckoutPreferences($quantity, $discountValue = 0, $additionalValue = 0)
+    {
+        $installmentPreferences = new stdClass();
+        $installmentPreferences->quantity = $quantity;
+        $installmentPreferences->discount = $discountValue;
+        $installmentPreferences->addition = $additionalValue;
+
+        $this->data->checkoutPreferences->installments[] = $installmentPreferences;
 
         return $this;
     }

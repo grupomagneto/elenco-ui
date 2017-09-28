@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b810a9b1d9854974f0ba8ca94adfe39e",
-    "content-hash": "5f3e212f1b5327451c4242d03e011461",
+    "hash": "268f91ee4a70ddb787c1c80e8a0c74b5",
+    "content-hash": "b24367a6180c143c128f8bdf8bfa3dad",
     "packages": [
         {
             "name": "moip/moip-sdk-php",
-            "version": "v1.2.0",
+            "version": "v1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moip/moip-sdk-php.git",
-                "reference": "01cd01aee5a16299c0ee3a338e634bcaa842d145"
+                "reference": "96e7e7db40a1e52f6fc49aabf69d58d285ef49ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moip/moip-sdk-php/zipball/01cd01aee5a16299c0ee3a338e634bcaa842d145",
-                "reference": "01cd01aee5a16299c0ee3a338e634bcaa842d145",
+                "url": "https://api.github.com/repos/moip/moip-sdk-php/zipball/96e7e7db40a1e52f6fc49aabf69d58d285ef49ef",
+                "reference": "96e7e7db40a1e52f6fc49aabf69d58d285ef49ef",
                 "shasum": ""
             },
             "require": {
@@ -66,7 +66,7 @@
                 "marketplace",
                 "moip"
             ],
-            "time": "2017-06-02 14:37:43"
+            "time": "2017-09-18 12:37:53"
         },
         {
             "name": "rmccue/requests",

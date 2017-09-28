@@ -14,21 +14,31 @@ $moip = new Moip(new BasicAuth($token, $key), Moip::ENDPOINT_SANDBOX);
 
 
 try {
-    $notification = $moip->notifications()->addEvent('ORDER.*')
+    $notification = $moip->notifications()
+    		->addEvent('ORDER.*')
             ->addEvent('PAYMENT.*')
-            ->setTarget('')
+            ->setTarget('https://requestb.in/1mr843n1')
             ->create();
-    print_r($notification);
+
+            echo '<pre>';
+				print_r($notification);
+			echo '</pre>';
+
+
+
 } catch (Exception $e) {
     printf($e->__toString());    
 }
 
-// Pega o RAW data da requisição
-$json = file_get_contents('php://input');
-// Converte os dados recebidos
-$response = json_decode($json, true);
 
-print_r($response);
+// // Pega o RAW data da requisição
+// $json = file_get_contents('php://input');
+// // Converte os dados recebidos
+// $response = json_decode($json, true);
+
+// echo '<pre>';
+// print_r($response);
+// echo '</pre>';
 
 
 ?>
