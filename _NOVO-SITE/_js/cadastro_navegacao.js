@@ -66,8 +66,8 @@ $(document).ready(function(){
       }
       document.getElementById("dt_nascimento-maior").value = nascimento;
       document.getElementById("dt_nasc_responsavel").value = nascimento;
-      document.getElementById("input-hidden-cartao-data_nascimento").value = nascimento;
       document.getElementById("input-hidden-boleto-data_nascimento").value = nascimento;
+      document.getElementById("input-hidden-cartao-data_nascimento").value = nascimento;
       swiper.unlockSwipeToNext();
       swiper.slideNext();
       percentage = "5%";
@@ -128,8 +128,8 @@ $(document).ready(function(){
     previousPercentage = "10%";
     stopTransition();
     sexo("M");
-    $('#input-hidden-cartao-email').val($('#email-vazio').val());
     $('#input-hidden-boleto-email').val($('#email-vazio').val());
+    $('#input-hidden-cartao-email').val($('#email-vazio').val());
   });
   $("#btn_sexo-maior-feminino").click(function(){
     // Ajax Cadastros
@@ -238,14 +238,13 @@ $(document).ready(function(){
       $('#input-hidden-cartao-bairro').val($('#bairro_value').val());
       $('#input-hidden-cartao-cidade').val($('#cidade_value').val());
       $('#input-hidden-cartao-uf').val($('#uf_value').val());
-      // Atualiza dados titular boleto
+      //atualiza dados boleto
       $('#input-hidden-boleto-data_nascimento').val($('#dt_nascimento-maior').val());
       $('#input-hidden-boleto-cep').val($('#cep-maior').val());
       $('#input-hidden-boleto-endereco').val($('#endereco_value').val());
       $('#input-hidden-boleto-bairro').val($('#bairro_value').val());
       $('#input-hidden-boleto-cidade').val($('#cidade_value').val());
       $('#input-hidden-boleto-uf').val($('#uf_value').val());
-      // console.log($('#input-hidden-cartao-uf').val());
     });
   });
 
@@ -304,18 +303,18 @@ $(document).ready(function(){
         });
         return false;
       });
-      $('#input-hidden-cartao-data_nascimento').val($('#dt_nasc_responsavel').val());
-      $('#input-hidden-cartao-cep').val($('#cep-maior').val());
-      $('#input-hidden-cartao-endereco').val($('#endereco_value').val());
-      $('#input-hidden-cartao-bairro').val($('#bairro_value').val());
-      $('#input-hidden-cartao-cidade').val($('#cidade_value').val());
-      $('#input-hidden-cartao-uf').val($('#uf_value').val());
       $('#input-hidden-boleto-data_nascimento').val($('#dt_nasc_responsavel').val());
       $('#input-hidden-boleto-cep').val($('#cep-maior').val());
       $('#input-hidden-boleto-endereco').val($('#endereco_value').val());
       $('#input-hidden-boleto-bairro').val($('#bairro_value').val());
       $('#input-hidden-boleto-cidade').val($('#cidade_value').val());
       $('#input-hidden-boleto-uf').val($('#uf_value').val());
+      $('#input-hidden-cartao-data_nascimento').val($('#dt_nasc_responsavel').val());
+      $('#input-hidden-cartao-cep').val($('#cep-maior').val());
+      $('#input-hidden-cartao-endereco').val($('#endereco_value').val());
+      $('#input-hidden-cartao-bairro').val($('#bairro_value').val());
+      $('#input-hidden-cartao-cidade').val($('#cidade_value').val());
+      $('#input-hidden-cartao-uf').val($('#uf_value').val());
     });
   });
   $("#ok_cpf-maior").click(function(){
@@ -339,10 +338,11 @@ $(document).ready(function(){
       });
       return false;
     });
-    $('#input-hidden-cartao-cpf_titular').val($('#cpf-maior').val());
-    $('#input-hidden-cartao-nome_titular').val($('#nome-cpf_value').val());
     $('#input-hidden-boleto-cpf_titular').val($('#cpf-maior').val());
     $('#input-hidden-boleto-nome_titular').val($('#nome-cpf_value').val());
+    $('#input-hidden-cartao-cpf_titular').val($('#cpf-maior').val());
+    $('#input-hidden-cartao-nome_titular').val($('#nome-cpf_value').val());
+    // console.log($('#input-hidden-boleto-nome_titular').val());
   });
   $("#ok_cel").click(function(){
     document.getElementById("03-1-04_qual-o-cep-da-sua-residencia").classList.remove("display_none");
@@ -365,10 +365,10 @@ $(document).ready(function(){
       });
       return false;
     });
-    $('#input-hidden-cartao-DDD').val($('#ddd-cel-value').val());
-    $('#input-hidden-cartao-cel').val($('#numero-cel-value').val());
     $('#input-hidden-boleto-DDD').val($('#ddd-cel-value').val());
     $('#input-hidden-boleto-cel').val($('#numero-cel-value').val());
+    $('#input-hidden-cartao-DDD').val($('#ddd-cel-value').val());
+    $('#input-hidden-cartao-cel').val($('#numero-cel-value').val());
   });
   $("#btn_cor-da-pele-maior").click(function(){
     // event.preventDefault();
@@ -904,17 +904,13 @@ $(document).ready(function(){
     $(".requerido").fadeOut(200);
   });
   $("#btn_cadastro-gratuito").click(function(){
-    // event.preventDefault();
     if(!$("#terms-1").is(":checked")){
       $(".requerido").fadeIn(200);
-      // event.preventDefault();
     }
     if($("#terms-1").is(":checked")){
-      // event.preventDefault();
       document.getElementById("05-1-02_perfeito-para-quem-tem-drt").className += " display_none";
       document.getElementById("05-1-03_assista-ao-video").classList.remove("display_none");
       swiper.unlockSwipeToNext();
-      // swiper.slideTo( $("#05-1-03_assista-ao-video").index(), 200);
       swiper.slideNext();
       percentage = "70%";
       previousPercentage = "60%";
@@ -927,7 +923,6 @@ $(document).ready(function(){
           url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
-            // event.preventDefault();
           }
         });
         return false;
@@ -995,10 +990,8 @@ $(document).ready(function(){
     $(".voltar").css("opacity", "0");
   });
   $("#btn_cadastro-premium").click(function(){
-    // event.preventDefault();
     if(!$("#terms-3").is(":checked")){
       $(".requerido").fadeIn(200);
-      // event.preventDefault();
     }
     if($("#terms-3").is(":checked")){
       document.getElementById("05-2-02_ideal-para-quem-trabalha-muito").className += " display_none";
@@ -1011,24 +1004,24 @@ $(document).ready(function(){
           url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
-            // event.preventDefault();
           }
         });
         return false;
       });
       swiper.unlockSwipeToNext();
-      // swiper.slideTo( $("#05-2-03_desconto-para-horario-pre-fixado").index(), 200);
       swiper.slideNext();
       percentage = "65%";
       previousPercentage = "60%";
       stopTransition();
+      document.getElementById("input-hidden-boleto-produto").value = "Cadastro Premium";
+      document.getElementById("input-hidden-boleto-valor").value = "29900";
+      document.getElementById("input-hidden-cartao-produto").value = "Cadastro Premium";
+      document.getElementById("input-hidden-cartao-valor").value = "29900";
     }
   });
   $("#btn_cadastro-profissional").click(function(){
-    // event.preventDefault();
     if(!$("#terms-4").is(":checked")){
       $(".requerido").fadeIn(200);
-      // event.preventDefault();
     }
     if($("#terms-4").is(":checked")){
       document.getElementById("05-2-01_mais-chances-de-trabalhar").className += " display_none";
@@ -1041,17 +1034,19 @@ $(document).ready(function(){
           url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
-            // event.preventDefault();
           }
         });
         return false;
       });
       swiper.unlockSwipeToNext();
-      // swiper.slideTo( $("#05-2-03_desconto-para-horario-pre-fixado").index(), 200);
       swiper.slideNext();
       percentage = "65%";
       previousPercentage = "60%";
       stopTransition();
+      document.getElementById("input-hidden-boleto-produto").value = "Cadastro Profissional";
+      document.getElementById("input-hidden-boleto-valor").value = "99900";
+      document.getElementById("input-hidden-cartao-produto").value = "Cadastro Profissional";
+      document.getElementById("input-hidden-cartao-valor").value = "99900";
     }
   });
   $("#btn_aceito-data-desconto").click(function(){
@@ -1059,21 +1054,17 @@ $(document).ready(function(){
     document.getElementById("05-2-04_escolha-o-horario-da-sessao-de-fotos").className += " display_none";
     document.getElementById("05-2-05_complete-o-seu-endereco").classList.remove("display_none");
     swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#05-2-05_complete-o-seu-endereco").index(), 200);
     swiper.slideNext();
     percentage = "70%";
     previousPercentage = "65%";
     stopTransition();
-    document.getElementById("input_desconto-cartao").value = "5";
-    document.getElementById("input_desconto-boleto").value = "5";
-    document.getElementById("valor-pagar-cartao").html = "284,05";
-    document.getElementById("valor-pagar-boleto").html = "284,05";
+    document.getElementById("input-hidden-boleto-desconto").value = 5;
+    document.getElementById("input-hidden-cartao-desconto").value = 5;
   });
   $("#btn_nao-posso-nesse-horario").click(function(){
     event.preventDefault();
     document.getElementById("05-2-04_escolha-o-horario-da-sessao-de-fotos").classList.remove("display_none");
     swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#05-2-04_escolha-o-horario-da-sessao-de-fotos").index(), 200);
     swiper.slideNext();
     percentage = "67%";
     previousPercentage = "65%";
@@ -1090,12 +1081,16 @@ $(document).ready(function(){
     stopTransition();
   });
   $("#btn_completa-endereco").click(function(){
+    $('#input-hidden-boleto-numero').val($('#input_numero-value').val());
+    $('#input-hidden-boleto-complemento').val($('#input_complemento-value').val());
+    $('#input-hidden-cartao-numero').val($('#input_numero-value').val());
+    $('#input-hidden-cartao-complemento').val($('#input_complemento-value').val());
     jQuery("form").submit(function(){
       var dados = jQuery(this).serialize();
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -1105,37 +1100,33 @@ $(document).ready(function(){
     });
     document.getElementById("05-2-06_qual-a-forma-de-pagamento").classList.remove("display_none");
     swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#05-2-06_qual-a-forma-de-pagamento").index(), 200);
     swiper.slideNext();
     percentage = "75%";
     previousPercentage = "70%";
     stopTransition();
-    $('#input-hidden-cartao-numero').val($('#input_numero-value').val());
-    $('#input-hidden-cartao-complemento').val($('#input_complemento-value').val());
-    $('#input-hidden-boleto-numero').val($('#input_numero-value').val());
-    $('#input-hidden-boleto-complemento').val($('#input_complemento-value').val());
   });
   $("#btn_cartao-de-credito").click(function(){
     event.preventDefault();
+    document.getElementById("input-hidden-cartao-forma_pagamento").value = "Cartão de Crédito";
     document.getElementById("05-2-08_pagamento-via-boleto-bancario").className += " display_none";
     document.getElementById("05-2-07_voce-e-o-titular-do-carta-de-credito").classList.remove("display_none");
     swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#05-2-07_voce-e-o-titular-do-carta-de-credito").index(), 200);
     swiper.slideNext();
     percentage = "80%";
     previousPercentage = "75%";
     stopTransition();
   });
   $("#btn_boleto-bancario").click(function(){
-    jQuery("form").submit(function(){
+    document.getElementById("input-hidden-boleto-desconto").value = parseInt(document.getElementById("input-hidden-boleto-desconto").value) + 5;
+    document.getElementById("input-hidden-boleto-forma_pagamento").value = "Boleto Bancário";
+    jQuery("#form-boleto").submit(function(){
       var dados = jQuery(this).serialize();
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "../_api/moip/boleto.php",
+        url: "../_api/moip/moip.php",
         data: dados,
         success: function( data ) {
-          // $('#link_boleto').html("<a href='" + data + "' target='_blank'>Imprimir Boleto</a>");
           $("#link_boleto").click(function(){
             window.open(data,"_blank","height=400,width=280");
             event.preventDefault();
@@ -1181,19 +1172,6 @@ $(document).ready(function(){
     percentage = "85%";
     previousPercentage = "80%";
     stopTransition();
-    document.getElementById("input-hidden-cartao-data_nascimento").value = "";
-    document.getElementById("input-hidden-cartao-email").value = "";
-    document.getElementById("input-hidden-cartao-cpf_titular").value = "";
-    document.getElementById("input-hidden-cartao-nome_titular").value = "";
-    document.getElementById("input-hidden-cartao-DDD").value = "";
-    document.getElementById("input-hidden-cartao-cel").value = "";
-    document.getElementById("input-hidden-cartao-cep").value = "";
-    document.getElementById("input-hidden-cartao-endereco").value = "";
-    document.getElementById("input-hidden-cartao-bairro").value = "";
-    document.getElementById("input-hidden-cartao-cidade").value = "";
-    document.getElementById("input-hidden-cartao-uf").value = "";
-    document.getElementById("input-hidden-cartao-numero").value = "";
-    document.getElementById("input-hidden-cartao-complemento").value = "";
   });
   $("#btn_dados-titular-cartao").click(function(){
     event.preventDefault();
@@ -1209,12 +1187,6 @@ $(document).ready(function(){
     $('#input-hidden-cartao-nome_titular').val($('#nome_completo-titular').val());
     $('#input-hidden-cartao-DDD').val($('#DDD-titular').val());
     $('#input-hidden-cartao-cel').val($('#cel-titular').val());
-    $('#input-hidden-boleto-data_nascimento').val($('#data_nascimento-titular').val());
-    $('#input-hidden-boleto-email').val($('#email-titular').val());
-    $('#input-hidden-boleto-cpf_titular').val($('#cpf-titular').val());
-    $('#input-hidden-boleto-nome_titular').val($('#nome_completo-titular').val());
-    $('#input-hidden-boleto-DDD').val($('#DDD-titular').val());
-    $('#input-hidden-boleto-cel').val($('#cel-titular').val());
   });
   $("#btn_endereco-titular-cartao").click(function(){
     event.preventDefault();
@@ -1231,15 +1203,8 @@ $(document).ready(function(){
     $('#input-hidden-cartao-uf').val($('#uf-titular').val());
     $('#input-hidden-cartao-numero').val($('#numero-casa-titular').val());
     $('#input-hidden-cartao-complemento').val($('#complemento-titular').val());
-    $('#input-hidden-boleto-cep').val($('#cep-titular').val());
-    $('#input-hidden-boleto-endereco').val($('#endereco-titular').val());
-    $('#input-hidden-boleto-bairro').val($('#bairro-titular').val());
-    $('#input-hidden-boleto-cidade').val($('#cidade-titular').val());
-    $('#input-hidden-boleto-uf').val($('#uf-titular').val());
-    $('#input-hidden-boleto-numero').val($('#numero-casa-titular').val());
-    $('#input-hidden-boleto-complemento').val($('#complemento-titular').val());
   });
-  $("#sendToMoip").click(function(){
+  $("#btn_pagar-com-cartao-de-credito").click(function(){
     var validade = $('#validade-cartao').val();
     var split = validade.split("/");
     var month = split[0];
@@ -1251,20 +1216,17 @@ $(document).ready(function(){
       expYear : year,
       pubKey  : $("#public_key").val()
     });
-    // console.log(cc);
     if(cc.isValid()){
       $("#encrypted_value").val(cc.hash());
       $("#card_type").val(cc.cardType());
-      jQuery("form").submit(function(){
+      jQuery("#form-cartao").submit(function(){
         var dados = jQuery(this).serialize();
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "../_api/moip/pagamento-cartao.php",
+          url: "../_api/moip/moip.php",
           data: dados,
           success: function( data ) {
-            // console.log('dados enviados: ' + dados);
-            // event.preventDefault();
             document.getElementById("05-2-12_cadastro-agendado").classList.remove("display_none");
             swiper.unlockSwipeToNext();
             swiper.slideNext();

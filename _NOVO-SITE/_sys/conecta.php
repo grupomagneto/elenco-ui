@@ -1,4 +1,10 @@
-<?php header('Content-Type: text/html; charset=utf-8');
+<?php
+if(!session_id()) {
+  session_start();
+}
+setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+date_default_timezone_set('America/Sao_Paulo');
+header('Content-Type: text/html; charset=utf-8');
 // DB Online
 // $user = 'vinigoulart1';
 // $password = 'ThM]HETPv@';
@@ -15,7 +21,7 @@
 // );
 // mysqli_set_charset($link,"utf8");
 // // Configura a timezone do DB
-// mysqli_query($link, "SET time_zone='-03:00'");
+// mysqli_query($link, "SET @@session.time_zone ='-03:00'");
 // // DB 2 Online
 // $user2 = 'elencooriginal';
 // $password2 = 'M@g3l3nc0_0962';
@@ -31,7 +37,7 @@
 //   $db2
 // );
 // mysqli_set_charset($link2,"utf8");
-
+// mysqli_query($link2, "SET @@session.time_zone ='-03:00'");
 // Localhost 1
 $user = 'root';
 $password = 'root';
@@ -47,7 +53,7 @@ $success = mysqli_real_connect(
   $db
 );
 mysqli_set_charset($link,"utf8");
-mysqli_query($link, "SET time_zone='-03:00'");
+mysqli_query($link, "SET @@session.time_zone ='-03:00'");
 // Localhost 2
 $user2 = 'root';
 $password2 = 'root';
@@ -63,4 +69,5 @@ $success2 = mysqli_real_connect(
   $db2
 );
 mysqli_set_charset($link2,"utf8");
+mysqli_query($link2, "SET @@session.time_zone ='-03:00'");
 ?>

@@ -337,12 +337,12 @@ margin-top: -3px;
 margin-left: 5px;
 text-align: left;
 }
-input.numero-casa{
-width: 50px;
-margin-right: 10px;
-}
 input.complemento{
 width: 150px;
+margin-right: 10px;
+}
+input.numero-casa{
+width: 50px;
 }
 input.cidade{
 width: 150px;

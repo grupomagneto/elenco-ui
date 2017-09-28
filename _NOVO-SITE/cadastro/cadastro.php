@@ -10,7 +10,6 @@ if (!empty($_SESSION['id_elenco'])) {
   require '../_sys/functions.php';
   require 'ajax/busca_horario.php';
   $id_elenco = $_SESSION['id_elenco'];
-  date_default_timezone_set('America/Sao_Paulo');
   $hoje = date('Y-m-d', time());
   $timestamp = date('Y-m-d H:i:s', time());
   if (!empty($_SERVER['HTTP_CLIENT_IP'])) {

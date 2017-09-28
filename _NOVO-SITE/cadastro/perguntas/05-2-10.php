@@ -15,10 +15,10 @@
                     <input type="text" id="endereco-titular" class="input-field inputs" value="" placeholder="Endereço" required />
                 </div>
                 <div class="descricao-inputs">
-                    <span class="texto_input">NÚMERO:</span>
-                    <input type="text" id="numero-casa-titular" class="input-field inputs numero-casa" value="" placeholder="Nº" required />
                     <span class="texto_input">COMPLEMENTO:</span>
                     <input type="text" id="complemento-titular" class="input-field inputs complemento" value="" placeholder="Complemento" required />
+                    <span class="texto_input">NÚMERO:</span>
+                    <input type="text" id="numero-casa-titular" class="input-field inputs numero-casa" value="" placeholder="Nº" required />
                 </div>
                 <div class="descricao-inputs">
                     <span class="texto_input">BAIRRO:</span>

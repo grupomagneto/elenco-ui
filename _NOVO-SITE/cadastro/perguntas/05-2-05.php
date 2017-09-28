@@ -19,14 +19,14 @@
                 </div>
                 <div class="endereco-inputs">
                     <div class="descricao-inputs">
-                        <span class='texto_input'>NÚMERO:</span>
-                        <input type="hidden" id="input_numero-field" name="field" value="numero" />
-                        <input type='text' id="input_numero-value" name='value' class="input-field inputs numero-casa" value='' placeholder='Nº' required />
-                    </div>
-                    <div class="descricao-inputs">
                         <span class='texto_input'>COMPLEMENTO:</span>
                         <input type="hidden" id="input_complemento-field" name="field2" value="complemento" />
                         <input type='text' id="input_complemento-value" name='value2' class="input-field inputs complemento" value='' placeholder='Complemento' required />
+                    </div>
+                    <div class="descricao-inputs">
+                        <span class='texto_input'>NÚMERO:</span>
+                        <input type="hidden" id="input_numero-field" name="field" value="numero" />
+                        <input type='text' id="input_numero-value" name='value' class="input-field inputs numero-casa" value='' placeholder='Nº' required />
                     </div>
                 </div>
             </div>

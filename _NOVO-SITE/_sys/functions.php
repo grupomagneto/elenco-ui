@@ -141,4 +141,20 @@ function proximoHorario($data) {
   $return = $diaSemana.", ".$novoDia." de ".$novoMes." às ".$horario;
   $_SESSION['prox_horario'] = $return;
 }
+function vencimentoBoleto($data) {
+  // Verifica se não é domingo nem feriado
+  $check_holiday = var_export(verificarFeriado($data), true);
+  if (date('N', strtotime($data)) != 7 && $check_holiday == 'false') {
+    $result = $data;
+  }
+  // Se for domingo ou feriado, adiciona 01 dia até ser um dia de trabalho válido
+  else {
+    while (date('N', strtotime($data)) == 7 || $check_holiday != 'false') {
+      $data = date('Y-m-d', strtotime($data . ' +1 day'));
+      $check_holiday = var_export(verificarFeriado($data), true);
+    }
+    $result = $data;
+  }
+  return $result;
+}
 ?>

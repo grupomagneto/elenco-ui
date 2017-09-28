@@ -1,4 +1,4 @@
-<form action="#" method="post">
+<form id="form-cartao" action="#" method="post">
   <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
       <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
           <div class='titulo heavy white large'>
@@ -39,7 +39,7 @@
                     <input type="hidden" name="data_nascimento" id="input-hidden-cartao-data_nascimento" value="" />
                     <input type="hidden" name="email" id="input-hidden-cartao-email" value="<?php echo $_SESSION['email']; ?>" />
                     <input type="hidden" name="cpf_titular" id="input-hidden-cartao-cpf_titular" value="" />
-                    <input type="hidden" name="nome_titular" id="input-hidden-cartao-nome_titular" value="" />
+                    <input type="hidden" name="nome_pagador" id="input-hidden-cartao-nome_titular" value="" />
                     <input type="hidden" name="DDD" id="input-hidden-cartao-DDD" value="" />
                     <input type="hidden" name="cel" id="input-hidden-cartao-cel" value="" />
                     <input type="hidden" name="cep" id="input-hidden-cartao-cep" value="" />
@@ -49,15 +49,16 @@
                     <input type="hidden" name="uf" id="input-hidden-cartao-uf" value="" />
                     <input type="hidden" name="numero" id="input-hidden-cartao-numero" value="" />
                     <input type="hidden" name="complemento" id="input-hidden-cartao-complemento" value="" />
+                    <input type="hidden" name="produto" id="input-hidden-cartao-produto" value="" />
+                    <input type="hidden" name="valor" id="input-hidden-cartao-valor" value="" />
+                    <input type="hidden" name="forma_pagamento" id="input-hidden-cartao-forma_pagamento" value="" />
+                    <input type="hidden" name="desconto" id="input-hidden-cartao-desconto" value="0" />
                     <input type="hidden" name="encrypted_value" id="encrypted_value" value="" />
-                    <input type="hidden" name="produto" id="input_produto-cartao" value="" />
-                    <input type="hidden" name="valor" id="input_valor-cartao" value="" />
-                    <input type="hidden" name="desconto" id="input_desconto-cartao" value="" />
                 </div>
               </div>
           </div>
           <div class='botoes'>
-              <button class='botao' id='sendToMoip'>Pagar R$ <span id="valor-pagar-cartao" class="valor_pagar"></span></button>
+              <button class='botao' id='btn_pagar-com-cartao-de-credito'>Pagar R$ <span id="valor-pagar-cartao" class="valor_pagar"></span></button>
               <div class='moip'>
                 <a href='http://www.moip.com.br' target='_blank'><img src='../_images/moip167px.png' /></a>
               </div>
