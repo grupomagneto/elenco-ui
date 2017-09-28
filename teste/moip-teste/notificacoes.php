@@ -36,12 +36,7 @@ print_r($array);
 echo '</pre>';
 
 echo '<br />';
-//navega pelos elementos do array, imprimindo cada id
-$id = $array['id']['ORD-432BJUHRZN43'];
-echo $id;
 
-$resourceId = $array['resourceId']['PAY-JVDTVDONUFKG'];
-echo $resourceId;
 
 
 ?>
