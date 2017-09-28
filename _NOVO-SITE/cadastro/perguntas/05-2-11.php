@@ -58,7 +58,7 @@
               </div>
           </div>
           <div class='botoes'>
-              <button class='botao' id='btn_pagar-com-cartao-de-credito'>Pagar R$ <span id="valor-pagar-cartao" class="valor_pagar"></span></button>
+              <button class='botao' id='btn_pagar-com-cartao-de-credito'><span id="valor-pagar-cartao" class="valor_pagar"></span></button>
               <div class='moip'>
                 <a href='http://www.moip.com.br' target='_blank'><img src='../_images/moip167px.png' /></a>
               </div>

@@ -11,6 +11,8 @@ if (!empty($_SESSION['id_elenco'])) {
   require 'ajax/busca_horario.php';
   $id_elenco = $_SESSION['id_elenco'];
   $hoje = date('Y-m-d', time());
+  $vencimento_boleto = vencimentoBoleto($hoje);
+  $vencimento_boleto = date("d/m/Y", strtotime($vencimento_boleto));
   $timestamp = date('Y-m-d H:i:s', time());
   if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
       $ip = $_SERVER['HTTP_CLIENT_IP'];

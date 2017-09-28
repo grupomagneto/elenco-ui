@@ -1107,6 +1107,16 @@ $(document).ready(function(){
   });
   $("#btn_cartao-de-credito").click(function(){
     event.preventDefault();
+    if (document.getElementById("input-hidden-cartao-desconto").value == "0") {
+      var valor = parseInt(document.getElementById("input-hidden-cartao-valor").value) * 0.01;
+      valor = valor.toFixed(2).toString().replace(".", ",");
+      document.getElementById("valor-pagar-cartao").innerHTML = "PAGAR (R$ " + valor + ")";
+    }
+    if (document.getElementById("input-hidden-cartao-desconto").value == "5") {
+      var valor = parseInt(document.getElementById("input-hidden-cartao-valor").value) * 0.0095;
+      valor = valor.toFixed(2).toString().replace(".", ",");
+      document.getElementById("valor-pagar-cartao").innerHTML = "PAGAR (R$ " + valor + ")";
+    }
     document.getElementById("input-hidden-cartao-forma_pagamento").value = "Cartão de Crédito";
     document.getElementById("05-2-08_pagamento-via-boleto-bancario").className += " display_none";
     document.getElementById("05-2-07_voce-e-o-titular-do-carta-de-credito").classList.remove("display_none");
@@ -1119,6 +1129,16 @@ $(document).ready(function(){
   $("#btn_boleto-bancario").click(function(){
     document.getElementById("input-hidden-boleto-desconto").value = parseInt(document.getElementById("input-hidden-boleto-desconto").value) + 5;
     document.getElementById("input-hidden-boleto-forma_pagamento").value = "Boleto Bancário";
+    if (document.getElementById("input-hidden-boleto-desconto").value == 5) {
+      var valor = parseInt(document.getElementById("input-hidden-boleto-valor").value) * 0.0095;
+      valor = valor.toFixed(2).toString().replace(".", ",");
+      document.getElementById("valor-pagar-boleto").innerHTML = valor;
+    }
+    if (document.getElementById("input-hidden-boleto-desconto").value == 10) {
+      var valor = parseInt(document.getElementById("input-hidden-boleto-valor").value) * 0.009;
+      valor = valor.toFixed(2).toString().replace(".", ",");
+      document.getElementById("valor-pagar-boleto").innerHTML = valor;
+    }
     jQuery("#form-boleto").submit(function(){
       var dados = jQuery(this).serialize();
       jQuery.ajax({
