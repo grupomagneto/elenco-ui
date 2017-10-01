@@ -1064,6 +1064,7 @@ $(document).ready(function(){
   $("#btn_nao-posso-nesse-horario").click(function(){
     event.preventDefault();
     document.getElementById("05-2-04_escolha-o-horario-da-sessao-de-fotos").classList.remove("display_none");
+    document.getElementById("horario_agendado").innerHTML = "";
     swiper.unlockSwipeToNext();
     swiper.slideNext();
     percentage = "67%";

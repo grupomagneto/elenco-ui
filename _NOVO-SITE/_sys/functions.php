@@ -98,16 +98,44 @@ function proximoHorario($data) {
           $hora = 14;
         }
         if ($hora >= 19) {
-          $result = date('Y-m-d', strtotime($result . ' +1 day'));
-          $hora = "09";
-          $minutos = "00";
+          // Se for sexta, joga para segunda
+          if (date('N', strtotime($data)) == 5){
+            $result = date('Y-m-d', strtotime($result . ' +3 day'));
+            $hora = "09";
+            $minutos = "00";
+          }
+          // Se for sábado, joga para segunda
+          if (date('N', strtotime($data)) == 6){
+            $result = date('Y-m-d', strtotime($result . ' +2 day'));
+            $hora = "09";
+            $minutos = "00";
+          }
+          else {
+            $result = date('Y-m-d', strtotime($result . ' +1 day'));
+            $hora = "09";
+            $minutos = "00";
+          }
         }
       }
     }
     else {
-      $result = date('Y-m-d', strtotime($result . ' +1 day'));
-      $hora = "09";
-      $minutos = "00";
+      // Se for sexta, joga para segunda
+      if (date('N', strtotime($data)) == 5){
+        $result = date('Y-m-d', strtotime($result . ' +3 day'));
+        $hora = "09";
+        $minutos = "00";
+      }
+      // Se for sábado, joga para segunda
+      if (date('N', strtotime($data)) == 6){
+        $result = date('Y-m-d', strtotime($result . ' +2 day'));
+        $hora = "09";
+        $minutos = "00";
+      }
+      else {
+        $result = date('Y-m-d', strtotime($result . ' +1 day'));
+        $hora = "09";
+        $minutos = "00";
+      }
     }
     $horario = $hora.":".$minutos;
   }

@@ -300,6 +300,30 @@ $(function(){
       $('.ok').hide();
     }
   });
+  $('#cpf-titular').keyup(function() {
+    if ($.trim(this.value).length == 14) {
+      var cpf = $(this).val();
+      if (validCPF(cpf) && /^\d{2}\/\d{2}\/\d{4}$/) {
+        if ( CPF.validate($(this).val()) === true ) {
+          $.bipbop("SELECT FROM 'BIPBOPJS'.'CPFCNPJ'", BIPBOP_FREE, {
+            data: {
+                documento: cpf
+            },
+            success: function(data) {
+                var nome = $(data).find("body nome").text().toLowerCase();
+                nome = ucFirstAllWords(nome);
+                $("#nome_completo-titular").val(nome);
+            }
+          });
+        } else {
+          alert('CPF inválido!');
+        }
+      }
+    }
+    else {
+      // Antes de 14 dígitos
+    }
+  });
 });
 // Checa se o celular está correto
 $('.input_celular').keyup(function() {
@@ -325,6 +349,9 @@ $('.input_ddd').keyup(function() {
 		$('.ok').hide();
 	}
 });
+$('.telefone-titular').keyup(function() {
+  $(".telefone-titular").mask("0 0000 0000");
+});
 // Checa se o CEP está correto
 function meu_callback(conteudo) {
     if (!("erro" in conteudo)) {
@@ -344,16 +371,16 @@ function meu_callback(conteudo) {
         $("#confirma-endereco").html(endereco);
         $("#confirma-bairro").html(bairro);
         $("#confirma-cidade-uf").html(cidade + "-" + uf);
-		$('.status').show();
-		$('.valido').show();
+    		$('.status').show();
+    		$('.valido').show();
     } //end if.
     else {
         //CEP não Encontrado.
         $('.ok').hide();
         var mensagem = "CEP não encontrado";
         $(".status").text(mensagem);
-		$('.status').show();
-		$('.invalido').show();
+    		$('.status').show();
+    		$('.invalido').show();
         // console.log(mensagem);
         // alert("CEP não encontrado.");
     }
@@ -403,6 +430,60 @@ $('.cep').keyup(function() {
 		$('.valido').hide();
 		$('.invalido').hide();
 	}
+});
+function meu_callback_2(conteudo) {
+    if (!("erro" in conteudo)) {
+        //Atualiza os campos com os valores.
+        var endereco = (conteudo.logradouro);
+        var bairro = (conteudo.bairro);
+        var cidade = (conteudo.localidade);
+        var uf = (conteudo.uf);
+        $("#bairro-titular").val(bairro);
+        $("#cidade-titular").val(cidade);
+        $("#uf-titular").val(uf);
+        $("#endereco-titular").val(endereco);
+    } //end if.
+    else {
+        //CEP não Encontrado.
+        alert("CEP inválido");
+    }
+}
+
+function pesquisacep_titular(valor) {
+    //Nova variável "cep" somente com dígitos.
+    var cep = valor.replace(/\D/g, '');
+    //Verifica se campo cep possui valor informado.
+    if (cep != "") {
+        //Expressão regular para validar o CEP.
+        var validacep = /^[0-9]{8}$/;
+        //Valida o formato do CEP.
+        if(validacep.test(cep)) {
+            //Cria um elemento javascript.
+            var script = document.createElement('script');
+            //Sincroniza com o callback.
+            script.src = '//viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback_2';
+            //Insere script no documento e carrega o conteúdo.
+            document.body.appendChild(script);
+        } //end if.
+        else {
+            //cep é inválido.
+            alert("Formato de CEP inválido.");
+        }
+    } //end if.
+    else {
+        //cep sem valor, limpa formulário.
+        $("#bairro-titular").val('');
+        $("#cidade-titular").val('');
+        $("#uf-titular").val('');
+        $("#endereco-titular").val('');
+    }
+};
+$('#cep-titular').keyup(function() {
+  $("#cep-titular").mask("00.000-000");
+  if ($.trim(this.value).length == 10) {
+    var cep = $("#cep-titular").val();
+    pesquisacep_titular(cep);
+  }
 });
 $('#numero-cartao-de-credito').keyup(function() {
   $("#numero-cartao-de-credito").mask("0000 0000 0000 0000");

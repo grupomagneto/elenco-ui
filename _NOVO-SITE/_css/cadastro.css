@@ -365,6 +365,17 @@ input.parcelas{
 width:50px;
 margin-bottom: 10px;
 }
+input.telefone-titular{
+width: 150px;
+
+}
+input.ddd-titular{
+width: 50px;
+margin-right: 10px;
+}
+input.ddd-titular::-webkit-input-placeholder{
+background: transparent;
+}
 /*
 .select-dropdown-hidden{
 width:0px;
