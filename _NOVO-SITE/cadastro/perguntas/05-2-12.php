@@ -4,8 +4,8 @@
         Cadastro agendado!
         </div>
         <div class="subtitulo avenir white small">
-            Tudo certo com seu pré-cadastro, agora só falta sua sessão de fotos:
-            <div class="data-agendamento heavy medium" id="horario_agendado">
+            Tudo certo com seu pré-cadastro, agora só falta sua sessão de fotos:<BR /><BR />
+            <div class="heavy medium" id="horario_agendado">
               <?php echo $data_desconto; ?>
             </div>
         </div>

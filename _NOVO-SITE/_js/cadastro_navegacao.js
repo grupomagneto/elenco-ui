@@ -1017,6 +1017,7 @@ $(document).ready(function(){
       document.getElementById("input-hidden-boleto-valor").value = "29900";
       document.getElementById("input-hidden-cartao-produto").value = "Cadastro Premium";
       document.getElementById("input-hidden-cartao-valor").value = "29900";
+      document.getElementById("input_tipo_ensaio").value = "Cadastro Premium";
     }
   });
   $("#btn_cadastro-profissional").click(function(){
@@ -1047,6 +1048,7 @@ $(document).ready(function(){
       document.getElementById("input-hidden-boleto-valor").value = "99900";
       document.getElementById("input-hidden-cartao-produto").value = "Cadastro Profissional";
       document.getElementById("input-hidden-cartao-valor").value = "99900";
+      document.getElementById("input_tipo_ensaio").value = "Cadastro Profissional";
     }
   });
   $("#btn_aceito-data-desconto").click(function(){
@@ -1072,10 +1074,21 @@ $(document).ready(function(){
     stopTransition();
   });
   $("#btn_novo-horario-fotos").click(function(){
-    event.preventDefault();
+    jQuery("#form_nova_data").submit(function(){
+      var dados_nova_data = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "../cadastro/ajax/agenda_horario.php",
+        data: dados_nova_data,
+        success: function( data ) {
+          document.getElementById("horario_agendado").innerHTML = data;
+        }
+      });
+      return false;
+    });
     document.getElementById("05-2-05_complete-o-seu-endereco").classList.remove("display_none");
     swiper.unlockSwipeToNext();
-    // swiper.slideTo( $("#05-2-05_complete-o-seu-endereco").index(), 200);
     swiper.slideNext();
     percentage = "70%";
     previousPercentage = "67%";

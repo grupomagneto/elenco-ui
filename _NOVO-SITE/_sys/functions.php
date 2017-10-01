@@ -60,7 +60,7 @@ function verificarFeriado($data, $boolean = false) {
     // Obtem dados da API
     $dados = json_decode(curl_exec($curl), true);
     // Encerra curl
-    curl_close($curl); 
+    curl_close($curl);
     // Retorna true/false se houver $boolean ou Nome_Do_Feriado/false se não houve $boolean
     return isset($dados['holidays']['0']) ? $boolean ? true : $dados['holidays']['0']['name'] : false;
 }
@@ -75,7 +75,7 @@ function proximoHorario($data) {
   if (date('N', strtotime($data)) != 7 && $check_holiday == 'false') {
     $result = $data;
     if ($hora >= 9 && $hora <= 18) {
-      //   $hora = $hora + 1;  
+      //   $hora = $hora + 1;
       if ($hora >= 12 && $hora < 14) {
         $hora = 14;
       }
@@ -168,6 +168,7 @@ function proximoHorario($data) {
   $novoAno = strftime('%Y', strtotime($result));
   $return = $diaSemana.", ".$novoDia." de ".$novoMes." às ".$horario;
   $_SESSION['prox_horario'] = $return;
+  $_SESSION['prox_horario_unformat'] = $result;
 }
 function vencimentoBoleto($data) {
   // Verifica se não é domingo nem feriado
