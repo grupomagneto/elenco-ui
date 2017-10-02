@@ -10,7 +10,7 @@
                   <?php
                   // Começa buscando o próximo dia e adiciona 7
                   $prox_data_unformat = proximoHorario($timestamp)['data_unformat'];
-                  $horario = proximoHorario($timestamp)['horario'];
+                  $escolheHorario = proximoHorario($timestamp)['horario'];
                   // Primeira opção
                   $data_desconto = strftime('%a %d de %b', strtotime($prox_data_unformat));
                   echo "<option value='$prox_data_unformat' selected>$data_desconto</option>";
@@ -29,31 +29,59 @@
                     echo "<option value='$verificaData'>$proxData</option>";
                     $n++;
                   }
+                  echo "</select>";
+                  // SELECT DA HORA
+                  $pieces_hora = explode(":", $escolheHorario);
+                  $hora_select = $pieces_hora[0];
+                  $minutos_select = $pieces_hora[1];
+                  $horaAgora = date('H', strtotime($timestamp));
+                  $minutosAgora = date('i', strtotime($timestamp));
+                  $h = 9;
+                  if ($minutosAgora <= 15 && $minutosAgora > 0) {
+                    $m = 15;
+                    $minutosAgora = 15;
+                  }
+                  if ($minutosAgora > 15 && $minutosAgora <= 30) {
+                    $m = 30;
+                    $minutosAgora = 30;
+                  }
+                  if ($minutosAgora > 30 && $minutosAgora <= 45) {
+                    $m = 45;
+                    $minutosAgora = 45;
+                  }
+                  if ($minutosAgora == "00" || $minutosAgora == 0 || ($minutosAgora > 45 && $minutosAgora <= 59)) {
+                    $m = "00";
+                    $minutosAgora = "00";
+                    $h++;
+                  }
+                  echo "<select class='drum-select list' id='hour' name='hour'>";
+                  while ($h < 19) {
+                    if ($horaAgora == $h) {
+                      echo "<option class='option' value='$h' selected>$h</option>";
+                    }
+                    if ($horaAgora != $h) {
+                      echo "<option class='option' value='$h'>$h</option>";
+                    }
+                    $h++;
+                  }
+                  echo "</select>";
+                  echo "<span class='dois-pontos'>:</span>";
+                  // SELECT DOS MINUTOS
+                  echo "<select class='drum-select list' id='minutes' name='minutes'>";
+                  while ($m < 59) {
+                    if ($minutosAgora == $m) {
+                      echo "<option class='option' value='$m' selected>$m</option>";
+                    }
+                    if ($minutosAgora != $m) {
+                      echo "<option class='option' value='$m'>$m</option>";
+                    }
+                    $m = $m + 15;
+                  }
+                  echo "</select>";
                   ?>
-              </select>
-              <select class='drum-select list' id='hour' name='hour'>
-                <option class='option' value='09' selected>09</option>
-                <option class='option' value='10'>10</option>
-                <option class='option' value='11'>11</option>
-                <option class='option' value='14'>14</option>
-                <option class='option' value='15'>15</option>
-                <option class='option' value='16'>16</option>
-                <option class='option' value='17'>17</option>
-                <option class='option' value='18'>18</option>
-              </select>
-
-            <span class="dois-pontos">:</span>
-
-              <select class="drum-select list" id="minutes" name="minutes">
-                <option class="option" value='00' selected>00</option>
-                <option class="option" value='15'>15</option>
-                <option class="option" value='30'>30</option>
-                <option class="option" value='45'>45</option>
-              </select>
           </section>
         </div>
         <div class='botoes'>
-          <?php echo $horario; ?>
             <input type="hidden" name="tipo_ensaio" id="input_tipo_ensaio" value="">
             <button id='btn_novo-horario-fotos' class='botao'>Continuar</button>
         </div>

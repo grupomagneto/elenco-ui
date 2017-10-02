@@ -1018,6 +1018,7 @@ $(document).ready(function(){
       document.getElementById("input-hidden-cartao-produto").value = "Cadastro Premium";
       document.getElementById("input-hidden-cartao-valor").value = "29900";
       document.getElementById("input_tipo_ensaio").value = "Cadastro Premium";
+      document.getElementById("input-hidden_discount-tipo_ensaio").value = "Cadastro Premium";
     }
   });
   $("#btn_cadastro-profissional").click(function(){
@@ -1049,10 +1050,23 @@ $(document).ready(function(){
       document.getElementById("input-hidden-cartao-produto").value = "Cadastro Profissional";
       document.getElementById("input-hidden-cartao-valor").value = "99900";
       document.getElementById("input_tipo_ensaio").value = "Cadastro Profissional";
+      document.getElementById("input-hidden_discount-tipo_ensaio").value = "Cadastro Profissional";
     }
   });
   $("#btn_aceito-data-desconto").click(function(){
-    event.preventDefault();
+    jQuery("#form_aceita-desconto").submit(function(){
+      var dados_data_desconto = jQuery(this).serialize();
+      jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "../cadastro/ajax/agenda_horario.php",
+        data: dados_data_desconto,
+        success: function( data ) {
+          document.getElementById("horario_agendado").innerHTML = data;
+        }
+      });
+      return false;
+    });
     document.getElementById("05-2-04_escolha-o-horario-da-sessao-de-fotos").className += " display_none";
     document.getElementById("05-2-05_complete-o-seu-endereco").classList.remove("display_none");
     swiper.unlockSwipeToNext();
@@ -1093,6 +1107,8 @@ $(document).ready(function(){
     percentage = "70%";
     previousPercentage = "67%";
     stopTransition();
+    document.getElementById("input-hidden-boleto-desconto").value = 0;
+    document.getElementById("input-hidden-cartao-desconto").value = 0;
   });
   $("#btn_completa-endereco").click(function(){
     $('#input-hidden-boleto-numero').val($('#input_numero-value').val());

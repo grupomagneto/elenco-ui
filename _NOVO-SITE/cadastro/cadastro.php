@@ -8,12 +8,12 @@ if (empty($_SESSION['id_elenco'])) {
 if (!empty($_SESSION['id_elenco'])) {
   require '../_sys/conecta.php';
   require '../_sys/functions.php';
-  require 'ajax/busca_horario.php';
   $id_elenco = $_SESSION['id_elenco'];
   $hoje = date('Y-m-d', time());
   $vencimento_boleto = vencimentoBoleto($hoje);
   $vencimento_boleto = date("d/m/Y", strtotime($vencimento_boleto));
   $timestamp = date('Y-m-d H:i:s', time());
+  require 'ajax/busca_horario.php';
   if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
       $ip = $_SERVER['HTTP_CLIENT_IP'];
   } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {

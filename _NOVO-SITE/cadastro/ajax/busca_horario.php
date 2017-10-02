@@ -13,11 +13,20 @@ $result = mysqli_query($link, $sql);
 if ($row = mysqli_fetch_array($result)) {
 	// Localiza os horários do dia
 	$data =  date('Y-m-d', strtotime($row['dh_agendamento']));
+	// SELECIONA O PRIMEIRO HORÁRIO AGENDADO
 	$sql2 = "SELECT dh_agendamento FROM tb_agenda WHERE DATE(dh_agendamento) = '$data' ORDER BY dh_agendamento ASC";
 	$result2 = mysqli_query($link, $sql2);
 	while ($row2 = mysqli_fetch_array($result2)) {
 		$horarioExistente = $row2['dh_agendamento'];
-		$proxHorarioTeste = date('Y-m-d H:i:s', strtotime($horarioExistente . ' +15 minute'));
+		// Verifica se existe algum horário possível antes adicionando 15 minutos
+		$horaProximoHorario =  date('H', strtotime($horarioExistente . ' +15 minute'));
+		if ($horaProximoHorario >= 9 && $horaProximoHorario < 12 && $horaProximoHorario >= 14 && $horaProximoHorario < 19) {
+			$proxHorarioTeste = date('Y-m-d H:i:s', strtotime($horarioExistente . ' +15 minute'));
+		}
+		// Se não tiver horário possível antes, subtrai 15 minutos
+		else {
+			$proxHorarioTeste = date('Y-m-d H:i:s', strtotime($horarioExistente . ' -15 minute'));
+		}
 		$hora = date('H', strtotime($proxHorarioTeste));
 		if ($hora >= 12 && $hora < 14) {
 	        $proxHorarioTeste = date('Y-m-d 14:00:00');
@@ -26,7 +35,7 @@ if ($row = mysqli_fetch_array($result)) {
 		$sql3 = "SELECT dh_agendamento FROM tb_agenda WHERE dh_agendamento = '$proxHorarioTeste'";
 		$result3 = mysqli_query($link, $sql3);
 		if (!$row3 = mysqli_fetch_array($result3)) {
-			$horarioResultante = date('Y-m-d H:i:s', strtotime($horarioExistente . ' +15 minute'));
+			$horarioResultante = $proxHorarioTeste;
 			break;
 		}
 	}
@@ -42,11 +51,21 @@ if ($row = mysqli_fetch_array($result)) {
 		$desconto = 5;
 	}
 	$data_desconto = proximoHorario($proxHorario)['data_format'];
+	$data_desconto_unformat = proximoHorario($proxHorario)['data_unformat'];
+	$horario = proximoHorario($proxHorario)['horario'];
+	$pieces = explode(':', $horario);
+	$hour = $pieces[0];
+	$minutes = $pieces[1];
 }
 // Se não tem horário agendado
 else {
 	// Localizar próximo sábado (??) ou adicionar uma hora de agora
 	$proxHorario = date('Y-m-d H:i:s', strtotime($agora . ' +1 hour'));
 	$data_desconto = proximoHorario($proxHorario)['data_format'];
+	$data_desconto_unformat = proximoHorario($proxHorario)['data_unformat'];
+	$horario = proximoHorario($proxHorario)['horario'];
+	$pieces = explode(':', $horario);
+	$hour = $pieces[0];
+	$minutes = $pieces[1];
 }
 ?>
