@@ -74,6 +74,7 @@ function proximoHorario($data) {
   $check_holiday = var_export(verificarFeriado($data), true);
   if (date('N', strtotime($data)) != 7 && $check_holiday == 'false') {
     $result = $data;
+    $result_original = $result;
     if ($hora >= 9 && $hora <= 18) {
       //   $hora = $hora + 1;
       if ($hora >= 12 && $hora < 14) {
@@ -103,17 +104,20 @@ function proximoHorario($data) {
             $result = date('Y-m-d', strtotime($result . ' +3 day'));
             $hora = "09";
             $minutos = "00";
+            $result_original = $result;
           }
           // Se for sábado, joga para segunda
           if (date('N', strtotime($data)) == 6){
             $result = date('Y-m-d', strtotime($result . ' +2 day'));
             $hora = "09";
             $minutos = "00";
+            $result_original = $result;
           }
           else {
             $result = date('Y-m-d', strtotime($result . ' +1 day'));
             $hora = "09";
             $minutos = "00";
+            $result_original = $result;
           }
         }
       }
@@ -124,14 +128,17 @@ function proximoHorario($data) {
         $result = date('Y-m-d', strtotime($result . ' +3 day'));
         $hora = "09";
         $minutos = "00";
+        $result_original = $result;
       }
       // Se for sábado, joga para segunda
       if (date('N', strtotime($data)) == 6){
         $result = date('Y-m-d', strtotime($result . ' +2 day'));
         $hora = "09";
         $minutos = "00";
+        $result_original = $result;
       }
       else {
+        $result_original = $result;
         $result = date('Y-m-d', strtotime($result . ' +1 day'));
         $hora = "09";
         $minutos = "00";
@@ -146,6 +153,7 @@ function proximoHorario($data) {
       $check_holiday = var_export(verificarFeriado($data), true);
     }
     $result = $data;
+    $result_original = $result;
     $horario = '09:00';
   }
   $hoje = date('Y-m-d');
@@ -167,8 +175,7 @@ function proximoHorario($data) {
   // $novoMes = strtolower($novoMes);
   $novoAno = strftime('%Y', strtotime($result));
   $return = $diaSemana.", ".$novoDia." de ".$novoMes." às ".$horario;
-  $_SESSION['prox_horario'] = $return;
-  $_SESSION['prox_horario_unformat'] = $result;
+  return array('data_format' => $return, 'data_unformat' => $result_original, 'horario' => $horario);
 }
 function vencimentoBoleto($data) {
   // Verifica se não é domingo nem feriado

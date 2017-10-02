@@ -8,14 +8,15 @@
             <form action="#" method="post" class="scroll" name="date" id="form_nova_data">
               <select class="date list drum-select" id="date" name="date">
                   <?php
-                  // Começa com a mesma sugestão de dia e adiciona 7
-                  $data_desconto_unformat = $_SESSION['prox_horario_unformat'];
+                  // Começa buscando o próximo dia e adiciona 7
+                  $prox_data_unformat = proximoHorario($timestamp)['data_unformat'];
+                  $horario = proximoHorario($timestamp)['horario'];
                   // Primeira opção
-                  $data_desconto = strftime('%a %d de %b', strtotime($data_desconto_unformat));
-                  echo "<option value='$data_desconto_unformat' selected>$data_desconto</option>";
+                  $data_desconto = strftime('%a %d de %b', strtotime($prox_data_unformat));
+                  echo "<option value='$prox_data_unformat' selected>$data_desconto</option>";
                   $n = 1;
                   while ($n <= 6) {
-                    $verificaData = date('Y-m-d', strtotime($data_desconto_unformat . '+'.$n.' day'));
+                    $verificaData = date('Y-m-d', strtotime($prox_data_unformat . '+'.$n.' day'));
                     $verificaFeriado = var_export(verificarFeriado($verificaData), true);
                     // Se for domingo ou feriado, adiciona um dia
                     while (date('N', strtotime($verificaData)) == 7 || $verificaFeriado != 'false'){
@@ -23,7 +24,7 @@
                       $verificaFeriado = var_export(verificarFeriado($verificaData), true);
                       $n++;
                     }
-                    // Formata a nova opção
+                    // Formata e exibe as opções
                     $proxData = strftime('%a %d de %b', strtotime($verificaData));
                     echo "<option value='$verificaData'>$proxData</option>";
                     $n++;
@@ -52,6 +53,7 @@
           </section>
         </div>
         <div class='botoes'>
+          <?php echo $horario; ?>
             <input type="hidden" name="tipo_ensaio" id="input_tipo_ensaio" value="">
             <button id='btn_novo-horario-fotos' class='botao'>Continuar</button>
         </div>

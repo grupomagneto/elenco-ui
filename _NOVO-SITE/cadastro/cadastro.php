@@ -73,7 +73,6 @@ if (!empty($_SESSION['id_elenco'])) {
 <link rel="stylesheet" href="../_css/cadastro.css" type="text/css" />
 </head>
 <body>
-<?php $data_desconto = $_SESSION['prox_horario']; ?>
 <div class="gradient">
   <div class="container">
     <div class="mancha flexbox relative wrap">

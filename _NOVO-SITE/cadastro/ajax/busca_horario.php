@@ -41,12 +41,12 @@ if ($row = mysqli_fetch_array($result)) {
 		$proxHorario = date('Y-m-d H:i:s', strtotime($agora . ' +30 minute'));
 		$desconto = 5;
 	}
-	proximoHorario($proxHorario);
+	$data_desconto = proximoHorario($proxHorario)['data_format'];
 }
 // Se não tem horário agendado
 else {
 	// Localizar próximo sábado (??) ou adicionar uma hora de agora
 	$proxHorario = date('Y-m-d H:i:s', strtotime($agora . ' +1 hour'));
-	proximoHorario($proxHorario);
+	$data_desconto = proximoHorario($proxHorario)['data_format'];
 }
 ?>
