@@ -114,7 +114,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -138,7 +138,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -161,7 +161,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -186,7 +186,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -223,7 +223,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "../cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             // event.preventDefault();
@@ -270,7 +270,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -295,7 +295,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "../cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             // event.preventDefault();
@@ -330,7 +330,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -357,7 +357,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -377,7 +377,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -410,7 +410,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -500,7 +500,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -518,7 +518,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -542,7 +542,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           event.preventDefault();
@@ -577,7 +577,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: rawData,
         success: function( data ) {
           // console.log('cpf menor: ' + rawData);
@@ -612,7 +612,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados9,
         success: function( data ) {
           event.preventDefault();
@@ -642,7 +642,7 @@ $(document).ready(function(){
           jQuery.ajax({
             type: "POST",
             dataType: "html",
-            url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+            url: "../cadastro/ajax/update_db.php",
             data: dados9,
             success: function( data ) {
               event.preventDefault();
@@ -680,7 +680,7 @@ $(document).ready(function(){
       jQuery.ajax({
         type: "POST",
         dataType: "html",
-        url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+        url: "../cadastro/ajax/update_db.php",
         data: dados,
         success: function( data ) {
           // event.preventDefault();
@@ -920,7 +920,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "../cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
           }
@@ -949,7 +949,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "../cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
             // event.preventDefault();
@@ -1001,7 +1001,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "../cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
           }
@@ -1033,7 +1033,7 @@ $(document).ready(function(){
         jQuery.ajax({
           type: "POST",
           dataType: "html",
-          url: "http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/ajax/update_db.php",
+          url: "../cadastro/ajax/update_db.php",
           data: dados,
           success: function( data ) {
           }

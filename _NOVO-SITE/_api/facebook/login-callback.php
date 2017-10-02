@@ -127,10 +127,10 @@ require 'bootstrap.php';
           echo 'Erro: '.$e->getMessage();
         }
 
-        header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/cadastro.php');
+        header('location: ../cadastro/cadastro.php');
 
       } else {
-        header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/index.php');
+        header('location: ../cadastro/index.php');
     }
   }
 mysqli_close($link);
