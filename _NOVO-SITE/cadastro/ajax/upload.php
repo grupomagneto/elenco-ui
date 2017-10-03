@@ -50,8 +50,8 @@ mysqli_query($link2, $sql_OLD);
 mysqli_close($link2);
 
 $file = $fileDir;
-// $remote_file = "public_html/magnetoelenco/fotos/".$fileName;
-$remote_file = "public_html/magnetoelenco/".$fileName;
+$remote_file = "public_html/magnetoelenco/fotos/".$fileName;
+// $remote_file = "public_html/magnetoelenco/".$fileName;
 // $remote_file = $fileName;
 
 include 'ftp_data.php';
@@ -73,5 +73,5 @@ if (ftp_put($ftp, $remote_file, $file, FTP_BINARY)) {
 ftp_close($ftp);
 
 // generate thumb
-// file_get_contents("http://www.grupomagneto.com.br/magnetoelenco/v2/thumb.php?src=".$fileName."&dest=".$fileName."&x=72&y=72");
+file_get_contents("http://www.grupomagneto.com.br/magnetoelenco/v2/thumb.php?src=".$fileName."&dest=".$fileName."&x=72&y=72");
 ?>

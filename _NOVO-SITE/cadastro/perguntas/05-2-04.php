@@ -68,7 +68,8 @@
                   echo "<span class='dois-pontos'>:</span>";
                   // SELECT DOS MINUTOS
                   echo "<select class='drum-select list' id='minutes' name='minutes'>";
-                  while ($m < 59) {
+                  $v = 1;
+                  while ($v < 5) {
                     if ($minutosAgora == $m) {
                       echo "<option class='option' value='$m' selected>$m</option>";
                     }
@@ -76,6 +77,10 @@
                       echo "<option class='option' value='$m'>$m</option>";
                     }
                     $m = $m + 15;
+                    if ($m == 60) {
+                      $m = "00";
+                    }
+                    $v++;
                   }
                   echo "</select>";
                   ?>

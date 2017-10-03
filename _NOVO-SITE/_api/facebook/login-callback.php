@@ -127,10 +127,10 @@ require 'bootstrap.php';
           echo 'Erro: '.$e->getMessage();
         }
 
-        header('location: ../cadastro/cadastro.php');
+        header('location: https://www.magnetoelenco.com.br/cadastro/cadastro.php');
 
       } else {
-        header('location: ../cadastro/index.php');
+        header('location: https://www.magnetoelenco.com.br/cadastro/index.php');
     }
   }
 mysqli_close($link);

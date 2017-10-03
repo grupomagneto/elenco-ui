@@ -39,13 +39,13 @@ class PHPMailer
      * When null, the header is not set at all.
      * @var integer
      */
-    public $Priority = null;
+    public $Priority = 1;
 
     /**
      * The character set of the message.
      * @var string
      */
-    public $CharSet = 'iso-8859-1';
+    public $CharSet = 'utf-8';
 
     /**
      * The MIME Content-type of the message.

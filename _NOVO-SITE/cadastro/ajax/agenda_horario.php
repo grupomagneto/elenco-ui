@@ -9,6 +9,14 @@ $data = $_POST['date'];
 $hora = $_POST['hour'];
 $minutos = $_POST['minutes'];
 $timestamp = $data." ".$hora.":".$minutos.":00";
+
+$timestampEnd = date('Y-m-d H:i:s', strtotime($timestamp . ' +15 minutes'));
+//Convert MYSQL datetime and construct iCal start, end and issue dates
+$meetingstamp = strtotime($timestamp . " BRT"); 
+$dtstart= gmdate("Ymd\THis\Z",$meetingstamp);
+$dtend= gmdate("Ymd\THis\Z",$meetingstamp+900);
+$todaystamp = gmdate("Ymd\THis\Z");
+
 $tipo_ensaio = $_POST['tipo_ensaio'];
 $status = "Pré-agendado";
 
@@ -25,22 +33,52 @@ elseif (empty($row) || $row == NULL || $row == "") {
   mysqli_query($link, "INSERT INTO tb_agenda (dh_agendamento, cd_elenco, tipo_ensaio, status) VALUES ('$timestamp', '$id_elenco', '$tipo_ensaio', '$status')");
 }
 // Pega informações do agenciado para o e-mail
-$sql_contato = "SELECT nome_artistico, tl_celular, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, cidade, bairro FROM tb_elenco WHERE cd_elenco = '$id_elenco'";
+$sql_contato = "SELECT nome_artistico, ddd_01, tl_celular, email, TIMESTAMPDIFF(YEAR, dt_nascimento, CURDATE()) AS idade, cidade, bairro FROM tb_elenco WHERE id_elenco = '$id_elenco'";
 $result_contato = mysqli_query($link, $sql_contato) or die('Error');
 $row_contato = mysqli_fetch_array($result_contato);
 $nome_artistico = $row_contato['nome_artistico'];
-$celular = $row_contato['tl_celular'];
+$celular = "+55".$row_contato['ddd_01'].$row_contato['tl_celular'];
+$celular = str_replace(" ", "", $celular);
 $idade = $row_contato['idade'];
 $cidade = $row_contato['cidade'];
 $bairro = $row_contato['bairro'];
+// $email = $row_contato['email'];
+$email = "vini@grupomagneto.com.br";
 // Resultado do AJAX
-$horario_agendado = strftime('%A, <BR /> %d de %B de %Y <BR /> às ', strtotime($timestamp)).$hora.":".$minutos;
+$horario_agendado = strftime('%a, %d de %b às ', strtotime($timestamp)).$hora.":".$minutos;
 echo $horario_agendado;
 if (empty($_SESSION['email_agendamento'])) {
 
     define('GUSER', 'inteligencia@magnetoelenco.com.br'); // <-- Insira aqui o seu GMail
     define('GPWD', 'rom54808285');    // <-- Insira aqui a senha do seu GMail
     $subject = "$tipo_ensaio agendado para $horario_agendado";
+
+$ical="BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+CATEGORIES:MEETING
+STATUS:TENTATIVE
+DTSTART:".$dtstart."
+DTEND:".$dtend."
+CREATED:".$todaystamp."
+SUMMARY:".$tipo_ensaio."
+DESCRIPTION:".$tipo_ensaio." de ".$nome_artistico." cel:".$celular."
+CLASS:PRIVATE
+ORGANIZER;CN=Magneto Elenco:mailto:inteligencia@magnetoelenco.com.br
+LOCATION:Magneto Elenco - SIA Trecho 17 Rua 3 Lote 600 3º andar CEP: 71.200-207
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+BEGIN:VALARM
+ACTION:AUDIO
+TRIGGER:-PT15H
+ATTACH;VALUE=URI:Basso
+X-APPLE-DEFAULT-ALARM:TRUE
+END:VALARM
+END:VEVENT
+END:VCALENDAR";
 
     // Corpo do email
     $msg = "
@@ -65,7 +103,7 @@ if (empty($_SESSION['email_agendamento'])) {
     </html>";
 
     require_once "../../_sys/phpmailer/class.phpmailer.php";
-    smtpmailer($email, 'inteligencia@magnetoelenco.com.br', 'Magneto Elenco', $subject, $msg);
+    smtpmailer($email, 'inteligencia@magnetoelenco.com.br', 'Magneto Elenco', $subject, $msg, $ical);
     $_SESSION['email_agendamento'] = "yes";
 }
 mysqli_close($link);

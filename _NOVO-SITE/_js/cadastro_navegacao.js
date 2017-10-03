@@ -1062,7 +1062,7 @@ $(document).ready(function(){
         url: "../cadastro/ajax/agenda_horario.php",
         data: dados_data_desconto,
         success: function( data ) {
-          document.getElementById("horario_agendado").innerHTML = data;
+          // document.getElementById("horario_agendado").innerHTML = data;
         }
       });
       return false;

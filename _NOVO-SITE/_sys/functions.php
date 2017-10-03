@@ -4,7 +4,7 @@ date_default_timezone_set('America/Sao_Paulo');
 if(!session_id()) {
   session_start();
 }
-function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
+function smtpmailer($para, $de, $de_nome, $assunto, $corpo, $ical) {
   global $error;
   $mail = new PHPMailer();
   // $mail->IsSMTP();   // Ativar SMTP
@@ -18,19 +18,27 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
   $mail->SetFrom($de, $de_nome);
   $mail->Subject = $assunto;
   $mail->Body = $corpo;
+  $mail->Ical = $ical; // ical format, in your case $text string
   $mail->AddAddress($para);
+  $mail->AddStringAttachment("$ical", "ensaio.ics", "base64", "text/calendar; charset=utf-8; method=REQUEST");
   // $mail->AddAttachment('/var/tmp/file.tar.gz');         // Add attachments
   // $mail->AddAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
   $mail->IsHTML(true);
-  $mail->CharSet = "UTF-8";                                  // Set email format to HTML
+  $mail->CharSet = "UTF-8";
+  $headers = "From: Sender\n";
+  $headers .= "Reply-To: inteligencia@magnetoelenco.com.br\n";
+  $headers .= "MIME-Version: 1.0\n";
+  $headers .= "Content-Type: text/calendar; method=REQUEST; charset=utf-8\n";
+  $headers .= "Content-Transfer-Encoding: 8bit\n";
+  $headers .= "Content-class: urn:content-classes:calendarmessage\n";                            // Set email format to HTML
   // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-  if(!$mail->Send()) {
+  if(!$mail->Send($headers, $corpo)) {
     $error = 'Mail error: '.$mail->ErrorInfo;
-    $nome_tabela = "tb_shares";
-    $array_colunas = array('error_message');
-    $array_valores = array("'$error'");
-    $condicao = "share_ID='$share_ID'";
-    atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
+    // $nome_tabela = "tb_shares";
+    // $array_colunas = array('error_message');
+    // $array_valores = array("'$error'");
+    // $condicao = "share_ID='$share_ID'";
+    // atualizaDados($link2, $nome_tabela, $array_colunas, $array_valores, $condicao);
     return false;
   } else {
     $error = 'E-mail(s) enviado(s)!';
