@@ -1,44 +1,41 @@
 <?php 
-require 'vendor/autoload.php';
 
-use Moip\Moip;
-use Moip\Auth\BasicAuth;
-use MoipPayment\Payment;
-use MoipPayment\Order;
-use MoipPayment\Customer;
+$header = [];
+$header[] = 'Content-type: application/json';
 
-$token = '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN';
-$key = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
+$header[] = "Authorization: Basic " . base64_encode("4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN:FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI");
+ 
+//Monta a URL
+$url = 'https://sandbox.moip.com.br/v2/webhooks';
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
+curl_setopt($curl, CURLOPT_USERPWD, "4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN:FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI");
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0");
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-$moip = new Moip(new BasicAuth($token, $key), Moip::ENDPOINT_SANDBOX);
+$ret = curl_exec($curl);
+$err = curl_error($curl);
+curl_close($curl);
 
+echo $ret;
 
-try {
-    $notification = $moip->notifications()
-    		->addEvent('ORDER.*')
-            ->addEvent('PAYMENT.*')
-            ->setTarget('https://requestb.in/1mr843n1')
-            ->create();
+echo '<br />';
 
-            echo '<pre>';
-				print_r($notification);
-			echo '</pre>';
+$xml = simplexml_load_string($ret);
+echo '<pre>';
+print_r($xml);
+echo '</pre>';
+echo '<br />';
 
+$json = json_encode($xml);
+$array = json_decode($json, TRUE);
+echo '<pre>';
+print_r($array);
+echo '</pre>';
 
-
-} catch (Exception $e) {
-    printf($e->__toString());    
-}
-
-
-// // Pega o RAW data da requisição
-// $json = file_get_contents('php://input');
-// // Converte os dados recebidos
-// $response = json_decode($json, true);
-
-// echo '<pre>';
-// print_r($response);
-// echo '</pre>';
+echo '<br />';
 
 
 ?>
