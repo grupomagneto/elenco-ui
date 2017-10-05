@@ -1,7 +1,8 @@
 <?php 
 
+
 $header = [];
-$header[] = 'Content-type: application/json';
+$header[] = 'Content-type: application/json; text/html; charset=utf-8';
 
 $header[] = "Authorization: Basic " . base64_encode("4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN:FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI");
  
