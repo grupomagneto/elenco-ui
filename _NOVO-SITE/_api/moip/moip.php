@@ -142,7 +142,7 @@ if ($forma_pagamento == "Cartão de Crédito") {
         $payment = $order->payments()  
         ->setCreditCardHash($hash, $customer)                                 
         ->setInstallmentCount($parcelas)                                 
-        ->setStatementDescriptor('MagnetoElenco')                               
+        ->setStatementDescriptor('MagnetoElenc')                               
         ->execute();  
 
         print_r($payment); 
