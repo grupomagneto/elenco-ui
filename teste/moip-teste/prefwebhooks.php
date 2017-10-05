@@ -17,7 +17,7 @@ try {
   $notification = $moip->notifications()
     ->addEvent('ORDER.*')
     ->addEvent('PAYMENT.*')
-    ->setTarget('https://requestb.in/1holk7o1')
+    ->setTarget('https://www.magnetoelenco.com.br/_api/moip/webhooks.php')
     ->create();
   
     echo '<pre>';
