@@ -29,10 +29,13 @@ use MoipPayment\Customer;
 $token = '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN';
 $key = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
 
+$rand1 = rand(0, 9999);
+$rand2 = rand(0, 9999);
+
 $moip = new Moip(new BasicAuth($token, $key), Moip::ENDPOINT_SANDBOX);
 //Criando um comprador
 try {
-    $customer = $moip->customers()->setOwnId(uniqid())
+    $customer = $moip->customers()->setOwnId($rand1)
         ->setFullname($nome)
         ->setEmail($email)
         ->setBirthDate($DataNascimento)
@@ -49,7 +52,7 @@ try {
 }
 //criando o pedido
 try {
-    $order = $moip->orders()->setOwnId(uniqid())
+    $order = $moip->orders()->setOwnId($rand2)
         ->addItem("cadastro premium",1, "premium", 19900)
         ->setCustomer($customer)
         ->create();
@@ -59,12 +62,12 @@ try {
     printf($e->__toString());
 }
 //criando o pagamento cartão com hash
-try {  $hash = $encrypted_value;  
-    $payment = $order->payments()  
+try {  
+    $hash = $encrypted_value;  
+    $payment = $order->payments()
     ->setCreditCardHash($hash, $customer)                                 
     ->setInstallmentCount($Parcelas)                                 
-    ->setStatementDescriptor('teste de pag')                                 
-    ->setDelayCapture(false)                                 
+    ->setStatementDescriptor('MagnetoElenco')                                
     ->execute();  
 
     print_r($payment); 

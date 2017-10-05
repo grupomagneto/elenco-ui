@@ -12,12 +12,11 @@ $key = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
 
 $moip = new Moip(new BasicAuth($token, $key), Moip::ENDPOINT_SANDBOX);
 
-
 try {
   $notification = $moip->notifications()
     ->addEvent('ORDER.*')
     ->addEvent('PAYMENT.*')
-    ->setTarget('https://requestb.in/1holk7o1')
+    ->setTarget('https://www.magnetoelenco.com.br/_api/moip/webhooks.php')
     ->create();
   
     echo '<pre>';

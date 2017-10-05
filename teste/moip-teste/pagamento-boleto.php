@@ -65,7 +65,7 @@ $expiration_date = new DateTime();
 $instruction_lines = ['INSTRUÇÃO 1', 'INSTRUÇÃO 2', 'INSTRUÇÃO 3'];
 try {
     $payment = $order->payments()  
-        ->setBoleto($expiration_date, $logo_uri, $instruction_lines)
+        ->setBoleto($expiration_date, $logo_uri, $instruction_lines)    
         ->execute();
         // echo "<pre>";
         // print_r($payment);
