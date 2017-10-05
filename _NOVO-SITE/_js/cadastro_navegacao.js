@@ -195,14 +195,30 @@ $(document).ready(function(){
       });
       return false;
     });
-    document.getElementById("04-2-01_qual-o-sexo-do-menor").className += " display_none";
-    document.getElementById("04-2-02_o-menor-tem-cpf-proprio").className += " display_none";
-    document.getElementById("04-2-03_qual-o-cpf-do-menor").className += " display_none";
-    document.getElementById("04-2-04_qual-o-nome-completo-dele").className += " display_none";
-    document.getElementById("04-2-05_qual-a-data-de-nascimento-dele").className += " display_none";
-    document.getElementById("04-2-06_qual-a-cor-da-pele-dele").className += " display_none";
-    document.getElementById("04-1-02_voce-tem-registro-drt").classList.remove("display_none");
-    document.getElementById("04-1-01_qual-a-cor-da-sua-pele").classList.remove("display_none");
+    if (document.getElementById("04-2-01_qual-o-sexo-do-menor")) {
+      document.getElementById("04-2-01_qual-o-sexo-do-menor").className += " display_none";
+    }
+    if (document.getElementById("04-2-02_o-menor-tem-cpf-proprio")) {
+      document.getElementById("04-2-02_o-menor-tem-cpf-proprio").className += " display_none";
+    }
+    if (document.getElementById("04-2-03_qual-o-cpf-do-menor")) {
+      document.getElementById("04-2-03_qual-o-cpf-do-menor").className += " display_none";
+    }
+    if (document.getElementById("04-2-04_qual-o-nome-completo-dele")) {
+      document.getElementById("04-2-04_qual-o-nome-completo-dele").className += " display_none";
+    }
+    if (document.getElementById("04-2-05_qual-a-data-de-nascimento-dele")) {
+      document.getElementById("04-2-05_qual-a-data-de-nascimento-dele").className += " display_none";
+    }
+    if (document.getElementById("04-2-06_qual-a-cor-da-pele-dele")) {
+      document.getElementById("04-2-06_qual-a-cor-da-pele-dele").className += " display_none";
+    }
+    if (document.getElementById("04-1-02_voce-tem-registro-drt")) {
+      document.getElementById("04-1-02_voce-tem-registro-drt").classList.remove("display_none");
+    }
+    if (document.getElementById("04-1-01_qual-a-cor-da-sua-pele")) {
+      document.getElementById("04-1-01_qual-a-cor-da-sua-pele").classList.remove("display_none");
+    }
     $(".voltar").css("opacity", "1");
     swiper.unlockSwipeToNext();
     swiper.slideNext();
@@ -247,14 +263,26 @@ $(document).ready(function(){
       $('#input-hidden-boleto-uf').val($('#uf_value').val());
     });
   });
-
   $("#btn_um-menor-de-idade").click(function(){
-    document.getElementById("04-1-02_voce-tem-registro-drt").className += " display_none";
-    document.getElementById("04-1-03_envie-uma-foto-do-seu-registro-drt").className += " display_none";
-    document.getElementById("05-0-02_clique-e-conheca-nossos-planos_drt").className += " display_none";
-    document.getElementById("05-1-02_perfeito-para-quem-tem-drt").className += " display_none";
-    document.getElementById("04-2-01_qual-o-sexo-do-menor").classList.remove("display_none");
-    document.getElementById("nome-cpf_field").value = "nome_responsavel";
+    // if (document.getElementById("cadastro_maior_existente").value == "não") {
+    if (document.getElementById("04-1-02_voce-tem-registro-drt")) {
+      document.getElementById("04-1-02_voce-tem-registro-drt").className += " display_none";
+    }
+    if (document.getElementById("04-1-03_envie-uma-foto-do-seu-registro-drt")) {
+      document.getElementById("04-1-03_envie-uma-foto-do-seu-registro-drt").className += " display_none";
+    }
+    if (document.getElementById("05-0-02_clique-e-conheca-nossos-planos_drt")) {
+      document.getElementById("05-0-02_clique-e-conheca-nossos-planos_drt").className += " display_none";
+    }
+    if (document.getElementById("05-1-02_perfeito-para-quem-tem-drt")) {
+      document.getElementById("05-1-02_perfeito-para-quem-tem-drt").className += " display_none";
+    }
+    if (document.getElementById("04-2-01_qual-o-sexo-do-menor")) {
+      document.getElementById("04-2-01_qual-o-sexo-do-menor").classList.remove("display_none");
+    }
+    if (document.getElementById("nome-cpf_field")) {
+      document.getElementById("nome-cpf_field").value = "nome_responsavel";
+    }
     if (document.getElementById("03-0-03_qual-o-seu-sexo")) {
       document.getElementById("sexo_field-fem").value = "sexo_responsavel";
       document.getElementById("sexo_field-masc").value = "sexo_responsavel";
@@ -262,9 +290,6 @@ $(document).ready(function(){
     if (document.getElementById("04-1-01_qual-a-cor-da-sua-pele")) {
       document.getElementById("04-1-01_qual-a-cor-da-sua-pele").className += " display_none";
     }
-    // if (document.getElementById("03-0-03_qual-o-seu-sexo")) {
-    //   document.getElementById("03-0-03_qual-o-seu-sexo").className += " display_none";
-    // }
     jQuery("form").submit(function(){
       var dados = jQuery(this).serialize();
       jQuery.ajax({
@@ -316,6 +341,13 @@ $(document).ready(function(){
       $('#input-hidden-cartao-cidade').val($('#cidade_value').val());
       $('#input-hidden-cartao-uf').val($('#uf_value').val());
     });
+    // }
+    // if (document.getElementById("cadastro_maior_existente").value == "sim") {
+      // Puxar primeiro nome e sexo da responsavel e transformar no novo titulo
+      // document.getElementById("quem_cadastrar_title").innerHTML = "Bem-vinda Fulana!";
+      // document.getElementById("quem_cadastrar_subtitle").innerHTML = "Seu cadastro já está ativo. Você gostaria de cadastrar um menor tendo você como responsável legal?";
+      // 
+    //}
   });
   $("#ok_cpf-maior").click(function(){
     document.getElementById("03-1-03_qual-o-seu-telefone-celular").classList.remove("display_none");

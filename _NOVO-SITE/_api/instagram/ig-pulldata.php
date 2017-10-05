@@ -93,5 +93,5 @@ if (!empty($_SESSION['instagram_access_token'])) {
 }
 mysqli_close($link);
 mysqli_close($link2);
-header('Location: ../cadastro/cadastro.php');
+header('Location: https://www.magnetoelenco.com.br/cadastro/cadastro.php');
 ?>

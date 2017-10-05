@@ -75,7 +75,7 @@ try {
 <meta data-react-helmet='true' name='apple-mobile-web-app-title' content='Magneto Elenco'/>
 <meta data-react-helmet='true' name='msapplication-TileColor' content='#FFFFFF'/>
 <meta data-react-helmet='true' property='og:site_name' content='Magneto Elenco'/>
-<meta data-react-helmet='true' property='og:url' content='https://www.magnetoelenco.com.br/cadastro'/>
+<meta data-react-helmet='true' property='og:url' content='https://www.magnetoelenco.com.br/cadastro/cadastro'/>
 <meta data-react-helmet='true' property='og:title' content='Agência e Marketplace de atores, modelos e influenciadores.'/>
 <title>Magneto Elenco - Atores, modelos e influenciadores para a sua marca</title>
 <link rel='apple-touch-icon' sizes='57x57' href='../_images/icon/apple-icon-57x57.png'>
