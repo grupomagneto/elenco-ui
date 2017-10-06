@@ -4,7 +4,9 @@ namespace Moip\Resource;
 
 use JsonSerializable;
 use Moip\Exceptions;
+use Moip\Helper\Filters;
 use Moip\Helper\Links;
+use Moip\Helper\Pagination;
 use Moip\Moip;
 use Requests;
 use Requests_Exception;
@@ -129,7 +131,14 @@ abstract class MoipResource implements JsonSerializable
      */
     protected function getIfSetDateTime($key, stdClass $data = null)
     {
-        return $this->getIfSetDateFmt($key, \DateTime::ATOM, $data);
+        $rawDateTime = $this->getIfSet($key, $data);
+
+        $dateTime = null;
+        if (!empty($rawDateTime)) {
+            $dateTime = new \DateTime($rawDateTime);
+        }
+
+        return $dateTime;
     }
 
     /**
@@ -140,6 +149,57 @@ abstract class MoipResource implements JsonSerializable
     public function jsonSerialize()
     {
         return $this->data;
+    }
+
+    /**
+     * Generate URL to request.
+     *
+     * @param $action
+     * @param $id
+     *
+     * @return string
+     */
+    public function generatePath($action, $id = null)
+    {
+        if (!is_null($id)) {
+            return sprintf('%s/%s/%s/%s', self::VERSION, static::PATH, $action, $id);
+        }
+
+        return sprintf('%s/%s/%s', self::VERSION, static::PATH, $action);
+    }
+
+    /**
+     * Generate URL to request a get list.
+     *
+     * @param Pagination $pagination
+     * @param Filters    $filters
+     * @param string     $qParam     Query a specific value.
+     *
+     * @return string
+     */
+    public function generateListPath(Pagination $pagination = null, Filters $filters = null, $qParam = '')
+    {
+        $queryParams = [];
+
+        if (!is_null($pagination)) {
+            if ($pagination->getLimit() != 0) {
+                $queryParams['limit'] = $pagination->getLimit();
+            }
+
+            if ($pagination->getOffset() >= 0) {
+                $queryParams['offset'] = $pagination->getOffset();
+            }
+        }
+
+        if (!is_null($filters)) {
+            $queryParams['filters'] = $filters->__toString();
+        }
+
+        if (!empty($qParam)) {
+            $queryParams['q'] = $qParam;
+        }
+
+        return sprintf('/%s/%s?%s', self::VERSION, static::PATH, http_build_query($queryParams));
     }
 
     /**
@@ -184,8 +244,10 @@ abstract class MoipResource implements JsonSerializable
             throw new Exceptions\UnautorizedException();
         } elseif ($code >= 400 && $code <= 499) {
             $errors = Exceptions\Error::parseErrors($response_body);
+
             throw new Exceptions\ValidationException($code, $errors);
         }
+
         throw new Exceptions\UnexpectedException();
     }
 
@@ -215,5 +277,17 @@ abstract class MoipResource implements JsonSerializable
         $response = $this->httpRequest($path, Requests::POST, $this);
 
         return $this->populate($response);
+    }
+
+    /**
+     * Delete a new item in Moip.
+     *
+     * @param $path
+     *
+     * @return mixed
+     */
+    public function deleteByPath($path)
+    {
+        return $this->httpRequest($path, Requests::DELETE);
     }
 }
