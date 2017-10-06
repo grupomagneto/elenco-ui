@@ -19,23 +19,31 @@ $ret = curl_exec($curl);
 $err = curl_error($curl);
 curl_close($curl);
 
-echo $ret;
+// echo $ret;
 
 echo '<br />';
 
-$xml = simplexml_load_string($ret);
-echo '<pre>';
-print_r($xml);
-echo '</pre>';
-echo '<br />';
+// $xml = simplexml_load_string($ret);
+// echo '<pre>';
+// print_r($xml);
+// echo '</pre>';
+// echo '<br />';
 
-$json = json_encode($xml);
+$json = json_encode($ret);
 $array = json_decode($json, TRUE);
-echo '<pre>';
+
 print_r($array);
-echo '</pre>';
 
 echo '<br />';
 
+
+echo '<br />';
+$webhooks = $array->webhooks;
+
+//navega pelos elementos do array, imprimindo cada id
+foreach ( $webhooks as $e )
+    {
+	echo "resourceId: $e->resourceId - event: $e->event - url: $e->url - status: $e->status - id: $e->id - sentAt: $e->sentAt<br>"; 
+    }
 
 ?>
