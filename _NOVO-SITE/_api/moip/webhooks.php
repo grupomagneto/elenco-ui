@@ -1,6 +1,5 @@
 <?php 
 
-
 $header = [];
 $header[] = 'Content-type: application/json; text/html; charset=utf-8';
 
@@ -20,25 +19,43 @@ $ret = curl_exec($curl);
 $err = curl_error($curl);
 curl_close($curl);
 
-echo $ret;
+$array = json_decode($ret, TRUE);
 
-echo '<br />';
+// $resourceId = $array['webhooks'][0]['resourceId'];
+// $event = $array['webhooks'][0]['event'];
+$webhooks = $array['webhooks'];
 
-$xml = simplexml_load_string($ret);
-echo '<pre>';
-print_r($xml);
-echo '</pre>';
-echo '<br />';
+require 'vendor/autoload.php';
 
-$json = json_encode($xml);
-$array = json_decode($json, TRUE);
-echo '<pre>';
-print_r($array);
-echo '</pre>';
+header('Content-Type: text/html; charset=utf-8');
 
-echo '<br />';
+use Moip\Moip;
+use Moip\Auth\BasicAuth;
+use MoipPayment\Payment;
+use MoipPayment\Order;
+use MoipPayment\Customer;
 
-echo '<br />';
+$token = '4LPKLD8JMZPTMSYGU1UTF6DAKJP7OALN';
+$key = 'FFQZG6GOBHEPPKRGABPNENUEQFYB6WALYMIWRJWI';
 
+$moip = new Moip(new BasicAuth($token, $key), Moip::ENDPOINT_SANDBOX);
 
- ?>
+//navega pelos elementos do array, imprimindo cada id
+foreach ($webhooks as $key => $e) {
+    	$id = $e['resourceId'];
+    	$event = $e['event'];
+    	echo $id;
+    	echo '<br />';
+    	echo $event;
+    	echo '<br />';
+   //  	if ($id == "PAY-K5AOK26L4G1L") {
+   //  		try {
+			//   // $notification_id = 'ORD-UWSXYXLUAMHF';
+			//   $notification = $moip->notifications()->delete($id);
+			//   print_r($notification);
+			// } catch (Exception $e) {
+			//   printf($e->__toString());    
+			// }
+   //  	}
+}
+?>
