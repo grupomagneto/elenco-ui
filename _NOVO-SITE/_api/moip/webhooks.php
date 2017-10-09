@@ -8,6 +8,17 @@ $json_obj = json_decode($json_str);
 
 echo $json_obj;
 
+$event = $dados['event'];
+$paymentId = $dados['resource']['payment']['id'];
+$status = $dados['resource']['payment']['status'];
+
+
+echo $event;
+echo '<br />';
+echo $paymentId;
+echo '<br />';
+echo $status;
+
 // $header = [];
 // $header[] = 'Content-type: application/json; text/html; charset=utf-8';
 
