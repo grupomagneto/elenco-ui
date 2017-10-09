@@ -29,21 +29,36 @@ echo '<br />';
 // echo '</pre>';
 // echo '<br />';
 
-$json = json_encode($ret);
-$array = json_decode($json, TRUE);
-
-print_r($array);
-
+// $json = json_encode($ret);
+$array = json_decode($ret, TRUE);
+// print_r($array);
+$webhooks = $array['webhooks'];
 echo '<br />';
 
 
 echo '<br />';
-$webhooks = $array->webhooks;
 
 //navega pelos elementos do array, imprimindo cada id
-foreach ( $webhooks as $e )
-    {
-	echo "resourceId: $e->resourceId - event: $e->event - url: $e->url - status: $e->status - id: $e->id - sentAt: $e->sentAt<br>"; 
-    }
+//navega pelos elementos do array, imprimindo cada id
+foreach ($webhooks as $key => $e) {
+    	$url = $e['url'];
+    	$id = $e['resourceId'];
+    	$event = $e['event'];
+    	echo $id;
+    	echo '<br />';
+    	echo $event;
+    	echo '<br />';
+    	echo $url;
+   //  	if ($id == "PAY-K5AOK26L4G1L") {
+   //  		try {
+			//   // $notification_id = 'ORD-UWSXYXLUAMHF';
+			//   $notification = $moip->notifications()->delete($id);
+			//   print_r($notification);
+			// } catch (Exception $e) {
+			//   printf($e->__toString());    
+			// }
+   //  	}
+}
+
 
 ?>
