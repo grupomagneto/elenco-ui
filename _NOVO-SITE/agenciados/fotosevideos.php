@@ -1,7 +1,7 @@
 
       <div class="title-section">
         <p class="avenir white small text-align-left">
-          FOTOS DE <span class="uppercase">Daniela souza</span>
+          FOTOS DE <span class="uppercase"><?php echo $nome_artistico; ?></span>
         </p>
       </div>
       <div class="container-slide">

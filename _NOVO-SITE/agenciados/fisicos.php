@@ -1,6 +1,6 @@
 
     <p class="avenir white small text-align-left"> NOME ARTÍSTICO</p>
-    <p class="avenir nome-artistico color_87 large bold"> Daniela Souza</p>
+    <p class="avenir nome-artistico color_87 large bold"> <?php echo $nome_artistico; ?></p>
 
     <div class="physical-section">
       <div class="title-section">

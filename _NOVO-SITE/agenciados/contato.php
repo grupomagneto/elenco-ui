@@ -31,17 +31,20 @@
           <table class="table-right">
             <tr>
               <td class="avenir small white">
-                +55 61 99311-0767
+                <?php echo $_SESSION['tl_celular']  = $row['tl_celular']; ?>
+                <!-- +55 61 99311-0767 -->
               </td>
             </tr>
             <tr>
               <td class="avenir small white">
-                São Sebastião, Brasília, DF
+                <!-- São Sebastião, Brasília, DF -->
+                <?php echo $_SESSION['bairro']  = $row['bairro']; ?>
               </td>
             </tr>
             <tr>
               <td class="avenir small white">
-                daniela.souza@gmail.com
+                <?php echo $_SESSION['email']  = $row['email']; ?>
+                <!-- daniela.souza@gmail.com -->
               </td>
             </tr>
           </table>
