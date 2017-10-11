@@ -14,21 +14,36 @@
             <div class="physical__box ">
               <img alt="" class="float_left" src="../_images/icon-female.svg" />
               <p class="avenir white medium text-align-left">
-                63 kg
+                <span id="peso">63</span> 
+                <span id="kilo">kg</span>
               </p>
+              <input type="text" name="msg" id="i-peso" placeholder="63kg" />
               <p class="avenir white medium text-align-left">
-                174 cm
+                <span id="altura">174</span> 
+                <span id="cm">cm</span>
               </p>
+
+              <input type="text" name="msg" id="i-altura" placeholder="174cm" />
+            
             </div>
             <div class="physical__box ">
               <img alt="" class="float_left" src="../_images/icon-roupa.svg" />
               <p class="avenir white medium text-align-left">
-                38/40
+
+                <span id="roupa">38/40</span> 
+                
               </p>
+
+              <input type="text" name="msg" id="i-roupa" placeholder="38/40" />
+
               <img alt="" class="float_left" src="../_images/icon-sapato.svg" />
               <p class="avenir white medium text-align-left">
-                39
+                <span id="sapato">39</span> 
+                
               </p>
+
+              <input type="text" name="msg" id="i-sapato" placeholder="39" />
+
             </div>
           </div>
           <div class="physical-description flexbox row relative justify-center align-items-center">
@@ -114,7 +129,7 @@
             </div>
           </div>
           <div class="botoes">
-            <button class="avenir white small" type="button">Editar</button>
+            <button id="b-peso" class="avenir white small" type="button">Editar</button>
           </div>
         </div>
       </div>

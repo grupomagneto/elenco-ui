@@ -195,8 +195,8 @@ para Premium quando 3 pessoas se inscreverem através desse link.</p>
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js" integrity="sha256-eEa1kEtgK9ZL6h60VXwDsJ2rxYCwfxi40VZ9E0XwoEA=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.min.js"></script>
 <script type="text/javascript" src="../_js/gradient.js"></script>
 <script type="text/javascript" src="../_js/progressbar.js"></script>
@@ -217,6 +217,62 @@ para Premium quando 3 pessoas se inscreverem através desse link.</p>
 	    } 
 	  }
 	}
+
+
+	$(function(){
+	  $('#i-peso').hide();
+	  $('#i-altura').hide();
+	  $('#i-roupa').hide();
+	  $('#i-sapato').hide();
+	  // $('#b-peso').hide();
+	  
+	  // $('#peso').click(function(){
+	  //     $('#peso').toggle('fast');
+	  //     $('#i-peso').val($('#peso').text());
+	  //     $('#i-peso').toggle('fast');
+	  //     // $('#b-peso').toggle('fast');
+	  // });
+	  
+	  $('#b-peso').click(function(){
+	      $('#peso').text($('#i-peso').val());
+	      $('#altura').text($('#i-altura').val());
+	      $('#roupa').text($('#i-roupa').val());
+	      $('#sapato').text($('#i-roupa').val());
+	      
+	  		$('#kilo').hide();
+	  		$('#cm').hide();
+
+	    document.getElementById("b-peso").innerHTML = "Salvar";
+
+	      $.post("salva_perfil.php",
+	           "msg="+ $('#peso').text(),
+	           "msg="+ $('#altura').text(),
+	           "msg="+ $('#roupa').text(),
+	           "msg="+ $('#sapato').text(),
+
+	        function (retorno) {
+	          if (retorno != "success") {
+	            // Quando der erro
+	            document.getElementById("b-peso").innerHTML = "Salvar";
+	          } else {
+	            // Quando salvar
+	  			$('#kilo').show();
+	  			$('#cm').show();
+	            document.getElementById("b-peso").innerHTML = "Editar";
+	          }
+	      });
+	    
+	      $('#i-peso').toggle('fast');
+	      $('#i-altura').toggle('fast');
+	      $('#i-roupa').toggle('fast');
+	      $('#i-sapato').toggle('fast');
+	      // $('#b-peso').toggle('fast');
+	      $('#peso').toggle('fast');
+	      $('#altura').toggle('fast');
+	      $('#roupa').toggle('fast');
+	      $('#sapato').toggle('fast');
+	  });
+	});
 
 </script>
 </body>

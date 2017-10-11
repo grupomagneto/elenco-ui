@@ -230,8 +230,23 @@ background: rgba(255,255,255,0.40);
   margin-top: 5px; }
 
 .physical .physical__box p:nth-child(1) {
+  position: absolute;
   margin-top: 30px;
   margin-left: 20px; }
+
+.physical .physical__box input#i-peso {
+  margin-top: 5px;
+  margin-left: 30px;
+  position: absolute;
+  width: 40px;
+  height: 20px; }
+
+.physical .physical__box input#i-altura {
+  margin: 40px 10px 10px 0px;
+  margin-left: 30px;
+  position: absolute;
+  width: 40px;
+  height: 20px; }
 
 .physical .physical__box p:nth-child(2) {
   margin: 10px 10px 10px 0px;
@@ -240,9 +255,22 @@ background: rgba(255,255,255,0.40);
 .physical .physical__box p:nth-child(3){
   margin-top: 10px;
 }
+
+.physical .physical__box input#i-roupa {
+  margin-top: 5px;
+  width: 40px;
+  height: 20px; }
+
 .physical .physical__box p:nth-child(4) {
   margin-top: 20px;
   margin-left: 35px; }
+
+
+.physical .physical__box input#i-sapato {
+  margin: -20px;
+  margin-left: -15px;
+  width: 40px;
+  height: 20px; }
 
 .physical-description {
   width: 100%; }
