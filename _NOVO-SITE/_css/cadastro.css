@@ -222,17 +222,19 @@ display: none;
 position: absolute;
 margin: -100px 0px 0px -15px;
 }
+
 .caixas-cadastros{
 height: 80%;
 
 overflow-x: hidden;
 overflow-y: scroll;
 -webkit-overflow-scrolling: auto;
-
 padding-bottom: 40px;
 }
+
 .caixas-cadastros::-webkit-scrollbar { 
-display: none;
+/*display: none;*/
+background: transparent;
 overflow-y: scroll;
 -webkit-overflow-scrolling: auto;
 }
@@ -240,6 +242,7 @@ overflow-y: scroll;
 overflow-y: scroll;
 -webkit-overflow-scrolling: auto;
 }
+
 .video{
 margin-top: 10px;
 }

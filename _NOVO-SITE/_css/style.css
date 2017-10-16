@@ -164,14 +164,15 @@ margin-right: 5px;
 text-align: center;
 cursor: pointer;
 padding: 10px;
+display: flex;
 display: -webkit-box;
 display: -ms-flexbox;
-display: flex;
+        align-items: center;
 -webkit-box-align: center;
     -ms-flex-align: center;
-        align-items: center;
--ms-flex-pack: distribute;
     justify-content: space-around;
+-ms-flex-pack: distribute;
+-webkit-justify-content: space-around; 
 }
 .botao:hover,
 .botao:focus,
