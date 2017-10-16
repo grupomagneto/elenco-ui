@@ -73,6 +73,7 @@ if (!empty($_SESSION['id_elenco'])) {
 <link rel="stylesheet" href="../_css/cadastro.css" type="text/css" />
 </head>
 <body>
+<?php include '../_sys/loading.php'; ?>
 <div class="gradient">
   <div class="container">
     <div class="mancha flexbox relative wrap">

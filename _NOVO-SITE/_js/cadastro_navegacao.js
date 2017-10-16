@@ -33,6 +33,7 @@ $(document).ready(function(){
     $(".invalido").hide();
     $(".valido").hide();
     $(".ok").hide();
+    hideLoading();
     // console.log(swiper.activeIndex);
   }
   // SEXO DO MENOR
@@ -1189,6 +1190,7 @@ $(document).ready(function(){
     stopTransition();
   });
   $("#btn_boleto-bancario").click(function(){
+    showLoading();
     document.getElementById("input-hidden-boleto-desconto").value = parseInt(document.getElementById("input-hidden-boleto-desconto").value) + 5;
     document.getElementById("input-hidden-boleto-forma_pagamento").value = "Boleto Bancário";
     if (document.getElementById("input-hidden-boleto-desconto").value == 5) {
@@ -1287,6 +1289,7 @@ $(document).ready(function(){
     $('#input-hidden-cartao-complemento').val($('#complemento-titular').val());
   });
   $("#btn_pagar-com-cartao-de-credito").click(function(){
+    showLoading();
     var validade = $('#validade-cartao').val();
     var split = validade.split("/");
     var month = split[0];

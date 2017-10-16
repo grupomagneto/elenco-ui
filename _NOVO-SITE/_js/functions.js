@@ -218,6 +218,7 @@ $(function(){
     if ($.trim(this.value).length == 14) {
       var cpf = $(this).val();
       if (validCPF(cpf) && /^\d{2}\/\d{2}\/\d{4}$/) {
+        showLoading();
         if ( CPF.validate($(this).val()) === true ) {
           $('.ok').show();
           $.bipbop("SELECT FROM 'BIPBOPJS'.'CPFCNPJ'", BIPBOP_FREE, {
@@ -234,9 +235,11 @@ $(function(){
                 $('.status').show();
                 $(".status").text(mensagem);
                 $("#nome-cpf_value").val(mensagem);
+                hideLoading();
             }
           });
         } else {
+          hideLoading();
           var mensagem = 'CPF inválido!';
           $('.invalido').show();
           $('.valido').hide();
@@ -257,6 +260,7 @@ $(function(){
     if ($.trim(this.value).length == 14) {
       var cpf = $(this).val();
       if (validCPF(cpf) && /^\d{2}\/\d{2}\/\d{4}$/) {
+        showLoading();
         if ( CPF.validate($(this).val()) === true ) {
           $('.ok').show();
           $.bipbop("SELECT FROM 'BIPBOPJS'.'CPFCNPJ'", BIPBOP_FREE, {
@@ -281,9 +285,11 @@ $(function(){
                 $(".status").text(mensagem);
                 $("#nome-cpf_value_menor").val(mensagem);
                 $("#nome-artistico_value_menor").val(nome_artistico);
+                hideLoading();
             }
           });
         } else {
+          hideLoading();
           var mensagem = 'CPF inválido!';
           $('.invalido').show();
           $('.valido').hide();
@@ -304,6 +310,7 @@ $(function(){
     if ($.trim(this.value).length == 14) {
       var cpf = $(this).val();
       if (validCPF(cpf) && /^\d{2}\/\d{2}\/\d{4}$/) {
+        showLoading();
         if ( CPF.validate($(this).val()) === true ) {
           $.bipbop("SELECT FROM 'BIPBOPJS'.'CPFCNPJ'", BIPBOP_FREE, {
             data: {
@@ -313,6 +320,7 @@ $(function(){
                 var nome = $(data).find("body nome").text().toLowerCase();
                 nome = ucFirstAllWords(nome);
                 $("#nome_completo-titular").val(nome);
+                hideLoading();
             }
           });
         } else {
@@ -362,6 +370,7 @@ function meu_callback(conteudo) {
         var uf = (conteudo.uf);
         var mensagem = bairro + " - " + cidade + " - " + uf;
         // console.log(mensagem);
+        hideLoading();
         $('.ok').show();
         $(".status").text(mensagem);
         $("#bairro_value").val(bairro);
@@ -377,6 +386,7 @@ function meu_callback(conteudo) {
     else {
         //CEP não Encontrado.
         $('.ok').hide();
+        hideLoading();
         var mensagem = "CEP não encontrado";
         $(".status").text(mensagem);
     		$('.status').show();
@@ -548,3 +558,9 @@ $(document).ready(function(){
 $(window).resize(mascara);
   mascara();
 });
+function showLoading() {
+   document.getElementById('loading').style.display = 'block';
+}
+function hideLoading() {
+   document.getElementById('loading').style.display = 'none';
+}

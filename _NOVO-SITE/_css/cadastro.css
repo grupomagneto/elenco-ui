@@ -12,8 +12,8 @@ width: 100%;
 height: 30px;
 margin: 20px 0px 0px 0px;
 -webkit-box-align: center;
-    -ms-flex-align: center;
-        align-items: center;
+-ms-flex-align: center;
+align-items: center;
 }
 .voltar{
 opacity: 0;
@@ -41,10 +41,10 @@ display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
 -webkit-box-pack: center;
-    -ms-flex-pack: center;
-        justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
 -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+flex-wrap: wrap;
 width: 100%;
 height: auto;
 margin: 10px 10px 10px 10px;
@@ -56,10 +56,10 @@ display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
 -webkit-box-pack: center;
-    -ms-flex-pack: center;
-        justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
 -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+flex-wrap: wrap;
 /*z-index: -1;*/
 }
 .subtexto{
@@ -76,7 +76,7 @@ display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
 -ms-flex-line-pack: start;
-    align-content: flex-start;
+align-content: flex-start;
 }
 .input-validacao-ok{
 margin-top: 50px;
@@ -118,16 +118,16 @@ height: auto;
 background: #FF5D85;
 border: 1px solid #FFFFFF;
 -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
 border-radius: 15px;
 display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
 -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+flex-wrap: wrap;
 -webkit-box-pack: center;
-    -ms-flex-pack: center;
-        justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
 }
 .quadro-premium{
 width: 90%;
@@ -135,16 +135,16 @@ height: auto;
 background: #CC64E0;
 border: 1px solid #FFFFFF;
 -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
 border-radius: 15px;
 display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
 -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+flex-wrap: wrap;
 -webkit-box-pack: center;
-    -ms-flex-pack: center;
-        justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
 }
 .quadro-profissional{
 width: 90%;
@@ -152,16 +152,16 @@ height: auto;
 background: #2AA6E4;
 border: 1px solid #FFFFFF;
 -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
 border-radius: 15px;
 display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
 -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+flex-wrap: wrap;
 -webkit-box-pack: center;
-    -ms-flex-pack: center;
-        justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
 }
 .icon{
 width: 60px;
@@ -183,8 +183,8 @@ display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
 -webkit-box-pack: center;
-    -ms-flex-pack: center;
-        justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
 margin-bottom: 20px;
 }
 .aviso {
@@ -193,12 +193,12 @@ display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
 -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+flex-wrap: nowrap;
 -ms-flex-line-pack: center;
-    align-content: center;
+align-content: center;
 -webkit-box-pack: center;
-    -ms-flex-pack: center;
-        justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
 margin: 0px 0px 10px 0px;
 }
 .declaro{
@@ -211,11 +211,11 @@ display: -ms-flexbox;
 display: flex;
 -webkit-box-orient: vertical;
 -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-        flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
 -webkit-box-pack: center;
-    -ms-flex-pack: center;
-        justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
 }
 .requerido{
 display: none;
@@ -227,11 +227,18 @@ height: 80%;
 
 overflow-x: hidden;
 overflow-y: scroll;
+-webkit-overflow-scrolling: auto;
 
 padding-bottom: 40px;
 }
 .caixas-cadastros::-webkit-scrollbar { 
-  display: none;
+display: none;
+overflow-y: scroll;
+-webkit-overflow-scrolling: auto;
+}
+.caixas-cadastros::-webkit-overflow-scrolling { 
+overflow-y: scroll;
+-webkit-overflow-scrolling: auto;
 }
 .video{
 margin-top: 10px;
@@ -261,11 +268,11 @@ display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
 -webkit-box-pack: center;
-    -ms-flex-pack: center;
-        justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
 -webkit-box-align: center;
-    -ms-flex-align: center;
-        align-items: center;
+-ms-flex-align: center;
+align-items: center;
 height: 200px;
 width: 150px;
 }
@@ -273,11 +280,11 @@ width: 150px;
 margin-top: 20px;
 display: none;
 -webkit-box-pack: center;
-    -ms-flex-pack: center;
-        justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
 -webkit-box-align: end;
-    -ms-flex-align: end;
-        align-items: flex-end;
+-ms-flex-align: end;
+align-items: flex-end;
 height: 200px;
 width: 200px;
 }
@@ -456,10 +463,10 @@ display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
 -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+flex-wrap: nowrap;
 -webkit-box-pack: center;
-    -ms-flex-pack: center;
-        justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
 }
 .numero-casa{
 text-align: left;
@@ -483,14 +490,14 @@ height: 100%;
 display: block;
 }
 .uploadbar-fill {
-	color: rgba(255, 255, 255, 0.3);
+color: rgba(255, 255, 255, 0.3);
 }
 #icon_drt-enviar{
-    position: relative;
-    z-index: 1;
+position: relative;
+z-index: 1;
 }
 #drt_upload_text {
-    width: 90%;
+width: 90%;
 }
 .ul_lista_selfies{
 margin-bottom: -20px;

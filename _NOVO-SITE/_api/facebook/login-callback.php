@@ -126,12 +126,12 @@ require 'bootstrap.php';
         catch (Exception $e) {
           echo 'Erro: '.$e->getMessage();
         }
-  header('http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/cadastro.php');
-        // header('location: https://www.magnetoelenco.com.br/cadastro/cadastro.php');
+  // header('http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/cadastro.php');
+        header('location: https://www.magnetoelenco.com.br/cadastro/cadastro.php');
 
       } else {
-        // header('location: https://www.magnetoelenco.com.br/cadastro/index.php');  
-        header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/index.php');
+        header('location: https://www.magnetoelenco.com.br/cadastro/index.php');  
+        // header('location: http://localhost:8888/elenco-ui/_NOVO-SITE/cadastro/index.php');
     }
   }
 mysqli_close($link);
