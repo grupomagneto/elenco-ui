@@ -67,7 +67,7 @@ try {
     $payment = $order->payments()
     ->setCreditCardHash($hash, $customer)                                 
     ->setInstallmentCount($Parcelas)                                 
-    ->setStatementDescriptor('MagnetoElenco')                                
+    ->setStatementDescriptor('teste de pag')                                
     ->execute();  
 
     print_r($payment); 

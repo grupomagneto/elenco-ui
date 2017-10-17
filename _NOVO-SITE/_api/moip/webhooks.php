@@ -1,5 +1,5 @@
 <?php
-require '../../_sys/conecta.php';
+// require '../../_sys/conecta.php';
 // $json_str = '{
 //   "event": "PAYMENT.IN_ANALYSIS",
 //   "resource": {
@@ -66,27 +66,33 @@ require '../../_sys/conecta.php';
 $json_str = file_get_contents('php://input');
 $array = json_decode($json_str, TRUE);
 
-$event = $array['event'];
-// $paymentId = $array['resource']['payment']['id'];
-// $status = $array['resource']['payment']['status'];
-$liquid = $array['resource']['payment']['amount']['liquid'];
-$order = $array['resource']['payment']['_links']['order']['title'];
+$file_1 = "file_1.txt";
+$file_2 = "file_2.txt";
 
-if ($event == "PAYMENT.CREATED") { $status = "Iniciado" } //Pagamento criado.
-elseif ($event == "PAYMENT.WAITING") { $status = "Aguardando" } //Moip está aguardando confirmação de pagamento.
-elseif ($event == "PAYMENT.IN_ANALYSIS") { $status = "Em Análise" } //Pagamento passando por análise de risco dentro do Moip.
-elseif ($event == "PAYMENT.PRE_AUTHORIZED") { $status = "Pré-autorizado" } //indica a reserva do valor no cartão do cliente.
-elseif ($event == "PAYMENT.AUTHORIZED") { $status = "Autorizado" } //Pagamento efetivado, proceda com a entrega da compra.
-elseif ($event == "PAYMENT.CANCELLED") { $status = "Cancelado" } //Pagamento não efetivado, cancelado.
-elseif ($event == "PAYMENT.REFUNDED") { $status = "Reembolsado" } //Atualização de status de pagamento para Reembolsado.
-elseif ($event == "PAYMENT.REVERSED") { $status = "Estornado" } //Atualização de status de pagamento para Estornado
-elseif ($event == "PAYMENT.SETTLED") { $status = "Disponível" } //Valor disponível para saque
+file_put_contents($file_1, $json_str, FILE_APPEND);
+file_put_contents($file_2, $array, FILE_APPEND);
 
-$id_venda = 12552;
-$sql = "UPDATE financeiro SET status_venda = '$status', valor_venda = '$liquid' WHERE id = '$id_venda'";
-$result = mysqli_query($link, $sql);
+// $event = $array['event'];
+// // $paymentId = $array['resource']['payment']['id'];
+// // $status = $array['resource']['payment']['status'];
+// $liquid = $array['resource']['payment']['amount']['liquid'];
+// $order = $array['resource']['payment']['_links']['order']['title'];
 
-mysqli_close($link);
+// if ($event == "PAYMENT.CREATED") { $status = "Iniciado" } //Pagamento criado.
+// elseif ($event == "PAYMENT.WAITING") { $status = "Aguardando" } //Moip está aguardando confirmação de pagamento.
+// elseif ($event == "PAYMENT.IN_ANALYSIS") { $status = "Em Análise" } //Pagamento passando por análise de risco dentro do Moip.
+// elseif ($event == "PAYMENT.PRE_AUTHORIZED") { $status = "Pré-autorizado" } //indica a reserva do valor no cartão do cliente.
+// elseif ($event == "PAYMENT.AUTHORIZED") { $status = "Autorizado" } //Pagamento efetivado, proceda com a entrega da compra.
+// elseif ($event == "PAYMENT.CANCELLED") { $status = "Cancelado" } //Pagamento não efetivado, cancelado.
+// elseif ($event == "PAYMENT.REFUNDED") { $status = "Reembolsado" } //Atualização de status de pagamento para Reembolsado.
+// elseif ($event == "PAYMENT.REVERSED") { $status = "Estornado" } //Atualização de status de pagamento para Estornado
+// elseif ($event == "PAYMENT.SETTLED") { $status = "Disponível" } //Valor disponível para saque
+
+// $id_venda = 12552;
+// $sql = "UPDATE financeiro SET status_venda = '$status', valor_venda = '$liquid' WHERE id = '$id_venda'";
+// $result = mysqli_query($link, $sql);
+
+// mysqli_close($link);
 
 http_response_code(200);
 
