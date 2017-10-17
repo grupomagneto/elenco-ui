@@ -1,5 +1,5 @@
 <form action="#" method="post">
-    <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center caixas-cadastros'>
+    <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center caixas-cadastros mCustomScrollbar'>
         <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
             <div class='titulo heavy white large'>
             Perfeito para começar
