@@ -729,7 +729,10 @@ $(document).ready(function(){
     previousPercentage = "50%";
     stopTransition();
   });
+
+
   $("#btn_gratuito").click(function(){
+
     event.preventDefault();
     document.getElementById("05-0-02_clique-e-conheca-nossos-planos_drt").className += " display_none";
     document.getElementById("05-1-02_perfeito-para-quem-tem-drt").className += " display_none";
@@ -747,6 +750,7 @@ $(document).ready(function(){
     document.getElementById("05-2-12_cadastro-agendado").className += " display_none";
     document.getElementById("05-2-13_prepare-se-para-suas-fotos").className += " display_none";
     document.getElementById("05-1-01_perfeito-para-comecar").classList.remove("display_none");
+
     swiper.unlockSwipeToNext();
     // swiper.slideTo( $("#05-1-01_perfeito-para-comecar").index(), 200);
     swiper.slideNext();
@@ -1340,4 +1344,8 @@ $(document).ready(function(){
     previousPercentage = "100%";
     stopTransition();
   });
+});
+
+$('.caixas-cadastros').mCustomScrollbar({
+    theme:"my-theme"
 });

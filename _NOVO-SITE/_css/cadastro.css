@@ -225,27 +225,15 @@ margin: -100px 0px 0px -15px;
 
 .caixas-cadastros{
 position: absolute;
-max-height: 700px;
-left: 3%;
+max-height: 980px;
 overflow-x: hidden;
+margin-left: -130px;
+padding-right: 50px;
 overflow-y: auto;
-padding-bottom: 40px;
 }
 
 .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: transparent; }
 .mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail{ background-color: transparent; } 
-
-/*-webkit-overflow-scrolling: auto;*/
-/*.caixas-cadastros::-webkit-scrollbar { 
-display: none;
-
-overflow-y: scroll;
--webkit-overflow-scrolling: auto;
-}
-.caixas-cadastros::-webkit-overflow-scrolling { 
-overflow-y: scroll;
--webkit-overflow-scrolling: auto;
-}*/
 
 .video{
 margin-top: 10px;
