@@ -1,5 +1,5 @@
 <div class='conteudo flexbox wrap text-align-center align-items-center justify-center'>
-  <div class='conteudo flexbox wrap text-align-center align-items-center justify-center'>
+  <div class='conteudo  conteudo-index  flexbox wrap text-align-center align-items-center justify-center'>
     <div class='titulo heavy white large'>
     </div>
     <div class='subtitulo'>
