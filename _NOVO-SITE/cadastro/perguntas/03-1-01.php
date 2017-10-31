@@ -1,5 +1,5 @@
 <div class="conteudo flexbox wrap text-align-center space-between-vertical justify-center">
-    <div class="conteudo flexbox wrap text-align-center space-between-vertical justify-center">
+    <div class="conteudo conteudo-cadastro flexbox wrap text-align-center space-between-vertical justify-center">
         <div class="titulo heavy white large" id="quem_cadastrar_title">
         Quem você deseja cadastrar?
         </div>
@@ -16,6 +16,8 @@
                 <input type="hidden" name="value3" value="<?php echo $_SESSION['nome_artistico']; ?>" />
                 <button id="btn_eu-mesmo-tenho-18" class="botao">Eu mesmo, tenho 18+</button>
             </form>
+        <!-- </div>
+        <div class="botoes"> -->
             <form id="form_btn_um-menor-de-idade" action="#" method="post">
                 <input type="hidden" name="field" value="dt_nasc_responsavel" />
                 <input type="hidden" name="value" id="dt_nasc_responsavel" value="<?php echo $_SESSION['dt_nascimento']; ?>" />

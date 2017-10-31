@@ -3,7 +3,7 @@
     <div class='titulo heavy white large'>
       <span class='heavy white large margin20'>Faça parte do nosso elenco!</span>
     </div>
-    <div class='subtitulo avenir white small'>
+    <div class='subtitulo subtitulo-index avenir white small'>
       <span class='margin20'>Cadastre-se gratuitamente em minutos</span>
     </div>
     <div class='botoes'>

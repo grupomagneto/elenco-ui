@@ -11,7 +11,7 @@
 	height: 90%;
 	padding: 0;
   position: absolute;
-  top:0;
+  top:-10%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -33,9 +33,12 @@
 .menu img{
 	margin: 0 20px;
 }
+.subtitulo-index{
+	margin-bottom: 25px;
+}
 .botoes{
 	width: 100%;
-	margin-top: -8px;
+	margin-top: -30px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -72,3 +75,4 @@
 	-webkit-justify-content: space-around; 
   justify-content: space-around;
 }
+
