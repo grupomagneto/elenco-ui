@@ -79,3 +79,31 @@
   margin: 0 auto;
 }
 
+.input-validacao-ok{
+margin-top: 20px;
+}
+
+.btn_planos{
+width: 280px;
+height: 100px;
+padding-right: 10px;
+}
+.btn_plano{
+width: 100%;
+height: 100%;
+cursor: pointer;
+}
+
+.btn_plano-more{
+margin-top: -80px;
+  position: absolute;
+right: 0;
+cursor: pointer;
+}
+.caixas-cadastros {
+position: absolute;
+max-height: 1000px;
+overflow-x: hidden;
+padding-right: 50px;
+overflow-y: scroll;
+}

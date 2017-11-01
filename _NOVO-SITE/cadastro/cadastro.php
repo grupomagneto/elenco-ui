@@ -72,7 +72,7 @@ if (!empty($_SESSION['id_elenco'])) {
 <link rel="stylesheet" href="../_css/drum.css" type="text/css" />
 <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css" type="text/css" />
 <link rel="stylesheet" href="../_css/cadastro.css" type="text/css" />
-<!-- <link rel="stylesheet" href="../_css/trumps-cadastro.css" type="text/css" /> -->
+<link rel="stylesheet" href="../_css/trumps-cadastro.css" type="text/css" />
 </head>
 <body>
 <?php include '../_sys/loading.php'; ?>
