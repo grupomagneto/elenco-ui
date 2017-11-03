@@ -34,11 +34,11 @@
 	margin: 0 20px;
 }
 .subtitulo-index{
-	margin-bottom: 25px;
+	margin-bottom: 35px;
 }
 .botoes{
 	width: 100%;
-	margin-top: -30px;
+	margin-top: 2px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -75,4 +75,3 @@
 	-webkit-justify-content: space-around; 
   justify-content: space-around;
 }
-

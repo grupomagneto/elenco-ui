@@ -6,7 +6,6 @@
   display: block;
   display: flex;
 }
-
 .conteudo{
   max-width: 320px;
   height: 90%;
@@ -18,11 +17,9 @@
   right: 0;
   margin: auto;
 }
-
 .conteudo-cadastro{
   width: 320px;
 }
-
 .botoes{
   max-width: 280px;
   height: 60px;
@@ -40,11 +37,29 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-
-.botao{
+.botao {
+background: rgba(255,255,255,0.30);
+border: 2px solid #FFFFFF;
+border-radius: 8px;
+font-family: Avenir-Book;
+font-size: 20px;
+color: #FFFFFF;
+width: 280px;
+height: 60px;
+margin-bottom: 15px;
+margin-left: 5px;
+margin-right: 5px;
+text-align: center;
+cursor: pointer;
+padding: 10px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   text-align: center;
 }
-
 .voltar{
   float: left;
   opacity: 0;
@@ -93,17 +108,48 @@ width: 100%;
 height: 100%;
 cursor: pointer;
 }
-
 .btn_plano-more{
 margin-top: -80px;
   position: absolute;
 right: 0;
 cursor: pointer;
 }
-.caixas-cadastros {
-position: absolute;
-max-height: 1000px;
-overflow-x: hidden;
-padding-right: 50px;
-overflow-y: scroll;
+
+.quadro-gratuito{
+width: 90%;
+height: 480px;
+background: #FF5D85;
+border: 1px solid #FFFFFF;
+-webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+border-radius: 15px;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+justify-content: center;
 }
+
+.aviso {
+width: 280px;
+  position: absolute;
+  margin-top: 290px;
+}
+.botao_cadastro{
+  width: 90%;
+  position: absolute;
+  margin: auto;
+  margin-top: 470px;
+}
+
+.caixas-cadastros{
+max-height: 980px;
+overflow-x: hidden;
+overflow-y: scroll;
+-webkit-overflow-scrolling: auto;
+margin-top: -50px;
+}
+

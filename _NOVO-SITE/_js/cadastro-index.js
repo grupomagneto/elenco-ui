@@ -137,10 +137,21 @@ $(document).ready(function(){
   });
 });
 
+var trumps_index = document.querySelector('#trumps_index');
 var nua = navigator.userAgent;
 var is_android = ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 &&     nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1));
 
 if(is_android) {
-  // Do something
-  alert("alerta");
+    $('.titulo-index_android').show();
+    $('.titulo-index_desktop').hide();
+    $('#ultima-index_android').show();
+    $('#ultima-index_desktop').hide();
+    trumps_index.setAttribute('href', '../_css/trumps-index.css');
+}else{
+    $('.titulo-index_desktop').show();
+    $('.titulo-index_android').hide();
+    $('#ultima-index_android').hide();
+    $('#ultima-index_desktop').show();
+    trumps_index.removeAttribute('href', '../_css/trumps-index.css');
+
 }
