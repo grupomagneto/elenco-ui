@@ -8,7 +8,7 @@ $(document).ready(function(){
       simulateTouch: false,
       onlyExternal: true,
       speed: 200,
-      initialSlide: 0,
+      initialSlide: 14,
       // keyboardControl: true
       // onSlideChangeEnd : function(swiper) {
       //  console.log("activeIndex: "+swiper.activeIndex);
@@ -1350,14 +1350,3 @@ $('.caixas-cadastros').mCustomScrollbar({
     theme:"my-theme"
 });
 
-
-var trumps_cadastro = document.querySelector('#trumps_cadastro');
-var nua = navigator.userAgent;
-var is_android = ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 &&     nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1));
-
-if(is_android) {
-    trumps_cadastro.setAttribute('href', '../_css/trumps-cadastro.css');
-}else{
-    trumps_cadastro.removeAttribute('href', '../_css/trumps-cadastro.css');
-
-}

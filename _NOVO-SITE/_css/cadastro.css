@@ -10,10 +10,7 @@ margin-left: -45%;
 .menu{
 width: 100%;
 height: 30px;
-margin: 20px 0px 0px 0px;
--webkit-box-align: center;
--ms-flex-align: center;
-align-items: center;
+margin: 20px 0px 0px 0px;  
 }
 .voltar{
 opacity: 0;
@@ -37,11 +34,14 @@ margin-top: 20px;
 margin-left: 5%;
 }
 .subtitulo{
-display: -webkit-box;
-display: -ms-flexbox;
+display: -webkit-box;  /* Safari 3.1 - 6, Chrome < 21 (2009 Spec), UC Browser Android */
+display: -moz-box;     /* Firefox 2 - 27 (2009 Spec), UC Mini */
+display: -ms-flexbox;  /* IE10 (2012 Syntax) */
+display: -webkit-flex; /* Safari 6.1 - 8, Android < 4.4, BB < 10, Chrome 21 - 28 */
 display: flex;
 -webkit-box-pack: center;
 -ms-flex-pack: center;
+-webkit-justify-content: center;
 justify-content: center;
 -ms-flex-wrap: wrap;
 flex-wrap: wrap;
@@ -60,7 +60,6 @@ display: flex;
 justify-content: center;
 -ms-flex-wrap: wrap;
 flex-wrap: wrap;
-/*z-index: -1;*/
 }
 .subtexto{
 position: relative;
@@ -203,7 +202,6 @@ margin: 0px 0px 10px 0px;
 }
 .declaro{
 width: 230px;
-/*opacity: 0.7;*/
 text-align: left;
 margin-left: 5px;
 display: -webkit-box;
@@ -217,30 +215,23 @@ flex-direction: column;
 -ms-flex-pack: center;
 justify-content: center;
 }
-.requerido{
+.requerido {
 display: none;
 position: absolute;
 margin: -100px 0px 0px -15px;
 }
 
-.caixas-cadastros{
-max-height: 900px;
+.caixas-cadastros {
+position: absolute;
+max-height: 980px;
 overflow-x: hidden;
-overflow-y: scroll;
--webkit-overflow-scrolling: auto;
-padding-bottom: 40px;
+margin-left: -130px;
+padding-right: 50px;
+overflow-y: auto;
 }
 
-.caixas-cadastros::-webkit-scrollbar { 
-/*display: none;*/
-background: transparent;
-overflow-y: scroll;
--webkit-overflow-scrolling: auto;
-}
-.caixas-cadastros::-webkit-overflow-scrolling { 
-overflow-y: scroll;
--webkit-overflow-scrolling: auto;
-}
+.mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: transparent; }
+.mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail{ background-color: transparent; } 
 
 .video{
 margin-top: 10px;
@@ -385,23 +376,6 @@ margin-right: 10px;
 input.ddd-titular::-webkit-input-placeholder{
 background: transparent;
 }
-/*
-.select-dropdown-hidden{
-width:0px;
-}
-.select-dropdown-styled{
-width:50px;
-display: inline-block;
-}
-.select-dropdown-options{
-width:90px;
-float: right;
-margin-bottom: -100px;
-margin-right: 7px;
-background-color: purple;
-margin-top: 0px;
-}
-*/
 input.numero-casa::-webkit-input-placeholder{
 background: transparent;
 }

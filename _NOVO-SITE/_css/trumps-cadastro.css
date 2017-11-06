@@ -37,21 +37,25 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+
+.botoes form button{
+  margin-top: 10px;
+}
+
 .botao {
-background: rgba(255,255,255,0.30);
-border: 2px solid #FFFFFF;
-border-radius: 8px;
-font-family: Avenir-Book;
-font-size: 20px;
-color: #FFFFFF;
-width: 280px;
-height: 60px;
-margin-bottom: 15px;
-margin-left: 5px;
-margin-right: 5px;
-text-align: center;
-cursor: pointer;
-padding: 10px;
+  background: rgba(255,255,255,0.30);
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  font-family: Avenir-Book;
+  font-size: 20px;
+  color: #FFFFFF;
+  width: 280px;
+  height: 60px;
+  margin-bottom: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  padding: 10px;
   position: relative;
   top: 0;
   bottom: 0;
@@ -94,8 +98,13 @@ padding: 10px;
   margin: 0 auto;
 }
 
+.mini-menu{
+  margin-left: 10px;
+}
+
 .input-validacao-ok{
-margin-top: 20px;
+  margin-top: 20px;
+  max-width: 280px;
 }
 
 .btn_planos{
@@ -134,22 +143,76 @@ justify-content: center;
 }
 
 .aviso {
-width: 280px;
-  position: absolute;
-  margin-top: 290px;
-}
-.botao_cadastro{
-  width: 90%;
+  width: 180px;
   position: absolute;
   margin: auto;
-  margin-top: 470px;
+  margin-top: 390px;
+  left: 28px;
+}
+.botao_cadastro{
+  width: 210px;
+  height: 50px;
+  position: absolute;
+  margin: auto;
+  margin-top: 565px;
+  left: -5px;
 }
 
 .caixas-cadastros{
-max-height: 980px;
-overflow-x: hidden;
-overflow-y: scroll;
--webkit-overflow-scrolling: auto;
-margin-top: -50px;
+  max-height: 1000px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: auto;
+  margin-top: -50px;
 }
 
+.ul_lista_selfies{
+  position: absolute;
+  margin-bottom: -20px;
+  margin-top: 25px;
+}
+.li_lista_selfies{
+  margin-left: -30px;
+  margin-bottom: 20px;
+  line-height: 20px;
+}
+#btn_video{
+  position: absolute;
+  top: 90%;  
+}
+
+.container-video{
+  margin-top: -20px;
+}
+.result{
+display: -webkit-box;
+display: -ms-flexbox;
+display: block;
+display: flex;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+justify-content: center;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
+  position: relative;
+  top: 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+height: 200px;
+width: 150px;
+}
+
+.foto{
+  margin-bottom: 60px;
+}
+
+.botoes-fotos{
+  margin-top: 30px;
+}
+
+#file-input {
+display: block;
+}

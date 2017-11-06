@@ -16,7 +16,7 @@
             <input type="hidden" id="foto" class="foto" value="0" />
         </div>
         <div class="subtitulo avenir white small instrucao" id="instrucao">Clique para escolher</div>
-        <div class='botoes'>
+        <div class='botoes botoes-fotos'>
             <button type="button" id="disabled" class="botao disabled" disabled>Continuar</button>
             <button type="button" id="save" class="botao save hide">Continuar</button>
             <button type="button" id='btn_sorrindo-enviar' class="botao download hide">Enviar</button>

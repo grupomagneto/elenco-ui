@@ -1,5 +1,5 @@
 <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
-    <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center'>
+    <div class='conteudo flexbox wrap text-align-center space-between-vertical justify-center container-video'>
         <div class='titulo heavy white large'>
         <!-- Como fazer bons autorretratos -->
         Autorretratos no padrão Magneto Elenco
