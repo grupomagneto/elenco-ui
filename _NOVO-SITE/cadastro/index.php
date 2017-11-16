@@ -50,14 +50,14 @@ try {
     else {
       if (!empty($_GET['code']) and !empty($_GET['state'])) {
           $_SESSION['facebook_access_token'] = $fb->Login()->getAccessToken();
-          // header('location: https://www.magnetoelenco.com.br/_api/facebook/login-callback.php');
-          header('location: http://192.168.0.44:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php');
+          /header('location: https://www.magnetoelenco.com.br/_api/facebook/login-callback.php');
+          //header('location: http://192.168.0.44:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php');
       } else {
         require '../_api/facebook/bootstrap.php';
         $helper = $fb->getRedirectLoginHelper();
         $permissions = ['email,public_profile,user_friends,user_birthday']; //permissões do usuario
-        // $loginUrl = $helper->getLoginUrl('https://www.magnetoelenco.com.br/_api/facebook/login-callback.php', $permissions);
-        $loginUrl = $helper->getLoginUrl('http://192.168.0.44:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php', $permissions);
+        $loginUrl = $helper->getLoginUrl('https://www.magnetoelenco.com.br/_api/facebook/login-callback.php', $permissions);
+        //$loginUrl = $helper->getLoginUrl('http://192.168.0.44:8888/elenco-ui/_NOVO-SITE/_api/facebook/login-callback.php', $permissions);
 ?>
 <!DOCTYPE html>
 <html lang='pt-br'>
