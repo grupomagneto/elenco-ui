@@ -110,5 +110,76 @@ $(document).ready(function(){
 	
 });
 
+//CAMPOS DIGITÁVEIS
 
+var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+	  acc[i].onclick = function() {
+	    this.classList.toggle("active");
+	    var panel = this.nextElementSibling;
+	    if (panel.style.maxHeight){
+	      panel.style.maxHeight = null;
+	    } else {
+	      panel.style.maxHeight = panel.scrollHeight + "px";
+	    } 
+	  }
+	}
+
+
+	$(function(){
+	  $('#i-peso').hide();
+	  $('#i-altura').hide();
+	  $('#i-roupa').hide();
+	  $('#i-sapato').hide();
+	  // $('#b-peso').hide();
+	  
+	  // $('#peso').click(function(){
+	  //     $('#peso').toggle('fast');
+	  //     $('#i-peso').val($('#peso').text());
+	  //     $('#i-peso').toggle('fast');
+	  //     // $('#b-peso').toggle('fast');
+	  // });
+	  
+	  $('#b-peso').click(function(){
+	      $('#peso').text($('#i-peso').val());
+	      $('#altura').text($('#i-altura').val());
+	      $('#roupa').text($('#i-roupa').val());
+	      $('#sapato').text($('#i-roupa').val());
+	      
+	  		$('#kilo').hide();
+	  		$('#cm').hide();
+
+	    document.getElementById("b-peso").innerHTML = "Salvar";
+
+	      $.post("salva_perfil.php",
+	           "msg="+ $('#peso').text(),
+	           "msg="+ $('#altura').text(),
+	           "msg="+ $('#roupa').text(),
+	           "msg="+ $('#sapato').text(),
+
+	        function (retorno) {
+	          if (retorno != "success") {
+	            // Quando der erro
+	            document.getElementById("b-peso").innerHTML = "Salvar";
+	          } else {
+	            // Quando salvar
+	  			$('#kilo').show();
+	  			$('#cm').show();
+	            document.getElementById("b-peso").innerHTML = "Editar";
+	          }
+	      });
+	    
+	      $('#i-peso').toggle('fast');
+	      $('#i-altura').toggle('fast');
+	      $('#i-roupa').toggle('fast');
+	      $('#i-sapato').toggle('fast');
+	      // $('#b-peso').toggle('fast');
+	      $('#peso').toggle('fast');
+	      $('#altura').toggle('fast');
+	      $('#roupa').toggle('fast');
+	      $('#sapato').toggle('fast');
+	  });
+	});
 
