@@ -111,7 +111,6 @@ $(document).ready(function(){
 });
 
 //CAMPOS DIGITÁVEIS
-
 var acc = document.getElementsByClassName("accordion");
 	var i;
 
@@ -151,9 +150,9 @@ var acc = document.getElementsByClassName("accordion");
 	  		$('#kilo').hide();
 	  		$('#cm').hide();
 
-	    document.getElementById("b-peso").innerHTML = "Salvar";
+	    	document.getElementById("b-peso").innerHTML = "Salvar";
 
-	      $.post("salva_perfil.php",
+	      	$.post("salva_perfil.php",
 	           "msg="+ $('#peso').text(),
 	           "msg="+ $('#altura').text(),
 	           "msg="+ $('#roupa').text(),
@@ -167,7 +166,7 @@ var acc = document.getElementsByClassName("accordion");
 	            // Quando salvar
 	  			$('#kilo').show();
 	  			$('#cm').show();
-	            document.getElementById("b-peso").innerHTML = "Editar";
+	  			alert("alerta");
 	          }
 	      });
 	    
