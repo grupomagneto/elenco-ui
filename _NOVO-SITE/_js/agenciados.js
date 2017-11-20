@@ -132,6 +132,14 @@ var acc = document.getElementsByClassName("accordion");
 	  $('#i-altura').hide();
 	  $('#i-roupa').hide();
 	  $('#i-sapato').hide();
+	  $('#i-busto').hide();
+	  $('#i-cintura').hide();
+	  $('#i-quadril').hide();
+	  $('#i-tipo_cabelo').hide();
+	  $('#i-cor_cabelo').hide();
+	  $('#i-tamanho_cabelo').hide();
+	  $('#i-cor_olho').hide();
+
 	  // $('#b-peso').hide();
 	  
 	  // $('#peso').click(function(){
@@ -142,10 +150,19 @@ var acc = document.getElementsByClassName("accordion");
 	  // });
 	  
 	  $('#b-peso').click(function(){
+	  	
 	      $('#peso').text($('#i-peso').val());
 	      $('#altura').text($('#i-altura').val());
 	      $('#roupa').text($('#i-roupa').val());
-	      $('#sapato').text($('#i-roupa').val());
+	      $('#sapato').text($('#i-sapato').val());
+	      $('#busto').text($('#i-busto').val());
+	      $('#cintura').text($('#i-cintura').val());
+	      $('#quadril').text($('#i-quadril').val());
+	      $('#tipo_cabelo').text($('#i-tipo_cabelo').val());
+	      $('#cor_cabelo').text($('#i-cor_cabelo').val());
+	      $('#tamanho_cabelo').text($('#i-tamanho_cabelo').val());
+	      $('#cor_olho').text($('#i-cor_olho').val());
+
 	      
 	  		$('#kilo').hide();
 	  		$('#cm').hide();
@@ -157,6 +174,13 @@ var acc = document.getElementsByClassName("accordion");
 	           "msg="+ $('#altura').text(),
 	           "msg="+ $('#roupa').text(),
 	           "msg="+ $('#sapato').text(),
+	           "msg="+ $('#busto').text(),
+	           "msg="+ $('#cintura').text(),
+	           "msg="+ $('#quadril').text(),
+	           "msg="+ $('#tipo_cabelo').text(),
+	           "msg="+ $('#cor_cabelo').text(),
+	           "msg="+ $('#tamanho_cabelo').text(),
+	           "msg="+ $('#cor_olho').text(),
 
 	        function (retorno) {
 	          if (retorno != "success") {
@@ -174,11 +198,25 @@ var acc = document.getElementsByClassName("accordion");
 	      $('#i-altura').toggle('fast');
 	      $('#i-roupa').toggle('fast');
 	      $('#i-sapato').toggle('fast');
+		  $('#i-busto').toggle('fast');
+		  $('#i-cintura').toggle('fast');
+		  $('#i-quadril').toggle('fast');
+		  $('#i-tipo_cabelo').toggle('fast');
+		  $('#i-cor_cabelo').toggle('fast');
+		  $('#i-tamanho_cabelo').toggle('fast');
+		  $('#i-cor_olho').toggle('fast');
 	      // $('#b-peso').toggle('fast');
 	      $('#peso').toggle('fast');
 	      $('#altura').toggle('fast');
 	      $('#roupa').toggle('fast');
 	      $('#sapato').toggle('fast');
+	      $('#busto').toggle('fast');
+	      $('#cintura').toggle('fast');
+	      $('#quadril').toggle('fast');
+	      $('#tipo_cabelo').toggle('fast');
+	      $('#cor_cabelo').toggle('fast');
+	      $('#tamanho_cabelo').toggle('fast');
+	      $('#cor_olho').toggle('fast');
 	  });
 	});
 
