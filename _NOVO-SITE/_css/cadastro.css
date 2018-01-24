@@ -487,3 +487,45 @@ line-height: 20px;
 .botao_cadastro{
 width: 260px;
 }
+@media only screen and (max-height:1920px){
+.video {
+width: auto    !important;
+height: 800px   !important;
+/*margin-top: -210%;*/
+}
+#btn_video{
+/*margin-top: -730px;*/
+}
+}
+@media only screen and (max-height:1136px){
+.video {
+width: auto    !important;
+height: 500px   !important;
+/*margin-top: -210%;*/
+}
+#btn_video{
+/*margin-top: -730px;*/
+}
+}
+@media only screen and (max-height:960px){
+.video {
+width: auto    !important;
+height: 400px   !important;
+/*margin-top: -210%;*/
+}
+#btn_video{
+/*margin-top: -1030px;*/
+}
+}
+@media only screen and (max-height:480px){
+.video {
+width: auto    !important;
+height: 200px   !important;
+/*margin-top: -210%;*/
+}
+#btn_video{
+/*margin-top: -1030px;*/
+}
+}
+
+
