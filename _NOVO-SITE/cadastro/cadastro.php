@@ -72,6 +72,7 @@ if (!empty($_SESSION['id_elenco'])) {
 <link rel="stylesheet" href="../_css/drum.css" type="text/css" />
 <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css" type="text/css" />
 <link rel="stylesheet" href="../_css/cadastro.css" type="text/css" />
+<link rel="stylesheet" type="text/css" id="trumps_cadastro"  />
 </head>
 <body>
 <?php include '../_sys/loading.php'; ?>
@@ -214,6 +215,21 @@ if (!empty($_SESSION['id_elenco'])) {
 <script type="text/javascript" src="../_js/jquery.bipbop.min.js"></script>
 <script type="text/javascript" src="../_js/progressbar.js"></script>
 <script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
+
+<script>
+  
+  
+var trumps_cadastro = document.querySelector('#trumps_cadastro');
+var nua = navigator.userAgent;
+var is_android = ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 &&     nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1));
+
+if(is_android) {
+    trumps_cadastro.setAttribute('href', '../_css/trumps-cadastro.css');
+}else{
+    trumps_cadastro.removeAttribute('href', '../_css/trumps-cadastro.css');
+
+}
+</script>
 
 <!-- <?php include "../_sys/analytics.php"; ?> -->
 </body>

@@ -32,8 +32,6 @@
               <input type='text' name='uf' id='uf' value='df' placeholder='UF' required />
             </div>
 
-            <!-- <input type='hidden' name='id_usuario' value='<? ?>' /> -->
-            <!-- <input type='hidden' name='cadastro' value='' id='input-botao_atualiza-dados' /> -->
 
             <span class='texto_input'>NOME:</span>
             <input type='text' id='Portador' name='Portador' value='karina pereira' placeholder= 'Nome (como no cartão)' required />
@@ -150,5 +148,24 @@ VQIDAQAB
 </body>
 </html>
 
+<?php 
 
+$json_str = file_get_contents('php://input');
+$array = json_decode($json_str, TRUE);
 
+echo $json_obj;
+
+$event = $dados['event'];
+$paymentId = $dados['resource']['payment']['id'];
+$status = $dados['resource']['payment']['status'];
+
+echo $event;
+echo '<br />';
+echo $paymentId;
+echo '<br />';
+echo $status;
+
+http_response_code(200);
+
+// https://www.magnetoelenco.com.br/_api/moip/webhooks.php
+ ?>

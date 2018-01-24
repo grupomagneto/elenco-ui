@@ -4,18 +4,12 @@ width: 100%;
 height: 100%;
 padding: 0px;
 margin: 0px;
-/*transition: all 0.5s ease;*/
 }
 .gradient:after{
 position: absolute;
 -webkit-transition: all 0.5s ease;
 transition: all 0.5s ease;
-/*-webkit-animation: bummer 10s;
-animation: bummer 10s;
--webkit-transform: scale(1,1);
-transform: scale(1,1);
--webkit-animation-fill-mode: forwards;
-animation-fill-mode: forwards;*/
+
 content: "";
 display: block;
 width: 100%;
@@ -33,16 +27,7 @@ background-size: cover;
 background-position: center center;
 opacity: 0.4;
 }
-/*@-webkit-keyframes bummer {
-100% {
--webkit-transform: scale(2,2);
-}
-}
-@keyframes bummer {
-100% {
-transform: scale(2,2);
-}
-}*/
+
 .margin20{
 margin-bottom: 20px;
 }

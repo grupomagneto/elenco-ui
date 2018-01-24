@@ -107,14 +107,15 @@ try {
 <link rel='stylesheet' href='../_css/style.css' type='text/css' />
 <link rel='stylesheet' href='../_css/cadastro.css' type='text/css' />
 <link rel='stylesheet' href='../_css/cadastro-index.css' type='text/css' />
+<link rel='stylesheet' type='text/css' id="trumps_index" />
 </head>
 <body>
 <div class='gradient'>
   <div class='container'>
-    <div class='mancha flexbox relative wrap'>
+    <div class='mancha flexbox absolute wrap'>
         <div class='menu align-items-center flexbox nowrap space-between-horizontal'>
             <img src='../_images/seta-voltar.svg' class='voltar' />
-            <img src='../_images/logo-horizontal.svg' />
+            <img class="logo" src='../_images/logo-horizontal.svg' />
             <img src='../_images/menu.svg' class='mini-menu' />
         </div>
           <?php if (!isset($validacao_email)) {
@@ -162,6 +163,8 @@ try {
 <script type='text/javascript' src='../_js/gradient.js'></script>
 <script type='text/javascript' src='../_js/swiper.min.js'></script>
 <script type='text/javascript' src='../_js/cadastro-index.js'></script>
+
+
 <?php
 if (isset($validacao_email) && $validacao_email === "OK") {
     echo "<script type='text/javascript' src='../_js/cadastro-index-email.js'></script>";

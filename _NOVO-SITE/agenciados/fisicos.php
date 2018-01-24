@@ -1,4 +1,4 @@
-
+    
     <p class="avenir white small text-align-left"> NOME ARTÍSTICO</p>
     <p class="avenir nome-artistico color_87 large bold"> <?php echo $nome_artistico; ?></p>
 
@@ -18,6 +18,7 @@
                 <span id="kilo">kg</span>
               </p>
               <input type="text" name="msg" id="i-peso" placeholder="63kg" />
+              
               <p class="avenir white medium text-align-left">
                 <span id="altura">174</span> 
                 <span id="cm">cm</span>
@@ -61,13 +62,16 @@
               </div>
               <div class="physical-description__box_right float_right relative">
                 <p class="avenir white x-small text-align-left">
-                  82cm
+                  <span id="busto">82cm</span>
+                  <input type="text" name="msg" id="i-busto" placeholder="82cm" />
                 </p>
                 <p class="avenir white x-small text-align-left">
-                  66cm
+                  <span id="cintura">66cm</span>
+                  <input type="text" name="msg" id="i-cintura" placeholder="66cm" />
                 </p>
                 <p class="avenir white x-small text-align-left">
-                  97cm
+                  <span id="quadril">97cm</span>
+                  <input type="text" name="msg" id="i-quadril" placeholder="97cm" />
                 </p>
               </div>
             </div>
@@ -79,13 +83,16 @@
               </div>
               <div class="physical-description__box_right float_right relative">
                 <p class="avenir white x-small text-align-left">
-                  cacheado
+                  <span id="tipo_cabelo">cacheado</span>
+                  <input type="text" name="msg" id="i-tipo_cabelo" placeholder="cacheado" />
                 </p>
                 <p class="avenir white x-small text-align-left">
-                  castanho
+                  <span id="cor_cabelo">castanho</span>
+                  <input type="text" name="msg" id="i-cor_cabelo" placeholder="castanho" />
                 </p>
                 <p class="avenir white x-small text-align-left">
-                  médio
+                  <span id="tamanho_cabelo">médio</span>
+                  <input type="text" name="msg" id="i-tamanho_cabelo" placeholder="médio" />
                 </p>
               </div>
             </div>
@@ -99,10 +106,8 @@
               </div>
               <div class="physical-description-bottom__box_right float_right relative">
                 <p class="avenir white x-small text-align-left">
-                  castanho
-                </p>
-                <p class="avenir white x-small text-align-left">
-                  escuro
+                  <span id="cor_olho">castanho</span>
+                  <input type="text" name="msg" id="i-cor_olho" placeholder="castanho" />
                 </p>
               </div>
             </div>

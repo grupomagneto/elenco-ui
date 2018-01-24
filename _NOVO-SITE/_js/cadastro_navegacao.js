@@ -1349,3 +1349,4 @@ $(document).ready(function(){
 $('.caixas-cadastros').mCustomScrollbar({
     theme:"my-theme"
 });
+

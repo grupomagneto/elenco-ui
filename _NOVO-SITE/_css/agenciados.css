@@ -291,6 +291,36 @@ background: rgba(255,255,255,0.40);
     width: 70px;
     margin-right: -40px;
     margin-top: 2px; }
+   .physical-description .physical-description__box .physical-description__box_right input#i-busto {
+    margin: -20px;
+    margin-left: -15px;
+    width: 20px;
+    height: 15px; }
+   .physical-description .physical-description__box .physical-description__box_right input#i-cintura {
+    margin: -20px;
+    margin-left: -15px;
+    width: 20px;
+    height: 15px; }
+   .physical-description .physical-description__box .physical-description__box_right input#i-quadril {
+    margin: -20px;
+    margin-left: -15px;
+    width: 20px;
+    height: 15px; }
+   .physical-description .physical-description__box .physical-description__box_right input#i-tipo_cabelo {
+    margin: -20px;
+    margin-left: -15px;
+    width: 20px;
+    height: 15px; }
+   .physical-description .physical-description__box .physical-description__box_right input#i-cor_cabelo {
+    margin: -20px;
+    margin-left: -15px;
+    width: 20px;
+    height: 15px; }
+   .physical-description .physical-description__box .physical-description__box_right input#i-tamanho_cabelo {
+    margin: -20px;
+    margin-left: -15px;
+    width: 20px;
+    height: 15px; }
 
 .physical-description-bottom  {
   width: 100%;
@@ -308,6 +338,12 @@ background: rgba(255,255,255,0.40);
     width: 70px;
     margin-right: -40px;
     margin-top: 2px;  }
+.physical-description-bottom .physical-description-bottom__box .physical-description-bottom__box_right input#i-cor_olho {
+    margin: -20px;
+    margin-left: -15px;
+    margin-top: 5px;
+    width: 20px;
+    height: 15px; }
 
 p.nome-artistico{
   margin-top: -5px;
@@ -483,7 +519,6 @@ li.slick-active{
   color: #fff;
   text-align: justify;
 }
-
 
 .block-media__video{
   margin-top: 35px;
